@@ -271,11 +271,24 @@
       "status": "published",
       "source": "workflow",
       "reserved_at": "2026-10-04T09:52:37Z",
+      "published_at": "2026-10-04T09:53:01Z",
       "run_id": "37192351556",
       "story_type": "true_case",
       "reservation_id": "825524cfaae64c7d838dd2a92c9ad2c0",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-04T09:53:01Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "7455e85b1706f3db7df0",
+      "title": "صدى الخندق المظلم",
+      "hook": "في عمق خمسة آلاف متر، سجلت غواصة آلية في المحيط الهادئ نبضة صوتية لم تتكرر إلا عندما توقف المحرك الرئيسي فجأة.",
+      "region": "المحيط الهادئ",
+      "status": "reserved",
+      "source": "workflow",
+      "story_type": "sci_fi",
+      "reservation_id": "06d5f4a214ea4cb0aba1176983731c06",
+      "reserved_at": "2026-10-04T20:59:33Z",
+      "run_id": "37232852191",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
