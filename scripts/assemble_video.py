@@ -66,6 +66,8 @@ MAX_SHORT_DURATION_SECONDS = 89.0
 AUTO_END_MARGIN_SECONDS = 8.0
 CTA_DURATION_SECONDS = 4.0
 REEL_CTA_TOP_MARGIN = 620
+# Captions for 9:16 are rendered independently, below the camera/notch safe area.
+REEL_CAPTION_TOP_MARGIN = 300
 FPS = 24
 
 # خط/حجم افتراضي يُستخدم فقط لو تعذّرت قراءة ستايل السكربت من ملف الترجمة.
@@ -160,6 +162,30 @@ def subtitle_filter(subtitles: Path | None) -> str | None:
         return None
     path = str(subtitles.resolve()).replace("\\", "/").replace(":", "\\:")
     return f"subtitles='{path}'"
+
+
+def build_vertical_subtitles(source: Path | None, output: Path) -> Path | None:
+    """Convert the narration ASS track to a 9:16, top-safe caption lane."""
+    if not source or not source.exists():
+        return None
+    text = source.read_text(encoding="utf-8", errors="ignore")
+    text = text.replace("PlayResX: 1920", f"PlayResX: {SHORT_WIDTH}")
+    text = text.replace("PlayResY: 1080", f"PlayResY: {SHORT_HEIGHT}")
+    lines = []
+    for line in text.splitlines():
+        if line.startswith("Style: Caption,"):
+            fields = line.split(",")
+            # ASS style fields: Alignment=18, MarginL=19, MarginR=20,
+            # MarginV=21. Alignment 8 is top-center.
+            if len(fields) >= 22:
+                fields[18] = "8"
+                fields[19] = "70"
+                fields[20] = "70"
+                fields[21] = str(REEL_CAPTION_TOP_MARGIN)
+                line = ",".join(fields)
+        lines.append(line)
+    output.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    return output
 
 
 def extract_subtitle_style(ass_path: Path | None) -> tuple[str, int]:
@@ -283,6 +309,7 @@ def build_full_video(
     final_audio: Path,
     subtitles: Path | None,
     output_path: Path,
+    clean_output_path: Path | None = None,
 ) -> float:
     """يبني الحلقة الكاملة الأفقية دون قصها إلى 90 ثانية."""
     audio_duration = probe_duration(final_audio)
@@ -301,6 +328,8 @@ def build_full_video(
 
     concatenated = CLIPS_DIR / "concatenated_full.mp4"
     concat_clips(normalized, concatenated, CLIPS_DIR / "concat_list_full.txt")
+    if clean_output_path:
+        add_audio_and_subtitles(concatenated, final_audio, None, clean_output_path)
     add_audio_and_subtitles(concatenated, final_audio, subtitles, output_path)
     return probe_duration(output_path)
 
@@ -385,13 +414,14 @@ def load_short_specs(episode: dict, full_duration: float) -> list[dict]:
 
 
 def create_short(
-    full_video: Path,
+    source_video: Path,
     spec: dict,
     short_index: int,
     platform: str,
     output_path: Path,
     font_name: str,
     font_size: int,
+    subtitles: Path | None = None,
 ) -> float:
     start = float(spec["start_seconds"])
     end = float(spec["end_seconds"])
@@ -409,13 +439,16 @@ def create_short(
         f"scale={SHORT_WIDTH}:{SHORT_HEIGHT}:force_original_aspect_ratio=increase,"
         f"crop={SHORT_WIDTH}:{SHORT_HEIGHT}"
     )
+    narration_subtitle_filter = subtitle_filter(subtitles)
+    if narration_subtitle_filter:
+        vf += f",{narration_subtitle_filter}"
     if cta_filter:
         vf += f",{cta_filter}"
 
     run([
         "ffmpeg", "-y",
         "-ss", f"{start:.3f}",
-        "-i", str(full_video),
+        "-i", str(source_video),
         "-t", f"{duration:.3f}",
         "-vf", vf,
         "-map", "0:v:0",
@@ -483,7 +516,11 @@ def _run() -> None:
         old.unlink(missing_ok=True)
 
     full_output = OUTPUT_DIR / "final_video_full.mp4"
-    full_duration = build_full_video(clips, final_audio, subtitles, full_output)
+    clean_full_output = CLIPS_DIR / "full_video_clean.mp4"
+    full_duration = build_full_video(
+        clips, final_audio, subtitles, full_output,
+        clean_output_path=clean_full_output,
+    )
     print(f"✅ الفيديو الكامل الأفقي: {full_output}")
     print(f"✅ مدة الفيديو الكامل: {full_duration:.1f} ثانية")
 
@@ -491,12 +528,15 @@ def _run() -> None:
     print(f"✅ عدد الريلز: {len(specs)} — الحد الأقصى: {MAX_SHORT_DURATION_SECONDS:.0f}s")
 
     generated = 0
+    vertical_subtitles = build_vertical_subtitles(
+        subtitles, CLIPS_DIR / "narration_vertical.ass"
+    )
     for short_index, spec in enumerate(specs, 1):
         for platform in PLATFORM_CTA:
             output = OUTPUT_DIR / f"short_{short_index}_{platform}.mp4"
             duration = create_short(
-                full_output, spec, short_index, platform, output,
-                cta_font_name, cta_font_size,
+                clean_full_output, spec, short_index, platform, output,
+                cta_font_name, cta_font_size, subtitles=vertical_subtitles,
             )
             generated += 1
             print(

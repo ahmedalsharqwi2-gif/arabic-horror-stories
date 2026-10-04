@@ -24,6 +24,17 @@ class ReelSafeAreaTests(unittest.TestCase):
             style = next(line for line in path.read_text(encoding="utf-8").splitlines() if line.startswith("Style: CTA,"))
         self.assertIn(",8,70,70,620,1", style)
 
+    def test_vertical_narration_captions_are_below_notch(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "narration.ass"
+            target = Path(directory) / "narration_vertical.ass"
+            source.write_text(generate_voice.build_ass_header(), encoding="utf-8")
+            assemble_video.build_vertical_subtitles(source, target)
+            rendered = target.read_text(encoding="utf-8")
+        self.assertIn("PlayResX: 1080", rendered)
+        self.assertIn("PlayResY: 1920", rendered)
+        self.assertIn(",8,70,70,300,1", rendered)
+
 
 if __name__ == "__main__":
     unittest.main()
