@@ -2,13 +2,19 @@ name: Create and Publish Horror Episode
 
 on:
   schedule:
-    # يبدأ التحضير قبل موعدي النشر النهائيين 12:00 و18:00 القاهرة.
-    - cron: "0 8 * * *"
-    - cron: "0 14 * * *"
+    # GitHub cron is UTC; these triggers are 12:00 and 18:00 Africa/Cairo
+    # for the current Cairo UTC+3 schedule.
+    - cron: "0 9 * * *"
+    - cron: "0 15 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
         description: "Build and validate without publishing externally"
+        required: false
+        default: false
+        type: boolean
+      publish_now:
+        description: "انشر فورًا لتعويض موعد فائت"
         required: false
         default: false
         type: boolean
@@ -37,6 +43,7 @@ jobs:
       - name: Set final Cairo publication slot
         env:
           SCHEDULE_EXPR: ${{ github.event.schedule }}
+          PUBLISH_NOW: ${{ inputs.publish_now || false }}
         run: |
           python - <<'PY'
           import os
@@ -45,7 +52,14 @@ jobs:
 
           now = datetime.now(timezone.utc)
           cairo_now = now.astimezone(ZoneInfo("Africa/Cairo"))
-          target_hour = {"0 8 * * *": 12, "0 14 * * *": 18}.get(os.environ.get("SCHEDULE_EXPR", ""))
+          if os.environ.get("PUBLISH_NOW", "false").lower() == "true":
+              target = datetime.now(timezone.utc) + timedelta(minutes=2)
+              due_at = target.isoformat(timespec="seconds").replace("+00:00", "Z")
+              print(f"Immediate catch-up publication slot: {due_at} UTC")
+              with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env_file:
+                  env_file.write(f"PUBLISH_DUE_AT={due_at}\n")
+              raise SystemExit(0)
+          target_hour = {"0 9 * * *": 12, "0 15 * * *": 18}.get(os.environ.get("SCHEDULE_EXPR", ""))
           if target_hour is None:
               slots = [cairo_now.replace(hour=12, minute=0, second=0, microsecond=0),
                        cairo_now.replace(hour=18, minute=0, second=0, microsecond=0)]
