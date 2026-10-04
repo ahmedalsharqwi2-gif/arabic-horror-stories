@@ -268,13 +268,14 @@
       "title": "غموض مزرعة هينتركايفيك",
       "hook": "في شتاء عام ألف وتسعمئة واثنين وعشرين، لاحظ مزارع في بافاريا آثار أقدام تقود من الغابة إلى مزرعته دون أي أثر للرجوع.",
       "region": "ألمانيا",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
-      "story_type": "true_case",
-      "reservation_id": "825524cfaae64c7d838dd2a92c9ad2c0",
       "reserved_at": "2026-10-04T09:52:37Z",
       "run_id": "37192351556",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "825524cfaae64c7d838dd2a92c9ad2c0",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-04T09:53:01Z"
     }
   ]
 }
