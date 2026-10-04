@@ -257,11 +257,24 @@
       "status": "published",
       "source": "workflow",
       "reserved_at": "2026-10-03T18:47:10Z",
+      "published_at": "2026-10-03T18:47:33Z",
       "run_id": "37144320243",
       "story_type": "sci_fi",
       "reservation_id": "42151054ed094d57991bca63500ff34d",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-03T18:47:33Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "d59849fc1da348cc02c3",
+      "title": "غموض مزرعة هينتركايفيك",
+      "hook": "في شتاء عام ألف وتسعمئة واثنين وعشرين، لاحظ مزارع في بافاريا آثار أقدام تقود من الغابة إلى مزرعته دون أي أثر للرجوع.",
+      "region": "ألمانيا",
+      "status": "reserved",
+      "source": "workflow",
+      "story_type": "true_case",
+      "reservation_id": "825524cfaae64c7d838dd2a92c9ad2c0",
+      "reserved_at": "2026-10-04T09:52:37Z",
+      "run_id": "37192351556",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
