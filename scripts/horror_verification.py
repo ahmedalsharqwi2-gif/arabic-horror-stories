@@ -40,9 +40,12 @@ def validate_visual_plan(episode: dict[str, Any]) -> None:
     if not isinstance(matches, list) or len(matches) != len(keywords): _fail("visual_match must align one-to-one with visual_keywords")
     for i, item in enumerate(matches, 1):
         if not isinstance(item, dict): _fail(f"visual_match {i} is not an object")
-        for key in ("keyword", "scene", "place", "source_type", "authenticity", "status"):
+        for key in ("keyword", "scene", "place", "source_type", "authenticity", "status", "audio_decision", "audio_match"):
             if not _s(item.get(key)): _fail(f"visual_match {i} missing {key}")
         if item.get("status") != "PASS": _fail(f"visual_match {i} is not approved")
+        if item.get("audio_match") != "PASS": _fail(f"visual_match {i} audio is not approved")
+        if item.get("audio_decision") not in {"ORIGINAL AUDIO", "ORIGINAL AUDIO + VOICE", "ORIGINAL AUDIO + VOICE DUCKING", "ORIGINAL AUDIO + MUSIC", "ORIGINAL AUDIO + VOICE + MUSIC", "VOICE ONLY", "MUTE"}:
+            _fail(f"visual_match {i} has invalid audio_decision")
         if item.get("authenticity") not in {"REAL_ARCHIVE", "REAL_LOCATION", "MAP", "SYMBOLIC", "REENACTMENT", "AI_RECONSTRUCTION"}: _fail(f"visual_match {i} has invalid authenticity")
         if item.get("authenticity") == "REENACTMENT" and "إعادة تمثيل" not in _s(item.get("label")):
             _fail(f"visual_match {i} reenactment is not labeled")

@@ -118,24 +118,22 @@ def resolve_path(value: str | Path) -> Path:
     return ROOT_DIR / path
 
 
-def normalize_clip(input_path: Path, output_path: Path, duration: float) -> None:
-    """يحوّل أي كليب إلى 1920x1080 أفقيًا مع ملء الإطار وقص الحواف."""
-    run([
-        "ffmpeg", "-y",
-        "-stream_loop", "-1",
-        "-i", str(input_path),
-        "-t", f"{duration:.3f}",
-        "-vf",
-        f"scale={FULL_WIDTH}:{FULL_HEIGHT}:force_original_aspect_ratio=increase,"
-        f"crop={FULL_WIDTH}:{FULL_HEIGHT},fps={FPS}",
-        "-an",
-        "-c:v", "libx264",
-        "-preset", "fast",
-        "-crf", "22",
-        "-pix_fmt", "yuv420p",
-        "-movflags", "+faststart",
-        str(output_path),
-    ])
+def normalize_clip(input_path: Path, output_path: Path, duration: float, audio_decision: str = "VOICE ONLY") -> None:
+    """Normalize video and preserve approved original audio; never mute by default."""
+    decision = str(audio_decision or "VOICE ONLY").upper()
+    keep_audio = decision.startswith("ORIGINAL AUDIO")
+    command = [
+        "ffmpeg", "-y", "-stream_loop", "-1", "-i", str(input_path), "-t", f"{duration:.3f}",
+        "-vf", f"scale={FULL_WIDTH}:{FULL_HEIGHT}:force_original_aspect_ratio=increase,crop={FULL_WIDTH}:{FULL_HEIGHT},fps={FPS}",
+        "-map", "0:v:0",
+    ]
+    if keep_audio:
+        volume = "0.18" if "DUCKING" not in decision else "0.24"
+        command += ["-map", "0:a:0?", "-af", f"aresample=48000,volume={volume}", "-c:a", "aac", "-b:a", "128k"]
+    else:
+        command += ["-an"]
+    command += ["-c:v", "libx264", "-preset", "fast", "-crf", "22", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(output_path)]
+    run(command)
 
 
 def concat_clips(paths: list[Path], output_path: Path, list_path: Path) -> None:
@@ -238,28 +236,41 @@ def extract_subtitle_style(ass_path: Path | None) -> tuple[str, int]:
     return chosen or (FALLBACK_CTA_FONT, FALLBACK_CTA_SIZE)
 
 
-def mix_horror_audio(final_audio: Path, duration: float, output_path: Path) -> Path:
-    """Add a restrained room bed, opening hit, and two distant footstep cues."""
+def mix_horror_audio(final_audio: Path, duration: float, output_path: Path, original_audio: Path | None = None) -> Path:
+    """Mix narration with approved original clip audio and restrained effects."""
     ambience = SFX_DIR / "horror_abandoned_room_loop.mp3"
     footsteps = SFX_DIR / "horror_distant_footsteps.mp3"
     reveal = SFX_DIR / "horror_reveal_hit.mp3"
     if not all(p.is_file() for p in (ambience, footsteps, reveal)):
         raise FileNotFoundError("ملفات مؤثرات الرعب ناقصة داخل assets/sfx")
     points = [max(0.8, duration * 0.38), max(1.2, duration * 0.72)]
-    inputs = ["-i", str(final_audio), "-stream_loop", "-1", "-i", str(ambience), "-i", str(reveal)]
+    inputs = ["-i", str(final_audio)]
+    has_original = bool(original_audio and original_audio.exists())
+    if has_original:
+        inputs += ["-i", str(original_audio)]
+    inputs += ["-stream_loop", "-1", "-i", str(ambience), "-i", str(reveal)]
     for _ in points:
         inputs += ["-i", str(footsteps)]
-    filters = [f"[0:a]aresample=48000,volume=1.0[voice]",
-               f"[1:a]aresample=48000,volume={HORROR_AMBIENCE_GAIN},atrim=duration={duration:.3f}[room]",
-               f"[2:a]aresample=48000,volume={HORROR_EVENT_GAIN},adelay=450|450,atrim=duration={duration:.3f}[hit]"]
+    original_index = 1 if has_original else None
+    ambience_index = 2 if has_original else 1
+    reveal_index = ambience_index + 1
+    first_steps_index = reveal_index + 1
+    filters = [f"[0:a]aresample=48000,volume=1.0[voice]"]
+    voice_mix_label = "voice"
+    if has_original:
+        filters.append(f"[{original_index}:a]aresample=48000,volume=0.18[original]")
+        filters.append("[voice][original]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=250[voice_ducked]")
+        voice_mix_label = "voice_ducked"
+    filters += [f"[{ambience_index}:a]aresample=48000,volume={HORROR_AMBIENCE_GAIN},atrim=duration={duration:.3f}[room]",
+                f"[{reveal_index}:a]aresample=48000,volume={HORROR_EVENT_GAIN},adelay=450|450,atrim=duration={duration:.3f}[hit]"]
     labels = []
     for index, point in enumerate(points):
-        input_idx = 3 + index
+        input_idx = first_steps_index + index
         label = f"steps{index}"
         delay = int(point * 1000)
         filters.append(f"[{input_idx}:a]aresample=48000,volume={HORROR_EVENT_GAIN},adelay={delay}|{delay},atrim=duration={duration:.3f}[{label}]")
         labels.append(f"[{label}]")
-    filters.append(f"[voice][room][hit]{''.join(labels)}amix=inputs={3+len(points)}:duration=first:dropout_transition=0:normalize=0,alimiter=limit=0.95:level=disabled[a]")
+    filters.append(f"[{voice_mix_label}][room][hit]{''.join(labels)}amix=inputs={3+len(points)}:duration=first:dropout_transition=0:normalize=0,alimiter=limit=0.95:level=disabled[a]")
     run(["ffmpeg", "-y", *inputs, "-filter_complex", ";".join(filters), "-map", "[a]", "-t", f"{duration:.3f}", "-c:a", "libmp3lame", "-b:a", "192k", str(output_path)])
     return output_path
 
@@ -276,7 +287,7 @@ def add_audio_and_subtitles(
         filters.append(sub_filter)
 
     mixed_audio = output_path.with_suffix(".mixed.mp3")
-    mix_horror_audio(final_audio, probe_duration(final_audio), mixed_audio)
+    mix_horror_audio(final_audio, probe_duration(final_audio), mixed_audio, original_audio=video_path)
     command = [
         "ffmpeg", "-y",
         "-i", str(video_path),
@@ -323,7 +334,7 @@ def build_full_video(
         if not source.exists():
             raise RuntimeError(f"❌ الكليب غير موجود: {source}")
         norm_path = CLIPS_DIR / f"norm_full_{index:03d}.mp4"
-        normalize_clip(source, norm_path, duration_per_clip)
+        normalize_clip(source, norm_path, duration_per_clip, clip.get("audio_decision", "VOICE ONLY"))
         normalized.append(norm_path)
 
     concatenated = CLIPS_DIR / "concatenated_full.mp4"

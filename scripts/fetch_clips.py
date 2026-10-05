@@ -42,6 +42,10 @@ import subprocess
 import sys
 import time
 import requests
+try:
+    from scripts.audio_matching import apply_manifest_to_clip
+except ModuleNotFoundError:
+    from audio_matching import apply_manifest_to_clip
 from pathlib import Path
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
@@ -264,15 +268,20 @@ def main():
                 dest_path.unlink(missing_ok=True)
                 continue
 
-            fetched_clips.append({
-                "file": str(dest_path),
-                "pexels_id": result["id"],
-                "keyword": keyword,
-                "scene": next((m.get("scene", "") for m in episode.get("visual_match", []) if m.get("keyword") == keyword), ""),
-                "source_type": next((m.get("source_type", "") for m in episode.get("visual_match", []) if m.get("keyword") == keyword), ""),
-                "authenticity": next((m.get("authenticity", "") for m in episode.get("visual_match", []) if m.get("keyword") == keyword), ""),
-                "status": next((m.get("status", "") for m in episode.get("visual_match", []) if m.get("keyword") == keyword), ""),
-            })
+            plan = next((m for m in episode.get("visual_match", []) if m.get("keyword") == keyword), {})
+            clip_item = {
+                "file": str(dest_path), "pexels_id": result["id"], "keyword": keyword,
+                "scene": plan.get("scene", ""), "source_type": plan.get("source_type", ""),
+                "authenticity": plan.get("authenticity", ""), "status": plan.get("status", ""),
+                "audio_decision": plan.get("audio_decision", ""), "audio_match": plan.get("audio_match", ""),
+                "audio_mute_reason": plan.get("audio_mute_reason", ""),
+            }
+            try:
+                fetched_clips.append(apply_manifest_to_clip(clip_item))
+            except (OSError, RuntimeError, ValueError) as exc:
+                dest_path.unlink(missing_ok=True)
+                print(f"⚠️ رفض الكليب بسبب بوابة الصوت: {exc}")
+                continue
             accepted_for_keyword += 1
             print(f"✅ اتنزل كليب لـ '{keyword}' (Pexels ID: {result['id']})")
 

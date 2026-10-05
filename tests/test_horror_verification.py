@@ -12,7 +12,7 @@ def episode():
         "basis": "تقارير صحفية وسجل رسمي",
         "narration": "قصة موثقة تكشف ما نعرفه وما لا نعرفه.",
         "visual_keywords": keywords,
-        "visual_match": [{"keyword": k, "scene": "مشهد مرتبط بالقضية", "place": "المكان الحقيقي", "source_type": "REAL_LOCATION", "authenticity": "REAL_LOCATION", "status": "PASS"} for k in keywords],
+        "visual_match": [{"keyword": k, "scene": "مشهد مرتبط بالقضية", "place": "المكان الحقيقي", "source_type": "REAL_LOCATION", "authenticity": "REAL_LOCATION", "status": "PASS", "audio_decision": "ORIGINAL AUDIO + VOICE DUCKING", "audio_match": "PASS"} for k in keywords],
         "caption": "رعب حقيقي موثق #رعب_حقيقي",
         "phonetic_hints": [],
         "authenticity_label": "REAL_EVENT",
