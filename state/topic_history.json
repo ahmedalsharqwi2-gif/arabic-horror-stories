@@ -194,48 +194,6 @@
       "source": "git-history-backfill"
     },
     {
-      "id": "3e55be2c78ad4b1b3006",
-      "title": "إشارات الأعماق المرتدة",
-      "hook": "في عام 2026، تلقت سفينة أبحاث في المحيط الهادئ نبضة صوتية مرتدة من القاع تصف تفاصيل محادثة طاقمها قبل عشر دقائق.",
-      "region": "المحيط الهادئ",
-      "status": "published",
-      "source": "workflow",
-      "reserved_at": "2026-10-02T01:32:00Z",
-      "published_at": "2026-10-02T01:32:21Z",
-      "run_id": "36950338031",
-      "story_type": "sci_fi",
-      "reservation_id": "ba42b8259dd34a708b1d640e517b7711",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
-    },
-    {
-      "id": "7e68b1d83b0c5466522e",
-      "title": "مراقب النفق السويسري",
-      "hook": "في عمق نفق غوتهارد، رصد نظام الوزن الآلي كتلة زائدة قدرها سبعون كيلوغراما داخل كل مقطورة فارغة تتجاوز منتصف النفق.",
-      "region": "سويسرا",
-      "status": "published",
-      "source": "workflow",
-      "reserved_at": "2026-10-02T13:39:12Z",
-      "published_at": "2026-10-02T13:39:34Z",
-      "run_id": "37010452190",
-      "story_type": "sci_fi",
-      "reservation_id": "2b773832b0eb4a4b85c01b0c4ff77209",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
-    },
-    {
-      "id": "62e87a3333983e1d36dd",
-      "title": "إشارة من الماضي",
-      "hook": "في 2027، سجلت محطة بيرن للبحث العلمي إشارة صوتية من نفسها قبل أن تُرسَل بثلاث ثوانٍ",
-      "region": "سويسرا",
-      "status": "published",
-      "source": "workflow",
-      "reserved_at": "2026-10-02T16:15:52Z",
-      "published_at": "2026-10-02T16:16:13Z",
-      "run_id": "37029053658",
-      "story_type": "sci_fi",
-      "reservation_id": "f3b3ad2417804882ae448125519304c9",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
-    },
-    {
       "id": "169311baeee1aba2c9b8",
       "title": "المنارة الحقيقية للرعب fear_case_01",
       "hook": "ثلاثة حراس منارة في اسكتلندا عام 1thoughtful_thought: The user wants a",
@@ -247,20 +205,6 @@
       "run_id": "37108904519",
       "story_type": "true_case",
       "reservation_id": "98c51d8941dc44118cc9ad1456e352e8",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
-    },
-    {
-      "id": "caed9998793cdd507d4e",
-      "title": "صدى الذاكرة الرقمية",
-      "hook": "في عام 2042، استرجع خادم البيانات في محطة أبحاث سيبيريا الرقمية ملفًا صوتيًا محذوفًا بالكامل قبل عشر سنوات من تاريخ تسجيله.",
-      "region": "سيبيريا، روسيا",
-      "status": "published",
-      "source": "workflow",
-      "reserved_at": "2026-10-03T18:47:10Z",
-      "published_at": "2026-10-03T18:47:33Z",
-      "run_id": "37144320243",
-      "story_type": "sci_fi",
-      "reservation_id": "42151054ed094d57991bca63500ff34d",
       "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     },
     {
@@ -276,34 +220,6 @@
       "story_type": "true_case",
       "reservation_id": "825524cfaae64c7d838dd2a92c9ad2c0",
       "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
-    },
-    {
-      "id": "7455e85b1706f3db7df0",
-      "title": "صدى الخندق المظلم",
-      "hook": "في عمق خمسة آلاف متر، سجلت غواصة آلية في المحيط الهادئ نبضة صوتية لم تتكرر إلا عندما توقف المحرك الرئيسي فجأة.",
-      "region": "المحيط الهادئ",
-      "status": "published",
-      "source": "workflow",
-      "reserved_at": "2026-10-04T20:59:33Z",
-      "published_at": "2026-10-04T20:59:56Z",
-      "run_id": "37232852191",
-      "story_type": "sci_fi",
-      "reservation_id": "06d5f4a214ea4cb0aba1176983731c06",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
-    },
-    {
-      "id": "8f9fa0828b307c2abebe",
-      "title": "صدى المستقبل الرقمي",
-      "hook": "في عام 2031، سجلت وحدة التبريد بمختبر أبحاث في تشيلي نبضة صوتية بشرية، رغم أن المختبر كان مغلقا بالكامل.",
-      "region": "تشيلي",
-      "status": "published",
-      "source": "workflow",
-      "reserved_at": "2026-10-05T09:47:00Z",
-      "run_id": "37289426423",
-      "story_type": "sci_fi",
-      "reservation_id": "51ca560caad5446592eae37ad77d68c6",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-05T09:47:28Z"
     }
   ]
 }

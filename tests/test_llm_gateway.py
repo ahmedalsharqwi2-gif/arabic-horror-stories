@@ -21,7 +21,9 @@ class LlmGatewayTests(unittest.TestCase):
             "title": "x", "hook": "هوك", "region": "مكان", "story_type": "true_case",
             "basis": "مصدر", "narration": "كلمة " * 10,
             "visual_keywords": ["night radio telescope"] * 7,
+            "visual_match": [{"keyword": "night radio telescope"}] * 7,
             "caption": "قصة #رعب", "phonetic_hints": [],
+            "verification_report": {}, "production_table": [], "authenticity_label": "REAL_EVENT", "final_checks": {"fact_check": "PASS", "visual_check": "PASS", "horror_check": "PASS", "authenticity_check": "PASS", "audio_check": "PASS", "subtitle_check": "PASS", "sensitivity_check": "PASS"},
         }
         full = dict(short, narration="كلمة " * 230)
         calls = []
@@ -57,16 +59,18 @@ class LlmGatewayTests(unittest.TestCase):
         self.assertEqual(llm_gateway.classify(invalid), "permanent")
         self.assertEqual(llm_gateway.classify(transient), "transient")
 
-    def test_validator_rejects_sci_fi_without_fiction_caption(self):
+    def test_validator_rejects_unknown_story_type(self):
         episode = {
             "title": "اختبار",
             "hook": "في عام 2090 وصلت إشارة قبل إرسالها",
             "region": "الفضاء",
-            "story_type": "sci_fi",
+            "story_type": "science_fiction",
             "basis": "الاتصالات الراديوية",
             "narration": " ".join(["إشارة"] * 230) + ".",
             "visual_keywords": ["night radio station"] * 7,
+            "visual_match": [{"keyword": "night radio station"}] * 7,
             "caption": "قصة رعب #رعب",
+            "verification_report": {}, "production_table": [], "authenticity_label": "REAL_EVENT", "final_checks": {"fact_check": "PASS", "visual_check": "PASS", "horror_check": "PASS", "authenticity_check": "PASS", "audio_check": "PASS", "subtitle_check": "PASS", "sensitivity_check": "PASS"},
             "phonetic_hints": [],
         }
         with self.assertRaises(OutputError):
@@ -81,7 +85,9 @@ class LlmGatewayTests(unittest.TestCase):
             "basis": "تقرير علمي منشور",
             "narration": " ".join(["إشارة"] * 230) + ".",
             "visual_keywords": ["night sky radio telescope"] * 7,
+            "visual_match": [{"keyword": "night sky radio telescope"}] * 7,
             "caption": "قصة غامضة #رعب",
+            "verification_report": {}, "production_table": [], "authenticity_label": "REAL_EVENT", "final_checks": {"fact_check": "PASS", "visual_check": "PASS", "horror_check": "PASS", "authenticity_check": "PASS", "audio_check": "PASS", "subtitle_check": "PASS", "sensitivity_check": "PASS"},
             "phonetic_hints": [{"word": "Flannan", "phonetic": "فلانان"}],
         }
         make_validator()(episode)

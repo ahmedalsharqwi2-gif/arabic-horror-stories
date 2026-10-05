@@ -59,11 +59,12 @@ OPENROUTER_MODELS = list(dict.fromkeys(
 WORDS_MIN = int(os.getenv("NARRATION_WORDS_MIN", "230"))
 WORDS_MAX = int(os.getenv("NARRATION_WORDS_MAX", "320"))
 
-STORY_TYPES = ("true_case", "sci_fi")
+STORY_TYPES = ("true_case", "unexplained_event", "urban_legend")
 
 REQUIRED_KEYS = {
-    "title", "hook", "region", "story_type", "basis",
-    "narration", "visual_keywords", "caption", "phonetic_hints",
+    "title", "hook", "region", "story_type", "basis", "narration",
+    "visual_keywords", "visual_match", "caption", "phonetic_hints",
+    "verification_report", "production_table", "authenticity_label", "final_checks",
 }
 
 # ───────────────────────── مخطط الحلقة ─────────────────────────
@@ -80,7 +81,12 @@ EPISODE_SCHEMA = {
             "basis": {"type": "string"},
             "narration": {"type": "string"},
             "visual_keywords": {"type": "array", "items": {"type": "string"}},
+            "visual_match": {"type": "array", "items": {"type": "object", "additionalProperties": True}},
             "caption": {"type": "string"},
+            "verification_report": {"type": "object", "additionalProperties": True},
+            "production_table": {"type": "array", "items": {"type": "object", "additionalProperties": True}},
+            "authenticity_label": {"type": "string", "enum": ["REAL_EVENT", "UNEXPLAINED_EVENT", "URBAN_LEGEND"]},
+            "final_checks": {"type": "object", "additionalProperties": True},
             "phonetic_hints": {
                 "type": "array",
                 "items": {
@@ -249,7 +255,7 @@ def make_validator(find_content_red_flag: Optional[Callable] = None,
         if missing:
             raise OutputError(f"حقول ناقصة: {sorted(missing)}")
         if ep["story_type"] not in STORY_TYPES:
-            raise OutputError("قيمة story_type لازم تكون true_case أو sci_fi")
+            raise OutputError("قيمة story_type لازم تكون true_case أو unexplained_event أو urban_legend")
 
         hook = str(ep["hook"]).strip()
         narration = str(ep["narration"]).strip()
@@ -277,14 +283,6 @@ def make_validator(find_content_red_flag: Optional[Callable] = None,
             if flag:
                 raise OutputError(f"النص يحتوي مصطلحًا مرفوضًا: {flag}")
 
-        if ep["story_type"] == "sci_fi":
-            for claim in REAL_CLAIMS:
-                if claim in plain:
-                    raise OutputError(f"الخيال العلمي ما ينفعش يتقدّم كحقيقة: {claim}")
-            if "خيال" not in str(ep["caption"]):
-                raise OutputError("caption لازم يذكر إن القصة خيالية")
-        elif not any(marker in str(ep["basis"]) for marker in EVIDENCE_MARKERS):
-            raise OutputError("true_case يحتاج basis يوضح نوع الدليل أو أن التفصيل متداول")
         if not str(ep["basis"]).strip():
             raise OutputError("basis فاضي")
 
@@ -571,8 +569,9 @@ def pick_story_type() -> str:
 
 def build_user_message(story_type, used_hooks=(), recent_regions=()) -> str:
     kind_line = {
-        "true_case": "النمط المطلوب: story_type = true_case (حادثة حقيقية موثقة أو قضية معروفة أو أسطورة حضرية مذكورة كأسطورة).",
-        "sci_fi": "النمط المطلوب: story_type = sci_fi (خيال علمي رعب أصيل، لا يُقدَّم كحقيقة أبدًا).",
+        "true_case": "النمط المطلوب: story_type = true_case (حادثة أو قضية حقيقية موثقة).",
+        "unexplained_event": "النمط المطلوب: story_type = unexplained_event (واقعة موثقة لم يحسم تفسيرها).",
+        "urban_legend": "النمط المطلوب: story_type = urban_legend (قصة متداولة موسومة بوضوح وليست حقيقة مثبتة).",
     }[story_type]
     hooks = "\n".join(f"- {h}" for h in list(used_hooks)[-40:]) or "- (لا يوجد)"
     regions = "، ".join(list(recent_regions)[-5:]) or "لا يوجد"

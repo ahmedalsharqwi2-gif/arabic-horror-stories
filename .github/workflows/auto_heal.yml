@@ -2,7 +2,7 @@ name: Auto-Heal Failed Workflow
 
 on:
   workflow_run:
-    workflows: ["Create and Publish Horror Episode"]
+    workflows: ["Create and Publish True Horror Episode"]
     types: [completed]
 
 permissions:

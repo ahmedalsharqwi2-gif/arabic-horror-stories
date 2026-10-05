@@ -213,6 +213,8 @@ def main():
     episode = load_json(EPISODE_PATH, None)
     if episode is None:
         sys.exit("خطأ: مفيش current_episode.json — شغّل generate_script.py الأول")
+    if episode.get("verification_report", {}).get("decision") != "APPROVED":
+        sys.exit("HORROR_GATE: لا يمكن جلب المقاطع قبل اعتماد التحقق")
 
     used_data = load_json(USED_CLIPS_PATH, {"pexels_ids_used": [], "history": []})
     used_ids = set(used_data.get("pexels_ids_used", []))
@@ -266,6 +268,10 @@ def main():
                 "file": str(dest_path),
                 "pexels_id": result["id"],
                 "keyword": keyword,
+                "scene": next((m.get("scene", "") for m in episode.get("visual_match", []) if m.get("keyword") == keyword), ""),
+                "source_type": next((m.get("source_type", "") for m in episode.get("visual_match", []) if m.get("keyword") == keyword), ""),
+                "authenticity": next((m.get("authenticity", "") for m in episode.get("visual_match", []) if m.get("keyword") == keyword), ""),
+                "status": next((m.get("status", "") for m in episode.get("visual_match", []) if m.get("keyword") == keyword), ""),
             })
             accepted_for_keyword += 1
             print(f"✅ اتنزل كليب لـ '{keyword}' (Pexels ID: {result['id']})")

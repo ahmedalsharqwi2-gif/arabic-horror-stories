@@ -177,7 +177,7 @@ def build_candidates(trend_values: dict[str, float], youtube_items: list[dict[st
         score = round(trend_points + youtube_points + freshness_points + source_points + visual_points + short_points)
         story_type = ""
         if kind == "horror":
-            story_type = "sci_fi" if any(word in title.casefold() for word in ("fiction", "خيال", "رواية")) else "true_case"
+            story_type = "true_case"
         hook = item.get("description") or f"ما الذي يجعل موضوع «{title}» جديرًا بالبحث؟"
         candidates.append(Candidate(title=title, hook=clean(hook, 500), queries=tuple(q for g in groups for q in g),
                                     source_url=item["url"], evidence=clean(item.get("description"), 500),
@@ -230,7 +230,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--bank", default="TOPIC_BANK.md")
     parser.add_argument("--history", default=None)
-    parser.add_argument("--kind", choices=("science", "horror", "history"), required=True)
+    parser.add_argument("--kind", choices=("horror",), required=True)
     parser.add_argument("--geo", default=os.getenv("TRENDS_GEO", "EG"))
     parser.add_argument("--timeframe", default=os.getenv("TRENDS_TIMEFRAME", "today 3-m"))
     parser.add_argument("--min-score", type=int, default=int(os.getenv("TOPIC_MIN_SCORE", MIN_SCORE)))
@@ -247,7 +247,7 @@ def main(argv: list[str] | None = None) -> int:
     groups = query_groups(os.getenv("TOPIC_RENEWAL_QUERIES", {
         "science": "AI, artificial intelligence;quantum computing, الحوسبة الكمية;space mission, مهمة فضائية;robotics, robotics medicine",
         "horror": "unexplained disappearance, اختفاء غامض;abandoned places, أماكن مهجورة;unsolved mystery, لغز لم يحل;strange signals, إشارات غامضة",
-        "history": "Islamic history, التاريخ الإسلامي;Andalus, الأندلس;Abbasid Baghdad, بغداد العباسية;Mamluk battles, معارك المماليك",
+        "horror": "true crime mystery, جريمة غامضة;missing person case, اختفاء غامض;abandoned hospital true story, مستشفى مهجور حادثة حقيقية;survival story, قصة نجاة حقيقية;unexplained recording, تسجيل غامض موثق",
     }[args.kind]))
     trend_values = fetch_trends(groups, args.geo, args.timeframe)
     queries = [q for group in groups for q in group]

@@ -56,7 +56,7 @@ class GenerateScriptTests(unittest.TestCase):
             ):
                 self.assertIn("اختفاء سفينة في بحر الشمال", generate_script.load_used_history())
         prompt = generate_script.build_user_message(["عنوان سابق"], [], [])
-        self.assertIn("بيانات غير موثوقة", prompt)
+        self.assertIn("بيانات لتجنب التكرار", prompt)
         self.assertIn('["عنوان سابق"]', prompt)
 
 
