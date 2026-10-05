@@ -273,6 +273,34 @@ class LlmGatewayTests(unittest.TestCase):
         self.assertEqual((episode, label), ({"title": "new"}, "next"))
         self.assertIn("مختلفة جذريًا", calls[-1])
 
+    def test_quota_provider_is_not_recreated_between_rounds(self):
+        calls = []
+        def no_credit(_system, _user, _budget):
+            calls.append("paid")
+            error = RuntimeError("HTTP 402 insufficient credits")
+            error.status_code = 402
+            raise error
+        def invalid_then_valid(_system, _user, _budget):
+            calls.append("working")
+            if calls.count("working") == 1:
+                raise llm_gateway.OutputError("invalid content")
+            return '{"story_type": "true_case"}'
+        providers = [Provider("paid", no_credit, family="paid"),
+                     Provider("working", invalid_then_valid)]
+        with patch.object(llm_gateway, "build_providers", return_value=providers) as build, \
+             patch.object(llm_gateway, "pick_story_type", return_value="true_case"), \
+             patch.object(llm_gateway, "LLM_INVALID_RETRIES", 1):
+            result = llm_gateway.generate_episode("system", 1000, lambda ep: None,
+                rounds=2, cooldown=0, user_message="project context")
+        self.assertEqual(result["story_type"], "true_case")
+        self.assertEqual(calls, ["paid", "working", "working"])
+        self.assertEqual(build.call_count, 1)
+
+    def test_groq_truncated_schema_400_is_recoverable(self):
+        error = RuntimeError("HTTP 400 max completion tokens reached before generating a valid document")
+        error.status_code = 400
+        self.assertEqual(llm_gateway.classify(error), "invalid")
+
     def test_duplicate_topic_starts_a_fresh_generation_round(self):
         prompts = []
 

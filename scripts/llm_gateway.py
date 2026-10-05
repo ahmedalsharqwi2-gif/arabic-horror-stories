@@ -299,6 +299,8 @@ def classify(exc: Exception) -> str:
         return "rate"
     if status in (500, 502, 503, 504):
         return "transient"
+    if status == 400 and "max completion tokens reached" in details.lower():
+        return "invalid"
     if status in (400, 401, 402, 403, 404):
         return "permanent"
     if _has(details, QUOTA_MARKERS):
@@ -525,6 +527,8 @@ def _post_chat(url, key, payload, label, extra_headers=None) -> str:
         # requests and to retry/reroute transient 429/5xx responses.
         error.status_code = r.status_code
         error.response = r
+        if r.status_code == 400 and "max completion tokens reached" in r.text.lower():
+            raise OutputError(f"{label} قطع JSON قبل اكتماله", truncated=True) from error
         raise error
     choice = (r.json().get("choices") or [{}])[0]
     if choice.get("finish_reason") == "length":
@@ -751,10 +755,19 @@ def build_user_message(story_type, used_hooks=(), recent_regions=()) -> str:
 
 
 def generate_episode(system_prompt, budget, validate, to_gemini_schema=None,
-                     used_hooks=(), recent_regions=(), rounds=3, cooldown=30):
+                     used_hooks=(), recent_regions=(), rounds=3, cooldown=30,
+                     user_message=None):
     """Generate an episode, refreshing the topic prompt after duplicate rejection."""
     story_type = pick_story_type()
-    user_message = build_user_message(story_type, used_hooks, recent_regions)
+    user_message = build_user_message(story_type, used_hooks, recent_regions) + "\n" + (user_message or "")
+    user_message += (
+        f"\nقواعد الإخراج الإلزامية: narration من {WORDS_MIN} إلى {WORDS_MAX} كلمة عربية فعلية. "
+        "hook لا يتجاوز 25 كلمة. visual_keywords من 7 إلى 8 عبارات بحث إنجليزية، "
+        "كل عبارة من 3 إلى 5 كلمات محددة للمكان والنشاط. "
+        "اربط كل عبارة بصف visual_match مطابق. أنهِ narration بخلاصة واقعية مكتملة "
+        "توضح ما ثبت وما بقي مجهولًا؛ لا تنه السرد بسؤال. "
+        "أعد verification_report وproduction_table وبقية الحقول كاملة دون اختلاق تفاصيل."
+    )
 
     def _validate(ep):
         validate(ep)
@@ -762,6 +775,8 @@ def generate_episode(system_prompt, budget, validate, to_gemini_schema=None,
             raise OutputError(f"story_type لازم يساوي {story_type}")
 
     last_error = ""
+    # Keep quota/auth/billing exclusions across all rounds of this run.
+    providers = build_providers(to_gemini_schema=to_gemini_schema)
     for rnd in range(1, rounds + 1):
         round_message = user_message
         if rnd > 1:
@@ -769,13 +784,15 @@ def generate_episode(system_prompt, budget, validate, to_gemini_schema=None,
             # the pipeline. Explicitly invalidate the previous candidate and
             # require a different incident, hook, and region in the next round.
             round_message += (
-                "\n\n[إعادة اختيار إلزامية] المحاولة السابقة رُفضت لأنها مكررة أو قريبة من سجل سابق. "
-                "اختر الآن موضوعًا مختلفًا جذريًا: حادثة/فكرة وهوك ومنطقة جديدة تمامًا، "
-                "ولا تعِد صياغة الموضوع المرفوض بأي شكل."
+                "\n\n[تصحيح المحاولة السابقة] عالج سبب الرفض الوارد أدناه مع الالتزام بكل القواعد. "
+                "إذا كان السبب تكرار الموضوع، اختر واقعة مختلفة تمامًا."
             )
+            if any(marker in last_error.lower() for marker in ("مكرر", "duplicate", "similar")):
+                round_message += "\n[إعادة اختيار إلزامية] اختر واقعة جديدة ولا تعِد صياغة الموضوع المرفوض."
             if last_error:
                 round_message += f"\nسبب الرفض السابق: {last_error[:500]}"
-        providers = build_providers(to_gemini_schema=to_gemini_schema)
+        if providers and all(provider.dead for provider in providers):
+            break
         try:
             episode, label = generate_valid_episode(
                 system_prompt, round_message, budget, providers, _validate)

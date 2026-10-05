@@ -123,6 +123,7 @@ jobs:
 
       - name: Generate complete episode script
         env:
+          PYTHONUNBUFFERED: "1"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL || 'openai/gpt-oss-120b' }}
@@ -139,7 +140,7 @@ jobs:
           # excerpted into one reel capped below 90 seconds.
           NARRATION_WORDS_MIN: "230"
           NARRATION_WORDS_MAX: "320"
-          LLM_INITIAL_BUDGET: "3200"
+          LLM_INITIAL_BUDGET: "8000"
           # Duplicate topics are rejected, then the next round is explicitly
           # required to choose a completely different incident and hook.
           LLM_ROUNDS: "3"

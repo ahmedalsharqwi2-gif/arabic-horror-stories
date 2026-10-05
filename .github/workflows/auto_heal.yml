@@ -45,9 +45,17 @@ jobs:
             DIAGNOSIS="Non-transient failure; manual code/configuration review is required."
           fi
 
+          # Quota, billing, invalid content and authentication do not heal by rerunning.
+          RETRY_SAFE=false
+          if grep -Eqi 'HTTP (401|402|403|429)|RESOURCE_EXHAUSTED|quota|rate limit|insufficient|billing' "$LOG_FILE"; then
+            DIAGNOSIS="Provider quota/authentication/billing failure; retry suppressed."
+          elif grep -Eqi 'HTTP (408|500|502|503|504)|timed out|temporarily unavailable' "$LOG_FILE"; then
+            RETRY_SAFE=true
+          fi
+
           # Never rerun a job after an external publish step: it could duplicate posts.
           # Only the first attempt is eligible for one safe recovery retry.
-          if [ "$RUN_ATTEMPT" = "1" ] && [ "$PUBLISH_STARTED" = "false" ]; then
+          if [ "$RUN_ATTEMPT" = "1" ] && [ "$PUBLISH_STARTED" = "false" ] && [ "$RETRY_SAFE" = "true" ]; then
             echo "Recovery: rerunning failed jobs once (no publish step started)."
             gh run rerun "$RUN_ID" -R "$REPOSITORY" --failed
             exit 0

@@ -204,6 +204,7 @@ def generate_episode() -> dict:
     try:
         episode = gateway_generate_episode(
             system_prompt=system_prompt,
+            user_message=user_message,
             budget=budget,
             validate=combined_validator,
             to_gemini_schema=to_gemini_schema,
