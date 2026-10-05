@@ -490,7 +490,7 @@ def _run() -> None:
 
     episode = json.loads(EPISODE_PATH.read_text(encoding="utf-8"))
     for clip in clips:
-        reviewed = review_clip(resolve_path(clip["file"]), str(clip.get("keyword", "")), str(episode.get("title", "")))
+        reviewed = review_clip(resolve_path(clip["file"]), str(clip.get("keyword", "")), str(episode.get("title", "")), historical=episode.get("historical") is True)
         if reviewed["audio_decision"] != clip.get("audio_decision"):
             raise ValueError("Audio decision differs from byte-bound clip review")
     final_audio_value = episode.get("final_audio")

@@ -20,6 +20,9 @@ class AudioMatchingTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate_manifest([{"audio_status": "PASS", "audio_decision": "ORIGINAL AUDIO + VOICE", "audio_match": "REJECT"}])
 
+    def test_reviewed_mute_is_preserved_for_a_silent_source(self):
+        self.assertEqual(normalize_decision("MUTE", False), "MUTE")
+
 
 if __name__ == "__main__":
     unittest.main()

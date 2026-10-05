@@ -274,7 +274,7 @@ def main():
                 continue
 
             try:
-                plan = review_clip(dest_path, keyword, str(episode.get("title", "")))
+                plan = review_clip(dest_path, keyword, str(episode.get("title", "")), historical=episode.get("historical") is True)
             except ValueError as exc:
                 print(f"⚠️ {exc}")
                 continue

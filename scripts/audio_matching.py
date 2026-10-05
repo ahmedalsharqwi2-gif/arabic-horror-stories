@@ -34,7 +34,7 @@ def inspect_audio(path: Path) -> dict[str, Any]:
 def normalize_decision(value: Any, has_audio: bool) -> str:
     decision = str(value or "").strip().upper()
     if not has_audio:
-        return "VOICE ONLY"
+        return "MUTE" if decision == "MUTE" else "VOICE ONLY"
     if decision not in DECISIONS:
         raise ValueError("AUDIO MATCH FAILED: every clip with original audio needs an approved audio_decision")
     return decision
