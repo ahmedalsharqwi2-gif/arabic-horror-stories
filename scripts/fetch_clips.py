@@ -52,6 +52,10 @@ try:
     from scripts.clip_review import review_clip
 except ModuleNotFoundError:
     from clip_review import review_clip
+try:
+    from scripts.commons_media import image_fallback
+except ModuleNotFoundError:
+    from commons_media import image_fallback
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
@@ -63,24 +67,16 @@ CLIPS_DIR = SCRIPT_DIR.parent / "downloaded_clips"
 
 PEXELS_SEARCH_URL = "https://api.pexels.com/videos/search"
 
-MAX_PAGES_TO_TRY = 10       # نبحث في صفحات أكثر قبل إعلان عدم وجود نتائج جديدة
-RESULTS_PER_PAGE = 80       # الحد العملي الأعلى لنتائج Pexels في الصفحة
-
-# أقصى عدد كليبات نحاول نجيبه لكل كلمة بحث (بدل كليب واحد بس زي الأول).
-CLIPS_PER_KEYWORD = 12
-
-# سقف إجمالي لعدد الكليبات في الحلقة الواحدة، عشان التنزيل ميطولش أو
-# ياكل مساحة/رصيد API أكتر من اللازم. غيّره براحتك.
-# حلقة 5–6 دقائق تحتاج عادةً 75–110 لقطة عند تغيير المشهد كل 3–4 ثوانٍ.
-# السقف 160 يتيح تنوعًا كبيرًا للحلقات الأطول، بينما يظل عمليًا من ناحية
-# زمن التنزيل ومساحة GitHub Actions. العدد الفعلي قد يكون أقل حسب النتائج
-# الجديدة المتاحة لكل كلمة بحث.
-MAX_TOTAL_CLIPS = 160
+# Bound stock search and inspection before moving to reviewed still images.
+MAX_PAGES_TO_TRY = 2
+RESULTS_PER_PAGE = 80
+CLIPS_PER_KEYWORD = 2
+MAX_TOTAL_CLIPS = 24
 
 MIN_DURATION_SECONDS = 4    # نتجنب الكليبات القصيرة جدًا
 
 # عدد محاولات التحميل القصوى لكل كليب (لو انقطع الاتصال أثناء التحميل).
-DOWNLOAD_MAX_ATTEMPTS = 4
+DOWNLOAD_MAX_ATTEMPTS = 2
 MAX_CLIP_BLACK_SECONDS = 0.30
 BLACK_INTERVAL_RE = re.compile(r"black_start:([0-9.]+).*black_end:([0-9.]+)")
 
@@ -92,12 +88,13 @@ def _build_session() -> requests.Session:
     ده بالظبط اللي كان بيوقف fetch_clips.py قبل كده."""
     session = requests.Session()
     retry = Retry(
-        total=5,
-        connect=5,
-        read=5,
-        backoff_factor=2,          # 2s, 4s, 8s, 16s, 32s بين المحاولات
+        total=1,
+        connect=1,
+        read=1,
+        backoff_factor=1,
         status_forcelist=[429, 500, 502, 503, 504],
         allowed_methods=["GET"],
+        respect_retry_after_header=False,
     )
     adapter = HTTPAdapter(max_retries=retry)
     session.mount("https://", adapter)
@@ -217,7 +214,7 @@ def has_excessive_black_frames(path: Path, max_black_seconds: float = MAX_CLIP_B
 def main():
     api_key = os.environ.get("PEXELS_API_KEY")
     if not api_key:
-        sys.exit("خطأ: لازم تضيف PEXELS_API_KEY في GitHub Secrets")
+        print("Pexels key absent; using reviewed Commons images")
 
     episode = load_json(EPISODE_PATH, None)
     if episode is None:
@@ -230,6 +227,7 @@ def main():
 
     CLIPS_DIR.mkdir(parents=True, exist_ok=True)
     fetched_clips = []
+    video_attempts = 0
 
     for keyword in episode["visual_keywords"]:
         if len(fetched_clips) >= MAX_TOTAL_CLIPS:
@@ -241,15 +239,21 @@ def main():
 
         # Fetch extra candidates because some stock sources contain black
         # leader/tail frames and must be rejected before the final montage.
-        results = search_pexels(keyword, api_key, used_ids, wanted * 2)
+        results = []
+        try:
+            results = search_pexels(keyword, api_key, used_ids, 2) if api_key and video_attempts < 12 else []
+        except requests.RequestException:
+            print("Pexels search unavailable; trying Commons")
         if not results:
-            print(f"⚠️  مفيش كليبات جديدة لكلمة '{keyword}' — هنتخطاها")
-            continue
+            print(f"⚠️  مفيش كليبات جديدة لكلمة '{keyword}' — هنجرب صور Commons")
 
         accepted_for_keyword = 0
         for result in results:
             if accepted_for_keyword >= wanted or len(fetched_clips) >= MAX_TOTAL_CLIPS:
                 break
+            if video_attempts >= 12:
+                break
+            video_attempts += 1
             dest_path = CLIPS_DIR / f"clip_{result['id']}.mp4"
             try:
                 download_clip(result["url"], dest_path)
@@ -294,6 +298,13 @@ def main():
                 continue
             accepted_for_keyword += 1
             print(f"✅ اتنزل كليب لـ '{keyword}' (Pexels ID: {result['id']})")
+
+        if accepted_for_keyword < wanted:
+            for item in image_fallback(keyword, str(episode.get("title", "")), CLIPS_DIR,
+                                       review_clip, historical=episode.get("historical") is True, limit=wanted-accepted_for_keyword):
+                item.update({key: item["visual_review"].get(key, "") for key in
+                             ("scene", "source_type", "authenticity", "status", "audio_match", "audio_mute_reason")})
+                fetched_clips.append(apply_manifest_to_clip(item))
 
     if not fetched_clips:
         sys.exit("خطأ: مفيش ولا كليب واحد اتنزل — راجع الكلمات المفتاحية أو رصيد الـ API")
