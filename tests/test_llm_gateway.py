@@ -16,6 +16,30 @@ from scripts.llm_gateway import (
 
 
 class LlmGatewayTests(unittest.TestCase):
+    def test_gemini_invalid_config_keeps_json_and_retries_without_nested_schema(self):
+        import sys
+        from types import SimpleNamespace
+        configs = []
+        def generate_content(**kwargs):
+            configs.append(kwargs)
+            if len(configs) < 3:
+                raise RuntimeError("400 INVALID_ARGUMENT")
+            return SimpleNamespace(text='{"narration":"test"}', candidates=[])
+        genai = SimpleNamespace(Client=lambda **_: SimpleNamespace(models=SimpleNamespace(generate_content=generate_content)))
+        sdk_types = SimpleNamespace(GenerateContentConfig=lambda **cfg: cfg,
+                                   ThinkingConfig=lambda **cfg: cfg)
+        with patch.dict(sys.modules, {"google": SimpleNamespace(genai=genai),
+                                      "google.genai": genai, "google.genai.types": sdk_types}), \
+             patch.object(llm_gateway, "GEMINI_THINKING_BUDGET", 0):
+            genai.types = sdk_types
+            result = llm_gateway._gemini_completion("system", "request", 8000, "new-model", {"type":"OBJECT"})
+        self.assertEqual(result, '{"narration":"test"}')
+        self.assertIn("response_schema", configs[1]["config"])
+        self.assertNotIn("thinking_config", configs[1]["config"])
+        self.assertNotIn("response_schema", configs[2]["config"])
+        self.assertEqual(configs[2]["config"]["response_mime_type"], "application/json")
+        self.assertIn('"type": "OBJECT"', configs[2]["contents"])
+
     def test_gemini_schema_preserves_source_and_classification_choices(self):
         from scripts.generate_script import to_gemini_schema
         converted = to_gemini_schema(EPISODE_SCHEMA['schema'])

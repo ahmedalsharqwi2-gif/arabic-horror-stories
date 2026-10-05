@@ -471,18 +471,22 @@ def _gemini_completion(system_prompt, user_message, budget, model, gemini_schema
 
     client = genai.Client(api_key=GEMINI_API_KEY)
 
-    def _call(with_thinking: bool):
+    def _call(with_thinking: bool, with_schema: bool = True):
         cfg = dict(
             system_instruction=system_prompt,
             temperature=TEMPERATURE,
             max_output_tokens=budget,
             response_mime_type="application/json",
-            response_schema=gemini_schema,
         )
+        contents = user_message
+        if with_schema:
+            cfg["response_schema"] = gemini_schema
+        else:
+            contents += "\nأعد JSON مطابقًا لهذا المخطط، وكل القيم المحددة ملزمة:\n" + json.dumps(gemini_schema, ensure_ascii=False)
         if with_thinking:
             cfg["thinking_config"] = types.ThinkingConfig(thinking_budget=GEMINI_THINKING_BUDGET)
         return client.models.generate_content(
-            model=model, contents=user_message,
+            model=model, contents=contents,
             config=types.GenerateContentConfig(**cfg),
         )
 
@@ -494,10 +498,19 @@ def _gemini_completion(system_prompt, user_message, budget, model, gemini_schema
         )
     except Exception as exc:  # noqa: BLE001
         # بعض الموديلات ما بتقبلش إعداد التفكير: نعيد بدونه بدل ما نخسر الموديل كله
-        if "thinking" in str(exc).lower() and not isinstance(exc, ProviderTimeout):
-            response = _run_with_timeout(
-                lambda: _call(False), REQUEST_TIMEOUT, f"Gemini {model}"
-            )
+        if ("thinking" in str(exc).lower() or "INVALID_ARGUMENT" in str(exc)) and not isinstance(exc, ProviderTimeout):
+            try:
+                response = _run_with_timeout(
+                    lambda: _call(False), REQUEST_TIMEOUT, f"Gemini {model}"
+                )
+            except Exception as config_error:
+                if "INVALID_ARGUMENT" not in str(config_error):
+                    raise
+                # Some models reject this nested schema. Keep JSON output and
+                # the full local validator; only change the transport format.
+                response = _run_with_timeout(
+                    lambda: _call(False, False), REQUEST_TIMEOUT, f"Gemini {model}"
+                )
         else:
             raise
 
