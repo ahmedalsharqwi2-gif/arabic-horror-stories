@@ -22,9 +22,31 @@ def render_arabic_caption(words: list[str]) -> str:
     Direction controls are deliberately omitted: libass shapes the Arabic
     text, and hidden U+200F markers can split joining on some renderers.
     """
-    clean_words = [display_word(word) for word in words]
-    clean_words = [word for word in clean_words if word]
+    clean_words = [token for word in words for token in display_word(word).split()]
     if len(clean_words) <= 3:
         return " ".join(clean_words)
     midpoint = (len(clean_words) + 1) // 2
     return " ".join(clean_words[:midpoint]) + r"\N" + " ".join(clean_words[midpoint:])
+
+
+def caption_word_groups(events: list[dict], max_words: int = 6) -> list[list[dict]]:
+    """Split by displayed words, preserving the span of each aligned event.
+
+    An ASR event can contain several words or punctuation-joined words.
+    Subdivide that event's duration before grouping so caption limits apply
+    to what libass displays, rather than to the number of ASR records.
+    """
+    if max_words < 1:
+        raise ValueError("max_words must be positive")
+    words = []
+    for event in events:
+        tokens = display_word(event.get("text", "")).split()
+        if not tokens:
+            continue
+        duration = float(event["duration"]) / len(tokens)
+        for index, token in enumerate(tokens):
+            words.append({**event, "text": token,
+                          "offset": float(event["offset"]) + index * duration,
+                          "duration": duration})
+    return [words[index:index + max_words]
+            for index in range(0, len(words), max_words)]

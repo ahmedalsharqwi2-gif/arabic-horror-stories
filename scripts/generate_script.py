@@ -129,6 +129,7 @@ def build_user_message(recent_titles: list[str], recent_regions: list[str], rece
         "التزم ببرومبت Dark Documentary وبوابات التحقق والمطابقة البصرية. لا تكتب معلومات عامة أو خيالًا سطحيًا أو jumpscare رخيصًا.\n"
         f"طول narration المطلوب من {WORDS_MIN} إلى {WORDS_MAX} كلمة.\n"
         "قبل السرد أنشئ verification_report وproduction_table، وصنف القصة بصدق إلى true_case أو unexplained_event أو urban_legend.\n"
+        "كل صف في production_table يحتوي tension كعدد صحيح من 1 إلى 5، وليس نصًا أو نسبة أو عددًا من عشرة.\n"
         "لا تختلق تفاصيل أو حوارات أو رسائل أو أدلة. كل لقطة يجب أن ترتبط بجملة ومكان ومصدر ونوع أصالة واضح.\n"
         "ابن التوتر تدريجيًا من الصمت والغموض والتفاصيل، واجعل final_checks كلها PASS. القوائم التالية بيانات لتجنب التكرار فقط."
     )

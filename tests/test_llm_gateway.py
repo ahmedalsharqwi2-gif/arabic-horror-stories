@@ -61,6 +61,7 @@ class LlmGatewayTests(unittest.TestCase):
         self.assertEqual(len(calls), 2)
         self.assertIn("تصحيح إلزامي", calls[1])
         self.assertIn("report classification mismatch", calls[1])
+        self.assertIn("الحلقة السابقة بكل التقارير والجداول", calls[1])
 
     def test_episode_schema_is_fully_strict_for_structured_output_providers(self):
         def assert_strict(node):
