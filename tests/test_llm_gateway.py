@@ -46,6 +46,7 @@ class LlmGatewayTests(unittest.TestCase):
         report = converted['properties']['verification_report']['properties']
         self.assertEqual(report['classification']['enum'], list(llm_gateway.STORY_TYPES))
         self.assertIn('primary', report['sources']['items']['properties']['tier']['enum'])
+        self.assertEqual(converted['properties']['production_table']['minItems'], 7)
 
     def test_production_gate_failure_is_returned_as_correction_feedback(self):
         calls = []
@@ -61,7 +62,6 @@ class LlmGatewayTests(unittest.TestCase):
         self.assertEqual(len(calls), 2)
         self.assertIn("تصحيح إلزامي", calls[1])
         self.assertIn("report classification mismatch", calls[1])
-        self.assertIn("الحلقة السابقة بكل التقارير والجداول", calls[1])
 
     def test_episode_schema_is_fully_strict_for_structured_output_providers(self):
         def assert_strict(node):

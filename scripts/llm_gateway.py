@@ -158,6 +158,7 @@ EPISODE_SCHEMA = {
             },
             "production_table": {
                 "type": "array",
+                "minItems": 7,
                 "items": {
                     "type": "object",
                     "properties": {

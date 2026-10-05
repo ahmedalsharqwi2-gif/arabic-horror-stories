@@ -133,7 +133,7 @@ jobs:
           # free quota may be exhausted and must not delay every episode.
           PREFER_OPENROUTER: "false"
           LLM_RETRIES: "2"
-          LLM_INVALID_RETRIES: "3"
+          LLM_INVALID_RETRIES: "4"
           LLM_DEADLINE_SECONDS: "900"
           LLM_REQUEST_TIMEOUT: "120"
           # Documentary horror episodes are 230–320 words and are later
