@@ -4,6 +4,7 @@ from unittest.mock import patch
 
 from scripts import llm_gateway
 from scripts.llm_gateway import (
+    EPISODE_SCHEMA,
     OutputError,
     Provider,
     ProviderTimeout,
@@ -16,6 +17,20 @@ from scripts.llm_gateway import (
 
 
 class LlmGatewayTests(unittest.TestCase):
+    def test_episode_schema_is_fully_strict_for_structured_output_providers(self):
+        def assert_strict(node):
+            if node.get("type") == "object":
+                properties = node.get("properties", {})
+                self.assertIs(node.get("additionalProperties"), False)
+                self.assertEqual(set(node.get("required", [])), set(properties))
+                for child in properties.values():
+                    assert_strict(child)
+            if node.get("type") == "array":
+                assert_strict(node["items"])
+
+        self.assertTrue(EPISODE_SCHEMA["strict"])
+        assert_strict(EPISODE_SCHEMA["schema"])
+
     def test_short_episode_retry_includes_prior_narration_and_missing_words(self):
         short = {
             "title": "x", "hook": "هوك", "region": "مكان", "story_type": "true_case",

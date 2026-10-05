@@ -81,12 +81,116 @@ EPISODE_SCHEMA = {
             "basis": {"type": "string"},
             "narration": {"type": "string"},
             "visual_keywords": {"type": "array", "items": {"type": "string"}},
-            "visual_match": {"type": "array", "items": {"type": "object", "additionalProperties": True}},
+            "visual_match": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "keyword": {"type": "string"},
+                        "scene": {"type": "string"},
+                        "place": {"type": "string"},
+                        "source_type": {"type": "string"},
+                        "authenticity": {"type": "string", "enum": [
+                            "REAL_ARCHIVE", "REAL_LOCATION", "MAP", "SYMBOLIC",
+                            "REENACTMENT", "AI_RECONSTRUCTION",
+                        ]},
+                        "status": {"type": "string", "enum": ["PASS"]},
+                        "audio_decision": {"type": "string", "enum": [
+                            "ORIGINAL AUDIO", "ORIGINAL AUDIO + VOICE",
+                            "ORIGINAL AUDIO + VOICE DUCKING", "ORIGINAL AUDIO + MUSIC",
+                            "ORIGINAL AUDIO + VOICE + MUSIC", "VOICE ONLY", "MUTE",
+                        ]},
+                        "audio_match": {"type": "string", "enum": ["PASS"]},
+                        "label": {"type": "string"},
+                    },
+                    "required": [
+                        "keyword", "scene", "place", "source_type", "authenticity",
+                        "status", "audio_decision", "audio_match", "label",
+                    ],
+                    "additionalProperties": False,
+                },
+            },
             "caption": {"type": "string"},
-            "verification_report": {"type": "object", "additionalProperties": True},
-            "production_table": {"type": "array", "items": {"type": "object", "additionalProperties": True}},
+            "verification_report": {
+                "type": "object",
+                "properties": {
+                    "case_name": {"type": "string"},
+                    "classification": {"type": "string", "enum": list(STORY_TYPES)},
+                    "period": {"type": "string"},
+                    "location": {"type": "string"},
+                    "people": {"type": "array", "items": {"type": "string"}},
+                    "facts": {"type": "array", "items": {"type": "string"}},
+                    "sources": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "title": {"type": "string"},
+                                "publisher_or_author": {"type": "string"},
+                                "date": {"type": "string"},
+                                "url": {"type": "string"},
+                                "tier": {"type": "string", "enum": [
+                                    "primary", "official", "reputable_press", "academic",
+                                    "archive", "interview", "public_reference",
+                                ]},
+                                "supports": {"type": "string"},
+                            },
+                            "required": [
+                                "title", "publisher_or_author", "date", "url", "tier", "supports",
+                            ],
+                            "additionalProperties": False,
+                        },
+                    },
+                    "confirmed_claims": {"type": "array", "items": {"type": "string"}},
+                    "disputed_claims": {"type": "array", "items": {"type": "string"}},
+                    "excluded_claims": {"type": "array", "items": {"type": "string"}},
+                    "verified_quotes": {"type": "array", "items": {"type": "string"}},
+                    "decision": {"type": "string", "enum": ["APPROVED"]},
+                },
+                "required": [
+                    "case_name", "classification", "period", "location", "people",
+                    "facts", "sources", "confirmed_claims", "disputed_claims",
+                    "excluded_claims", "verified_quotes", "decision",
+                ],
+                "additionalProperties": False,
+            },
+            "production_table": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "time": {"type": "string"},
+                        "narration": {"type": "string"},
+                        "scene": {"type": "string"},
+                        "scene_source": {"type": "string"},
+                        "sound_effect": {"type": "string"},
+                        "music": {"type": "string"},
+                        "subtitle": {"type": "string"},
+                        "tension": {"type": "integer"},
+                    },
+                    "required": [
+                        "time", "narration", "scene", "scene_source", "sound_effect",
+                        "music", "subtitle", "tension",
+                    ],
+                    "additionalProperties": False,
+                },
+            },
             "authenticity_label": {"type": "string", "enum": ["REAL_EVENT", "UNEXPLAINED_EVENT", "URBAN_LEGEND"]},
-            "final_checks": {"type": "object", "additionalProperties": True},
+            "final_checks": {
+                "type": "object",
+                "properties": {
+                    key: {"type": "string", "enum": ["PASS"]}
+                    for key in (
+                        "fact_check", "visual_check", "horror_check", "authenticity_check",
+                        "audio_check", "subtitle_check", "sensitivity_check",
+                    )
+                },
+                "required": [
+                    "fact_check", "visual_check", "horror_check", "authenticity_check",
+                    "audio_check", "subtitle_check", "sensitivity_check",
+                ],
+                "additionalProperties": False,
+            },
             "phonetic_hints": {
                 "type": "array",
                 "items": {

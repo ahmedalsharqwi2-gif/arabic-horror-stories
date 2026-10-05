@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 POLICY_PATH = ROOT / os.getenv("MODEL_POLICY_FILE", "config/model_policy.json")
-DEFAULT_GEMINI = "gemini-2.5-flash"
+DEFAULT_GEMINI = "gemma-4-26b-a4b-it"
 DEFAULT_FALLBACK = "llama-3.1-8b-instant"
 DEFAULT_OPENROUTER = "google/gemini-2.5-flash"
 
@@ -100,10 +100,18 @@ def discover_gemini(policy: dict) -> tuple[str, list[str]]:
     if status != 200 or not available:
         log(f"Gemini catalog unusable (HTTP {status}, {len(available)} generative models); skipping provider", warning=True)
         return "", []
-    # Listing models is not sufficient: restricted keys can list a model but
-    # receive 404 on its detail/generation endpoint. Confirm the selected
-    # candidates individually before exporting them to the production step.
-    selected, fallbacks = select(preferred, configured, available)
+    # Catalog listings can contain model aliases which the key can no longer
+    # invoke (the 2.5 aliases returned 404 for this repository). Prefer only
+    # explicitly configured or policy-approved candidates; don't append every
+    # advertised model as an implicit fallback.
+    approved = list(dict.fromkeys(configured + preferred))
+    candidates = [model for model in approved if model in set(available)]
+    if not candidates:
+        log("Gemini has no policy-approved model in its catalog; skipping provider", warning=True)
+        return "", []
+    # Detail validation is still needed because restricted keys may list models
+    # they cannot invoke.
+    selected, fallbacks = select(preferred, configured, candidates)
     verified = []
     for candidate in [selected, *fallbacks]:
         detail_status, detail = request_json(
@@ -139,7 +147,11 @@ def discover_openai_provider(name: str, endpoint: str, key: str, preferred: list
     if status == 403 and configured:
         selected = configured[0]
         log(f"{name} catalog returned HTTP 403; using explicitly configured model {selected}", warning=True)
-        return selected, configured[1:6]
+        # Catalog-inaccessible Groq accounts still need a failover chain when
+        # the explicitly configured model is rate-limited or temporarily down.
+        # These candidates come from maintained policy, not guessed IDs.
+        alternatives = [model for model in dict.fromkeys(configured[1:] + preferred) if model != selected]
+        return selected, alternatives[:5]
     if status != 200 or not available:
         log(f"{name} catalog unusable (HTTP {status}, {len(available)} models); skipping provider", warning=True)
         return "", []
