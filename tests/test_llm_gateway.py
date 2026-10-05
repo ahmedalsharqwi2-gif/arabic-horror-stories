@@ -11,12 +11,26 @@ from scripts.llm_gateway import (
     _run_with_timeout,
     generate_valid_episode,
     make_validator,
-    make_validator,
     parse_episode_json,
 )
 
 
 class LlmGatewayTests(unittest.TestCase):
+    def test_production_gate_failure_is_returned_as_correction_feedback(self):
+        calls = []
+        def provider(_system, user, _budget):
+            calls.append(user)
+            return '{"narration": "test"}'
+        def validate(_episode):
+            if len(calls) == 1:
+                raise ValueError("HORROR GATE FAILED: report classification mismatch")
+        generate_valid_episode("system", "request", 8000,
+                               [Provider("test", provider)], validate,
+                               sleep=lambda _seconds: None)
+        self.assertEqual(len(calls), 2)
+        self.assertIn("تصحيح إلزامي", calls[1])
+        self.assertIn("report classification mismatch", calls[1])
+
     def test_episode_schema_is_fully_strict_for_structured_output_providers(self):
         def assert_strict(node):
             if node.get("type") == "object":

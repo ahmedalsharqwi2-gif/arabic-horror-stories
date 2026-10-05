@@ -649,7 +649,12 @@ def generate_valid_episode(system_prompt, user_message, budget, providers, valid
                 raw = prov.fn(system_prompt, user_message + feedback, cur_budget)
                 print(f"✅ وصل رد {prov.label} خلال {clock() - call_started:.1f}ث")
                 episode = parse_episode_json(raw)
-                validate(episode)  # الفحص جزء من النجاح
+                try:
+                    validate(episode)  # الفحص جزء من النجاح
+                except ValueError as exc:
+                    # Production gates reject content, not a transient API call.
+                    # Feed the exact rejection back into the correction prompt.
+                    raise OutputError(str(exc)) from exc
                 return episode, prov.label
             except Exception as exc:  # noqa: BLE001
                 kind = classify(exc)
@@ -767,6 +772,9 @@ def generate_episode(system_prompt, budget, validate, to_gemini_schema=None,
         "اربط كل عبارة بصف visual_match مطابق. أنهِ narration بخلاصة واقعية مكتملة "
         "توضح ما ثبت وما بقي مجهولًا؛ لا تنه السرد بسؤال. "
         "أعد verification_report وproduction_table وبقية الحقول كاملة دون اختلاق تفاصيل."
+        f" verification_report.classification يجب أن يساوي {story_type} حرفيًا. "
+        "أدرج مصدرين مستقلين على الأقل بروابط حقيقية وبيانات المصدر الكاملة، "
+        "ولا تعتمد على التخمين أو مصدر واحد."
     )
 
     def _validate(ep):
