@@ -701,12 +701,15 @@ def generate_valid_episode(system_prompt, user_message, budget, providers, valid
                     if isinstance(episode, dict):
                         prior_narration = str(episode.get("narration", "")).strip()
                         prior_words = len(prior_narration.split())
-                        missing_words = max(0, WORDS_MIN - prior_words)
+                        # Aim inside the accepted window rather than just at
+                        # its lower edge, where small undercounts cause repeats.
+                        target_words = (WORDS_MIN + WORDS_MAX) // 2
+                        missing_words = max(0, target_words - prior_words)
                         missing_keys = sorted(REQUIRED_KEYS - set(episode.keys()))
                         prior = (
                             f"\nالناتج السابق كان يحتوي {prior_words} كلمة في narration؛ "
                             f"أضف {missing_words} كلمة جديدة على الأقل، وانسخ السرد السابق ثم أكمله "
-                            "بمعلومات ومشاهد جديدة من دون تكرار المقدمة.\n"
+                            "بسياق معروف ومؤكد من دون تكرار المقدمة أو اختلاق تفاصيل.\n"
                             f"النarration السابق:\n{prior_narration}\n"
                             f"الحقول الناقصة التي يجب إرجاعها: {missing_keys or 'لا يوجد'}."
                         )
@@ -781,6 +784,7 @@ def generate_episode(system_prompt, budget, validate, to_gemini_schema=None,
     user_message = build_user_message(story_type, used_hooks, recent_regions) + "\n" + (user_message or "")
     user_message += (
         f"\nقواعد الإخراج الإلزامية: narration من {WORDS_MIN} إلى {WORDS_MAX} كلمة عربية فعلية. "
+        f"استهدف {(WORDS_MIN + WORDS_MAX) // 2} كلمة حتى لا ينقص الناتج عن الحد الأدنى. "
         "hook لا يتجاوز 25 كلمة. visual_keywords من 7 إلى 8 عبارات بحث إنجليزية، "
         "كل عبارة من 3 إلى 5 كلمات محددة للمكان والنشاط. "
         "اربط كل عبارة بصف visual_match مطابق. أنهِ narration بخلاصة واقعية مكتملة "
