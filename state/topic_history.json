@@ -296,13 +296,14 @@
       "title": "صدى المستقبل الرقمي",
       "hook": "في عام 2031، سجلت وحدة التبريد بمختبر أبحاث في تشيلي نبضة صوتية بشرية، رغم أن المختبر كان مغلقا بالكامل.",
       "region": "تشيلي",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
-      "story_type": "sci_fi",
-      "reservation_id": "51ca560caad5446592eae37ad77d68c6",
       "reserved_at": "2026-10-05T09:47:00Z",
       "run_id": "37289426423",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "sci_fi",
+      "reservation_id": "51ca560caad5446592eae37ad77d68c6",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-05T09:47:28Z"
     }
   ]
 }
