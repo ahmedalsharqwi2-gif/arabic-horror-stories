@@ -4,6 +4,7 @@
     "gemini": {
       "enabled": true,
       "preferred_models": [
+        "gemini-flash-lite-latest",
         "gemma-4-26b-a4b-it",
         "gemma-4-31b-it"
       ],
