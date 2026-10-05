@@ -109,6 +109,8 @@ def looks_open_ended(narration: str) -> bool:
 def to_gemini_schema(schema: dict) -> dict:
     """Convert the local JSON schema to the Gemini SDK's schema format."""
     result = {"type": schema["type"].upper()}
+    if "enum" in schema:
+        result["enum"] = schema["enum"]
     if result["type"] == "OBJECT":
         result["properties"] = {
             key: to_gemini_schema(value)

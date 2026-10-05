@@ -16,6 +16,13 @@ from scripts.llm_gateway import (
 
 
 class LlmGatewayTests(unittest.TestCase):
+    def test_gemini_schema_preserves_source_and_classification_choices(self):
+        from scripts.generate_script import to_gemini_schema
+        converted = to_gemini_schema(EPISODE_SCHEMA['schema'])
+        report = converted['properties']['verification_report']['properties']
+        self.assertEqual(report['classification']['enum'], list(llm_gateway.STORY_TYPES))
+        self.assertIn('primary', report['sources']['items']['properties']['tier']['enum'])
+
     def test_production_gate_failure_is_returned_as_correction_feedback(self):
         calls = []
         def provider(_system, user, _budget):
