@@ -59,5 +59,5 @@ def apply_manifest_to_clip(item: dict[str, Any]) -> dict[str, Any]:
     item["audio_decision"] = normalize_decision(item.get("audio_decision"), info["has_audio"])
     if item["audio_decision"] == "MUTE" and not item.get("audio_mute_reason"):
         raise ValueError("AUDIO MATCH FAILED: MUTE requires a documented reason")
-    item["audio_match"] = item.get("audio_match", "PASS")
+    item["audio_match"] = "PASS" if not info["has_audio"] or item["audio_decision"] in {"VOICE ONLY", "MUTE"} else item.get("audio_match", "REVIEW_REQUIRED")
     return item

@@ -47,6 +47,11 @@ try:
 except ModuleNotFoundError:
     from audio_matching import apply_manifest_to_clip
 from pathlib import Path
+
+try:
+    from scripts.clip_review import review_clip
+except ModuleNotFoundError:
+    from clip_review import review_clip
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
@@ -245,7 +250,7 @@ def main():
         for result in results:
             if accepted_for_keyword >= wanted or len(fetched_clips) >= MAX_TOTAL_CLIPS:
                 break
-            dest_path = CLIPS_DIR / f"clip_{len(fetched_clips):02d}.mp4"
+            dest_path = CLIPS_DIR / f"clip_{result['id']}.mp4"
             try:
                 download_clip(result["url"], dest_path)
             except requests.exceptions.RequestException as exc:
@@ -268,9 +273,14 @@ def main():
                 dest_path.unlink(missing_ok=True)
                 continue
 
-            plan = next((m for m in episode.get("visual_match", []) if m.get("keyword") == keyword), {})
+            try:
+                plan = review_clip(dest_path, keyword, str(episode.get("title", "")))
+            except ValueError as exc:
+                print(f"⚠️ {exc}")
+                continue
             clip_item = {
                 "file": str(dest_path), "pexels_id": result["id"], "keyword": keyword,
+                "visual_review": plan,
                 "scene": plan.get("scene", ""), "source_type": plan.get("source_type", ""),
                 "authenticity": plan.get("authenticity", ""), "status": plan.get("status", ""),
                 "audio_decision": plan.get("audio_decision", ""), "audio_match": plan.get("audio_match", ""),

@@ -41,6 +41,13 @@ import subprocess
 import sys
 from pathlib import Path
 
+try:
+    from scripts.clip_review import review_clip
+    from scripts.media_audio import normalized_audio_args, ducking_filters, has_audio
+except ModuleNotFoundError:
+    from clip_review import review_clip
+    from media_audio import normalized_audio_args, ducking_filters, has_audio
+
 SCRIPT_DIR = Path(__file__).parent
 ROOT_DIR = SCRIPT_DIR.parent
 STATE_DIR = ROOT_DIR / "state"
@@ -122,16 +129,12 @@ def normalize_clip(input_path: Path, output_path: Path, duration: float, audio_d
     """Normalize video and preserve approved original audio; never mute by default."""
     decision = str(audio_decision or "VOICE ONLY").upper()
     keep_audio = decision.startswith("ORIGINAL AUDIO")
+    extra, mapping = normalized_audio_args(input_path, keep_audio)
     command = [
-        "ffmpeg", "-y", "-stream_loop", "-1", "-i", str(input_path), "-t", f"{duration:.3f}",
+        "ffmpeg", "-y", "-stream_loop", "-1", "-i", str(input_path), *extra, "-t", f"{duration:.3f}",
         "-vf", f"scale={FULL_WIDTH}:{FULL_HEIGHT}:force_original_aspect_ratio=increase,crop={FULL_WIDTH}:{FULL_HEIGHT},fps={FPS}",
-        "-map", "0:v:0",
+        "-map", "0:v:0", *mapping,
     ]
-    if keep_audio:
-        volume = "0.18" if "DUCKING" not in decision else "0.24"
-        command += ["-map", "0:a:0?", "-af", f"aresample=48000,volume={volume}", "-c:a", "aac", "-b:a", "128k"]
-    else:
-        command += ["-an"]
     command += ["-c:v", "libx264", "-preset", "fast", "-crf", "22", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(output_path)]
     run(command)
 
@@ -245,7 +248,7 @@ def mix_horror_audio(final_audio: Path, duration: float, output_path: Path, orig
         raise FileNotFoundError("ملفات مؤثرات الرعب ناقصة داخل assets/sfx")
     points = [max(0.8, duration * 0.38), max(1.2, duration * 0.72)]
     inputs = ["-i", str(final_audio)]
-    has_original = bool(original_audio and original_audio.exists())
+    has_original = bool(original_audio and original_audio.exists() and has_audio(original_audio))
     if has_original:
         inputs += ["-i", str(original_audio)]
     inputs += ["-stream_loop", "-1", "-i", str(ambience), "-i", str(reveal)]
@@ -255,12 +258,11 @@ def mix_horror_audio(final_audio: Path, duration: float, output_path: Path, orig
     ambience_index = 2 if has_original else 1
     reveal_index = ambience_index + 1
     first_steps_index = reveal_index + 1
-    filters = [f"[0:a]aresample=48000,volume=1.0[voice]"]
-    voice_mix_label = "voice"
+    filters = ["[0:a]aresample=48000,volume=1.0[voice]"]
+    original_mix = ""
     if has_original:
-        filters.append(f"[{original_index}:a]aresample=48000,volume=0.18[original]")
-        filters.append("[voice][original]sidechaincompress=threshold=0.03:ratio=8:attack=20:release=250[voice_ducked]")
-        voice_mix_label = "voice_ducked"
+        filters = ducking_filters("[0:a]", f"[{original_index}:a]")
+        original_mix = "[ducked]"
     filters += [f"[{ambience_index}:a]aresample=48000,volume={HORROR_AMBIENCE_GAIN},atrim=duration={duration:.3f}[room]",
                 f"[{reveal_index}:a]aresample=48000,volume={HORROR_EVENT_GAIN},adelay=450|450,atrim=duration={duration:.3f}[hit]"]
     labels = []
@@ -270,7 +272,7 @@ def mix_horror_audio(final_audio: Path, duration: float, output_path: Path, orig
         delay = int(point * 1000)
         filters.append(f"[{input_idx}:a]aresample=48000,volume={HORROR_EVENT_GAIN},adelay={delay}|{delay},atrim=duration={duration:.3f}[{label}]")
         labels.append(f"[{label}]")
-    filters.append(f"[{voice_mix_label}][room][hit]{''.join(labels)}amix=inputs={3+len(points)}:duration=first:dropout_transition=0:normalize=0,alimiter=limit=0.95:level=disabled[a]")
+    filters.append(f"[voice]{original_mix}[room][hit]{''.join(labels)}amix=inputs={3+len(points)+int(has_original)}:duration=first:dropout_transition=0:normalize=0,alimiter=limit=0.95:level=disabled[a]")
     run(["ffmpeg", "-y", *inputs, "-filter_complex", ";".join(filters), "-map", "[a]", "-t", f"{duration:.3f}", "-c:a", "libmp3lame", "-b:a", "192k", str(output_path)])
     return output_path
 
@@ -487,6 +489,10 @@ def _run() -> None:
         raise RuntimeError("❌ fetched_clips.json فارغ أو غير صالح.")
 
     episode = json.loads(EPISODE_PATH.read_text(encoding="utf-8"))
+    for clip in clips:
+        reviewed = review_clip(resolve_path(clip["file"]), str(clip.get("keyword", "")), str(episode.get("title", "")))
+        if reviewed["audio_decision"] != clip.get("audio_decision"):
+            raise ValueError("Audio decision differs from byte-bound clip review")
     final_audio_value = episode.get("final_audio")
     subtitles_value = episode.get("subtitles")
 

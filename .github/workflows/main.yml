@@ -165,6 +165,7 @@ jobs:
 
       - name: Fetch landscape stock clips
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: python scripts/fetch_clips.py
 
@@ -313,3 +314,16 @@ jobs:
           done
           echo "فشل push بعد 5 محاولات"
           exit 1
+
+      - name: Preserve clip review candidates
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: clip-review-candidates
+          path: |
+            state/clip_review_requests.json
+            state/clip_reviews.json
+            downloaded_clips/clip_*.mp4
+            output/pexels_clips/raw_*
+          if-no-files-found: ignore
+          retention-days: 3
