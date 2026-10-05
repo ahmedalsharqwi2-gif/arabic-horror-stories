@@ -18,6 +18,9 @@
     "fallback": {
       "enabled": true,
       "preferred_models": [
+        "openai/gpt-oss-120b"
+      ],
+      "excluded_models": [
         "openai/gpt-oss-20b",
         "llama-3.1-8b-instant",
         "llama-3.3-70b-versatile"
@@ -35,6 +38,9 @@
       "preferred_models": [
         "google/gemini-2.5-flash",
         "qwen/qwen3-32b"
+      ],
+      "excluded_models": [
+        "inclusionai/ling-3.1-flash"
       ],
       "retry_statuses": [
         429,

@@ -139,30 +139,120 @@ class LlmGatewayTests(unittest.TestCase):
             providers = llm_gateway.build_providers()
         self.assertEqual([p.label for p in providers], ["groq:model-a", "groq:model-b"])
 
-    def test_rate_limited_provider_is_not_retried(self):
+    def test_rate_limit_honors_retry_after_then_retries_same_model(self):
+        from types import SimpleNamespace
         calls = []
+        waits = []
 
-        def rate_limited(_system, _user, _budget):
-            calls.append("rate")
-            raise RuntimeError("Groq HTTP 429: rate limit")
+        def rate_then_success(_system, _user, _budget):
+            calls.append("groq")
+            if len(calls) == 1:
+                error = RuntimeError("Groq HTTP 429: rate limit")
+                error.status_code = 429
+                error.response = SimpleNamespace(headers={"Retry-After": "7"}, text="rate limit")
+                raise error
+            return '{"ok":true}'
 
-        def next_provider(_system, _user, _budget):
-            calls.append("next")
-            return '{"title":"x"}'
-
-        providers = [Provider("rate", rate_limited), Provider("next", next_provider)]
         with patch.object(llm_gateway, "LLM_RETRIES", 3), \
              patch.object(llm_gateway, "LLM_DEADLINE_SECONDS", 10):
             episode, label = llm_gateway.generate_valid_episode(
-                "system", "request", 1000, providers, lambda _ep: None,
-                sleep=lambda _seconds: None,
+                "system", "request", 1000,
+                [Provider("groq:model", rate_then_success, family="groq")],
+                lambda _ep: None, sleep=waits.append,
             )
-        self.assertEqual(episode, {"title": "x"})
-        self.assertEqual(label, "next")
-        self.assertEqual(calls, ["rate", "next"])
+        self.assertEqual(episode, {"ok": True})
+        self.assertEqual(label, "groq:model")
+        self.assertEqual(calls, ["groq", "groq"])
+        self.assertEqual(waits, [7.0])
 
-    def test_credit_error_is_classified_as_permanent(self):
-        self.assertEqual(llm_gateway.classify(RuntimeError("OpenRouter HTTP 402")), "permanent")
+    def test_daily_429_skips_sibling_models_for_same_provider_key(self):
+        calls = []
+
+        def daily_limit(_system, _user, _budget):
+            calls.append("router:first")
+            error = RuntimeError("OpenRouter HTTP 429: free-models-per-day limit reached")
+            error.status_code = 429
+            raise error
+
+        def sibling(_system, _user, _budget):
+            calls.append("router:sibling")
+            return '{"wrong":true}'
+
+        def next_provider(_system, _user, _budget):
+            calls.append("groq")
+            return '{"ok":true}'
+
+        providers = [
+            Provider("openrouter:first", daily_limit, family="openrouter"),
+            Provider("openrouter:sibling", sibling, family="openrouter"),
+            Provider("groq:model", next_provider, family="groq"),
+        ]
+        episode, _ = llm_gateway.generate_valid_episode(
+            "system", "request", 1000, providers, lambda _ep: None,
+            sleep=lambda _seconds: None,
+        )
+        self.assertEqual(episode, {"ok": True})
+        self.assertEqual(calls, ["router:first", "groq"])
+
+    def test_402_credit_error_disables_all_models_for_provider_key(self):
+        calls = []
+
+        def out_of_credits(_system, _user, _budget):
+            calls.append("router:first")
+            error = RuntimeError("OpenRouter HTTP 402: requires more credits")
+            error.status_code = 402
+            raise error
+
+        def sibling(_system, _user, _budget):
+            calls.append("router:sibling")
+            return '{"wrong":true}'
+
+        def next_provider(_system, _user, _budget):
+            calls.append("groq")
+            return '{"ok":true}'
+
+        providers = [
+            Provider("openrouter:first", out_of_credits, family="openrouter"),
+            Provider("openrouter:sibling", sibling, family="openrouter"),
+            Provider("groq:model", next_provider, family="groq"),
+        ]
+        episode, _ = llm_gateway.generate_valid_episode(
+            "system", "request", 1000, providers, lambda _ep: None,
+            sleep=lambda _seconds: None,
+        )
+        self.assertEqual(episode, {"ok": True})
+        self.assertEqual(calls, ["router:first", "groq"])
+
+    def test_400_and_404_disable_only_the_bad_model(self):
+        calls = []
+
+        def bad_model(status):
+            def fail(_system, _user, _budget):
+                calls.append(status)
+                error = RuntimeError(f"Groq HTTP {status}: model unavailable")
+                error.status_code = status
+                raise error
+            return fail
+
+        def good_model(_system, _user, _budget):
+            calls.append("good")
+            return '{"ok":true}'
+
+        providers = [
+            Provider("groq:400-model", bad_model(400), family="groq"),
+            Provider("groq:404-model", bad_model(404), family="groq"),
+            Provider("groq:good-model", good_model, family="groq"),
+        ]
+        episode, _ = llm_gateway.generate_valid_episode(
+            "system", "request", 1000, providers, lambda _ep: None,
+            sleep=lambda _seconds: None,
+        )
+        self.assertEqual(episode, {"ok": True})
+        self.assertEqual(calls, [400, 404, "good"])
+
+    def test_credit_error_is_classified_as_quota(self):
+        self.assertEqual(llm_gateway.classify(RuntimeError("OpenRouter HTTP 402: requires more credits")), "quota")
+        self.assertEqual(llm_gateway.classify(RuntimeError("HTTP 429 free-models-per-day limit reached")), "quota")
 
     def test_duplicate_feedback_is_carried_to_next_provider(self):
         calls = []

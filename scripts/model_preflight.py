@@ -18,7 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 POLICY_PATH = ROOT / os.getenv("MODEL_POLICY_FILE", "config/model_policy.json")
 DEFAULT_GEMINI = "gemma-4-26b-a4b-it"
-DEFAULT_FALLBACK = "llama-3.1-8b-instant"
+DEFAULT_FALLBACK = "openai/gpt-oss-120b"
 DEFAULT_OPENROUTER = "google/gemini-2.5-flash"
 
 
@@ -64,7 +64,8 @@ def ids_from_openai(payload: dict) -> list[str]:
     return [str(item["id"]) for item in payload.get("data", []) if item.get("id")]
 
 
-def select(preferred: list[str], configured: list[str], available: list[str], default: str = "") -> tuple[str, list[str]]:
+def select(preferred: list[str], configured: list[str], available: list[str], default: str = "",
+           excluded: list[str] | tuple[str, ...] = ()) -> tuple[str, list[str]]:
     """Select only IDs confirmed by the provider catalog.
 
     A configured/preferred ID is not evidence that the provider still serves it.
@@ -72,8 +73,10 @@ def select(preferred: list[str], configured: list[str], available: list[str], de
     404s (notably llama-3.1-8b-instant).  An empty catalog means no safe choice.
     """
     del default  # kept in the signature for backwards-compatible callers
-    available_set = set(available)
-    ordered = list(dict.fromkeys(configured + preferred + available))
+    excluded_set = set(excluded)
+    available_set = set(available) - excluded_set
+    ordered = [item for item in dict.fromkeys(configured + preferred + available)
+               if item not in excluded_set]
     selected = next((item for item in ordered if item in available_set), "")
     fallbacks = [item for item in ordered if item in available_set and item != selected][:5]
     return selected, fallbacks
@@ -128,8 +131,13 @@ def discover_gemini(policy: dict) -> tuple[str, list[str]]:
     return verified[0], verified[1:6]
 
 
-def discover_openai_provider(name: str, endpoint: str, key: str, preferred: list[str], configured_names: tuple[str, ...], default: str) -> tuple[str, list[str]]:
+def discover_openai_provider(name: str, endpoint: str, key: str, preferred: list[str],
+                             configured_names: tuple[str, ...], default: str,
+                             excluded_models: list[str] | tuple[str, ...] = ()) -> tuple[str, list[str]]:
     configured = configured_list(*configured_names)
+    excluded = set(excluded_models)
+    configured = [model for model in configured if model not in excluded]
+    preferred = [model for model in preferred if model not in excluded]
     if not key:
         log(f"{name} key is absent; skipping discovery", warning=True)
         return "", []
@@ -144,18 +152,27 @@ def discover_openai_provider(name: str, endpoint: str, key: str, preferred: list
     # permitted to enumerate the account catalog. Do not resurrect a stale
     # default; trust only a model explicitly supplied by workflow/variables
     # and let the real completion request perform the final access check.
-    if status == 403 and configured:
-        selected = configured[0]
-        log(f"{name} catalog returned HTTP 403; using explicitly configured model {selected}", warning=True)
+    if status == 403 and (configured or preferred):
+        approved = list(dict.fromkeys(configured + preferred))
+        if not approved:
+            log(f"{name} catalog returned HTTP 403 and no approved model remains; skipping provider", warning=True)
+            return "", []
+        selected = approved[0]
+        log(f"{name} catalog returned HTTP 403; using approved model {selected}", warning=True)
         # Catalog-inaccessible Groq accounts still need a failover chain when
         # the explicitly configured model is rate-limited or temporarily down.
         # These candidates come from maintained policy, not guessed IDs.
-        alternatives = [model for model in dict.fromkeys(configured[1:] + preferred) if model != selected]
+        alternatives = [model for model in approved if model != selected]
         return selected, alternatives[:5]
     if status != 200 or not available:
         log(f"{name} catalog unusable (HTTP {status}, {len(available)} models); skipping provider", warning=True)
         return "", []
-    selected, fallbacks = select(preferred, configured, available)
+    if name == "Fallback":
+        # Groq may enumerate legacy/enterprise-only IDs. Only use candidates
+        # maintained in policy or explicitly configured, never every catalog ID.
+        approved = set(configured + preferred)
+        available = [model for model in available if model in approved]
+    selected, fallbacks = select(preferred, configured, available, excluded=excluded_models)
     if not selected:
         log(f"{name} catalog has no selectable model; skipping provider (available={available[:8]})", warning=True)
         return "", []
@@ -184,12 +201,14 @@ def main() -> int:
         os.getenv("LLM_FALLBACK_API_KEY", os.getenv("GROQ_API_KEY", "")).strip(),
         policy["providers"]["fallback"].get("preferred_models", []),
         ("LLM_FALLBACK_MODEL", "GROQ_MODEL", "GROQ_MODELS"), DEFAULT_FALLBACK,
+        policy["providers"]["fallback"].get("excluded_models", []),
     )
     openrouter, openrouter_fallbacks = discover_openai_provider(
         "OpenRouter", "https://openrouter.ai/api/v1/chat/completions",
         os.getenv("OPENROUTER_API_KEY", "").strip(),
         policy["providers"]["openrouter"].get("preferred_models", []),
         ("OPENROUTER_MODEL", "OPENROUTER_MODELS"), DEFAULT_OPENROUTER,
+        policy["providers"]["openrouter"].get("excluded_models", []),
     )
     values = {
         "GEMINI_MODEL": gemini,

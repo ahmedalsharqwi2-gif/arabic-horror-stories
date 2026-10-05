@@ -13,16 +13,27 @@ class ModelPolicyTests(unittest.TestCase):
         for provider in policy["providers"].values():
             self.assertTrue(provider["preferred_models"])
             self.assertIn(503, provider["retry_statuses"])
+        groq = policy["providers"]["fallback"]
+        self.assertEqual(groq["preferred_models"], ["openai/gpt-oss-120b"])
+        self.assertTrue({"openai/gpt-oss-20b", "llama-3.1-8b-instant", "llama-3.3-70b-versatile"}
+                        .issubset(set(groq["excluded_models"])))
+        self.assertIn("inclusionai/ling-3.1-flash", policy["providers"]["openrouter"]["excluded_models"])
 
 
     def test_select_never_returns_unlisted_or_stale_default(self):
         from scripts.model_preflight import select
         self.assertEqual(select(["old-model"], [], [], "old-model"), ("", []))
         self.assertEqual(select(["old-model"], [], ["new-model"], "old-model"), ("new-model", []))
+        self.assertEqual(
+            select(["old-model", "good-model"], [], ["old-model", "good-model"],
+                   excluded=["old-model"]),
+            ("good-model", []),
+        )
 
     def test_preflight_is_importable_without_third_party_dependencies(self):
         import scripts.model_preflight as preflight
         self.assertEqual(preflight.DEFAULT_GEMINI, "gemma-4-26b-a4b-it")
+        self.assertEqual(preflight.DEFAULT_FALLBACK, "openai/gpt-oss-120b")
 
     def test_gemini_discovery_uses_only_policy_approved_catalog_models(self):
         import scripts.model_preflight as preflight
@@ -53,15 +64,36 @@ class ModelPolicyTests(unittest.TestCase):
 
     def test_groq_403_catalog_uses_policy_fallback_candidates(self):
         import scripts.model_preflight as preflight
-        with patch.dict(os.environ, {"GROQ_MODEL": "configured-model"}, clear=False), \
+        with patch.dict(os.environ, {"GROQ_MODEL": "openai/gpt-oss-20b"}, clear=False), \
              patch.object(preflight, "request_json", return_value=(403, {})):
             selected, fallbacks = preflight.discover_openai_provider(
                 "Fallback", "https://api.groq.com/openai/v1/chat/completions",
-                "test-key", ["configured-model", "backup-a", "backup-b"],
+                "test-key", ["openai/gpt-oss-120b"],
                 ("GROQ_MODEL",), "unused-default",
+                excluded_models=["openai/gpt-oss-20b"],
             )
-        self.assertEqual(selected, "configured-model")
-        self.assertEqual(fallbacks, ["backup-a", "backup-b"])
+        self.assertEqual(selected, "openai/gpt-oss-120b")
+        self.assertEqual(fallbacks, [])
+
+    def test_groq_catalog_selection_ignores_models_outside_approved_policy(self):
+        import scripts.model_preflight as preflight
+        catalog = {"data": [
+            {"id": "openai/gpt-oss-120b"},
+            {"id": "openai/gpt-oss-20b"},
+            {"id": "llama-3.1-8b-instant"},
+            {"id": "llama-3.3-70b-versatile"},
+        ]}
+        with patch.dict(os.environ, {"GROQ_MODEL": "openai/gpt-oss-20b"}, clear=False), \
+             patch.object(preflight, "request_json", return_value=(200, catalog)):
+            selected, fallbacks = preflight.discover_openai_provider(
+                "Fallback", "https://api.groq.com/openai/v1/chat/completions",
+                "test-key", ["openai/gpt-oss-120b"],
+                ("GROQ_MODEL",), "unused-default",
+                excluded_models=["openai/gpt-oss-20b", "llama-3.1-8b-instant",
+                                 "llama-3.3-70b-versatile"],
+            )
+        self.assertEqual(selected, "openai/gpt-oss-120b")
+        self.assertEqual(fallbacks, [])
 
 
 if __name__ == "__main__":

@@ -19,6 +19,8 @@ import re
 import signal
 import time
 from dataclasses import dataclass
+from datetime import timezone
+from email.utils import parsedate_to_datetime
 from typing import Callable, Optional
 
 # ───────────────────────── الإعدادات ─────────────────────────
@@ -44,7 +46,7 @@ GEMINI_MODELS = list(dict.fromkeys(
 GEMINI_THINKING_BUDGET = int(os.getenv("GEMINI_THINKING_BUDGET", "0"))
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
-GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")
+GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
 GROQ_MODELS = list(dict.fromkeys(
     m.strip() for m in os.getenv("GROQ_MODELS", GROQ_MODEL).split(",") if m.strip()
 ))
@@ -258,7 +260,11 @@ def _run_with_timeout(fn: Callable, timeout_seconds: int, label: str):
             signal.setitimer(signal.ITIMER_REAL, *previous_timer)
 
 
-QUOTA_MARKERS = ("PerDay", "per day", "daily limit", "insufficient_quota")
+QUOTA_MARKERS = (
+    "PerDay", "per day", "daily limit", "insufficient_quota",
+    "free-models-per-day", "exceeded your current quota", "RESOURCE_EXHAUSTED",
+)
+_CREDIT_MARKERS = ("402", "insufficient credit", "requires more credits", "not enough credits")
 RATE_MARKERS = ("429", "RESOURCE_EXHAUSTED", "rate limit", "rate_limit")
 TRANSIENT_MARKERS = ("500", "502", "503", "504", "UNAVAILABLE", "overloaded",
                      "timed out", "timeout", "temporarily", "connection")
@@ -281,20 +287,27 @@ def classify(exc: Exception) -> str:
     if isinstance(exc, OutputError):
         return "invalid"
     status = getattr(exc, "status_code", None)
-    if status in (408, 429):
+    message = str(exc)
+    response = getattr(exc, "response", None)
+    body = getattr(response, "text", "") if response is not None else ""
+    details = f"{message} {body}"
+    if status == 402 or _has(details, _CREDIT_MARKERS):
+        return "quota"
+    if status == 429:
+        return "quota" if _has(details, QUOTA_MARKERS) else "rate"
+    if status == 408:
         return "rate"
     if status in (500, 502, 503, 504):
         return "transient"
     if status in (400, 401, 402, 403, 404):
         return "permanent"
-    msg = str(exc)
-    if _has(msg, QUOTA_MARKERS):
+    if _has(details, QUOTA_MARKERS):
         return "quota"      # حصة يومية خلصت: مفيش فايدة من الإعادة
-    if _has(msg, RATE_MARKERS):
+    if _has(details, RATE_MARKERS):
         return "rate"
-    if _has(msg, TRANSIENT_MARKERS):
+    if _has(details, TRANSIENT_MARKERS):
         return "transient"
-    if _has(msg, PERMANENT_MARKERS):
+    if _has(details, PERMANENT_MARKERS):
         return "permanent"  # مفتاح ناقص/صلاحية/معامل غير مدعوم
     return "unknown"
 
@@ -302,6 +315,29 @@ def classify(exc: Exception) -> str:
 def _backoff(attempt: int) -> float:
     base = min(BACKOFF_BASE * 2 ** (attempt - 1), BACKOFF_MAX)
     return base * random.uniform(0.75, 1.25)  # عشوائية بسيطة عشان مانضربش الخدمة في نفس اللحظة
+
+
+MAX_RETRY_AFTER_SECONDS = 60
+
+
+def _retry_after_seconds(exc: Exception) -> float | None:
+    """Parse Retry-After seconds/date and cap waits so one provider cannot stall the run."""
+    response = getattr(exc, "response", None)
+    headers = getattr(response, "headers", {}) if response is not None else {}
+    raw = (headers.get("Retry-After") or headers.get("retry-after")) if headers else None
+    if not raw:
+        return None
+    try:
+        delay = float(raw)
+    except (TypeError, ValueError):
+        try:
+            retry_at = parsedate_to_datetime(str(raw))
+            if retry_at.tzinfo is None:
+                retry_at = retry_at.replace(tzinfo=timezone.utc)
+            delay = retry_at.timestamp() - time.time()
+        except (TypeError, ValueError, OverflowError):
+            return None
+    return max(0.0, min(delay, MAX_RETRY_AFTER_SECONDS))
 
 
 # ───────────────────────── تحليل الرد ─────────────────────────
@@ -424,6 +460,7 @@ class Provider:
     label: str
     fn: Callable[[str, str, int], str]
     dead: bool = False  # لو true نتخطاه لباقي التشغيل
+    family: str = ""    # models sharing credentials/quota (e.g. all OpenRouter models)
 
 
 def _gemini_completion(system_prompt, user_message, budget, model, gemini_schema) -> str:
@@ -553,7 +590,8 @@ def build_providers(episode_schema=EPISODE_SCHEMA, to_gemini_schema=None):
             for m in OPENROUTER_MODELS:
                 providers.append(Provider(
                     f"openrouter:{m}",
-                    lambda sp, um, b, m=m: _openrouter_completion(sp, um, b, keys_hint, model=m)))
+                    lambda sp, um, b, m=m: _openrouter_completion(sp, um, b, keys_hint, model=m),
+                    family="openrouter"))
 
     if prefer_openrouter:
         add_openrouter()
@@ -561,12 +599,14 @@ def build_providers(episode_schema=EPISODE_SCHEMA, to_gemini_schema=None):
         for m in GEMINI_MODELS:
             providers.append(Provider(
                 f"gemini:{m}",
-                lambda sp, um, b, m=m: _gemini_completion(sp, um, b, m, gemini_schema)))
+                lambda sp, um, b, m=m: _gemini_completion(sp, um, b, m, gemini_schema),
+                family="gemini"))
     if GROQ_API_KEY:
         for m in GROQ_MODELS:
             providers.append(Provider(
                 f"groq:{m}",
-                lambda sp, um, b, m=m: _groq_completion_for_model(sp, um, b, schema, m)))
+                lambda sp, um, b, m=m: _groq_completion_for_model(sp, um, b, schema, m),
+                family="groq"))
     if not prefer_openrouter:
         add_openrouter()
     if not providers:
@@ -612,8 +652,19 @@ def generate_valid_episode(system_prompt, user_message, budget, providers, valid
                 errors.append(f"{prov.label} [{kind}]: {str(exc)[:150]}")
                 print(f"⚠️ {errors[-1]}")
 
-                if kind in ("quota", "rate", "permanent"):
-                    prov.dead = True      # إعادة المحاولة مش هتفيد
+                status = getattr(exc, "status_code", None)
+                if kind == "quota" or status in (401, 402, 403):
+                    # Billing/quota/auth failures apply to the credential, not
+                    # just one model; skip all siblings to avoid repeated 402s.
+                    for candidate in providers:
+                        if candidate is prov or (prov.family and candidate.family == prov.family):
+                            candidate.dead = True
+                    break
+
+                if kind == "permanent":
+                    # 400/404 is usually model/request-specific: skip this model
+                    # but preserve other candidates in the same provider family.
+                    prov.dead = True
                     break
 
                 if kind == "invalid":
@@ -647,6 +698,18 @@ def generate_valid_episode(system_prompt, user_message, budget, providers, valid
                             "ولا تعِد صياغة أي عنوان أو واقعة من القائمة السابقة."
                         )
                     provider_feedback = feedback
+                    continue
+
+                if kind == "rate":
+                    transient_tries += 1
+                    if transient_tries >= LLM_RETRIES:
+                        prov.dead = True
+                        break
+                    delay = _retry_after_seconds(exc)
+                    if delay is None:
+                        delay = _backoff(transient_tries)
+                    print(f"⏳ {prov.label} rate-limited; retrying in {delay:.1f}s")
+                    sleep(delay)
                     continue
 
                 # transient / unknown: انتظار تصاعدي ثم إعادة

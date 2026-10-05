@@ -115,8 +115,8 @@ jobs:
           LLM_FALLBACK_API_KEY: ${{ secrets.LLM_FALLBACK_API_KEY || secrets.GROQ_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           LLM_FALLBACK_ENDPOINT: ${{ vars.LLM_FALLBACK_ENDPOINT || 'https://api.groq.com/openai/v1/chat/completions' }}
-          LLM_FALLBACK_MODEL: ${{ vars.LLM_FALLBACK_MODEL || vars.GROQ_MODEL || 'openai/gpt-oss-20b' }}
-          GROQ_MODEL: ${{ vars.GROQ_MODEL || 'openai/gpt-oss-20b' }}
+          LLM_FALLBACK_MODEL: ${{ vars.LLM_FALLBACK_MODEL || vars.GROQ_MODEL || 'openai/gpt-oss-120b' }}
+          GROQ_MODEL: ${{ vars.GROQ_MODEL || 'openai/gpt-oss-120b' }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           MODEL_POLICY_FILE: config/model_policy.json
         run: python scripts/model_preflight.py
@@ -125,7 +125,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          GROQ_MODEL: ${{ vars.GROQ_MODEL || 'openai/gpt-oss-20b' }}
+          GROQ_MODEL: ${{ vars.GROQ_MODEL || 'openai/gpt-oss-120b' }}
           GEMINI_THINKING_BUDGET: "0"
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           # Gemini -> Groq first; OpenRouter is the last resort because its
