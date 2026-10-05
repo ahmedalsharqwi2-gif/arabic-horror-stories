@@ -158,10 +158,13 @@ def discover_openai_provider(name: str, endpoint: str, key: str, preferred: list
             probe_status, _ = request_json(endpoint,
                 {"Authorization": "Bearer " + key},
                 {"model": candidate, "messages": [{"role": "user", "content": "Reply OK."}],
-                 "max_tokens": 64},
+                 "max_tokens": 512,
+                 **({"reasoning_effort": "low"} if candidate.startswith("openai/gpt-oss") else {})},
             )
             if probe_status == 200:
                 verified.append(candidate)
+            else:
+                log(f"{name} model {candidate} completion probe failed (HTTP {probe_status})", warning=True)
         if verified:
             log(f"{name} catalog forbidden; completion probe confirmed {verified[0]}")
             return verified[0], verified[1:]
