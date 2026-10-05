@@ -65,7 +65,7 @@ class ModelPolicyTests(unittest.TestCase):
     def test_groq_403_catalog_uses_policy_fallback_candidates(self):
         import scripts.model_preflight as preflight
         with patch.dict(os.environ, {"GROQ_MODEL": "openai/gpt-oss-20b"}, clear=False), \
-             patch.object(preflight, "request_json", return_value=(403, {})):
+             patch.object(preflight, "request_json", side_effect=[(403, {}), (200, {})]):
             selected, fallbacks = preflight.discover_openai_provider(
                 "Fallback", "https://api.groq.com/openai/v1/chat/completions",
                 "test-key", ["openai/gpt-oss-120b"],

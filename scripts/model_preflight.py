@@ -34,8 +34,12 @@ def configured_list(*names: str) -> list[str]:
     return list(dict.fromkeys(values))
 
 
-def request_json(url: str, headers: dict[str, str] | None = None) -> tuple[int, dict]:
-    request = urllib.request.Request(url, headers=headers or {"Accept": "application/json"})
+def request_json(url: str, headers: dict[str, str] | None = None, payload: dict | None = None) -> tuple[int, dict]:
+    data = json.dumps(payload).encode() if payload is not None else None
+    request_headers = dict(headers or {"Accept": "application/json"})
+    if data is not None:
+        request_headers["Content-Type"] = "application/json"
+    request = urllib.request.Request(url, headers=request_headers, data=data)
     try:
         with urllib.request.urlopen(request, timeout=20) as response:
             return response.status, json.load(response)
@@ -148,22 +152,19 @@ def discover_openai_provider(name: str, endpoint: str, key: str, preferred: list
         available = [item for item in available if not any(token in item.lower() for token in ("embedding", "whisper", "tts"))]
     if status == 400:
         raise SystemExit(f"MODEL_PREFLIGHT_ERROR: {name} returned HTTP 400 for /models")
-    # Some Groq keys can invoke an explicitly configured model but are not
-    # permitted to enumerate the account catalog. Do not resurrect a stale
-    # default; trust only a model explicitly supplied by workflow/variables
-    # and let the real completion request perform the final access check.
     if status == 403 and (configured or preferred):
-        approved = list(dict.fromkeys(configured + preferred))
-        if not approved:
-            log(f"{name} catalog returned HTTP 403 and no approved model remains; skipping provider", warning=True)
-            return "", []
-        selected = approved[0]
-        log(f"{name} catalog returned HTTP 403; using approved model {selected}", warning=True)
-        # Catalog-inaccessible Groq accounts still need a failover chain when
-        # the explicitly configured model is rate-limited or temporarily down.
-        # These candidates come from maintained policy, not guessed IDs.
-        alternatives = [model for model in approved if model != selected]
-        return selected, alternatives[:5]
+        verified = []
+        for candidate in list(dict.fromkeys(configured + preferred))[:6]:
+            probe_status, _ = request_json(endpoint,
+                {"Authorization": "Bearer " + key},
+                {"model": candidate, "messages": [{"role": "user", "content": "Reply OK."}],
+                 "max_tokens": 64},
+            )
+            if probe_status == 200:
+                verified.append(candidate)
+        if verified:
+            log(f"{name} catalog forbidden; completion probe confirmed {verified[0]}")
+            return verified[0], verified[1:]
     if status != 200 or not available:
         log(f"{name} catalog unusable (HTTP {status}, {len(available)} models); skipping provider", warning=True)
         return "", []
