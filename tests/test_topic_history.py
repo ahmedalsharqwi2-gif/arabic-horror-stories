@@ -8,6 +8,7 @@ from scripts.topic_history import (
     TopicHistoryError,
     find_duplicate,
     load_history,
+    merge_topic_entries,
     normalize_text,
 )
 
@@ -70,6 +71,44 @@ class TopicHistoryTests(unittest.TestCase):
             path.write_text("not valid json", encoding="utf-8")
             with self.assertRaises(TopicHistoryError):
                 load_history(path)
+
+    def test_concurrent_reservations_merge_without_dropping_remote_entries(self):
+        remote = [{"id": "remote", "title": "قضية اختفاء طائرة في جبال الأنديز"}]
+        local_candidate = {
+            "id": "local",
+            "reservation_id": "run-local",
+            "title": "لغز إشارات الراديو من محطة قطبية مهجورة",
+            "status": "reserved",
+        }
+        merged = merge_topic_entries(
+            remote, [local_candidate], local_candidate, action="reserve"
+        )
+        self.assertEqual([entry["id"] for entry in merged], ["remote", "local"])
+
+    def test_concurrent_duplicate_reservation_fails_closed(self):
+        remote = [{
+            "id": "remote",
+            "title": "لغز اختفاء سفينة ماري سيليست في المحيط الأطلسي",
+        }]
+        local_candidate = {
+            "id": "local",
+            "reservation_id": "run-local",
+            "title": "حقيقة اختفاء سفينة ماري سيليست في المحيط الأطلسي",
+        }
+        with self.assertRaises(TopicHistoryError):
+            merge_topic_entries(remote, [local_candidate], local_candidate, action="reserve")
+
+    def test_publish_transition_updates_remote_record_and_keeps_remote_additions(self):
+        remote = [
+            {"id": "topic-a", "title": "قصة اختفاء بعثة في القطب", "status": "reserved"},
+            {"id": "topic-b", "title": "حادثة منارة معزولة", "status": "reserved"},
+        ]
+        local = [
+            {"id": "topic-a", "title": "قصة اختفاء بعثة في القطب", "status": "published"}
+        ]
+        merged = merge_topic_entries(remote, local, local[0], action="published")
+        self.assertEqual(merged[0]["status"], "published")
+        self.assertEqual(merged[1]["id"], "topic-b")
 
 
 if __name__ == "__main__":

@@ -263,6 +263,67 @@ def load_history(path: str | Path) -> list[dict[str, Any]]:
     return result
 
 
+def merge_topic_entries(
+    remote_entries: list[dict[str, Any]],
+    local_entries: list[dict[str, Any]],
+    candidate: dict[str, Any],
+    action: str,
+) -> list[dict[str, Any]]:
+    """Merge concurrent topic-history updates without losing remote state.
+
+    Reservations remain fail-closed: a concurrently recorded similar topic
+    blocks publication. A publication status update overlays the matching
+    local entry, while unrelated remote additions are always retained.
+    """
+    merged = [dict(entry) for entry in remote_entries]
+    candidate_id = candidate.get("id") or _entry_id(candidate)
+    candidate_reservation = candidate.get("reservation_id")
+
+    if action == "reserve":
+        competing = [
+            entry for entry in merged
+            if not candidate_reservation
+            or entry.get("reservation_id") != candidate_reservation
+        ]
+        duplicate = find_duplicate(candidate, competing)
+        if duplicate:
+            raise TopicHistoryError(
+                "حجز تشغيل متزامن موضوعًا مشابهًا أولًا؛ أُوقف هذا النشر."
+            )
+
+    positions_by_id = {
+        entry.get("id"): index
+        for index, entry in enumerate(merged)
+        if entry.get("id")
+    }
+    positions_by_reservation = {
+        entry.get("reservation_id"): index
+        for index, entry in enumerate(merged)
+        if entry.get("reservation_id")
+    }
+    for local in local_entries:
+        entry_id = local.get("id")
+        reservation_id = local.get("reservation_id")
+        if entry_id in positions_by_id:
+            index = positions_by_id[entry_id]
+        elif reservation_id in positions_by_reservation:
+            index = positions_by_reservation[reservation_id]
+        else:
+            index = None
+
+        if index is None:
+            merged.append(dict(local))
+            if entry_id:
+                positions_by_id[entry_id] = len(merged) - 1
+            if reservation_id:
+                positions_by_reservation[reservation_id] = len(merged) - 1
+        elif action == "published" and entry_id == candidate_id:
+            # Apply the status transition made by this run but preserve the
+            # remote record's fields added by any competing workflow.
+            merged[index].update(local)
+    return merged
+
+
 def write_history(path: str | Path, entries: list[dict[str, Any]]) -> None:
     file_path = Path(path)
     file_path.parent.mkdir(parents=True, exist_ok=True)
@@ -333,26 +394,40 @@ class TopicHistory:
         if staged.returncode == 0:
             return
         git("commit", "-m", f"chore: {action} topic history [skip ci]")
-        pushed = git("push", "origin", "HEAD:main", check=False)
-        if pushed.returncode == 0:
-            return
-        fetched = git("fetch", "origin", "main", check=False)
-        if fetched.returncode != 0:
-            raise TopicHistoryError("تعذر تحديث سجل المواضيع البعيد؛ أُوقف النشر.")
-        rebased = git("rebase", "FETCH_HEAD", check=False)
-        if rebased.returncode != 0:
-            git("rebase", "--abort", check=False)
-            raise TopicHistoryError("تعارض تحديث سجل المواضيع؛ أُوقف النشر بدل المخاطرة بالتكرار.")
-        own_reservation_id = candidate.get("reservation_id")
-        remote_entries = [
-            entry for entry in load_history(self.path)
-            if not own_reservation_id or entry.get("reservation_id") != own_reservation_id
-        ]
-        if find_duplicate(candidate, remote_entries):
-            raise TopicHistoryError("حجز تشغيل متزامن موضوعًا مشابهًا أولًا؛ أُوقف هذا النشر.")
-        pushed = git("push", "origin", "HEAD:main", check=False)
-        if pushed.returncode != 0:
-            raise TopicHistoryError("تعذر حفظ سجل المواضيع بعد إعادة المحاولة؛ أُوقف النشر.")
+        local_entries = [dict(entry) for entry in self.entries]
+        for attempt in range(1, 6):
+            pushed = git("push", "origin", "HEAD:main", check=False)
+            if pushed.returncode == 0:
+                return
+
+            fetched = git("fetch", "origin", "main", check=False)
+            if fetched.returncode != 0:
+                raise TopicHistoryError("تعذر تحديث سجل المواضيع البعيد؛ أُوقف النشر.")
+
+            remote_file = git("show", f"FETCH_HEAD:{file_arg}", check=False)
+            if remote_file.returncode != 0:
+                raise TopicHistoryError("تعذر قراءة سجل المواضيع من الفرع البعيد؛ أُوقف النشر.")
+            remote_path = self.path.with_name(self.path.name + ".remote.tmp")
+            try:
+                remote_path.write_text(remote_file.stdout, encoding="utf-8")
+                remote_entries = load_history(remote_path)
+            finally:
+                remote_path.unlink(missing_ok=True)
+
+            merged = merge_topic_entries(remote_entries, local_entries, candidate, action)
+            # Discard the stale local commit and align the index to remote main;
+            # only the merged history file is staged for the replacement commit.
+            reset = git("reset", "--mixed", "FETCH_HEAD", check=False)
+            if reset.returncode != 0:
+                raise TopicHistoryError("تعذر تجهيز دمج سجل المواضيع؛ أُوقف النشر.")
+            write_history(self.path, merged)
+            git("add", "--", file_arg)
+            staged = git("diff", "--cached", "--quiet", check=False)
+            if staged.returncode == 0:
+                return
+            git("commit", "-m", f"chore: {action} topic history [skip ci]")
+
+        raise TopicHistoryError("تعذر حفظ سجل المواضيع بعد 5 محاولات دمج؛ أُوقف النشر.")
 
 
 def _load_episode(path: str | Path) -> dict[str, Any]:
