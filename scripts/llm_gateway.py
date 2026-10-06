@@ -417,9 +417,13 @@ def make_validator(find_content_red_flag: Optional[Callable] = None,
         if cut:
             raise OutputError("نص narration مقطوع", truncated=True)
         if words < WORDS_MIN:
-            raise OutputError(f"narration قصير: {words} كلمة والمطلوب من {WORDS_MIN} إلى {WORDS_MAX}")
+            if os.getenv("QUALITY_GATES_BLOCKING", "true").lower() == "true":
+                raise OutputError(f"narration قصير: {words} كلمة والمطلوب من {WORDS_MIN} إلى {WORDS_MAX}")
+            print(f"WARNING: narration below target length: {words} words")
         if words > WORDS_MAX:
-            raise OutputError(f"narration طويل: {words} كلمة والمطلوب من {WORDS_MIN} إلى {WORDS_MAX}")
+            if os.getenv("QUALITY_GATES_BLOCKING", "true").lower() == "true":
+                raise OutputError(f"narration طويل: {words} كلمة والمطلوب من {WORDS_MIN} إلى {WORDS_MAX}")
+            print(f"WARNING: narration above target length: {words} words")
 
         if find_content_red_flag:
             flag = find_content_red_flag(narration)
