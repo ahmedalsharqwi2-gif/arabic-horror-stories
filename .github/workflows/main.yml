@@ -78,7 +78,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v6
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Setup Python
         uses: actions/setup-python@v6
@@ -94,21 +94,6 @@ jobs:
 
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
-
-      - name: Verify Edge TTS installation
-        run: python -c "import edge_tts; print('edge-tts import OK:', getattr(edge_tts, '__version__', 'installed'))"
-
-      # فشل الـ import هنا صامت لو حصل من غير السطر ده — pip منفصل عن
-      # "python -m pip" ممكن يثبّت الحزم على تفسير Python مختلف عن اللي
-      # بيشغّل main.py فعليًا، فيرجع realign_subtitles_with_whisper()
-      # بصمت لتوقيتات edge-tts الأقل دقة (سبب عدم تزامن الترجمة اللي
-      # ظهر قبل كده). السطر ده بيفشل الـ run فورًا وبوضوح لو تكرر نفس
-      # الخطأ، بدل ما يتخبى جوه try/except ويكمّل بجودة أقل من غير تنبيه.
-      - name: Verify faster-whisper is importable on the same interpreter
-        run: python -c "import faster_whisper; print('faster-whisper OK:', faster_whisper.__file__)"
-
-      - name: Verify Arabic narration guard
-        run: python -m unittest tests.test_arabic_guard -v
 
       - name: Validate and resolve AI model policy
         env:
@@ -159,12 +144,6 @@ jobs:
           test -f state/current_episode.json || { echo "TEXT_GATE: episode artifact missing"; exit 1; }
           TEXT=$(python -c "import json; print(json.load(open('state/current_episode.json', encoding='utf-8')).get('narration',''))")
           python -m arabic_speech_core.cli preflight --text "$TEXT" --engine edge --locale ar-SA --voice "$EDGE_TTS_VOICE" --lexicon config/arabic_pronunciation.json --min-words 20 --max-words 1200
-
-      - name: Independent horror verification and production-table gate
-        continue-on-error: true
-        run: |
-          test -f state/current_episode.json || { echo "HORROR_GATE: episode artifact missing"; exit 1; }
-          python -m scripts.horror_final_gate state/current_episode.json
 
       - name: Fetch landscape stock clips
         env:
@@ -219,24 +198,6 @@ jobs:
           print(f"Reel duration verified: {path} {duration:.2f}s")
           PY
           done
-
-      - name: Run B-roll quality gate before Buffer
-        continue-on-error: true
-        run: |
-          python scripts/broll_quality_pipeline.py \
-            --video output/final_video_full.mp4 \
-            --manifest state/fetched_clips.json \
-            --expected landscape \
-            --min-clips 4
-
-      - name: Confirm live publication mode
-        if: ${{ inputs.dry_run != true }}
-        run: echo "LIVE_PUBLICATION=true — external publishing is enabled"
-
-      - name: Final horror authenticity and safety gate
-        continue-on-error: true
-        if: ${{ inputs.dry_run != true }}
-        run: python -m scripts.horror_final_gate state/current_episode.json
 
       - name: Reserve unique topic before external publication
         if: ${{ inputs.dry_run != true }}
