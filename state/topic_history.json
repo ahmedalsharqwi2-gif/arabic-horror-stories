@@ -226,13 +226,14 @@
       "title": "ألغاز الط الرحلة الفضائية للأرض الحقيقية واختفاء طاقم قطار كولومبيا",
       "hook": "في عام 1910، اختفى قطار ركاب كامل داخل نفق جبلي في إيطاليا ولم يظهر له أي أثر منذ ذلك الحين.",
       "region": "إيطاليا",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
-      "story_type": "true_case",
-      "reservation_id": "d54b434d44fa49efbda560624bf12dea",
       "reserved_at": "2026-10-06T05:09:46Z",
       "run_id": "37415537734",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "d54b434d44fa49efbda560624bf12dea",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-06T05:10:14Z"
     }
   ]
 }
