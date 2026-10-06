@@ -296,15 +296,15 @@ def add_audio_and_subtitles(
         "-i", str(mixed_audio),
     ]
     if filters:
-        command += ["-vf", ";".join(filters)]
+        command += ["-vf", ";".join(filters), "-c:v", "libx264",
+                    "-preset", "fast", "-crf", "22", "-pix_fmt", "yuv420p"]
+    else:
+        # Normalized H.264 clips need no second video encode when only audio changes.
+        command += ["-c:v", "copy"]
     command += [
         "-map", "0:v:0",
         "-map", "1:a:0",
         "-t", f"{probe_duration(mixed_audio):.3f}",
-        "-c:v", "libx264",
-        "-preset", "fast",
-        "-crf", "22",
-        "-pix_fmt", "yuv420p",
         "-c:a", "aac",
         "-b:a", "192k",
         "-shortest",
