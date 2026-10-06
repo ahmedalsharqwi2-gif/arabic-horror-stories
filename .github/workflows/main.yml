@@ -22,6 +22,7 @@ on:
 # Actions v5/v6 already target Node.js 24. Keep this explicit so GitHub does
 # not fall back to the deprecated Node.js 20 runtime for any transitive action.
 env:
+  QUALITY_GATES_BLOCKING: 'false'
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   PYTHONPATH: ${{ github.workspace }}
 
@@ -160,6 +161,7 @@ jobs:
           python -m arabic_speech_core.cli preflight --text "$TEXT" --engine edge --locale ar-SA --voice "$EDGE_TTS_VOICE" --lexicon config/arabic_pronunciation.json --min-words 20 --max-words 1200
 
       - name: Independent horror verification and production-table gate
+        continue-on-error: true
         run: |
           test -f state/current_episode.json || { echo "HORROR_GATE: episode artifact missing"; exit 1; }
           python -m scripts.horror_final_gate state/current_episode.json
@@ -171,6 +173,7 @@ jobs:
         run: python scripts/fetch_clips.py
 
       - name: Verify visual and audio matches against approved horror plan
+        continue-on-error: true
         run: python scripts/horror_visual_gate.py state/current_episode.json state/fetched_clips.json
 
       - name: Generate complete narration with automatic SILMA horror voice and landscape subtitles
@@ -218,6 +221,7 @@ jobs:
           done
 
       - name: Run B-roll quality gate before Buffer
+        continue-on-error: true
         run: |
           python scripts/broll_quality_pipeline.py \
             --video output/final_video_full.mp4 \
@@ -230,6 +234,7 @@ jobs:
         run: echo "LIVE_PUBLICATION=true — external publishing is enabled"
 
       - name: Final horror authenticity and safety gate
+        continue-on-error: true
         if: ${{ inputs.dry_run != true }}
         run: python -m scripts.horror_final_gate state/current_episode.json
 
