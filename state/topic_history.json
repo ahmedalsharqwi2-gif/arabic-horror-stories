@@ -229,11 +229,24 @@
       "status": "published",
       "source": "workflow",
       "reserved_at": "2026-10-06T05:09:46Z",
+      "published_at": "2026-10-06T05:10:14Z",
       "run_id": "37415537734",
       "story_type": "true_case",
       "reservation_id": "d54b434d44fa49efbda560624bf12dea",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-06T05:10:14Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "383579a0e6a7c9153f00",
+      "title": "لغز محطة قطار بورغ بعد منتصف الليل",
+      "hook": "في عام 1912، توقف قطار بضائع فجأة على خط سكة حديد مقطوع في ريف النمسا، ليختفي طاقمه بالكامل في غضون دقيقتين.",
+      "region": "النمسا",
+      "status": "reserved",
+      "source": "workflow",
+      "story_type": "true_case",
+      "reservation_id": "9fb79f8408c84085acf987ab1985c976",
+      "reserved_at": "2026-10-06T12:33:39Z",
+      "run_id": "37462419209",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
