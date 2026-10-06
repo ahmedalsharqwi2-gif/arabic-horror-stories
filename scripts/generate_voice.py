@@ -260,18 +260,26 @@ def _norm_arabic_words(text: str) -> list[str]:
     return [w for w in text.lower().split() if w]
 
 
+
+_TRANSCRIPT_CACHE: dict[tuple, list] = {}
+
+def _cached_whisper_segments(audio_path: Path) -> list:
+    """Reuse one word-timed transcript; invalidate it when audio is rewritten."""
+    from faster_whisper import WhisperModel
+    stat = audio_path.stat()
+    key = (str(audio_path.resolve()), stat.st_size, stat.st_mtime_ns, WHISPER_MODEL_SIZE)
+    if key not in _TRANSCRIPT_CACHE:
+        model = WhisperModel(WHISPER_MODEL_SIZE, device="cpu", compute_type="int8")
+        result = model.transcribe(str(audio_path), language="ar",
+                                  word_timestamps=True, vad_filter=False)
+        segments = result[0] if isinstance(result, (tuple, list)) else result
+        _TRANSCRIPT_CACHE.clear()
+        _TRANSCRIPT_CACHE[key] = list(segments)
+    return _TRANSCRIPT_CACHE[key]
+
 def _transcribe_arabic_words(audio_path: Path) -> list[str]:
     """Return normalized Arabic words across faster-whisper API variants."""
-    from faster_whisper import WhisperModel
-
-    model = WhisperModel(WHISPER_MODEL_SIZE, device="cpu", compute_type="int8")
-    result = model.transcribe(
-        str(audio_path), language="ar", word_timestamps=False, vad_filter=False
-    )
-    # faster-whisper releases return (segments, info); tolerate wrappers that
-    # return only the iterable so an API shape change cannot silently disable
-    # the pronunciation gate.
-    segments = result[0] if isinstance(result, (tuple, list)) else result
+    segments = _cached_whisper_segments(audio_path)
     return _norm_arabic_words(" ".join(getattr(seg, "text", "") or "" for seg in segments))
 
 
@@ -435,13 +443,7 @@ def align_words_with_whisper(audio_path: Path, script_words: list[str]) -> list[
     (difflib) بين الكلمتين بعد تطبيع كل منهما. أي كلمة من السكريبت لم
     يتعرّف عليها Whisper بثقة تأخذ توقيتًا تقريبيًا من أقرب كلمتين
     متطابقتين قبلها وبعدها، بدل أن تُفقد."""
-    from faster_whisper import WhisperModel
-
-    model = WhisperModel(WHISPER_MODEL_SIZE, device="cpu", compute_type="int8")
-    result = model.transcribe(
-        str(audio_path), language="ar", word_timestamps=True, vad_filter=False,
-    )
-    segments = result[0] if isinstance(result, (tuple, list)) else result
+    segments = _cached_whisper_segments(audio_path)
 
     whisper_words: list[tuple[str, float, float]] = []
     for segment in segments:
