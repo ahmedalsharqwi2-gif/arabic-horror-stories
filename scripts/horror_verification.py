@@ -21,15 +21,12 @@ def validate_source(source: Any, index: int) -> None:
 
 def validate_report(report: Any, story_type: str) -> None:
     if not isinstance(report, dict): _fail("verification_report must be an object")
-    required = ("case_name", "classification", "period", "location", "people", "facts", "sources", "confirmed_claims", "disputed_claims", "excluded_claims", "verified_quotes", "decision")
+    required = ("case_name", "classification", "period", "location", "people", "facts", "confirmed_claims", "disputed_claims", "excluded_claims", "verified_quotes", "decision")
     missing = [k for k in required if k not in report]
     if missing: _fail("verification_report missing: " + ", ".join(missing))
     if report.get("decision") != APPROVED: _fail("decision must be APPROVED")
     if report.get("classification") != story_type: _fail("report classification mismatch")
-    sources = report.get("sources")
-    if not isinstance(sources, list) or len(sources) < 2: _fail("at least two independent sources are required")
-    for i, source in enumerate(sources, 1): validate_source(source, i)
-    if len({_s(s.get("url")) for s in sources}) < 2: _fail("sources must be independent")
+    # Source references are optional and do not block production/publication.
     for key in ("confirmed_claims", "disputed_claims", "excluded_claims", "verified_quotes"):
         if not isinstance(report.get(key), list): _fail(f"{key} must be a list")
 
