@@ -200,7 +200,12 @@ def generate_episode() -> dict:
     def combined_validator(episode: dict) -> None:
         validator(episode)
         validate_episode(episode)
-        validate_horror_episode(episode)
+        try:
+            validate_horror_episode(episode)
+        except ValueError as exc:
+            if os.getenv("QUALITY_GATES_BLOCKING", "true").lower() == "true":
+                raise
+            print(f"WARNING: horror editorial review: {exc}")
         try:
             topic_history.check_unique(episode)
         except DuplicateTopicError as exc:
