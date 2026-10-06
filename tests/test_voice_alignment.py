@@ -1,6 +1,7 @@
 import sys
 import types
 import unittest
+import tempfile
 from pathlib import Path
 from unittest.mock import patch
 
@@ -42,9 +43,11 @@ class VoiceAlignmentTests(unittest.TestCase):
         fake_module.WhisperModel = lambda *args, **kwargs: types.SimpleNamespace(
             transcribe=lambda *args, **kwargs: ([Segment()], object())
         )
-        with patch.dict(sys.modules, {"faster_whisper": fake_module}):
+        with tempfile.TemporaryDirectory() as directory, patch.dict(sys.modules, {"faster_whisper": fake_module}):
+            audio = Path(directory) / "audio.mp3"
+            audio.write_bytes(b"mock audio fixture")
             result = align_words_with_whisper(
-                Path("audio.mp3"), ["مَرْحَبًا", "بِكُمْ"]
+                audio, ["مَرْحَبًا", "بِكُمْ"]
             )
 
         self.assertEqual([event["text"] for event in result], ["مَرْحَبًا", "بِكُمْ"])
