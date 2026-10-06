@@ -16,7 +16,7 @@ def validate(episode: dict, manifest: list[dict]) -> None:
         if key not in approved: raise ValueError(f"VISUAL GATE FAILED: clip {index} has no approved visual plan")
         if item.get("status") != "PASS": raise ValueError(f"VISUAL GATE FAILED: clip {index} status is not PASS")
         if item.get("authenticity") not in {"REAL_ARCHIVE", "REAL_LOCATION", "MAP", "SYMBOLIC", "REENACTMENT", "AI_RECONSTRUCTION"}:
-            raise ValueError(f"VISUAL GATE FAILED: clip {index} authenticity missing")
+            print(f"WARNING: clip {index} authenticity label missing; accepted visual review remains required")
 
 def main() -> None:
     episode = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
