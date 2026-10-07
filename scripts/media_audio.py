@@ -40,6 +40,7 @@ def ducking_filters(voice: str, original: str) -> list[str]:
 def add_topic_soundtrack(mixed_audio: Path, narration: Path, duration: float,
                          channel: str, topic: str = "") -> None:
     """Original procedural score: no recordings, third-party samples or downloads."""
+    from scripts.music_rotation import mix_background_music
     import hashlib
     import math
     import os
@@ -48,6 +49,10 @@ def add_topic_soundtrack(mixed_audio: Path, narration: Path, duration: float,
     import wave
 
     if os.getenv("BACKGROUND_MUSIC_ENABLED", "true").lower() != "true":
+        return
+    music_dir = Path(__file__).resolve().parent.parent / "assets" / "music"
+    if any(p.suffix.lower() in {".wav", ".mp3"} for p in music_dir.glob("*")):
+        mix_background_music(mixed_audio, narration, duration, music_dir.parent.parent, channel)
         return
     if not topic:
         episode_path = Path(__file__).resolve().parent.parent / "state/current_episode.json"

@@ -25,6 +25,8 @@ env:
   QUALITY_GATES_BLOCKING: 'false'
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   PYTHONPATH: ${{ github.workspace }}
+  BACKGROUND_MUSIC_ENABLED: 'true'
+  BACKGROUND_MUSIC_VOLUME: '0.12'
 
 # يمنع تشغيل حلقتين في الوقت نفسه، ولا يلغي التشغيل الجاري.
 concurrency:
