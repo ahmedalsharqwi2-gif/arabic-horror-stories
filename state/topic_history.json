@@ -268,13 +268,14 @@
       "title": "غموض قضية فندق سيث في أيرلندا",
       "hook": "في عام 1994، وُجد مدير فندق سيث في أيرلندا ميتًا داخل غرفته المقفولة من الداخل، رغم عدم وجود أي سبب طبي للوفاة.",
       "region": "أيرلندا",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
-      "story_type": "true_case",
-      "reservation_id": "6f8924c7711a41b5b4fbf1d255b5d849",
       "reserved_at": "2026-10-07T12:35:32Z",
       "run_id": "37620405224",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "6f8924c7711a41b5b4fbf1d255b5d849",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-07T12:35:51Z"
     }
   ]
 }
