@@ -254,13 +254,14 @@
       "title": "غموض منارة جزيرة إيكان الباسيكية",
       "hook": "في شتاء عام 1921، دخل حراس منارة جزيرة إيكان الإسبانية نوبة عملهم الأخيرة، لتختفي آثارهم تمامًا وسط عاصفة لم تترك سوى طاولات مرتبة.",
       "region": "إسبانيا",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
-      "story_type": "unexplained_event",
-      "reservation_id": "829530aa560b4616a6d5d40824d2180f",
       "reserved_at": "2026-10-07T06:49:43Z",
       "run_id": "37581147400",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "unexplained_event",
+      "reservation_id": "829530aa560b4616a6d5d40824d2180f",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-07T06:50:12Z"
     }
   ]
 }
