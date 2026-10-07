@@ -37,6 +37,7 @@ assemble_video.py
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -68,7 +69,7 @@ FULL_HEIGHT = 1080
 # الريل: رأسي 9:16 — واحد فقط، من أول الفيديو
 SHORT_WIDTH = 1080
 SHORT_HEIGHT = 1920
-# Keep one second of headroom below the platform's 90-second reel limit so
+# Keep one second of headroom below the one-minute reel target so
 # container/encoding rounding cannot produce an over-limit upload.
 MAX_SHORT_DURATION_SECONDS = 59.0
 AUTO_END_MARGIN_SECONDS = 8.0
@@ -428,6 +429,34 @@ def load_short_specs(episode: dict, full_duration: float) -> list[dict]:
     return specs[:1] or default_short_specs(full_duration)
 
 
+def finish_reel_at_caption_boundary(spec: dict, subtitles: Path | None) -> dict:
+    """Prefer a complete sentence between 45 seconds and the requested cap."""
+    if not subtitles or not subtitles.exists():
+        return spec
+    start, end = spec["start_seconds"], spec["end_seconds"]
+    caption_ends, sentence_ends = [], []
+    for line in subtitles.read_text(encoding="utf-8-sig").splitlines():
+        if not line.startswith("Dialogue:"):
+            continue
+        fields = line.split(",", 9)
+        if len(fields) != 10:
+            continue
+        try:
+            hours, minutes, seconds = fields[2].split(":")
+            timestamp = int(hours) * 3600 + int(minutes) * 60 + float(seconds)
+        except (ValueError, TypeError):
+            continue
+        if start + 45 <= timestamp <= end:
+            caption_ends.append(timestamp)
+            text = re.sub(r"\{[^}]*\}", "", fields[9]).strip()
+            if text.rstrip('"»”').endswith((".", "!", "؟", "?", "…")):
+                sentence_ends.append(timestamp)
+    candidates = sentence_ends or caption_ends
+    if not candidates:
+        return spec
+    return {**spec, "end_seconds": max(candidates)}
+
+
 def create_short(
     source_video: Path,
     spec: dict,
@@ -543,7 +572,8 @@ def _run() -> None:
     print(f"✅ الفيديو الكامل الأفقي: {full_output}")
     print(f"✅ مدة الفيديو الكامل: {full_duration:.1f} ثانية")
 
-    specs = load_short_specs(episode, full_duration)
+    specs = [finish_reel_at_caption_boundary(spec, subtitles)
+             for spec in load_short_specs(episode, full_duration)]
     print(f"✅ عدد الريلز: {len(specs)} — الحد الأقصى: {MAX_SHORT_DURATION_SECONDS:.0f}s")
 
     generated = 0
@@ -578,3 +608,4 @@ def main() -> int:
     return 0
 if __name__ == "__main__":
     raise SystemExit(main())
+
