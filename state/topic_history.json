@@ -271,11 +271,25 @@
       "status": "published",
       "source": "workflow",
       "reserved_at": "2026-10-07T12:35:32Z",
+      "published_at": "2026-10-07T12:35:51Z",
       "run_id": "37620405224",
       "story_type": "true_case",
       "reservation_id": "6f8924c7711a41b5b4fbf1d255b5d849",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-07T12:35:51Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "2c991b099d98579f0e48",
+      "title": "غموض السفينة الشبح إم في بايتانيا",
+      "hook": "في عام ألف وتسعمئة وخمسة وثلاثين، رصدت سفينة شحن بحرية سفينة تجارية مهجورة في مياه المحيط الهادئ، لتختفي تمامًا أمام عيون الطاقم خلال دقائق.",
+      "region": "المحيط الهادئ",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "اختفاء السفينة إم في بايتانيا",
+      "story_type": "unexplained_event",
+      "reservation_id": "2d59ab6a4be14a62bfa7f67f30228610",
+      "reserved_at": "2026-10-07T21:09:43Z",
+      "run_id": "37685598110",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
