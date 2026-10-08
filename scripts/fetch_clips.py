@@ -73,7 +73,7 @@ RESULTS_PER_PAGE = 80
 CLIPS_PER_KEYWORD = 2
 MAX_TOTAL_CLIPS = 24
 
-MIN_DURATION_SECONDS = 4    # نتجنب الكليبات القصيرة جدًا
+MIN_DURATION_SECONDS = 2    # نتجنب الكليبات القصيرة جدًا
 
 # عدد محاولات التحميل القصوى لكل كليب (لو انقطع الاتصال أثناء التحميل).
 DOWNLOAD_MAX_ATTEMPTS = 2
@@ -123,7 +123,7 @@ def search_pexels(keyword: str, api_key: str, used_ids: set, count: int) -> list
 
         params = {
             "query": keyword,
-            "orientation": "landscape",  # المصدر الأساسي للفيديو الكامل 16:9؛ الشورتس تُقص لاحقًا
+
             "per_page": RESULTS_PER_PAGE,
             "page": page,
         }
@@ -223,7 +223,10 @@ def main():
         sys.exit("HORROR_GATE: لا يمكن جلب المقاطع قبل اعتماد التحقق")
 
     used_data = load_json(USED_CLIPS_PATH, {"pexels_ids_used": [], "history": []})
-    used_ids = set(used_data.get("pexels_ids_used", []))
+    # A permanent blacklist eventually exhausts the provider. Keep a
+    # cooldown across the most recent 20 episodes instead.
+    used_ids = {clip_id for entry in used_data.get("history", [])[-20:]
+                for clip_id in entry.get("clips", [])}
 
     CLIPS_DIR.mkdir(parents=True, exist_ok=True)
     fetched_clips = []
@@ -241,7 +244,14 @@ def main():
         # leader/tail frames and must be rejected before the final montage.
         results = []
         try:
-            results = search_pexels(keyword, api_key, used_ids, 2) if api_key and video_attempts < 12 else []
+            results = search_pexels(keyword, api_key, used_ids, 6) if api_key and video_attempts < 24 else []
+            if not results and api_key and video_attempts < 24:
+                words = keyword.split()
+                for simple in dict.fromkeys((" ".join(words[:3]), " ".join(words[:2]))):
+                    if simple and simple != keyword:
+                        results = search_pexels(simple, api_key, used_ids, 6)
+                        if results:
+                            break
         except requests.RequestException:
             print("Pexels search unavailable; trying Commons")
         if not results:
@@ -251,7 +261,7 @@ def main():
         for result in results:
             if accepted_for_keyword >= wanted or len(fetched_clips) >= MAX_TOTAL_CLIPS:
                 break
-            if video_attempts >= 12:
+            if video_attempts >= 24:
                 break
             video_attempts += 1
             dest_path = CLIPS_DIR / f"clip_{result['id']}.mp4"
