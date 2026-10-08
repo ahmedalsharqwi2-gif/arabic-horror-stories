@@ -281,7 +281,7 @@ jobs:
           fi
           git commit -m "chore: update used clips tracking [skip ci]"
           for attempt in 1 2 3 4 5; do
-            git pull --rebase origin main && git push && exit 0
+            git pull --rebase --autostash origin main && git push && exit 0
             echo "إعادة محاولة push رقم $attempt"
             sleep $((attempt * 5))
           done
