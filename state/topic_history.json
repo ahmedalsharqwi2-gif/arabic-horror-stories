@@ -301,11 +301,25 @@
       "source": "workflow",
       "event_identity": "لغز اختفاء طاقم سفينة سوان دراجون",
       "reserved_at": "2026-10-08T13:32:01Z",
+      "published_at": "2026-10-08T13:32:35Z",
       "run_id": "37782794783",
       "story_type": "true_case",
       "reservation_id": "1779a1e609fd4c8f926c485668e6dd04",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-08T13:32:35Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "a486fdaaa0c3777a30c9",
+      "title": "لغز محطة قطار فوكوكا المهجورة",
+      "hook": "في عام 1989، استقبلت محطة فوكوكا في اليابان مكالمة طوارئ غامضة من قطار كان مفترضا ألا يسير على تلك السكة منذ عقود.",
+      "region": "اليابان",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "لغز محطة قطار فوكوكا المهجورة",
+      "story_type": "unexplained_event",
+      "reservation_id": "e8ab01c3f63d4abc82a291032551c5bf",
+      "reserved_at": "2026-10-08T16:05:43Z",
+      "run_id": "37800888197",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
