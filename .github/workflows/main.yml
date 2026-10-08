@@ -26,6 +26,8 @@ env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   PYTHONPATH: ${{ github.workspace }}
   BACKGROUND_MUSIC_ENABLED: 'true'
+  # Consecutive production runs cycle 1 -> 2 -> 3; retries keep the same track.
+  MUSIC_ROTATION_INDEX: ${{ github.run_number }}
   BACKGROUND_MUSIC_VOLUME: '0.12'
 
 # يمنع تشغيل حلقتين في الوقت نفسه، ولا يلغي التشغيل الجاري.
