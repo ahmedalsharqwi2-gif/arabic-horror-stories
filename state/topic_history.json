@@ -286,11 +286,25 @@
       "source": "workflow",
       "event_identity": "اختفاء السفينة إم في بايتانيا",
       "reserved_at": "2026-10-07T21:09:43Z",
+      "published_at": "2026-10-07T21:10:02Z",
       "run_id": "37685598110",
       "story_type": "unexplained_event",
       "reservation_id": "2d59ab6a4be14a62bfa7f67f30228610",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-07T21:10:02Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "9d372afc3c14b65cca02",
+      "title": "لغز اختفاء طاقم سفينة سوان دراجون",
+      "hook": "في عام 1958، عُثر على سفينة شحن عملاقة تهيم في مياه بحر الصين الجنوبي بكامل حمولتها، لكن طاقمها اختفى دون أثر واحد يفسر المصير.",
+      "region": "بحر الصين الجنوبي",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "لغز اختفاء طاقم سفينة سوان دراجون",
+      "story_type": "true_case",
+      "reservation_id": "1779a1e609fd4c8f926c485668e6dd04",
+      "reserved_at": "2026-10-08T13:32:01Z",
+      "run_id": "37782794783",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
