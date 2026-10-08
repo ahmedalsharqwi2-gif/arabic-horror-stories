@@ -297,14 +297,15 @@
       "title": "لغز اختفاء طاقم سفينة سوان دراجون",
       "hook": "في عام 1958، عُثر على سفينة شحن عملاقة تهيم في مياه بحر الصين الجنوبي بكامل حمولتها، لكن طاقمها اختفى دون أثر واحد يفسر المصير.",
       "region": "بحر الصين الجنوبي",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "لغز اختفاء طاقم سفينة سوان دراجون",
-      "story_type": "true_case",
-      "reservation_id": "1779a1e609fd4c8f926c485668e6dd04",
       "reserved_at": "2026-10-08T13:32:01Z",
       "run_id": "37782794783",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "1779a1e609fd4c8f926c485668e6dd04",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-08T13:32:35Z"
     }
   ]
 }
