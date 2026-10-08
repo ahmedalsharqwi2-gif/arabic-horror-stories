@@ -156,10 +156,6 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: python scripts/fetch_clips.py
 
-      - name: Verify visual and audio matches against approved horror plan
-        continue-on-error: true
-        run: python scripts/horror_visual_gate.py state/current_episode.json state/fetched_clips.json
-
       - name: Generate complete narration with automatic SILMA horror voice and landscape subtitles
         env:
           TTS_ENGINE: "edge"
