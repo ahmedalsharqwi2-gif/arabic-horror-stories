@@ -89,6 +89,8 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 1
+          # Load the latest topic/clip history after the preceding job finishes.
+          ref: main
 
       - name: Setup Python
         uses: actions/setup-python@v6
