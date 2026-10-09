@@ -229,6 +229,13 @@ _LAST_FREE_REQUEST = 0.0
 # These are deliberately atmospheric and do not substitute an unrelated
 # landscape or monster.
 SCENE_SEARCH_FALLBACKS = {
+    "__default__": (
+        "abandoned corridor dim light",
+        "old empty hallway deep shadows",
+        "dusty interior doorway moonlight",
+        "dark stairwell flashlight",
+        "empty room night window shadows",
+    ),
     "scene_006": (
         "abandoned corridor dim light",
         "old empty hallway deep shadows",
@@ -242,9 +249,8 @@ SCENE_SEARCH_FALLBACKS = {
 def search_queries(scene: dict) -> tuple[str, ...]:
     """Return the original query followed by bounded visual fallbacks."""
     primary = str(scene.get("query", "")).strip()
-    if not primary:
-        return ()
-    return tuple(dict.fromkeys((primary, *SCENE_SEARCH_FALLBACKS.get(scene.get("id"), ()))))
+    fallbacks = SCENE_SEARCH_FALLBACKS.get(scene.get("id"), SCENE_SEARCH_FALLBACKS["__default__"])
+    return tuple(dict.fromkeys(((primary,) if primary else ()) + fallbacks))
 
 
 def gemini_json(parts: list[dict], model: str, budget: Budget, cost: float, kind: str, tokens=1024) -> dict | list:
