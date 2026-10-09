@@ -372,14 +372,15 @@
       "title": "غموض منارة جزيرة سارك البحرية",
       "hook": "في شتاء عام 1937، اختفى حارسا منارة جزيرة سارك في القناة الإنجليزية وسط عاصفة، تاركين خلفهما سجلًا غامضًا.",
       "region": "المملكة المتحدة",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "اختفاء حارسي منارة سارك 1937",
-      "story_type": "true_case",
-      "reservation_id": "073667a41c7649129b9cd7348c68b33c",
       "reserved_at": "2026-10-09T23:11:00Z",
       "run_id": "38002038909",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "073667a41c7649129b9cd7348c68b33c",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-09T23:11:21Z"
     }
   ]
 }
