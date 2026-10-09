@@ -357,14 +357,15 @@
       "title": "إشارة مرصد تشانغ باي الغامضة",
       "hook": "في شتاء 1994، استقبل مرصد تشانغ باي في الصين إشارة راديوية من فراغ تام، وتكررت بحذافيرها بعد خمس سنوات.",
       "region": "الصين",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "إشارة مرصد تشانغ باي الغامضة",
-      "story_type": "unexplained_event",
-      "reservation_id": "859f5d71c6d34132801697baaeb4fcf9",
       "reserved_at": "2026-10-09T22:14:50Z",
       "run_id": "37996492079",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "unexplained_event",
+      "reservation_id": "859f5d71c6d34132801697baaeb4fcf9",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-09T22:15:09Z"
     }
   ]
 }
