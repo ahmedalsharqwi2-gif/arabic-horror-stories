@@ -316,11 +316,25 @@
       "source": "workflow",
       "event_identity": "لغز محطة قطار فوكوكا المهجورة",
       "reserved_at": "2026-10-08T16:05:43Z",
+      "published_at": "2026-10-08T16:06:14Z",
       "run_id": "37800888197",
       "story_type": "unexplained_event",
       "reservation_id": "e8ab01c3f63d4abc82a291032551c5bf",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-08T16:06:14Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "ecaa2a7d6ed03ef60b6c",
+      "title": "لغز غواصة كورسيكا المفقودة",
+      "hook": "في عمق مياه البحر المتوسط، سجلت محطة الأبحاث صدىً صوتياً لغواصة مفقودة قبل رصد موقعها الفعلي بساعات.",
+      "region": "فرنسا",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "اختفاء الغواصة مينيرف الفرنسية",
+      "story_type": "unexplained_event",
+      "reservation_id": "16f4792a09164e178e4b50d6f83c6606",
+      "reserved_at": "2026-10-09T14:40:18Z",
+      "run_id": "37944321355",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
