@@ -1,0 +1,11 @@
+{
+  "music": "../assets/music/horror_shadow_ambient.wav",
+  "voice": "ar-EG-ShakirNeural",
+  "rate": "-8%",
+  "pitch": "-3Hz",
+  "music_gain": 0.20,
+  "scenes": [
+    {"id": "hook", "image": "../assets/scene_001.jpg", "text": "ضع هنا الخطاف الأول.", "motion": "zoom_in"},
+    {"id": "reveal", "image": "../assets/scene_002.jpg", "text": "ضع هنا نقطة التحول.", "motion": "pan_right"}
+  ]
+}
