@@ -3,7 +3,7 @@ assemble_video.py
 
 ينتج أصلين من نفس الحلقة:
 
-1) فيديو كامل أفقي 16:9:
+1) فيديو كامل عمودي 9:16:
    output/final_video_full.mp4
 
 2) ريل رأسي واحد 9:16، مقتطف من أول الفيديو الكامل ويتوقف قبل النهاية/الحل:
@@ -62,9 +62,9 @@ HORROR_EVENT_GAIN = 0.22
 FETCHED_CLIPS_PATH = STATE_DIR / "fetched_clips.json"
 EPISODE_PATH = STATE_DIR / "current_episode.json"
 
-# الفيديو الكامل: أفقي 16:9
-FULL_WIDTH = 1920
-FULL_HEIGHT = 1080
+# الفيديو الكامل: عمودي 9:16
+FULL_WIDTH = 1080
+FULL_HEIGHT = 1920
 
 # الريل: رأسي 9:16 — واحد فقط، من أول الفيديو
 SHORT_WIDTH = 1080
@@ -77,7 +77,7 @@ CTA_DURATION_SECONDS = 4.0
 REEL_CTA_TOP_MARGIN = 620
 # Captions for 9:16 are rendered independently, below the camera/notch safe area.
 REEL_CAPTION_TOP_MARGIN = 300
-FPS = 24
+FPS = 30
 
 # خط/حجم افتراضي يُستخدم فقط لو تعذّرت قراءة ستايل السكربت من ملف الترجمة.
 FALLBACK_CTA_FONT = "Arial"
@@ -511,6 +511,10 @@ def create_short(
 
 
 def _run() -> None:
+    from scripts.cinematic_production import enabled, build_episode
+    if enabled():
+        build_episode(ROOT_DIR)
+        return
     for path in (FETCHED_CLIPS_PATH, EPISODE_PATH):
         if not path.exists():
             raise RuntimeError(f"❌ الملف غير موجود: {path}")
@@ -566,10 +570,10 @@ def _run() -> None:
     full_output = OUTPUT_DIR / "final_video_full.mp4"
     clean_full_output = CLIPS_DIR / "full_video_clean.mp4"
     full_duration = build_full_video(
-        clips, final_audio, subtitles, full_output,
+        clips, final_audio, build_vertical_subtitles(subtitles, CLIPS_DIR / "narration_full_vertical.ass"), full_output,
         clean_output_path=clean_full_output,
     )
-    print(f"✅ الفيديو الكامل الأفقي: {full_output}")
+    print(f"✅ الفيديو الكامل العمودي: {full_output}")
     print(f"✅ مدة الفيديو الكامل: {full_duration:.1f} ثانية")
 
     specs = [finish_reel_at_caption_boundary(spec, subtitles)
