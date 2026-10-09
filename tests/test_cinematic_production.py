@@ -103,8 +103,22 @@ class CinematicTests(unittest.TestCase):
 
     def test_no_approval_without_real_review_response(self):
         with patch.object(cp,'run',return_value=''), patch.object(cp.Path,'read_bytes',return_value=b'video'), patch.object(cp,'gemini_json',return_value={'passed':False,'reason':'wrong period'}):
-            with self.assertRaises(ValueError):
+            with self.assertRaisesRegex(ValueError,'wrong period'):
                 cp.review_visual(self.root/'test.mp4',{'start':0,'end':2,'text':'قصة'}, {}, self.cfg,self.budget())
+
+    def test_failed_visual_acquisition_persists_per_attempt_details_in_run_root(self):
+        scene={'id':'scene_001','start':0,'end':2,'text':'طائرة فوق الجبال','query':'military aircraft snowy mountains','kind':'image','prompt':'aircraft'}
+        attempt={'url':'https://example.test/asset.png','image':True,'source':'fixture','license':'fixture'}
+        cache=self.root/'.cinematic_cache'
+        with patch.object(cp,'candidates',return_value=iter([attempt])), \
+             patch.object(cp,'download'), patch.object(cp,'render_visual'), \
+             patch.object(cp,'review_visual',side_effect=ValueError('Actual visual inspection rejected scene: no airplane visible')):
+            with self.assertRaisesRegex(RuntimeError,'Attempts: 1'):
+                cp.acquire(scene,{'title':'طائرة','narration':'طائرة فوق الجبال'},self.cfg,self.budget(),cache)
+        report=json.loads((self.root/'state/cinematic_failures.json').read_text())
+        self.assertEqual(report['attempts'][0]['source'],'fixture')
+        self.assertIn('no airplane visible',report['attempts'][0]['error'])
+        self.assertEqual(report['attempts'][0]['error_type'],'ValueError')
 
     def test_safe_caption_lane_and_red_keyword(self):
         path=self.root/'captions.ass'

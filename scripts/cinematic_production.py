@@ -378,7 +378,8 @@ def review_visual(video: Path, scene: dict, episode: dict, cfg: dict, budget: Bu
     finally:
         preview.unlink(missing_ok=True)
     if not isinstance(result, dict) or result.get("passed") is not True or not str(result.get("reason", "")).strip():
-        raise ValueError("Actual visual inspection rejected scene")
+        reason = str(result.get("reason", "")).strip() if isinstance(result, dict) else "invalid review response"
+        raise ValueError(f"Actual visual inspection rejected scene: {reason or 'no rejection reason returned'}")
     keep = result.get("audio_keep") is True and bool(str(result.get("audio_reason", "")).strip())
     return {**result, "sha256": hashlib.sha256(video.read_bytes()).hexdigest(), "reviewer": cfg["review_model"], "audio_keep": keep}
 
@@ -578,8 +579,9 @@ def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) 
         "free_only": cfg.get("free_only", True),
         "attempts": errors,
     }
-    atomic_json(ROOT / "state/cinematic_failures.json", report)
-    print(f"Cinematic failure report written: {ROOT / 'state/cinematic_failures.json'}")
+    failure_report = cache.parent / "state/cinematic_failures.json"
+    atomic_json(failure_report, report)
+    print(f"Cinematic failure report written: {failure_report}")
     raise RuntimeError(f"No inspected visual for {scene['id']}; detailed report saved to state/cinematic_failures.json. Attempts: {len(errors)}")
 
 
@@ -708,7 +710,7 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
         atomic_json(root / "state/cinematic_quality_report.json", report)
         return report
     except Exception as exc:
-        atomic_json(root / "state/cinematic_quality_report.json", {"passed": False, "error_type": type(exc).__name__, "completed_scenes": len(records), "estimated_episode_usd": budget.episode["estimated_usd"]})
+        atomic_json(root / "state/cinematic_quality_report.json", {"passed": False, "error_type": type(exc).__name__, "error": str(exc)[:1000] or repr(exc)[:1000], "completed_scenes": len(records), "estimated_episode_usd": budget.episode["estimated_usd"]})
         raise
 
 
