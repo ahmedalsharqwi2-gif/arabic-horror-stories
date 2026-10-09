@@ -541,7 +541,13 @@ def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) 
             return visual, record
         except (requests.RequestException, RuntimeError, ValueError, OSError, subprocess.SubprocessError, KeyError, IndexError) as exc:
             visual.unlink(missing_ok=True)
-            errors.append(type(exc).__name__)
+            errors.append({
+                "source": attempt.get("source", "unknown"),
+                "query": scene.get("query", ""),
+                "url": attempt.get("url", ""),
+                "error_type": type(exc).__name__,
+                "error": str(exc)[:500] or repr(exc)[:500],
+            })
     if not cfg.get("free_only", True) and scene["kind"] != "stock":
         # Same scene only. No unrelated fallback, and no reuse from another narration.
         fallback = dict(scene, kind="stock")
@@ -555,9 +561,26 @@ def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) 
                 record = {"scene_id": scene["id"], "source": "wikimedia_commons", "license": attempt["license"], "source_url": attempt.get("source_url", ""), "review": review, "cached": False, "audio_decision": "ORIGINAL AUDIO + VOICE DUCKING" if review.get("audio_keep") else "VOICE ONLY", "illustrative": True}
                 atomic_json(meta, record)
                 return visual, record
-            except (requests.RequestException, RuntimeError, ValueError, OSError, subprocess.SubprocessError):
+            except (requests.RequestException, RuntimeError, ValueError, OSError, subprocess.SubprocessError) as exc:
                 visual.unlink(missing_ok=True)
-    raise RuntimeError(f"No inspected visual for {scene['id']}; no unrelated substitution. Supply another scene-matched free asset or inspected cache; paid generation remains locked. Attempts: {errors}")
+                errors.append({
+                    "source": attempt.get("source", "wikimedia_commons"),
+                    "query": scene.get("query", ""),
+                    "url": attempt.get("url", ""),
+                    "error_type": type(exc).__name__,
+                    "error": str(exc)[:500] or repr(exc)[:500],
+                })
+    report = {
+        "scene_id": scene["id"],
+        "primary_query": scene.get("query", ""),
+        "queries": list(search_queries(scene)),
+        "profile": cfg.get("profile"),
+        "free_only": cfg.get("free_only", True),
+        "attempts": errors,
+    }
+    atomic_json(ROOT / "state/cinematic_failures.json", report)
+    print(f"Cinematic failure report written: {ROOT / 'state/cinematic_failures.json'}")
+    raise RuntimeError(f"No inspected visual for {scene['id']}; detailed report saved to state/cinematic_failures.json. Attempts: {len(errors)}")
 
 
 def write_captions(events: list[dict], path: Path, cfg: dict, *, illustrative=True) -> None:

@@ -326,6 +326,7 @@ jobs:
           path: |
             state/clip_review_requests.json
             state/clip_reviews.json
+            state/cinematic_failures.json
             downloaded_clips/clip_*.mp4
             output/pexels_clips/raw_*
           if-no-files-found: ignore
