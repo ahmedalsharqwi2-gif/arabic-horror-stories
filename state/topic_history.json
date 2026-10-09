@@ -327,14 +327,15 @@
       "title": "لغز غواصة كورسيكا المفقودة",
       "hook": "في عمق مياه البحر المتوسط، سجلت محطة الأبحاث صدىً صوتياً لغواصة مفقودة قبل رصد موقعها الفعلي بساعات.",
       "region": "فرنسا",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "اختفاء الغواصة مينيرف الفرنسية",
-      "story_type": "unexplained_event",
-      "reservation_id": "16f4792a09164e178e4b50d6f83c6606",
       "reserved_at": "2026-10-09T14:40:18Z",
       "run_id": "37944321355",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "unexplained_event",
+      "reservation_id": "16f4792a09164e178e4b50d6f83c6606",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-09T14:40:37Z"
     }
   ]
 }
