@@ -20,9 +20,15 @@
           "calls": 0,
           "reservations": [],
           "free_calls": 5
+        },
+        "fececa353ece87e11f2fc54c": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 12
         }
       },
-      "free_calls": 24
+      "free_calls": 36
     }
   }
 }
