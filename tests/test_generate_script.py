@@ -14,6 +14,17 @@ from generate_voice import normalize_min_min_pronunciation  # noqa: E402
 
 
 class GenerateScriptTests(unittest.TestCase):
+    def test_prompt_requires_complete_vertical_story_under_three_minutes(self):
+        prompt = (ROOT / "prompts" / "horror_system_prompt.md").read_text(encoding="utf-8")
+        self.assertIn("لا تقسّم القصة إلى أجزاء", prompt)
+        self.assertIn("180 ثانية", prompt)
+        self.assertIn("150 إلى 240 كلمة", prompt)
+        self.assertNotIn("مقتطف الريل", prompt)
+        runtime_prompt = generate_script.build_user_message([], [], [])
+        self.assertIn("لا يتجاوز 180 ثانية", runtime_prompt)
+        self.assertIn("150 إلى 240 كلمة", runtime_prompt)
+        self.assertNotIn("مقتطف الريل", runtime_prompt)
+
     def test_content_red_flag_checker_runs_and_detects_flag(self):
         self.assertIsNone(generate_script.find_content_red_flag("نص عربي سليم."))
         self.assertEqual(

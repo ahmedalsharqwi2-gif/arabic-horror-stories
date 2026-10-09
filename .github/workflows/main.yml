@@ -151,10 +151,10 @@ jobs:
           LLM_INVALID_RETRIES: "4"
           LLM_DEADLINE_SECONDS: "900"
           LLM_REQUEST_TIMEOUT: "120"
-          # Documentary horror episodes are 230–320 words and are later
-          # excerpted into one reel capped below 90 seconds.
-          NARRATION_WORDS_MIN: "230"
-          NARRATION_WORDS_MAX: "320"
+          # Generate the complete standalone horror story for the single
+          # vertical video; assembly and CI both enforce the 180-second cap.
+          NARRATION_WORDS_MIN: "150"
+          NARRATION_WORDS_MAX: "240"
           LLM_INITIAL_BUDGET: "8000"
           # Duplicate topics are rejected, then the next round is explicitly
           # required to choose a completely different incident and hook.

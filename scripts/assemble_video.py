@@ -1,34 +1,8 @@
-"""
-assemble_video.py
+"""Assemble exactly one complete 9:16 horror story video.
 
-ينتج أصلين من نفس الحلقة:
-
-1) فيديو كامل عمودي 9:16:
-   output/final_video_full.mp4
-
-2) لا يتم إنشاء ريل؛ المخرج الوحيد هو القصة الكاملة العمودية:
-
-مصدر الحقيقة للصوت والترجمة هو current_episode.json. يدعم الملف الحقول الجديدة:
-
-{
-  "final_audio": "downloaded_clips/narration.mp3",
-  "subtitles": "downloaded_clips/narration.ass",
-  "shorts": [
-    {"start_seconds": 0, "end_seconds": 75}
-  ]
-}
-
-تُهمل أي قائمة shorts قديمة ولا تُنتج ملفات ريل،
-مع ترك AUTO_END_MARGIN_SECONDS في نهاية الحلقة حتى لا يصل المقتطف إلى الحل.
-
-مهم: مدة 90 ثانية حد للريل فقط، وليست حدًا للفيديو الكامل.
-
-=== تخطيط النص في المنطقة الآمنة ===
-- ترجمة السرد في أصل 16:9 محاذاة أسفل-وسط بهامش سفلي 70px؛ وهذا يضمن
-  ظهورها أسفل الشاشة في الفيديو الأفقي بدون التصاقها بالحافة.
-- الترجمة يظهر في مسار علوي ثانٍ (هامش 620px في إطار الريل) حتى لا يتداخل
-  مع الترجمة أثناء آخر ثوانٍ، مع بقائه في النصف العلوي من الشاشة.
-- الخط والحجم للتنويه يظلان مأخوذين من ملف ترجمة الحلقة.
+The only publishable output is output/final_video_full.mp4 (1080x1920).
+Legacy ``shorts`` metadata is ignored and no excerpt/reel is emitted. The
+full narration and rendered MP4 are both capped at 180 seconds.
 """
 
 from __future__ import annotations
@@ -527,4 +501,3 @@ def main() -> int:
     return 0
 if __name__ == "__main__":
     raise SystemExit(main())
-
