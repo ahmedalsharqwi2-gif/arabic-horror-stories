@@ -14,7 +14,7 @@
    موجود بس في نوع الـ output (`YoutubePostMetadata`) اللي بيوصف حالة
    البوست بعد النشر، مش نوع الـ input اللي بنستخدمه وقت الإنشاء. إرساله
    كان بيرجّع "Field 'type' is not defined by type 'YoutubePostMetadataInput'"
-   لكل الأصول (الفيديو الكامل + الريل) بنفس الرسالة بالظبط. الحل: حذف
+   للفيديو الكامل فقط بنفس الرسالة بالظبط. الحل: حذف
    الحقل من فرع يوتيوب خالص. يوتيوب بيحدد تلقائيًا لو الفيديو "Short" من
    مواصفات الملف نفسه (نسبة أبعاد رأسية/مربعة + مدة قصيرة)، مش من أي حقل
    بتبعته لـ Buffer.
@@ -250,7 +250,7 @@ def metadata_for(channel_id: str, asset_type: str, title: str) -> dict | None:
         # قيم Facebook الرسمية هي post / reel / story؛ لا توجد قيمة video.
         return {"facebook": {"type": "reel"}}
     if service == "instagram":
-        # كل الفيديوهات (الكامل والريل) بتتبعت كـ"reel" — لا "post"،
+        # الفيديو الكامل يُرسل كـ"reel" — لا "post"،
         # لأن نوع "post" عند Buffer بيفرض حد قديم 60 ثانية لفيديوهات
         # Instagram (رسالة الخطأ: "Video must be no longer than 1 minute
         # for Instagram Posts")، بينما Instagram Graph API الرسمي بيسمح
@@ -345,11 +345,6 @@ def _run() -> None:
         raise RuntimeError(f"الفيديو الكامل يجب أن يكون عموديًا 9:16 ({full_width}x{full_height}).")
     print(f"✅ الفيديو الكامل العمودي: {full_width}x{full_height}")
 
-    shorts = sorted(OUTPUT_DIR.glob("short_*_*.mp4"))
-    if not shorts:
-        raise RuntimeError("لا يوجد ريل جاهز للنشر.")
-    # ترتيب ثابت حسب المنصة.
-    shorts = sorted(shorts, key=lambda p: (int(p.stem.split("_")[1]), p.stem))
 
     ids = channel_ids()
     if not ids:
@@ -371,11 +366,8 @@ def _run() -> None:
     for service in set(services.values()):
         full_urls[service] = os.environ.get(f"FULL_VIDEO_URL_{service.upper()}", "").strip() or None
 
-    # كل الأصول (الفيديو الكامل + الريل على كل منصة) بتستخدم نفس التأخير
-    # FULL_VIDEO_DELAY_HOURS، عشان تُنشر كلها مع بعض في نفس اللحظة.
+    # Full-story-only policy: publish exactly one complete vertical video.
     assets: list[tuple[str, Path]] = [("full_video", full_path)]
-    for path in shorts:
-        assets.append(("short", path))
 
     successes = 0
     failures = []

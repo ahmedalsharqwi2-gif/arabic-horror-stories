@@ -202,7 +202,7 @@ jobs:
           EDGE_TTS_PITCH: "-3Hz"
         run: python scripts/generate_voice.py
 
-      - name: Assemble complete vertical video and platform reel
+      - name: Assemble one complete vertical video
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
@@ -223,18 +223,6 @@ jobs:
               raise SystemExit(f"ERROR: horror video must be no longer than 180 seconds, got {duration:.2f}s")
           print(f"Vertical horror montage verified: {duration:.2f}s")
           PY
-          for reel in output/short_*.mp4; do
-            test -s "$reel" || { echo "ERROR: reel missing or empty: $reel"; exit 1; }
-            duration=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$reel")
-            python - "$duration" "$reel" <<'PY'
-          import sys
-          duration = float(sys.argv[1])
-          path = sys.argv[2]
-          if duration > 89.0:
-              raise SystemExit(f"ERROR: reel exceeds safe 90-second limit: {path} ({duration:.2f}s)")
-          print(f"Reel duration verified: {path} {duration:.2f}s")
-          PY
-          done
 
       - name: Reserve unique topic before external publication
         if: ${{ inputs.dry_run != true }}
@@ -242,7 +230,7 @@ jobs:
           TOPIC_HISTORY_COMMIT: "true"
         run: python scripts/topic_history.py reserve --file state/topic_history.json --episode state/current_episode.json
 
-      - name: Publish full video and reel together
+      - name: Publish the complete video only
         if: ${{ inputs.dry_run != true }}
         env:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
@@ -296,7 +284,6 @@ jobs:
           name: true-horror-episode-media-${{ github.run_id }}
           path: |
             output/final_video_full.mp4
-            output/short_*.mp4
             state/current_episode.json
           retention-days: 14
           if-no-files-found: error

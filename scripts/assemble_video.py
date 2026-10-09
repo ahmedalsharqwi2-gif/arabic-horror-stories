@@ -6,10 +6,7 @@ assemble_video.py
 1) فيديو كامل عمودي 9:16:
    output/final_video_full.mp4
 
-2) ريل رأسي واحد 9:16، مقتطف من أول الفيديو الكامل ويتوقف قبل النهاية/الحل:
-   output/short_1_youtube.mp4
-   output/short_1_facebook.mp4
-   output/short_1_instagram.mp4
+2) لا يتم إنشاء ريل؛ المخرج الوحيد هو القصة الكاملة العمودية:
 
 مصدر الحقيقة للصوت والترجمة هو current_episode.json. يدعم الملف الحقول الجديدة:
 
@@ -21,7 +18,7 @@ assemble_video.py
   ]
 }
 
-إذا لم توجد قائمة shorts، يتم إنشاء ريل واحد تلقائيًا من أول الفيديو،
+تُهمل أي قائمة shorts قديمة ولا تُنتج ملفات ريل،
 مع ترك AUTO_END_MARGIN_SECONDS في نهاية الحلقة حتى لا يصل المقتطف إلى الحل.
 
 مهم: مدة 90 ثانية حد للريل فقط، وليست حدًا للفيديو الكامل.
@@ -66,12 +63,12 @@ EPISODE_PATH = STATE_DIR / "current_episode.json"
 FULL_WIDTH = 1080
 FULL_HEIGHT = 1920
 
-# الريل: رأسي 9:16 — واحد فقط، من أول الفيديو
 SHORT_WIDTH = 1080
 SHORT_HEIGHT = 1920
 # Keep one second of headroom below the one-minute reel target so
 # container/encoding rounding cannot produce an over-limit upload.
 MAX_SHORT_DURATION_SECONDS = 59.0
+MAX_FULL_VIDEO_SECONDS = 180.0
 AUTO_END_MARGIN_SECONDS = 8.0
 # Captions for 9:16 are rendered independently, below the camera/notch safe area.
 REEL_CAPTION_TOP_MARGIN = 300
@@ -516,35 +513,11 @@ def _run() -> None:
         clean_output_path=clean_full_output,
     )
     print(f"✅ الفيديو الكامل العمودي: {full_output}")
-    print(f"✅ مدة الفيديو الكامل: {full_duration:.1f} ثانية")
+    if full_duration <= 0 or full_duration > MAX_FULL_VIDEO_SECONDS:
+        raise ValueError(f"مدة الفيديو الكامل يجب أن تكون بين 0 و180 ثانية: {full_duration:.2f}s")
+    print(f"✅ مدة الفيديو الكامل العمودي: {full_duration:.1f} ثانية")
 
-    specs = [finish_reel_at_caption_boundary(spec, subtitles)
-             for spec in load_short_specs(episode, full_duration)]
-    print(f"✅ عدد الريلز: {len(specs)} — الحد الأقصى: {MAX_SHORT_DURATION_SECONDS:.0f}s")
-
-    generated = 0
-    vertical_subtitles = build_vertical_subtitles(
-        subtitles, CLIPS_DIR / "narration_vertical.ass"
-    )
-    for short_index, spec in enumerate(specs, 1):
-        for platform in PLATFORMS:
-            output = OUTPUT_DIR / f"short_{short_index}_{platform}.mp4"
-            duration = create_short(
-                clean_full_output, spec, short_index, platform, output,
-                subtitles=vertical_subtitles,
-            )
-            generated += 1
-            print(
-                f"✅ ريل {short_index} / {platform}: {output} "
-                f"({duration:.1f}s، من أول الفيديو، يتوقف قبل نهاية القصة)"
-            )
-
-    if generated == 0:
-        raise RuntimeError("❌ لم يتم إنشاء أي ريل.")
-
-    print("✅ اكتمل إنتاج الفيديو الكامل والريل لجميع المنصات.")
-
-
+    print("✅ تم إنتاج قصة كاملة واحدة فقط؛ لن يتم إنشاء أي ريل أو short_*.mp4.")
 def main() -> int:
     try:
         _run()
