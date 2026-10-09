@@ -331,11 +331,25 @@
       "source": "workflow",
       "event_identity": "اختفاء الغواصة مينيرف الفرنسية",
       "reserved_at": "2026-10-09T14:40:18Z",
+      "published_at": "2026-10-09T14:40:37Z",
       "run_id": "37944321355",
       "story_type": "unexplained_event",
       "reservation_id": "16f4792a09164e178e4b50d6f83c6606",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-09T14:40:37Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "9f615ceb06117067b3d9",
+      "title": "غموض قضية طيران مانيلا المفقود",
+      "hook": "في عام 1978، اختفت طائرة ركاب مدنية تمامًا من شاشات الرادار فوق الأرخبيل الفلبيني بعد تلقي نداء استغاثة واحد.",
+      "region": "الفلبين",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "اختفاء طائرة مانيلا 1978",
+      "story_type": "true_case",
+      "reservation_id": "0c3b3fa62886469e91c5f60fd8dee80a",
+      "reserved_at": "2026-10-09T18:35:03Z",
+      "run_id": "37972732405",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
