@@ -22,6 +22,15 @@ on:
 # Actions v5/v6 already target Node.js 24. Keep this explicit so GitHub does
 # not fall back to the deprecated Node.js 20 runtime for any transitive action.
 env:
+  CINEMATIC_ENABLED: ${{ vars.CINEMATIC_ENABLED || 'true' }}
+  # Free-only production: repository variables cannot unlock paid endpoints.
+  CINEMATIC_FREE_ONLY: 'true'
+  CINEMATIC_PAID_ENABLED: 'false'
+  CINEMATIC_VIDEO_ENABLED: 'false'
+  CINEMATIC_EPISODE_BUDGET_USD: '0'
+  CINEMATIC_DAILY_BUDGET_USD: '0'
+  CINEMATIC_IMAGE_MODEL: ${{ vars.CINEMATIC_IMAGE_MODEL || 'gemini-3.1-flash-lite-image' }}
+  CINEMATIC_IMAGE_FALLBACK_MODEL: ${{ vars.CINEMATIC_IMAGE_FALLBACK_MODEL || 'gemini-3.1-flash-image' }}
   QUALITY_GATES_BLOCKING: 'false'
   CLIP_REVIEW_ENABLED: 'false'
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -92,15 +101,23 @@ jobs:
           # Load the latest topic/clip history after the preceding job finishes.
           ref: main
 
+      - name: Restore inspected cinematic scenes
+        if: ${{ env.CINEMATIC_ENABLED == 'true' }}
+        uses: actions/cache/restore@v4
+        with:
+          path: .cinematic_cache
+          key: cinematic-v1-${{ github.repository_id }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: cinematic-v1-${{ github.repository_id }}-
+
       - name: Setup Python
         uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
-      - name: Install ffmpeg
+      - name: Install ffmpeg and Arabic fonts
         run: |
           sudo apt-get update
-          sudo apt-get install -y ffmpeg
+          sudo apt-get install -y ffmpeg fonts-noto-core
           ffmpeg -version
           ffprobe -version
 
@@ -157,7 +174,8 @@ jobs:
           TEXT=$(python -c "import json; print(json.load(open('state/current_episode.json', encoding='utf-8')).get('narration',''))")
           python -m arabic_speech_core.cli preflight --text "$TEXT" --engine edge --locale ar-SA --voice "$EDGE_TTS_VOICE" --lexicon config/arabic_pronunciation.json --min-words 20 --max-words 1200
 
-      - name: Fetch landscape stock clips
+      - name: Fetch suitable stock clips (legacy economical path)
+        if: ${{ env.CINEMATIC_ENABLED != 'true' }}
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
@@ -183,7 +201,10 @@ jobs:
           EDGE_TTS_PITCH: "-3Hz"
         run: python scripts/generate_voice.py
 
-      - name: Assemble full landscape video and single vertical reel
+      - name: Assemble complete vertical video and platform reel
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: python scripts/assemble_video.py
 
       - name: Verify final montage and B-roll output
@@ -193,7 +214,7 @@ jobs:
           test "$(python -c 'import json; print(len(json.load(open("state/fetched_clips.json"))))')" -ge 1 || { echo "ERROR: no usable visual assets"; exit 1; }
           ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 output/final_video_full.mp4
           ffprobe -v error -show_entries format=duration -of csv=p=0 output/final_video_full.mp4
-          echo "Professional landscape montage with topic-specific B-roll verified."
+          echo "Vertical montage with scene-matched assets verified."
           for reel in output/short_*.mp4; do
             test -s "$reel" || { echo "ERROR: reel missing or empty: $reel"; exit 1; }
             duration=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$reel")
@@ -302,3 +323,35 @@ jobs:
             output/pexels_clips/raw_*
           if-no-files-found: ignore
           retention-days: 3
+
+      - name: Save inspected cinematic scenes even after a failed run
+        if: ${{ always() && env.CINEMATIC_ENABLED == 'true' }}
+        uses: actions/cache/save@v4
+        with:
+          path: .cinematic_cache
+          key: cinematic-v1-${{ github.repository_id }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Persist cinematic cost reservations even after failure
+        if: ${{ always() && env.CINEMATIC_ENABLED == 'true' }}
+        run: |
+          if [ ! -f state/cinematic_budget.json ]; then exit 0; fi
+          git config user.name 'content-bot'
+          git config user.email 'bot@users.noreply.github.com'
+          git add state/cinematic_budget.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'chore: persist cinematic cost reservations [skip ci]'
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Preserve cinematic storyboard and quality evidence
+        if: ${{ always() && env.CINEMATIC_ENABLED == 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: cinematic-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            state/cinematic_storyboard.json
+            state/cinematic_scene_manifest.json
+            state/cinematic_quality_report.json
+            state/cinematic_budget.json
+          if-no-files-found: ignore
+          retention-days: 14

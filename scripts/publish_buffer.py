@@ -248,7 +248,7 @@ def metadata_for(channel_id: str, asset_type: str, title: str) -> dict | None:
         }}
     if service == "facebook":
         # قيم Facebook الرسمية هي post / reel / story؛ لا توجد قيمة video.
-        return {"facebook": {"type": "reel" if asset_type == "short" else "post"}}
+        return {"facebook": {"type": "reel"}}
     if service == "instagram":
         # كل الفيديوهات (الكامل والريل) بتتبعت كـ"reel" — لا "post"،
         # لأن نوع "post" عند Buffer بيفرض حد قديم 60 ثانية لفيديوهات
@@ -341,12 +341,9 @@ def _run() -> None:
     if not full_path.exists() or full_path.stat().st_size == 0:
         raise RuntimeError(f"الفيديو الكامل غير موجود: {full_path}")
     full_width, full_height = video_dimensions(full_path)
-    if full_width <= full_height:
-        raise RuntimeError(
-            f"الفيديو الكامل ليس أفقيًا ({full_width}x{full_height}). "
-            "شغّل assemble_video.py من النسخة الجديدة قبل النشر."
-        )
-    print(f"✅ أبعاد الفيديو الكامل: {full_width}x{full_height} — سيُرسل كفيديو YouTube عادي")
+    if full_width * 16 != full_height * 9:
+        raise RuntimeError(f"الفيديو الكامل يجب أن يكون عموديًا 9:16 ({full_width}x{full_height}).")
+    print(f"✅ الفيديو الكامل العمودي: {full_width}x{full_height}")
 
     shorts = sorted(OUTPUT_DIR.glob("short_*_*.mp4"))
     if not shorts:
