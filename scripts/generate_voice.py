@@ -70,10 +70,9 @@ RATE = os.getenv("EDGE_TTS_RATE", "-8%")
 PITCH = os.getenv("EDGE_TTS_PITCH", "-5Hz")
 VOLUME = "+0%"
 WORDS_PER_CAPTION_CHUNK = int(os.getenv("WORDS_PER_CAPTION_CHUNK", "6"))
-VIDEO_W = 1920
-VIDEO_H = 1080
-# The horizontal 16:9 master keeps narration captions bottom-centered.  The
-# same master is the source for reels, so leave a safe lower margin for app UI.
+VIDEO_W = 1080
+VIDEO_H = 1920
+# كل المخرجات عمودية 9:16؛ الترجمة في المنطقة الآمنة العلوية.
 FULL_CAPTION_BOTTOM_MARGIN = 70
 
 # نموذج Whisper المستخدم لمحاذاة الترجمة مع الصوت الفعلي (انظر

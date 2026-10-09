@@ -224,6 +224,28 @@ def plan_scenes(events: list[dict], duration: float, episode: dict, cfg: dict) -
 
 _LAST_FREE_REQUEST = 0.0
 
+# scene_006 was previously dependent on one abstract LLM query. Keep the
+# director's query first, then try concrete, scene-matched horror imagery.
+# These are deliberately atmospheric and do not substitute an unrelated
+# landscape or monster.
+SCENE_SEARCH_FALLBACKS = {
+    "scene_006": (
+        "abandoned corridor dim light",
+        "old empty hallway deep shadows",
+        "dusty interior doorway moonlight",
+        "dark stairwell flashlight",
+        "empty room night window shadows",
+    ),
+}
+
+
+def search_queries(scene: dict) -> tuple[str, ...]:
+    """Return the original query followed by bounded visual fallbacks."""
+    primary = str(scene.get("query", "")).strip()
+    if not primary:
+        return ()
+    return tuple(dict.fromkeys((primary, *SCENE_SEARCH_FALLBACKS.get(scene.get("id"), ()))))
+
 
 def gemini_json(parts: list[dict], model: str, budget: Budget, cost: float, kind: str, tokens=1024) -> dict | list:
     global _LAST_FREE_REQUEST
@@ -427,39 +449,46 @@ def generate_video(image: Path, target: Path, scene: dict, cfg: dict, budget: Bu
 
 
 def candidates(scene: dict, cfg: dict):
-    query = scene.get("query", "")
-    if not query:
+    queries = search_queries(scene)
+    if not queries:
         return
     key = os.getenv("PEXELS_API_KEY", "")
-    if scene["kind"] == "stock" and key:
+    seen: set[str] = set()
+    for query in queries:
+        if scene["kind"] == "stock" and key:
+            try:
+                response = requests.get("https://api.pexels.com/videos/search", headers={"Authorization": key},
+                    params={"query": query, "orientation": "portrait", "per_page": 5}, timeout=(10, 20))
+                response.raise_for_status()
+                for video in response.json().get("videos", [])[:2]:
+                    files = [f for f in video.get("video_files", []) if f.get("link") and f.get("height", 0) >= 720]
+                    if files:
+                        best = min(files, key=lambda f: abs(f.get("width", 0) * f.get("height", 0) - 1080 * 1920))
+                        if best["link"] not in seen:
+                            seen.add(best["link"])
+                            yield {"url": best["link"], "image": False, "source": "pexels", "license": "Pexels", "source_url": video.get("url", "")}
+            except (requests.RequestException, ValueError, KeyError):
+                print(f"Stock search unavailable for query: {query}")
+        if key:
+            try:
+                response = requests.get("https://api.pexels.com/v1/search", headers={"Authorization": key},
+                    params={"query": query, "orientation": "portrait", "per_page": 5}, timeout=(10, 20))
+                response.raise_for_status()
+                for photo in response.json().get("photos", [])[:2]:
+                    url = photo.get("src", {}).get("large2x") or photo.get("src", {}).get("large")
+                    if url and url not in seen:
+                        seen.add(url)
+                        yield {"url": url, "image": True, "source": "pexels_photo", "license": "Pexels", "source_url": photo.get("url", ""), "artist": photo.get("photographer", "")}
+            except (requests.RequestException, ValueError, KeyError):
+                print(f"Free photo search unavailable for query: {query}")
         try:
-            response = requests.get("https://api.pexels.com/videos/search", headers={"Authorization": key},
-                params={"query": query, "orientation": "portrait", "per_page": 5}, timeout=(10, 20))
-            response.raise_for_status()
-            for video in response.json().get("videos", [])[:2]:
-                files = [f for f in video.get("video_files", []) if f.get("link") and f.get("height", 0) >= 720]
-                if files:
-                    best = min(files, key=lambda f: abs(f.get("width", 0) * f.get("height", 0) - 1080 * 1920))
-                    yield {"url": best["link"], "image": False, "source": "pexels", "license": "Pexels", "source_url": video.get("url", "")}
-        except (requests.RequestException, ValueError, KeyError):
-            print("Bounded stock search unavailable; trying scene image")
-    if key:
-        try:
-            response = requests.get("https://api.pexels.com/v1/search", headers={"Authorization": key},
-                params={"query": query, "orientation": "portrait", "per_page": 5}, timeout=(10, 20))
-            response.raise_for_status()
-            for photo in response.json().get("photos", [])[:2]:
-                url = photo.get("src", {}).get("large2x") or photo.get("src", {}).get("large")
-                if url:
-                    yield {"url": url, "image": True, "source": "pexels_photo", "license": "Pexels", "source_url": photo.get("url", ""), "artist": photo.get("photographer", "")}
-        except (requests.RequestException, ValueError, KeyError):
-            print("Free photo search unavailable; trying public-domain images")
-    try:
-        from scripts.commons_media import search_images
-        for item in search_images(query, limit=2):
-            yield {**item, "image": True, "source": "wikimedia_commons"}
-    except (requests.RequestException, ValueError, ImportError):
-        print("Public-domain image fallback unavailable")
+            from scripts.commons_media import search_images
+            for item in search_images(query, limit=2):
+                if item.get("url") not in seen:
+                    seen.add(item.get("url"))
+                    yield {**item, "image": True, "source": "wikimedia_commons"}
+        except (requests.RequestException, ValueError, ImportError):
+            print(f"Public-domain image fallback unavailable for query: {query}")
 
 
 def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) -> tuple[Path, dict]:

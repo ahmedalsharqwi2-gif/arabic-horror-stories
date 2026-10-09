@@ -212,9 +212,16 @@ jobs:
           test -s output/final_video_full.mp4 || { echo "ERROR: full montage missing or empty"; exit 1; }
           test -s state/fetched_clips.json || { echo "ERROR: B-roll tracking manifest missing"; exit 1; }
           test "$(python -c 'import json; print(len(json.load(open("state/fetched_clips.json"))))')" -ge 1 || { echo "ERROR: no usable visual assets"; exit 1; }
-          ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 output/final_video_full.mp4
-          ffprobe -v error -show_entries format=duration -of csv=p=0 output/final_video_full.mp4
-          echo "Vertical montage with scene-matched assets verified."
+          dimensions=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 output/final_video_full.mp4)
+          test "$dimensions" = "1080,1920" || { echo "ERROR: horizontal output is forbidden; expected 1080x1920, got $dimensions"; exit 1; }
+          duration=$(ffprobe -v error -show_entries format=duration -of csv=p=0 output/final_video_full.mp4)
+          python - "$duration" <<'PY'
+          import sys
+          duration = float(sys.argv[1])
+          if not 0 < duration <= 180.0:
+              raise SystemExit(f"ERROR: horror video must be no longer than 180 seconds, got {duration:.2f}s")
+          print(f"Vertical horror montage verified: {duration:.2f}s")
+          PY
           for reel in output/short_*.mp4; do
             test -s "$reel" || { echo "ERROR: reel missing or empty: $reel"; exit 1; }
             duration=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$reel")

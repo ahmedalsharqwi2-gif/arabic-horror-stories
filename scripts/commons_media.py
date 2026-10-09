@@ -40,7 +40,7 @@ def search_images(query: str, limit: int = 4) -> list[dict]:
             "artist": meta.get("Artist", {}).get("value", ""), "media_type": "animated_image"})
     return result
 
-def animate_image(source: Path, destination: Path, *, width=1920, height=1080, seconds=8.0):
+def animate_image(source: Path, destination: Path, *, width=1080, height=1920, seconds=8.0):
     # Fit and pad keeps maps, captions and historical details inside the frame.
     vf = (f"scale={width}:{height}:force_original_aspect_ratio=decrease,"
           f"pad={width}:{height}:(ow-iw)/2:(oh-ih)/2,setsar=1,"
@@ -51,7 +51,7 @@ def animate_image(source: Path, destination: Path, *, width=1920, height=1080, s
         "-pix_fmt", "yuv420p", str(destination)], check=True, timeout=120)
 
 def image_fallback(query: str, topic: str, directory: Path, reviewer, *, historical=False,
-                   width=1920, height=1080, limit=2) -> list[dict]:
+                   width=1080, height=1920, limit=2) -> list[dict]:
     accepted = []
     directory.mkdir(parents=True, exist_ok=True)
     try:

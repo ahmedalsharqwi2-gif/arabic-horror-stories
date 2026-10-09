@@ -143,12 +143,14 @@ def search_pexels(keyword: str, api_key: str, used_ids: set, count: int) -> list
             if video["duration"] < MIN_DURATION_SECONDS:
                 continue
 
-            # اختار أفضل جودة فيديو ملف (HD لو موجود)
+            # لا نقبل إلا ملفات portrait؛ لا نعتمد على crop لاحق لإخفاء أصل أفقي.
             video_files = sorted(
-                video["video_files"],
+                [f for f in video["video_files"] if f.get("link") and f.get("height", 0) > f.get("width", 0)],
                 key=lambda f: f.get("height", 0),
                 reverse=True,
             )
+            if not video_files:
+                continue
             hd_files = [f for f in video_files if 720 <= f.get("height", 0) <= 1080]
             chosen_file = hd_files[0] if hd_files else video_files[0]
 
