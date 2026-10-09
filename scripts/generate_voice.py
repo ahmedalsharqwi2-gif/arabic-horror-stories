@@ -629,7 +629,7 @@ def main() -> None:
     EPISODE_PATH.write_text(json.dumps(episode, ensure_ascii=False, indent=2), encoding="utf-8")
     save_voice_to_history(episode, selected_voice)
     print(f"✅ صوت كامل: {FINAL_AUDIO}")
-    print(f"✅ ترجمة أفقية متزامنة: {SUBTITLES}")
+    print(f"✅ ترجمة رأسية متزامنة: {SUBTITLES}")
     print(f"✅ تلميحات نطق مُطبّقة: {len(phonetic_hints)}")
 
 

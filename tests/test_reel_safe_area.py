@@ -17,13 +17,6 @@ class ReelSafeAreaTests(unittest.TestCase):
         style = next(line for line in generate_voice.build_ass_header().splitlines() if line.startswith("Style: Caption,"))
         self.assertIn(",2,70,70,70,1", style)
 
-    def test_cta_is_in_a_separate_top_safe_lane_below_captions(self):
-        with tempfile.TemporaryDirectory() as directory:
-            path = Path(directory) / "cta.ass"
-            assemble_video.write_cta_ass(path, 0.0, 4.0, "رسالة الريل", "Noto Sans Arabic", 58)
-            style = next(line for line in path.read_text(encoding="utf-8").splitlines() if line.startswith("Style: CTA,"))
-        self.assertIn(",8,70,70,620,1", style)
-
     def test_vertical_narration_captions_are_below_notch(self):
         with tempfile.TemporaryDirectory() as directory:
             source = Path(directory) / "narration.ass"

@@ -181,7 +181,7 @@ jobs:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
         run: python scripts/fetch_clips.py
 
-      - name: Generate complete narration with automatic SILMA horror voice and landscape subtitles
+      - name: Generate complete narration with automatic SILMA horror voice and vertical subtitles
         env:
           TTS_ENGINE: "edge"
           EDGE_TTS_VOICES: "ar-SA-ZariyahNeural"

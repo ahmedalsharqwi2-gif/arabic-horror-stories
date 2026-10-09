@@ -29,7 +29,7 @@ assemble_video.py
 === تخطيط النص في المنطقة الآمنة ===
 - ترجمة السرد في أصل 16:9 محاذاة أسفل-وسط بهامش سفلي 70px؛ وهذا يضمن
   ظهورها أسفل الشاشة في الفيديو الأفقي بدون التصاقها بالحافة.
-- التنويه يظهر في مسار علوي ثانٍ (هامش 620px في إطار الريل) حتى لا يتداخل
+- الترجمة يظهر في مسار علوي ثانٍ (هامش 620px في إطار الريل) حتى لا يتداخل
   مع الترجمة أثناء آخر ثوانٍ، مع بقائه في النصف العلوي من الشاشة.
 - الخط والحجم للتنويه يظلان مأخوذين من ملف ترجمة الحلقة.
 """
@@ -73,21 +73,15 @@ SHORT_HEIGHT = 1920
 # container/encoding rounding cannot produce an over-limit upload.
 MAX_SHORT_DURATION_SECONDS = 59.0
 AUTO_END_MARGIN_SECONDS = 8.0
-CTA_DURATION_SECONDS = 4.0
-REEL_CTA_TOP_MARGIN = 620
 # Captions for 9:16 are rendered independently, below the camera/notch safe area.
 REEL_CAPTION_TOP_MARGIN = 300
 FPS = 30
 
 # خط/حجم افتراضي يُستخدم فقط لو تعذّرت قراءة ستايل السكربت من ملف الترجمة.
-FALLBACK_CTA_FONT = "Arial"
-FALLBACK_CTA_SIZE = 62
+FALLBACK_مقتطف_FONT = "Arial"
+FALLBACK_مقتطف_SIZE = 62
 
-PLATFORM_CTA = {
-    "youtube": "لو عايز تتفرج على باقي الفيديو\nشوفه كامل على القناة",
-    "facebook": "لو عايز تتفرج على باقي الفيديو\nشوفه كامل على الصفحة",
-    "instagram": "لو عايز تتفرج على باقي الفيديو\nشوفه كامل على الصفحة",
-}
+PLATFORMS = ("youtube", "facebook", "instagram")
 
 
 def run(command: list[str]) -> subprocess.CompletedProcess[str]:
@@ -193,18 +187,18 @@ def build_vertical_subtitles(source: Path | None, output: Path) -> Path | None:
 
 def extract_subtitle_style(ass_path: Path | None) -> tuple[str, int]:
     """يقرأ اسم الخط وحجمه من أول Style معرّف في ملف ترجمة السكربت
-    (قسم [V4+ Styles])، عشان تنويه الريل (CTA) يستخدم نفس خط وحجم
+    (قسم [V4+ Styles])، عشان تنويه الريل (مقتطف) يستخدم نفس خط وحجم
     ترجمة الفيديو نفسها تلقائيًا مهما تغيّر إعداد الخط في
     generate_voice.py مستقبلًا، بدل تثبيت قيمة يدوية هنا قد تختلف عن
     الخط الفعلي المستخدم في الفيديو.
     """
     if not ass_path or not ass_path.exists():
-        return FALLBACK_CTA_FONT, FALLBACK_CTA_SIZE
+        return FALLBACK_مقتطف_FONT, FALLBACK_مقتطف_SIZE
 
     try:
         text = ass_path.read_text(encoding="utf-8", errors="ignore")
     except OSError:
-        return FALLBACK_CTA_FONT, FALLBACK_CTA_SIZE
+        return FALLBACK_مقتطف_FONT, FALLBACK_مقتطف_SIZE
 
     in_styles = False
     format_fields: list[str] = []
@@ -228,8 +222,8 @@ def extract_subtitle_style(ass_path: Path | None) -> tuple[str, int]:
             values = [v.strip() for v in line[len("Style:"):].split(",")]
             row = dict(zip(format_fields, values))
             try:
-                font_name = row.get("Fontname") or FALLBACK_CTA_FONT
-                font_size = int(float(row.get("Fontsize", FALLBACK_CTA_SIZE)))
+                font_name = row.get("Fontname") or FALLBACK_مقتطف_FONT
+                font_size = int(float(row.get("Fontsize", FALLBACK_مقتطف_SIZE)))
             except (TypeError, ValueError):
                 continue
             if first_style is None:
@@ -238,7 +232,7 @@ def extract_subtitle_style(ass_path: Path | None) -> tuple[str, int]:
                 default_style = (font_name, font_size)
 
     chosen = default_style or first_style
-    return chosen or (FALLBACK_CTA_FONT, FALLBACK_CTA_SIZE)
+    return chosen or (FALLBACK_مقتطف_FONT, FALLBACK_مقتطف_SIZE)
 
 
 def mix_horror_audio(final_audio: Path, duration: float, output_path: Path, original_audio: Path | None = None) -> Path:
@@ -350,49 +344,6 @@ def build_full_video(
     return probe_duration(output_path)
 
 
-def write_cta_ass(
-    path: Path,
-    start: float,
-    end: float,
-    text: str,
-    font_name: str,
-    font_size: int,
-) -> None:
-    """ينشئ Overlay ASS عربيًا بدل drawtext لتفادي مشاكل تشكيل العربية.
-
-    التنويه في مسار علوي ثانٍ أسفل ترجمة السرد، مع هامش 620px من أعلى
-    إطار 9:16 لمنع التداخل مع الترجمة وإبقاء النص ضمن منطقة الهاتف الآمنة.
-    """
-    def ass_time(seconds: float) -> str:
-        centiseconds = max(0, int(round(seconds * 100)))
-        hours, rem = divmod(centiseconds, 360000)
-        minutes, rem = divmod(rem, 6000)
-        secs, cs = divmod(rem, 100)
-        return f"{hours}:{minutes:02d}:{secs:02d}.{cs:02d}"
-
-    safe_text = text.replace("\\", "\\\\").replace("\n", r"\N")
-    content = (
-        "[Script Info]\n"
-        "ScriptType: v4.00+\n"
-        f"PlayResX: {SHORT_WIDTH}\n"
-        f"PlayResY: {SHORT_HEIGHT}\n"
-        "WrapStyle: 2\n"
-        "ScaledBorderAndShadow: yes\n\n"
-        "[V4+ Styles]\n"
-        "Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, "
-        "OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, "
-        "ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, "
-        "Alignment, MarginL, MarginR, MarginV, Encoding\n"
-        # أبيض مع خلفية شبه شفافة، محاذاة أعلى-وسط، وفي مسار أدنى من السرد.
-        f"Style: CTA,{font_name},{font_size},&H00FFFFFF,&H00FFFFFF,&H00101010,&H99000000,"
-        f"1,0,0,0,100,100,0,0,1,4,1,8,70,70,{REEL_CTA_TOP_MARGIN},1\n\n"
-        "[Events]\n"
-        "Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, "
-        "Effect, Text\n"
-        f"Dialogue: 0,{ass_time(start)},{ass_time(end)},CTA,,0,0,0,,{safe_text}\n"
-    )
-    path.write_text(content, encoding="utf-8")
-
 
 def default_short_specs(full_duration: float) -> list[dict]:
     """ينشئ ريل واحد فقط من أول الفيديو، ويترك هامشًا قبل نهاية القصة
@@ -463,8 +414,8 @@ def create_short(
     short_index: int,
     platform: str,
     output_path: Path,
-    font_name: str,
-    font_size: int,
+    font_name: str = "Arial",
+    font_size: int = 58,
     subtitles: Path | None = None,
 ) -> float:
     start = float(spec["start_seconds"])
@@ -473,10 +424,6 @@ def create_short(
     if duration <= 0:
         raise ValueError("مدة الريل يجب أن تكون أكبر من صفر")
 
-    cta_start = max(0.0, duration - CTA_DURATION_SECONDS)
-    cta_ass = CLIPS_DIR / f"cta_short_{short_index}_{platform}.ass"
-    write_cta_ass(cta_ass, cta_start, duration, PLATFORM_CTA[platform], font_name, font_size)
-    cta_filter = subtitle_filter(cta_ass)
 
     # crop مركزي من 16:9 إلى 9:16، مع الإبقاء على صوت الفيديو الكامل.
     vf = (
@@ -486,8 +433,6 @@ def create_short(
     narration_subtitle_filter = subtitle_filter(subtitles)
     if narration_subtitle_filter:
         vf += f",{narration_subtitle_filter}"
-    if cta_filter:
-        vf += f",{cta_filter}"
 
     run([
         "ffmpeg", "-y",
@@ -554,9 +499,6 @@ def _run() -> None:
         print(f"⚠️ ملف الترجمة غير موجود؛ سيتم إنتاج الفيديو بدون ترجمة: {subtitles}")
         subtitles = None
 
-    # خط/حجم التنويه (CTA) في الريل بياخده تلقائيًا من ستايل ترجمة السكربت.
-    cta_font_name, cta_font_size = extract_subtitle_style(subtitles)
-    print(f"ℹ️ خط التنويه (CTA) سيطابق خط السكربت: {cta_font_name}, {cta_font_size}pt")
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     CLIPS_DIR.mkdir(parents=True, exist_ok=True)
@@ -585,11 +527,11 @@ def _run() -> None:
         subtitles, CLIPS_DIR / "narration_vertical.ass"
     )
     for short_index, spec in enumerate(specs, 1):
-        for platform in PLATFORM_CTA:
+        for platform in PLATFORMS:
             output = OUTPUT_DIR / f"short_{short_index}_{platform}.mp4"
             duration = create_short(
                 clean_full_output, spec, short_index, platform, output,
-                cta_font_name, cta_font_size, subtitles=vertical_subtitles,
+                subtitles=vertical_subtitles,
             )
             generated += 1
             print(
