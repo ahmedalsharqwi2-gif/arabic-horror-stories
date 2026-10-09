@@ -346,11 +346,25 @@
       "source": "workflow",
       "event_identity": "اختفاء طائرة مانيلا 1978",
       "reserved_at": "2026-10-09T18:35:03Z",
+      "published_at": "2026-10-09T18:35:22Z",
       "run_id": "37972732405",
       "story_type": "true_case",
       "reservation_id": "0c3b3fa62886469e91c5f60fd8dee80a",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-09T18:35:22Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "158ef1dd48826d6d2693",
+      "title": "إشارة مرصد تشانغ باي الغامضة",
+      "hook": "في شتاء 1994، استقبل مرصد تشانغ باي في الصين إشارة راديوية من فراغ تام، وتكررت بحذافيرها بعد خمس سنوات.",
+      "region": "الصين",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "إشارة مرصد تشانغ باي الغامضة",
+      "story_type": "unexplained_event",
+      "reservation_id": "859f5d71c6d34132801697baaeb4fcf9",
+      "reserved_at": "2026-10-09T22:14:50Z",
+      "run_id": "37996492079",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
