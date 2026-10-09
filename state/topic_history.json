@@ -342,14 +342,15 @@
       "title": "غموض قضية طيران مانيلا المفقود",
       "hook": "في عام 1978، اختفت طائرة ركاب مدنية تمامًا من شاشات الرادار فوق الأرخبيل الفلبيني بعد تلقي نداء استغاثة واحد.",
       "region": "الفلبين",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "اختفاء طائرة مانيلا 1978",
-      "story_type": "true_case",
-      "reservation_id": "0c3b3fa62886469e91c5f60fd8dee80a",
       "reserved_at": "2026-10-09T18:35:03Z",
       "run_id": "37972732405",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "0c3b3fa62886469e91c5f60fd8dee80a",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-09T18:35:22Z"
     }
   ]
 }
