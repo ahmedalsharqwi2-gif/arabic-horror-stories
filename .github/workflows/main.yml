@@ -194,6 +194,7 @@ jobs:
           SILMA_GUARD_MIN_MATCH_WORDS: "3"
           SILMA_FALLBACK_TO_EDGE: "true"
           WHISPER_MODEL: "base"
+          ASR_FALLBACK_MODEL: "small"
           # Whisper can miss diacritics and proper names; keep empty/
           # foreign-audio checks while allowing minor alignment differences.
           ASR_MIN_MATCH_RATIO: "0.60"

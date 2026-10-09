@@ -81,6 +81,7 @@ FULL_CAPTION_BOTTOM_MARGIN = 70
 # عبر متغير البيئة WHISPER_MODEL.
 WHISPER_MODEL_SIZE = os.getenv("WHISPER_MODEL", "base")
 ASR_MIN_MATCH_RATIO = float(os.getenv("ASR_MIN_MATCH_RATIO", "0.82"))
+ASR_FALLBACK_MODEL_SIZE = os.getenv("ASR_FALLBACK_MODEL", "small").strip() or "small"
 
 VOICE_AUDIO = CLIPS_DIR / "narration_voice.mp3"
 FINAL_AUDIO = CLIPS_DIR / "narration.mp3"
@@ -262,41 +263,58 @@ def _norm_arabic_words(text: str) -> list[str]:
 
 _TRANSCRIPT_CACHE: dict[tuple, list] = {}
 
-def _cached_whisper_segments(audio_path: Path) -> list:
+def _cached_whisper_segments(audio_path: Path, model_size: str | None = None) -> list:
     """Reuse one word-timed transcript; invalidate it when audio is rewritten."""
     from faster_whisper import WhisperModel
+    model_size = model_size or WHISPER_MODEL_SIZE
     stat = audio_path.stat()
-    key = (str(audio_path.resolve()), stat.st_size, stat.st_mtime_ns, WHISPER_MODEL_SIZE)
+    key = (str(audio_path.resolve()), stat.st_size, stat.st_mtime_ns, model_size)
     if key not in _TRANSCRIPT_CACHE:
-        model = WhisperModel(WHISPER_MODEL_SIZE, device="cpu", compute_type="int8")
+        model = WhisperModel(model_size, device="cpu", compute_type="int8")
         result = model.transcribe(str(audio_path), language="ar",
                                   word_timestamps=True, vad_filter=False)
         segments = result[0] if isinstance(result, (tuple, list)) else result
-        _TRANSCRIPT_CACHE.clear()
         _TRANSCRIPT_CACHE[key] = list(segments)
     return _TRANSCRIPT_CACHE[key]
 
-def _transcribe_arabic_words(audio_path: Path) -> list[str]:
+def _transcribe_arabic_words(audio_path: Path, model_size: str | None = None) -> list[str]:
     """Return normalized Arabic words across faster-whisper API variants."""
-    segments = _cached_whisper_segments(audio_path)
+    segments = _cached_whisper_segments(audio_path, model_size)
     return _norm_arabic_words(" ".join(getattr(seg, "text", "") or "" for seg in segments))
 
 
 def assert_audio_matches_script(audio_path: Path, script_text: str) -> float:
-    """Fail closed when ASR cannot hear the Arabic script that was generated."""
+    """Check with the configured ASR, then a stronger independent model on a miss."""
     expected = _norm_arabic_words(script_text)
-    heard = _transcribe_arabic_words(audio_path)
-    if not expected or not heard:
+    if not expected:
         raise RuntimeError("بوابة ASR لم تحصل على كلمات عربية من النص أو الصوت")
-    matcher = difflib.SequenceMatcher(None, expected, heard, autojunk=False)
-    matched = sum(block.size for block in matcher.get_matching_blocks())
-    ratio = matched / len(expected)
-    print(f"🎧 بوابة ASR العربية: {matched}/{len(expected)} كلمة مطابقة ({ratio:.1%})")
-    if ratio < ASR_MIN_MATCH_RATIO:
-        raise RuntimeError(
-            f"تطابق النطق العربي منخفض: {ratio:.1%}، المطلوب {ASR_MIN_MATCH_RATIO:.1%}"
-        )
-    return ratio
+    models = list(dict.fromkeys([WHISPER_MODEL_SIZE, ASR_FALLBACK_MODEL_SIZE]))
+    ratios = []
+    failures = []
+    for model_size in models:
+        try:
+            heard = _transcribe_arabic_words(audio_path, model_size)
+            if not heard:
+                failures.append(f"{model_size}: no Arabic words recognized")
+                continue
+            matcher = difflib.SequenceMatcher(None, expected, heard, autojunk=False)
+            matched = sum(block.size for block in matcher.get_matching_blocks())
+            ratio = matched / len(expected)
+            ratios.append((model_size, matched, ratio))
+            print(f"🎧 بوابة ASR العربية ({model_size}): {matched}/{len(expected)} كلمة مطابقة ({ratio:.1%})")
+            if ratio >= ASR_MIN_MATCH_RATIO:
+                if model_size != WHISPER_MODEL_SIZE:
+                    print(f"✓ تأكد تطابق الصوت بالنموذج الاحتياطي {model_size} بعد انخفاض نتيجة النموذج الأساسي.")
+                return ratio
+        except Exception as exc:
+            failures.append(f"{model_size}: {type(exc).__name__}: {str(exc)[:160]}")
+    details = "; ".join(f"{name}={ratio:.1%}" for name, _, ratio in ratios)
+    if failures:
+        details += ("; " if details else "") + "; ".join(failures)
+    raise RuntimeError(
+        f"تطابق النطق العربي منخفض أو تعذّر التحقق: {details or 'لم يُستخرج نص'}؛ "
+        f"المطلوب {ASR_MIN_MATCH_RATIO:.1%}"
+    )
 
 
 def detect_silma_reference_leak(audio_path: Path) -> str | None:
