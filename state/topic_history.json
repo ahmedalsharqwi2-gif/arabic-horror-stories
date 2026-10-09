@@ -361,11 +361,25 @@
       "source": "workflow",
       "event_identity": "إشارة مرصد تشانغ باي الغامضة",
       "reserved_at": "2026-10-09T22:14:50Z",
+      "published_at": "2026-10-09T22:15:09Z",
       "run_id": "37996492079",
       "story_type": "unexplained_event",
       "reservation_id": "859f5d71c6d34132801697baaeb4fcf9",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-09T22:15:09Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "72f254de28022024e708",
+      "title": "غموض منارة جزيرة سارك البحرية",
+      "hook": "في شتاء عام 1937، اختفى حارسا منارة جزيرة سارك في القناة الإنجليزية وسط عاصفة، تاركين خلفهما سجلًا غامضًا.",
+      "region": "المملكة المتحدة",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "اختفاء حارسي منارة سارك 1937",
+      "story_type": "true_case",
+      "reservation_id": "073667a41c7649129b9cd7348c68b33c",
+      "reserved_at": "2026-10-09T23:11:00Z",
+      "run_id": "38002038909",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
