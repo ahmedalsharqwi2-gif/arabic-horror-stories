@@ -1,0 +1,16 @@
+{
+  "days": {
+    "2026-10-09": {
+      "estimated_usd": 0,
+      "episodes": {
+        "75f7f7895047dad1ecd93764": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 7
+        }
+      },
+      "free_calls": 7
+    }
+  }
+}
