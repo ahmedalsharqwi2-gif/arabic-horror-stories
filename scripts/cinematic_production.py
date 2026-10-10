@@ -540,7 +540,8 @@ def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) 
             review = apply_audio_review(visual, review_visual(visual, scene, episode, cfg, budget))
             record = {"scene_id": scene["id"], "source": attempt["source"], "license": attempt["license"],
                       "source_url": attempt.get("source_url", ""), "review": review, "cached": False,
-                      "audio_decision": "ORIGINAL AUDIO + VOICE DUCKING" if review.get("audio_keep") else "VOICE ONLY",\n                      "source_media_is_video": not attempt["image"], "illustrative": True}
+                      "audio_decision": "ORIGINAL AUDIO + VOICE DUCKING" if review.get("audio_keep") else "VOICE ONLY",
+                      "source_media_is_video": not attempt["image"], "illustrative": True}
             if scene["kind"] == "ai_video" and attempt["image"] and cfg["video_enabled"]:
                 ai_video = cache / f"{digest}.veo.mp4"
                 try:
@@ -548,7 +549,8 @@ def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) 
                     render_visual(ai_video, visual, seconds, scene, cfg, False, keep_audio=True)
                     record["review"] = apply_audio_review(visual, review_visual(visual, scene, episode, cfg, budget))
                     record["audio_decision"] = "ORIGINAL AUDIO + VOICE DUCKING" if record["review"].get("audio_keep") else "VOICE ONLY"
-                    record["source"] = "generated_video"\n                    record["source_media_is_video"] = True
+                    record["source"] = "generated_video"
+                    record["source_media_is_video"] = True
                 except (requests.RequestException, RuntimeError, ValueError, KeyError, IndexError):
                     # Restore the previously inspected image animation if video fails review.
                     render_visual(source, visual, seconds, scene, cfg, True)
@@ -605,10 +607,23 @@ def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) 
 
 def write_captions(events: list[dict], path: Path, cfg: dict, *, illustrative=False) -> None:
     """Write clean Arabic captions as separately positioned RTL word events."""
-    header = ("[Script Info]\nScriptType: v4.00+\n" f"PlayResX: {cfg['width']}\nPlayResY: {cfg['height']}\nWrapStyle: 2\nScaledBorderAndShadow: yes\n\n"
-        "[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n"
-        "Style: Caption,Noto Naskh Arabic,58,&H00FFFFFF,&H00FFFFFF,&H0010182B,&HAA000000,1,0,0,0,100,100,0,0,1,4,1,8,90,120,300,1\n\n"
-        "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
+    header = ("[Script Info]
+ScriptType: v4.00+
+" f"PlayResX: {cfg['width']}
+PlayResY: {cfg['height']}
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+"
+        "[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+"
+        "Style: Caption,Noto Naskh Arabic,58,&H00FFFFFF,&H00FFFFFF,&H0010182B,&HAA000000,1,0,0,0,100,100,0,0,1,4,1,8,90,120,300,1
+
+"
+        "[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+")
     lines = [header]
 
     def add_dialogues(start: float, end: float, payloads: list[str]) -> None:
@@ -663,7 +678,9 @@ def write_captions(events: list[dict], path: Path, cfg: dict, *, illustrative=Fa
                         center_y=329, extra_ass_tags=r"\fad(40,60)",
                     ),
                 )
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    path.write_text("
+".join(lines) + "
+", encoding="utf-8")
 
 def mix_audio(voice: Path, clean_video: Path, output: Path, duration: float, cfg: dict, scenes: list[dict], root: Path) -> None:
     from scripts.media_audio import add_topic_soundtrack, ducking_filters
@@ -761,7 +778,9 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
                 f"minimum {min_video_share:.0%}. Animated photos and diagrams do not count."
             )
         listing = work / "concat.txt"
-        listing.write_text("\n".join("file '" + str(p.resolve()).replace("'", "'\\''") + "'" for p in paths) + "\n")
+        listing.write_text("
+".join("file '" + str(p.resolve()).replace("'", "'\\''") + "'" for p in paths) + "
+")
         clean = output.with_name("cinematic_clean.mp4")
         run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", str(listing), "-c", "copy", str(clean)])
         mixed = work / "mixed.m4a"
@@ -778,7 +797,9 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
         report = {"passed": True, "output": str(output), "caption_timing": timing, "quality": quality,
                   "target_mix": {"image": 0.8, "stock": 0.2, "ai_video": 0.0} if cfg.get("free_only", True) else {"image": 0.7, "stock": 0.2, "ai_video": 0.1},
                   "actual_sources": {source: sum(r["source"] == source for r in records) for source in sorted({r["source"] for r in records})},
-                  "real_video_duration_share": round(moving_video_share, 4), "real_video_seconds": round(moving_scene_seconds, 2),\n                  "minimum_real_video_share": min_video_share,\n                  "scene_count": len(records), "cached_scenes": sum(r["cached"] for r in records),
+                  "real_video_duration_share": round(moving_video_share, 4), "real_video_seconds": round(moving_scene_seconds, 2),
+                  "minimum_real_video_share": min_video_share,
+                  "scene_count": len(records), "cached_scenes": sum(r["cached"] for r in records),
                   "estimated_episode_usd": budget.episode["estimated_usd"], "estimated_day_usd": budget.row["estimated_usd"],
                   "free_only": cfg.get("free_only", True), "free_api_calls": budget.episode.get("free_calls", 0),
                   "paid_enabled": cfg["paid_enabled"] and not cfg.get("free_only", True), "billing_note": "Reservations are estimates, not provider invoices"}
