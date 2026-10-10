@@ -190,15 +190,26 @@ def captions(narration: str, duration: float, source: Path | None) -> tuple[list
             else:
                 merged.append(chunk.copy())
         chunks = merged
-    previous = 0.0
-    for chunk in chunks:
-        chunk["start"] = max(previous, chunk["start"])
-        previous = chunk["end"]
-        if chunk["end"] <= chunk["start"]:
-            raise ValueError("Invalid or overlapping narration timeline")
-    if not chunks:
-        raise ValueError("Empty narration captions")
-    return chunks, method
+    # ASS alignment may contain overlapping dialogue or sub-centisecond events.
+    # Normalize these without extending captions beyond the actual narration.
+    normalized = []
+    for chunk in sorted(chunks, key=lambda item: (item["start"], item["end"])):
+        start = max(0.0, float(chunk["start"]))
+        end = min(duration, float(chunk["end"]))
+        if not math.isfinite(start) or not math.isfinite(end):
+            continue
+        if normalized:
+            start = max(start, normalized[-1]["end"])
+        if end - start < 0.01:
+            # An overlapping or rounded-to-zero caption must not abort rendering.
+            # Preserve its words in the preceding caption instead.
+            if normalized:
+                normalized[-1]["text"] += " " + chunk["text"]
+            continue
+        normalized.append({"start": start, "end": end, "text": chunk["text"]})
+    if not normalized:
+        raise ValueError("Empty or unusable narration captions")
+    return normalized, method
 
 
 def plan_scenes(events: list[dict], duration: float, episode: dict, cfg: dict) -> list[dict]:
