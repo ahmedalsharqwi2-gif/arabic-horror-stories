@@ -485,7 +485,7 @@ def candidates(scene: dict, cfg: dict):
                 response = requests.get("https://api.pexels.com/videos/search", headers={"Authorization": key},
                     params={"query": query, "per_page": 12}, timeout=(10, 20))
                 response.raise_for_status()
-                for video in response.json().get("videos", [])[:8]:
+                for video in (response.json() or {}).get("videos", [])[:8]:
                     files = [f for f in video.get("video_files", []) if f.get("link") and f.get("height", 0) >= 540 and f.get("width", 0) >= 540]
                     if files:
                         best = min(files, key=lambda f: abs(f.get("width", 0) * f.get("height", 0) - 1080 * 1920))
