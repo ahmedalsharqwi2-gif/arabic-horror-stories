@@ -770,7 +770,7 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
         quality = verify_final(temporary, duration, cfg)
         temporary.replace(output)
         report = {"passed": True, "output": str(output), "caption_timing": timing, "quality": quality,
-                  "target_mix": {"image": 0.8, "stock": 0.2, "ai_video": 0.0} if cfg.get("free_only", True) else {"image": 0.7, "stock": 0.2, "ai_video": 0.1},
+                  "target_mix": {"real_source_video_minimum": 0.70, "photos_and_diagrams_maximum": 0.30},
                   "actual_sources": {source: sum(r["source"] == source for r in records) for source in sorted({r["source"] for r in records})},
                   "real_video_duration_share": round(moving_video_share, 4), "minimum_real_video_share": min_video_share,
                   "scene_count": len(records), "cached_scenes": sum(r["cached"] for r in records),
