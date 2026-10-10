@@ -189,7 +189,7 @@ jobs:
           SILMA_REFERENCE_PROFILE: "auto"
           SILMA_VOICE_PROFILES_FILE: "assets/voices/voice_profiles.json"
           AUTO_VOICE_PROFILES: "hossam,hossam_uploaded,marwan,nassim,ahmed_z"
-          SILMA_SPEED: "1.00"
+          SILMA_SPEED: "0.92"
           SILMA_GUARD_ENABLED: "true"
           SILMA_GUARD_MIN_MATCH_WORDS: "3"
           SILMA_FALLBACK_TO_EDGE: "true"
@@ -198,7 +198,7 @@ jobs:
           # Whisper can miss diacritics and proper names; keep empty/
           # foreign-audio checks while allowing minor alignment differences.
           ASR_MIN_MATCH_RATIO: "0.60"
-          EDGE_TTS_RATE: "-8%"
+          EDGE_TTS_RATE: "-15%"
           EDGE_TTS_PITCH: "-3Hz"
         run: python scripts/generate_voice.py
 
