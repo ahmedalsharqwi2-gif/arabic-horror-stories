@@ -16,13 +16,12 @@ class VoiceAlignmentTests(unittest.TestCase):
 
         self.assertNotIn("\u200f", rendered)
         self.assertNotIn("\u200e", rendered)
-        self.assertEqual(rendered, "هذا نص\\Nعربي سليم")
+        self.assertEqual(rendered, "هذا نص عربي سليم")
 
     def test_six_words_are_split_three_and_three(self):
         rendered = two_lines(["واحد", "اثنان", "ثلاثة", "أربعة", "خمسة", "ستة"])
-        self.assertIn(r"\N", rendered)
-        self.assertIn("واحد اثنان ثلاثة", rendered)
-        self.assertIn("أربعة خمسة ستة", rendered)
+        self.assertNotIn(r"\N", rendered)
+        self.assertEqual(rendered, "واحد اثنان ثلاثة أربعة خمسة ستة")
 
     def test_three_words_stay_on_one_line(self):
         self.assertNotIn(r"\N", two_lines(["واحد", "اثنان", "ثلاثة"]))

@@ -69,7 +69,7 @@ SILMA_GUARD_MIN_MATCH_WORDS = int(os.getenv("SILMA_GUARD_MIN_MATCH_WORDS", "2"))
 RATE = os.getenv("EDGE_TTS_RATE", "-15%")
 PITCH = os.getenv("EDGE_TTS_PITCH", "-5Hz")
 VOLUME = "+0%"
-WORDS_PER_CAPTION_CHUNK = int(os.getenv("WORDS_PER_CAPTION_CHUNK", "6"))
+WORDS_PER_CAPTION_CHUNK = int(os.getenv("WORDS_PER_CAPTION_CHUNK", "4"))
 VIDEO_W = 1080
 VIDEO_H = 1920
 # كل المخرجات عمودية 9:16؛ الترجمة في المنطقة الآمنة العلوية.
@@ -585,7 +585,14 @@ def synthesize_voice(voice_text: str) -> None:
     for group in caption_word_groups(all_word_events, WORDS_PER_CAPTION_CHUNK):
         start = group[0]["offset"]
         end = group[-1]["offset"] + group[-1]["duration"]
-        dialogue_lines.append(f"Dialogue: 0,{ass_time(start)},{ass_time(max(end, start + 0.25))},Caption,,0,0,0,,{two_lines([e['text'] for e in group])}")
+        words = [e["text"] for e in group]
+        for active_index in range(len(words)):
+            word_start = group[active_index]["offset"]
+            word_end = group[active_index]["offset"] + group[active_index]["duration"]
+            dialogue_lines.append(
+                f"Dialogue: 0,{ass_time(word_start)},{ass_time(max(word_end, word_start + 0.12))},Caption,,0,0,0,,"
+                f"{render_active_arabic_caption(words, active_index)}"
+            )
     SUBTITLES.write_text(build_ass_header() + "\n".join(dialogue_lines) + "\n", encoding="utf-8")
     for segment in segments:
         Path(segment["path"]).unlink(missing_ok=True)

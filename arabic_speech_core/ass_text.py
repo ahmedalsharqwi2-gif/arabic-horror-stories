@@ -16,20 +16,25 @@ def display_word(word: str) -> str:
     return ARABIC_DIACRITICS.sub("", word).translate(DISPLAY_PUNCTUATION).strip()
 
 
+def _clean_words(words: list[str]) -> list[str]:
+    return [token for word in words for token in display_word(word).split()]
+
 def render_arabic_caption(words: list[str]) -> str:
-    """Render a short Arabic caption using ASS ``\\N`` for the line break.
+    """Render a single RTL caption line; callers limit it to four words."""
+    return " ".join(_clean_words(words))
 
-    Direction controls are deliberately omitted: libass shapes the Arabic
-    text, and hidden U+200F markers can split joining on some renderers.
-    """
-    clean_words = [token for word in words for token in display_word(word).split()]
-    if len(clean_words) <= 3:
-        return " ".join(clean_words)
-    midpoint = (len(clean_words) + 1) // 2
-    return " ".join(clean_words[:midpoint]) + r"\N" + " ".join(clean_words[midpoint:])
+def render_active_arabic_caption(words: list[str], active_index: int) -> str:
+    """Render one clean RTL line with exactly one active word in red."""
+    clean_words = _clean_words(words)
+    rendered = []
+    for index, word in enumerate(clean_words):
+        if index == active_index:
+            rendered.append(r"{\c&H000000FF&}" + word + r"{\c&H00FFFFFF&}")
+        else:
+            rendered.append(word)
+    return " ".join(rendered)
 
-
-def caption_word_groups(events: list[dict], max_words: int = 6) -> list[list[dict]]:
+def caption_word_groups(events: list[dict], max_words: int = 4) -> list[list[dict]]:
     """Split by displayed words, preserving the span of each aligned event.
 
     An ASR event can contain several words or punctuation-joined words.
