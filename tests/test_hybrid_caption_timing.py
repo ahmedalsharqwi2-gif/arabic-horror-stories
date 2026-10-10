@@ -59,10 +59,11 @@ class HybridCaptionTimingTests(unittest.TestCase):
             target = Path(folder) / "captions.ass"
             pipeline.write_ass([{"text": "أين اختفت؟", "start": 0, "end": 1.0, "highlight_words": ["اختفت"]}], target)
             content = target.read_text(encoding="utf-8")
-        self.assertIn("أين ", content)
+        self.assertIn("أين", content)
+        self.assertNotIn("\u200f", content)
         self.assertIn(r"\fad(120,150)", content)
-        self.assertIn(r"{\c&H000000FF&}اختفت؟{\c}", content)
-        self.assertIn("Noto Sans Arabic", content)
+        self.assertIn(r"{\c&H000000FF&}اختفت{\c}", content)
+        self.assertIn("Noto Naskh Arabic", content)
 
 
 if __name__ == "__main__":
