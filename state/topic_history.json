@@ -376,11 +376,25 @@
       "source": "workflow",
       "event_identity": "اختفاء حارسي منارة سارك 1937",
       "reserved_at": "2026-10-09T23:11:00Z",
+      "published_at": "2026-10-09T23:11:21Z",
       "run_id": "38002038909",
       "story_type": "true_case",
       "reservation_id": "073667a41c7649129b9cd7348c68b33c",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-09T23:11:21Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "c71422587c4c108678bd",
+      "title": "غموض قلعة بوينا في إيطاليا",
+      "hook": "في شتاء عام 1978، اختفى حارسا قلعة بوينا التاريخية بإيطاليا داخل غرفة مغلقة تمامًا من الداخل دون أي أثر.",
+      "region": "إيطاليا",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "اختفاء حارسي قلعة بوينا",
+      "story_type": "unexplained_event",
+      "reservation_id": "4b1a3443224b44b5b72b01b9b7571ba8",
+      "reserved_at": "2026-10-10T22:35:24Z",
+      "run_id": "38090747319",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
