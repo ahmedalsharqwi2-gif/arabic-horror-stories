@@ -164,7 +164,7 @@ def captions(narration: str, duration: float, source: Path | None) -> tuple[list
         words = span["text"].split()
         groups, current = [], []
         for word in words:
-            if current and (len(current) >= 6 or len(" ".join(current + [word])) > 38):
+            if current and (len(current) >= 4 or len(" ".join(current + [word])) > 38):
                 groups.append(current)
                 current = []
             current.append(word)
@@ -180,7 +180,7 @@ def captions(narration: str, duration: float, source: Path | None) -> tuple[list
     if method == "character_weighted_estimate":
         merged = []
         for chunk in chunks:
-            if merged and len(merged[-1]["text"].split()) < 6 and len(merged[-1]["text"] + " " + chunk["text"]) <= 38:
+            if merged and len(merged[-1]["text"].split()) < 4 and len(merged[-1]["text"] + " " + chunk["text"]) <= 38:
                 merged[-1]["text"] += " " + chunk["text"]
                 merged[-1]["end"] = chunk["end"]
             else:
@@ -596,7 +596,7 @@ def write_captions(events: list[dict], path: Path, cfg: dict, *, illustrative=Fa
         "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
     lines = [header]
     for event in events:
-        tokens = [re.sub(r"[\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069]", "", token).replace("\\", "").replace("{", "").replace("}", "") for token in event["text"].split()]
+        tokens = [re.sub(r'''[.,،؛:!?؟…/\\\-—_()\[\]{}"«»]''', "", re.sub(r"[\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069\u064b-\u065f\u0670\u06d6-\u06ed]", "", token)) for token in event["text"].split()]
         tokens = [token for token in tokens if token]
         if not tokens:
             continue
