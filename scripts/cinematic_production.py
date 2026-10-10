@@ -480,13 +480,13 @@ def candidates(scene: dict, cfg: dict):
     key = os.getenv("PEXELS_API_KEY", "")
     seen: set[str] = set()
     for query in queries:
-        if scene["kind"] == "stock" and key:
+        if key:
             try:
                 response = requests.get("https://api.pexels.com/videos/search", headers={"Authorization": key},
-                    params={"query": query, "orientation": "portrait", "per_page": 5}, timeout=(10, 20))
+                    params={"query": query, "per_page": 12}, timeout=(10, 20))
                 response.raise_for_status()
-                for video in response.json().get("videos", [])[:2]:
-                    files = [f for f in video.get("video_files", []) if f.get("link") and f.get("height", 0) >= 720]
+                for video in (response.json() or {}).get("videos", [])[:8]:
+                    files = [f for f in video.get("video_files", []) if f.get("link") and f.get("height", 0) >= 540 and f.get("width", 0) >= 540]
                     if files:
                         best = min(files, key=lambda f: abs(f.get("width", 0) * f.get("height", 0) - 1080 * 1920))
                         if best["link"] not in seen:
