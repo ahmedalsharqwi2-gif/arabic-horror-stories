@@ -248,7 +248,7 @@ def metadata_for(channel_id: str, asset_type: str, title: str) -> dict | None:
         }}
     if service == "facebook":
         # قيم Facebook الرسمية هي post / reel / story؛ لا توجد قيمة video.
-        return {"facebook": {"type": "reel"}}
+        return {"facebook": {"type": "post" if asset_type == "full_video" else "reel"}}
     if service == "instagram":
         # الفيديو الكامل يُرسل كـ"reel" — لا "post"،
         # لأن نوع "post" عند Buffer بيفرض حد قديم 60 ثانية لفيديوهات
