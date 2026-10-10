@@ -387,14 +387,15 @@
       "title": "غموض قلعة بوينا في إيطاليا",
       "hook": "في شتاء عام 1978، اختفى حارسا قلعة بوينا التاريخية بإيطاليا داخل غرفة مغلقة تمامًا من الداخل دون أي أثر.",
       "region": "إيطاليا",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "اختفاء حارسي قلعة بوينا",
-      "story_type": "unexplained_event",
-      "reservation_id": "4b1a3443224b44b5b72b01b9b7571ba8",
       "reserved_at": "2026-10-10T22:35:24Z",
       "run_id": "38090747319",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "unexplained_event",
+      "reservation_id": "4b1a3443224b44b5b72b01b9b7571ba8",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-10T22:35:37Z"
     }
   ]
 }
