@@ -62,8 +62,16 @@ class HybridCaptionTimingTests(unittest.TestCase):
         self.assertIn("أين", content)
         self.assertNotIn("\u200f", content)
         self.assertIn(r"\fad(120,150)", content)
-        self.assertIn(r"{\c&H000000FF&}اختفت{\c}", content)
         self.assertIn("Noto Naskh Arabic", content)
+        dialogue = [line for line in content.splitlines() if line.startswith("Dialogue:")]
+        payloads = [line.split(",", 9)[9] for line in dialogue]
+        self.assertEqual(len(dialogue), 4)
+        self.assertEqual([payload.rsplit("}", 1)[-1] for payload in payloads[:2]], ["أين", "اختفت"])
+        centers = [int(payload.split("pos(", 1)[1].split(",", 1)[0]) for payload in payloads[:2]]
+        self.assertGreater(centers[0], centers[1])
+        self.assertIn("H000000FF&", payloads[0])
+        self.assertNotIn("H000000FF&", payloads[1])
+        self.assertIn("H000000FF&", payloads[3])
 
 
 if __name__ == "__main__":

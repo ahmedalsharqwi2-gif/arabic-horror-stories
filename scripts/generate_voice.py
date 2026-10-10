@@ -35,7 +35,7 @@ if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
 import edge_tts
-from arabic_speech_core.ass_text import render_arabic_caption, caption_word_groups
+from arabic_speech_core.ass_text import render_active_arabic_caption, render_arabic_caption, caption_word_groups
 try:
     from .voice_profiles import resolve_reference_profile
 except ImportError:  # direct `python scripts/generate_voice.py`
@@ -589,10 +589,13 @@ def synthesize_voice(voice_text: str) -> None:
         for active_index in range(len(words)):
             word_start = group[active_index]["offset"]
             word_end = group[active_index]["offset"] + group[active_index]["duration"]
-            dialogue_lines.append(
-                f"Dialogue: 0,{ass_time(word_start)},{ass_time(max(word_end, word_start + 0.12))},Caption,,0,0,0,,"
-                f"{render_active_arabic_caption(words, active_index)}"
-            )
+            for payload in render_active_arabic_caption(
+                words, active_index, canvas_width=VIDEO_W,
+                center_y=VIDEO_H - FULL_CAPTION_BOTTOM_MARGIN - 29,
+            ):
+                dialogue_lines.append(
+                    f"Dialogue: 0,{ass_time(word_start)},{ass_time(max(word_end, word_start + 0.12))},Caption,,0,0,0,,{payload}"
+                )
     SUBTITLES.write_text(build_ass_header() + "\n".join(dialogue_lines) + "\n", encoding="utf-8")
     for segment in segments:
         Path(segment["path"]).unlink(missing_ok=True)

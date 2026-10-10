@@ -41,6 +41,11 @@ try:
 except ImportError as exc:  # pragma: no cover
     raise SystemExit("edge-tts is required: python -m pip install edge-tts") from exc
 
+ROOT_DIR = Path(__file__).resolve().parents[1]
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+from arabic_speech_core.ass_text import render_active_arabic_caption
+
 WIDTH = 1080
 HEIGHT = 1920
 FPS = 30
@@ -132,11 +137,12 @@ def write_ass(events: list[dict[str, Any]], output: Path) -> None:
             for active in range(len(chunk)):
                 word_start = chunk_start + (chunk_end - chunk_start) * active / len(chunk)
                 word_end = chunk_end if active == len(chunk) - 1 else chunk_start + (chunk_end - chunk_start) * (active + 1) / len(chunk)
-                display_chunk = list(reversed(chunk))
-                display_active = len(chunk) - 1 - active
-                rendered = [r"{\c&H000000FF&}" + ass_escape(token) + r"{\c}" if index == display_active else ass_escape(token) for index, token in enumerate(display_chunk)]
-                text = " ".join(rendered)
-                lines.append(f"Dialogue: 0,{ass_time(word_start)},{ass_time(max(word_end, word_start + 0.04))},Caption,,0,0,0,,{{\\fad(120,150)}}{text}")
+                for payload in render_active_arabic_caption(
+                    chunk, active, canvas_width=WIDTH, center_y=329,
+                    font_name=FONT_NAME, side_margin=70,
+                    extra_ass_tags=r"\fad(120,150)",
+                ):
+                    lines.append(f"Dialogue: 0,{ass_time(word_start)},{ass_time(max(word_end, word_start + 0.04))},Caption,,0,0,0,,{payload}")
     output.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 

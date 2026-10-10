@@ -16,6 +16,7 @@ import os
 import re
 import shutil
 import subprocess
+import sys
 import time
 from datetime import datetime
 from pathlib import Path
@@ -25,6 +26,9 @@ from zoneinfo import ZoneInfo
 import requests
 
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from arabic_speech_core.ass_text import display_word, render_active_arabic_caption
 API = "https://generativelanguage.googleapis.com/v1beta"
 MAX_VIDEO_DURATION_SECONDS = 180.0
 MOTIONS = ("zoom_in", "pan_right", "zoom_out", "pan_left")
@@ -589,36 +593,65 @@ def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) 
 
 
 def write_captions(events: list[dict], path: Path, cfg: dict, *, illustrative=False) -> None:
-    """Write clean RTL captions: one line, at most four words, active word red."""
+    """Write clean Arabic captions as separately positioned RTL word events."""
     header = ("[Script Info]\nScriptType: v4.00+\n" f"PlayResX: {cfg['width']}\nPlayResY: {cfg['height']}\nWrapStyle: 2\nScaledBorderAndShadow: yes\n\n"
         "[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n"
         "Style: Caption,Noto Naskh Arabic,58,&H00FFFFFF,&H00FFFFFF,&H0010182B,&HAA000000,1,0,0,0,100,100,0,0,1,4,1,8,90,120,300,1\n\n"
         "[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n")
     lines = [header]
+
+    def add_dialogues(start: float, end: float, payloads: list[str]) -> None:
+        for payload in payloads:
+            lines.append(
+                f"Dialogue: 0,{ass_time(start)},{ass_time(max(end, start + 0.04))},Caption,,0,0,0,,{payload}"
+            )
+
     for event in events:
-        tokens = [re.sub(r'''[.,،؛:!?؟…/\\\-—_()\[\]{}"«»]''', "", re.sub(r"[\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069\u064b-\u065f\u0670\u06d6-\u06ed]", "", token)) for token in event["text"].split()]
-        tokens = [token for token in tokens if token]
+        text = str(event.get("text", "")).replace(r"\N", " ")
+        tokens = [token for part in text.split() for token in display_word(part).split()]
         if not tokens:
             continue
         start_time, end_time = float(event["start"]), float(event["end"])
+        raw_ass = str(event.get("ass_text", ""))
+
+        # New source captions already carry one positioned token per ASS event.
+        if raw_ass and r"\pos(" in raw_ass and len(tokens) == 1:
+            add_dialogues(start_time, end_time, [raw_ass])
+            continue
+
+        # Older source captions used inline color tags. Keep their exact timing
+        # and active word while rebuilding the phrase as independent RTL words.
+        active_index = None
+        if raw_ass:
+            active_match = re.search(r"\\c&H000000FF&[^}]*\}([^{}\s]+)", raw_ass)
+            if active_match:
+                active_word = display_word(active_match.group(1))
+                active_index = next((i for i, word in enumerate(tokens) if display_word(word) == active_word), None)
+        if active_index is not None:
+            add_dialogues(
+                start_time, end_time,
+                render_active_arabic_caption(
+                    tokens, active_index, canvas_width=int(cfg["width"]),
+                    center_y=329, extra_ass_tags=r"\fad(40,60)",
+                ),
+            )
+            continue
+
         total = max(end_time - start_time, 0.04)
         for chunk_start in range(0, len(tokens), 4):
             chunk = tokens[chunk_start:chunk_start + 4]
             chunk_begin = start_time + total * chunk_start / len(tokens)
             chunk_end = end_time if chunk_start + len(chunk) >= len(tokens) else start_time + total * (chunk_start + len(chunk)) / len(tokens)
-            for active_index in range(len(chunk)):
-                word_start = chunk_begin + (chunk_end - chunk_begin) * active_index / len(chunk)
-                word_end = chunk_end if active_index == len(chunk) - 1 else chunk_begin + (chunk_end - chunk_begin) * (active_index + 1) / len(chunk)
-                display_chunk = list(reversed(chunk))
-                display_active = len(chunk) - 1 - active_index
-                rendered = []
-                for index, token in enumerate(display_chunk):
-                    if index == display_active:
-                        rendered.append(r"{\c&H000000FF&}" + token + r"{\c&H00FFFFFF&}")
-                    else:
-                        rendered.append(token)
-                text = " ".join(rendered)
-                lines.append(f"Dialogue: 0,{ass_time(word_start)},{ass_time(max(word_end, word_start + 0.04))},Caption,,0,0,0,,{{\\fad(40,60)}}{text}")
+            for active in range(len(chunk)):
+                word_start = chunk_begin + (chunk_end - chunk_begin) * active / len(chunk)
+                word_end = chunk_end if active == len(chunk) - 1 else chunk_begin + (chunk_end - chunk_begin) * (active + 1) / len(chunk)
+                add_dialogues(
+                    word_start, word_end,
+                    render_active_arabic_caption(
+                        chunk, active, canvas_width=int(cfg["width"]),
+                        center_y=329, extra_ass_tags=r"\fad(40,60)",
+                    ),
+                )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 def mix_audio(voice: Path, clean_video: Path, output: Path, duration: float, cfg: dict, scenes: list[dict], root: Path) -> None:

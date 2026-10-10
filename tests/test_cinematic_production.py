@@ -133,8 +133,30 @@ class CinematicTests(unittest.TestCase):
         self.assertIn(',8,90,120,300,1',content)
         self.assertIn('حضارة',content)
         self.assertIn(r'\c&H000000FF&',content)
+        dialogue=[line for line in content.splitlines() if line.startswith('Dialogue:')]
+        payloads=[line.split(',',9)[9] for line in dialogue]
+        self.assertEqual(len(dialogue),4)
+        self.assertEqual([payload.rsplit('}',1)[-1] for payload in payloads[:2]],['حضارة','قديمة'])
+        centers=[int(payload.split('pos(',1)[1].split(',',1)[0]) for payload in payloads[:2]]
+        self.assertGreater(centers[0],centers[1])
+        self.assertIn('H000000FF&',payloads[0])
+        self.assertNotIn('H000000FF&',payloads[1])
         self.assertNotIn('محاكاة توضيحية', content)
         self.assertNotIn('مشاهد توضيحية', content)
+
+    def test_source_inline_highlight_is_preserved_when_repositioned(self):
+        path=self.root/'source-captions.ass'
+        cp.write_captions([
+            {'start':0,'end':0.4,'text':'حضارة قديمة','ass_text':r'{\c&H000000FF&}حضارة{\c&H00FFFFFF&} قديمة'},
+            {'start':0.4,'end':0.8,'text':'حضارة قديمة','ass_text':r'حضارة {\c&H000000FF&}قديمة{\c&H00FFFFFF&}'},
+        ],path,self.cfg)
+        dialogue=[line for line in path.read_text().splitlines() if line.startswith('Dialogue:')]
+        payloads=[line.split(',',9)[9] for line in dialogue]
+        self.assertEqual(len(dialogue),4)
+        self.assertIn('H000000FF&',payloads[0])
+        self.assertNotIn('H000000FF&',payloads[1])
+        self.assertNotIn('H000000FF&',payloads[2])
+        self.assertIn('H000000FF&',payloads[3])
 
     def test_duration_relative_motion_reaches_end_not_fixed_1500_frames(self):
         short=cp.motion_filter('pan_right',3,360,640)
