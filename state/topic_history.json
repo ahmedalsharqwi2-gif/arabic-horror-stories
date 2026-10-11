@@ -402,14 +402,15 @@
       "title": "غموض مرصد فالبارايسو البحري",
       "hook": "في شتاء عام 1982، سجلت محطة فالبارايسو البحرية في تشيلي إشارة راديوية قادمة من قاع المحيط قبل أن تبدأ عاصفة التسونامي بخمس دقائق.",
       "region": "تشيلي",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "غموض مرصد فالبارايسو البحري",
-      "story_type": "unexplained_event",
-      "reservation_id": "a1cec9f95f8d4602ae221818e6dee004",
       "reserved_at": "2026-10-11T01:15:55Z",
       "run_id": "38100421136",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "unexplained_event",
+      "reservation_id": "a1cec9f95f8d4602ae221818e6dee004",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-11T01:16:17Z"
     }
   ]
 }
