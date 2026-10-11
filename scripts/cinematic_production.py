@@ -281,7 +281,10 @@ def search_queries(scene: dict) -> tuple[str, ...]:
     context = " ".join(str(scene.get(k, "")) for k in ("query", "text", "prompt")).lower()
     # A generic abandoned hallway is NOT a valid fallback for a maritime scene.
     if any(word in context for word in ("ship", "coast", "sea", "ocean", "boat", "sail", "vessel", "maritime", "بحر", "سفينة", "ساحل")):
-        fallbacks = ("old sailing ship at sea", "stormy ocean waves night", "vintage wooden boat", "dark sea fog", "antique nautical map")
+        if any(word in context for word in ("1981", "research", "cargo", "bridge interior", "سفينة أبحاث", "سفينة شحن", "ألف وتسعمئة")):
+            fallbacks = ("1980s cargo ship bridge interior", "industrial ship control room analog gauges", "empty maritime navigation bridge radar", "ocean freighter at night fog", "dark ocean waves at night")
+        else:
+            fallbacks = ("ship deck at night", "stormy ocean waves night", "dark sea fog", "empty ship corridor", "ship navigation instruments")
     else:
         fallbacks = SCENE_SEARCH_FALLBACKS.get(scene.get("id"), SCENE_SEARCH_FALLBACKS["__default__"])
     return tuple(dict.fromkeys(((primary,) if primary else ()) + fallbacks))
@@ -547,6 +550,8 @@ def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) 
     models = [] if cfg.get("free_only", True) else list(dict.fromkeys([cfg["image_model"], cfg["image_fallback_model"]]))
     # Bound inspection work to protect the free-tier quota and scheduled slot.
     max_visual_attempts = max(1, int(os.getenv("CINEMATIC_MAX_VISUAL_ATTEMPTS", "12")))
+    # Round-robin search phrases instead of letting the first phrase consume
+    # every review slot. Preserve scene-specific review for every candidate.
     for attempt in itertools.islice(itertools.chain(options, ({"model": model, "image": True, "source": "generated_image", "license": "AI illustration"} for model in models if model)), max_visual_attempts):
         source = cache / f"{digest}.{'png' if attempt['image'] else 'source.mp4'}"
         try:
