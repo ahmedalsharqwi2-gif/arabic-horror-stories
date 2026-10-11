@@ -391,11 +391,25 @@
       "source": "workflow",
       "event_identity": "اختفاء حارسي قلعة بوينا",
       "reserved_at": "2026-10-10T22:35:24Z",
+      "published_at": "2026-10-10T22:35:37Z",
       "run_id": "38090747319",
       "story_type": "unexplained_event",
       "reservation_id": "4b1a3443224b44b5b72b01b9b7571ba8",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-10T22:35:37Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "d4cb56b608a594bc0c38",
+      "title": "غموض مرصد فالبارايسو البحري",
+      "hook": "في شتاء عام 1982، سجلت محطة فالبارايسو البحرية في تشيلي إشارة راديوية قادمة من قاع المحيط قبل أن تبدأ عاصفة التسونامي بخمس دقائق.",
+      "region": "تشيلي",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "غموض مرصد فالبارايسو البحري",
+      "story_type": "unexplained_event",
+      "reservation_id": "a1cec9f95f8d4602ae221818e6dee004",
+      "reserved_at": "2026-10-11T01:15:55Z",
+      "run_id": "38100421136",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
