@@ -66,7 +66,7 @@ SILMA_REFERENCE_TEXT = os.getenv(
 SILMA_SPEED = float(os.getenv("SILMA_SPEED", "0.92"))
 SILMA_GUARD_ENABLED = os.getenv("SILMA_GUARD_ENABLED", "true").lower() == "true"
 SILMA_GUARD_MIN_MATCH_WORDS = int(os.getenv("SILMA_GUARD_MIN_MATCH_WORDS", "2"))
-RATE = os.getenv("EDGE_TTS_RATE", "-15%")
+RATE = os.getenv("EDGE_TTS_RATE", "-20%")
 PITCH = os.getenv("EDGE_TTS_PITCH", "-5Hz")
 VOLUME = "+0%"
 WORDS_PER_CAPTION_CHUNK = int(os.getenv("WORDS_PER_CAPTION_CHUNK", "4"))
