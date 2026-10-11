@@ -495,7 +495,10 @@ def align_words_with_whisper(audio_path: Path, script_words: list[str]) -> list[
             }
 
     known_indices = [i for i, t in enumerate(timings) if t is not None]
-    if not known_indices or len(known_indices) < len(script_words) * 0.85:
+    # The independent audio-vs-script ASR gate already passed before this
+    # function. Allow limited Whisper word-boundary misses (Arabic clitics,
+    # spelling variants), but never fabricate timing for more than 20%.
+    if not known_indices or len(known_indices) < len(script_words) * 0.80:
         raise RuntimeError(
             f"تطابق ضعيف جدًا: {len(known_indices)}/{len(script_words)} كلمة فقط"
         )
