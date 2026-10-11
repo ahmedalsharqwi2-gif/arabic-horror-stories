@@ -278,7 +278,12 @@ SCENE_SEARCH_FALLBACKS = {
 def search_queries(scene: dict) -> tuple[str, ...]:
     """Return the original query followed by bounded visual fallbacks."""
     primary = str(scene.get("query", "")).strip()
-    fallbacks = SCENE_SEARCH_FALLBACKS.get(scene.get("id"), SCENE_SEARCH_FALLBACKS["__default__"])
+    context = " ".join(str(scene.get(k, "")) for k in ("query", "text", "prompt")).lower()
+    # A generic abandoned hallway is NOT a valid fallback for a maritime scene.
+    if any(word in context for word in ("ship", "coast", "sea", "ocean", "boat", "sail", "vessel", "maritime", "بحر", "سفينة", "ساحل")):
+        fallbacks = ("old sailing ship at sea", "stormy ocean waves night", "vintage wooden boat", "dark sea fog", "antique nautical map")
+    else:
+        fallbacks = SCENE_SEARCH_FALLBACKS.get(scene.get("id"), SCENE_SEARCH_FALLBACKS["__default__"])
     return tuple(dict.fromkeys(((primary,) if primary else ()) + fallbacks))
 
 
@@ -496,7 +501,7 @@ def candidates(scene: dict, cfg: dict):
                 response = requests.get("https://api.pexels.com/videos/search", headers={"Authorization": key},
                     params={"query": query, "per_page": 12}, timeout=(10, 20))
                 response.raise_for_status()
-                for video in (response.json() or {}).get("videos", [])[:8]:
+                for video in (response.json() or {}).get("videos", [])[:3]:
                     files = [f for f in video.get("video_files", []) if f.get("link") and f.get("height", 0) >= 540 and f.get("width", 0) >= 540]
                     if files:
                         best = min(files, key=lambda f: abs(f.get("width", 0) * f.get("height", 0) - 1080 * 1920))
