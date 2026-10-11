@@ -417,14 +417,15 @@
       "title": "لغز محطة أبحاث ديزرت هيلز",
       "hook": "في شتاء عام 1985، سجلت محطة أبحاث ديزرت هيلز في أستراليا رسالة راديوية غامضة من قلب الصحراء، لتختفي بعدها أي أثر لطاقمها بالكامل.",
       "region": "أستراليا",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "لغز محطة أبحاث ديزرت هيلز",
-      "story_type": "unexplained_event",
-      "reservation_id": "613d4f85bdc4446c9796863cbc64cbfb",
       "reserved_at": "2026-10-11T13:51:15Z",
       "run_id": "38129665443",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "unexplained_event",
+      "reservation_id": "613d4f85bdc4446c9796863cbc64cbfb",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-11T13:51:32Z"
     }
   ]
 }
