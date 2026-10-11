@@ -380,7 +380,9 @@ def _run() -> None:
             print(f"⏭️  {path.name}: تخطي — لا توجد قناة {platform_hint} معرّفة (لم يُرفع الملف)")
             continue
         url = upload_media(path, github_token)
-        due_at = iso_after(FULL_VIDEO_DELAY_HOURS)
+        # Respect the three-day publication slot computed by the workflow.
+        # Manual immediate publishing retains the workflow's explicit due time.
+        due_at = scheduled_publish_utc().isoformat().replace("+00:00", "Z") if os.environ.get("PUBLISH_DUE_AT") else iso_after(FULL_VIDEO_DELAY_HOURS)
         print(f"📤 {path.name} → {due_at} UTC")
         for cid in ids:
             service = services[cid]
