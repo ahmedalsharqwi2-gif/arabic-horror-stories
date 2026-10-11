@@ -493,7 +493,7 @@ def align_words_with_whisper(audio_path: Path, script_words: list[str]) -> list[
             }
 
     known_indices = [i for i, t in enumerate(timings) if t is not None]
-    if not known_indices or len(known_indices) < len(script_words) * 0.5:
+    if not known_indices or len(known_indices) < len(script_words) * 0.85:
         raise RuntimeError(
             f"تطابق ضعيف جدًا: {len(known_indices)}/{len(script_words)} كلمة فقط"
         )
@@ -566,18 +566,9 @@ def synthesize_voice(voice_text: str) -> None:
     try:
         all_word_events = align_words_with_whisper(VOICE_AUDIO, display_words)
     except Exception as exc:  # noqa: BLE001
-        # Whisper can under-recognize Arabic even when the ASR gate confirms
-        # the audio is valid. Keep the run alive with Edge WordBoundary timing
-        # instead of dropping an otherwise publishable episode.
-        print(f"⚠️ تعذرت محاذاة Whisper ({exc}) — استخدام توقيت Edge الاحتياطي.")
-        all_word_events = _build_word_events_from_edge_tts(segments)
-        if not all_word_events:
-            duration = probe_duration(VOICE_AUDIO)
-            per_word = duration / max(len(display_words), 1)
-            all_word_events = [
-                {"text": word, "offset": index * per_word, "duration": per_word}
-                for index, word in enumerate(display_words)
-            ]
+        raise RuntimeError(
+            f"رفض النشر: لا توجد مزامنة موثوقة بين الصوت والكلمات ({exc})"
+        ) from exc
 
     if not all_word_events:
         sys.exit("❌ تعذر إنشاء توقيت الترجمة.")
