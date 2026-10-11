@@ -460,7 +460,9 @@ def align_words_with_whisper(audio_path: Path, script_words: list[str]) -> list[
     (difflib) بين الكلمتين بعد تطبيع كل منهما. أي كلمة من السكريبت لم
     يتعرّف عليها Whisper بثقة تأخذ توقيتًا تقريبيًا من أقرب كلمتين
     متطابقتين قبلها وبعدها، بدل أن تُفقد."""
-    segments = _cached_whisper_segments(audio_path)
+    # Prefer the stronger ASR transcript for timing when the base model misses
+    # Arabic words; both models are already cached by the pronunciation gate.
+    segments = _cached_whisper_segments(audio_path, ASR_FALLBACK_MODEL_SIZE)
 
     whisper_words: list[tuple[str, float, float]] = []
     for segment in segments:
