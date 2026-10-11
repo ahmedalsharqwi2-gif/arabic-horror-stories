@@ -124,6 +124,9 @@ jobs:
           # Load the latest topic/clip history after the preceding job finishes.
           ref: main
 
+      - name: Validate Python syntax before expensive production
+        run: python3 -m compileall -q scripts arabic_speech_core
+
       - name: Restore inspected cinematic scenes
         if: ${{ env.CINEMATIC_ENABLED == 'true' }}
         uses: actions/cache/restore@v4
