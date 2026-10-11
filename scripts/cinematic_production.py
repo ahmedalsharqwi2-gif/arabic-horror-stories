@@ -261,6 +261,15 @@ SCENE_SEARCH_FALLBACKS = {
         "dark stairwell flashlight",
         "empty room night window shadows",
     ),
+    "scene_009": (
+        "abandoned corridor dim light",
+        "old empty hallway deep shadows",
+        "dusty interior doorway moonlight",
+        "dark stairwell flashlight",
+        "empty room night window shadows",
+        "old wooden door dark hallway",
+        "empty abandoned house interior",
+    ),
 }
 
 
