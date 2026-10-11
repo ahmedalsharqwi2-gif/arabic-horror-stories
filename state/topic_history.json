@@ -406,11 +406,25 @@
       "source": "workflow",
       "event_identity": "غموض مرصد فالبارايسو البحري",
       "reserved_at": "2026-10-11T01:15:55Z",
+      "published_at": "2026-10-11T01:16:17Z",
       "run_id": "38100421136",
       "story_type": "unexplained_event",
       "reservation_id": "a1cec9f95f8d4602ae221818e6dee004",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-11T01:16:17Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "9967de5d3129963c25b5",
+      "title": "لغز محطة أبحاث ديزرت هيلز",
+      "hook": "في شتاء عام 1985، سجلت محطة أبحاث ديزرت هيلز في أستراليا رسالة راديوية غامضة من قلب الصحراء، لتختفي بعدها أي أثر لطاقمها بالكامل.",
+      "region": "أستراليا",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "لغز محطة أبحاث ديزرت هيلز",
+      "story_type": "unexplained_event",
+      "reservation_id": "613d4f85bdc4446c9796863cbc64cbfb",
+      "reserved_at": "2026-10-11T13:51:15Z",
+      "run_id": "38129665443",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
