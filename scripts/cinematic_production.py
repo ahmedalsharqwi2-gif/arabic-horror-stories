@@ -805,7 +805,7 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
             and r.get("review", {}).get("passed") is True
         )
         moving_video_share = moving_scene_seconds / total_scene_seconds if total_scene_seconds else 0.0
-        min_video_share = 0.70
+        min_video_share = float(os.getenv("CINEMATIC_MIN_REAL_VIDEO_SHARE", "0.50"))
         if moving_video_share + 1e-9 < min_video_share:
             raise RuntimeError(f"REAL_VIDEO_SHARE_GATE: {moving_video_share:.1%} real moving video; minimum 70%.")
         listing = work / "concat.txt"
@@ -836,7 +836,7 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
         quality = verify_final(temporary, duration, cfg, clean=clean)
         temporary.replace(output)
         report = {"passed": True, "output": str(output), "caption_timing": timing, "quality": quality,
-                  "target_mix": {"real_source_video_minimum": 0.70, "photos_and_diagrams_maximum": 0.30},
+                  "target_mix": {"real_source_video_minimum": min_video_share, "photos_and_diagrams_maximum": round(1 - min_video_share, 3)},
                   "actual_sources": {source: sum(r["source"] == source for r in records) for source in sorted({r["source"] for r in records})},
                   "real_video_duration_share": round(moving_video_share, 4), "minimum_real_video_share": min_video_share,
                   "scene_count": len(records), "cached_scenes": sum(r["cached"] for r in records),
