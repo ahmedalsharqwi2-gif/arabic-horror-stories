@@ -538,7 +538,9 @@ def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) 
     # Stock slots try at most two actual sources; every candidate still gets reviewed.
     options = candidates(scene, cfg) if cfg.get("free_only", True) or scene["kind"] == "stock" else iter(())
     models = [] if cfg.get("free_only", True) else list(dict.fromkeys([cfg["image_model"], cfg["image_fallback_model"]]))
-    # Bound inspection work to protect the free-tier quota and scheduled slot.\n    max_visual_attempts = max(1, int(os.getenv("CINEMATIC_MAX_VISUAL_ATTEMPTS", "12")))\n    for attempt in itertools.islice(itertools.chain(options, ({"model": model, "image": True, "source": "generated_image", "license": "AI illustration"} for model in models if model)), max_visual_attempts):
+    # Bound inspection work to protect the free-tier quota and scheduled slot.
+    max_visual_attempts = max(1, int(os.getenv("CINEMATIC_MAX_VISUAL_ATTEMPTS", "12")))
+    for attempt in itertools.islice(itertools.chain(options, ({"model": model, "image": True, "source": "generated_image", "license": "AI illustration"} for model in models if model)), max_visual_attempts):
         source = cache / f"{digest}.{'png' if attempt['image'] else 'source.mp4'}"
         try:
             if attempt.get("model"):
