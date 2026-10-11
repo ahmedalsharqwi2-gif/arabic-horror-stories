@@ -200,7 +200,7 @@ jobs:
           # Whisper can miss diacritics and proper names; keep empty/
           # foreign-audio checks while allowing minor alignment differences.
           ASR_MIN_MATCH_RATIO: "0.60"
-          EDGE_TTS_RATE: "-15%"
+          EDGE_TTS_RATE: "-20%"
           EDGE_TTS_PITCH: "-3Hz"
         run: python scripts/generate_voice.py
 
