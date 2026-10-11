@@ -218,7 +218,9 @@ jobs:
           SILMA_GUARD_ENABLED: "true"
           SILMA_GUARD_MIN_MATCH_WORDS: "3"
           SILMA_FALLBACK_TO_EDGE: "true"
-          WHISPER_MODEL: "base"
+          # One stronger model for both speech verification and caption timing;
+          # avoid loading/transcribing the same audio with two models.
+          WHISPER_MODEL: "small"
           ASR_FALLBACK_MODEL: "small"
           # Whisper can miss diacritics and proper names; keep empty/
           # foreign-audio checks while allowing minor alignment differences.
@@ -296,7 +298,7 @@ jobs:
       # أمان بدل ما ننتظر فشل النشر فعليًا. يشتغل دايمًا (always())، حتى
       # لو الخطوة اللي فاتت فشلت، عشان يفضل يقرأ آخر تاريخ نجاح معروف.
       - name: Check YouTube token age
-        if: always()
+        if: ${{ success() && inputs.dry_run != true }}
         continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -332,7 +334,7 @@ jobs:
           exit 1
 
       - name: Preserve clip review candidates
-        if: ${{ failure() }}
+        if: ${{ failure() && env.CINEMATIC_ENABLED != 'true' }}
         uses: actions/upload-artifact@v4
         with:
           name: clip-review-candidates
@@ -346,7 +348,8 @@ jobs:
           retention-days: 3
 
       - name: Save inspected cinematic scenes even after a failed run
-        if: ${{ always() && env.CINEMATIC_ENABLED == 'true' }}
+        # Avoid uploading multi-GB cache when narration failed before montage.
+        if: ${{ always() && env.CINEMATIC_ENABLED == 'true' && hashFiles('state/cinematic_scene_manifest.json') != '' }}
         uses: actions/cache/save@v4
         with:
           path: .cinematic_cache
