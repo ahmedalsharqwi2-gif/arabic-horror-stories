@@ -462,14 +462,15 @@
       "title": "لغز سفينة ماديسون المهجورة",
       "hook": "في خريف عام 1974، عُثر على سفينة بضائع تجارية تحوم بلا توجيه في دلتا نهر المسيسيبي، وطاقمها مفقود بالكامل.",
       "region": "الولايات المتحدة الأمريكية",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "سفينة ماديسون المهجورة",
-      "story_type": "true_case",
-      "reservation_id": "cb49d5b6c63e4931a941df7fa89e992b",
       "reserved_at": "2026-10-12T22:22:15Z",
       "run_id": "38314857681",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "cb49d5b6c63e4931a941df7fa89e992b",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-12T22:22:29Z"
     }
   ]
 }
