@@ -421,11 +421,25 @@
       "source": "workflow",
       "event_identity": "لغز محطة أبحاث ديزرت هيلز",
       "reserved_at": "2026-10-11T13:51:15Z",
+      "published_at": "2026-10-11T13:51:32Z",
       "run_id": "38129665443",
       "story_type": "unexplained_event",
       "reservation_id": "613d4f85bdc4446c9796863cbc64cbfb",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-11T13:51:32Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "d195d5417d63c509dc9a",
+      "title": "غموض قضية منارة دوفر البريطانية",
+      "hook": "في شتاء عام 1988، دخل حارسا منارة دوفر البريطانية غرفة التحكم، ليختفيا تمامًا دون ترك أي أثر وسط عاصفة.",
+      "region": "بريطانيا",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "اختفاء حارسي منارة دوفر",
+      "story_type": "true_case",
+      "reservation_id": "e991bab36c4a4790b1f9246d71c2caa2",
+      "reserved_at": "2026-10-12T02:37:49Z",
+      "run_id": "38195507300",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
