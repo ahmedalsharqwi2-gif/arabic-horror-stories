@@ -89,7 +89,8 @@ jobs:
               print(f"Stock publication slot: {due_at} UTC")
               raise SystemExit(0)
           if os.environ.get("PUBLISH_NOW", "false").lower() == "true":
-              target = datetime.now(timezone.utc) + timedelta(minutes=2)
+              # Reserve enough time for voice synthesis, montage and upload before Buffer scheduling.
+              target = datetime.now(timezone.utc) + timedelta(minutes=90)
               due_at = target.isoformat(timespec="seconds").replace("+00:00", "Z")
               print(f"Immediate catch-up publication slot: {due_at} UTC")
               with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as env_file:
