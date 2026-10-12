@@ -363,6 +363,9 @@ def _run() -> None:
             "بالكامل: " + ", ".join(sorted(missing_services))
         )
 
+    from scripts.publication_state import accepted_receipt, require_services
+    if os.getenv("PUBLICATION_RECEIPTS_ENABLED", "false").lower() == "true":
+        require_services({CHANNEL_SERVICES[cid] for cid in ids if CHANNEL_SERVICES[cid] != "youtube"})
     org_id = organization_id(api_key) if ENABLE_PREFLIGHT_CHECK else None
     services = {cid: CHANNEL_SERVICES[cid] for cid in ids}
     full_urls = {}
@@ -399,6 +402,10 @@ def _run() -> None:
                 # "Video must be no longer than 3 minutes / must be vertical
                 # for YouTube Shorts".
                 print("  ⏭️  youtube: يُنشر بشكل منفصل عبر publish_youtube_direct.py (تم التخطي هنا)")
+                continue
+            if accepted_receipt(service):
+                print(f"  Already accepted {service}; reusing stored receipt")
+                successes += 1
                 continue
             try:
                 if org_id is not None and pending_count(org_id, cid, api_key) >= CHANNEL_PENDING_LIMIT:

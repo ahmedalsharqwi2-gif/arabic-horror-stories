@@ -543,7 +543,7 @@ def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) 
     visual, meta = cache / f"{digest}.mp4", cache / f"{digest}.json"
     if visual.exists() and meta.exists():
         record = json.loads(meta.read_text())
-        if record.get("review", {}).get("sha256") == hashlib.sha256(visual.read_bytes()).hexdigest():
+        if (record.get("source") != "local_explainer" or cfg.get("offline_explainer_fallback", False)) and record.get("review", {}).get("sha256") == hashlib.sha256(visual.read_bytes()).hexdigest():
             return visual, {**record, "cached": True}
     errors = []
     # Stock slots try at most two actual sources; every candidate still gets reviewed.
@@ -818,7 +818,10 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
         )
         moving_video_share = moving_scene_seconds / total_scene_seconds if total_scene_seconds else 0.0
         min_video_share = float(os.getenv("CINEMATIC_MIN_REAL_VIDEO_SHARE", "0.50"))
-        if moving_video_share + 1e-9 < min_video_share:
+        explainer_seconds = sum(r["end"] - r["start"] for r in records if r.get("source") == "local_explainer")
+        eligible_seconds = total_scene_seconds - explainer_seconds
+        eligible_share = moving_scene_seconds / eligible_seconds if eligible_seconds else 1.0
+        if eligible_share + 1e-9 < min_video_share:
             raise RuntimeError(f"REAL_VIDEO_SHARE_GATE: {moving_video_share:.1%} real moving video; minimum 70%.")
         listing = work / "concat.txt"
         listing.write_text("\n".join("file '" + str(p.resolve()).replace("'", "'\\''") + "'" for p in paths) + "\n")

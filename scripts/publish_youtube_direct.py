@@ -184,6 +184,12 @@ def upload_video(youtube, video_path: Path, title: str, description: str) -> str
 
 def main() -> int:
     try:
+        from scripts.publication_state import accepted_receipt, require_services
+        if accepted_receipt("youtube"):
+            print("YouTube already accepted this slot; reusing stored receipt")
+            return 0
+        if os.getenv("PUBLICATION_RECEIPTS_ENABLED", "false").lower() == "true":
+            require_services({"youtube"})
         if not VIDEO_PATH.exists() or VIDEO_PATH.stat().st_size == 0:
             raise RuntimeError(f"الفيديو الكامل غير موجود: {VIDEO_PATH}")
         title, description = load_title_and_description()
