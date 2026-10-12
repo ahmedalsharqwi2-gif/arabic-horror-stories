@@ -555,6 +555,11 @@ def synthesize_google_sentences(sentences: list[str]) -> list[dict]:
 
 async def synthesize_with_recovery(sentences: list[str]) -> tuple[list[dict], str]:
     """One local fallback when Edge cannot produce audio; no provider retry loop."""
+    if os.getenv("PREFER_FREE_GOOGLE_TTS", "false").lower() == "true":
+        try:
+            return await asyncio.to_thread(synthesize_google_sentences, sentences), "google_free"
+        except Exception as exc:
+            print(f"Preferred free Arabic TTS unavailable: {type(exc).__name__}")
     try:
         return await synthesize_sentences(sentences), TTS_ENGINE
     except Exception as exc:
