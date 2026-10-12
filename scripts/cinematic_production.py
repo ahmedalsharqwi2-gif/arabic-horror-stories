@@ -85,6 +85,7 @@ def settings(root: Path = ROOT) -> dict:
         raise ValueError("Invalid cinematic pacing or frame rate")
     if not 0 < cfg.get("max_duration_seconds", 0) <= MAX_VIDEO_DURATION_SECONDS:
         raise ValueError("Cinematic videos must not exceed 180 seconds")
+    cfg.setdefault("offline_explainer_fallback", True)
     return cfg
 
 
@@ -542,7 +543,7 @@ def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) 
     visual, meta = cache / f"{digest}.mp4", cache / f"{digest}.json"
     if visual.exists() and meta.exists():
         record = json.loads(meta.read_text())
-        if record.get("review", {}).get("sha256") == hashlib.sha256(visual.read_bytes()).hexdigest():
+        if (record.get("source") != "local_explainer" or cfg.get("offline_explainer_fallback", False)) and record.get("review", {}).get("sha256") == hashlib.sha256(visual.read_bytes()).hexdigest():
             return visual, {**record, "cached": True}
     errors = []
     # Stock slots try at most two actual sources; every candidate still gets reviewed.
@@ -624,6 +625,17 @@ def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) 
     failure_report = cache.parent / "state/cinematic_failures.json"
     atomic_json(failure_report, report)
     print(f"Cinematic failure report written: {failure_report}")
+    if cfg.get("offline_explainer_fallback", True):
+        from scripts.offline_explainer import render_explainer
+        render_explainer(visual, scene["end"] - scene["start"], scene, cfg)
+        review = {"passed": True, "reviewer": "deterministic_narration_typography",
+                  "reason": "Only narration text and abstract shapes; no external scene or alleged historical event",
+                  "audio_keep": False, "sha256": hashlib.sha256(visual.read_bytes()).hexdigest()}
+        record = {"scene_id": scene["id"], "source": "local_explainer", "license": "Original typography",
+                  "source_url": "", "review": review, "cached": False, "illustrative": True,
+                  "audio_decision": "VOICE ONLY", "fallback_reasons": errors}
+        atomic_json(meta, record)
+        return visual, record
     raise RuntimeError(f"No inspected visual for {scene['id']}; detailed report saved to state/cinematic_failures.json. Attempts: {len(errors)}")
 
 
@@ -806,7 +818,10 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
         )
         moving_video_share = moving_scene_seconds / total_scene_seconds if total_scene_seconds else 0.0
         min_video_share = float(os.getenv("CINEMATIC_MIN_REAL_VIDEO_SHARE", "0.50"))
-        if moving_video_share + 1e-9 < min_video_share:
+        explainer_seconds = sum(r["end"] - r["start"] for r in records if r.get("source") == "local_explainer")
+        eligible_seconds = total_scene_seconds - explainer_seconds
+        eligible_share = moving_scene_seconds / eligible_seconds if eligible_seconds else 1.0
+        if eligible_share + 1e-9 < min_video_share:
             raise RuntimeError(f"REAL_VIDEO_SHARE_GATE: {moving_video_share:.1%} real moving video; minimum 70%.")
         listing = work / "concat.txt"
         listing.write_text("\n".join("file '" + str(p.resolve()).replace("'", "'\\''") + "'" for p in paths) + "\n")

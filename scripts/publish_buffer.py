@@ -97,6 +97,9 @@ def publish_target_utc(hour: int = 19) -> datetime:
 
 def scheduled_publish_utc(default_hour: int = 19) -> datetime:
     """Use the workflow's exact final slot when one was computed."""
+    from scripts.publication_state import immediate_requested
+    if immediate_requested():
+        return datetime.now(timezone.utc) + timedelta(minutes=2)
     raw = os.environ.get("PUBLISH_DUE_AT", "").strip()
     if raw:
         parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
@@ -360,6 +363,9 @@ def _run() -> None:
             "بالكامل: " + ", ".join(sorted(missing_services))
         )
 
+    from scripts.publication_state import accepted_receipt, require_services
+    if os.getenv("PUBLICATION_RECEIPTS_ENABLED", "false").lower() == "true":
+        require_services({CHANNEL_SERVICES[cid] for cid in ids if CHANNEL_SERVICES[cid] != "youtube"})
     org_id = organization_id(api_key) if ENABLE_PREFLIGHT_CHECK else None
     services = {cid: CHANNEL_SERVICES[cid] for cid in ids}
     full_urls = {}
@@ -397,12 +403,19 @@ def _run() -> None:
                 # for YouTube Shorts".
                 print("  ⏭️  youtube: يُنشر بشكل منفصل عبر publish_youtube_direct.py (تم التخطي هنا)")
                 continue
+            if accepted_receipt(service):
+                print(f"  Already accepted {service}; reusing stored receipt")
+                successes += 1
+                continue
             try:
                 if org_id is not None and pending_count(org_id, cid, api_key) >= CHANNEL_PENDING_LIMIT:
                     raise RuntimeError(f"قائمة Buffer ممتلئة ({CHANNEL_PENDING_LIMIT}) للقناة {service}")
                 text = build_post_text(service, asset_type, title, caption, full_urls.get(service))
                 post = create_post(url, text, title, cid, api_key, due_at, asset_type)
                 print(f"  ✅ {service}: {post.get('id')} عند {post.get('dueAt', due_at)}")
+                if os.getenv("PUBLICATION_RECEIPTS_ENABLED", "false").lower() == "true":
+                    from scripts.publication_state import record_receipt
+                    record_receipt(service, post.get("id"), due_at)
                 successes += 1
             except Exception as exc:
                 failures.append((path.name, service, str(exc)))
@@ -411,6 +424,8 @@ def _run() -> None:
     print(f"نجاح النشر: {successes}")
     for item in failures:
         print("فشل:", " | ".join(item))
+    if failures:
+        raise RuntimeError("Some configured channels did not accept publication")
     if successes == 0:
         raise RuntimeError("لم ينجح نشر أي أصل.")
 
@@ -419,7 +434,8 @@ def main() -> int:
     try:
         _run()
     except Exception as exc:
-        print(f"⚠️ Buffer publishing skipped (non-fatal; remaining workflow continues): {exc}")
+        print(f"❌ Buffer publication failed: {exc}")
+        return 1
     return 0
 if __name__ == "__main__":
     raise SystemExit(main())
