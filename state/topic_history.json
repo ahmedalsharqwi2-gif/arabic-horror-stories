@@ -451,11 +451,25 @@
       "source": "workflow",
       "event_identity": "غموض سفينة ماريا سلبينا الأرجنتينية",
       "reserved_at": "2026-10-12T21:33:21Z",
+      "published_at": "2026-10-12T21:33:36Z",
       "run_id": "38309524506",
       "story_type": "unexplained_event",
       "reservation_id": "7873ca66a1224222ad2c846af7538a57",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-12T21:33:36Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "5c51d8f8f3ba193cfc5a",
+      "title": "لغز سفينة ماديسون المهجورة",
+      "hook": "في خريف عام 1974، عُثر على سفينة بضائع تجارية تحوم بلا توجيه في دلتا نهر المسيسيبي، وطاقمها مفقود بالكامل.",
+      "region": "الولايات المتحدة الأمريكية",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "سفينة ماديسون المهجورة",
+      "story_type": "true_case",
+      "reservation_id": "cb49d5b6c63e4931a941df7fa89e992b",
+      "reserved_at": "2026-10-12T22:22:15Z",
+      "run_id": "38314857681",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
