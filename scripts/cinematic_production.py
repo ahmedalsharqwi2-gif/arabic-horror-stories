@@ -548,9 +548,11 @@ def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) 
     errors = []
     # Stock slots try at most two actual sources; every candidate still gets reviewed.
     options = candidates(scene, cfg) if cfg.get("free_only", True) or scene["kind"] == "stock" else iter(())
+    if cfg.get("free_only", True) and (budget.episode.get("free_calls", 0) >= cfg["max_free_calls"] or budget.row.get("free_calls", 0) >= cfg["max_daily_free_calls"]):
+        options = iter(())
     models = [] if cfg.get("free_only", True) else list(dict.fromkeys([cfg["image_model"], cfg["image_fallback_model"]]))
     # Bound inspection work to protect the free-tier quota and scheduled slot.
-    max_visual_attempts = max(1, int(os.getenv("CINEMATIC_MAX_VISUAL_ATTEMPTS", "12")))
+    max_visual_attempts = max(1, int(os.getenv("CINEMATIC_MAX_VISUAL_ATTEMPTS", "2")))
     # Round-robin search phrases instead of letting the first phrase consume
     # every review slot. Preserve scene-specific review for every candidate.
     for attempt in itertools.islice(itertools.chain(options, ({"model": model, "image": True, "source": "generated_image", "license": "AI illustration"} for model in models if model)), max_visual_attempts):
@@ -805,8 +807,10 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
     atomic_json(root / "state/cinematic_storyboard.json", {"episode_id": episode_id, "profile": cfg["profile"], "scenes": scenes})
     records, paths = [], []
     try:
-        for scene in scenes:
+        for scene_index, scene in enumerate(scenes, 1):
+            print(f"Cinematic scene {scene_index}/{len(scenes)}: acquiring reviewed media", flush=True)
             visual, record = acquire(scene, episode, cfg, budget, cache)
+            print(f"Cinematic scene {scene_index}/{len(scenes)} ready: {record.get('source')}", flush=True)
             paths.append(visual)
             records.append({**scene, **record, "file": str(visual)})
             atomic_json(root / "state/cinematic_scene_manifest.json", records)
