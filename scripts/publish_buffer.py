@@ -206,7 +206,7 @@ def upload_media(video_path: Path, token: str) -> str:
         )
     release_response.raise_for_status()
     release = release_response.json()
-    asset_name = f"video_{video_path.stem}_{os.environ.get('GITHUB_RUN_ID', 'local')}.mp4"
+    asset_name = f"video_{video_path.stem}_{(os.environ.get('PRODUCTION_MEDIA_ID') or os.environ.get('GITHUB_RUN_ID', 'local'))}.mp4"
     with video_path.open("rb") as handle:
         response = requests.post(
             release["upload_url"].split("{")[0], headers={**github_headers(token), "Content-Type": "video/mp4"},
