@@ -144,7 +144,10 @@ def load_title_and_description() -> tuple[str, str]:
 
 def upload_video(youtube, video_path: Path, title: str, description: str) -> str:
     status: dict = {"selfDeclaredMadeForKids": YT_MADE_FOR_KIDS}
-    if FULL_VIDEO_DELAY_HOURS > 0:
+    from scripts.publication_state import immediate_requested
+    if immediate_requested():
+        status["privacyStatus"] = "public"
+    elif FULL_VIDEO_DELAY_HOURS > 0:
         # جدولة نشر مؤجَّلة: يوتيوب بيطلب privacyStatus="private" مع
         # publishAt (ISO 8601)، وبيحوّل الفيديو تلقائيًا لـpublic في
         # الموعد المحدد بالظبط — الفيديو مش هيكون مرئي لحد ده الموعد.
@@ -196,9 +199,13 @@ def main() -> int:
             print(f"⚠️ YouTube أعاد HTTP {status}؛ إعادة تجديد التوكن والمحاولة مرة واحدة")
             credentials = load_credentials()
             video_id = upload_video(build("youtube", "v3", credentials=credentials), VIDEO_PATH, title, description)
-        print(f"✅ تم النشر بنجاح: https://youtu.be/{video_id}")
+        if os.getenv("PUBLICATION_RECEIPTS_ENABLED", "false").lower() == "true":
+            from scripts.publication_state import record_receipt
+            record_receipt("youtube", video_id, os.getenv("PUBLISH_DUE_AT"))
+        print(f"✅ تم قبول فيديو يوتيوب: https://youtu.be/{video_id}")
     except Exception as exc:
-        print(f"⚠️ نشر YouTube غير متاح في هذه الجولة (غير قاتل؛ سيُستكمل باقي الـworkflow): {exc}")
+        print(f"❌ YouTube publication failed: {exc}")
+        return 1
     return 0
 if __name__ == "__main__":
     raise SystemExit(main())

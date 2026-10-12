@@ -34,7 +34,7 @@ class CinematicTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         (self.root/'config').mkdir()
         self.cfg = cp.settings()
-        self.cfg.update(width=360, height=640, fps=30, scene_seconds=3,
+        self.cfg.update(width=360, height=640, fps=30, scene_seconds=3, offline_explainer_fallback=False,
                         episode_budget_usd=.20, daily_budget_usd=.25, free_request_interval_seconds=0)
         (self.root/'config/cinematic_production.json').write_text(json.dumps(self.cfg))
         (self.root/'config/cinematic_sfx.json').write_text('{}')

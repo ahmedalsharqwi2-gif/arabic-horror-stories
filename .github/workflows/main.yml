@@ -26,7 +26,7 @@ on:
 # Actions v5/v6 already target Node.js 24. Keep this explicit so GitHub does
 # not fall back to the deprecated Node.js 20 runtime for any transitive action.
 env:
-  CINEMATIC_ENABLED: ${{ vars.CINEMATIC_ENABLED || 'true' }}
+  CINEMATIC_ENABLED: 'true'
   # Free-only production: repository variables cannot unlock paid endpoints.
   CINEMATIC_FREE_ONLY: 'true'
   CINEMATIC_PAID_ENABLED: 'false'
@@ -71,6 +71,8 @@ jobs:
 
   build-and-publish:
     env:
+      PUBLICATION_RECEIPTS_ENABLED: 'true'
+      PUBLISH_IMMEDIATE: ${{ inputs.publish_now && matrix.date == '' }}
       PRODUCTION_MEDIA_ID: ${{ format('{0}-{1}-{2}', github.run_id, matrix.date, matrix.hour) }}
     needs: plan_slots
     strategy:
@@ -183,7 +185,7 @@ jobs:
           LLM_FALLBACK_ENDPOINT: ${{ vars.LLM_FALLBACK_ENDPOINT || 'https://api.groq.com/openai/v1/chat/completions' }}
           LLM_FALLBACK_MODEL: ${{ vars.LLM_FALLBACK_MODEL || vars.GROQ_MODEL || 'openai/gpt-oss-120b' }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL || 'openai/gpt-oss-120b' }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_API_KEY: ''
           MODEL_POLICY_FILE: config/model_policy.json
         run: python scripts/model_preflight.py
 
@@ -194,7 +196,7 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GROQ_MODEL: ${{ vars.GROQ_MODEL || 'openai/gpt-oss-120b' }}
           GEMINI_THINKING_BUDGET: "0"
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_API_KEY: ''
           # Gemini -> Groq first; OpenRouter is the last resort because its
           # free quota may be exhausted and must not delay every episode.
           PREFER_OPENROUTER: "false"
@@ -224,13 +226,6 @@ jobs:
           test -f state/current_episode.json || { echo "TEXT_GATE: episode artifact missing"; exit 1; }
           TEXT=$(python -c "import json; print(json.load(open('state/current_episode.json', encoding='utf-8')).get('narration',''))")
           python -m arabic_speech_core.cli preflight --text "$TEXT" --engine edge --locale ar-SA --voice "$EDGE_TTS_VOICE" --lexicon config/arabic_pronunciation.json --min-words 20 --max-words 1200
-
-      - name: Fetch suitable stock clips (legacy economical path)
-        if: ${{ env.CINEMATIC_ENABLED != 'true' }}
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
-        run: python scripts/fetch_clips.py
 
       - name: Generate complete narration with automatic SILMA horror voice and vertical subtitles
         env:
@@ -284,6 +279,8 @@ jobs:
         run: python scripts/topic_history.py reserve --file state/topic_history.json --episode state/current_episode.json
 
       - name: Publish the complete video only
+        id: publish_buffer
+        continue-on-error: true
         if: ${{ inputs.dry_run != true }}
         env:
           BUFFER_API_KEY: ${{ secrets.BUFFER_API_KEY }}
@@ -304,6 +301,8 @@ jobs:
       # FULL_VIDEO_DELAY_HOURS لازم تكون نفس قيمة الخطوة اللي فاتت، عشان
       # يوتيوب ينشر في نفس توقيت باقي المنصات (والريل) مساءً.
       - name: Publish full video directly to YouTube
+        id: publish_youtube
+        continue-on-error: true
         if: ${{ inputs.dry_run != true }}
         env:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
@@ -312,6 +311,13 @@ jobs:
           YT_REFRESH_TOKEN_FALLBACK: ${{ secrets.YT_REFRESH_TOKEN_FALLBACK }}
           FULL_VIDEO_DELAY_HOURS: "8"
         run: python scripts/publish_youtube_direct.py
+
+      - name: Confirm actual publication receipts
+        if: ${{ !inputs.dry_run }}
+        env:
+          BUFFER_OUTCOME: ${{ steps.publish_buffer.outcome }}
+          YOUTUBE_OUTCOME: ${{ steps.publish_youtube.outcome }}
+        run: python scripts/publication_state.py confirm
 
       - name: Mark topic as published in repository history
         if: ${{ inputs.dry_run != true }}
@@ -331,6 +337,7 @@ jobs:
         run: python scripts/check_youtube_token_age.py
 
       - name: Upload generated media artifacts
+        if: ${{ always() && hashFiles('output/final_video_full.mp4') != '' }}
         continue-on-error: true
         uses: actions/upload-artifact@v6
         with:
@@ -340,24 +347,6 @@ jobs:
             state/current_episode.json
           retention-days: 14
           if-no-files-found: error
-
-      - name: Commit clip tracking state only
-        run: |
-          git config user.name "content-bot"
-          git config user.email "bot@users.noreply.github.com"
-          git add state/used_clips.json state/yt_token_last_success.json
-          if git diff --cached --quiet; then
-            echo "لا يوجد تغيير في حالة الكليبات"
-            exit 0
-          fi
-          git commit -m "chore: update used clips tracking [skip ci]"
-          for attempt in 1 2 3 4 5; do
-            git pull --rebase --autostash origin main && git push && exit 0
-            echo "إعادة محاولة push رقم $attempt"
-            sleep $((attempt * 5))
-          done
-          echo "فشل push بعد 5 محاولات"
-          exit 1
 
       - name: Preserve clip review candidates
         if: ${{ failure() && env.CINEMATIC_ENABLED != 'true' }}
@@ -381,17 +370,21 @@ jobs:
           path: .cinematic_cache
           key: cinematic-v1-${{ github.repository_id }}-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.date }}-${{ matrix.hour }}
 
-      - name: Persist cinematic cost reservations even after failure
-        if: ${{ always() && env.CINEMATIC_ENABLED == 'true' }}
+      - name: Persist confirmed stock and production counters
+        if: always()
         run: |
-          if [ ! -f state/cinematic_budget.json ]; then exit 0; fi
           git config user.name 'content-bot'
           git config user.email 'bot@users.noreply.github.com'
-          git add state/cinematic_budget.json
+          for path in state/publication_stock.json state/cinematic_budget.json state/yt_token_last_success.json state/used_clips.json; do
+            if [ -f "$path" ]; then git add "$path"; fi
+          done
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'chore: persist cinematic cost reservations [skip ci]'
-          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          git commit -m 'chore: persist publication receipts and counters [skip ci]'
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin main && git push origin HEAD:main; then exit 0; fi
+            sleep $((attempt * 5))
+          done
+          exit 1
 
       - name: Preserve cinematic storyboard and quality evidence
         if: ${{ always() && env.CINEMATIC_ENABLED == 'true' }}
@@ -404,5 +397,6 @@ jobs:
             state/cinematic_quality_report.json
             state/cinematic_failures.json
             state/cinematic_budget.json
+            state/publication_stock.json
           if-no-files-found: ignore
           retention-days: 14
