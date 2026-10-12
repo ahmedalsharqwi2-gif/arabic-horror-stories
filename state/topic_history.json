@@ -432,14 +432,15 @@
       "title": "غموض قضية منارة دوفر البريطانية",
       "hook": "في شتاء عام 1988، دخل حارسا منارة دوفر البريطانية غرفة التحكم، ليختفيا تمامًا دون ترك أي أثر وسط عاصفة.",
       "region": "بريطانيا",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "اختفاء حارسي منارة دوفر",
-      "story_type": "true_case",
-      "reservation_id": "e991bab36c4a4790b1f9246d71c2caa2",
       "reserved_at": "2026-10-12T02:37:49Z",
       "run_id": "38195507300",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "e991bab36c4a4790b1f9246d71c2caa2",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-12T02:38:01Z"
     }
   ]
 }
