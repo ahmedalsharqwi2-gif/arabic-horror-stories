@@ -436,11 +436,25 @@
       "source": "workflow",
       "event_identity": "اختفاء حارسي منارة دوفر",
       "reserved_at": "2026-10-12T02:37:49Z",
+      "published_at": "2026-10-12T02:38:01Z",
       "run_id": "38195507300",
       "story_type": "true_case",
       "reservation_id": "e991bab36c4a4790b1f9246d71c2caa2",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-12T02:38:01Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "2fcc9eb7b3f95539b373",
+      "title": "غموض سفينة ماريا سلبينا الأرجنتينية",
+      "hook": "في عام 1926، عثر على سفينة شحن أرجنتينية مهجورة في مياه الأطلسي، وبداخلها طعام دافئ على الطاولات لكن دون أي أثر لطاقمها.",
+      "region": "المحيط الأطلسي",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "غموض سفينة ماريا سلبينا الأرجنتينية",
+      "story_type": "unexplained_event",
+      "reservation_id": "7873ca66a1224222ad2c846af7538a57",
+      "reserved_at": "2026-10-12T21:33:21Z",
+      "run_id": "38309524506",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
