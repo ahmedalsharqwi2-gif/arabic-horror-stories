@@ -536,6 +536,23 @@ def align_words_with_whisper(audio_path: Path, script_words: list[str]) -> list[
     return timings
 
 
+def synthesize_google_sentences(sentences: list[str]) -> list[dict]:
+    from scripts.free_tts_fallback import google_arabic_voice
+    segments = []
+    for index, sentence in enumerate(sentences):
+        path = CLIPS_DIR / f"_google_full_{index:03d}.mp3"
+        google_arabic_voice(sentence, path)
+        segments.append({"path": path, "duration": probe_duration(path), "events": None,
+                         "sentence": sentence, "is_silence": False})
+        if index < len(sentences) - 1:
+            pause = pause_duration_for(sentence)
+            pause_path = CLIPS_DIR / f"_google_pause_{index:03d}.mp3"
+            build_silence_clip(pause, pause_path)
+            segments.append({"path": pause_path, "duration": pause, "events": None,
+                             "sentence": None, "is_silence": True})
+    return segments
+
+
 async def synthesize_with_recovery(sentences: list[str]) -> tuple[list[dict], str]:
     """One local fallback when Edge cannot produce audio; no provider retry loop."""
     try:
@@ -543,7 +560,12 @@ async def synthesize_with_recovery(sentences: list[str]) -> tuple[list[dict], st
     except Exception as exc:
         if TTS_ENGINE != "edge" or os.getenv("EDGE_FALLBACK_TO_SILMA", "true").lower() != "true":
             raise
-        print(f"⚠️ Edge audio unavailable ({type(exc).__name__}); using local SILMA.")
+        print(f"⚠️ Edge audio unavailable ({type(exc).__name__}); using an independent free fallback.")
+        if os.getenv("FREE_GOOGLE_TTS_ENABLED", "false").lower() == "true":
+            try:
+                return await asyncio.to_thread(synthesize_google_sentences, sentences), "google_free"
+            except Exception as google_exc:
+                print(f"Free Google Arabic voice unavailable: {type(google_exc).__name__}")
         # Resolve an existing reference rather than silently using a missing/default clip.
         configure_silma_voice_profile()
         return await synthesize_sentences(sentences, "silma"), "silma"
