@@ -102,7 +102,7 @@ class Budget:
             # Reuse the existing free-tier text/vision key; no media-generation endpoint.
             # Historical failed retries must not block all subsequent free episodes.
             # Provider HTTP quota errors remain enforced; paid endpoints stay disabled.
-            if self.episode.get("free_calls", 0) >= self.cfg["max_free_calls"]:
+            if self.episode.get("free_calls", 0) >= self.cfg["max_free_calls"] or self.row.get("free_calls", 0) >= self.cfg["max_daily_free_calls"]:
                 return False
             self.episode["free_calls"] = self.episode.get("free_calls", 0) + 1
             self.row["free_calls"] = self.row.get("free_calls", 0) + 1

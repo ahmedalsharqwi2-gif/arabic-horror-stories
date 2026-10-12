@@ -536,17 +536,30 @@ def align_words_with_whisper(audio_path: Path, script_words: list[str]) -> list[
     return timings
 
 
+async def synthesize_with_recovery(sentences: list[str]) -> tuple[list[dict], str]:
+    """One local fallback when Edge cannot produce audio; no provider retry loop."""
+    try:
+        return await synthesize_sentences(sentences), TTS_ENGINE
+    except Exception as exc:
+        if TTS_ENGINE != "edge" or os.getenv("EDGE_FALLBACK_TO_SILMA", "true").lower() != "true":
+            raise
+        print(f"⚠️ Edge audio unavailable ({type(exc).__name__}); using local SILMA.")
+        # Resolve an existing reference rather than silently using a missing/default clip.
+        configure_silma_voice_profile()
+        return await synthesize_sentences(sentences, "silma"), "silma"
+
+
 def synthesize_voice(voice_text: str) -> None:
     sentences = split_sentences(voice_text)
     if not sentences:
         sys.exit("❌ النص فارغ ولا يمكن إنشاء صوت.")
-    segments = asyncio.run(synthesize_sentences(sentences))
+    segments, engine_used = asyncio.run(synthesize_with_recovery(sentences))
     inputs: list[str] = []
     for segment in segments:
         inputs += ["-i", str(segment["path"])]
     concat_filter = "".join(f"[{i}:a]" for i in range(len(segments))) + f"concat=n={len(segments)}:v=0:a=1[aout]"
     run(["ffmpeg", "-y", *inputs, "-filter_complex", concat_filter, "-map", "[aout]", "-c:a", "libmp3lame", "-b:a", "192k", str(VOICE_AUDIO)])
-    if TTS_ENGINE == "silma":
+    if engine_used == "silma":
         try:
             leak = detect_silma_reference_leak(VOICE_AUDIO)
         except Exception as exc:  # Whisper unavailable/download failure: fail safe to Edge.
