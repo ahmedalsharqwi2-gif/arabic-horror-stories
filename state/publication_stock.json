@@ -1,0 +1,33 @@
+{
+  "slots": {
+    "immediate 38309524506--": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6acd52293d6121df402eecc9",
+          "due_at": "2026-10-12T21:35:28.851194Z",
+          "run_id": "38309524506",
+          "accepted_at": "2026-10-12T21:33:29.753342+00:00"
+        },
+        "instagram": {
+          "id": "6acd522aa36dd8518130abfa",
+          "due_at": "2026-10-12T21:35:28.851194Z",
+          "run_id": "38309524506",
+          "accepted_at": "2026-10-12T21:33:30.791236+00:00"
+        },
+        "youtube": {
+          "id": "N3DuAnnT90U",
+          "due_at": "2026-10-12T22:46:04Z",
+          "run_id": "38309524506",
+          "accepted_at": "2026-10-12T21:33:35.970022+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-12T21:33:36.061231+00:00"
+    }
+  }
+}
