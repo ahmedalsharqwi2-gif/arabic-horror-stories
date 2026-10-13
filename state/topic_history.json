@@ -481,11 +481,25 @@
       "source": "workflow",
       "event_identity": "اختفاء رحلة ستارداست فوق الأنديز",
       "reserved_at": "2026-10-13T00:48:13Z",
+      "published_at": "2026-10-13T00:48:23Z",
       "run_id": "38327958685",
       "story_type": "unexplained_event",
       "reservation_id": "eec23b1af5b34318a0b05f5d2bfef708",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-13T00:48:23Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "9377f2b68e742a4d4e49",
+      "title": "غموض قضية محطة قطار ليون في فرنسا",
+      "hook": "في شتاء عام 1983، توقف قطار ليون السريع في محطة خالية تمامًا من الركاب، ليختفي سائقه دون ترك أي أثر على القضبان الحديدية.",
+      "region": "فرنسا",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "اختفاء سائق قطار ليون 1983",
+      "story_type": "true_case",
+      "reservation_id": "9281db2e28a747b5a712dd1e58ef221b",
+      "reserved_at": "2026-10-13T06:58:56Z",
+      "run_id": "38358386966",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
