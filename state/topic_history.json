@@ -537,14 +537,15 @@
       "title": "غموض قضية منارة كيب فير",
       "hook": "في شتاء عام 1920، وجد فريق التفتيش منارة كيب فير خالية تمامًا، بينما كانت نيران الموقد مشتعلة والملابس معلقة دون أثر لطاقمها.",
       "region": "الولايات المتحدة",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "اختفاء حراس منارة كيب فير 1920",
-      "story_type": "true_case",
-      "reservation_id": "0b000d23817e48da84bf12bd8c62b5e1",
       "reserved_at": "2026-10-13T20:45:35Z",
       "run_id": "38464355755",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "0b000d23817e48da84bf12bd8c62b5e1",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-13T20:45:43Z"
     }
   ]
 }
