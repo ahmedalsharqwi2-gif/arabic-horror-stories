@@ -492,14 +492,15 @@
       "title": "غموض قضية محطة قطار ليون في فرنسا",
       "hook": "في شتاء عام 1983، توقف قطار ليون السريع في محطة خالية تمامًا من الركاب، ليختفي سائقه دون ترك أي أثر على القضبان الحديدية.",
       "region": "فرنسا",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "اختفاء سائق قطار ليون 1983",
-      "story_type": "true_case",
-      "reservation_id": "9281db2e28a747b5a712dd1e58ef221b",
       "reserved_at": "2026-10-13T06:58:56Z",
       "run_id": "38358386966",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "9281db2e28a747b5a712dd1e58ef221b",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-13T06:59:06Z"
     }
   ]
 }
