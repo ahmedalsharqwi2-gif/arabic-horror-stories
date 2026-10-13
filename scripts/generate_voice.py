@@ -537,21 +537,14 @@ def align_words_with_whisper(audio_path: Path, script_words: list[str]) -> list[
     return timings
 
 
-def synthesize_google_sentences(sentences: list[str]) -> list[dict]:
+def synthesize_google_sentences(sentences: list[str], *, slow: bool = False) -> list[dict]:
     from scripts.free_tts_fallback import google_arabic_voice
-    segments = []
-    for index, sentence in enumerate(sentences):
-        path = CLIPS_DIR / f"_google_full_{index:03d}.mp3"
-        google_arabic_voice(sentence, path)
-        segments.append({"path": path, "duration": probe_duration(path), "events": None,
-                         "sentence": sentence, "is_silence": False})
-        if index < len(sentences) - 1:
-            pause = pause_duration_for(sentence)
-            pause_path = CLIPS_DIR / f"_google_pause_{index:03d}.mp3"
-            build_silence_clip(pause, pause_path)
-            segments.append({"path": pause_path, "duration": pause, "events": None,
-                             "sentence": None, "is_silence": True})
-    return segments
+    # Provider punctuation supplies pauses; do not add silence per sentence.
+    sentence = " ".join(sentences)
+    path = CLIPS_DIR / "_google_full_000.mp3"
+    google_arabic_voice(sentence, path, slow=slow)
+    return [{"path": path, "duration": probe_duration(path), "events": None,
+             "sentence": sentence, "is_silence": False}]
 
 
 async def synthesize_with_recovery(sentences: list[str]) -> tuple[list[dict], str]:
