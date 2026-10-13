@@ -526,11 +526,25 @@
       "source": "workflow",
       "event_identity": "تحطم رحلة إيسترن إيرلاينز رقم 401",
       "reserved_at": "2026-10-13T16:00:42Z",
+      "published_at": "2026-10-13T16:00:53Z",
       "run_id": "38418483279",
       "story_type": "true_case",
       "reservation_id": "a4387bf6c3d14eda97077a6491410e14",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-13T16:00:53Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "4f1b4153dcb9892b3aa2",
+      "title": "غموض قضية منارة كيب فير",
+      "hook": "في شتاء عام 1920، وجد فريق التفتيش منارة كيب فير خالية تمامًا، بينما كانت نيران الموقد مشتعلة والملابس معلقة دون أثر لطاقمها.",
+      "region": "الولايات المتحدة",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "اختفاء حراس منارة كيب فير 1920",
+      "story_type": "true_case",
+      "reservation_id": "0b000d23817e48da84bf12bd8c62b5e1",
+      "reserved_at": "2026-10-13T20:45:35Z",
+      "run_id": "38464355755",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
