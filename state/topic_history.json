@@ -496,11 +496,25 @@
       "source": "workflow",
       "event_identity": "اختفاء سائق قطار ليون 1983",
       "reserved_at": "2026-10-13T06:58:56Z",
+      "published_at": "2026-10-13T06:59:06Z",
       "run_id": "38358386966",
       "story_type": "true_case",
       "reservation_id": "9281db2e28a747b5a712dd1e58ef221b",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-13T06:59:06Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "8c457874d4f933b70d87",
+      "title": "غموض منارة تيلين الأيرلندية",
+      "hook": "في شتاء عام 1972، وجد خفر السواحل الأيرلندي أبواب منارة تيلين مغلقة من الداخل، وطاقمها مفقود تمامًا دون أي أثر.",
+      "region": "أيرلندا",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "غموض منارة تيلين الأيرلندية",
+      "story_type": "unexplained_event",
+      "reservation_id": "a6bdf50d10494b80aebf7776b00326b9",
+      "reserved_at": "2026-10-13T07:14:09Z",
+      "run_id": "38359980646",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
