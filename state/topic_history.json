@@ -522,14 +522,15 @@
       "title": "غموض طائرة إيسترن إيرلاينز الرحلة 401",
       "hook": "في ليلة 29 ديسمبر 1972، تحطمت طائرة إيسترن إيرلاينز في مستنقعات إيفرجليدز، ليظهر ناجون جدد من طاقمها الراحل على رحلات أخرى لاحقًا.",
       "region": "الولايات المتحدة الأمريكية",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "تحطم رحلة إيسترن إيرلاينز رقم 401",
-      "story_type": "true_case",
-      "reservation_id": "a4387bf6c3d14eda97077a6491410e14",
       "reserved_at": "2026-10-13T16:00:42Z",
       "run_id": "38418483279",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "a4387bf6c3d14eda97077a6491410e14",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-13T16:00:53Z"
     }
   ]
 }
