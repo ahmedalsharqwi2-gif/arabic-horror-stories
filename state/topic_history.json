@@ -477,14 +477,15 @@
       "title": "غموض رحلة طائرة الأرجنتين المفقودة",
       "hook": "في عام 1951، اختفت طائرة ركاب تجارية فوق جبال الأنديز تمامًا، ولم يظهر لها أي أثر على شاشات الرادار منذ تلك اللحظة.",
       "region": "الأرجنتين",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "اختفاء رحلة ستارداست فوق الأنديز",
-      "story_type": "unexplained_event",
-      "reservation_id": "eec23b1af5b34318a0b05f5d2bfef708",
       "reserved_at": "2026-10-13T00:48:13Z",
       "run_id": "38327958685",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "unexplained_event",
+      "reservation_id": "eec23b1af5b34318a0b05f5d2bfef708",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-13T00:48:23Z"
     }
   ]
 }
