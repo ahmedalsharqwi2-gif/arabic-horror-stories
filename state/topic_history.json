@@ -552,14 +552,15 @@
       "title": "لغز السفينة المهجورة ديلاسي",
       "hook": "في شتاء عام 1925، حامت سفينة تجارية عملاقة بلا توجيه في الأطلسي، وبداخلها طعام دافئ دون أثر لطاقمها.",
       "region": "المحيط الأطلسي",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "لغز السفينة المهجورة ديلاسي",
-      "story_type": "true_case",
-      "reservation_id": "2d3288cea85c447fa94f10f9de21e508",
       "reserved_at": "2026-10-14T16:00:49Z",
       "run_id": "38590422256",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "2d3288cea85c447fa94f10f9de21e508",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-14T16:01:03Z"
     }
   ]
 }
