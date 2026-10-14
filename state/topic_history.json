@@ -567,14 +567,15 @@
       "title": "غموض محطة قطار أوساكا المفقودة",
       "hook": "في شتاء عام 1982، وصل قطار أوساكا إلى محطة مهجورة لا تظهر على أي خريطة رسمية، ليختفي ركابه الستون في ظروف غامضة تمامًا.",
       "region": "اليابان",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "غموض محطة قطار أوساكا المفقودة",
-      "story_type": "unexplained_event",
-      "reservation_id": "2c42c4de5fff4ffda0e831b5d2bec77f",
       "reserved_at": "2026-10-14T19:15:01Z",
       "run_id": "38619881175",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "unexplained_event",
+      "reservation_id": "2c42c4de5fff4ffda0e831b5d2bec77f",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-14T19:15:11Z"
     }
   ]
 }
