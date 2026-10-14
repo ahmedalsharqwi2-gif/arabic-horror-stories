@@ -582,14 +582,15 @@
       "title": "لغز اختفاء طاقم سفينة إم في ليو",
       "hook": "في عام ألف وتسعمائة وستين، عُثر على سفينة شحن إم في ليو تهيم في مياه البحر الكاريبي، وبداخلها طعام طازج تمامًا دون أي أثر لطاقمها.",
       "region": "البحر الكاريبي",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "لغز اختفاء طاقم سفينة إم في ليو",
-      "story_type": "true_case",
-      "reservation_id": "9366855c545b491ab0047ac8eca45442",
       "reserved_at": "2026-10-14T22:37:01Z",
       "run_id": "38646392716",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "9366855c545b491ab0047ac8eca45442",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-14T22:37:19Z"
     }
   ]
 }
