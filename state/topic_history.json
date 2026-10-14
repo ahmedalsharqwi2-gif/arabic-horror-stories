@@ -541,11 +541,25 @@
       "source": "workflow",
       "event_identity": "اختفاء حراس منارة كيب فير 1920",
       "reserved_at": "2026-10-13T20:45:35Z",
+      "published_at": "2026-10-13T20:45:43Z",
       "run_id": "38464355755",
       "story_type": "true_case",
       "reservation_id": "0b000d23817e48da84bf12bd8c62b5e1",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-13T20:45:43Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "5f4f4f0afc0521e56fc7",
+      "title": "لغز السفينة المهجورة ديلاسي",
+      "hook": "في شتاء عام 1925، حامت سفينة تجارية عملاقة بلا توجيه في الأطلسي، وبداخلها طعام دافئ دون أثر لطاقمها.",
+      "region": "المحيط الأطلسي",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "لغز السفينة المهجورة ديلاسي",
+      "story_type": "true_case",
+      "reservation_id": "2d3288cea85c447fa94f10f9de21e508",
+      "reserved_at": "2026-10-14T16:00:49Z",
+      "run_id": "38590422256",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
