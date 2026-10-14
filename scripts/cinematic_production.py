@@ -505,7 +505,7 @@ def candidates(scene: dict, cfg: dict):
                 response = requests.get("https://api.pexels.com/videos/search", headers={"Authorization": key},
                     params={"query": query, "per_page": 12}, timeout=(10, 20))
                 response.raise_for_status()
-                for video in (response.json() or {}).get("videos", [])[:1]:
+                for video in (response.json() or {}).get("videos", [])[:2]:
                     files = [f for f in video.get("video_files", []) if f.get("link") and f.get("height", 0) >= 540 and f.get("width", 0) >= 540]
                     if files:
                         best = min(files, key=lambda f: abs(f.get("width", 0) * f.get("height", 0) - 1080 * 1920))
@@ -514,6 +514,8 @@ def candidates(scene: dict, cfg: dict):
                             yield {"url": best["link"], "image": False, "source": "pexels", "license": "Pexels", "source_url": video.get("url", "")}
             except (requests.RequestException, ValueError, KeyError):
                 print(f"Stock search unavailable for query: {query}")
+    # Exhaust moving footage across scene-specific queries before still images.
+    for query in queries:
         if key:
             try:
                 response = requests.get("https://api.pexels.com/v1/search", headers={"Authorization": key},
@@ -538,7 +540,7 @@ def candidates(scene: dict, cfg: dict):
 
 def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) -> tuple[Path, dict]:
     seconds = scene["end"] - scene["start"]
-    identity = json.dumps({"scene": scene, "context": episode, "profile": cfg["profile"], "dimensions": [cfg["width"], cfg["height"], cfg["fps"]], "models": [cfg["image_model"], cfg["image_fallback_model"], cfg["review_model"]]}, ensure_ascii=False, sort_keys=True)
+    identity = json.dumps({"acquisition_policy": "video-first-v2", "scene": scene, "context": episode, "profile": cfg["profile"], "dimensions": [cfg["width"], cfg["height"], cfg["fps"]], "models": [cfg["image_model"], cfg["image_fallback_model"], cfg["review_model"]]}, ensure_ascii=False, sort_keys=True)
     digest = hashlib.sha256(identity.encode()).hexdigest()[:24]
     visual, meta = cache / f"{digest}.mp4", cache / f"{digest}.json"
     if visual.exists() and meta.exists():
@@ -552,7 +554,7 @@ def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) 
         options = iter(())
     models = [] if cfg.get("free_only", True) else list(dict.fromkeys([cfg["image_model"], cfg["image_fallback_model"]]))
     # Bound inspection work to protect the free-tier quota and scheduled slot.
-    max_visual_attempts = max(1, int(os.getenv("CINEMATIC_MAX_VISUAL_ATTEMPTS", "2")))
+    max_visual_attempts = max(1, int(os.getenv("CINEMATIC_MAX_VISUAL_ATTEMPTS", "6")))
     # Round-robin search phrases instead of letting the first phrase consume
     # every review slot. Preserve scene-specific review for every candidate.
     for attempt in itertools.islice(itertools.chain(options, ({"model": model, "image": True, "source": "generated_image", "license": "AI illustration"} for model in models if model)), max_visual_attempts):
@@ -826,7 +828,7 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
         eligible_seconds = total_scene_seconds - explainer_seconds
         eligible_share = moving_scene_seconds / eligible_seconds if eligible_seconds else 1.0
         if eligible_share + 1e-9 < min_video_share:
-            raise RuntimeError(f"REAL_VIDEO_SHARE_GATE: {moving_video_share:.1%} real moving video; minimum 70%.")
+            raise RuntimeError(f"REAL_VIDEO_SHARE_GATE: {moving_video_share:.1%} real moving video; minimum {min_video_share:.0%} of non-explainer scenes.")
         listing = work / "concat.txt"
         listing.write_text("\n".join("file '" + str(p.resolve()).replace("'", "'\\''") + "'" for p in paths) + "\n")
         clean = output.with_name("cinematic_clean.mp4")
