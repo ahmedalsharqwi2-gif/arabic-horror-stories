@@ -571,11 +571,25 @@
       "source": "workflow",
       "event_identity": "غموض محطة قطار أوساكا المفقودة",
       "reserved_at": "2026-10-14T19:15:01Z",
+      "published_at": "2026-10-14T19:15:11Z",
       "run_id": "38619881175",
       "story_type": "unexplained_event",
       "reservation_id": "2c42c4de5fff4ffda0e831b5d2bec77f",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-14T19:15:11Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "b7703c092385315f6b3a",
+      "title": "لغز اختفاء طاقم سفينة إم في ليو",
+      "hook": "في عام ألف وتسعمائة وستين، عُثر على سفينة شحن إم في ليو تهيم في مياه البحر الكاريبي، وبداخلها طعام طازج تمامًا دون أي أثر لطاقمها.",
+      "region": "البحر الكاريبي",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "لغز اختفاء طاقم سفينة إم في ليو",
+      "story_type": "true_case",
+      "reservation_id": "9366855c545b491ab0047ac8eca45442",
+      "reserved_at": "2026-10-14T22:37:01Z",
+      "run_id": "38646392716",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
