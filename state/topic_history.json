@@ -627,14 +627,15 @@
       "title": "غموض السفينة كارول ديرنج",
       "hook": "في شتاء عام 1921، عُثر على السفينة كارول ديرنج جانحة وفي داخلها وجبات طعام ساخنة دون أثر لطاقمها.",
       "region": "الولايات المتحدة",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "Carroll A. Deering Disappearance",
-      "story_type": "unexplained_event",
-      "reservation_id": "9a203e6d3a2f4c4d83d9b0c445df4d96",
       "reserved_at": "2026-10-15T10:26:33Z",
       "run_id": "38718267472",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "unexplained_event",
+      "reservation_id": "9a203e6d3a2f4c4d83d9b0c445df4d96",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-15T10:26:47Z"
     }
   ]
 }
