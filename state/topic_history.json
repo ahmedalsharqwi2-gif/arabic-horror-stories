@@ -586,11 +586,25 @@
       "source": "workflow",
       "event_identity": "لغز اختفاء طاقم سفينة إم في ليو",
       "reserved_at": "2026-10-14T22:37:01Z",
+      "published_at": "2026-10-14T22:37:19Z",
       "run_id": "38646392716",
       "story_type": "true_case",
       "reservation_id": "9366855c545b491ab0047ac8eca45442",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-14T22:37:19Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "40f9a56baee7bfd3d54c",
+      "title": "غموض قضية محطة طبرق المنسية",
+      "hook": "في شتاء عام 1974، رصدت محطة طبرق العسكرية إشارة لاسلكية غامضة تتكرر كل منتصف ليلة، لكن مصدرها كان غرفة فارغة تماما من الأجهزة.",
+      "region": "ليبيا",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "غموض قضية محطة طبرق المنسية",
+      "story_type": "unexplained_event",
+      "reservation_id": "354f59e4296d41d9b8b303643478585f",
+      "reserved_at": "2026-10-15T00:57:31Z",
+      "run_id": "38661073193",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
