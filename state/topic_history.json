@@ -657,14 +657,15 @@
       "title": "لغز اختفاء سفينة ليرغ البرمودية",
       "hook": "في عام 1925، اختفت سفينة الشحن العملاقة إم في ليرغ في عرض المحيط، ولم يتبق سوى سجل بحري مفتوح على صفحة فارغة.",
       "region": "المحيط الأطلسي",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "لغز اختفاء سفينة ليرغ البرمودية",
-      "story_type": "true_case",
-      "reservation_id": "d1bbbe5f5da64650b4db1d1dfd3fd73a",
       "reserved_at": "2026-10-15T20:23:11Z",
       "run_id": "38800464249",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "d1bbbe5f5da64650b4db1d1dfd3fd73a",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-15T20:23:19Z"
     }
   ]
 }
