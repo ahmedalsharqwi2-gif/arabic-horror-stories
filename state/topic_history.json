@@ -631,11 +631,25 @@
       "source": "workflow",
       "event_identity": "Carroll A. Deering Disappearance",
       "reserved_at": "2026-10-15T10:26:33Z",
+      "published_at": "2026-10-15T10:26:47Z",
       "run_id": "38718267472",
       "story_type": "unexplained_event",
       "reservation_id": "9a203e6d3a2f4c4d83d9b0c445df4d96",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-15T10:26:47Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "cec22515f76e13b544c6",
+      "title": "ألغاز المحطة القطبية المنسية",
+      "hook": "في شتاء عام 1991، عثر فريق الإغاثة على محطة أبحاث قطبية في سيبيريا فارغة تمامًا بينما كانت أجهزة التدفئة والطعام الدافئ تعمل بانتظام.",
+      "region": "روسيا",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "اختفاء طاقم محطة الأبحاث القطبية بسيبيريا",
+      "story_type": "true_case",
+      "reservation_id": "c267228a24b2469a908f5a72681f484d",
+      "reserved_at": "2026-10-15T15:20:34Z",
+      "run_id": "38757677287",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
