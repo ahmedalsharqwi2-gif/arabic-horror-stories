@@ -642,14 +642,15 @@
       "title": "ألغاز المحطة القطبية المنسية",
       "hook": "في شتاء عام 1991، عثر فريق الإغاثة على محطة أبحاث قطبية في سيبيريا فارغة تمامًا بينما كانت أجهزة التدفئة والطعام الدافئ تعمل بانتظام.",
       "region": "روسيا",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "اختفاء طاقم محطة الأبحاث القطبية بسيبيريا",
-      "story_type": "true_case",
-      "reservation_id": "c267228a24b2469a908f5a72681f484d",
       "reserved_at": "2026-10-15T15:20:34Z",
       "run_id": "38757677287",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "c267228a24b2469a908f5a72681f484d",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-15T15:20:45Z"
     }
   ]
 }
