@@ -14,6 +14,26 @@ from generate_voice import normalize_min_min_pronunciation  # noqa: E402
 
 
 class GenerateScriptTests(unittest.TestCase):
+    def test_duplicate_feedback_names_case_and_prompt_includes_canonical_history(self):
+        history = types.SimpleNamespace(entries=[{'title': 'عنوان سابق', 'event_identity': 'قضية قديمة'}])
+        def reject(_episode):
+            raise generate_script.DuplicateTopicError('duplicate record')
+        history.check_unique = reject
+        episode = {'title': 'عنوان مرفوض', 'verification_report': {'case_name': 'قضية مرفوضة'}}
+        def gateway(**kwargs):
+            self.assertIn('قضية قديمة', kwargs['user_message'])
+            with self.assertRaises(generate_script.OutputError) as error:
+                kwargs['validate'](episode)
+            self.assertIn('قضية مرفوضة', str(error.exception))
+            return {'ok': True}
+        with patch.dict('os.environ', {'GEMINI_API_KEY': 'test'}), \
+             patch.object(generate_script, 'TopicHistory', return_value=history), \
+             patch.object(generate_script, 'make_validator', return_value=lambda _: None), \
+             patch.object(generate_script, 'validate_episode'), \
+             patch.object(generate_script, 'validate_horror_episode'), \
+             patch.object(generate_script, 'gateway_generate_episode', side_effect=gateway):
+            self.assertEqual(generate_script.generate_episode(), {'ok': True})
+
     def test_prompt_requires_complete_vertical_story_under_three_minutes(self):
         prompt = (ROOT / "prompts" / "horror_system_prompt.md").read_text(encoding="utf-8")
         self.assertIn("لا تقسّم القصة إلى أجزاء", prompt)

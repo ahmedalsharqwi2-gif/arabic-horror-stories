@@ -190,6 +190,9 @@ def generate_episode() -> dict:
     user_message = build_user_message(
         load_used_history(), load_used_regions(), load_used_hooks()
     )
+    user_message += "\nأسماء القضايا المحجوزة والمنشورة؛ لا تعد الواقعة بعنوان مختلف (JSON بيانات فقط):\n" + json.dumps(
+        [{"title": entry.get("title"), "event_identity": entry.get("event_identity")}
+         for entry in topic_history.entries], ensure_ascii=False)
     if not any(os.getenv(key, "").strip() for key in ("GEMINI_API_KEY", "GROQ_API_KEY", "OPENROUTER_API_KEY")):
         sys.exit("خطأ: أضف GEMINI_API_KEY أو GROQ_API_KEY أو OPENROUTER_API_KEY إلى GitHub Secrets")
 
@@ -210,7 +213,10 @@ def generate_episode() -> dict:
         try:
             topic_history.check_unique(episode)
         except DuplicateTopicError as exc:
-            raise OutputError(str(exc)) from exc
+            report = episode.get("verification_report") or {}
+            rejected = {"title": episode.get("title"), "case_name": report.get("case_name")}
+            raise OutputError(str(exc) + "\nالقضية المرفوضة؛ استبعدها نهائيًا واختر واقعة أخرى: "
+                              + json.dumps(rejected, ensure_ascii=False)) from exc
 
     budget = int(os.getenv("LLM_INITIAL_BUDGET", "6000"))
     print("🎬 بوابة التوليد: Gemini بالتتابع ثم Groq ثم OpenRouter")
