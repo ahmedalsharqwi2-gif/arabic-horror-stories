@@ -661,11 +661,25 @@
       "source": "workflow",
       "event_identity": "لغز اختفاء سفينة ليرغ البرمودية",
       "reserved_at": "2026-10-15T20:23:11Z",
+      "published_at": "2026-10-15T20:23:19Z",
       "run_id": "38800464249",
       "story_type": "true_case",
       "reservation_id": "d1bbbe5f5da64650b4db1d1dfd3fd73a",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-15T20:23:19Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "947d3e21817dfafddcd5",
+      "title": "غموض منارة إيديستون البريطانية",
+      "hook": "في شتاء عام ألف وثمانية وثمانين وثلاثمائة، اختفى حارسا منارة إيديستون قبالة سواحل كورنوال تمامًا دون ترك أي أثر خلفهما.",
+      "region": "المملكة المتحدة",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "اختفاء حارسي منارة إيديستون 1890",
+      "story_type": "unexplained_event",
+      "reservation_id": "488c029ddc6849afa43ff7e5cf777b63",
+      "reserved_at": "2026-10-15T22:52:54Z",
+      "run_id": "38817453233",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
