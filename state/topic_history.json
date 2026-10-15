@@ -616,11 +616,25 @@
       "source": "workflow",
       "event_identity": "اختفاء حارسي منارة ميركوري",
       "reserved_at": "2026-10-15T05:56:26Z",
+      "published_at": "2026-10-15T05:56:35Z",
       "run_id": "38686287723",
       "story_type": "true_case",
       "reservation_id": "7a4dee228b1d4f56969c2882789fa3b4",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-15T05:56:35Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "7e859cc97d1ef28804cc",
+      "title": "غموض السفينة كارول ديرنج",
+      "hook": "في شتاء عام 1921، عُثر على السفينة كارول ديرنج جانحة وفي داخلها وجبات طعام ساخنة دون أثر لطاقمها.",
+      "region": "الولايات المتحدة",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "Carroll A. Deering Disappearance",
+      "story_type": "unexplained_event",
+      "reservation_id": "9a203e6d3a2f4c4d83d9b0c445df4d96",
+      "reserved_at": "2026-10-15T10:26:33Z",
+      "run_id": "38718267472",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
