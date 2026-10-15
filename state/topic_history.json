@@ -646,11 +646,25 @@
       "source": "workflow",
       "event_identity": "اختفاء طاقم محطة الأبحاث القطبية بسيبيريا",
       "reserved_at": "2026-10-15T15:20:34Z",
+      "published_at": "2026-10-15T15:20:45Z",
       "run_id": "38757677287",
       "story_type": "true_case",
       "reservation_id": "c267228a24b2469a908f5a72681f484d",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-15T15:20:45Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "2fcf275cb787f9247071",
+      "title": "لغز اختفاء سفينة ليرغ البرمودية",
+      "hook": "في عام 1925، اختفت سفينة الشحن العملاقة إم في ليرغ في عرض المحيط، ولم يتبق سوى سجل بحري مفتوح على صفحة فارغة.",
+      "region": "المحيط الأطلسي",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "لغز اختفاء سفينة ليرغ البرمودية",
+      "story_type": "true_case",
+      "reservation_id": "d1bbbe5f5da64650b4db1d1dfd3fd73a",
+      "reserved_at": "2026-10-15T20:23:11Z",
+      "run_id": "38800464249",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
