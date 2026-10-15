@@ -601,11 +601,25 @@
       "source": "workflow",
       "event_identity": "غموض قضية محطة طبرق المنسية",
       "reserved_at": "2026-10-15T00:57:31Z",
+      "published_at": "2026-10-15T00:57:44Z",
       "run_id": "38661073193",
       "story_type": "unexplained_event",
       "reservation_id": "354f59e4296d41d9b8b303643478585f",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-15T00:57:44Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "8ed3ccbedcf5f58f78cd",
+      "title": "غموض قضية منارة ميركوري السويسرية",
+      "hook": "في شتاء عام 1975، فتح حراس منارة ميركوري الجبلية بسويسرا الباب، ليختفيا تمامًا دون ترك أي أثر وسط عاصفة ثلجية.",
+      "region": "سويسرا",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "اختفاء حارسي منارة ميركوري",
+      "story_type": "true_case",
+      "reservation_id": "7a4dee228b1d4f56969c2882789fa3b4",
+      "reserved_at": "2026-10-15T05:56:26Z",
+      "run_id": "38686287723",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
