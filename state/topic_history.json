@@ -597,14 +597,15 @@
       "title": "غموض قضية محطة طبرق المنسية",
       "hook": "في شتاء عام 1974، رصدت محطة طبرق العسكرية إشارة لاسلكية غامضة تتكرر كل منتصف ليلة، لكن مصدرها كان غرفة فارغة تماما من الأجهزة.",
       "region": "ليبيا",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "غموض قضية محطة طبرق المنسية",
-      "story_type": "unexplained_event",
-      "reservation_id": "354f59e4296d41d9b8b303643478585f",
       "reserved_at": "2026-10-15T00:57:31Z",
       "run_id": "38661073193",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "unexplained_event",
+      "reservation_id": "354f59e4296d41d9b8b303643478585f",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-15T00:57:44Z"
     }
   ]
 }
