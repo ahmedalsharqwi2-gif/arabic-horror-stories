@@ -676,11 +676,25 @@
       "source": "workflow",
       "event_identity": "اختفاء حارسي منارة إيديستون 1890",
       "reserved_at": "2026-10-15T22:52:54Z",
+      "published_at": "2026-10-15T22:53:14Z",
       "run_id": "38817453233",
       "story_type": "unexplained_event",
       "reservation_id": "488c029ddc6849afa43ff7e5cf777b63",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-15T22:53:14Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "426ecb4aab481eed5228",
+      "title": "غموض السفينة جويت بيرس المفقودة",
+      "hook": "في أكتوبر من عام 1969، عثر خفر السواحل على سفينة جويت بيرس في الأطلسي، محركاتها تعمل وطاولاتها ممتلئة بالطعام، لكن طاقمها اختفى تمامًا.",
+      "region": "الولايات المتحدة",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "اختفاء طاقم سفينة جويت بيرس",
+      "story_type": "true_case",
+      "reservation_id": "a1a8f11ab8a14ac2869fc23803a5cd30",
+      "reserved_at": "2026-10-16T00:57:51Z",
+      "run_id": "38831087702",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
