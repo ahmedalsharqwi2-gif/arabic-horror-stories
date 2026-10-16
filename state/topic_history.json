@@ -706,11 +706,25 @@
       "source": "workflow",
       "event_identity": "اختفاء طاقم محطة طقس جبل هود 1978",
       "reserved_at": "2026-10-16T05:31:02Z",
+      "published_at": "2026-10-16T05:31:14Z",
       "run_id": "38854412720",
       "story_type": "unexplained_event",
       "reservation_id": "4a91338fc6c647a5b75bfdf811ac6264",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-16T05:31:14Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "a769bd3c715764e92aab",
+      "title": "غموض حادثة كهف دراجون في إسبانيا",
+      "hook": "في شتاء عام 1974، عثر فريق استكشاف داخل كهف دراجون بإسبانيا على معدات إضاءة تعمل وكاميرا مفتوحة، لكن أصحابها اختفوا تمامًا دون أي أثر.",
+      "region": "إسبانيا",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "اختفاء فريق الاستكشاف في كهف دراجون 1994",
+      "story_type": "true_case",
+      "reservation_id": "06209dbf4e914d4491b248a16f5d3d4e",
+      "reserved_at": "2026-10-16T22:00:46Z",
+      "run_id": "38970965447",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
