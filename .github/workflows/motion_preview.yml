@@ -6,6 +6,14 @@ on:
         description: 'Optional checked plan in this repository; blank uses a visual fixture'
         required: false
         default: ''
+      episode_path:
+        description: 'Optional checked episode JSON; builds the scene plan automatically'
+        required: false
+        default: ''
+      timings_path:
+        description: 'Real word alignment JSON or sentence SRT for the episode'
+        required: false
+        default: ''
       narration_path:
         description: 'Optional approved narration file; blank exports only a PNG'
         required: false
@@ -24,7 +32,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           repository: ahmedalsharqwi2-gif/science-discovery-shorts
-          ref: e6171c7160e624d41910752980dab057b81a2ef5
+          ref: d6d3b983e210b9d0778429e1cc0c007604700e67
           path: _motion_core
           persist-credentials: false
       - uses: actions/setup-node@v4
@@ -35,16 +43,23 @@ jobs:
       - run: sudo apt-get update -qq && sudo apt-get install -y fonts-noto-core ffmpeg
       - name: Export review artifact only
         env:
+          EPISODE_PATH: ${{ inputs.episode_path }}
+          TIMINGS_PATH: ${{ inputs.timings_path }}
           PLAN_PATH: ${{ inputs.plan_path }}
           NARRATION_PATH: ${{ inputs.narration_path }}
         run: |
           mkdir -p motion-preview
-          plan="${PLAN_PATH:-_motion_core/motion/examples/horror.json}"
-          node -e 'const p=JSON.parse(require("node:fs").readFileSync(process.argv[1],"utf8"));if(p.channel!==process.argv[2])throw Error("Plan belongs to another channel")' "$plan" "horror"
-          if [ -n "$NARRATION_PATH" ]; then
-            node _motion_core/motion/render.mjs --plan "$plan" --audio "$NARRATION_PATH" --font /usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf --out motion-preview/horror.mp4
+          if [ -n "$EPISODE_PATH" ]; then
+            [ -n "$TIMINGS_PATH" ] && [ -n "$NARRATION_PATH" ] || { echo 'Episode planning requires real timings and narration' >&2; exit 1; }
+            node _motion_core/motion/render.mjs --episode "$EPISODE_PATH" --timings "$TIMINGS_PATH" --channel horror --audio "$NARRATION_PATH" --save-plan motion-preview/plan.json --font /usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf --out motion-preview/horror.mp4
           else
-            node _motion_core/motion/render.mjs --plan "$plan" --frame 3 --font /usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf --out motion-preview/horror.png
+            plan="${PLAN_PATH:-_motion_core/motion/examples/horror.json}"
+            node -e 'const p=JSON.parse(require("node:fs").readFileSync(process.argv[1],"utf8"));if(p.channel!==process.argv[2])throw Error("Plan belongs to another channel")' "$plan" "horror"
+            if [ -n "$NARRATION_PATH" ]; then
+              node _motion_core/motion/render.mjs --plan "$plan" --channel horror --audio "$NARRATION_PATH" --font /usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf --out motion-preview/horror.mp4
+            else
+              node _motion_core/motion/render.mjs --plan "$plan" --frame 3 --font /usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf --out motion-preview/horror.png
+            fi
           fi
       - uses: actions/upload-artifact@v4
         with:

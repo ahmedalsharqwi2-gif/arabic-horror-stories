@@ -1,9 +1,13 @@
-# Shared channel motion preview
+# Shared horror motion preview
 
-The manual `Channel motion preview` workflow uses the shared renderer from science-discovery-shorts at pinned commit `e6171c7160e624d41910752980dab057b81a2ef5` (science PR #103). The shared engine owns Arabic headings, captions, timing validation and vertical MP4 export. This channel selects the `horror` scene module.
+This workflow uses the shared renderer and automatic narration planner pinned to science PR #103 at `d6d3b983e210b9d0778429e1cc0c007604700e67`.
 
-With blank inputs it exports a six-second visual fixture as a PNG. Supply a checked episode plan and a repository-local approved narration file to render a complete MP4. The plan must cover the real audio duration exactly, within the renderer's 120ms tolerance. No TTS provider is selected by this workflow.
+- With blank inputs, export a channel-specific visual fixture PNG.
+- With `episode_path`, `timings_path` and `narration_path`, build the scene plan automatically from the checked episode text and real audio alignment, then export MP4 and plan JSON.
+- Alternatively supply `plan_path` and optional `narration_path` for a prebuilt plan.
 
-This is a review path. It never invokes the publisher, reserves a topic, or writes publication receipts. Production still needs a source-checked plan adapter, approved Egyptian voice, full episode review, and visual quality checks appropriate to procedural scenes. The fixture is not a publishable episode.
+Episode JSON supplies `title`/`topic` and `narration`/`narration_script`. Timings are SRT sentence cues or JSON word records (`text,start,end` or `text,offset,duration`). Every narration word must match the timing text in order; the planner does not invent per-word timestamps. The channel is enforced.
 
-See the pinned core's `motion/README.md` for the input contract and scene types. Upgrade the shared SHA only after its renderer checks pass.
+TTS, factual checks, narration/ASR quality and duplicate reservation remain upstream. No publisher or stock file is invoked here. Production adoption requires exporting the existing pipeline's timing data into this contract, reviewing the approved Egyptian narration, checking the completed episode and enabling motion-specific visual checks before connecting to the current receipt-confirmed publisher.
+
+Science, history and horror share layout/timing/export, while their scene modules and data differ. Procedural templates do not provide unlimited fresh photoreal images or a match for an unknown TTS voice.
