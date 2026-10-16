@@ -1,0 +1,51 @@
+name: Channel motion preview
+on:
+  workflow_dispatch:
+    inputs:
+      plan_path:
+        description: 'Optional checked plan in this repository; blank uses a visual fixture'
+        required: false
+        default: ''
+      narration_path:
+        description: 'Optional approved narration file; blank exports only a PNG'
+        required: false
+        default: ''
+permissions:
+  contents: read
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Checkout the reviewed shared renderer
+        uses: actions/checkout@v6
+        with:
+          repository: ahmedalsharqwi2-gif/science-discovery-shorts
+          ref: e6171c7160e624d41910752980dab057b81a2ef5
+          path: _motion_core
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts
+        working-directory: _motion_core/motion
+      - run: sudo apt-get update -qq && sudo apt-get install -y fonts-noto-core ffmpeg
+      - name: Export review artifact only
+        env:
+          PLAN_PATH: ${{ inputs.plan_path }}
+          NARRATION_PATH: ${{ inputs.narration_path }}
+        run: |
+          mkdir -p motion-preview
+          plan="${PLAN_PATH:-_motion_core/motion/examples/horror.json}"
+          if [ -n "$NARRATION_PATH" ]; then
+            node _motion_core/motion/render.mjs --plan "$plan" --audio "$NARRATION_PATH" --font /usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf --out motion-preview/horror.mp4
+          else
+            node _motion_core/motion/render.mjs --plan "$plan" --frame 3 --font /usr/share/fonts/truetype/noto/NotoSansArabic-Regular.ttf --out motion-preview/horror.png
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: horror-motion-review
+          path: motion-preview/
