@@ -687,14 +687,15 @@
       "title": "غموض السفينة جويت بيرس المفقودة",
       "hook": "في أكتوبر من عام 1969، عثر خفر السواحل على سفينة جويت بيرس في الأطلسي، محركاتها تعمل وطاولاتها ممتلئة بالطعام، لكن طاقمها اختفى تمامًا.",
       "region": "الولايات المتحدة",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "اختفاء طاقم سفينة جويت بيرس",
-      "story_type": "true_case",
-      "reservation_id": "a1a8f11ab8a14ac2869fc23803a5cd30",
       "reserved_at": "2026-10-16T00:57:51Z",
       "run_id": "38831087702",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "true_case",
+      "reservation_id": "a1a8f11ab8a14ac2869fc23803a5cd30",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-16T00:58:09Z"
     }
   ]
 }
