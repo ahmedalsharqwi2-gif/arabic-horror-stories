@@ -691,11 +691,25 @@
       "source": "workflow",
       "event_identity": "اختفاء طاقم سفينة جويت بيرس",
       "reserved_at": "2026-10-16T00:57:51Z",
+      "published_at": "2026-10-16T00:58:09Z",
       "run_id": "38831087702",
       "story_type": "true_case",
       "reservation_id": "a1a8f11ab8a14ac2869fc23803a5cd30",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-16T00:58:09Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "c49e26d0893213291b8e",
+      "title": "غموض قضية محطة طقس جبل هود",
+      "hook": "في شتاء عام 1978، عثر فريق الإنقاذ على محطة طقس جبل هود الأمريكية فارغة تمامًا بينما كانت أجهزة الإرسال تعمل بانتظام.",
+      "region": "الولايات المتحدة",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "اختفاء طاقم محطة طقس جبل هود 1978",
+      "story_type": "unexplained_event",
+      "reservation_id": "4a91338fc6c647a5b75bfdf811ac6264",
+      "reserved_at": "2026-10-16T05:31:02Z",
+      "run_id": "38854412720",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
