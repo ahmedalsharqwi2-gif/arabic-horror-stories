@@ -224,8 +224,8 @@ jobs:
           LLM_REQUEST_TIMEOUT: "120"
           # Generate the complete standalone horror story for the single
           # vertical video; assembly and CI both enforce the 180-second cap.
-          NARRATION_WORDS_MIN: "150"
-          NARRATION_WORDS_MAX: "240"
+          NARRATION_WORDS_MIN: "240"
+          NARRATION_WORDS_MAX: "420"
           LLM_INITIAL_BUDGET: "8000"
           # Duplicate topics are rejected, then the next round is explicitly
           # required to choose a completely different incident and hook.

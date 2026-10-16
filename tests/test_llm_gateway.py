@@ -86,7 +86,7 @@ class LlmGatewayTests(unittest.TestCase):
             "caption": "قصة #رعب", "phonetic_hints": [],
             "verification_report": {}, "production_table": [], "authenticity_label": "REAL_EVENT", "final_checks": {"fact_check": "PASS", "visual_check": "PASS", "horror_check": "PASS", "authenticity_check": "PASS", "audio_check": "PASS", "subtitle_check": "PASS", "sensitivity_check": "PASS"},
         }
-        full = dict(short, narration="كلمة " * 230)
+        full = dict(short, narration="كلمة " * 240)
         calls = []
 
         # Use JSON so parse_episode_json receives a real object.
@@ -100,7 +100,7 @@ class LlmGatewayTests(unittest.TestCase):
             make_validator(), sleep=lambda _seconds: None,
         )
         self.assertEqual(label, "test")
-        self.assertEqual(len(episode["narration"].split()), 230)
+        self.assertEqual(len(episode["narration"].split()), 240)
         self.assertIn("كلمة", calls[1])
         self.assertIn("أضف", calls[1])
     def test_parse_episode_json_removes_fence_and_think_block(self):
@@ -127,7 +127,7 @@ class LlmGatewayTests(unittest.TestCase):
             "region": "الفضاء",
             "story_type": "science_fiction",
             "basis": "الاتصالات الراديوية",
-            "narration": " ".join(["إشارة"] * 230) + ".",
+            "narration": " ".join(["إشارة"] * 240) + ".",
             "visual_keywords": ["night radio station"] * 7,
             "visual_match": [{"keyword": "night radio station"}] * 7,
             "caption": "قصة رعب #رعب",
@@ -144,7 +144,7 @@ class LlmGatewayTests(unittest.TestCase):
             "region": "أتاكاما",
             "story_type": "true_case",
             "basis": "تقرير علمي منشور",
-            "narration": " ".join(["إشارة"] * 230) + ".",
+            "narration": " ".join(["إشارة"] * 240) + ".",
             "visual_keywords": ["night sky radio telescope"] * 7,
             "visual_match": [{"keyword": "night sky radio telescope"}] * 7,
             "caption": "قصة غامضة #رعب",

@@ -34,7 +34,8 @@ class CinematicTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         (self.root/'config').mkdir()
         self.cfg = cp.settings()
-        self.cfg.update(renderer="hybrid", width=360, height=640, fps=30, scene_seconds=3, offline_explainer_fallback=False,
+        self.cfg.update(renderer="hybrid", width=1080, height=1920, fps=30, scene_seconds=3, offline_explainer_fallback=False,
+                        min_motion_share=0.0, min_graphics_share=0.0, min_broll_share=0.0, min_duration_seconds=0.1,
                         episode_budget_usd=.20, daily_budget_usd=.25, free_request_interval_seconds=0)
         (self.root/'config/cinematic_production.json').write_text(json.dumps(self.cfg))
         (self.root/'config/cinematic_sfx.json').write_text('{}')
@@ -206,8 +207,10 @@ class CinematicTests(unittest.TestCase):
                 return Reply({'query':{'pages':{}}})
             return Reply(raw=image.read_bytes())
         env={'GEMINI_API_KEY':'fixture-free-key','PEXELS_API_KEY':'fixture-pexels-key','BACKGROUND_MUSIC_ENABLED':'false'}
+        self.cfg['min_broll_share']=0.20
+        (self.root/'config/cinematic_production.json').write_text(json.dumps(self.cfg))
         with patch.dict(os.environ,env),patch.object(cp.requests,'post',side_effect=post),patch.object(cp.requests,'get',side_effect=get):
-            with self.assertRaisesRegex(RuntimeError, 'MOTION_VISUAL_SHARE_GATE'):
+            with self.assertRaisesRegex(RuntimeError, 'BROLL_SHARE_GATE'):
                 cp.build(audio,narration,self.root/'output/final.mp4',episode,root=self.root)
         report=json.loads((self.root/'state/cinematic_quality_report.json').read_text())
         self.assertFalse(report['passed'])
