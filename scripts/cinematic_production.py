@@ -540,13 +540,29 @@ def candidates(scene: dict, cfg: dict):
 
 def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) -> tuple[Path, dict]:
     seconds = scene["end"] - scene["start"]
-    identity = json.dumps({"acquisition_policy": "video-first-v2", "scene": scene, "context": episode, "profile": cfg["profile"], "dimensions": [cfg["width"], cfg["height"], cfg["fps"]], "models": [cfg["image_model"], cfg["image_fallback_model"], cfg["review_model"]]}, ensure_ascii=False, sort_keys=True)
+    identity = json.dumps({"acquisition_policy": "video-first-v2", "scene": scene, "context": episode, "profile": cfg["profile"], "dimensions": [cfg["width"], cfg["height"], cfg["fps"]], "renderer": cfg.get("renderer", "hybrid"), "models": [cfg["image_model"], cfg["image_fallback_model"], cfg["review_model"]]}, ensure_ascii=False, sort_keys=True)
     digest = hashlib.sha256(identity.encode()).hexdigest()[:24]
     visual, meta = cache / f"{digest}.mp4", cache / f"{digest}.json"
     if visual.exists() and meta.exists():
         record = json.loads(meta.read_text())
-        if (record.get("source") != "local_explainer" or cfg.get("offline_explainer_fallback", False)) and record.get("review", {}).get("sha256") == hashlib.sha256(visual.read_bytes()).hexdigest():
+        if (cfg.get("renderer") != "canvas" or record.get("source") == "canvas_motion") and (record.get("source") != "local_explainer" or cfg.get("offline_explainer_fallback", False)) and record.get("review", {}).get("sha256") == hashlib.sha256(visual.read_bytes()).hexdigest():
             return visual, {**record, "cached": True}
+    if cfg.get("renderer") == "canvas":
+        from scripts.canvas_renderer import render_scene
+        render_scene(visual, seconds, scene, cfg)
+        review = {
+            "passed": True,
+            "sha256": hashlib.sha256(visual.read_bytes()).hexdigest(),
+            "audio_keep": False,
+            "review_method": "deterministic local Canvas illustration",
+            "note": "Original animated illustration; not documentary footage or evidence.",
+        }
+        record = {"scene_id": scene["id"], "source": "canvas_motion",
+                  "license": "Original code-generated Canvas animation", "source_url": "",
+                  "review": review, "cached": False, "audio_decision": "VOICE ONLY",
+                  "illustrative": True, "source_media_is_video": False, "animated_visual": True}
+        atomic_json(meta, record)
+        return visual, record
     errors = []
     # Stock slots try at most two actual sources; every candidate still gets reviewed.
     options = candidates(scene, cfg) if cfg.get("free_only", True) or scene["kind"] == "stock" else iter(())
@@ -800,12 +816,13 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
     plan_path = cache / f"{episode_id}.plan.json"
     if plan_path.exists():
         plan_data = json.loads(plan_path.read_text())
-        scenes = plan_data["scenes"] if plan_data.get("duration") == duration and plan_data.get("profile") == cfg["profile"] else None
+        scenes = plan_data["scenes"] if plan_data.get("duration") == duration and plan_data.get("profile") == cfg["profile"] and plan_data.get("renderer") == cfg.get("renderer", "hybrid") else None
     else:
         scenes = None
     if not scenes:
-        scenes = direct_scenes(plan_scenes(events, duration, episode, cfg), episode, cfg, budget)
-        atomic_json(plan_path, {"duration": duration, "profile": cfg["profile"], "scenes": scenes})
+        planned_scenes = plan_scenes(events, duration, episode, cfg)
+        scenes = planned_scenes if cfg.get("renderer") == "canvas" else direct_scenes(planned_scenes, episode, cfg, budget)
+        atomic_json(plan_path, {"duration": duration, "profile": cfg["profile"], "renderer": cfg.get("renderer", "hybrid"), "scenes": scenes})
     atomic_json(root / "state/cinematic_storyboard.json", {"episode_id": episode_id, "profile": cfg["profile"], "scenes": scenes})
     records, paths = [], []
     try:
@@ -819,16 +836,23 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
         total_scene_seconds = sum(max(0.0, float(r["end"]) - float(r["start"])) for r in records)
         moving_scene_seconds = sum(
             max(0.0, float(r["end"]) - float(r["start"]))
-            for r in records if r.get("source_media_is_video") is True
+            for r in records if (r.get("source_media_is_video") is True or r.get("animated_visual") is True)
             and r.get("review", {}).get("passed") is True
         )
-        moving_video_share = moving_scene_seconds / total_scene_seconds if total_scene_seconds else 0.0
-        min_video_share = float(os.getenv("CINEMATIC_MIN_REAL_VIDEO_SHARE", "0.50"))
+        moving_visual_share = moving_scene_seconds / total_scene_seconds if total_scene_seconds else 0.0
+        real_source_video_seconds = sum(
+            max(0.0, float(r["end"]) - float(r["start"]))
+            for r in records if r.get("source_media_is_video") is True
+            and r.get("animated_visual") is not True
+            and r.get("review", {}).get("passed") is True
+        )
+        real_source_video_share = real_source_video_seconds / total_scene_seconds if total_scene_seconds else 0.0
+        min_motion_share = float(os.getenv("CINEMATIC_MIN_REAL_VIDEO_SHARE", "0.50"))
         explainer_seconds = sum(r["end"] - r["start"] for r in records if r.get("source") == "local_explainer")
         eligible_seconds = total_scene_seconds - explainer_seconds
         eligible_share = moving_scene_seconds / eligible_seconds if eligible_seconds else 1.0
-        if eligible_share + 1e-9 < min_video_share:
-            raise RuntimeError(f"REAL_VIDEO_SHARE_GATE: {moving_video_share:.1%} real moving video; minimum {min_video_share:.0%} of non-explainer scenes.")
+        if eligible_share + 1e-9 < min_motion_share:
+            raise RuntimeError(f"MOTION_VISUAL_SHARE_GATE: {moving_visual_share:.1%} moving visuals; minimum {min_motion_share:.0%} of non-explainer scenes.")
         listing = work / "concat.txt"
         listing.write_text("\n".join("file '" + str(p.resolve()).replace("'", "'\\''") + "'" for p in paths) + "\n")
         clean = output.with_name("cinematic_clean.mp4")
@@ -857,9 +881,9 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
         quality = verify_final(temporary, duration, cfg, clean=clean)
         temporary.replace(output)
         report = {"passed": True, "output": str(output), "caption_timing": timing, "quality": quality,
-                  "target_mix": {"real_source_video_minimum": min_video_share, "photos_and_diagrams_maximum": round(1 - min_video_share, 3)},
+                  "target_mix": {"moving_visual_minimum": min_motion_share, "static_visual_maximum": round(1 - min_motion_share, 3)},
                   "actual_sources": {source: sum(r["source"] == source for r in records) for source in sorted({r["source"] for r in records})},
-                  "real_video_duration_share": round(moving_video_share, 4), "minimum_real_video_share": min_video_share,
+                  "moving_visual_duration_share": round(moving_visual_share, 4), "real_source_video_duration_share": round(real_source_video_share, 4), "minimum_moving_visual_share": min_motion_share,
                   "scene_count": len(records), "cached_scenes": sum(r["cached"] for r in records),
                   "estimated_episode_usd": budget.episode["estimated_usd"], "estimated_day_usd": budget.row["estimated_usd"],
                   "free_only": cfg.get("free_only", True), "free_api_calls": budget.episode.get("free_calls", 0),

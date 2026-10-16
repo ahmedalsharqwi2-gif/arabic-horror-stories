@@ -24,7 +24,7 @@ Real Story + Mystery + Suspense + Atmosphere + Psychological Fear + Cinematic Ed
 استخدم Low Drone وRoom Tone وWind وFootsteps وDistant Sounds وRadio Static وDoor Creak وSubtle Heartbeat عند الحاجة، لا في كل ثانية. اترك الصمت قبل اللحظة المهمة. يمنع صوت مرتفع مفاجئ مع وجه مخيف كحل وحيد. البداية بلقطات أطول، والتصاعد بلقطات أقصر، دون انتقالات مبالغ فيها.
 
 ## الترجمة والحساسية
-فصحى عربية واضحة، حروف متصلة، جمل قصيرة متزامنة مع الصوت. الفيديو 9:16: أعلى الشاشة بعيدًا عن العناصر المهمة. 16:9: أسفل الشاشة. تناول الدماء والعنف دون صور صادمة غير ضرورية. نفذ Fact Check وVisual Check وHorror Check وAuthenticity Check وAudio Check وSubtitle Check وSensitivity Check قبل النشر.
+لهجة مصرية واضحة وطبيعية، حروف عربية سليمة، وجمل قصيرة متزامنة مع الصوت. تجنب العامية الغامضة أو المبالغة في المصطلحات المحلية. الفيديو 9:16: أعلى الشاشة بعيدًا عن العناصر المهمة. 16:9: أسفل الشاشة. تناول الدماء والعنف دون صور صادمة غير ضرورية. نفذ Fact Check وVisual Check وHorror Check وAuthenticity Check وAudio Check وSubtitle Check وSensitivity Check قبل النشر.
 
 ## الإخراج
 أخرج JSON فقط بالحقول: `title`, `hook`, `region`, `story_type` (واحد من `true_case`, `unexplained_event`, `urban_legend`), `basis`, `narration`, `visual_keywords`, `visual_match`, `caption`, `phonetic_hints`, `verification_report`, `production_table`, `authenticity_label`, `final_checks` (ويجب أن تكون بنودها السبعة PASS). يجب أن تكون `authenticity_label` واحدة من `REAL_EVENT`, `UNEXPLAINED_EVENT`, `URBAN_LEGEND`. الكابشن يذكر التصنيف بصدق ويحتوي وسومًا مثل `#رعب_حقيقي` و`#قصص_غامضة` دون ادعاء ما لا تثبته المصادر.

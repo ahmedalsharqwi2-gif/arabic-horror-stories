@@ -58,13 +58,13 @@ VOICE_CANDIDATES = list(dict.fromkeys(
 ))
 TTS_ENGINE = os.getenv("TTS_ENGINE", "silma").strip().lower()
 SILMA_REFERENCE_WAV = Path(os.getenv("SILMA_REFERENCE_WAV", "assets/voice_reference_synthetic.wav"))
-SILMA_REFERENCE_PROFILE = os.getenv("SILMA_REFERENCE_PROFILE", "auto").strip()
+SILMA_REFERENCE_PROFILE = os.getenv("SILMA_REFERENCE_PROFILE", "octopus_narrator").strip()
 SILMA_VOICE_PROFILES_FILE = Path(os.getenv("SILMA_VOICE_PROFILES_FILE", "assets/voices/voice_profiles.json"))
 SILMA_REFERENCE_TEXT = os.getenv(
     "SILMA_REFERENCE_TEXT",
     "في عام 1943، بدأت خطة خداع عسكرية بوثيقة صغيرة، لكنها غيرت مسار معركة كاملة.",
 ).strip()
-SILMA_SPEED = float(os.getenv("SILMA_SPEED", "0.92"))
+SILMA_SPEED = float(os.getenv("SILMA_SPEED", "1.0"))
 SILMA_GUARD_ENABLED = os.getenv("SILMA_GUARD_ENABLED", "true").lower() == "true"
 SILMA_GUARD_MIN_MATCH_WORDS = int(os.getenv("SILMA_GUARD_MIN_MATCH_WORDS", "2"))
 RATE = os.getenv("EDGE_TTS_RATE", "-20%")
@@ -367,7 +367,7 @@ async def synthesize_sentences(sentences: list[str], engine_override: str | None
         try:
             return synthesize_sentences_silma(sentences)
         except Exception as exc:
-            if engine_override is None and os.getenv("SILMA_FALLBACK_TO_EDGE", "true").lower() == "true":
+            if engine_override is None and os.getenv("SILMA_FALLBACK_TO_EDGE", "false").lower() == "true":
                 print(f"⚠️ تعذر SILMA ({exc}) — الرجوع إلى Edge TTS.")
                 return await synthesize_sentences(sentences, "edge")
             raise
