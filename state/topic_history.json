@@ -721,11 +721,25 @@
       "source": "workflow",
       "event_identity": "اختفاء فريق الاستكشاف في كهف دراجون 1994",
       "reserved_at": "2026-10-16T22:00:46Z",
+      "published_at": "2026-10-16T22:00:58Z",
       "run_id": "38970965447",
       "story_type": "true_case",
       "reservation_id": "06209dbf4e914d4491b248a16f5d3d4e",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-      "published_at": "2026-10-16T22:00:58Z"
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+    },
+    {
+      "id": "870921d6bfdb707287c7",
+      "title": "غموض محطة راديو غريفتار في السويد",
+      "hook": "في شتاء عام 1979، استقبلت محطة راديو غريفتار بالسويد رسالة بث غامضة من نقطة في الغابات لم تكن تضم أي أجهزة إرسال بشرية.",
+      "region": "السويد",
+      "status": "reserved",
+      "source": "workflow",
+      "event_identity": "غموض محطة راديو غريفتار في السويد",
+      "story_type": "unexplained_event",
+      "reservation_id": "836e69617bd542d896d800c49bbb90b7",
+      "reserved_at": "2026-10-17T00:17:03Z",
+      "run_id": "38984200208",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
     }
   ]
 }
