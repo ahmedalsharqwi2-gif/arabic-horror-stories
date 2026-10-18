@@ -1,12 +1,7 @@
 name: Replenish rolling 4-day video stock
+# Owner pause: automatic stock scheduling removed on 2026-10-18.
 on:
-  schedule:
-    - cron: '7,22,37,52 * * * *'
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Create and Publish True Horror Episode"]
-    branches: [main]
-    types: [completed]
 permissions:
   actions: write
   contents: read
