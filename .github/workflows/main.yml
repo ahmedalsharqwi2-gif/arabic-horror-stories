@@ -75,8 +75,8 @@ jobs:
     # Publishing paused by owner request on 2026-10-17.
     if: ${{ false }}
     env:
-      PREFER_FREE_GOOGLE_TTS: 'true'
-      FREE_GOOGLE_TTS_ENABLED: 'true'
+      PREFER_FREE_GOOGLE_TTS: 'false'
+      FREE_GOOGLE_TTS_ENABLED: 'false'
       PUBLICATION_RECEIPTS_ENABLED: 'true'
       PUBLISH_IMMEDIATE: ${{ inputs.publish_now && matrix.date == '' }}
       PRODUCTION_MEDIA_ID: ${{ format('{0}-{1}-{2}', github.run_id, matrix.date, matrix.hour) }}
@@ -194,6 +194,9 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
+      - name: Install Chromium for local Canvas scenes
+        run: python -m playwright install --with-deps chromium
+
       - name: Validate and resolve AI model policy
         if: steps.checked_text.outputs.usable != 'true'
         env:
@@ -225,8 +228,8 @@ jobs:
           LLM_REQUEST_TIMEOUT: "120"
           # Generate the complete standalone horror story for the single
           # vertical video; assembly and CI both enforce the 180-second cap.
-          NARRATION_WORDS_MIN: "150"
-          NARRATION_WORDS_MAX: "240"
+          NARRATION_WORDS_MIN: "240"
+          NARRATION_WORDS_MAX: "420"
           LLM_INITIAL_BUDGET: "8000"
           # Duplicate topics are rejected, then the next round is explicitly
           # required to choose a completely different incident and hook.
@@ -239,12 +242,12 @@ jobs:
 
       - name: Arabic preflight gates (horror)
         env:
-          EDGE_TTS_VOICE: "ar-SA-ZariyahNeural"
+          EDGE_TTS_VOICE: "ar-EG-ShakirNeural"
           TTS_ENGINE: "edge"
         run: |
           test -f state/current_episode.json || { echo "TEXT_GATE: episode artifact missing"; exit 1; }
           TEXT=$(python -c "import json; print(json.load(open('state/current_episode.json', encoding='utf-8')).get('narration',''))")
-          python -m arabic_speech_core.cli preflight --text "$TEXT" --engine edge --locale ar-SA --voice "$EDGE_TTS_VOICE" --lexicon config/arabic_pronunciation.json --min-words 20 --max-words 1200
+          python -m arabic_speech_core.cli preflight --text "$TEXT" --engine edge --locale ar-EG --voice "$EDGE_TTS_VOICE" --lexicon config/arabic_pronunciation.json --min-words 20 --max-words 1200
 
       - name: Save prepared text independently of later media failures
         if: steps.checked_text.outputs.usable != 'true'
@@ -255,16 +258,16 @@ jobs:
 
       - name: Generate complete narration with automatic SILMA horror voice and vertical subtitles
         env:
-          TTS_ENGINE: "edge"
-          EDGE_TTS_VOICES: "ar-SA-ZariyahNeural"
-          EDGE_TTS_VOICE: "ar-SA-ZariyahNeural"
-          SILMA_REFERENCE_PROFILE: "auto"
+          TTS_ENGINE: "silma"
+          EDGE_TTS_VOICES: "ar-EG-ShakirNeural"
+          EDGE_TTS_VOICE: "ar-EG-ShakirNeural"
+          SILMA_REFERENCE_PROFILE: "octopus_narrator"
           SILMA_VOICE_PROFILES_FILE: "assets/voices/voice_profiles.json"
-          AUTO_VOICE_PROFILES: "hossam,hossam_uploaded,marwan,nassim,ahmed_z"
-          SILMA_SPEED: "0.92"
+          AUTO_VOICE_PROFILES: "octopus_narrator"
+          SILMA_SPEED: "1.0"
           SILMA_GUARD_ENABLED: "true"
           SILMA_GUARD_MIN_MATCH_WORDS: "3"
-          SILMA_FALLBACK_TO_EDGE: "true"
+          SILMA_FALLBACK_TO_EDGE: "false"
           # One stronger model for both speech verification and caption timing;
           # avoid loading/transcribing the same audio with two models.
           WHISPER_MODEL: "small"
@@ -426,4 +429,3 @@ jobs:
             state/publication_stock.json
           if-no-files-found: ignore
           retention-days: 14
-

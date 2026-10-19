@@ -58,8 +58,8 @@ OPENROUTER_MODELS = list(dict.fromkeys(
 ))
 
 # حدود طول السرد بالكلمات (الموديل بيقدّر الكلمات أدق بكثير من الثواني)
-WORDS_MIN = int(os.getenv("NARRATION_WORDS_MIN", "150"))
-WORDS_MAX = int(os.getenv("NARRATION_WORDS_MAX", "240"))
+WORDS_MIN = int(os.getenv("NARRATION_WORDS_MIN", "240"))
+WORDS_MAX = int(os.getenv("NARRATION_WORDS_MAX", "420"))
 
 STORY_TYPES = ("true_case", "unexplained_event", "urban_legend")
 

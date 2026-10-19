@@ -34,7 +34,8 @@ class CinematicTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         (self.root/'config').mkdir()
         self.cfg = cp.settings()
-        self.cfg.update(width=360, height=640, fps=30, scene_seconds=3, offline_explainer_fallback=False,
+        self.cfg.update(renderer="hybrid", width=1080, height=1920, fps=30, scene_seconds=3, offline_explainer_fallback=False,
+                        min_motion_share=0.0, min_graphics_share=0.0, min_broll_share=0.0, min_duration_seconds=0.1,
                         episode_budget_usd=.20, daily_budget_usd=.25, free_request_interval_seconds=0)
         (self.root/'config/cinematic_production.json').write_text(json.dumps(self.cfg))
         (self.root/'config/cinematic_sfx.json').write_text('{}')
@@ -42,6 +43,21 @@ class CinematicTests(unittest.TestCase):
 
     def budget(self, episode='one'):
         return cp.Budget(self.root/'state/budget.json', self.cfg, episode)
+
+    def test_canvas_renderer_branch_is_local_and_marks_animation(self):
+        cfg = dict(self.cfg, renderer='canvas')
+        scene = {'id':'canvas-test','start':0.0,'end':1.0,'text':'اختبار','kind':'image'}
+        def render_fixture(output, *_args):
+            output.parent.mkdir(parents=True, exist_ok=True)
+            output.write_bytes(b'canvas fixture')
+        with patch('scripts.canvas_renderer.render_scene', side_effect=render_fixture) as renderer, \
+             patch.object(cp, 'candidates', side_effect=AssertionError('Canvas must not search remote media')):
+            visual, record = cp.acquire(scene, {'title':'test'}, cfg, self.budget('canvas'), self.root/'.canvas-cache')
+        renderer.assert_called_once()
+        self.assertEqual(record['source'], 'canvas_motion')
+        self.assertTrue(record['animated_visual'])
+        self.assertFalse(record['source_media_is_video'])
+        self.assertTrue(record['review']['passed'])
 
     def test_settings_reject_duration_above_three_minutes(self):
         cfg = dict(self.cfg, max_duration_seconds=180.01)
@@ -191,8 +207,10 @@ class CinematicTests(unittest.TestCase):
                 return Reply({'query':{'pages':{}}})
             return Reply(raw=image.read_bytes())
         env={'GEMINI_API_KEY':'fixture-free-key','PEXELS_API_KEY':'fixture-pexels-key','BACKGROUND_MUSIC_ENABLED':'false'}
+        self.cfg['min_broll_share']=0.20
+        (self.root/'config/cinematic_production.json').write_text(json.dumps(self.cfg))
         with patch.dict(os.environ,env),patch.object(cp.requests,'post',side_effect=post),patch.object(cp.requests,'get',side_effect=get):
-            with self.assertRaisesRegex(RuntimeError, 'REAL_VIDEO_SHARE_GATE'):
+            with self.assertRaisesRegex(RuntimeError, 'BROLL_SHARE_GATE'):
                 cp.build(audio,narration,self.root/'output/final.mp4',episode,root=self.root)
         report=json.loads((self.root/'state/cinematic_quality_report.json').read_text())
         self.assertFalse(report['passed'])
