@@ -494,6 +494,10 @@ def _run() -> None:
     print("✅ تم إنتاج قصة كاملة واحدة فقط؛ لن يتم إنشاء أي ريل أو short_*.mp4.")
 def main() -> int:
     try:
+        # An explicit reviewed storyboard takes precedence; errors never fall back.
+        from photo_motion.bridge import render_state_if_requested
+        if render_state_if_requested(ROOT_DIR, "horror"):
+            return 0
         _run()
     except Exception as exc:
         print(f"❌ Video assembly failed: {exc}")
