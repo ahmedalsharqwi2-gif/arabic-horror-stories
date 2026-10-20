@@ -363,6 +363,13 @@ def synthesize_sentences_silma(sentences: list[str]) -> list[dict]:
 
 async def synthesize_sentences(sentences: list[str], engine_override: str | None = None) -> list[dict]:
     engine = engine_override or TTS_ENGINE
+    if engine == "voicetut":
+        from voice_provider.client import generate
+        source = CLIPS_DIR / "_voicetut_complete.wav"
+        whole_text = " ".join(str(s).strip() for s in sentences if str(s).strip())
+        await asyncio.to_thread(generate, whole_text, source)
+        return [{"path": source, "duration": probe_duration(source), "events": None,
+                 "sentence": whole_text, "is_silence": False}]
     if engine == "silma":
         try:
             return synthesize_sentences_silma(sentences)
@@ -549,6 +556,8 @@ def synthesize_google_sentences(sentences: list[str], *, slow: bool = False) -> 
 
 async def synthesize_with_recovery(sentences: list[str]) -> tuple[list[dict], str]:
     """One local fallback when Edge cannot produce audio; no provider retry loop."""
+    if TTS_ENGINE == "voicetut":
+        return await synthesize_sentences(sentences, "voicetut"), "voicetut"
     if os.getenv("PREFER_FREE_GOOGLE_TTS", "false").lower() == "true":
         try:
             return await asyncio.to_thread(synthesize_google_sentences, sentences), "google_free"
@@ -662,7 +671,7 @@ def main() -> None:
     selected_voice = (
         configure_silma_voice_profile()
         if TTS_ENGINE == "silma"
-        else select_edge_voice(episode)
+        else ("voicetut:Mohammed" if TTS_ENGINE == "voicetut" else select_edge_voice(episode))
     )
     narration = normalize_text(str(episode.get("narration", "")))
     if not narration:
@@ -673,7 +682,8 @@ def main() -> None:
 
     phonetic_hints = episode.get("phonetic_hints") or []
     voice_text = apply_phonetic_hints(narration, phonetic_hints)
-    voice_text = apply_light_diacritics(voice_text)
+    if TTS_ENGINE != "voicetut":
+        voice_text = apply_light_diacritics(voice_text)
     synthesize_voice(voice_text)
     prepare_final_audio()
 

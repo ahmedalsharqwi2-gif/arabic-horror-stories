@@ -240,7 +240,7 @@ jobs:
       - name: Arabic preflight gates (horror)
         env:
           EDGE_TTS_VOICE: "ar-SA-ZariyahNeural"
-          TTS_ENGINE: "edge"
+          TTS_ENGINE: "voicetut"
         run: |
           test -f state/current_episode.json || { echo "TEXT_GATE: episode artifact missing"; exit 1; }
           TEXT=$(python -c "import json; print(json.load(open('state/current_episode.json', encoding='utf-8')).get('narration',''))")
@@ -253,9 +253,12 @@ jobs:
           path: state/current_episode.json
           key: prepared-v1-${{ github.repository_id }}-${{ inputs.dry_run || false }}-${{ matrix.date || github.run_id }}-${{ matrix.hour }}
 
-      - name: Generate complete narration with automatic SILMA horror voice and vertical subtitles
+      - name: Install the accepted VoiceTut voice in an isolated runtime
+        run: bash voice_provider/install.sh
+
+      - name: Generate complete narration with accepted VoiceTut Mohammed and vertical subtitles
         env:
-          TTS_ENGINE: "edge"
+          TTS_ENGINE: "voicetut"
           EDGE_TTS_VOICES: "ar-SA-ZariyahNeural"
           EDGE_TTS_VOICE: "ar-SA-ZariyahNeural"
           SILMA_REFERENCE_PROFILE: "auto"
@@ -264,7 +267,7 @@ jobs:
           SILMA_SPEED: "0.92"
           SILMA_GUARD_ENABLED: "true"
           SILMA_GUARD_MIN_MATCH_WORDS: "3"
-          SILMA_FALLBACK_TO_EDGE: "true"
+          SILMA_FALLBACK_TO_EDGE: "false"
           # One stronger model for both speech verification and caption timing;
           # avoid loading/transcribing the same audio with two models.
           WHISPER_MODEL: "small"
