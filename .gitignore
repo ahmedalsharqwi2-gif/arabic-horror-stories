@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 
 .cinematic_cache/
+
+.voice_cache/
+state/api_budget.sqlite3*
+.env

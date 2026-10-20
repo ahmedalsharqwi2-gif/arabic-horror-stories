@@ -26,6 +26,9 @@ on:
 # Actions v5/v6 already target Node.js 24. Keep this explicit so GitHub does
 # not fall back to the deprecated Node.js 20 runtime for any transitive action.
 env:
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+  GEMINI_TEXT_API_KEY: ${{ secrets.GEMINI_TEXT_API_KEY || secrets.GEMINI_API_KEY }}
+  GEMINI_TTS_API_KEY: ${{ secrets.GEMINI_TTS_API_KEY || secrets.GEMINI_API_KEY }}
   CINEMATIC_ENABLED: 'true'
   # Free-only production: repository variables cannot unlock paid endpoints.
   CINEMATIC_FREE_ONLY: 'true'
@@ -240,7 +243,7 @@ jobs:
       - name: Arabic preflight gates (horror)
         env:
           EDGE_TTS_VOICE: "ar-SA-ZariyahNeural"
-          TTS_ENGINE: "voicetut"
+          TTS_ENGINE: "gemini"
         run: |
           test -f state/current_episode.json || { echo "TEXT_GATE: episode artifact missing"; exit 1; }
           TEXT=$(python -c "import json; print(json.load(open('state/current_episode.json', encoding='utf-8')).get('narration',''))")
@@ -253,12 +256,12 @@ jobs:
           path: state/current_episode.json
           key: prepared-v1-${{ github.repository_id }}-${{ inputs.dry_run || false }}-${{ matrix.date || github.run_id }}-${{ matrix.hour }}
 
-      - name: Install the accepted VoiceTut voice in an isolated runtime
+      - name: Validate the approved Gemini Charon voice
         run: bash voice_provider/install.sh
 
       - name: Generate complete narration with accepted VoiceTut Mohammed and vertical subtitles
         env:
-          TTS_ENGINE: "voicetut"
+          TTS_ENGINE: "gemini"
           EDGE_TTS_VOICES: "ar-SA-ZariyahNeural"
           EDGE_TTS_VOICE: "ar-SA-ZariyahNeural"
           SILMA_REFERENCE_PROFILE: "auto"

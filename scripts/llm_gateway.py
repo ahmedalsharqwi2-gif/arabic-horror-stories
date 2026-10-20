@@ -34,7 +34,7 @@ MAX_BUDGET = int(os.getenv("LLM_MAX_BUDGET", "16000"))
 TEMPERATURE = float(os.getenv("TEMPERATURE", "0.9"))
 REQUEST_TIMEOUT = int(os.getenv("LLM_REQUEST_TIMEOUT", "120"))
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+GEMINI_API_KEY = os.getenv("GEMINI_TEXT_API_KEY") or os.getenv("GEMINI_API_KEY", "")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 # سلسلة موديلات Gemini: الأساسي ثم بدائل أخف وأكثر توفرًا (بدون تكرار)
 GEMINI_MODELS = list(dict.fromkeys(
@@ -490,6 +490,8 @@ def _gemini_completion(system_prompt, user_message, budget, model, gemini_schema
             contents += "\nأعد JSON مطابقًا لهذا المخطط، وكل القيم المحددة ملزمة:\n" + json.dumps(gemini_schema, ensure_ascii=False)
         if with_thinking:
             cfg["thinking_config"] = types.ThinkingConfig(thinking_budget=GEMINI_THINKING_BUDGET)
+        from api_budget import reserve
+        reserve("text", model, GEMINI_API_KEY)
         return client.models.generate_content(
             model=model, contents=contents,
             config=types.GenerateContentConfig(**cfg),
