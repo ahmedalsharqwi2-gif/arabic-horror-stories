@@ -78,8 +78,6 @@ jobs:
     # Publishing paused by owner request on 2026-10-17.
     if: ${{ false }}
     env:
-      PREFER_FREE_GOOGLE_TTS: 'true'
-      FREE_GOOGLE_TTS_ENABLED: 'true'
       PUBLICATION_RECEIPTS_ENABLED: 'true'
       PUBLISH_IMMEDIATE: ${{ inputs.publish_now && matrix.date == '' }}
       PRODUCTION_MEDIA_ID: ${{ format('{0}-{1}-{2}', github.run_id, matrix.date, matrix.hour) }}
@@ -242,12 +240,11 @@ jobs:
 
       - name: Arabic preflight gates (horror)
         env:
-          EDGE_TTS_VOICE: "ar-SA-ZariyahNeural"
           TTS_ENGINE: "gemini"
         run: |
           test -f state/current_episode.json || { echo "TEXT_GATE: episode artifact missing"; exit 1; }
           TEXT=$(python -c "import json; print(json.load(open('state/current_episode.json', encoding='utf-8')).get('narration',''))")
-          python -m arabic_speech_core.cli preflight --text "$TEXT" --engine edge --locale ar-SA --voice "$EDGE_TTS_VOICE" --lexicon config/arabic_pronunciation.json --min-words 20 --max-words 1200
+          python -m arabic_speech_core.cli preflight --text "$TEXT" --engine gemini --locale ar-EG --voice Charon --no-smoke --lexicon config/arabic_pronunciation.json --min-words 20 --max-words 1200
 
       - name: Save prepared text independently of later media failures
         if: steps.checked_text.outputs.usable != 'true'
@@ -259,18 +256,9 @@ jobs:
       - name: Validate the approved Gemini Charon voice
         run: bash voice_provider/install.sh
 
-      - name: Generate complete narration with accepted VoiceTut Mohammed and vertical subtitles
+      - name: Generate complete narration with approved Gemini Charon and vertical subtitles
         env:
           TTS_ENGINE: "gemini"
-          EDGE_TTS_VOICES: "ar-SA-ZariyahNeural"
-          EDGE_TTS_VOICE: "ar-SA-ZariyahNeural"
-          SILMA_REFERENCE_PROFILE: "auto"
-          SILMA_VOICE_PROFILES_FILE: "assets/voices/voice_profiles.json"
-          AUTO_VOICE_PROFILES: "hossam,hossam_uploaded,marwan,nassim,ahmed_z"
-          SILMA_SPEED: "0.92"
-          SILMA_GUARD_ENABLED: "true"
-          SILMA_GUARD_MIN_MATCH_WORDS: "3"
-          SILMA_FALLBACK_TO_EDGE: "false"
           # One stronger model for both speech verification and caption timing;
           # avoid loading/transcribing the same audio with two models.
           WHISPER_MODEL: "small"
@@ -278,8 +266,6 @@ jobs:
           # Whisper can miss diacritics and proper names; keep empty/
           # foreign-audio checks while allowing minor alignment differences.
           ASR_MIN_MATCH_RATIO: "0.60"
-          EDGE_TTS_RATE: "-20%"
-          EDGE_TTS_PITCH: "-3Hz"
         run: python scripts/generate_voice.py
 
       - name: Assemble one complete vertical video
