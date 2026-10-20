@@ -63,9 +63,9 @@ YT_MADE_FOR_KIDS = os.environ.get("YT_MADE_FOR_KIDS", "false").lower() == "true"
 # ينشروا في نفس التوقيت تقريبًا.
 FULL_VIDEO_DELAY_HOURS = float(os.environ.get("FULL_VIDEO_DELAY_HOURS", "0"))
 
-def publish_target_utc(hour: int = 19) -> datetime:
-    """Return the next 19:00 Africa/Cairo converted to UTC.
-    This is absolute scheduling, so SILMA duration does not shift the post.
+def publish_target_utc(hour: int = 17) -> datetime:
+    """Return the next 17:00 Africa/Cairo converted to UTC.
+    This is absolute scheduling, so generation duration does not shift the post.
     """
     now = datetime.now(timezone.utc)
     cairo = now.astimezone(ZoneInfo("Africa/Cairo"))
@@ -75,14 +75,12 @@ def publish_target_utc(hour: int = 19) -> datetime:
     return target.astimezone(timezone.utc)
 
 
-def scheduled_publish_utc(default_hour: int = 19) -> datetime:
+def scheduled_publish_utc(default_hour: int = 17) -> datetime:
     """Use the workflow's exact final slot when one was computed."""
     raw = os.environ.get("PUBLISH_DUE_AT", "").strip()
     if raw:
-        parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
-        if parsed.tzinfo is None:
-            raise ValueError("PUBLISH_DUE_AT must include a timezone")
-        return parsed.astimezone(timezone.utc)
+        from scripts.daily_schedule import validate_slot
+        return validate_slot(raw).astimezone(timezone.utc)
     return publish_target_utc(default_hour)
 
 
@@ -147,11 +145,11 @@ def upload_video(youtube, video_path: Path, title: str, description: str) -> str
     from scripts.publication_state import immediate_requested
     if immediate_requested():
         status["privacyStatus"] = "public"
-    elif FULL_VIDEO_DELAY_HOURS > 0:
+    elif os.getenv("PUBLISH_DUE_AT"):
         # جدولة نشر مؤجَّلة: يوتيوب بيطلب privacyStatus="private" مع
         # publishAt (ISO 8601)، وبيحوّل الفيديو تلقائيًا لـpublic في
         # الموعد المحدد بالظبط — الفيديو مش هيكون مرئي لحد ده الموعد.
-        publish_at = scheduled_publish_utc(19)
+        publish_at = scheduled_publish_utc(17)
         status["privacyStatus"] = "private"
         status["publishAt"] = publish_at.isoformat(timespec="seconds").replace("+00:00", "Z")
         print(f"⏰ الفيديو مجدول ينشر تلقائيًا عند: {status['publishAt']} UTC")

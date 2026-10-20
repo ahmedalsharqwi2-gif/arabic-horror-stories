@@ -83,9 +83,9 @@ ENABLE_PREFLIGHT_CHECK = os.environ.get("ENABLE_PREFLIGHT_CHECK", "true").lower(
 # الكامل في نفس اللحظة.
 FULL_VIDEO_DELAY_HOURS = float(os.environ.get("FULL_VIDEO_DELAY_HOURS", "0"))
 
-def publish_target_utc(hour: int = 19) -> datetime:
-    """Return the next 19:00 Africa/Cairo converted to UTC.
-    This is absolute scheduling, so SILMA duration does not shift the post.
+def publish_target_utc(hour: int = 17) -> datetime:
+    """Return the next 17:00 Africa/Cairo converted to UTC.
+    This is absolute scheduling, so generation duration does not shift the post.
     """
     now = datetime.now(timezone.utc)
     cairo = now.astimezone(ZoneInfo("Africa/Cairo"))
@@ -95,17 +95,15 @@ def publish_target_utc(hour: int = 19) -> datetime:
     return target.astimezone(timezone.utc)
 
 
-def scheduled_publish_utc(default_hour: int = 19) -> datetime:
+def scheduled_publish_utc(default_hour: int = 17) -> datetime:
     """Use the workflow's exact final slot when one was computed."""
     from scripts.publication_state import immediate_requested
     if immediate_requested():
         return datetime.now(timezone.utc) + timedelta(minutes=2)
     raw = os.environ.get("PUBLISH_DUE_AT", "").strip()
     if raw:
-        parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
-        if parsed.tzinfo is None:
-            raise ValueError("PUBLISH_DUE_AT must include a timezone")
-        return parsed.astimezone(timezone.utc)
+        from scripts.daily_schedule import validate_slot
+        return validate_slot(raw).astimezone(timezone.utc)
     return publish_target_utc(default_hour)
 
 
@@ -293,7 +291,7 @@ def build_post_text(service: str, asset_type: str, title: str, caption: str, ful
 
 
 def iso_after(hours: float) -> str:
-    due = scheduled_publish_utc(19)
+    due = scheduled_publish_utc(17)
     return due.isoformat(timespec="milliseconds").replace("+00:00", "Z")
 
 
@@ -388,7 +386,7 @@ def _run() -> None:
         url = upload_media(path, github_token)
         # Respect the three-day publication slot computed by the workflow.
         # Manual immediate publishing retains the workflow's explicit due time.
-        due_at = scheduled_publish_utc().isoformat().replace("+00:00", "Z") if os.environ.get("PUBLISH_DUE_AT") else iso_after(FULL_VIDEO_DELAY_HOURS)
+        due_at = scheduled_publish_utc().isoformat().replace("+00:00", "Z") if os.environ.get("PUBLISH_DUE_AT") else scheduled_publish_utc(17).isoformat().replace("+00:00", "Z")
         print(f"📤 {path.name} → {due_at} UTC")
         for cid in ids:
             service = services[cid]
