@@ -608,6 +608,35 @@
         "youtube"
       ],
       "confirmed_at": "2026-10-21T15:26:48.077787+00:00"
+    },
+    "immediate approved-photo-v3-horror": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ad946fdcf322174cebb68ea",
+          "due_at": "2026-10-21T23:15:00Z",
+          "run_id": "39691195356",
+          "accepted_at": "2026-10-21T23:13:01.224642+00:00"
+        },
+        "instagram": {
+          "id": "6ad946fd9b7af5217d170a04",
+          "due_at": "2026-10-21T23:15:00Z",
+          "run_id": "39691195356",
+          "accepted_at": "2026-10-21T23:13:01.863810+00:00"
+        },
+        "youtube": {
+          "id": "kSamnxZ_Urc",
+          "due_at": "2026-10-22T14:00:00Z",
+          "run_id": "39691195356",
+          "accepted_at": "2026-10-21T23:13:05.114292+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-21T23:13:05.115227+00:00"
     }
   }
 }
