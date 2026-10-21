@@ -21,3 +21,5 @@ jobs:
 # Review sample trigger requested 2026-10-21; dry_run, no social publishing.
 
 # Render narration-cued narrative diagrams revision 2; no images, no social publishing.
+
+# Recover missing word timestamps from a second measured waveform alignment; never uniform timing.
