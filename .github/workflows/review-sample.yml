@@ -8,6 +8,7 @@ name: Review sample — no social publishing
     - .github/workflows/review-sample.yml
 permissions:
   contents: write
+  issues: write
 jobs:
   sample:
     uses: ./.github/workflows/main.yml
