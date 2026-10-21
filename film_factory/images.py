@@ -6,6 +6,7 @@ import json
 import os
 import re
 import shutil
+import time
 from pathlib import Path
 import requests
 from PIL import Image
@@ -14,9 +15,17 @@ from api_budget import reserve
 MODEL = '@cf/black-forest-labs/flux-1-schnell'
 REVISION = 'documented-cinema-scenes-v2'
 
+class CloudflareUnavailable(RuntimeError):pass
+
 def decoded_image(response):
     if response.status_code != 200:
-        raise RuntimeError(f'Cloudflare image HTTP {response.status_code}; check Workers AI token permissions, Account ID and quota. No paid fallback.')
+        try:errors=response.json().get('errors',[])
+        except ValueError:errors=[]
+        codes=','.join(str(e.get('code','unknown')) for e in errors if isinstance(e,dict))
+        quota=any(re.search(r'neuron|daily|allocation|quota',str(e.get('message','')),re.I) for e in errors if isinstance(e,dict))
+        Path('output').mkdir(exist_ok=True)
+        Path('output/image-provider-status.json').write_text(json.dumps({'http_status':response.status_code,'error_codes':codes,'quota_message':quota,'paid_fallback_used':False}))
+        raise CloudflareUnavailable(f'Cloudflare image HTTP {response.status_code}; codes={codes}; quota_message={quota}. No paid fallback.')
     if 'image/' in response.headers.get('Content-Type',''):
         raw = response.content
     else:
@@ -53,7 +62,19 @@ def prepare_images(plan):
             except (OSError,ValueError):target.unlink()
         if not hit:
             response=requests.post(f'https://api.cloudflare.com/client/v4/accounts/{account}/ai/run/{MODEL}',headers={'Authorization':'Bearer '+token},json={'prompt':prompt,'steps':8},timeout=120)
-            im=decoded_image(response);temporary=target.with_suffix('.tmp');im.save(temporary,format='JPEG',quality=95);temporary.replace(target)
+            if response.status_code==429:
+                # One bounded wait for transient capacity, not repeated quota retries.
+                try:wait=min(20,max(1,int(response.headers.get('Retry-After','5'))))
+                except ValueError:wait=5
+                time.sleep(wait)
+                response=requests.post(f'https://api.cloudflare.com/client/v4/accounts/{account}/ai/run/{MODEL}',headers={'Authorization':'Bearer '+token},json={'prompt':prompt,'steps':8},timeout=120)
+            try:im=decoded_image(response)
+            except CloudflareUnavailable:
+                if response.status_code==429 and plan.get('topic_id')=='nyos-cameroon-1986-documented':
+                    from film_factory.nyos_archive import prepare_archive
+                    return prepare_archive(plan)
+                raise
+            temporary=target.with_suffix('.tmp');im.save(temporary,format='JPEG',quality=95);temporary.replace(target)
         with Image.open(target) as im:dimensions=list(im.size)
         public=Path('output/images')/f'scene-{index+1:02}.jpg';public.parent.mkdir(exist_ok=True);shutil.copyfile(target,public)
         paths.append(public)

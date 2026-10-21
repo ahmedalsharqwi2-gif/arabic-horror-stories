@@ -18,6 +18,7 @@ def create(plan,profile):
   if len(tags)>=7:break
  disclosure='واقعة موثقة؛ الصور والمؤثرات إعادة بناء توضيحية وليست تسجيلًا للواقعة.' if profile=='horror' else 'صور مولّدة وموشن للتوضيح؛ المعلومات من المصدر.'
  if profile=='news':disclosure+=' التعليق الكوميدي للتسلية.'
+ if plan.get('visual_mode')=='reviewed_public_domain_archive':disclosure='صور أرشيفية للموضوع من هيئة المسح الجيولوجي الأمريكية USGS، ملكية عامة. الموشن والمؤثرات للتوضيح وليست تسجيلًا للواقعة.'
  caption=title+'\n\n'+disclosure+'\nالمصدر: '+source.get('publisher','')+'\n'+url+'\n\n'+' '.join('#'+tag for tag in tags)
  result={'title':title,'caption':caption,'description':caption,'hashtags':['#'+x for x in tags],'tags':tags,'series':brand,'source_url':url,'source_type':'documented','fiction':False,'generated_illustrations':True,'containsSyntheticMedia':True}
  Path('output').mkdir(exist_ok=True);Path('output/publication.json').write_text(json.dumps(result,ensure_ascii=False,indent=2));return result

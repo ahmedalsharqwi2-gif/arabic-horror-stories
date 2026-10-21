@@ -69,7 +69,8 @@
         "PUBLISH_IMMEDIATE": "${{ github.event_name == 'push' && github.event.head_commit.message == 'Activate approved daily factory and publish first episode' }}",
         "PRODUCTION_MEDIA_ID": "${{ (github.event_name == 'push' && github.event.head_commit.message == 'Activate approved daily factory and publish first episode') && 'approved-photo-v3-horror' || github.run_id }}",
         "USE_APPROVED_SAMPLE": "false",
-        "FIRST_APPROVED_PUBLISH": "${{ github.event_name == 'push' && github.event.head_commit.message == 'Activate approved daily factory and publish first episode' }}"
+        "FIRST_APPROVED_PUBLISH": "${{ github.event_name == 'push' && github.event.head_commit.message == 'Activate approved daily factory and publish first episode' }}",
+        "IMAGE_RECOVERY_REVISION": "reviewed-usgs-fallback-v1"
       },
       "steps": [
         {

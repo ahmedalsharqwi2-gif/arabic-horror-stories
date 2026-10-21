@@ -65,6 +65,7 @@ class FilmRenderer(Renderer):
   if cut%2:
    im=im.resize((1124,1998),Image.Resampling.BICUBIC).crop((22,39,1102,1959))
   im.alpha_composite(self.shade);d=ImageDraw.Draw(im)
+  if any(cue['kind']=='gas' and 0<=t-cue['at']<5.5 for cue in self.motion_events):txt(im,'رسم توضيحي • الغاز غير مرئي',(540,1190),30,accent)
   d.rounded_rectangle((60,90,1020,208),radius=25,fill=(4,9,16,210),outline=accent,width=2)
   txt(im,self.plan['series'],(540,150),52,accent)
   if profile!='horror':para(im,s['title'],540,300,50,930,maxlines=2)
@@ -76,7 +77,7 @@ class FilmRenderer(Renderer):
      panel=Image.new('RGBA',(960,93));pd=ImageDraw.Draw(panel);pd.rounded_rectangle((0,0,959,92),radius=20,fill=(4,13,23,210),outline=accent,width=2);para(panel,label,480,25,34,880,maxlines=2);im.alpha_composite(panel,(60,1240+k*104))
   for start,end,panel in self.captions:
    if start<=t<end:im.alpha_composite(panel,(60,1490));break
-  footer='صور ومؤثرات مولّدة للتوضيح • واقعة موثقة' if profile=='horror' else 'مشاهد مولّدة للتوضيح • المعلومات من المصدر'
+  footer=('صور أرشيفية USGS • موشن توضيحي' if self.plan.get('visual_mode')=='reviewed_public_domain_archive' else 'صور ومؤثرات مولّدة للتوضيح • واقعة موثقة') if profile=='horror' else 'مشاهد مولّدة للتوضيح • المعلومات من المصدر'
   txt(im,footer,(540,1770),26,MUTED)
   txt(im,self.plan['source']['publisher'],(540,1820),25,MUTED)
   d=ImageDraw.Draw(im);d.line((60,1870,1020,1870),fill=(34,43,53),width=5);d.line((60,1870,60+960*t/self.duration,1870),fill=accent,width=5)

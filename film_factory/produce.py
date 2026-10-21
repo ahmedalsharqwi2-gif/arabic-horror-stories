@@ -35,7 +35,7 @@ def main():
  subprocess.run(['ffmpeg','-v','error','-y','-i','output/visuals.mp4','-i','output/mix.wav','-map','0:v','-map','1:a','-c:v','copy','-c:a','aac','-b:a','192k','-t',str(duration),'-movflags','+faststart',str(final)],check=True)
  audit=verify_tail(final,normalized,duration)
  subprocess.run(['ffmpeg','-v','error','-i',str(final),'-f','null','-'],check=True)
- Path('output/verification.json').write_text(json.dumps({'profile':args.profile,'series':plan['series'],'topic_id':plan['topic_id'],'video':str(final),'width':1080,'height':1920,'fps':30,'duration':duration,'voice':'Charon','voice_performance':performance(plan),'generated_images':len(images),'audio':audit,'sound':sound,'script_model':plan['script_model'],'source':plan['source'],'automatically_published':False,'documented':True,'fiction':False,'audio_channels':2,'motion_revision':'spoken-semantics-v2'},ensure_ascii=False,indent=2))
+ Path('output/verification.json').write_text(json.dumps({'profile':args.profile,'series':plan['series'],'topic_id':plan['topic_id'],'video':str(final),'width':1080,'height':1920,'fps':30,'duration':duration,'voice':'Charon','voice_performance':performance(plan),'generated_images':0 if plan.get('visual_mode')=='reviewed_public_domain_archive' else len(images),'visual_mode':plan.get('visual_mode','generated_reconstruction'),'audio':audit,'sound':sound,'script_model':plan['script_model'],'source':plan['source'],'automatically_published':False,'documented':True,'fiction':False,'audio_channels':2,'motion_revision':'spoken-semantics-v2'},ensure_ascii=False,indent=2))
  from film_factory.topics import mark_produced
  mark_produced(plan)
  print('Verified complete photographic '+args.profile+' sample: '+str(final),flush=True)
