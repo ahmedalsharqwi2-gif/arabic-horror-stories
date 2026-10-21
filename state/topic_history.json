@@ -747,14 +747,15 @@
       "title": "غموض مرصد أورورا القطبي",
       "hook": "في شتاء عام 1986، استقبل مرصد أورورا القطبي في ألاسكا إشارة راديوية من نقطة فارغة تمامًا، وتكررت بحذافيرها خمس مرات متطابقة دون أي مصدر بشري.",
       "region": "ألاسكا، الولايات المتحدة",
-      "status": "reserved",
+      "status": "published",
       "source": "workflow",
       "event_identity": "غموض إشارة مرصد أورورا القطبي",
-      "story_type": "unexplained_event",
-      "reservation_id": "7aa3c54efefd48dfb3beaf715e4ae8cb",
       "reserved_at": "2026-10-21T15:26:39Z",
       "run_id": "39623457645",
-      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories"
+      "story_type": "unexplained_event",
+      "reservation_id": "7aa3c54efefd48dfb3beaf715e4ae8cb",
+      "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+      "published_at": "2026-10-21T15:26:48Z"
     }
   ]
 }
