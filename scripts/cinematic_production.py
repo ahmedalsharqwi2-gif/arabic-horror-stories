@@ -542,7 +542,7 @@ def candidates(scene: dict, cfg: dict):
 
 def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) -> tuple[Path, dict]:
     seconds = scene["end"] - scene["start"]
-    identity = json.dumps({"acquisition_policy": "video-first-v2", "scene": scene, "context": episode, "profile": cfg["profile"], "visual_revision": "native-narrative-v2", "dimensions": [cfg["width"], cfg["height"], cfg["fps"]], "models": [cfg["image_model"], cfg["image_fallback_model"], cfg["review_model"]]}, ensure_ascii=False, sort_keys=True)
+    identity = json.dumps({"acquisition_policy": "video-first-v2", "scene": scene, "context": episode, "profile": cfg["profile"], "visual_revision": "immersive-world-v3", "dimensions": [cfg["width"], cfg["height"], cfg["fps"]], "models": [cfg["image_model"], cfg["image_fallback_model"], cfg["review_model"]]}, ensure_ascii=False, sort_keys=True)
     digest = hashlib.sha256(identity.encode()).hexdigest()[:24]
     visual, meta = cache / f"{digest}.mp4", cache / f"{digest}.json"
     if visual.exists() and meta.exists():
@@ -716,6 +716,10 @@ def write_captions(events: list[dict], path: Path, cfg: dict, *, illustrative=Fa
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 def mix_audio(voice: Path, clean_video: Path, output: Path, duration: float, cfg: dict, scenes: list[dict], root: Path) -> None:
+    if os.getenv("CINEMATIC_MOTION_ONLY", "false").lower() == "true" and cfg["profile"] in ("horror","history"):
+        from scripts.immersive_sound import mix_immersive
+        mix_immersive(voice,output,duration,scenes,cfg["profile"],root)
+        return
     from scripts.media_audio import add_topic_soundtrack, ducking_filters
     inputs = ["-i", str(voice), "-i", str(clean_video)]
     graph = ducking_filters("[0:a]", "[1:a]")

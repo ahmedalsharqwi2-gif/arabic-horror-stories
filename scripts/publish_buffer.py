@@ -335,7 +335,8 @@ def _run() -> None:
         raise RuntimeError("state/current_episode.json غير موجود.")
 
     episode = json.loads(EPISODE_PATH.read_text(encoding="utf-8"))
-    title = str(episode.get("title", "Horror Episode")).strip()
+    from scripts.channel_brand import display_title
+    title = display_title(episode.get("title", "Horror Episode"))
     caption = str(episode.get("caption", "")).strip() or title
 
     full_path = OUTPUT_DIR / "final_video_full.mp4"

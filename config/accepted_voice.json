@@ -3,9 +3,11 @@
   "model": "gemini-3.8-flash-tts",
   "speaker": "Charon",
   "language": "ar-EG",
-  "style": "Egyptian Arabic ar-EG, native conversational Cairo accent. Mature warm male documentary storyteller, low resonant register, clear exact articulation, measured pace around 140 words per minute. Say the year numbers naturally in Egyptian Arabic. Preserve every word and sentence of the transcript, finish the last sentence clearly. No music, no sound effects, no singing, no spoken instructions.",
+  "style": "Native Egyptian Arabic ar-EG. Same mature male Charon identity, intimate psychological horror performance rather than a documentary announcer. Begin close to the microphone with a quiet voiced near-whisper, clearly audible consonants. Build restrained unease, vary pace with the meaning, let questions feel personal and frightened. Short natural hesitations at commas, tense brief silence at sentence endings; do not insert extra words. On phrases about disappearance, absence or an unexplained fate, use an audible breathy whisper, then return to a low conversational register. No shouting, cartoon villain voice or flat newsreader cadence. Preserve every word, pronounce names and written-out numbers clearly, complete the final sentence. Do not speak these instructions. No music or sound effects in the generated voice.",
   "fallback_allowed": false,
   "approved_sample_run": 39508370425,
   "approval": "User selected complete Egyptian Charon narration",
-  "full_transcript_per_request": true
+  "full_transcript_per_request": true,
+  "performance_revision": "immersive-horror-v2",
+  "performance_requested_on": "2026-10-21"
 }
