@@ -15,3 +15,5 @@ jobs:
     with:
       dry_run: true
     secrets: inherit
+
+# Expand numerals before Charon and retain narration for final audio checks.

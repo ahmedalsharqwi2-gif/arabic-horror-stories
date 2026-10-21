@@ -16,6 +16,7 @@ if str(ROOT_DIR) not in sys.path:
 from arabic_speech_core.ass_text import render_active_arabic_caption, render_arabic_caption, caption_word_groups, display_word
 from scripts.arabic_guard import validate_narration
 from voice_provider.client import generate
+from scripts.spoken_numbers import spoken_numbers
 STATE_DIR = ROOT_DIR / "state"
 CLIPS_DIR = ROOT_DIR / "downloaded_clips"
 EPISODE_PATH = STATE_DIR / "current_episode.json"
@@ -288,7 +289,7 @@ def main() -> None:
     if os.getenv("TTS_ENGINE","gemini").lower()!="gemini":
         raise ValueError("Production requires Gemini Charon")
     episode=json.loads(EPISODE_PATH.read_text(encoding="utf-8"))
-    narration=normalize_text(str(episode.get("narration","")))
+    narration=spoken_numbers(normalize_text(str(episode.get("narration",""))))
     if not narration or validate_narration(narration):
         raise ValueError("Invalid or empty narration")
     CLIPS_DIR.mkdir(parents=True,exist_ok=True)

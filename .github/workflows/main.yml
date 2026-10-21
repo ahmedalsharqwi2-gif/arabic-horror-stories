@@ -60,6 +60,15 @@ jobs:
     - name: Select the unique 17:00 Cairo slot
       id: daily
       run: python scripts/daily_schedule.py
+    - name: Restore verified voices and API budget
+      uses: actions/cache/restore@v4
+      with:
+        path: '.voice_cache
+
+          state/api_budget.sqlite3'
+        key: voice-budget-${{ github.repository_id }}-${{ github.run_id }}-${{ github.run_attempt }}
+        restore-keys: voice-budget-${{ github.repository_id }}-
+      if: ${{ steps.daily.outputs.already_confirmed != 'true' }}
     - name: Validate Python syntax before expensive production
       run: python3 -m compileall -q scripts arabic_speech_core
       if: ${{ steps.daily.outputs.already_confirmed != 'true' }}
@@ -277,5 +286,31 @@ jobs:
           state/publication_stock.json
 
           '
+        if-no-files-found: ignore
+        retention-days: 14
+    - name: Preserve verified voices and API budget
+      uses: actions/cache/save@v4
+      if: ${{ always() && steps.daily.outputs.already_confirmed != 'true' }}
+      with:
+        path: '.voice_cache
+
+          state/api_budget.sqlite3'
+        key: voice-budget-${{ github.repository_id }}-${{ github.run_id }}-${{ github.run_attempt }}
+    - name: Preserve review narration and script
+      if: ${{ always() && inputs.dry_run }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: review-evidence-${{ github.run_id }}
+        path: 'state/current_episode.json
+
+          state/prepared_narration.json
+
+          output/narration.mp3
+
+          output/narration.source.json
+
+          downloaded_clips/narration.mp3
+
+          downloaded_clips/narration.source.json'
         if-no-files-found: ignore
         retention-days: 14
