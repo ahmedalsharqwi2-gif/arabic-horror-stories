@@ -184,6 +184,9 @@ jobs:
     - name: Verify final montage and B-roll output
       run: "test -s output/final_video_full.mp4 || { echo \"ERROR: full montage missing or empty\"; exit 1; }\ntest -s state/fetched_clips.json || { echo \"ERROR: B-roll tracking manifest missing\"; exit 1; }\ntest \"$(python -c 'import json; print(len(json.load(open(\"state/fetched_clips.json\"))))')\" -ge 1 || { echo \"ERROR: no usable visual assets\"; exit 1; }\ndimensions=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=p=0 output/final_video_full.mp4)\ntest \"$dimensions\" = \"1080,1920\" || { echo \"ERROR: horizontal output is forbidden; expected 1080x1920, got $dimensions\"; exit 1; }\nduration=$(ffprobe -v error -show_entries format=duration -of csv=p=0 output/final_video_full.mp4)\npython - \"$duration\" <<'PY'\nimport sys\nduration = float(sys.argv[1])\nif not 0 < duration <= 180.0:\n    raise SystemExit(f\"ERROR: horror video must be no longer than 180 seconds, got {duration:.2f}s\")\nprint(f\"Vertical horror montage verified: {duration:.2f}s\")\nPY\n"
       if: ${{ steps.daily.outputs.already_confirmed != 'true' }}
+    - name: Verify the last spoken words survive final mixing
+      run: python -m scripts.verify_delivery output/final_video_full.mp4 downloaded_clips/narration.mp3
+      if: ${{ steps.daily.outputs.already_confirmed != 'true' }}
     - name: Reserve unique topic before external publication
       if: ${{ (inputs.dry_run != true) && steps.daily.outputs.already_confirmed != 'true' }}
       env:
@@ -312,6 +315,10 @@ jobs:
 
           downloaded_clips/narration.mp3
 
-          downloaded_clips/narration.source.json'
+          downloaded_clips/narration.source.json
+
+          downloaded_clips/narration_voice.source.json
+
+          state/delivery_verification.json'
         if-no-files-found: ignore
         retention-days: 14
