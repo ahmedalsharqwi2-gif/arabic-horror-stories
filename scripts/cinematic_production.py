@@ -542,7 +542,7 @@ def candidates(scene: dict, cfg: dict):
 
 def acquire(scene: dict, episode: dict, cfg: dict, budget: Budget, cache: Path) -> tuple[Path, dict]:
     seconds = scene["end"] - scene["start"]
-    identity = json.dumps({"acquisition_policy": "video-first-v2", "scene": scene, "context": episode, "profile": cfg["profile"], "visual_revision": "native-motion-v1", "dimensions": [cfg["width"], cfg["height"], cfg["fps"]], "models": [cfg["image_model"], cfg["image_fallback_model"], cfg["review_model"]]}, ensure_ascii=False, sort_keys=True)
+    identity = json.dumps({"acquisition_policy": "video-first-v2", "scene": scene, "context": episode, "profile": cfg["profile"], "visual_revision": "native-narrative-v2", "dimensions": [cfg["width"], cfg["height"], cfg["fps"]], "models": [cfg["image_model"], cfg["image_fallback_model"], cfg["review_model"]]}, ensure_ascii=False, sort_keys=True)
     digest = hashlib.sha256(identity.encode()).hexdigest()[:24]
     visual, meta = cache / f"{digest}.mp4", cache / f"{digest}.json"
     if visual.exists() and meta.exists():
@@ -813,7 +813,10 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
         scenes = plan_data["scenes"] if plan_data.get("duration") == duration and plan_data.get("profile") == cfg["profile"] else None
     else:
         scenes = None
-    if not scenes:
+    if os.getenv("CINEMATIC_MOTION_ONLY", "false").lower() == "true":
+        from scripts.narrative_motion import cues_from_captions
+        scenes = cues_from_captions(events, duration, cfg["profile"])
+    elif not scenes:
         scenes = direct_scenes(plan_scenes(events, duration, episode, cfg), episode, cfg, budget)
         atomic_json(plan_path, {"duration": duration, "profile": cfg["profile"], "scenes": scenes})
     atomic_json(root / "state/cinematic_storyboard.json", {"episode_id": episode_id, "profile": cfg["profile"], "scenes": scenes})

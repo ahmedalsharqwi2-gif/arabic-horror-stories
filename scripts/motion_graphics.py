@@ -23,6 +23,9 @@ def label(im,text,x,y,size=44,color='#eee9dd',width=860,maxlines=3):
         return label(im,text,x,y,max(28,size-6),color,width,maxlines+1)
     for i,row in enumerate(rows):d.text((x,y+i*size*1.65),row,font=font(size),fill=color,anchor='mm',direction='rtl')
 def frame(scene,profile,t,duration):
+    if scene.get("narrative_beats"):
+        from scripts.narrative_motion import narrative_frame
+        return narrative_frame(scene,profile,t,duration)
     bg={'history':'#101b20','science':'#071726','horror':'#0b101c'}[profile]
     accent={'history':'#edb76e','science':'#57e2ec','horror':'#d09180'}[profile]
     im=Image.new('RGB',(W,H),bg);d=ImageDraw.Draw(im)
