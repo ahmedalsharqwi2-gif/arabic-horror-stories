@@ -14,6 +14,7 @@ jobs:
     uses: ./.github/workflows/main.yml
     with:
       dry_run: true
+      source_backed_sample: true
     secrets: inherit
 
 # Expand numerals before Charon and retain narration for final audio checks.
