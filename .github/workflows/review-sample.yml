@@ -22,3 +22,5 @@ jobs:
 # Render the approved narration using native original motion graphics.
 
 # Review topic-specific motion graphics for the verified source capsule.
+
+# Source-first narration; reuse only the matching reviewed-text cache revision.
