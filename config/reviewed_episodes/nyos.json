@@ -1,0 +1,113 @@
+{
+  "title": "بحيرة نيوس: الخطر اللي خرج من الميه في ليلة واحدة",
+  "scenes": [
+    {
+      "title": "بداية الليلة في الجبل",
+      "narration": "صورة بحيرة نيوس ممكن تبان هادية، لكن اللي حصل هناك كان كارثة حقيقية. في ليلة واحد وعشرين أغسطس سنة ألف وتسعمية وستة وتمانين، خرج غاز من البحيرة في شمال غرب الكاميرون. الخطر ماكانش حيوان مفترس ولا حريق جاي من الغابة.",
+      "labels": [
+        "بحيرة نيوس"
+      ],
+      "cue": "ولا حريق جاي من الغابة.",
+      "delivery": "tense",
+      "effect": "none",
+      "image_prompt": "Wide angle establishing shot of Lake Nyos nestled in steep green volcanic crater hills under a dusky overcast sky in West Africa, dark calm water surface reflecting the dim twilight, realistic documentary photography, empty landscape, no people or text.",
+      "punchline": "ولا حريق جاي من الغابة.",
+      "kind": "cards",
+      "reaction": "suspicious"
+    },
+    {
+      "title": "خروج الغاز الصامت",
+      "narration": "الغاز كان ثاني أكسيد الكربون، وده غاز غير مرئي. اتحرك من البحيرة ناحية الوديان المنخفضة ووصل لقرى حواليها. المشهد اللي بنعرضه هنا للتوضيح؛ الأسهم بتشرح حركة الغاز، لكنها مش تصوير لسحابة ملونة شافها الناس في الليلة دي.",
+      "labels": [
+        "بحيرة نيوس"
+      ],
+      "cue": "شافها الناس في الليلة دي.",
+      "delivery": "whisper",
+      "effect": "none",
+      "image_prompt": "Medium high-angle shot looking down steep green crater slopes toward dark shoreline water at dusk, low practical lighting, empty landscape showing deep valley topography, realistic documentary photography, no visible fog or colors.",
+      "punchline": "شافها الناس في الليلة دي.",
+      "kind": "cards",
+      "reaction": "suspicious"
+    },
+    {
+      "title": "الآثار الصادمة في الوادي",
+      "narration": "الكارثة تسببت في وفاة أكتر من ألف وسبعمية شخص، وكمان أعداد كبيرة من الحيوانات. ده رقم موثق، مش حكاية عن قرية اختفت ولا دليل على لعنة. وفيه فرق كبير بين إننا نحكي واقعة مرعبة، وإننا نضيف لها تفاصيل ماحصلتش.",
+      "labels": [
+        "بحيرة نيوس"
+      ],
+      "cue": "وإننا نضيف لها تفاصيل ماحصلتش.",
+      "delivery": "tense",
+      "effect": "none",
+      "image_prompt": "Close-up cinematic shot of simple rural mud brick and thatch African highland houses empty at dusk, weathered wooden doors closed, quiet atmosphere, realistic documentary photography, no people, no blood, no text.",
+      "punchline": "وإننا نضيف لها تفاصيل ماحصلتش.",
+      "kind": "cards",
+      "reaction": "suspicious"
+    },
+    {
+      "title": "البحث عن الأسباب العلمية",
+      "narration": "الباحثين ربطوا الكارثة بغاز اتراكم في الميه العميقة، ومصدره غازات جاية من تحت القشرة الأرضية. ماكانش لازم يحصل ثوران بركاني ناري عشان الغاز يخرج. أما الشرارة الأولى اللي بدأت خروجه فجأة، فماينفعش نقدّم لها سبب مؤكد من غير دليل.",
+      "labels": [
+        "بحيرة نيوس"
+      ],
+      "cue": "سبب مؤكد من غير دليل.",
+      "delivery": "tense",
+      "effect": "none",
+      "image_prompt": "Extreme wide shot of distant rolling green hills and deep valley paths under clear night sky with realistic moonlight, desolate landscape, documentary reconstruction photography, no people or diagrams.",
+      "punchline": "سبب مؤكد من غير دليل.",
+      "kind": "cards",
+      "reaction": "suspicious"
+    },
+    {
+      "title": "تركيب أنابيب التفريغ",
+      "narration": "بعد الكارثة بسنين، وفي سنة ألفين وواحد، اتركب أنبوب لتفريغ الغاز من عمق البحيرة بشكل تدريجي. وفي سنة ألفين وحداشر، اتضاف أنبوبين كمان. الصور الأرشيفية للأنابيب بتوضح إجراء جه بعد الكارثة، مش حاجة كانت موجودة وقت حدوثها.",
+      "labels": [
+        "بحيرة نيوس"
+      ],
+      "cue": "حاجة كانت موجودة وقت حدوثها.",
+      "delivery": "calm",
+      "effect": "none",
+      "image_prompt": "Close-up telephoto shot of a simple metal degassing pipe sticking vertically out of dark water surface near the shore of Lake Nyos, calm ripples, realistic documentary photography, daytime lighting, no people or text.",
+      "punchline": "حاجة كانت موجودة وقت حدوثها.",
+      "kind": "cards",
+      "reaction": "suspicious"
+    },
+    {
+      "title": "ما زال الغموض قائما",
+      "narration": "الفكرة كانت تقليل تراكم الغاز اللي عمل الخطر، مش ضمان إن أي خطر اختفى للأبد. اللي يخوّف في نيوس إن الظاهرة حقيقية وليها تفسير علمي، حتى لو الغاز نفسه ماتشافش. دي مأساة موثقة، وصورنا والمؤثرات للتوضيح، احترامًا للناس اللي فقدوا حياتهم.",
+      "labels": [
+        "بحيرة نيوس"
+      ],
+      "cue": "احترامًا للناس اللي فقدوا حياتهم.",
+      "delivery": "calm",
+      "effect": "none",
+      "image_prompt": "Low-angle tracking shot along the shoreline of Lake Nyos looking toward steep green hills under a dark night sky with soft moonlight reflecting on the water, realistic documentary photography, empty and still, no people.",
+      "punchline": "احترامًا للناس اللي فقدوا حياتهم.",
+      "kind": "cards",
+      "reaction": "suspicious"
+    }
+  ],
+  "profile": "horror",
+  "series": "ملفات غامضه",
+  "topic_id": "nyos-cameroon-1986-documented",
+  "source": {
+    "publisher": "NASA Earth Observatory",
+    "url": "https://science.nasa.gov/earth/earth-observatory/lake-nyos-cameroon-86244/",
+    "checked_on": "2026-10-22"
+  },
+  "narration": "صورة بحيرة نيوس ممكن تبان هادية، لكن اللي حصل هناك كان كارثة حقيقية. في ليلة واحد وعشرين أغسطس سنة ألف وتسعمية وستة وتمانين، خرج غاز من البحيرة في شمال غرب الكاميرون. الخطر ماكانش حيوان مفترس ولا حريق جاي من الغابة. الغاز كان ثاني أكسيد الكربون، وده غاز غير مرئي. اتحرك من البحيرة ناحية الوديان المنخفضة ووصل لقرى حواليها. المشهد اللي بنعرضه هنا للتوضيح؛ الأسهم بتشرح حركة الغاز، لكنها مش تصوير لسحابة ملونة شافها الناس في الليلة دي. الكارثة تسببت في وفاة أكتر من ألف وسبعمية شخص، وكمان أعداد كبيرة من الحيوانات. ده رقم موثق، مش حكاية عن قرية اختفت ولا دليل على لعنة. وفيه فرق كبير بين إننا نحكي واقعة مرعبة، وإننا نضيف لها تفاصيل ماحصلتش. الباحثين ربطوا الكارثة بغاز اتراكم في الميه العميقة، ومصدره غازات جاية من تحت القشرة الأرضية. ماكانش لازم يحصل ثوران بركاني ناري عشان الغاز يخرج. أما الشرارة الأولى اللي بدأت خروجه فجأة، فماينفعش نقدّم لها سبب مؤكد من غير دليل. بعد الكارثة بسنين، وفي سنة ألفين وواحد، اتركب أنبوب لتفريغ الغاز من عمق البحيرة بشكل تدريجي. وفي سنة ألفين وحداشر، اتضاف أنبوبين كمان. الصور الأرشيفية للأنابيب بتوضح إجراء جه بعد الكارثة، مش حاجة كانت موجودة وقت حدوثها. الفكرة كانت تقليل تراكم الغاز اللي عمل الخطر، مش ضمان إن أي خطر اختفى للأبد. اللي يخوّف في نيوس إن الظاهرة حقيقية وليها تفسير علمي، حتى لو الغاز نفسه ماتشافش. دي مأساة موثقة، وصورنا والمؤثرات للتوضيح، احترامًا للناس اللي فقدوا حياتهم.",
+  "fiction": false,
+  "documented": true,
+  "policy_revision": "documented-daily-v1",
+  "visual_world": "Lake Nyos northwestern Cameroon in August 1986, steep green crater hills and dark water above a rural valley, West African highland vegetation, simple unbranded rural houses. Cinematic documentary reconstruction, empty landscape and household objects, never identifiable victims or bodies. At dusk and night use realistic moonlight and low practical light. Show water, valley topography and later plain degassing pipe with historical period separation. Invisible gas must remain invisible in the photograph; any gas arrows are visibly illustrative diagrams added by code. No ghosts, colored poisonous fog, lava, gore, modern smartphones, fabricated documents or writing.",
+  "editorial_review": {
+    "supported": true,
+    "issues": [],
+    "method": "Manual sentence-by-sentence check against NASA Earth Observatory and the 1987 primary research abstract; exact spoken years corrected",
+    "checked_on": "2026-10-22"
+  },
+  "script_model": "Gemini draft with manually reviewed factual correction",
+  "generated_at": "2026-10-21T23:00:55.724133+00:00",
+  "visual_mode": "reviewed_public_domain_archive",
+  "visual_credit": "Jack Lockwood / USGS • Public Domain",
+  "manual_revision": "nyos-factual-spoken-years-v2"
+}

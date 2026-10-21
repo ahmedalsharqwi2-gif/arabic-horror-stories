@@ -47,6 +47,9 @@ def photo_prompts(plan,cache):
     return [world+' '+s['image_prompt']+' Cinematic editorial reconstruction, dramatic but realistic practical lighting, 35mm or 85mm lens, layered foreground depth, tactile materials, clear silhouette and strong visual focal point, restrained film grain. Each shot must illustrate the actual narrated action. No generic filler, no fake evidence, no writing or logos, no anachronistic landmarks, plausible geometry and anatomy. Main subject within center 60 percent for vertical crop.' for s in plan['scenes']]
 
 def prepare_images(plan):
+    if plan.get('visual_mode')=='reviewed_public_domain_archive' and plan.get('topic_id')=='nyos-cameroon-1986-documented':
+        from film_factory.nyos_archive import prepare_archive
+        return prepare_archive(plan)
     token=os.getenv('CLOUDFLARE_API_TOKEN','').strip();account=os.getenv('CLOUDFLARE_ACCOUNT_ID','').strip()
     if not token or not re.fullmatch(r'[a-fA-F0-9]{32}',account):
         raise RuntimeError('Set CLOUDFLARE_API_TOKEN and the 32-character CLOUDFLARE_ACCOUNT_ID in repository Actions secrets')

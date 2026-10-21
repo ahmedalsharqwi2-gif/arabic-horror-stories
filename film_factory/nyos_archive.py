@@ -21,7 +21,7 @@ def prepare_archive(plan):
     im.convert('RGB').save(p,quality=95)
  paths=[];records=[]
  for i,scene in enumerate(plan['scenes']):
-  text=scene['narration'];key='raft' if any(w in text for w in ('أنابيب','انابيب','مواسير')) else 'fountain' if any(w in text for w in ('ماسورة','نافورة','تنفيس','تفريغ')) else 'lake'
+  text=scene['narration'];key='raft' if any(w in text for w in ('أنابيب','انابيب','مواسير','أنبوبين')) else 'fountain' if any(w in text for w in ('ماسورة','نافورة','تنفيس','تفريغ')) else 'lake'
   target=out/('scene-%02d.jpg'%(i+1));target.write_bytes((cache/(key+'.jpg')).read_bytes());paths.append(target)
   records.append({'scene':i,'file':str(target),'provider':'USGS public-domain archival photo','url':ASSETS[key][0],'source_page':ASSETS[key][1],'credit':ASSETS[key][2],'license':'Public Domain','date_not_assumed_to_be_the_night_of_the_disaster':True,'generated':False,'sha256':hashlib.sha256(target.read_bytes()).hexdigest()})
  plan['visual_mode']='reviewed_public_domain_archive';plan['visual_credit']='Jack Lockwood / USGS • Public Domain';Path('output/plan.json').write_text(json.dumps(plan,ensure_ascii=False,indent=2))

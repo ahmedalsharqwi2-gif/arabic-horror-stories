@@ -115,7 +115,7 @@ class ContentPublisher:
                 headers=self._headers(self.github_token),
                 json={
                     "tag_name": tag,
-                    "target_commitish": os.getenv("GITHUB_SHA", "").strip() or "main",
+                    "target_commitish": "main",
                     "name": f"Auto publish media {self.run_id}",
                     "body": "Temporary public media asset for scheduled Buffer publishing.",
                     "prerelease": True,

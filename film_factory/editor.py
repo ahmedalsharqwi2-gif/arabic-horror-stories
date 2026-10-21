@@ -44,11 +44,22 @@ def validate(plan,profile,brief):
   s['cue']=cue;s['punchline']=cue;s['kind']='cards';s['reaction']='suspicious'
  if not 210<=len(all_words)<=320:raise ValueError('Total spoken narration needs 210–320 words, target 240–280')
  plan.update(profile=profile,series=BRANDS[profile],topic_id=brief['topic_id'],source=brief['source'],narration=' '.join(all_words),fiction=False,documented=True,policy_revision=brief.get('policy_revision','documented-daily-v1'),visual_world=brief['visual_world'])
+ if brief['topic_id']=='nyos-cameroon-1986-documented':
+  if re.search(r'سنة ألف وواحد|ما حدش صحي تاني|محدش صحي تاني',plan['narration']):raise ValueError('Incorrect Nyos spoken year or unsupported claim that nobody survived')
  if profile=='horror' and not any(s['delivery'] in ('whisper','panic_whisper') for s in plan['scenes']):raise ValueError('Horror needs actual whisper delivery cues')
  return plan
 
 def prepare(profile):
  out=Path('output');out.mkdir(exist_ok=True);work=Path('.film_work');work.mkdir(exist_ok=True)
+ if os.getenv('FILM_SOURCE_PLAN'):
+  source=Path(os.environ['FILM_SOURCE_PLAN']).resolve()
+  approved=(Path('config/reviewed_episodes')/'nyos.json').resolve()
+  if source!=approved or profile!='horror':raise ValueError('Unapproved manual episode input')
+  plan=json.loads(source.read_text())
+  if plan.get('fiction') is not False or plan.get('topic_id')!=NYOS['topic_id'] or plan.get('source',{}).get('url')!=NYOS['source']['url'] or plan.get('editorial_review',{}).get('supported') is not True or not plan.get('manual_revision'):raise ValueError('Reviewed episode identity or factual approval missing')
+  plan=validate(plan,profile,NYOS)
+  (out/'plan.json').write_text(json.dumps(plan,ensure_ascii=False,indent=2))
+  return plan
  from film_factory.topics import select
  brief=select(profile,ask);p=work/(profile+'-'+brief['topic_id']+'-plan.json')
  if p.exists():
