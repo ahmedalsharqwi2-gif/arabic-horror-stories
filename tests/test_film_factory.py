@@ -29,4 +29,18 @@ class FilmTests(unittest.TestCase):
     with wave.open('output/effects.wav') as w:self.assertEqual(w.getnchannels(),2);self.assertEqual(w.getnframes(),144000)
    finally:os.chdir(before)
 
+class WhisperPhraseTests(unittest.TestCase):
+ def test_sparse_short_words_can_use_measured_phrase_bounds(self):
+  from film_factory.render import phrase_caption_anchors
+  words=['كلمة']*20;anchors={i:{'start':i*.2} for i in range(20) if i not in (2,8,15)}
+  self.assertTrue(phrase_caption_anchors(words,anchors))
+ def test_a_missing_spoken_phrase_cannot_be_padded_with_guessed_timing(self):
+  from film_factory.render import phrase_caption_anchors
+  words=['كلمة']*20;anchors={i:{'start':i*.2} for i in range(20) if i not in range(5,10)}
+  self.assertFalse(phrase_caption_anchors(words,anchors))
+ def test_timestamps_must_remain_monotonic(self):
+  from film_factory.render import phrase_caption_anchors
+  anchors={i:{'start':i*.2} for i in range(20)};anchors[8]['start']=.1
+  self.assertFalse(phrase_caption_anchors(['كلمة']*20,anchors))
+
 if __name__=='__main__':unittest.main()
