@@ -18,3 +18,4 @@ jobs:
     secrets: inherit
 
 # Review source-specific cache isolation and measured caption timing.
+# Review sample trigger requested 2026-10-21; dry_run, no social publishing.
