@@ -17,3 +17,5 @@ jobs:
     secrets: inherit
 
 # Expand numerals before Charon and retain narration for final audio checks.
+
+# Render the approved narration using native original motion graphics.

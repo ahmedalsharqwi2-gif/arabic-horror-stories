@@ -10,3 +10,4 @@ Pillow>=10.0
 
 av<19
 num2words>=0.5.14,<0.6
+stable-ts>=2.18,<3

@@ -36,6 +36,7 @@ env:
   BACKGROUND_MUSIC_ENABLED: 'true'
   MUSIC_ROTATION_INDEX: ${{ github.run_number }}
   BACKGROUND_MUSIC_VOLUME: '0.12'
+  CINEMATIC_MOTION_ONLY: 'true'
 concurrency:
   group: horror-episode-pipeline
   cancel-in-progress: false

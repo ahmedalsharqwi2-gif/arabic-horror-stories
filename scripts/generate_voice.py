@@ -192,7 +192,7 @@ def align_words_with_whisper(audio_path: Path, script_words: list[str]) -> list[
         raise RuntimeError("Whisper لم يرجع أي توقيت على مستوى الكلمة")
 
     def _norm(w: str) -> str:
-        return strip_diacritics(w).translate(DISPLAY_PUNCTUATION).strip().lower()
+        return strip_diacritics(w).translate(DISPLAY_PUNCTUATION).strip().lower().translate(str.maketrans({"أ":"ا","إ":"ا","آ":"ا","ى":"ي","ؤ":"و","ئ":"ي"}))
 
     script_norm = [_norm(w) for w in script_words]
     whisper_norm = [_norm(w) for w, _, _ in whisper_words]
@@ -212,14 +212,15 @@ def align_words_with_whisper(audio_path: Path, script_words: list[str]) -> list[
                 "duration": max(end - start, 0.05),
             }
 
+    from scripts.asr_token_boundaries import recover_token_boundaries
+    recover_token_boundaries(script_norm,whisper_norm,whisper_words,script_words,timings)
     known_indices = [i for i, t in enumerate(timings) if t is not None]
     # The independent audio-vs-script ASR gate already passed before this
     # function. Allow limited Whisper word-boundary misses (Arabic clitics,
     # spelling variants), but never fabricate timing for more than 20%.
     if not known_indices or len(known_indices) < len(script_words) * 0.80:
-        raise RuntimeError(
-            f"تطابق ضعيف جدًا: {len(known_indices)}/{len(script_words)} كلمة فقط"
-        )
+        from scripts.forced_caption_alignment import forced_word_alignment
+        return forced_word_alignment(audio_path,script_words)
 
     for i in range(len(timings)):
         if timings[i] is not None:

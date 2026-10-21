@@ -21,9 +21,13 @@ class OfflineExplainerTests(unittest.TestCase):
             self.assertEqual((video["width"], video["height"]), (360, 640))
             self.assertEqual(audio["channels"], 2)
             self.assertAlmostEqual(float(data["format"]["duration"]), 2.1, delta=0.15)
-            captions = path.with_suffix(".explainer.ass").read_text()
-            self.assertIn("شرح نصي توضيحي", captions)
-            self.assertIn("هذه مدينة قديمة وكانت", captions)
+            # The replacement is real original artwork, rather than a flat text fallback.
+            import io
+            from PIL import Image,ImageStat
+            png=subprocess.check_output(["ffmpeg","-v","error","-ss","1","-i",str(path),"-frames:v","1","-f","image2pipe","-vcodec","png","-"])
+            frame=Image.open(io.BytesIO(png)).convert("RGB")
+            self.assertGreater(max(ImageStat.Stat(frame.crop((30,210,330,450))).stddev),10)
+
 
     def test_empty_narration_is_never_replaced_with_unrelated_text(self):
         with self.assertRaises(ValueError):
