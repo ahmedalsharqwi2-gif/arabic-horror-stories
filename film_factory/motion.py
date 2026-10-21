@@ -13,12 +13,17 @@ LEX={
  'magnet':r'مغناطيس|مغناطيسي',
  'network':r'نموذج|ذكاء|بيانات|شريحة|شريحه|معالج|رقاقة',
 }
+def lexical_match(pattern,text):
+ token=re.sub(r'[^\u0621-\u064a]','',str(text)).translate(str.maketrans({'أ':'ا','إ':'ا','آ':'ا','ة':'ه','ى':'ي'}))
+ pattern=pattern.translate(str.maketrans({'أ':'ا','إ':'ا','آ':'ا','ة':'ه','ى':'ي'}))
+ return re.fullmatch(r'(?:و|ف)?(?:ب|ل|ك)?(?:ال)?(?:'+pattern+r')',token) is not None
+
 def events(words,profile):
  allowed={'horror':{'waves','lamp','gas'},'history':{'battle','construction','waves'},'science':{'cell','wave','magnet'},'news':{'network'}}[profile]
  result=[];last={}
  for word in words:
   for kind in allowed:
-   if re.search(LEX[kind],word['text']) and word['start']-last.get(kind,-100)>9:
+   if lexical_match(LEX[kind],word['text']) and word['start']-last.get(kind,-100)>9:
     last[kind]=word['start'];result.append({'kind':kind,'at':word['start'],'word':word['text']})
  return result
 def draw(im,t,cues,accent):

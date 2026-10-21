@@ -6,14 +6,14 @@ import json
 import os
 import re
 import shutil
-import time
 from pathlib import Path
 import requests
 from PIL import Image
-from api_budget import reserve
 
-MODEL = '@cf/black-forest-labs/flux-1-schnell'
-REVISION = 'documented-cinema-scenes-v2'
+MODEL = os.getenv('FILM_IMAGE_MODEL','@cf/black-forest-labs/flux-2-klein-4b')
+REVISION = 'portrait-photography-review-v3'
+PORTRAIT_MODEL='@cf/black-forest-labs/flux-2-klein-4b'
+if MODEL not in (PORTRAIT_MODEL,'@cf/black-forest-labs/flux-1-schnell'):raise ValueError('Image model has not been configured for this pipeline')
 
 class CloudflareUnavailable(RuntimeError):pass
 
@@ -40,11 +40,18 @@ def decoded_image(response):
     with Image.open(io.BytesIO(raw)) as im:
         im.load()
         if min(im.size)<512:raise ValueError('Generated image below minimum resolution')
+        if MODEL==PORTRAIT_MODEL and (im.width<1080 or im.height<1900 or im.width>=im.height):raise ValueError('Portrait provider returned the wrong resolution or orientation')
         return im.convert('RGB')
 
 def photo_prompts(plan,cache):
     world=plan['visual_world']
-    return [world+' '+s['image_prompt']+' Cinematic editorial reconstruction, dramatic but realistic practical lighting, 35mm or 85mm lens, layered foreground depth, tactile materials, clear silhouette and strong visual focal point, restrained film grain. Each shot must illustrate the actual narrated action. No generic filler, no fake evidence, no writing or logos, no anachronistic landmarks, plausible geometry and anatomy. Main subject within center 60 percent for vertical crop.' for s in plan['scenes']]
+    prompts=[world+' '+s['image_prompt']+' Full-scale lifelike location photography, not a miniature set or a video-game render. Natural exposure, weathered real materials, plausible anatomy, restrained color. One clear focal subject and foreground-to-background depth. Compose directly for a vertical 9:16 frame. No text, diagrams, logos, plastic-looking surfaces or fake evidence.' for s in plan['scenes']]
+    if any(len(p)>2048 for p in prompts):raise ValueError('Photographic direction exceeds provider prompt limit; shorten the scene description explicitly')
+    return prompts
+
+def request_image(account,token,prompt):
+    kwargs={'files':{k:(None,str(v)) for k,v in {'prompt':prompt,'width':1088,'height':1920}.items()}} if MODEL==PORTRAIT_MODEL else {'json':{'prompt':prompt,'steps':8}}
+    return requests.post(f'https://api.cloudflare.com/client/v4/accounts/{account}/ai/run/{MODEL}',headers={'Authorization':'Bearer '+token},timeout=180,**kwargs)
 
 def prepare_images(plan):
     if plan.get('visual_mode')=='reviewed_public_domain_archive' and plan.get('topic_id')=='nyos-cameroon-1986-documented':
@@ -64,24 +71,13 @@ def prepare_images(plan):
                 hit=True
             except (OSError,ValueError):target.unlink()
         if not hit:
-            response=requests.post(f'https://api.cloudflare.com/client/v4/accounts/{account}/ai/run/{MODEL}',headers={'Authorization':'Bearer '+token},json={'prompt':prompt,'steps':8},timeout=120)
-            if response.status_code==429:
-                # One bounded wait for transient capacity, not repeated quota retries.
-                try:wait=min(20,max(1,int(response.headers.get('Retry-After','5'))))
-                except ValueError:wait=5
-                time.sleep(wait)
-                response=requests.post(f'https://api.cloudflare.com/client/v4/accounts/{account}/ai/run/{MODEL}',headers={'Authorization':'Bearer '+token},json={'prompt':prompt,'steps':8},timeout=120)
-            try:im=decoded_image(response)
-            except CloudflareUnavailable:
-                if response.status_code==429 and plan.get('topic_id')=='nyos-cameroon-1986-documented':
-                    from film_factory.nyos_archive import prepare_archive
-                    return prepare_archive(plan)
-                raise
+            response=request_image(account,token,prompt)
+            im=decoded_image(response)
             temporary=target.with_suffix('.tmp');im.save(temporary,format='JPEG',quality=95);temporary.replace(target)
         with Image.open(target) as im:dimensions=list(im.size)
         public=Path('output/images')/f'scene-{index+1:02}.jpg';public.parent.mkdir(exist_ok=True);shutil.copyfile(target,public)
         paths.append(public)
-        records.append({'scene':index,'file':str(public),'prompt':prompt,'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'dimensions':dimensions,'cache_hit':hit,'provider':'Cloudflare Workers AI','model':MODEL,'steps':8,'source_url':plan['source']['url'],'illustration_not_evidence':True})
+        records.append({'scene':index,'file':str(public),'prompt':prompt,'sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'dimensions':dimensions,'cache_hit':hit,'provider':'Cloudflare Workers AI','model':MODEL,'steps':4 if MODEL==PORTRAIT_MODEL else 8,'source_url':plan['source']['url'],'illustration_not_evidence':True})
         print(f'Cloudflare scene {index+1}/{len(prompts)} ready; cached={hit}',flush=True)
         Path('output/image_manifest.json').write_text(json.dumps({'revision':REVISION,'images':records,'completed':len(records)==len(prompts)},ensure_ascii=False,indent=2))
     return paths
