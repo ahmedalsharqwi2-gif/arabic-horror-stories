@@ -16,3 +16,15 @@ class NarrativeCueTests(unittest.TestCase):
     def test_no_measured_timing_is_an_error(self):
         with self.assertRaisesRegex(RuntimeError,'measured'):
             cues_from_captions([{'text':'سفينة','start':0.,'end':3.}],3.,'horror')
+
+    def test_active_words_are_read_before_legacy_caption_normalization(self):
+        import tempfile
+        from pathlib import Path
+        from scripts.narrative_motion import read_active_captions
+        with tempfile.TemporaryDirectory() as folder:
+            path=Path(folder)/'voice.ass'
+            path.write_text('Dialogue: 0,0:00:02.00,0:00:02.50,Caption,,0,0,0,,{\\c&H000000FF&}قارب\nDialogue: 0,0:00:02.00,0:00:02.50,Caption,,0,0,0,,سفينة\n')
+            events=read_active_captions(path,4)
+            self.assertEqual(len(events),1)
+            self.assertEqual(events[0]['text'],'قارب')
+            self.assertEqual(events[0]['start'],2)

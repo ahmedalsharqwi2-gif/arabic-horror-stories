@@ -22,4 +22,4 @@ jobs:
 
 # Render narration-cued narrative diagrams revision 2; no images, no social publishing.
 
-# Recover missing word timestamps from a second measured waveform alignment; never uniform timing.
+# Preserve original active-word ASS events before any legacy caption normalization.

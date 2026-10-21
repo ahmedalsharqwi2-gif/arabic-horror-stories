@@ -19,6 +19,27 @@ TITLES={
 }
 
 
+
+def read_active_captions(source, duration):
+    if source is None:
+        raise RuntimeError('Measured ASS captions are required')
+    from pathlib import Path
+    def seconds(value):
+        h,m,s=value.split(':')
+        return int(h)*3600+int(m)*60+float(s)
+    events=[]
+    for line in Path(source).read_text(encoding='utf-8-sig').splitlines():
+        if not line.startswith('Dialogue:'):continue
+        fields=line.split(',',9)
+        if len(fields)!=10 or r'\c&H000000FF&' not in fields[9]:continue
+        start,end=seconds(fields[1]),min(duration,seconds(fields[2]))
+        text=re.sub(r'\{[^}]*\}','',fields[9]).strip()
+        if text and 0<=start<end:
+            events.append({'start':start,'end':end,'text':text,'ass_text':fields[9]})
+    if not events:raise RuntimeError('Active word timings missing from source subtitles')
+    return events
+
+
 def cues_from_captions(events,duration,profile):
     words=[]
     for e in events:

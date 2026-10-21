@@ -814,8 +814,9 @@ def build(audio: Path, narration: str, output: Path, episode: dict, subtitles: P
     else:
         scenes = None
     if os.getenv("CINEMATIC_MOTION_ONLY", "false").lower() == "true":
-        from scripts.narrative_motion import cues_from_captions
-        scenes = cues_from_captions(events, duration, cfg["profile"])
+        from scripts.narrative_motion import cues_from_captions, read_active_captions
+        motion_events = read_active_captions(subtitles, duration)
+        scenes = cues_from_captions(motion_events, duration, cfg["profile"])
     elif not scenes:
         scenes = direct_scenes(plan_scenes(events, duration, episode, cfg), episode, cfg, budget)
         atomic_json(plan_path, {"duration": duration, "profile": cfg["profile"], "scenes": scenes})
