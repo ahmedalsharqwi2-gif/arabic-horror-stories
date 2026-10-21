@@ -86,7 +86,7 @@ jobs:
       uses: actions/cache/restore@v4
       with:
         path: state/current_episode.json
-        key: prepared-v1-${{ github.repository_id }}-${{ inputs.dry_run || false }}-${{ env.PUBLISH_DATE || github.run_id }}-${{ env.PUBLISH_HOUR }}
+        key: prepared-v4-${{ inputs.source_backed_sample || false }}-${{ github.repository_id }}-${{ inputs.dry_run || false }}-${{ env.PUBLISH_DATE || github.run_id }}-${{ env.PUBLISH_HOUR }}
       if: ${{ steps.daily.outputs.already_confirmed != 'true' }}
     - name: Validate restored text against current topic history
       id: checked_text
@@ -176,7 +176,7 @@ jobs:
       uses: actions/cache/save@v4
       with:
         path: state/current_episode.json
-        key: prepared-v1-${{ github.repository_id }}-${{ inputs.dry_run || false }}-${{ env.PUBLISH_DATE || github.run_id }}-${{ env.PUBLISH_HOUR }}
+        key: prepared-v4-${{ inputs.source_backed_sample || false }}-${{ github.repository_id }}-${{ inputs.dry_run || false }}-${{ env.PUBLISH_DATE || github.run_id }}-${{ env.PUBLISH_HOUR }}
     - name: Validate the approved Gemini Charon voice
       run: bash voice_provider/install.sh
       if: ${{ steps.daily.outputs.already_confirmed != 'true' }}
