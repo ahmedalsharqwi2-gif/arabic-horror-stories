@@ -17,11 +17,12 @@ class FilmRenderer(Renderer):
    alpha=int(255*max(max(0,1-y/500)*.86,max(0,(y-1160)/760)*.97))
    d.line((0,y,W,y),fill=(3,6,12,alpha))
   words=timing['words']
-  for i in range(0,len(words),5):
-   group=words[i:i+5];panel=Image.new('RGBA',(960,235));d=ImageDraw.Draw(panel)
+  groups=timing.get('caption_groups') or [{'text':' '.join(x['text'] for x in words[i:i+5]),'start':words[i]['start'],'end':words[min(i+4,len(words)-1)]['end']} for i in range(0,len(words),5)]
+  for group in groups:
+   panel=Image.new('RGBA',(960,235));d=ImageDraw.Draw(panel)
    d.rounded_rectangle((0,0,959,234),radius=24,fill=(4,9,16,225))
-   para(panel,' '.join(x['text'] for x in group),480,73,48,880,maxlines=2)
-   self.captions.append((group[0]['start'],group[-1]['end'],panel))
+   para(panel,group['text'],480,73,48,880,maxlines=2)
+   self.captions.append((group['start'],group['end'],panel))
  def frame(self,t):
   index=next((i for i,s in enumerate(self.t['scenes']) if s['start']<=t<s['end']),len(self.photos)-1)
   s=self.t['scenes'][index];profile=self.plan['profile'];accent=COLORS[profile]

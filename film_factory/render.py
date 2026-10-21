@@ -37,18 +37,6 @@ def para(im,text,cx,y,size=44,width=880,fill=INK,maxlines=3):
 
 def norm(w):return re.sub(r'[^\u0621-\u064a0-9]','',re.sub(r'[\u064b-\u065fـ]','',w)).translate(str.maketrans({'أ':'ا','إ':'ا','آ':'ا','ى':'ي','ة':'ه'}))
 
-def phrase_caption_anchors(expected,anchors):
-    if len(anchors)/max(1,len(expected))<.70:return False
-    gap=0
-    for i in range(len(expected)):
-        gap=0 if i in anchors else gap+1
-        if gap>3:return False
-    for start in range(0,len(expected),5):
-        end=min(len(expected),start+5)
-        if sum(i in anchors for i in range(start,end))<min(2,end-start):return False
-    ordered=[anchors[i]['start'] for i in sorted(anchors)]
-    return all(b>=a for a,b in zip(ordered,ordered[1:]))
-
 def align(plan,wav):
     from faster_whisper import WhisperModel
     expected=plan['narration'].split()
@@ -67,25 +55,26 @@ def align(plan,wav):
         return actual,anchors
     actual,anchors=transcribe('small');alignment_method='measured_word_asr'
     coverage=len(anchors)/max(1,len(expected))
-    if coverage<.85:
+    if coverage<.85 and plan.get('profile')!='horror':
         other,other_anchors=transcribe('medium')
         if len(other_anchors)>len(anchors):actual,anchors=other,other_anchors
         coverage=len(anchors)/max(1,len(expected))
     print(f'Independent speech transcription matched {coverage:.1%} of words',flush=True)
+    duration=float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',str(wav)]))
+    asr_coverage=coverage;caption_groups=None
     if coverage<.85:
         if coverage<.50:raise ValueError(f'The recorded narration differs substantially from the script ({coverage:.1%})')
-        from scripts.forced_caption_alignment import forced_word_alignment
-        try:
+        if plan.get('profile')=='horror':
+            from film_factory.phrase_alignment import force_phrase_alignment
+            events,caption_groups=force_phrase_alignment(wav,expected,duration)
+            anchors={i:event for i,event in enumerate(events) if event['end']>event['start']}
+            alignment_method='measured_waveform_phrase_captions'
+            print(f'Validated {len(caption_groups)} whole-phrase captions against the actual whispered waveform; no active-word precision claim',flush=True)
+        else:
+            from scripts.forced_caption_alignment import forced_word_alignment
             measured=forced_word_alignment(Path(wav),expected)
             anchors={i:{'text':w['text'],'start':w['offset'],'end':w['offset']+w['duration']} for i,w in enumerate(measured)}
             coverage=1.0;alignment_method='forced_word_alignment'
-        except RuntimeError:
-            # This renderer shows whole five-word phrases, never a guessed active-word highlight.
-            # Sparse unresolved short words may share their measured surrounding phrase.
-            if not phrase_caption_anchors(expected,anchors):raise
-            alignment_method='asr_anchored_phrase_captions'
-            print('Using measured surrounding phrase bounds for sparse unresolved whispered words; no word-level precision claim.',flush=True)
-    duration=float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',str(wav)]))
     def at(index):
         if index in anchors:return anchors[index]['start']
         left=max([i for i in anchors if i<index],default=None);right=min([i for i in anchors if i>index],default=None)
@@ -109,7 +98,7 @@ def align(plan,wav):
             label_beats.append(at(cursor-count+position) if position is not None else end)
         scenes.append({**scene,'start':start,'end':end,'beat':beat,'label_beats':label_beats})
     if actual and duration-actual[-1]['end']>2.5:raise ValueError('Unexpected long trailing silence; review final spoken sentence')
-    result={'narration_sha256':hashlib.sha256(plan['narration'].encode()).hexdigest(),'coverage':coverage,'alignment_method':alignment_method,'duration':duration,'words':words,'scenes':scenes,'asr_words':actual,'interpolated_words':[i for i in range(len(words)) if i not in anchors]}
+    result={'narration_sha256':hashlib.sha256(plan['narration'].encode()).hexdigest(),'coverage':coverage,'alignment_method':alignment_method,'independent_asr_coverage':asr_coverage,'caption_groups':caption_groups,'active_word_precision_claimed':False,'duration':duration,'words':words,'scenes':scenes,'asr_words':actual,'interpolated_words':[i for i in range(len(words)) if i not in anchors]}
     Path('output/timing.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
     return result
 

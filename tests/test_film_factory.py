@@ -29,18 +29,20 @@ class FilmTests(unittest.TestCase):
     with wave.open('output/effects.wav') as w:self.assertEqual(w.getnchannels(),2);self.assertEqual(w.getnframes(),144000)
    finally:os.chdir(before)
 
-class WhisperPhraseTests(unittest.TestCase):
- def test_sparse_short_words_can_use_measured_phrase_bounds(self):
-  from film_factory.render import phrase_caption_anchors
-  words=['كلمة']*20;anchors={i:{'start':i*.2} for i in range(20) if i not in (2,8,15)}
-  self.assertTrue(phrase_caption_anchors(words,anchors))
- def test_a_missing_spoken_phrase_cannot_be_padded_with_guessed_timing(self):
-  from film_factory.render import phrase_caption_anchors
-  words=['كلمة']*20;anchors={i:{'start':i*.2} for i in range(20) if i not in range(5,10)}
-  self.assertFalse(phrase_caption_anchors(words,anchors))
- def test_timestamps_must_remain_monotonic(self):
-  from film_factory.render import phrase_caption_anchors
-  anchors={i:{'start':i*.2} for i in range(20)};anchors[8]['start']=.1
-  self.assertFalse(phrase_caption_anchors(['كلمة']*20,anchors))
+class MeasuredPhraseTests(unittest.TestCase):
+ def events(self):return [{'text':'كلمة','start':i*.2,'end':i*.2+.18} for i in range(10)]
+ def test_a_zero_duration_token_does_not_invent_a_word_interval(self):
+  from film_factory.phrase_alignment import phrase_intervals
+  events=self.events();events[2]['end']=events[2]['start'];groups=phrase_intervals(events,['كلمة']*10,2)
+  self.assertEqual(len(groups),2);self.assertEqual(events[2]['start'],events[2]['end']);self.assertEqual(groups[0]['end'],.98)
+ def test_a_whole_unmeasured_phrase_is_rejected(self):
+  from film_factory.phrase_alignment import phrase_intervals
+  events=self.events()
+  for event in events[:5]:event['end']=event['start']
+  with self.assertRaisesRegex(RuntimeError,'No measured speech'):phrase_intervals(events,['كلمة']*10,2)
+ def test_transcript_changes_are_rejected(self):
+  from film_factory.phrase_alignment import phrase_intervals
+  events=self.events();events[1]['text']='مختلف'
+  with self.assertRaisesRegex(RuntimeError,'changed'):phrase_intervals(events,['كلمة']*10,2)
 
 if __name__=='__main__':unittest.main()
