@@ -23,3 +23,5 @@ jobs:
 # Render narration-cued narrative diagrams revision 2; no images, no social publishing.
 
 # Preserve original active-word ASS events before any legacy caption normalization.
+
+# Re-align unresolved short words inside a bounded real-audio crop.
