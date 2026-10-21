@@ -137,12 +137,12 @@ def load_title_and_description() -> tuple[str, str]:
     title = display_title(episode.get("title", "Horror Episode"))
     caption = str(episode.get("caption", "")).strip() or title
     # وصف يوتيوب بيسمح بحد أقصى 5000 حرف، الكابشن الحالي عادة أقصر بكتير.
-    description = f"{caption[:4900]}\n\n#رعب #قصص_رعب #غموض".strip()
+    description = caption[:4900]
     return title, description
 
 
 def upload_video(youtube, video_path: Path, title: str, description: str) -> str:
-    status: dict = {"selfDeclaredMadeForKids": YT_MADE_FOR_KIDS}
+    status: dict = {"selfDeclaredMadeForKids": YT_MADE_FOR_KIDS, "containsSyntheticMedia": True}
     from scripts.publication_state import immediate_requested
     if immediate_requested():
         status["privacyStatus"] = "public"
@@ -161,6 +161,8 @@ def upload_video(youtube, video_path: Path, title: str, description: str) -> str
         "snippet": {
             "title": title or "Horror Episode",
             "description": description,
+            "tags": json.loads(EPISODE_PATH.read_text()).get("tags", []),
+            "defaultAudioLanguage": "ar",
             "categoryId": YT_CATEGORY_ID,
         },
         "status": status,
