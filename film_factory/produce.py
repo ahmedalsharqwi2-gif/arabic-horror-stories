@@ -13,7 +13,7 @@ def performance(plan):
  instructions=['Perform this ORIGINAL FICTION as the person trapped inside the apartment NOW, recording quietly so the presence behind the door cannot hear. Same Charon voice, Egyptian Arabic. Acting must follow the meaning, not an audiobook. Keep every written word. Audible close-mic voiced whispers, frightened breath, short tense pauses; remain intelligible. No screaming, caricature, music or spoken stage directions. Do not say the scene labels.']
  styles={'tense':'restrained unease, low voice, trying to stay rational','whisper':'close-microphone breathy whisper, scared of being overheard','fear':'voice trembles slightly, short breaths and urgent questioning','panic_whisper':'terrified but suppressing volume, broken breathing and slower hushed words, then freeze briefly','calm':'low intimate voice','curious':'uncertain quiet curiosity'}
  for s in plan['scenes']:instructions.append('Beginning with the EXACT words «'+' '.join(s['narration'].split()[:7])+'», use '+styles[s['delivery']]+'.')
- instructions.append('Do not fade away or omit the final words. Whisper the final complete sentence distinctly, then finish.')
+ instructions.append('Clarity priority: use quiet VOICED under-the-breath speech, not an airy unvoiced whisper. Keep full Arabic consonants and vowels, with frightened intention and breath between phrases. Do not mumble or swallow syllables. Make the final five words slightly clearer and more voiced, without shouting. Complete every final word before stopping. Performance revision: clear-whisper-v3.')
  return '\n'.join(instructions)
 
 def main():
@@ -24,7 +24,9 @@ def main():
  if args.prepare_only:return
  voice=generate(plan['narration'],'output/narration.wav',performance(plan))
  p=Path('output/timing.json');digest=hashlib.sha256(plan['narration'].encode()).hexdigest();timing=json.loads(p.read_text()) if p.exists() else None
- if not timing or timing.get('narration_sha256')!=digest:timing=align(plan,voice)
+ voice_digest=hashlib.sha256(Path(voice).read_bytes()).hexdigest()
+ if not timing or timing.get('narration_sha256')!=digest or timing.get('audio_sha256')!=voice_digest:
+  timing=align(plan,voice);timing['audio_sha256']=voice_digest;p.write_text(json.dumps(timing,ensure_ascii=False,indent=2))
  duration=timing['duration']
  if not 70<=duration<=180:raise ValueError(f'Expected 70–180 seconds of complete speech, got {duration:.2f}')
  FilmRenderer(plan,timing,images).encode('output/visuals.mp4')

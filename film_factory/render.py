@@ -66,7 +66,7 @@ def align(plan,wav):
         if coverage<.50:raise ValueError(f'The recorded narration differs substantially from the script ({coverage:.1%})')
         if plan.get('profile')=='horror':
             from film_factory.phrase_alignment import force_phrase_alignment
-            events,caption_groups=force_phrase_alignment(wav,expected,duration)
+            events,caption_groups=force_phrase_alignment(wav,expected,duration,anchors)
             anchors={i:event for i,event in enumerate(events) if event['end']>event['start']}
             alignment_method='measured_waveform_phrase_captions'
             print(f'Validated {len(caption_groups)} whole-phrase captions against the actual whispered waveform; no active-word precision claim',flush=True)
