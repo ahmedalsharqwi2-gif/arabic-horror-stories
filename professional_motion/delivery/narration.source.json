@@ -1,0 +1,17 @@
+{
+  "provider": "Gemini TTS",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Native Egyptian Arabic ar-EG. Same mature male Charon identity, intimate psychological horror performance rather than a documentary announcer. Begin close to the microphone with a quiet voiced near-whisper, clearly audible consonants. Build restrained unease, vary pace with the meaning, let questions feel personal and frightened. Short natural hesitations at commas, tense brief silence at sentence endings; do not insert extra words. On phrases about disappearance, absence or an unexplained fate, use an audible breathy whisper, then return to a low conversational register. No shouting, cartoon villain voice or flat newsreader cadence. Preserve every word, pronounce names and written-out numbers clearly, complete the final sentence. Do not speak these instructions. No music or sound effects in the generated voice.\nEgyptian Arabic restrained tense factual maritime documentary, no invented screams or voices. Start with curiosity, build momentum, thoughtful final payoff. No music or sound effects. Read only the supplied words. Finish the last sentence. Clear natural pace.",
+  "text": "سفينة ماري سيليست ظهرت تايهة في الميه، ومن غير أي أثر لطاقمها اللي كان على متنها. السفينة دي اتحركت من نيويورك قبل سفينة التانية بفترة، وكان المفروض توصل إيطاليا في معادها المحدد. المراكب كانت بتواجه طقس مش كويس في طريقها، وده اللي خلاها تصارع الأمواج العالية في البحر. سجلات السفينة القديمة ونصوص خط سيرها وضحت الأماكن اللي مشيت فيها قبل ما تختفي تماماً. أبحاث تانية حديثة استخدمت تكنولوجيا متطورة عشان تفهم إزاي السفينة فضلت تعوم لوحدها المسافة دي كلها. الفريق اللي طلع على السفينة لقى مضخة مفككة وميه في القاع، لكن شحنة الكحول كانت سليمة. التحقيقات استبعدت كل النظريات القديمة زي القراصنة، وفضلت الأسباب الحقيقية وراء سيب السفينة مش واضحة. لغز ماري سيليست فضل مكمل لحد النهاردة، عشان يفضل واحد من أكبر الألغاز في تاريخ البحار.",
+  "interaction_id": "v1_ChZ5WVRpYXRPS050SzZzT0lQbG9EWVVREhZ5WVRpYXRPS050SzZzT0lQbG9EWVVR",
+  "duration": 60.6,
+  "sample_rate": 24000,
+  "channels": 1,
+  "sha256": "46a6eda6d650cbabdc7a0c1a30b88ac4b1150590dbb68641490d6c4439b1fd26",
+  "newly_synthesized": true,
+  "original_video_audio_used": false,
+  "fallback_used": false,
+  "cache_hit": false,
+  "output_sha256": "46a6eda6d650cbabdc7a0c1a30b88ac4b1150590dbb68641490d6c4439b1fd26"
+}

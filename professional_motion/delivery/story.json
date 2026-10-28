@@ -1,0 +1,95 @@
+{
+  "title": "ماري سيليست: سفينة من غير طاقم",
+  "canonical_subject": "mary-celeste-1872",
+  "suitable": true,
+  "facts": [
+    "The British brig Dei Gratia spotted the Mary Celeste adrift on December 5, 1872",
+    "The ship had a six-month supply of food and water but no crew on board",
+    "Modern investigations used historical weather data and modern maritime technology to study the drift"
+  ],
+  "milestones": [
+    "November 7, 1872",
+    "December 5, 1872",
+    "1884"
+  ],
+  "scenes": [
+    {
+      "id": "scene_1",
+      "label": "سفينة من غير طاقم",
+      "narration": "سفينة ماري سيليست ظهرت تايهة في الميه، ومن غير أي أثر لطاقمها اللي كان على متنها.",
+      "labels": []
+    },
+    {
+      "id": "scene_2",
+      "label": "رحلة ماري سيليست",
+      "narration": "السفينة دي اتحركت من نيويورك قبل سفينة التانية بفترة، وكان المفروض توصل إيطاليا في معادها المحدد.",
+      "labels": [
+        "السفينة دي اتحركت"
+      ]
+    },
+    {
+      "id": "scene_3",
+      "label": "طقس مش كويس",
+      "narration": "المراكب كانت بتواجه طقس مش كويس في طريقها، وده اللي خلاها تصارع الأمواج العالية في البحر.",
+      "labels": [
+        "طقس مش كويس"
+      ]
+    },
+    {
+      "id": "scene_4",
+      "label": "سجلات السفينة",
+      "narration": "سجلات السفينة القديمة ونصوص خط سيرها وضحت الأماكن اللي مشيت فيها قبل ما تختفي تماماً.",
+      "labels": [
+        "سجلات السفينة القديمة"
+      ]
+    },
+    {
+      "id": "scene_5",
+      "label": "بحث متقدم",
+      "narration": "أبحاث تانية حديثة استخدمت تكنولوجيا متطورة عشان تفهم إزاي السفينة فضلت تعوم لوحدها المسافة دي كلها.",
+      "labels": [
+        "أبحاث تانية حديثة"
+      ]
+    },
+    {
+      "id": "scene_6",
+      "label": "مضخة مفككة",
+      "narration": "الفريق اللي طلع على السفينة لقى مضخة مفككة وميه في القاع، لكن شحنة الكحول كانت سليمة.",
+      "labels": [
+        "مضخة مفككة وميه في القاع"
+      ]
+    },
+    {
+      "id": "scene_7",
+      "label": "أسباب الغموض",
+      "narration": "التحقيقات استبعدت كل النظريات القديمة زي القراصنة، وفضلت الأسباب الحقيقية وراء سيب السفينة مش واضحة.",
+      "labels": [
+        "التحقيقات استبعدت كل النظريات القديمة"
+      ]
+    },
+    {
+      "id": "scene_8",
+      "label": "نهاية اللغز",
+      "narration": "لغز ماري سيليست فضل مكمل لحد النهاردة، عشان يفضل واحد من أكبر الألغاز في تاريخ البحار.",
+      "labels": [
+        "لغز ماري سيليست فضل مكمل"
+      ]
+    }
+  ],
+  "profile": "horror",
+  "series": "ملفات غامضه",
+  "visual_family": "maritime",
+  "variant": "atlantic",
+  "topic_key": "mary-celeste-1872",
+  "source": {
+    "url": "https://www.smithsonianmag.com/history/abandoned-ship-the-mary-celeste-174488104/",
+    "publisher": "Smithsonian Magazine"
+  },
+  "fiction": false,
+  "documented": true,
+  "editorial_review": {
+    "supported": true,
+    "novel": true,
+    "issues": []
+  }
+}
