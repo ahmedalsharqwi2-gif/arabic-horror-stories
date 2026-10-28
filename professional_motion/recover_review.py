@@ -39,9 +39,14 @@ rows=SCRIPTS[PROFILE]
 s['scenes']=[{'id':f'scene-{i+1}','label':label,'visual_mode':mode,'narration':narration,'labels':[]} for i,(label,mode,narration) in enumerate(rows)]
 s['title']={'horror':'ماري سيليست: السفينة رجعت.. والناس؟','history':'بون دو جار: جسر بيشيل ميه','news':'جيميني فور كاربون: إيه الجديد فعلاً؟'}[PROFILE]
 text=evidence(s['source']['url'])
-quotes_schema={'type':'OBJECT','properties':{'quotes':{'type':'ARRAY','minItems':8,'maxItems':8,'items':{'type':'STRING'}}},'required':['quotes']}
-q=ask('For each of the eight Arabic scenes, copy a 5–18 word VERBATIM excerpt supporting its factual subject from source_text. Diagram descriptions, research cautions and questions are explicitly explanatory, not claims about actual measurements. Never invent excerpts. DATA:\n'+json.dumps({'scenes':s['scenes'],'source_text':text},ensure_ascii=False),quotes_schema)
-for scene,quote in zip(s['scenes'],q['quotes']):scene['evidence_quote']=quote
+# Select source excerpt IDs; the model cannot alter quoted source wording.
+words=text.split();excerpts=[' '.join(words[i:i+15]) for i in range(0,len(words),15) if len(words[i:i+15])>=5]
+quotes_schema={'type':'OBJECT','properties':{'excerpt_ids':{'type':'ARRAY','minItems':8,'maxItems':8,'items':{'type':'INTEGER'}}},'required':['excerpt_ids']}
+q=ask('For each of the eight Arabic scenes choose the INDEX of the source excerpt most relevant to its factual subject. Diagram descriptions and cautious research questions are explanatory, not claims about actual measurements. Return eight excerpt_ids, in scene order. DATA:\n'+json.dumps({'scenes':s['scenes'],'excerpts':dict(enumerate(excerpts))},ensure_ascii=False),quotes_schema)
+if len(q['excerpt_ids'])!=8:raise ValueError('Eight supporting excerpt IDs required')
+for scene,idx in zip(s['scenes'],q['excerpt_ids']):
+    if not isinstance(idx,int) or not 0<=idx<len(excerpts):raise ValueError('Invalid source excerpt ID')
+    scene['evidence_quote']=excerpts[idx]
 verify_evidence(s,text)
 row={'family':s['visual_family'],'variant':s['variant'],'key':s['topic_key'],'url':s['source']['url'],'publisher':s['source']['publisher']}
 s=validate(s,PROFILE,row)
