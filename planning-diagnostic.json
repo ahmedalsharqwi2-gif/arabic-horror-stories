@@ -1,0 +1,10 @@
+{
+  "prior_run": "40786155007",
+  "planning_error_lines": [
+    "2026-10-28T23:17:32.2894895Z Traceback (most recent call last):",
+    "2026-10-28T23:17:32.2901935Z   File \"/home/runner/work/arabic-horror-stories/arabic-horror-stories/professional_motion/cli.py\", line 38, in <module>",
+    "2026-10-28T23:17:32.2903730Z   File \"/home/runner/work/arabic-horror-stories/arabic-horror-stories/professional_motion/cli.py\", line 32, in main",
+    "2026-10-28T23:17:32.2905477Z   File \"/home/runner/work/arabic-horror-stories/arabic-horror-stories/professional_motion/editorial.py\", line 107, in prepare",
+    "2026-10-28T23:17:32.2907273Z   File \"/home/runner/work/arabic-horror-stories/arabic-horror-stories/professional_motion/editorial.py\", line 107, in <setcomp>"
+  ]
+}
