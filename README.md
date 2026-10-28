@@ -1,11 +1,14 @@
-# Arabic horror stories
+# إنتاج موشن جرافيك — horror
 
-كل تشغيل ينتج قصة رعب واحدة مكتملة في فيديو عمودي 9:16 ‏(1080×1920) لا يتجاوز 180 ثانية. لا تُنتج أجزاء أو مقتطفات/ريل منفصلة؛ يرفض مولّد السرد النص الأطول من 240 كلمة، ويمنع مسار التجميع نشر أي فيديو يتجاوز ثلاث دقائق.
+مسار الإنتاج الوحيد المدعوم: `python -m motion_factory.produce horror`.
+في GitHub افتح Actions ثم **Arabic motion graphics — horror** ثم Run workflow على الفرع المحتوي على هذا التغيير. اترك preview=false للفيديو الكامل، أو true لمعاينة صامتة مدتها 12 ثانية. نزّل MP4 من Artifact `horror-motion-<run_id>` بعد انتهاء التشغيل.
 
-## مراجعة الصورة والصوت
+أسرار المستودع الحالية تستخدم داخل Actions: GEMINI_API_KEY، أو GEMINI_TEXT_API_KEY وGEMINI_TTS_API_KEY. لا تنقلها للبيئة المحلية. Cloudflare غير مطلوب: الرسوم تنتج بالكود، لا بمسار الصور القديم.
 
-راجع [CLIP_REVIEW.md](CLIP_REVIEW.md) لإعداد مراجعة المقاطع الفعلية والصوت قبل النشر، وتشخيص توقف المسار عند عدم وجود مشهد مطابق.
+الفيديو الكامل: 1080×1920، 30fps، صوت Charon كامل، توقيت مستمد من الصوت الفعلي مع توثيق الكلمات المستنتجة، رسوم توضيحية خاصة بالقناة، موسيقى ومؤثرات محلية، واختبار فك ترميز وصوت النهاية. مراجعة الحقائق تقارن بالملخص المقدم؛ ليست تحققًا مستقلاً من المصادر. بوابة الصورة تقنية وليست ضمانًا للجودة الفنية. العينات المرفوعة مرجع للأسلوب؛ لا يعاد استخدام صوتها.
 
+لا توجد جدولة أو إعادة نشر تلقائية في المسار البديل. الناتج للمراجعة. يحتفظ الكاش بالصوت والحصة، وبسجل المصادر الحديثة للأخبار. أمثلة العلوم والتاريخ والرعب هي حلقات تجريبية محددة، وليست بنك موضوعات يوميًا؛ الأخبار تتطلب مصدرًا رسميًا حديثًا خلال 72 ساعة.
 
-### Bounded visual fallback
-Pexels candidates are bounded before falling back to Wikimedia Commons public-domain / CC0 JPEG or PNG images. Images are fitted to the frame, animated with FFmpeg, and inspected by the existing actual-media gate before acceptance. Provider errors never grant approval. Source and license metadata are retained beside each animated clip. No API key is required for Commons. Pixabay and Mixkit are not yet integrated. This does not change the episode duration or publication schedule.
+حذفت مسارات تشغيل الإنتاج السابقة (11 ملفًا)، وأبقيت اختبارات CI والمكتبات التي يستعملها المسار الجديد أو اختبارات الانحدار. نقاط الدخول القديمة الرئيسية توجه للمسار الجديد، وأدوات الإنتاج الخاصة السابقة توقف التشغيل المباشر برسالة واضحة.
+
+تحقق محلي بدون مفاتيح: `python -m unittest discover -s tests -p test_motion_factory.py -v`. معاينة محلية: `python -m motion_factory.produce horror --preview --width 360 --fps 15`.

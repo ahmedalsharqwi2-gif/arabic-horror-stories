@@ -27,4 +27,5 @@ def main():
    if im.height<=im.width or im.width<1000:raise ValueError('Provider did not return the required portrait image')
    im.convert('RGB').save(out/f'scene-{i+1:02}.jpg',quality=96)
   records.append(row);(out/'report.json').write_text(json.dumps(records,indent=2));print(json.dumps({k:v for k,v in row.items() if k!='prompt'}),flush=True)
-if __name__=='__main__':main()
+if __name__ == '__main__':
+    raise SystemExit('Retired production path. Run: python -m motion_factory.produce horror')
