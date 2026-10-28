@@ -1,5 +1,5 @@
 {
-  "name": "Professional daily factory — horror",
+  "name": "Professional daily factory — horror — legacy history compatibility fix",
   "on": {
     "push": {
       "branches": [
