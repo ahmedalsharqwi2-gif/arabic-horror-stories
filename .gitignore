@@ -7,3 +7,9 @@ __pycache__/
 .voice_cache/
 state/api_budget.sqlite3*
 .env
+
+professional_motion/node_modules/
+
+professional_motion/delivery/
+
+professional_motion/output/
