@@ -7,7 +7,7 @@
       "canonical_subject": "mary-celeste-1872",
       "title": "ماري سيليست: سفينة من غير طاقم",
       "url": "https://www.smithsonianmag.com/history/abandoned-ship-the-mary-celeste-174488104/",
-      "status": "reserved",
+      "status": "rendered",
       "story": {
         "title": "ماري سيليست: سفينة من غير طاقم",
         "canonical_subject": "mary-celeste-1872",
@@ -103,7 +103,8 @@
           "issues": []
         }
       },
-      "reserved_at": "2026-10-28T23:27:02.578092+00:00"
+      "reserved_at": "2026-10-28T23:27:02.578092+00:00",
+      "video_sha256": "baa0cb0b6784e7e27026151237a9b074a503f3989729b88ea6b5e34e5565eef4"
     }
   ]
 }
