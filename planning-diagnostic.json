@@ -1,0 +1,9 @@
+{
+  "prior_run": "40790459297",
+  "planning_error_lines": [
+    "2026-10-28T23:54:53.6155166Z Traceback (most recent call last):",
+    "2026-10-28T23:54:53.6164923Z   File \"/home/runner/work/arabic-horror-stories/arabic-horror-stories/professional_motion/recover_review.py\", line 45, in <module>",
+    "2026-10-28T23:54:53.6166297Z   File \"/home/runner/work/arabic-horror-stories/arabic-horror-stories/professional_motion/editorial.py\", line 25, in verify_evidence",
+    "2026-10-28T23:54:53.6198204Z ValueError: Every scene needs a short verbatim supporting source excerpt"
+  ]
+}
