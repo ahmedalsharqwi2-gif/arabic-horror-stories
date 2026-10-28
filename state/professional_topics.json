@@ -5,11 +5,11 @@
       "slot": "review-40787353327",
       "topic_key": "mary-celeste-1872",
       "canonical_subject": "mary-celeste-1872",
-      "title": "ماري سيليست: سفينة من غير طاقم",
+      "title": "ماري سيليست: السفينة رجعت.. والناس؟",
       "url": "https://www.smithsonianmag.com/history/abandoned-ship-the-mary-celeste-174488104/",
-      "status": "rendered",
+      "status": "reserved",
       "story": {
-        "title": "ماري سيليست: سفينة من غير طاقم",
+        "title": "ماري سيليست: السفينة رجعت.. والناس؟",
         "canonical_subject": "mary-celeste-1872",
         "suitable": true,
         "facts": [
@@ -24,66 +24,68 @@
         ],
         "scenes": [
           {
-            "id": "scene_1",
+            "id": "scene-1",
             "label": "سفينة من غير طاقم",
-            "narration": "سفينة ماري سيليست ظهرت تايهة في الميه، ومن غير أي أثر لطاقمها اللي كان على متنها.",
-            "labels": []
+            "visual_mode": "hero",
+            "narration": "تخيل سفينة ماشية في البحر، والأكل والميه لسه موجودين، بس مفيش حد عليها. دي حكاية ماري سيليست.",
+            "labels": [],
+            "evidence_quote": "and water—but not a soul to consume it. Thus was born one of the most"
           },
           {
-            "id": "scene_2",
-            "label": "رحلة ماري سيليست",
-            "narration": "السفينة دي اتحركت من نيويورك قبل سفينة التانية بفترة، وكان المفروض توصل إيطاليا في معادها المحدد.",
-            "labels": [
-              "السفينة دي اتحركت"
-            ]
+            "id": "scene-2",
+            "label": "رحلة ماكملتش",
+            "visual_mode": "route",
+            "narration": "السفينة دي خرجت من نيويورك، ووجهتها كانت جنوة في إيطاليا. لكن اللي حصل لطاقمها فضل لغز.",
+            "labels": [],
+            "evidence_quote": "that the unguided vessel was the Mary Celeste , which had left New York City"
           },
           {
-            "id": "scene_3",
-            "label": "طقس مش كويس",
-            "narration": "المراكب كانت بتواجه طقس مش كويس في طريقها، وده اللي خلاها تصارع الأمواج العالية في البحر.",
-            "labels": [
-              "طقس مش كويس"
-            ]
+            "id": "scene-3",
+            "label": "اكتشاف في الأطلسي",
+            "visual_mode": "hero",
+            "narration": "سفينة تانية لقت ماري سيليست تايهة في الأطلسي. هي مااختفتش تحت الميه، اللي اختفى كان الناس.",
+            "labels": [],
+            "evidence_quote": "a ship adrift in the choppy seas. Capt. David Morehouse was taken aback to discover"
           },
           {
-            "id": "scene_4",
-            "label": "سجلات السفينة",
-            "narration": "سجلات السفينة القديمة ونصوص خط سيرها وضحت الأماكن اللي مشيت فيها قبل ما تختفي تماماً.",
-            "labels": [
-              "سجلات السفينة القديمة"
-            ]
+            "id": "scene-4",
+            "label": "سجلات وأسئلة",
+            "visual_mode": "timeline",
+            "narration": "سجل الرحلة بيساعد الباحثين يتتبعوا الطريق. بس السجل لوحده مش بيقول إيه اللي خلّى الطاقم يمشي.",
+            "labels": [],
+            "evidence_quote": "had been tossed about, and the crewmen's belongings were still in their quarters. The ship's"
           },
           {
-            "id": "scene_5",
-            "label": "بحث متقدم",
-            "narration": "أبحاث تانية حديثة استخدمت تكنولوجيا متطورة عشان تفهم إزاي السفينة فضلت تعوم لوحدها المسافة دي كلها.",
-            "labels": [
-              "أبحاث تانية حديثة"
-            ]
+            "id": "scene-5",
+            "label": "إعادة تتبع الرحلة",
+            "visual_mode": "research",
+            "narration": "باحثين رجعوا لبيانات الطقس ومسار السفينة، عشان يحاولوا يفهموا الرحلة. ده بحث بعد الواقعة، مش شهادة عيان.",
+            "labels": [],
+            "evidence_quote": "says. Documentarian Anne MacGregor and oceanographer Phil Richardson used historical weather data to plot the"
           },
           {
-            "id": "scene_6",
+            "id": "scene-6",
             "label": "مضخة مفككة",
-            "narration": "الفريق اللي طلع على السفينة لقى مضخة مفككة وميه في القاع، لكن شحنة الكحول كانت سليمة.",
-            "labels": [
-              "مضخة مفككة وميه في القاع"
-            ]
+            "visual_mode": "pump",
+            "narration": "على السفينة لقوا مضخة مفككة وميه في القاع. الرسم ده توضيحي للمضخة، مش صورة للمعدة الأصلية.",
+            "labels": [],
+            "evidence_quote": "only lifeboat was missing, and one of its two pumps had been disassembled. Three and"
           },
           {
-            "id": "scene_7",
-            "label": "أسباب الغموض",
-            "narration": "التحقيقات استبعدت كل النظريات القديمة زي القراصنة، وفضلت الأسباب الحقيقية وراء سيب السفينة مش واضحة.",
-            "labels": [
-              "التحقيقات استبعدت كل النظريات القديمة"
-            ]
+            "id": "scene-7",
+            "label": "فرضيات من غير حسم",
+            "visual_mode": "papers",
+            "narration": "تفاصيل زي دي فتحت باب لتفسيرات مختلفة. بس وجود تفسير محتمل مش معناه إننا عرفنا السبب بشكل قاطع.",
+            "labels": [],
+            "evidence_quote": "the Mary Celeste ? Through the decades, a lack of hard facts has only spurred"
           },
           {
-            "id": "scene_8",
-            "label": "نهاية اللغز",
-            "narration": "لغز ماري سيليست فضل مكمل لحد النهاردة، عشان يفضل واحد من أكبر الألغاز في تاريخ البحار.",
-            "labels": [
-              "لغز ماري سيليست فضل مكمل"
-            ]
+            "id": "scene-8",
+            "label": "السفينة رجعت.. والناس؟",
+            "visual_mode": "hero",
+            "narration": "الغريب إن السفينة اتلاقت وهي عايمة، لكن مصير طاقمها فضل مجهول. هنا بالذات، السؤال أقوى من أي إجابة سهلة.",
+            "labels": [],
+            "evidence_quote": "durable mysteries in nautical history: What happened to the ten people who had sailed aboard"
           }
         ],
         "profile": "horror",
@@ -101,7 +103,8 @@
           "supported": true,
           "novel": true,
           "issues": []
-        }
+        },
+        "revision": "source-checked narration and topic-specific authored visual modes"
       },
       "reserved_at": "2026-10-28T23:27:02.578092+00:00",
       "video_sha256": "baa0cb0b6784e7e27026151237a9b074a503f3989729b88ea6b5e34e5565eef4"
