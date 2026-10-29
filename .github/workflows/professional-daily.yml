@@ -11,22 +11,12 @@
             "daily"
           ],
           "default": "review"
-        },
-        "horror_genre": {
-          "description": "Optional horror genre for review; daily alternates automatically",
-          "type": "choice",
-          "options": [
-            "automatic",
-            "original_fiction",
-            "documented"
-          ],
-          "default": "automatic"
         }
       }
     },
     "schedule": [
       {
-        "cron": "0 9,10 * * *"
+        "cron": "0 6,7 * * *"
       }
     ]
   },
@@ -49,7 +39,7 @@
         "GEMINI_TEXT_API_KEY": "${{ secrets.GEMINI_TEXT_API_KEY || secrets.GEMINI_API_KEY }}",
         "GEMINI_TTS_API_KEY": "${{ secrets.GEMINI_TTS_API_KEY || secrets.GEMINI_API_KEY }}",
         "GITHUB_TOKEN": "${{ github.token }}",
-        "GH_RELEASE_TOKEN": "${{ secrets.GH_RELEASE_TOKEN }}",
+        "GH_RELEASE_TOKEN": "${{ github.token }}",
         "BUFFER_API_KEY": "${{ secrets.BUFFER_API_KEY }}",
         "BUFFER_CHANNEL_IDS": "${{ secrets.BUFFER_CHANNEL_IDS || vars.BUFFER_CHANNEL_IDS }}",
         "YT_CLIENT_ID": "${{ secrets.YT_CLIENT_ID }}",
@@ -60,7 +50,7 @@
         "BUFFER_FACEBOOK_CHANNEL_ID": "${{ secrets.BUFFER_FACEBOOK_CHANNEL_ID }}",
         "BUFFER_INSTAGRAM_CHANNEL_ID": "${{ secrets.BUFFER_INSTAGRAM_CHANNEL_ID }}",
         "BUFFER_TIKTOK_CHANNEL_ID": "${{ secrets.BUFFER_TIKTOK_CHANNEL_ID }}",
-        "HORROR_REVIEW_GENRE": "${{ inputs.horror_genre || '' }}"
+        "HORROR_REVIEW_GENRE": "documented"
       },
       "outputs": {
         "run": "${{ steps.decision.outputs.run }}",
@@ -243,7 +233,7 @@
         "GEMINI_TEXT_API_KEY": "${{ secrets.GEMINI_TEXT_API_KEY || secrets.GEMINI_API_KEY }}",
         "GEMINI_TTS_API_KEY": "${{ secrets.GEMINI_TTS_API_KEY || secrets.GEMINI_API_KEY }}",
         "GITHUB_TOKEN": "${{ github.token }}",
-        "GH_RELEASE_TOKEN": "${{ secrets.GH_RELEASE_TOKEN }}",
+        "GH_RELEASE_TOKEN": "${{ github.token }}",
         "BUFFER_API_KEY": "${{ secrets.BUFFER_API_KEY }}",
         "BUFFER_CHANNEL_IDS": "${{ secrets.BUFFER_CHANNEL_IDS || vars.BUFFER_CHANNEL_IDS }}",
         "YT_CLIENT_ID": "${{ secrets.YT_CLIENT_ID }}",
@@ -254,7 +244,7 @@
         "BUFFER_FACEBOOK_CHANNEL_ID": "${{ secrets.BUFFER_FACEBOOK_CHANNEL_ID }}",
         "BUFFER_INSTAGRAM_CHANNEL_ID": "${{ secrets.BUFFER_INSTAGRAM_CHANNEL_ID }}",
         "BUFFER_TIKTOK_CHANNEL_ID": "${{ secrets.BUFFER_TIKTOK_CHANNEL_ID }}",
-        "HORROR_REVIEW_GENRE": "${{ inputs.horror_genre || '' }}"
+        "HORROR_REVIEW_GENRE": "documented"
       },
       "steps": [
         {

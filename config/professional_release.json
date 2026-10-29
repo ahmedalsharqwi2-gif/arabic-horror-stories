@@ -1,10 +1,11 @@
 {
-  "renderer": "professional-threejs-v2",
-  "style_approved": false,
-  "publication_approved": false,
-  "approved_sample_sha256": null,
-  "reason": "Science style approved by user; automatic release waits for the other channel reviews requested by the user.",
+  "renderer": "professional-threejs-v3",
+  "style_approved": true,
+  "publication_approved": true,
+  "approved_sample_sha256": "2983697b9f56df162ff283359e3efe1d54fbbaeaf7217caf5bcaed2dc372702b",
+  "reason": "User approved completed channel films and explicitly requested ready-film publication plus daily preparation and publication at 17:00 Cairo.",
   "timezone": "Africa/Cairo",
   "publication_local_time": "17:00",
-  "generation_local_time": "12:00"
+  "generation_local_time": "09:00",
+  "approved_on": "2026-10-29"
 }
