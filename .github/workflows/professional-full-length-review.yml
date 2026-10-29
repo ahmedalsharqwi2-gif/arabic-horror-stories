@@ -1,5 +1,5 @@
 {
-  "name": "Original horror film with editorial notes and full media verification",
+  "name": "One original intercom horror film with saved draft and mobile-safe captions",
   "on": {
     "push": {
       "branches": [
@@ -40,7 +40,8 @@
         "BUFFER_FACEBOOK_CHANNEL_ID": "${{ secrets.BUFFER_FACEBOOK_CHANNEL_ID }}",
         "BUFFER_INSTAGRAM_CHANNEL_ID": "${{ secrets.BUFFER_INSTAGRAM_CHANNEL_ID }}",
         "BUFFER_TIKTOK_CHANNEL_ID": "${{ secrets.BUFFER_TIKTOK_CHANNEL_ID }}",
-        "HORROR_REVIEW_GENRE": "original_fiction"
+        "HORROR_REVIEW_GENRE": "original_fiction",
+        "HORROR_REVIEW_SEED_KEY": "fiction-2c4cfb64b591e06b"
       },
       "outputs": {
         "run": "${{ steps.decision.outputs.run }}",
@@ -234,7 +235,8 @@
         "BUFFER_FACEBOOK_CHANNEL_ID": "${{ secrets.BUFFER_FACEBOOK_CHANNEL_ID }}",
         "BUFFER_INSTAGRAM_CHANNEL_ID": "${{ secrets.BUFFER_INSTAGRAM_CHANNEL_ID }}",
         "BUFFER_TIKTOK_CHANNEL_ID": "${{ secrets.BUFFER_TIKTOK_CHANNEL_ID }}",
-        "HORROR_REVIEW_GENRE": "original_fiction"
+        "HORROR_REVIEW_GENRE": "original_fiction",
+        "HORROR_REVIEW_SEED_KEY": "fiction-2c4cfb64b591e06b"
       },
       "steps": [
         {

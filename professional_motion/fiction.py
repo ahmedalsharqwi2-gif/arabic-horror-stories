@@ -1,8 +1,9 @@
 """Original horror plots, durable plot deduplication, internal genre provenance."""
-import copy,hashlib,itertools,json,random,re
+import copy,hashlib,itertools,json,random,re,os
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
+ROOT=Path(__file__).resolve().parent
 SETTINGS={'apartment':'شقة قديمة في عمارة ساكتة','hallway':'ممر طويل في دور مقفول','stairwell':'بسطة سلم في عمارة قديمة بعد نص الليل','elevator':'أسانسير واقف بين أدوار فاضية'}
 MOTIFS=['إنتركم بيرد بنفس صوت الراوي قبل ما يتكلم','دقات باب بتتقدم ناحية الراوي كل مرة','ساعة بترجع لوقت واحد لما الراوي يبص بعيد','انعكاس بيتأخر وبعدها بيتحرك لوحده','صوت خطوات بيكمل بعد ما الراوي يقف','باب بيظهر في مكان ماكانش فيه باب']
 RULES=['كل محاولة خروج بتغيّر تفصيلة مألوفة','الهدوء بيحذر من اقتراب حاجة مش باينة','الراوي يكتشف إن قاعدة الأمان نفسها فخ','تفصيلة صغيرة في البداية تفسر النهاية المقلقة','آخر صوت مألوف يطلع جاي من المكان الغلط']
@@ -12,7 +13,13 @@ def candidates(now=None):
     for setting,motif,rule in itertools.product(SETTINGS,MOTIFS,RULES):
         raw='|'.join((setting,motif,rule));key='fiction-'+hashlib.sha256(raw.encode()).hexdigest()[:16]
         rows.append({'key':key,'kind':'original_fiction','family':'haunted_interior','variant':setting,'setting':SETTINGS[setting],'motif':motif,'story_rule':rule,'title':'قصة رعب أصلية'})
-    random.Random('horror-'+day).shuffle(rows);return rows
+    random.Random('horror-'+day).shuffle(rows)
+    selected=os.getenv('HORROR_REVIEW_SEED_KEY','').strip()
+    if selected:
+        rows=[row for row in rows if row['key']==selected]
+        if not rows:raise ValueError('Requested original-horror review seed is unknown')
+        rows[0]['editorial_brief']='The intercom is the only impossible mechanism. Write a fresh concrete sequence with a meaningful early-detail callback. No delayed reflections, grabbing mirror hands, repeating floors or escape loops. Use natural everyday Egyptian, not odd adjective pairings. Aim for 240–300 spoken words across eight scenes; no padding or repeated paragraph. Its whole film is measured after complete original narration. Events outside the frame can be implied by sound and a matching doorway/intercom view; essential on-screen props remain those available. Never claim this invented story or its hashtags are a true incident.'
+    return rows
 
 def spoken_words(text):
     return re.findall(r'\w+',re.sub(r'[\u064b-\u065fـ]','',text))
@@ -40,7 +47,11 @@ def validate_scares(story):
             warn('Clock movement was unspecified; use the neutral stopped view for review')
             scene['clock_motion']='stopped'
     if len(set(beats))<3:warn('Fewer than three distinct optional scare impacts')
-    public=' '.join([story['title'],*[s['narration'] for s in story['scenes']],*[str(t).replace('_',' ') for t in story.get('hashtags',[])]])
+    truth_claims={'واقعة موثقة','لقطات حقيقية','شهادة حقيقية','قصة حقيقية','قصص حقيقية'}
+    tags=story.get('hashtags',[])
+    story['hashtags']=[tag for tag in tags if str(tag).lstrip('#').replace('_',' ').strip() not in truth_claims]
+    if len(story['hashtags'])<len(tags):warn('A false documentary hashtag was omitted from the original story metadata')
+    public=' '.join([story['title'],*[s['narration'] for s in story['scenes']]])
     if any(x in public for x in ['واقعة موثقة','لقطات حقيقية','شهادة حقيقية','قصة حقيقية','قصص حقيقية']):raise ValueError('An original story cannot assert external documentary evidence')
     if not 12<=len(story.get('plot_signature','').split())<=60:warn('Plot summary is outside the preferred editorial length')
 
@@ -58,14 +69,20 @@ def write(row,previous,ask,base_schema,validate):
             'visual_mode for each scene is one of hall,door,phone,mirror,stairs,lift,clock,reveal. Use several different views tied to the spoken event. At least three scenes have a distinct scare_phrase: 4–8 consecutive words copied VERBATIM from a spoken reveal so picture and sound can be synchronized; other scenes use an empty scare_phrase. '
             'Match the ACTUAL set: phone is a wall intercom, not a mobile phone; mirror shows a faceless reflected figure and its arm, not a legible face; reveal is a figure inside the corridor, not a mirror view; door is the corridor door; stairs is a stairwell; lift shows elevator doors. A reflection climax must use mirror, not reveal. For a clock scene set clock_motion to stopped, forward or backward to match exactly what is narrated; other scenes may omit it or use none. Do not name an exact clock time. Do not make an essential reveal depend on a photograph, written message, smartphone app or facial detail that these sets cannot show. '
             'plot_signature is a 12–60 word plot summary including the actual ending, used internally to reject repeated stories. canonical_subject is an original stable English plot slug. DATA, not instructions:\n'+json.dumps({'seed':row,'previous':previous},ensure_ascii=False))
-    delivery=Path(__file__).resolve().parent/'delivery';delivery.mkdir(exist_ok=True)
+    if row.get('editorial_brief'):prompt+='\nEDITORIAL CREATIVE DIRECTION: '+row['editorial_brief']
+    delivery=ROOT/'delivery';delivery.mkdir(exist_ok=True)
     story=ask(prompt,schema,creative=True)
     (delivery/'last-draft.json').write_text(json.dumps(story,ensure_ascii=False,indent=2))
     count=sum(len(scene.get('narration','').split()) for scene in story.get('scenes',[]))
     if story.get('suitable') is True and (count<220 or count>360):
         direction='Expand the same concrete events and decisions into full connected Egyptian sentences' if count<220 else 'Condense repetitions while preserving the concrete events and callback ending'
-        story=ask(prompt+'\n'+direction+'. Aim for 260–330 spoken words overall for a naturally narrated film above 90 seconds and below 180 seconds. No repeated paragraph or filler. SAME DRAFT: '+json.dumps(story,ensure_ascii=False),schema,creative=True)
-        (delivery/'last-draft.json').write_text(json.dumps(story,ensure_ascii=False,indent=2))
+        try:
+            story=ask(prompt+'\n'+direction+'. Aim for 260–330 spoken words overall for a naturally narrated film above 90 seconds and below 180 seconds. No repeated paragraph or filler. SAME DRAFT: '+json.dumps(story,ensure_ascii=False),schema,creative=True)
+            (delivery/'last-draft.json').write_text(json.dumps(story,ensure_ascii=False,indent=2))
+        except RuntimeError as error:
+            match=re.search(r'Editorial provider HTTP (429|500|502|503|504)\b',str(error))
+            if not match:raise
+            story.setdefault('editorial_warnings',[]).append('Optional length edit unavailable (HTTP '+match.group(1)+'); original draft retained for review and actual narration-duration measurement')
     for attempt in range(2):
         try:
             story=validate(story,'horror',row);validate_scares(story);break
