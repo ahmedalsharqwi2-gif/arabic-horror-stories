@@ -1,0 +1,183 @@
+{
+  "file": "professional-review.mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 157.16,
+  "story_sha256": "d59edf0703dd9f5e1fb007efc0bb905a8326638c0de021188a38e17c1a894fda",
+  "voice": "original Gemini Charon",
+  "asr_model": "medium+small+large-v3",
+  "independent_asr_word_coverage": 0.906896551724138,
+  "visual_gate": {
+    "passed": true,
+    "duration": 157.166667,
+    "resolution": [
+      1080,
+      1920
+    ],
+    "method": "within-scene diagram-region pixel changes",
+    "scenes": [
+      {
+        "scene": 1,
+        "diagram_spatial_std": [
+          17.874264589701,
+          8.11720140875451,
+          20.034000135653837
+        ],
+        "changed_pixel_ratios": [
+          0.07140313390313391,
+          0.07526115859449192
+        ],
+        "passed": true
+      },
+      {
+        "scene": 2,
+        "diagram_spatial_std": [
+          23.461170177555914,
+          20.612732439066008,
+          21.175659574918235
+        ],
+        "changed_pixel_ratios": [
+          0.08663342830009496,
+          0.0837962962962963
+        ],
+        "passed": true
+      },
+      {
+        "scene": 3,
+        "diagram_spatial_std": [
+          22.966072826877852,
+          19.40092481605801,
+          19.975082592790276
+        ],
+        "changed_pixel_ratios": [
+          0.09899097815764482,
+          0.052801519468186134
+        ],
+        "passed": true
+      },
+      {
+        "scene": 4,
+        "diagram_spatial_std": [
+          24.803723925961922,
+          25.900248540382393,
+          24.818501419506255
+        ],
+        "changed_pixel_ratios": [
+          0.1381172839506173,
+          0.25933048433048433
+        ],
+        "passed": true
+      },
+      {
+        "scene": 5,
+        "diagram_spatial_std": [
+          35.40312178686603,
+          30.654015800600195,
+          30.17540542253697
+        ],
+        "changed_pixel_ratios": [
+          0.2153252611585945,
+          0.1945868945868946
+        ],
+        "passed": true
+      },
+      {
+        "scene": 6,
+        "diagram_spatial_std": [
+          46.45427684024768,
+          49.605556821819704,
+          44.92000638427116
+        ],
+        "changed_pixel_ratios": [
+          0.14697293447293447,
+          0.11838793922127255
+        ],
+        "passed": true
+      },
+      {
+        "scene": 7,
+        "diagram_spatial_std": [
+          35.381060943837284,
+          29.687949300155797,
+          30.02824049361243
+        ],
+        "changed_pixel_ratios": [
+          0.25011870845204176,
+          0.1808641975308642
+        ],
+        "passed": true
+      },
+      {
+        "scene": 8,
+        "diagram_spatial_std": [
+          19.20601093264475,
+          21.04482058291847,
+          21.083473784428865
+        ],
+        "changed_pixel_ratios": [
+          0.08212250712250713,
+          0.08890075973409307
+        ],
+        "passed": true
+      }
+    ],
+    "note": "Technical blank/freeze detection only; not a judgement of artistic or factual quality."
+  },
+  "audio_tail": {
+    "audio_seconds": 157.16,
+    "video_seconds": 157.16,
+    "difference_seconds": 0.0,
+    "last_speech_window_correlation": 0.961355984210968,
+    "audio_tail_checked": true,
+    "silence_padding_used_to_hide_lost_speech": false
+  },
+  "publication_metadata": {
+    "title": "ملفات غامضه | الدور الرابع.. المرة دي أنا اللي بقيت الانعكاس",
+    "caption": "\n#الدور_الرابع #المراية #سلم_العمارة #رعب_مصري",
+    "description": "\n#الدور_الرابع #المراية #سلم_العمارة #رعب_مصري",
+    "tags": [
+      "الدور_الرابع",
+      "المراية",
+      "سلم_العمارة",
+      "رعب_مصري"
+    ],
+    "hashtags": [
+      "#الدور_الرابع",
+      "#المراية",
+      "#سلم_العمارة",
+      "#رعب_مصري"
+    ],
+    "source_url": "",
+    "containsSyntheticMedia": true
+  },
+  "duration_policy": {
+    "minimum_exclusive": 90,
+    "maximum_exclusive": 180
+  },
+  "music_target_lufs": -27,
+  "music": "Original composed score",
+  "music_bpm": 94,
+  "source": {
+    "kind": "original_fiction",
+    "publisher": "ملفات غامضه"
+  },
+  "topic_key": "fiction-873b4fd6856e1995",
+  "profile": "horror",
+  "editorial_review": {
+    "supported": true,
+    "novel": true,
+    "issues": [],
+    "review_type": "Codex editorial review of the SAME unpublished repository-authored original plot",
+    "checks": [
+      "No invented documentary evidence",
+      "First-person events match corridor, stairs, door, stopped-clock and mirror sets",
+      "Clear Egyptian wording; coherent delayed-reflection callback",
+      "Same reserved episode, not a new duplicate subject"
+    ]
+  },
+  "render": "Three.js procedural geometry, physical lighting, custom skin shader, layered optical bloom",
+  "reference_audio_reused": false,
+  "automatically_published": false,
+  "status": "Technical checks passed; artistic judgement requires viewing the complete film."
+}
