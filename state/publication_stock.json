@@ -639,13 +639,33 @@
       "confirmed_at": "2026-10-21T23:13:05.115227+00:00"
     },
     "immediate approved-horror-40933433482": {
-      "confirmed": false,
-      "receipts": {},
+      "confirmed": true,
+      "receipts": {
+        "instagram": {
+          "id": "6ae39fcc98c11c76e3750380",
+          "due_at": "2026-10-29T19:36:35Z",
+          "run_id": "40940990314",
+          "accepted_at": "2026-10-29T19:34:36.559195+00:00"
+        },
+        "facebook": {
+          "id": "6ae39fcd98c11c76e37503c0",
+          "due_at": "2026-10-29T19:36:35Z",
+          "run_id": "40940990314",
+          "accepted_at": "2026-10-29T19:34:37.503250+00:00"
+        },
+        "youtube": {
+          "id": "6ae39fce02b1fcfd3e15f881",
+          "due_at": "2026-10-29T19:36:35Z",
+          "run_id": "40940990314",
+          "accepted_at": "2026-10-29T19:34:38.342233+00:00"
+        }
+      },
       "required_services": [
         "facebook",
         "instagram",
         "youtube"
-      ]
+      ],
+      "confirmed_at": "2026-10-29T19:34:38.344157+00:00"
     }
   }
 }

@@ -116,7 +116,7 @@
       "title": "الدور الرابع.. الباب اللي مش بيرجعني البيت",
       "plot_signature": "A man climbs a repeating apartment stairwell, notices a delayed mirror reflection, enters what he thinks is a safe open apartment, only to realize the apartment is a trap inside the loop, ending face-to-face with his own grinning reflection.",
       "fiction": true,
-      "status": "rendered",
+      "status": "scheduled",
       "story": {
         "title": "الدور الرابع.. الباب اللي مش بيرجعني البيت",
         "canonical_subject": "repeating-apartment-stairwell-mirror-trap",
@@ -237,10 +237,30 @@
       "reserved_at": "2026-10-29T08:53:52.660372+00:00",
       "video_sha256": "2983697b9f56df162ff283359e3efe1d54fbbaeaf7217caf5bcaed2dc372702b",
       "one_off_publication": {
-        "status": "submitting",
+        "status": "accepted",
         "approved_video_sha256": "2983697b9f56df162ff283359e3efe1d54fbbaeaf7217caf5bcaed2dc372702b",
         "media_id": "approved-horror-40933433482",
-        "title": "ملفات غامضه | الدور الرابع.. الباب اللي مش بيرجعني البيت"
+        "title": "ملفات غامضه | الدور الرابع.. الباب اللي مش بيرجعني البيت",
+        "receipts": {
+          "instagram": {
+            "id": "6ae39fcc98c11c76e3750380",
+            "due_at": "2026-10-29T19:36:35Z",
+            "run_id": "40940990314",
+            "accepted_at": "2026-10-29T19:34:36.559195+00:00"
+          },
+          "facebook": {
+            "id": "6ae39fcd98c11c76e37503c0",
+            "due_at": "2026-10-29T19:36:35Z",
+            "run_id": "40940990314",
+            "accepted_at": "2026-10-29T19:34:37.503250+00:00"
+          },
+          "youtube": {
+            "id": "6ae39fce02b1fcfd3e15f881",
+            "due_at": "2026-10-29T19:36:35Z",
+            "run_id": "40940990314",
+            "accepted_at": "2026-10-29T19:34:38.342233+00:00"
+          }
+        }
       }
     }
   ]
