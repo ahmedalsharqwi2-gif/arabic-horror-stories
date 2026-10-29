@@ -235,7 +235,13 @@
         }
       },
       "reserved_at": "2026-10-29T08:53:52.660372+00:00",
-      "video_sha256": "2983697b9f56df162ff283359e3efe1d54fbbaeaf7217caf5bcaed2dc372702b"
+      "video_sha256": "2983697b9f56df162ff283359e3efe1d54fbbaeaf7217caf5bcaed2dc372702b",
+      "one_off_publication": {
+        "status": "submitting",
+        "approved_video_sha256": "2983697b9f56df162ff283359e3efe1d54fbbaeaf7217caf5bcaed2dc372702b",
+        "media_id": "approved-horror-40933433482",
+        "title": "ملفات غامضه | الدور الرابع.. الباب اللي مش بيرجعني البيت"
+      }
     }
   ]
 }
