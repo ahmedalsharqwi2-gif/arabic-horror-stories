@@ -1,0 +1,107 @@
+{
+  "title": "صمت الممر الطويل",
+  "canonical_subject": "long-corridor-delayed-reflection-trap",
+  "suitable": true,
+  "facts": [],
+  "milestones": [],
+  "scenes": [
+    {
+      "id": "scene_1",
+      "label": "المهمة الأولى",
+      "narration": "دخلت الممر الطويل في الدور المقفول وعينيا على الباب الخشبي القديم. سمعت صوت تكة خفيفة ورايا من غير ما أشوف حد قدامي.",
+      "labels": [
+        "hall",
+        "door"
+      ],
+      "visual_mode": "hall",
+      "scare_phrase": "",
+      "clock_motion": "none"
+    },
+    {
+      "id": "scene_2",
+      "label": "الخطوة المشبوهة",
+      "narration": "وقفت قدام المراية الكبيرة اللي على الحيطة عشان أتأكد من نفسي. رفعت إيدي الشمال بس الانعكاس فضل ثابت ثانية كاملة قبل ما يتحرك لوحده.",
+      "labels": [
+        "mirror"
+      ],
+      "visual_mode": "mirror",
+      "scare_phrase": "الانعكاس فضل ثابت ثانية كاملة",
+      "clock_motion": "none"
+    },
+    {
+      "id": "scene_3",
+      "label": "الفحص البطيء",
+      "narration": "جريت على باب الشقة وضربت زرار الانتركوم عشان أطلب مساعدة من البواب. طلع لي صوت حربي مخدوش بيقول بحذر شديد اقفل الباب وراك حالاً.",
+      "labels": [
+        "phone",
+        "door"
+      ],
+      "visual_mode": "phone",
+      "scare_phrase": "اقفل الباب وراك حالاً",
+      "clock_motion": "none"
+    },
+    {
+      "id": "scene_4",
+      "label": "الصدى السريع",
+      "narration": "بصيت ناحية السلالم وسمعت خبط متسارع جاي من الدور اللي فوق. نزلت خطوتين بس لقيت نفس الصوت بيقلد خبطتي بالضبط من غير أي تأخير.",
+      "labels": [
+        "stairs"
+      ],
+      "visual_mode": "stairs",
+      "scare_phrase": "",
+      "clock_motion": "none"
+    },
+    {
+      "id": "scene_5",
+      "label": "محاولة الهروب",
+      "narration": "وصلت قدام باب الأسانسير وضغطت الزرار بعنف عشان أنزل الدور الارضي. أبواب الحديد فتحت لوحدها ببطء شديد وبانت جوة ظلمة كاملة ومقبولة.",
+      "labels": [
+        "lift"
+      ],
+      "visual_mode": "lift",
+      "scare_phrase": "",
+      "clock_motion": "none"
+    },
+    {
+      "id": "scene_6",
+      "label": "الوقت الواقف",
+      "narration": "رفعت عيني للساعة القديمة المعلقة فوق الممر ولقيت عقاربها ثابتة في مكانها تماماً من غير ما تدق ولا ثانية واحدة.",
+      "labels": [
+        "clock"
+      ],
+      "visual_mode": "clock",
+      "scare_phrase": "",
+      "clock_motion": "stopped"
+    },
+    {
+      "id": "scene_7",
+      "label": "الخداع المألوف",
+      "narration": "التفت بسرعة ورايا ولقيت إيد الانعكاس بتمسك دراعي من جوة المراية. حسيت بسقعة حديد تانية على كتفي أكدت لي إني لسه جوة الدور المقفول.",
+      "labels": [
+        "mirror"
+      ],
+      "visual_mode": "mirror",
+      "scare_phrase": "إيد الانعكاس بتمسك دراعي",
+      "clock_motion": "none"
+    },
+    {
+      "id": "scene_8",
+      "label": "النهاية المكشوفة",
+      "narration": "بصيت قدامي في أول الممر ولقيت نفسي واقف مكاني من جديد قدام نفس الباب الخشبي القديم. التكة الخفيفة رجعت اتكررت تاني بصوت واضح ورا رقبتي.",
+      "labels": [
+        "door",
+        "hall"
+      ],
+      "visual_mode": "reveal",
+      "scare_phrase": "",
+      "clock_motion": "none"
+    }
+  ],
+  "hashtags": [
+    "#ممر_مرعب",
+    "#انعكاس",
+    "#قصص_حقيقية",
+    "#رعب_مصري"
+  ],
+  "plot_signature": "A man walks down a long sealed corridor, notices a delayed mirror reflection, tries to escape through the elevator and stairs, and realizes he is trapped in an endless loop where his own reflection grabs him."
+}
