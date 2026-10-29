@@ -1,0 +1,22 @@
+[
+  {
+    "topic_key": "fiction-e40025532658aeef",
+    "error_class": "ValueError",
+    "validation": "Each scene needs 32–44 spoken words for the requested complete story length"
+  },
+  {
+    "topic_key": "fiction-1aed8420915c6c4f",
+    "error_class": "ValueError",
+    "validation": "Each scene needs 32–44 spoken words for the requested complete story length"
+  },
+  {
+    "topic_key": "fiction-29f3edda08db0d6e",
+    "error_class": "ValueError",
+    "validation": "Build at least three different measured suspense/reveal beats"
+  },
+  {
+    "topic_key": "fiction-de6b838c191bb376",
+    "error_class": "ValueError",
+    "validation": "At least two hashtags must refer to specific subjects actually discussed in this film"
+  }
+]
