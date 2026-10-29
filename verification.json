@@ -1,0 +1,151 @@
+{
+  "file": "professional-review.mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 69.6,
+  "voice": "original Gemini Charon",
+  "asr_model": "medium+small+large-v3",
+  "independent_asr_word_coverage": 0.8592592592592593,
+  "visual_gate": {
+    "passed": true,
+    "duration": 69.6,
+    "resolution": [
+      1080,
+      1920
+    ],
+    "method": "within-scene diagram-region pixel changes",
+    "scenes": [
+      {
+        "scene": 1,
+        "diagram_spatial_std": [
+          48.80692939741232,
+          48.80215280812091,
+          49.0307295063678
+        ],
+        "changed_pixel_ratios": [
+          0.15472459639126307,
+          0.14362535612535612
+        ],
+        "passed": true
+      },
+      {
+        "scene": 2,
+        "diagram_spatial_std": [
+          19.88934968906361,
+          20.672697684678678,
+          20.192261606964646
+        ],
+        "changed_pixel_ratios": [
+          0.27646011396011394,
+          0.3001780626780627
+        ],
+        "passed": true
+      },
+      {
+        "scene": 3,
+        "diagram_spatial_std": [
+          50.5912499237237,
+          52.682820749967696,
+          52.79243787431966
+        ],
+        "changed_pixel_ratios": [
+          0.1444207027540361,
+          0.12923789173789174
+        ],
+        "passed": true
+      },
+      {
+        "scene": 4,
+        "diagram_spatial_std": [
+          17.313401005677566,
+          17.48285141052808,
+          17.172004002593976
+        ],
+        "changed_pixel_ratios": [
+          0.02312440645773979,
+          0.03123219373219373
+        ],
+        "passed": true
+      },
+      {
+        "scene": 5,
+        "diagram_spatial_std": [
+          18.767267608870746,
+          18.551810675098594,
+          18.185447457496153
+        ],
+        "changed_pixel_ratios": [
+          0.07957027540360874,
+          0.07863247863247863
+        ],
+        "passed": true
+      },
+      {
+        "scene": 6,
+        "diagram_spatial_std": [
+          25.504919816121852,
+          25.762159008581396,
+          25.59589872935209
+        ],
+        "changed_pixel_ratios": [
+          0.019515669515669517,
+          0.02361111111111111
+        ],
+        "passed": true
+      },
+      {
+        "scene": 7,
+        "diagram_spatial_std": [
+          42.8367109535412,
+          42.90310434251984,
+          42.91445213055347
+        ],
+        "changed_pixel_ratios": [
+          0.016452991452991454,
+          0.012476258309591643
+        ],
+        "passed": true
+      },
+      {
+        "scene": 8,
+        "diagram_spatial_std": [
+          48.96145262687018,
+          48.004353244483454,
+          49.049259272342525
+        ],
+        "changed_pixel_ratios": [
+          0.13609924026590695,
+          0.14017094017094017
+        ],
+        "passed": true
+      }
+    ],
+    "note": "Technical blank/freeze detection only; not a judgement of artistic or factual quality."
+  },
+  "audio_tail": {
+    "audio_seconds": 69.6,
+    "video_seconds": 69.6,
+    "difference_seconds": 0.0,
+    "last_speech_window_correlation": 0.9302539229393005,
+    "audio_tail_checked": true,
+    "silence_padding_used_to_hide_lost_speech": false
+  },
+  "music": "Original composed score",
+  "music_bpm": 94,
+  "source": {
+    "url": "https://www.smithsonianmag.com/history/abandoned-ship-the-mary-celeste-174488104/",
+    "publisher": "Smithsonian Magazine"
+  },
+  "topic_key": "mary-celeste-1872",
+  "profile": "horror",
+  "editorial_review": {
+    "supported": true,
+    "novel": true,
+    "issues": []
+  },
+  "render": "Three.js procedural geometry, physical lighting, custom skin shader, layered optical bloom",
+  "reference_audio_reused": false,
+  "automatically_published": false,
+  "status": "Technical checks passed; artistic judgement requires viewing the complete film."
+}
