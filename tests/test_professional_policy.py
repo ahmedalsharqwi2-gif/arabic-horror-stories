@@ -20,9 +20,9 @@ class LengthAndMetadataTests(unittest.TestCase):
  def test_original_horror_has_no_invented_documentary_source_or_intrusive_genre_notice(self):
   s={'title':'الإنتركم ورا باب الممر','scenes':[{'narration':'الإنتركم ده بيرد من باب الممر'}],'hashtags':['الإنتركم','باب_الممر','رعب'],'fiction':True,'source':{'kind':'original_fiction','publisher':'ملفات غامضة'}}
   m=make(s,'horror');self.assertEqual(m['source_url'],'');self.assertNotIn('خيالية',m['caption']);self.assertNotIn('المصدر:',m['caption'])
- def test_irrelevant_reach_bait_tags_are_rejected(self):
-  s={'title':'خبر جديد','scenes':[{'narration':'خبر جديد'}],'hashtags':['viral','fyp','ترند'],'source':{}}
-  with self.assertRaises(ValueError):make(s,'news')
+ def test_reach_bait_metadata_warns_without_blocking_a_valid_film(self):
+  s={'title':'خبر جديد','scenes':[{'narration':'خبر جديد'}],'hashtags':['viral','fyp','ترند'],'source':{'publisher':'Official source','url':'https://openai.com/example/'}}
+  make(s,'news');self.assertTrue(s['editorial_warnings'])
 
 class NewsRelevanceTests(unittest.TestCase):
  def setUp(self):self.now=datetime(2026,10,29,8,tzinfo=timezone.utc)
@@ -37,12 +37,12 @@ class NewsRelevanceTests(unittest.TestCase):
  def test_no_fresh_important_news_does_not_trigger_an_invented_fallback(self):
   self.assertEqual(choose([],lambda *a:(_ for _ in ()).throw(AssertionError('must not call')),self.now),[])
  def test_a_plain_bulletin_does_not_pass_the_meme_requirement(self):
-  with self.assertRaises(ValueError):validate_memes({'scenes':[{'narration':'خبر حقيقي بدون قفشة'}]*8})
+  story={'scenes':[{'narration':'خبر حقيقي بدون قفشة'}]*8};validate_memes(story);self.assertTrue(story['editorial_warnings'])
  def test_visual_jokes_must_be_spoken_and_distinct(self):
   jokes=['المحفظة حضرت الاجتماع','الكود طالب أجازة','البنشمارك محتاج حكم','السيرفر بيشرب قهوة']
   s={'scenes':[{'narration':'ده التعليق '+j,'punchline':j,'reaction':'shock'} for j in jokes]};validate_memes(s)
   s['scenes'][0]['punchline']='كلام لم يقله الراوي'
-  with self.assertRaises(ValueError):validate_memes(s)
+  validate_memes(s);self.assertEqual(s['scenes'][0]['punchline'],'');self.assertTrue(s['editorial_warnings'])
 
 class ExactFramesAndRevealsTests(unittest.TestCase):
  def test_partitions_reject_gaps_and_duplicated_frames(self):
@@ -53,8 +53,16 @@ class ExactFramesAndRevealsTests(unittest.TestCase):
   words='ده باب الممر اللي اتفتح لوحده وأنا واقف قدامه ساكت'.split();s={'scenes':[{'narration':' '.join(words),'scare_phrase':'اتفتح لوحده','punchline':'قدامه ساكت'}]}
   actual=[{'text':w,'start':float(i),'end':i+.5} for i,w in enumerate(words)]
   t=measured_timing(s,15,[('measured',actual)]);self.assertEqual(t['scenes'][0]['scare_beat'],4);self.assertEqual(t['scenes'][0]['meme_beat'],8)
- def test_horror_requires_multiple_different_spoken_reveals(self):
+ def test_missing_optional_effect_anchor_keeps_otherwise_verified_speech(self):
+  words='ده باب الممر اللي اتفتح لوحده وأنا واقف قدامه ساكت'.split()
+  story={'scenes':[{'narration':' '.join(words),'scare_phrase':'اتفتح لوحده'}]}
+  actual=[{'text':w,'start':float(i),'end':i+.5} for i,w in enumerate(words) if w!='لوحده']
+  timing=measured_timing(story,15,[('measured',actual)])
+  self.assertGreaterEqual(timing['coverage'],.85);self.assertNotIn('scare_beat',timing['scenes'][0]);self.assertTrue(timing['scenes'][0]['editorial_warnings'])
+  with self.assertRaisesRegex(ValueError,'Insufficient exact-token'):
+   measured_timing(story,15,[('incomplete',actual[:5])])
+ def test_optional_reveal_variety_warns_without_blocking_film(self):
   s={'title':'الممر','plot_signature':'a new original story about a corridor whose hidden door changes each attempt to leave','scenes':[{'narration':'سمعت الباب بيتفتح لوحده','scare_phrase':'بيتفتح لوحده'}]*3}
-  with self.assertRaises(ValueError):validate_scares(s)
+  validate_scares(s);self.assertIn('Fewer than three distinct optional scare impacts',s['editorial_warnings'])
 
 if __name__=='__main__':unittest.main()

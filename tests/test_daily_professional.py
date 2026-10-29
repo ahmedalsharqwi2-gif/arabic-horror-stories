@@ -67,9 +67,9 @@ class DailyProfessionalTests(unittest.TestCase):
   with patch.dict(os.environ,{'BUFFER_YOUTUBE_CHANNEL_ID':'a'},clear=True):
    with self.assertRaises(ValueError):verified_mapping('science',rows)
 
- def test_generic_numbered_slides_are_not_a_topic_specific_film(self):
-  story={'suitable':True,'title':'موضوع جديد','scenes':[{'label':'الشريحة الأولى','narration':'ده مش مجرد لون عشان اللي قدامك جزء من موضوع علمي جديد','labels':[]} for _ in range(8)]}
-  with self.assertRaisesRegex(ValueError,'topic-specific'):e.validate(story,'science',{'family':'space'})
+ def test_generic_numbered_slides_warn_without_blocking_geometry_valid_film(self):
+  story={'suitable':True,'title':'موضوع جديد','scenes':[{'label':'الشريحة الأولى','narration':'ده مش مجرد لون عشان اللي قدامك جزء من موضوع علمي جديد','labels':[],'visual_mode':'hero'} for _ in range(8)],'hashtags':['موضوع','علم','شرح']}
+  e.validate(story,'science',{'family':'space','variant':'moon','key':'moon','url':'https://science.nasa.gov/moon/','publisher':'NASA'});self.assertIn('Use topic-specific headings, not numbered slides',story['editorial_warnings'])
 
 class ExactSourceSelectionTests(unittest.TestCase):
  def test_indexed_excerpts_keep_the_original_source_words(self):
