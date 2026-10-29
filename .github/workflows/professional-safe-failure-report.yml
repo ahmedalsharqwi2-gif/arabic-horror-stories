@@ -1,0 +1,42 @@
+{
+  "name": "Safe original horror failure category report",
+  "on": {
+    "push": {
+      "branches": [
+        "codex/daily-professional-factory"
+      ],
+      "paths": [
+        ".github/workflows/professional-safe-failure-report.yml"
+      ]
+    }
+  },
+  "permissions": {
+    "contents": "write",
+    "actions": "read"
+  },
+  "jobs": {
+    "diagnose": {
+      "runs-on": "ubuntu-24.04",
+      "timeout-minutes": 5,
+      "env": {
+        "GITHUB_TOKEN": "${{ github.token }}",
+        "INSPECT_RUN": "40896235991"
+      },
+      "steps": [
+        {
+          "uses": "actions/checkout@v4"
+        },
+        {
+          "run": "python professional_motion/safe_run_diagnostic.py"
+        },
+        {
+          "name": "Persist fixed safe categories",
+          "run": "python -m professional_motion.review_evidence",
+          "env": {
+            "REVIEW_STAGE": "failure-categories"
+          }
+        }
+      ]
+    }
+  }
+}
