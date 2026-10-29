@@ -1,0 +1,17 @@
+{
+  "provider": "Gemini TTS",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Native Egyptian Arabic ar-EG. Same mature male Charon identity, intimate psychological horror performance rather than a documentary announcer. Begin close to the microphone with a quiet voiced near-whisper, clearly audible consonants. Build restrained unease, vary pace with the meaning, let questions feel personal and frightened. Short natural hesitations at commas, tense brief silence at sentence endings; do not insert extra words. On phrases about disappearance, absence or an unexplained fate, use an audible breathy whisper, then return to a low conversational register. No shouting, cartoon villain voice or flat newsreader cadence. Preserve every word, pronounce names and written-out numbers clearly, complete the final sentence. Do not speak these instructions. No music or sound effects in the generated voice.\nEgyptian Arabic restrained tense factual maritime documentary, no invented screams or voices. Start with curiosity, build momentum, thoughtful final payoff. No music or sound effects. Read only the supplied words. Finish the last sentence. Clear natural pace.",
+  "text": "تخيل سفينة ماشية في البحر، والأكل والميه لسه موجودين، بس مفيش حد عليها. دي حكاية ماري سيليست. السفينة دي خرجت من نيويورك، ووجهتها كانت جنوة في إيطاليا. لكن اللي حصل لطاقمها فضل لغز. سفينة تانية لقت ماري سيليست تايهة في الأطلسي. هي مااختفتش تحت الميه، اللي اختفى كان الناس. سجل الرحلة بيساعد الباحثين يتتبعوا الطريق. بس السجل لوحده مش بيقول إيه اللي خلّى الطاقم يمشي. باحثين رجعوا لبيانات الطقس ومسار السفينة، عشان يحاولوا يفهموا الرحلة. ده بحث بعد الواقعة، مش شهادة عيان. على السفينة لقوا مضخة مفككة وميه في القاع. الرسم ده توضيحي للمضخة، مش صورة للمعدة الأصلية. تفاصيل زي دي فتحت باب لتفسيرات مختلفة. بس وجود تفسير محتمل مش معناه إننا عرفنا السبب بشكل قاطع. الغريب إن السفينة اتلاقت وهي عايمة، لكن مصير طاقمها فضل مجهول. هنا بالذات، السؤال أقوى من أي إجابة سهلة.",
+  "interaction_id": "v1_ChdXNHppYW82WkRvdm5xdHNQbE1IZHlRMBIXVzR6aWFvNlpEb3ZucXRzUGxNSGR5UTA",
+  "duration": 69.6,
+  "sample_rate": 24000,
+  "channels": 1,
+  "sha256": "cb10237b15544afb625bc4adcd923b779fe82a3f897d0f563391d4f92088a277",
+  "newly_synthesized": true,
+  "original_video_audio_used": false,
+  "fallback_used": false,
+  "cache_hit": false,
+  "output_sha256": "cb10237b15544afb625bc4adcd923b779fe82a3f897d0f563391d4f92088a277"
+}

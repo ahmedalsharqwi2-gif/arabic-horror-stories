@@ -1,0 +1,98 @@
+{
+  "title": "ماري سيليست: السفينة رجعت.. والناس؟",
+  "canonical_subject": "mary-celeste-1872",
+  "suitable": true,
+  "facts": [
+    "The British brig Dei Gratia spotted the Mary Celeste adrift on December 5, 1872",
+    "The ship had a six-month supply of food and water but no crew on board",
+    "Modern investigations used historical weather data and modern maritime technology to study the drift"
+  ],
+  "milestones": [
+    "November 7, 1872",
+    "December 5, 1872",
+    "1884"
+  ],
+  "scenes": [
+    {
+      "id": "scene-1",
+      "label": "سفينة من غير طاقم",
+      "visual_mode": "hero",
+      "narration": "تخيل سفينة ماشية في البحر، والأكل والميه لسه موجودين، بس مفيش حد عليها. دي حكاية ماري سيليست.",
+      "labels": [],
+      "evidence_quote": "and water—but not a soul to consume it. Thus was born one of the most"
+    },
+    {
+      "id": "scene-2",
+      "label": "رحلة ماكملتش",
+      "visual_mode": "route",
+      "narration": "السفينة دي خرجت من نيويورك، ووجهتها كانت جنوة في إيطاليا. لكن اللي حصل لطاقمها فضل لغز.",
+      "labels": [],
+      "evidence_quote": "that the unguided vessel was the Mary Celeste , which had left New York City"
+    },
+    {
+      "id": "scene-3",
+      "label": "اكتشاف في الأطلسي",
+      "visual_mode": "hero",
+      "narration": "سفينة تانية لقت ماري سيليست تايهة في الأطلسي. هي مااختفتش تحت الميه، اللي اختفى كان الناس.",
+      "labels": [],
+      "evidence_quote": "a ship adrift in the choppy seas. Capt. David Morehouse was taken aback to discover"
+    },
+    {
+      "id": "scene-4",
+      "label": "سجلات وأسئلة",
+      "visual_mode": "timeline",
+      "narration": "سجل الرحلة بيساعد الباحثين يتتبعوا الطريق. بس السجل لوحده مش بيقول إيه اللي خلّى الطاقم يمشي.",
+      "labels": [],
+      "evidence_quote": "had been tossed about, and the crewmen's belongings were still in their quarters. The ship's"
+    },
+    {
+      "id": "scene-5",
+      "label": "إعادة تتبع الرحلة",
+      "visual_mode": "research",
+      "narration": "باحثين رجعوا لبيانات الطقس ومسار السفينة، عشان يحاولوا يفهموا الرحلة. ده بحث بعد الواقعة، مش شهادة عيان.",
+      "labels": [],
+      "evidence_quote": "says. Documentarian Anne MacGregor and oceanographer Phil Richardson used historical weather data to plot the"
+    },
+    {
+      "id": "scene-6",
+      "label": "مضخة مفككة",
+      "visual_mode": "pump",
+      "narration": "على السفينة لقوا مضخة مفككة وميه في القاع. الرسم ده توضيحي للمضخة، مش صورة للمعدة الأصلية.",
+      "labels": [],
+      "evidence_quote": "only lifeboat was missing, and one of its two pumps had been disassembled. Three and"
+    },
+    {
+      "id": "scene-7",
+      "label": "فرضيات من غير حسم",
+      "visual_mode": "papers",
+      "narration": "تفاصيل زي دي فتحت باب لتفسيرات مختلفة. بس وجود تفسير محتمل مش معناه إننا عرفنا السبب بشكل قاطع.",
+      "labels": [],
+      "evidence_quote": "the Mary Celeste ? Through the decades, a lack of hard facts has only spurred"
+    },
+    {
+      "id": "scene-8",
+      "label": "السفينة رجعت.. والناس؟",
+      "visual_mode": "hero",
+      "narration": "الغريب إن السفينة اتلاقت وهي عايمة، لكن مصير طاقمها فضل مجهول. هنا بالذات، السؤال أقوى من أي إجابة سهلة.",
+      "labels": [],
+      "evidence_quote": "durable mysteries in nautical history: What happened to the ten people who had sailed aboard"
+    }
+  ],
+  "profile": "horror",
+  "series": "ملفات غامضه",
+  "visual_family": "maritime",
+  "variant": "atlantic",
+  "topic_key": "mary-celeste-1872",
+  "source": {
+    "url": "https://www.smithsonianmag.com/history/abandoned-ship-the-mary-celeste-174488104/",
+    "publisher": "Smithsonian Magazine"
+  },
+  "fiction": false,
+  "documented": true,
+  "editorial_review": {
+    "supported": true,
+    "novel": true,
+    "issues": []
+  },
+  "revision": "source-checked narration and topic-specific authored visual modes"
+}
