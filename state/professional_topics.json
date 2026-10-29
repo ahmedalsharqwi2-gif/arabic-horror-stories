@@ -113,12 +113,12 @@
       "slot": "review-40845205098",
       "topic_key": "fiction-873b4fd6856e1995",
       "canonical_subject": "repeating-apartment-stairwell-mirror-trap",
-      "title": "سلم المتاهة الملعون",
+      "title": "الدور الرابع.. المرة دي أنا اللي بقيت الانعكاس",
       "plot_signature": "A man climbs a repeating apartment stairwell, notices a delayed mirror reflection, enters what he thinks is a safe open apartment, only to realize the apartment is a trap inside the loop, ending face-to-face with his own grinning reflection.",
       "fiction": true,
       "status": "reserved",
       "story": {
-        "title": "سلم المتاهة الملعون",
+        "title": "الدور الرابع.. المرة دي أنا اللي بقيت الانعكاس",
         "canonical_subject": "repeating-apartment-stairwell-mirror-trap",
         "suitable": true,
         "facts": [],
@@ -126,72 +126,81 @@
         "scenes": [
           {
             "id": "scene_1",
-            "label": "البداية",
-            "narration": "طلعت سلم العمارة بعد منتصف الليل وكنت سامع صوت خطواتي المعتادة على الدرج القديم. الدور الرابع ظاهر قدامي ببروازه المكسور على الحيطة الشمالية كالعادة. ريح باردة خبطت رقبتي فجأة وقشعريرة سرت في جسمي كله.",
+            "label": "الدور الرابع",
+            "narration": "طلعت سلم العمارة بعد نص الليل، وأنا سامع صوت رجلي بيرد من فوق. وقفت. الصوت كمل درجتين لوحده، وبعدين سكت. قدامي كان باب الدور الرابع، بنفس الخدش الطويل اللي جنب المقبض. الخدش ده أنا عارفه كويس.",
             "labels": [],
             "visual_mode": "stairs",
-            "scare_phrase": ""
+            "scare_phrase": "الصوت كمل درجتين لوحده",
+            "clock_motion": "none"
           },
           {
             "id": "scene_2",
-            "label": "الانعكاس المتاخر",
-            "narration": "وقفت قدام المراية المعلقة على بسطة السلالم عشان أصلح ياقة قميصي المبلل بالعرق. رفعت إيدي الشمال لكن انعكاسي فضل ثابت مكانه ثواني طويلة قبل ما يتحرك لوحده ببطء مرعب. حسيت بصدر بيضيق ومش قادر أخد نفسي.",
+            "label": "الانعكاس استنى",
+            "narration": "على بسطة السلم كانت فيه مراية قديمة. قربت أصلح ياقة القميص، ورفعت إيدي الشمال. اللي في المراية ما اتحركش. فضلت إيده تحت، رغم إن إيدي قدام وشي. وبعد ثانية، رفعها ببطء، وأنا كنت نزلتها خلاص.",
             "labels": [],
             "visual_mode": "mirror",
-            "scare_phrase": ""
+            "scare_phrase": "اللي في المراية ما اتحركش",
+            "clock_motion": "none"
           },
           {
             "id": "scene_3",
-            "label": "الدور المكرر",
-            "narration": "كملت طريقي لفوق بسرعة وأنا باصص تحت رجليا عشان اهرب من الرعب ده. عديت خمس درجات ووصلت تاني لبرواز الدور الرابع المكسور بحذافيره. إزاي رجعت لنفس النقطة وانا طالع لفوق على طول؟ السلم بيكرر نفسه.",
+            "label": "السلم بيرجعني",
+            "narration": "ما استنتش أفهم. طلعت بسرعة، وعديت بسطة وبسطة. بس الباب اللي قابلني كان باب الدور الرابع، بنفس الخدش جنب المقبض. نزلت بدل ما أطلع. لقيته تاني. المرة دي، سمعت حركة المقبض من جوه، قبل ما أقرب.",
             "labels": [],
             "visual_mode": "stairs",
-            "scare_phrase": ""
+            "scare_phrase": "سمعت حركة المقبض من جوه",
+            "clock_motion": "none"
           },
           {
             "id": "scene_4",
-            "label": "باب النجاة الوهمي",
-            "narration": "لقيت باب الشقة أخيرًا مفتوح نص فتحة والنور الدافئ طالع منه يطمن قلبي المذعور. جريت عليه وبسرعة دخلت وقفلت الباب ورايا بإحكام عشان أحمي نفسي من الصمت المرعب بره. قلت خلاص أنا أمان جوه شقتي ومحدش يقدر يوصل لي.",
+            "label": "باب موارب",
+            "narration": "باب شقتي ظهر في آخر الممر، موارب زي ما بسيبه ساعات. كنت عايز أي حاجة مألوفة، فدخلت وقفلت ورايا. أول ما القفل عمل تكته، صوت السلم اختفى. حتى صوت الشارع اختفى. المكان بقى ساكت بطريقة توجع الودان.",
             "labels": [],
             "visual_mode": "door",
-            "scare_phrase": ""
+            "scare_phrase": "حتى صوت الشارع اختفى",
+            "clock_motion": "none"
           },
           {
             "id": "scene_5",
-            "label": "الوهم ينكشف",
-            "narration": "بصيت حواليا لقيت الصالة فاضية تمامًا من أي أثاث ومفيش غير مرسومات غريبة على الجدران الشبيهة. البرواز المكسور ظاهر قدامي على حيطة الصالة الداخلية جوه الشقة نفسها. قاعدة الأمان طلعت فخ محكم ومغلق علي جوه الحيطان.",
+            "label": "مش شقتي",
+            "narration": "مديت إيدي أدور على مفتاح النور. مفيش مفتاح. ومفيش كنبة، ولا ترابيزة، ولا أي حاجة من شقتي. قدامي نفس الممر الطويل. وفي آخره، نفس باب الدور الرابع. بس الخدش المرة دي كان من الناحية اللي أنا واقف فيها.",
             "labels": [],
-            "visual_mode": "reveal",
-            "scare_phrase": "قاعدة الأمان طلعت فخ محكم ومغلق"
+            "visual_mode": "hall",
+            "scare_phrase": "الخدش المرة دي كان من الناحية",
+            "clock_motion": "none"
           },
           {
             "id": "scene_6",
-            "label": "الساعة المتوقفة",
-            "narration": "بصيت على الحيطة الجميلة دي ولقيت ساعة قديمة عقاربها ثابتة على نفس اللحظة اللي دخلت فيها العمارة. صوت عقاربها بدأ يتردد جوه دماغي كأنه دقات قلب ميت. الإضاءة الصفراء بتهتز وبترتعش حواليا بشكل يجنن.",
+            "label": "الساعة ساكتة",
+            "narration": "فوق الباب ساعة قديمة، عقاربها واقفة. مع كده، كنت سامع تكة منتظمة من ورا الباب. قربت ودني، فالتكة وقفت. بعدين سمعت نفسي باخد نفس طويل من جوه. حبست نفسي. النفس اللي ورا الباب كمل عادي.",
             "labels": [],
             "visual_mode": "clock",
-            "scare_phrase": "عقاربها ثابتة على نفس اللحظة اللي"
+            "scare_phrase": "النفس اللي ورا الباب كمل",
+            "clock_motion": "stopped"
           },
           {
             "id": "scene_7",
-            "label": "الخطوات المقتربة",
-            "narration": "سمعت صوت خطوات تانية بتطلع السلالم من بره وبتخبط على باب الشقة بقوة جنونية ومخيفة. صوتي اتقطع وانا بصرخ ومحدش سامع صراخي المستغيث في الليلة السوداء دي. الخطوات بقت قريبة جدا من الظهر المفرود والمذعور بتاعي.",
+            "label": "حد مستنيني",
+            "narration": "رجعت لورا واحدة واحدة. في آخر الممر كان فيه خيال واقف، ملامحه مش باينة. ما كانش بيجري ورايا، ولا بيقرب. كان مستني. كل ما أبعد عنه، ألاقي المراية أقرب لوشي. وكأن الممر كله بيزقني ناحيتها.",
             "labels": [],
             "visual_mode": "hall",
-            "scare_phrase": ""
+            "scare_phrase": "كان مستني",
+            "clock_motion": "none"
           },
           {
             "id": "scene_8",
-            "label": "النهاية المفاجئة",
-            "narration": "التفت بسرعة أواجه اللي جاي ورايا ولقيت نفسي واقف قدام المراية في الدور الرابع بالظبط. الانعكاس بتاعي رفع إيده الشمال وابتسم ببرود وهو بيقول بصوت ميت انا اللي استنيتك تطلع. اتقفل الباب ومبقاش فيه مخرج ليا.",
+            "label": "مين بيقلد مين؟",
+            "narration": "بصيت في المراية عشان أعرف هو ورايا ولا لأ. اللي جواها رفع إيده الشمال. أنا ما كنتش رفعتها. حاولت أثبت دراعي، بس إيدي طلعت لوحدها وراه. ساعتها فهمت: أنا مش اللي واقف قدام المراية. أنا اللي بقيت الانعكاس.",
             "labels": [],
-            "visual_mode": "reveal",
-            "scare_phrase": "الانعكاس بتاعي رفع إيده الشمال وابتسم"
+            "visual_mode": "mirror",
+            "scare_phrase": "أنا اللي بقيت الانعكاس",
+            "clock_motion": "none"
           }
         ],
         "hashtags": [
+          "الدور_الرابع",
+          "المراية",
           "سلم_العمارة",
-          "انعكاس_مرعب",
           "رعب_مصري"
         ],
         "plot_signature": "A man climbs a repeating apartment stairwell, notices a delayed mirror reflection, enters what he thinks is a safe open apartment, only to realize the apartment is a trap inside the loop, ending face-to-face with his own grinning reflection.",
@@ -210,7 +219,19 @@
           "supported": true,
           "novel": true,
           "issues": [],
-          "review_type": "original_narrative_and_plot_novelty"
+          "review_type": "Codex editorial review of the SAME unpublished repository-authored original plot",
+          "checks": [
+            "No invented documentary evidence",
+            "First-person events match corridor, stairs, door, stopped-clock and mirror sets",
+            "Clear Egyptian wording; coherent delayed-reflection callback",
+            "Same reserved episode, not a new duplicate subject"
+          ]
+        },
+        "editorial_revision": {
+          "original_source_run": "40845205098",
+          "original_story_sha256": "babd25198c9b9e890620089efdb4b3504c212f61769cec19e39773054c1f37f0",
+          "reviewer": "Codex",
+          "scope": "Repair awkward wording and visual contradictions in the repository draft; preserve its delayed-reflection/stairwell trap plot. Generate a completely new original narration for this revised text."
         }
       },
       "reserved_at": "2026-10-29T08:53:52.660372+00:00"
