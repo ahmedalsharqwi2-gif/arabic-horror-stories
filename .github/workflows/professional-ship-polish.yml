@@ -1,0 +1,76 @@
+{
+  "name": "Polish Mary Celeste film — reuse verified complete narration",
+  "on": {
+    "push": {
+      "branches": [
+        "codex/daily-professional-factory"
+      ],
+      "paths": [
+        ".github/workflows/professional-ship-polish.yml"
+      ]
+    }
+  },
+  "permissions": {
+    "contents": "write"
+  },
+  "jobs": {
+    "polish": {
+      "runs-on": "ubuntu-24.04",
+      "timeout-minutes": 45,
+      "env": {
+        "PYTHONPATH": "${{ github.workspace }}",
+        "GITHUB_TOKEN": "${{ github.token }}"
+      },
+      "steps": [
+        {
+          "uses": "actions/checkout@v4",
+          "with": {
+            "fetch-depth": 0
+          }
+        },
+        {
+          "uses": "actions/setup-python@v5",
+          "with": {
+            "python-version": "3.11"
+          }
+        },
+        {
+          "run": "sudo apt-get update -qq\nsudo apt-get install -y ffmpeg\npython -m pip install numpy Pillow requests beautifulsoup4"
+        },
+        {
+          "name": "Reuse the exact complete verified voice and measured timings",
+          "run": "python - <<'PY2'\nimport subprocess,json\nfrom pathlib import Path\nref='refs/heads/codex/professional-review-run-40790917440'\nsubprocess.run(['git','fetch','origin',ref,'--depth=1'],check=True)\np=Path('professional_motion/delivery');p.mkdir(exist_ok=True)\nfor name in ['story.json','timing.json','narration.wav','narration.source.json','publishing-preflight.json']:\n (p/name).write_bytes(subprocess.check_output(['git','show','FETCH_HEAD:professional_motion/delivery/'+name]))\ns=json.loads((p/'story.json').read_text());s['milestones']=[]\nif json.loads((p/'narration.source.json').read_text())['text']!=' '.join(x['narration'] for x in s['scenes']):raise ValueError('Voice mismatch')\n(p/'story.json').write_text(json.dumps(s,ensure_ascii=False,indent=2))\nPY2"
+        },
+        {
+          "uses": "actions/setup-node@v4",
+          "with": {
+            "node-version": "22"
+          }
+        },
+        {
+          "run": "cd professional_motion\nnpm ci\nnpx playwright-core install --with-deps chromium"
+        },
+        {
+          "name": "Render polished two-mast brigantine with continuous ocean",
+          "run": "node professional_motion/render.mjs --stills\nnode professional_motion/render.mjs"
+        },
+        {
+          "name": "Mix the full film and verify motion and final spoken sentence",
+          "run": "python -m professional_motion.finish"
+        },
+        {
+          "uses": "actions/upload-artifact@v4",
+          "with": {
+            "name": "horror-professional-${{ github.run_id }}",
+            "path": "professional_motion/output/\nprofessional_motion/delivery/",
+            "retention-days": 30
+          }
+        },
+        {
+          "name": "Deliver the actual verified movie",
+          "run": "python -m professional_motion.deliver_media"
+        }
+      ]
+    }
+  }
+}
