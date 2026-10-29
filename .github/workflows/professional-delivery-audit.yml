@@ -1,5 +1,5 @@
 {
-  "name": "Read-only final delivery audit — horror",
+  "name": "Confirm final live links without submitting duplicate posts",
   "on": {
     "push": {
       "branches": [
