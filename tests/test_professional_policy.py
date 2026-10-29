@@ -59,7 +59,7 @@ class ExactFramesAndRevealsTests(unittest.TestCase):
   actual=[{'text':w,'start':float(i),'end':i+.5} for i,w in enumerate(words) if w!='لوحده']
   timing=measured_timing(story,15,[('measured',actual)])
   self.assertGreaterEqual(timing['coverage'],.85);self.assertNotIn('scare_beat',timing['scenes'][0]);self.assertTrue(timing['scenes'][0]['editorial_warnings'])
-  with self.assertRaisesRegex(ValueError,'Insufficient exact-token'):
+  with self.assertRaisesRegex(ValueError,'Insufficient measured speech'):
    measured_timing(story,15,[('incomplete',actual[:5])])
  def test_optional_reveal_variety_warns_without_blocking_film(self):
   s={'title':'الممر','plot_signature':'a new original story about a corridor whose hidden door changes each attempt to leave','scenes':[{'narration':'سمعت الباب بيتفتح لوحده','scare_phrase':'بيتفتح لوحده'}]*3}
