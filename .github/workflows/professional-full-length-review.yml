@@ -1,5 +1,5 @@
 {
-  "name": "One original intercom horror film with saved draft and mobile-safe captions",
+  "name": "Complete the same unpublished horror plot with editorial repair and safe captions",
   "on": {
     "push": {
       "branches": [
@@ -70,7 +70,7 @@
         {
           "name": "Check review approval and Cairo civil-time guard",
           "id": "decision",
-          "run": "python -m professional_motion.cli decision horror --mode \"${{ inputs.mode || 'review' }}\""
+          "run": "python -m professional_motion.cli decision horror --mode \"${{ inputs.mode || 'review' }}\"\necho \"slot=review-40845205098\" >> \"$GITHUB_OUTPUT\""
         },
         {
           "name": "Install narration and alignment dependencies",
@@ -87,10 +87,10 @@
           }
         },
         {
-          "name": "Author a different full-length story, source claims, title and topical hashtags",
+          "name": "Editorial repair of the same unpublished repository plot",
           "id": "prepare",
           "if": "steps.decision.outputs.run == 'true'",
-          "run": "python -m professional_motion.cli prepare horror --slot \"${{ steps.decision.outputs.slot }}\""
+          "run": "python -m professional_motion.revise_horror_review"
         },
         {
           "name": "Persist the reserved plot before any synthesis",
