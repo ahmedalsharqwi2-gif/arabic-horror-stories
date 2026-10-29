@@ -1,0 +1,22 @@
+{
+  "inspected_run": "40896235991",
+  "raw_log_exposed": false,
+  "jobs": [
+    {
+      "conclusion": "failure",
+      "error_classes": [
+        "RuntimeError"
+      ],
+      "editorial_http_codes": [
+        "503"
+      ],
+      "local_safety_budget_reached": false,
+      "incomplete_editorial_response": false,
+      "no_unused_topic": false,
+      "missing_generation_secret": false,
+      "failed_steps": [
+        "Author a different full-length story, source claims, title and topical hashtags"
+      ]
+    }
+  ]
+}
