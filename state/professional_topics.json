@@ -113,12 +113,12 @@
       "slot": "review-40845205098",
       "topic_key": "fiction-873b4fd6856e1995",
       "canonical_subject": "repeating-apartment-stairwell-mirror-trap",
-      "title": "الدور الرابع.. المرة دي أنا اللي بقيت الانعكاس",
+      "title": "الدور الرابع.. الباب اللي مش بيرجعني البيت",
       "plot_signature": "A man climbs a repeating apartment stairwell, notices a delayed mirror reflection, enters what he thinks is a safe open apartment, only to realize the apartment is a trap inside the loop, ending face-to-face with his own grinning reflection.",
       "fiction": true,
       "status": "rendered",
       "story": {
-        "title": "الدور الرابع.. المرة دي أنا اللي بقيت الانعكاس",
+        "title": "الدور الرابع.. الباب اللي مش بيرجعني البيت",
         "canonical_subject": "repeating-apartment-stairwell-mirror-trap",
         "suitable": true,
         "facts": [],
@@ -235,7 +235,7 @@
         }
       },
       "reserved_at": "2026-10-29T08:53:52.660372+00:00",
-      "video_sha256": "189a775b8f16d8f99f90d6d3e7d72f305ab2ffe7c1ec41d095a301afe1c09e45"
+      "video_sha256": "2983697b9f56df162ff283359e3efe1d54fbbaeaf7217caf5bcaed2dc372702b"
     }
   ]
 }
