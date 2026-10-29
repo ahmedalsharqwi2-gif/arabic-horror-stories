@@ -116,7 +116,7 @@
       "title": "الدور الرابع.. المرة دي أنا اللي بقيت الانعكاس",
       "plot_signature": "A man climbs a repeating apartment stairwell, notices a delayed mirror reflection, enters what he thinks is a safe open apartment, only to realize the apartment is a trap inside the loop, ending face-to-face with his own grinning reflection.",
       "fiction": true,
-      "status": "reserved",
+      "status": "rendered",
       "story": {
         "title": "الدور الرابع.. المرة دي أنا اللي بقيت الانعكاس",
         "canonical_subject": "repeating-apartment-stairwell-mirror-trap",
@@ -234,7 +234,8 @@
           "scope": "Repair awkward wording and visual contradictions in the repository draft; preserve its delayed-reflection/stairwell trap plot. Generate a completely new original narration for this revised text."
         }
       },
-      "reserved_at": "2026-10-29T08:53:52.660372+00:00"
+      "reserved_at": "2026-10-29T08:53:52.660372+00:00",
+      "video_sha256": "189a775b8f16d8f99f90d6d3e7d72f305ab2ffe7c1ec41d095a301afe1c09e45"
     }
   ]
 }
