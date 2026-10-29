@@ -1,0 +1,17 @@
+{
+  "provider": "Gemini TTS",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Native Egyptian Arabic ar-EG. Same mature male Charon identity, intimate psychological horror performance rather than a documentary announcer. Begin close to the microphone with a quiet voiced near-whisper, clearly audible consonants. Build restrained unease, vary pace with the meaning, let questions feel personal and frightened. Short natural hesitations at commas, tense brief silence at sentence endings; do not insert extra words. On phrases about disappearance, absence or an unexplained fate, use an audible breathy whisper, then return to a low conversational register. No shouting, cartoon villain voice or flat newsreader cadence. Preserve every word, pronounce names and written-out numbers clearly, complete the final sentence. Do not speak these instructions. No music or sound effects in the generated voice.\nEgyptian Arabic gripping horror storyteller. Natural resonant Charon voice with exceptionally clear everyday Egyptian diction. Calm controlled tension and short uneasy pauses, escalating urgency near reveals. Do not whisper, mumble, distort words, scream, add words or swallow sentence endings. Read every supplied word exactly. Keep tension through the final sentence. Finish every word, then stop without a warm resolving tone. No music or sound effects. Read only the supplied words. Finish the last sentence. Clear natural pace.",
+  "text": "طلعت سلم العمارة بعد نص الليل، وأنا سامع صوت رجلي بيرد من فوق. وقفت. الصوت كمل درجتين لوحده، وبعدين سكت. قدامي كان باب الدور الرابع، بنفس الخدش الطويل اللي جنب المقبض. الخدش ده أنا عارفه كويس. على بسطة السلم كانت فيه مراية قديمة. قربت أصلح ياقة القميص، ورفعت إيدي الشمال. اللي في المراية ما اتحركش. فضلت إيده تحت، رغم إن إيدي قدام وشي. وبعد ثانية، رفعها ببطء، وأنا كنت نزلتها خلاص. ما استنتش أفهم. طلعت بسرعة، وعديت بسطة وبسطة. بس الباب اللي قابلني كان باب الدور الرابع، بنفس الخدش جنب المقبض. نزلت بدل ما أطلع. لقيته تاني. المرة دي، سمعت حركة المقبض من جوه، قبل ما أقرب. باب شقتي ظهر في آخر الممر، موارب زي ما بسيبه ساعات. كنت عايز أي حاجة مألوفة، فدخلت وقفلت ورايا. أول ما القفل عمل تكته، صوت السلم اختفى. حتى صوت الشارع اختفى. المكان بقى ساكت بطريقة توجع الودان. مديت إيدي أدور على مفتاح النور. مفيش مفتاح. ومفيش كنبة، ولا ترابيزة، ولا أي حاجة من شقتي. قدامي نفس الممر الطويل. وفي آخره، نفس باب الدور الرابع. بس الخدش المرة دي كان من الناحية اللي أنا واقف فيها. فوق الباب ساعة قديمة، عقاربها واقفة. مع كده، كنت سامع تكة منتظمة من ورا الباب. قربت ودني، فالتكة وقفت. بعدين سمعت نفسي باخد نفس طويل من جوه. حبست نفسي. النفس اللي ورا الباب كمل عادي. رجعت لورا واحدة واحدة. في آخر الممر كان فيه خيال واقف، ملامحه مش باينة. ما كانش بيجري ورايا، ولا بيقرب. كان مستني. كل ما أبعد عنه، ألاقي المراية أقرب لوشي. وكأن الممر كله بيزقني ناحيتها. بصيت في المراية عشان أعرف هو ورايا ولا لأ. اللي جواها رفع إيده الشمال. أنا ما كنتش رفعتها. حاولت أثبت دراعي، بس إيدي طلعت لوحدها وراه. ساعتها فهمت: أنا مش اللي واقف قدام المراية. أنا اللي بقيت الانعكاس.",
+  "interaction_id": "v1_ChdMSXJqYXJxR0JQN2FqTWNQbU1HV3lRYxIXTElyamFycUdCUDdhak1jUG1NR1d5UWM",
+  "duration": 157.16,
+  "sample_rate": 24000,
+  "channels": 1,
+  "sha256": "43e6f0ebba8242a9625d296b31b43f5c71430ea0c72cbbe622df8081efbd9fd2",
+  "newly_synthesized": true,
+  "original_video_audio_used": false,
+  "fallback_used": false,
+  "cache_hit": false,
+  "output_sha256": "43e6f0ebba8242a9625d296b31b43f5c71430ea0c72cbbe622df8081efbd9fd2"
+}

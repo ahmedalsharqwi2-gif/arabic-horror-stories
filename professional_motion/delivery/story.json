@@ -1,0 +1,117 @@
+{
+  "title": "الدور الرابع.. المرة دي أنا اللي بقيت الانعكاس",
+  "canonical_subject": "repeating-apartment-stairwell-mirror-trap",
+  "suitable": true,
+  "facts": [],
+  "milestones": [],
+  "scenes": [
+    {
+      "id": "scene_1",
+      "label": "الدور الرابع",
+      "narration": "طلعت سلم العمارة بعد نص الليل، وأنا سامع صوت رجلي بيرد من فوق. وقفت. الصوت كمل درجتين لوحده، وبعدين سكت. قدامي كان باب الدور الرابع، بنفس الخدش الطويل اللي جنب المقبض. الخدش ده أنا عارفه كويس.",
+      "labels": [],
+      "visual_mode": "stairs",
+      "scare_phrase": "الصوت كمل درجتين لوحده",
+      "clock_motion": "none"
+    },
+    {
+      "id": "scene_2",
+      "label": "الانعكاس استنى",
+      "narration": "على بسطة السلم كانت فيه مراية قديمة. قربت أصلح ياقة القميص، ورفعت إيدي الشمال. اللي في المراية ما اتحركش. فضلت إيده تحت، رغم إن إيدي قدام وشي. وبعد ثانية، رفعها ببطء، وأنا كنت نزلتها خلاص.",
+      "labels": [],
+      "visual_mode": "mirror",
+      "scare_phrase": "اللي في المراية ما اتحركش",
+      "clock_motion": "none"
+    },
+    {
+      "id": "scene_3",
+      "label": "السلم بيرجعني",
+      "narration": "ما استنتش أفهم. طلعت بسرعة، وعديت بسطة وبسطة. بس الباب اللي قابلني كان باب الدور الرابع، بنفس الخدش جنب المقبض. نزلت بدل ما أطلع. لقيته تاني. المرة دي، سمعت حركة المقبض من جوه، قبل ما أقرب.",
+      "labels": [],
+      "visual_mode": "stairs",
+      "scare_phrase": "سمعت حركة المقبض من جوه",
+      "clock_motion": "none"
+    },
+    {
+      "id": "scene_4",
+      "label": "باب موارب",
+      "narration": "باب شقتي ظهر في آخر الممر، موارب زي ما بسيبه ساعات. كنت عايز أي حاجة مألوفة، فدخلت وقفلت ورايا. أول ما القفل عمل تكته، صوت السلم اختفى. حتى صوت الشارع اختفى. المكان بقى ساكت بطريقة توجع الودان.",
+      "labels": [],
+      "visual_mode": "door",
+      "scare_phrase": "حتى صوت الشارع اختفى",
+      "clock_motion": "none"
+    },
+    {
+      "id": "scene_5",
+      "label": "مش شقتي",
+      "narration": "مديت إيدي أدور على مفتاح النور. مفيش مفتاح. ومفيش كنبة، ولا ترابيزة، ولا أي حاجة من شقتي. قدامي نفس الممر الطويل. وفي آخره، نفس باب الدور الرابع. بس الخدش المرة دي كان من الناحية اللي أنا واقف فيها.",
+      "labels": [],
+      "visual_mode": "hall",
+      "scare_phrase": "الخدش المرة دي كان من الناحية",
+      "clock_motion": "none"
+    },
+    {
+      "id": "scene_6",
+      "label": "الساعة ساكتة",
+      "narration": "فوق الباب ساعة قديمة، عقاربها واقفة. مع كده، كنت سامع تكة منتظمة من ورا الباب. قربت ودني، فالتكة وقفت. بعدين سمعت نفسي باخد نفس طويل من جوه. حبست نفسي. النفس اللي ورا الباب كمل عادي.",
+      "labels": [],
+      "visual_mode": "clock",
+      "scare_phrase": "النفس اللي ورا الباب كمل",
+      "clock_motion": "stopped"
+    },
+    {
+      "id": "scene_7",
+      "label": "حد مستنيني",
+      "narration": "رجعت لورا واحدة واحدة. في آخر الممر كان فيه خيال واقف، ملامحه مش باينة. ما كانش بيجري ورايا، ولا بيقرب. كان مستني. كل ما أبعد عنه، ألاقي المراية أقرب لوشي. وكأن الممر كله بيزقني ناحيتها.",
+      "labels": [],
+      "visual_mode": "hall",
+      "scare_phrase": "كان مستني",
+      "clock_motion": "none"
+    },
+    {
+      "id": "scene_8",
+      "label": "مين بيقلد مين؟",
+      "narration": "بصيت في المراية عشان أعرف هو ورايا ولا لأ. اللي جواها رفع إيده الشمال. أنا ما كنتش رفعتها. حاولت أثبت دراعي، بس إيدي طلعت لوحدها وراه. ساعتها فهمت: أنا مش اللي واقف قدام المراية. أنا اللي بقيت الانعكاس.",
+      "labels": [],
+      "visual_mode": "mirror",
+      "scare_phrase": "أنا اللي بقيت الانعكاس",
+      "clock_motion": "none"
+    }
+  ],
+  "hashtags": [
+    "الدور_الرابع",
+    "المراية",
+    "سلم_العمارة",
+    "رعب_مصري"
+  ],
+  "plot_signature": "A man climbs a repeating apartment stairwell, notices a delayed mirror reflection, enters what he thinks is a safe open apartment, only to realize the apartment is a trap inside the loop, ending face-to-face with his own grinning reflection.",
+  "profile": "horror",
+  "series": "ملفات غامضه",
+  "visual_family": "haunted_interior",
+  "variant": "stairwell",
+  "topic_key": "fiction-873b4fd6856e1995",
+  "source": {
+    "kind": "original_fiction",
+    "publisher": "ملفات غامضه"
+  },
+  "fiction": true,
+  "documented": false,
+  "editorial_review": {
+    "supported": true,
+    "novel": true,
+    "issues": [],
+    "review_type": "Codex editorial review of the SAME unpublished repository-authored original plot",
+    "checks": [
+      "No invented documentary evidence",
+      "First-person events match corridor, stairs, door, stopped-clock and mirror sets",
+      "Clear Egyptian wording; coherent delayed-reflection callback",
+      "Same reserved episode, not a new duplicate subject"
+    ]
+  },
+  "editorial_revision": {
+    "original_source_run": "40845205098",
+    "original_story_sha256": "babd25198c9b9e890620089efdb4b3504c212f61769cec19e39773054c1f37f0",
+    "reviewer": "Codex",
+    "scope": "Repair awkward wording and visual contradictions in the repository draft; preserve its delayed-reflection/stairwell trap plot. Generate a completely new original narration for this revised text."
+  }
+}
