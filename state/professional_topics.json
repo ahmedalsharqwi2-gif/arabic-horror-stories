@@ -108,6 +108,112 @@
       },
       "reserved_at": "2026-10-28T23:27:02.578092+00:00",
       "video_sha256": "e479c521979e67b1c2d8d1db7410e1f1f264bc495874596cd7dba0141373c196"
+    },
+    {
+      "slot": "review-40845205098",
+      "topic_key": "fiction-873b4fd6856e1995",
+      "canonical_subject": "repeating-apartment-stairwell-mirror-trap",
+      "title": "سلم المتاهة الملعون",
+      "plot_signature": "A man climbs a repeating apartment stairwell, notices a delayed mirror reflection, enters what he thinks is a safe open apartment, only to realize the apartment is a trap inside the loop, ending face-to-face with his own grinning reflection.",
+      "fiction": true,
+      "status": "reserved",
+      "story": {
+        "title": "سلم المتاهة الملعون",
+        "canonical_subject": "repeating-apartment-stairwell-mirror-trap",
+        "suitable": true,
+        "facts": [],
+        "milestones": [],
+        "scenes": [
+          {
+            "id": "scene_1",
+            "label": "البداية",
+            "narration": "طلعت سلم العمارة بعد منتصف الليل وكنت سامع صوت خطواتي المعتادة على الدرج القديم. الدور الرابع ظاهر قدامي ببروازه المكسور على الحيطة الشمالية كالعادة. ريح باردة خبطت رقبتي فجأة وقشعريرة سرت في جسمي كله.",
+            "labels": [],
+            "visual_mode": "stairs",
+            "scare_phrase": ""
+          },
+          {
+            "id": "scene_2",
+            "label": "الانعكاس المتاخر",
+            "narration": "وقفت قدام المراية المعلقة على بسطة السلالم عشان أصلح ياقة قميصي المبلل بالعرق. رفعت إيدي الشمال لكن انعكاسي فضل ثابت مكانه ثواني طويلة قبل ما يتحرك لوحده ببطء مرعب. حسيت بصدر بيضيق ومش قادر أخد نفسي.",
+            "labels": [],
+            "visual_mode": "mirror",
+            "scare_phrase": ""
+          },
+          {
+            "id": "scene_3",
+            "label": "الدور المكرر",
+            "narration": "كملت طريقي لفوق بسرعة وأنا باصص تحت رجليا عشان اهرب من الرعب ده. عديت خمس درجات ووصلت تاني لبرواز الدور الرابع المكسور بحذافيره. إزاي رجعت لنفس النقطة وانا طالع لفوق على طول؟ السلم بيكرر نفسه.",
+            "labels": [],
+            "visual_mode": "stairs",
+            "scare_phrase": ""
+          },
+          {
+            "id": "scene_4",
+            "label": "باب النجاة الوهمي",
+            "narration": "لقيت باب الشقة أخيرًا مفتوح نص فتحة والنور الدافئ طالع منه يطمن قلبي المذعور. جريت عليه وبسرعة دخلت وقفلت الباب ورايا بإحكام عشان أحمي نفسي من الصمت المرعب بره. قلت خلاص أنا أمان جوه شقتي ومحدش يقدر يوصل لي.",
+            "labels": [],
+            "visual_mode": "door",
+            "scare_phrase": ""
+          },
+          {
+            "id": "scene_5",
+            "label": "الوهم ينكشف",
+            "narration": "بصيت حواليا لقيت الصالة فاضية تمامًا من أي أثاث ومفيش غير مرسومات غريبة على الجدران الشبيهة. البرواز المكسور ظاهر قدامي على حيطة الصالة الداخلية جوه الشقة نفسها. قاعدة الأمان طلعت فخ محكم ومغلق علي جوه الحيطان.",
+            "labels": [],
+            "visual_mode": "reveal",
+            "scare_phrase": "قاعدة الأمان طلعت فخ محكم ومغلق"
+          },
+          {
+            "id": "scene_6",
+            "label": "الساعة المتوقفة",
+            "narration": "بصيت على الحيطة الجميلة دي ولقيت ساعة قديمة عقاربها ثابتة على نفس اللحظة اللي دخلت فيها العمارة. صوت عقاربها بدأ يتردد جوه دماغي كأنه دقات قلب ميت. الإضاءة الصفراء بتهتز وبترتعش حواليا بشكل يجنن.",
+            "labels": [],
+            "visual_mode": "clock",
+            "scare_phrase": "عقاربها ثابتة على نفس اللحظة اللي"
+          },
+          {
+            "id": "scene_7",
+            "label": "الخطوات المقتربة",
+            "narration": "سمعت صوت خطوات تانية بتطلع السلالم من بره وبتخبط على باب الشقة بقوة جنونية ومخيفة. صوتي اتقطع وانا بصرخ ومحدش سامع صراخي المستغيث في الليلة السوداء دي. الخطوات بقت قريبة جدا من الظهر المفرود والمذعور بتاعي.",
+            "labels": [],
+            "visual_mode": "hall",
+            "scare_phrase": ""
+          },
+          {
+            "id": "scene_8",
+            "label": "النهاية المفاجئة",
+            "narration": "التفت بسرعة أواجه اللي جاي ورايا ولقيت نفسي واقف قدام المراية في الدور الرابع بالظبط. الانعكاس بتاعي رفع إيده الشمال وابتسم ببرود وهو بيقول بصوت ميت انا اللي استنيتك تطلع. اتقفل الباب ومبقاش فيه مخرج ليا.",
+            "labels": [],
+            "visual_mode": "reveal",
+            "scare_phrase": "الانعكاس بتاعي رفع إيده الشمال وابتسم"
+          }
+        ],
+        "hashtags": [
+          "سلم_العمارة",
+          "انعكاس_مرعب",
+          "رعب_مصري"
+        ],
+        "plot_signature": "A man climbs a repeating apartment stairwell, notices a delayed mirror reflection, enters what he thinks is a safe open apartment, only to realize the apartment is a trap inside the loop, ending face-to-face with his own grinning reflection.",
+        "profile": "horror",
+        "series": "ملفات غامضه",
+        "visual_family": "haunted_interior",
+        "variant": "stairwell",
+        "topic_key": "fiction-873b4fd6856e1995",
+        "source": {
+          "kind": "original_fiction",
+          "publisher": "ملفات غامضه"
+        },
+        "fiction": true,
+        "documented": false,
+        "editorial_review": {
+          "supported": true,
+          "novel": true,
+          "issues": [],
+          "review_type": "original_narrative_and_plot_novelty"
+        }
+      },
+      "reserved_at": "2026-10-29T08:53:52.660372+00:00"
     }
   ]
 }
