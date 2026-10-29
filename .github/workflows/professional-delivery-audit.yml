@@ -1,5 +1,5 @@
 {
-  "name": "Confirm final live links without submitting duplicate posts",
+  "name": "Confirm remaining Instagram processing with bounded read-only checks",
   "on": {
     "push": {
       "branches": [
