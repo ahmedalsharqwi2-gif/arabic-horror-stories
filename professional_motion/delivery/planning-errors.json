@@ -1,0 +1,22 @@
+[
+  {
+    "topic_key": "fiction-e40025532658aeef",
+    "error_class": "ValueError",
+    "validation": "Original horror story failed narrative or originality review"
+  },
+  {
+    "topic_key": "fiction-1aed8420915c6c4f",
+    "error_class": "ValueError",
+    "validation": "Original horror story failed narrative or originality review"
+  },
+  {
+    "topic_key": "fiction-29f3edda08db0d6e",
+    "error_class": "ValueError",
+    "validation": "Write 260–330 spoken words for a natural film between 90 and 180 seconds"
+  },
+  {
+    "topic_key": "fiction-de6b838c191bb376",
+    "error_class": "ValueError",
+    "validation": "Vary scenes naturally between 24 and 50 spoken words while keeping the whole film length"
+  }
+]
