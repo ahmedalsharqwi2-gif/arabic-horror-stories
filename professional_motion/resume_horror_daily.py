@@ -1,5 +1,5 @@
 """Reuse exact original Charon audio; correct year captions to source/independent ASR."""
-import hashlib,json,subprocess
+import hashlib,json,subprocess,re
 from pathlib import Path
 from . import editorial as e
 from .alignment import measured_timing
@@ -17,7 +17,7 @@ def main():
  transcripts=[]
  for model in ('medium','small','large-v3'):
   raw=blob('asr-'+model+'.json');(out/('asr-'+model+'.json')).write_bytes(raw);transcripts.append((model,json.loads(raw)['recognized_words']))
- words={w['text'] for _,raw in transcripts for w in raw}
+ words={year for _,raw in transcripts for w in raw for year in re.findall(r'\d{4}',w['text'])}
  if not {'1845','1859','1848','2014','2016'}<=words:raise ValueError('Independent recognized years do not support caption correction')
  for scene in story['scenes']:
   for old,new in FIXES.items():scene['narration']=scene['narration'].replace(old,new)
