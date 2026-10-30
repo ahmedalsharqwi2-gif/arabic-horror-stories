@@ -269,7 +269,7 @@
       "canonical_subject": "franklin-expedition-1845",
       "title": "سفن فرانكلين: اختفاء في الجليد",
       "url": "https://www.rmg.co.uk/stories/maritime-history/what-happened-to-erebus-terror-crew-true-story",
-      "status": "reserved",
+      "status": "rendered",
       "story": {
         "title": "سفن فرانكلين: اختفاء في الجليد",
         "canonical_subject": "franklin-expedition-1845",
@@ -422,7 +422,8 @@
           }
         }
       },
-      "reserved_at": "2026-10-30T12:14:01.341549+00:00"
+      "reserved_at": "2026-10-30T12:14:01.341549+00:00",
+      "video_sha256": "9fd01c8243a510deda3bd582c39418533494f9438cb50e0f43f279e92bde47dd"
     }
   ]
 }
