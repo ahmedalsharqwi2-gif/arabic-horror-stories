@@ -25,6 +25,11 @@
           "type": "string",
           "default": "review",
           "required": false
+        },
+        "verified_voice_evidence": {
+          "type": "string",
+          "required": false,
+          "default": ""
         }
       }
     }
@@ -110,7 +115,7 @@
           "name": "Author a different full-length story, source claims, title and topical hashtags",
           "id": "prepare",
           "if": "steps.decision.outputs.run == 'true'",
-          "run": "python -m professional_motion.cli prepare horror --slot \"${{ steps.decision.outputs.slot }}\""
+          "run": "if [ \"${{ inputs.verified_voice_evidence }}\" = \"horror-41053666915\" ]; then\n  python -m professional_motion.resume_horror_daily\nelse\n  python -m professional_motion.cli prepare horror --slot \"${{ steps.decision.outputs.slot }}\"\nfi"
         },
         {
           "name": "Persist the reserved plot before any synthesis",
@@ -131,7 +136,7 @@
           "name": "Generate the complete original voice and measure speech/reveal timing",
           "id": "voice",
           "if": "steps.prepare.outcome == 'success'",
-          "run": "python -m professional_motion.voice_job"
+          "run": "if [ \"${{ inputs.verified_voice_evidence }}\" = \"horror-41053666915\" ]; then\n  echo \"Using pinned original full Charon audio and independently recomputed measured timing\"\nelse\n  python -m professional_motion.voice_job\nfi"
         },
         {
           "name": "Record the exact source revision used for narration",

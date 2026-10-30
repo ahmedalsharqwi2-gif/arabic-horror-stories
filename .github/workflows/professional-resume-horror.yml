@@ -1,0 +1,27 @@
+{
+  "name": "Finish same Franklin film with original Charon audio and verified date captions",
+  "on": {
+    "push": {
+      "branches": [
+        "main"
+      ],
+      "paths": [
+        ".github/workflows/professional-resume-horror.yml"
+      ]
+    }
+  },
+  "permissions": {
+    "contents": "write",
+    "actions": "read"
+  },
+  "jobs": {
+    "factory": {
+      "uses": "./.github/workflows/professional-daily.yml",
+      "with": {
+        "mode": "daily",
+        "verified_voice_evidence": "horror-41053666915"
+      },
+      "secrets": "inherit"
+    }
+  }
+}
