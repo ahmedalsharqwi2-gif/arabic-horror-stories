@@ -1,0 +1,181 @@
+{
+  "file": "professional-review.mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 155.16,
+  "story_sha256": "1ff505ba80d6da126dd5647aa66682750e9dd3803d3656bdc10b40d34b9bf5a0",
+  "voice": "original Gemini Charon",
+  "asr_model": "medium+small+large-v3",
+  "independent_asr_word_coverage": 0.9097472924187726,
+  "exact_token_coverage": 0.9097472924187726,
+  "speech_matching_method": "Exact-token ensemble anchors; supplied-script phrase captions; no active-word precision claim",
+  "known_name_normalization_applied": false,
+  "visual_gate": {
+    "passed": true,
+    "duration": 155.166667,
+    "resolution": [
+      1080,
+      1920
+    ],
+    "method": "within-scene diagram-region pixel changes",
+    "scenes": [
+      {
+        "scene": 1,
+        "diagram_spatial_std": [
+          20.017971938573673,
+          19.3526753209364,
+          19.206467786163415
+        ],
+        "changed_pixel_ratios": [
+          0.10734805318138652,
+          0.10214862298195632
+        ],
+        "passed": true
+      },
+      {
+        "scene": 2,
+        "diagram_spatial_std": [
+          53.545754277539956,
+          54.85718967916063,
+          54.41950291621329
+        ],
+        "changed_pixel_ratios": [
+          0.3518993352326686,
+          0.4148504273504274
+        ],
+        "passed": true
+      },
+      {
+        "scene": 3,
+        "diagram_spatial_std": [
+          30.42648728416542,
+          30.434413873555243,
+          31.151798711300966
+        ],
+        "changed_pixel_ratios": [
+          0.04046771130104464,
+          0.06461301044634378
+        ],
+        "passed": true
+      },
+      {
+        "scene": 4,
+        "diagram_spatial_std": [
+          51.930048649882345,
+          51.02685586379507,
+          51.95889773325597
+        ],
+        "changed_pixel_ratios": [
+          0.27431149097815766,
+          0.3001543209876543
+        ],
+        "passed": true
+      },
+      {
+        "scene": 5,
+        "diagram_spatial_std": [
+          45.218443673720074,
+          45.23060613320321,
+          45.02361366136897
+        ],
+        "changed_pixel_ratios": [
+          0.025510446343779677,
+          0.048990978157644825
+        ],
+        "passed": true
+      },
+      {
+        "scene": 6,
+        "diagram_spatial_std": [
+          17.517192045651093,
+          17.340383885115283,
+          17.228698521212234
+        ],
+        "changed_pixel_ratios": [
+          0.04632003798670465,
+          0.04831433998100665
+        ],
+        "passed": true
+      },
+      {
+        "scene": 7,
+        "diagram_spatial_std": [
+          19.79176204762251,
+          20.039444022160563,
+          19.708260771685133
+        ],
+        "changed_pixel_ratios": [
+          0.09620132953466287,
+          0.0887701804368471
+        ],
+        "passed": true
+      },
+      {
+        "scene": 8,
+        "diagram_spatial_std": [
+          51.28633015083864,
+          49.83130896799522,
+          51.340222183504395
+        ],
+        "changed_pixel_ratios": [
+          0.28647910731244064,
+          0.2814814814814815
+        ],
+        "passed": true
+      }
+    ],
+    "note": "Technical blank/freeze detection only; not a judgement of artistic or factual quality."
+  },
+  "audio_tail": {
+    "audio_seconds": 155.16,
+    "video_seconds": 155.16,
+    "difference_seconds": 0.0,
+    "last_speech_window_correlation": 0.9727335572242737,
+    "audio_tail_checked": true,
+    "silence_padding_used_to_hide_lost_speech": false
+  },
+  "publication_metadata": {
+    "title": "ملفات غامضه | سفن فرانكلين: اختفاء في الجليد",
+    "caption": "رسوم توضيحية وإعادة تمثيل درامية؛ ليست تسجيلًا للأحداث.\nالمصدر: Royal Museums Greenwich\nhttps://www.rmg.co.uk/stories/maritime-history/what-happened-to-erebus-terror-crew-true-story\n#سفن_فرانكلين #الممر_الشمالي_الغربي #تاريخ_بحري #القطب_الشمالي",
+    "description": "رسوم توضيحية وإعادة تمثيل درامية؛ ليست تسجيلًا للأحداث.\nالمصدر: Royal Museums Greenwich\nhttps://www.rmg.co.uk/stories/maritime-history/what-happened-to-erebus-terror-crew-true-story\n#سفن_فرانكلين #الممر_الشمالي_الغربي #تاريخ_بحري #القطب_الشمالي",
+    "tags": [
+      "سفن_فرانكلين",
+      "الممر_الشمالي_الغربي",
+      "تاريخ_بحري",
+      "القطب_الشمالي"
+    ],
+    "hashtags": [
+      "#سفن_فرانكلين",
+      "#الممر_الشمالي_الغربي",
+      "#تاريخ_بحري",
+      "#القطب_الشمالي"
+    ],
+    "source_url": "https://www.rmg.co.uk/stories/maritime-history/what-happened-to-erebus-terror-crew-true-story",
+    "containsSyntheticMedia": true
+  },
+  "duration_policy": {
+    "minimum_exclusive": 90,
+    "maximum_exclusive": 180
+  },
+  "music_target_lufs": -27,
+  "music": "Original composed score",
+  "music_bpm": 94,
+  "source": {
+    "url": "https://www.rmg.co.uk/stories/maritime-history/what-happened-to-erebus-terror-crew-true-story",
+    "publisher": "Royal Museums Greenwich",
+    "title": "سفن فرانكلين: اختفاء في الجليد"
+  },
+  "topic_key": "franklin-expedition-1845",
+  "profile": "horror",
+  "editorial_review": {
+    "supported": true,
+    "novel": true,
+    "issues": [],
+    "model": "gemini-3.5-flash-lite"
+  },
+  "render": "Three.js procedural geometry, physical lighting, custom skin shader, layered optical bloom",
+  "reference_audio_reused": false,
+  "automatically_published": false,
+  "status": "Technical checks passed; artistic judgement requires viewing the complete film."
+}
