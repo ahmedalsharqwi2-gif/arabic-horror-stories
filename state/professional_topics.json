@@ -269,7 +269,7 @@
       "canonical_subject": "franklin-expedition-1845",
       "title": "سفن فرانكلين: اختفاء في الجليد",
       "url": "https://www.rmg.co.uk/stories/maritime-history/what-happened-to-erebus-terror-crew-true-story",
-      "status": "publishing",
+      "status": "scheduled",
       "story": {
         "title": "سفن فرانكلين: اختفاء في الجليد",
         "canonical_subject": "franklin-expedition-1845",
@@ -423,7 +423,40 @@
         }
       },
       "reserved_at": "2026-10-30T12:14:01.341549+00:00",
-      "video_sha256": "9fd01c8243a510deda3bd582c39418533494f9438cb50e0f43f279e92bde47dd"
+      "video_sha256": "9fd01c8243a510deda3bd582c39418533494f9438cb50e0f43f279e92bde47dd",
+      "due_at": "2026-10-30T15:00:00Z",
+      "receipts": {
+        "facebook": {
+          "id": "6ae491614233ff6805be1cb9",
+          "due_at": "2026-10-30T15:00:00Z",
+          "run_id": "41055885506",
+          "accepted_at": "2026-10-30T12:45:22.119451+00:00",
+          "channel_id": "6aaa853fea19ca0bde57b5f7",
+          "scheduled_at": "2026-10-30T15:00:00+00:00",
+          "status": "scheduled",
+          "verified_at": "2026-10-30T12:45:27.159608+00:00"
+        },
+        "instagram": {
+          "id": "6ae491644233ff6805be1d24",
+          "due_at": "2026-10-30T15:00:00Z",
+          "run_id": "41055885506",
+          "accepted_at": "2026-10-30T12:45:24.530818+00:00",
+          "channel_id": "6aad267dea19ca0bde778d5e",
+          "scheduled_at": "2026-10-30T15:00:00+00:00",
+          "status": "scheduled",
+          "verified_at": "2026-10-30T12:45:27.335600+00:00"
+        },
+        "youtube": {
+          "id": "6ae491663dc61ec0c2ffdd23",
+          "due_at": "2026-10-30T15:00:00Z",
+          "run_id": "41055885506",
+          "accepted_at": "2026-10-30T12:45:26.981092+00:00",
+          "channel_id": "6aaa8778ea19ca0bde57da16",
+          "scheduled_at": "2026-10-30T15:00:00+00:00",
+          "status": "scheduled",
+          "verified_at": "2026-10-30T12:45:27.520920+00:00"
+        }
+      }
     }
   ]
 }
