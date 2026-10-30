@@ -1,0 +1,32 @@
+{
+  "profile": "horror",
+  "slot": "daily-2026-10-30",
+  "checked_at": "2026-10-30T13:10:46.161074+00:00",
+  "video_sha256": "9fd01c8243a510deda3bd582c39418533494f9438cb50e0f43f279e92bde47dd",
+  "due_at": "2026-10-30T15:00:00+00:00",
+  "no_posts_created": true,
+  "verified": true,
+  "posts": {
+    "youtube": {
+      "post_id": "6ae491663dc61ec0c2ffdd23",
+      "channel_id": "6aaa8778ea19ca0bde57da16",
+      "scheduled_at": "2026-10-30T15:00:00.000Z",
+      "status": "scheduled",
+      "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/auto-publish-daily-2026-10-30/science-video-daily-2026-10-30.mp4"
+    },
+    "facebook": {
+      "post_id": "6ae491614233ff6805be1cb9",
+      "channel_id": "6aaa853fea19ca0bde57b5f7",
+      "scheduled_at": "2026-10-30T15:00:00.000Z",
+      "status": "scheduled",
+      "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/auto-publish-daily-2026-10-30/science-video-daily-2026-10-30.mp4"
+    },
+    "instagram": {
+      "post_id": "6ae491644233ff6805be1d24",
+      "channel_id": "6aad267dea19ca0bde778d5e",
+      "scheduled_at": "2026-10-30T15:00:00.000Z",
+      "status": "scheduled",
+      "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/auto-publish-daily-2026-10-30/science-video-daily-2026-10-30.mp4"
+    }
+  }
+}
