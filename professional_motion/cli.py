@@ -12,8 +12,8 @@ def decision(profile,mode,event,now=None):
     now=now or datetime.now(timezone.utc);local=now.astimezone(ZoneInfo('Africa/Cairo'))
     daily=mode=='daily' or event=='schedule'
     enabled=approved()
-    # Two UTC cron hours cover both Cairo offsets. The civil-time guard selects one.
-    run=not daily or (enabled and (event!='schedule' or local.hour==9))
+    # Permit delayed scheduled runs before 17:00 Cairo; publication and duplicate guards remain downstream.
+    run=not daily or (enabled and (event!='schedule' or (9 <= local.hour < 17)))
     due=next_slot(now).isoformat(timespec='seconds').replace('+00:00','Z')
     slot=('daily-'+due[:10]) if daily else 'review-'+os.getenv('GITHUB_RUN_ID','local')
     return {'run':run,'publish':daily and enabled,'due':due,'slot':slot,'profile':profile,'approval_pending':daily and not enabled}
