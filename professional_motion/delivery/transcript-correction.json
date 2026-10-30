@@ -1,0 +1,13 @@
+{
+  "reviewer": "Codex",
+  "scope": "Correct malformed written-out years to real source dates independently recognized in the original audio; retain narration audio byte for byte",
+  "original_story_sha256": "eb225f4534045f0810353a23c1401abbde0a4b5cbbd6f1ca21eb05dccd9aa5b6",
+  "original_audio_sha256": "2e96aaa0e07cf34b11544976d0b2a24ddbfbb3a8201f79fac99fcae4df8a02bd",
+  "changes": {
+    "ألف وكمان مية وخمسة والأربعين": "1845",
+    "ألف وكمان مية وتسعة وخمسين": "1859",
+    "ألف وكمان مية وثمانية": "1848",
+    "ألفين وكمان أربعة عشر وألفين وكمان ستة عشر": "2014 و2016",
+    "إتش إم إس إريبوس وإتش إم إس تيرور": "HMS Erebus وHMS Terror"
+  }
+}
