@@ -1,0 +1,17 @@
+[
+  {
+    "topic_key": "endurance-1915",
+    "error_class": "ValueError",
+    "validation": "Factual or semantic novelty review rejected the episode"
+  },
+  {
+    "topic_key": "hms-captain-1870",
+    "error_class": "ValueError",
+    "validation": "Do not depict an afloat ship as an underwater wreck"
+  },
+  {
+    "topic_key": "ss-freshfield-loss",
+    "error_class": "ValueError",
+    "validation": "Do not depict an afloat ship as an underwater wreck"
+  }
+]
