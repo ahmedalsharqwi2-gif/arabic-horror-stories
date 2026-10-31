@@ -1,0 +1,121 @@
+{
+  "title": "فريشفيلد: رحلة الشحن المشؤومة عبر الأطلسي",
+  "canonical_subject": "ss-freshfield-loss",
+  "suitable": true,
+  "facts": [
+    "The cargo steamer SS Freshfield disappeared in 1905 after leaving the coast of America.",
+    "The ship was captained by David Lawson with a twenty five strong crew.",
+    "The vessel loaded timber in Mobile and Pensacola and replenished coal in Norfolk, Virginia.",
+    "The crew refused to board the ship in Virginia because the vessel was listing and covered in ice.",
+    "A Board of Trade inquiry investigated the loss of the Freshfield starting on August twenty third, 1905."
+  ],
+  "milestones": [
+    "7 February 1905",
+    "23 August 1905",
+    "17 March 1905"
+  ],
+  "scenes": [
+    {
+      "id": "scene_1",
+      "label": "سفينة الشحن فريشفيلد",
+      "narration": "سفينة الشحن فريشفيلد خرجت من الموانئ الأمريكية سنة ألف وتسعة مئة وخمسة بطاقم مكون من خمسة وعشرين فرداً. الطاقم ده واجه كابوس حقيقي في رحلة العودة عبر المحيط الأطلسي، والسفينة دي اختفت تماماً من غير ما تسيب أي اثر.",
+      "labels": [
+        "سفينة الشحن فريشفيلد"
+      ],
+      "visual_mode": "route",
+      "evidence_excerpt_id": 3,
+      "evidence_quote": "of SS Freshfield on its journey home. The SS Freshfield , captained by David Lawson"
+    },
+    {
+      "id": "scene_2",
+      "label": "مسار الشحن",
+      "narration": "المسار بدا من موبيل في ألاباما لشحن الأخشاب، وبعدين بينساكولا في فلوريدا، ووصلت السفينة لنورفوك في فرجينيا عشان إمدادات الفحم. الحركة دي وضعت السفينة في قلب ظروف قاسية ومشحونة بالمخاطر.",
+      "labels": [],
+      "visual_mode": "route",
+      "evidence_excerpt_id": 5,
+      "evidence_quote": "of timber. The ship then travelled around the coast to Pensacola in Florida , where"
+    },
+    {
+      "id": "scene_3",
+      "label": "شحنة الأخشاب",
+      "narration": "عامل الشحن في بينساكولا اعترض على طريقة رص الأخشاب القصيرة فوق بعضها عشان اعتبرها غير آمنة. الكابتن ديفيد لوسون لقى نفسه قدام ضغوط كبيرة من الشركات والمستأجرين لتفريغ الشحنة في موانئ محددة.",
+      "labels": [],
+      "visual_mode": "papers",
+      "evidence_excerpt_id": 16,
+      "evidence_quote": "’; the latter objected to shorter logs being placed on top as they were impossible"
+    },
+    {
+      "id": "scene_4",
+      "label": "رفض الطاقم",
+      "narration": "لما وصلت السفينة فرجينيا، كانت الشحنة اتحركت وتغطت بالجليد والسفينة مالت على جنبها الشمالي. البحارة رفضوا ركوب السفينة واختاروا السجن على إنهم يطلعوا في رحلة بحرية بالخطورة دي، فالكابتن اضطر يعدل وضع الشحنة.",
+      "labels": [],
+      "visual_mode": "evidence",
+      "evidence_excerpt_id": 19,
+      "evidence_quote": "ship was listing to the port side. The crew refused to board the ship ‘"
+    },
+    {
+      "id": "scene_5",
+      "label": "مخاوف الكابتن",
+      "narration": "رسائل الكابتن لوسون لمراته بيلا وضحت قلقه الشديد وخوفه من خسارة شغله لو ما التزمش بتعليمات الشركات. لوسون كتب إن السفينة دي كانت سلسلة من الكوارث، وإنه اضطر يتحرك بعد ما خفف حوالي عشرة في المية من الشحنة.",
+      "labels": [],
+      "visual_mode": "research",
+      "evidence_excerpt_id": 26,
+      "evidence_quote": "clear from his letters that Lawson was very anxious about the voyage and the state"
+    },
+    {
+      "id": "scene_6",
+      "label": "الانطلاق الأخير",
+      "narration": "السفينة فريشفيلد اتحركت أخيرًا من نورفوك يوم سبعة فبراير سنة ألف وتسعة مئة وخمسة عشان تقطع الأطلسي في الشتاء. التحقيقات أثبتت بعد كده إن نقل الأخشاب على السطح في الشتاء بيمثل خطر مضاعف.",
+      "labels": [],
+      "visual_mode": "weather",
+      "evidence_excerpt_id": 7,
+      "evidence_quote": "The Freshfield departed Norfolk on 7 February 1905 to make the return voyage across the"
+    },
+    {
+      "id": "scene_7",
+      "label": "تحقيق مجلس التجارة",
+      "narration": "مجلس التجارة فتح تحقيق رسمي في اختفاء السفينة يوم ثلاثة وعشرين أغسطس سنة ألف وتسعة مئة وخمسة. القضية دي اتذكرت كمان في نقاشات مجلس اللوردات البريطاني بخصوص خطورة شحن الأخشاب في الشتاء.",
+      "labels": [],
+      "visual_mode": "papers",
+      "evidence_excerpt_id": 9,
+      "evidence_quote": "the loss of the Freshfield opened on 23 August 1905, which, incidentally, would have been"
+    },
+    {
+      "id": "scene_8",
+      "label": "النتائج والقرارات",
+      "narration": "رغم النقاشات البرلمانية، الحملات ما قدرتش تمنع شحن الأخشاب تماماً في البداية. لكن التشريعات بعد كده عدلت قوانين خطوط الشحن البحري وحمايتها، وفضلت قصة فريشفيلد علامة واضحة على مخاطر الإبحار الشتوي.",
+      "labels": [],
+      "visual_mode": "timeline",
+      "evidence_excerpt_id": 85,
+      "evidence_quote": "the law…. Campaigners were unsuccessful in getting deck loads outlawed entirely. However, the library collection"
+    }
+  ],
+  "hashtags": [
+    "SS_Freshfield",
+    "David_Lawson",
+    "Board_of_Trade",
+    "maritime_history"
+  ],
+  "editorial_warnings": [
+    "At least two hashtags must refer to specific subjects actually discussed in this film"
+  ],
+  "profile": "horror",
+  "series": "ملفات غامضه",
+  "visual_family": "maritime",
+  "variant": "atlantic",
+  "topic_key": "ss-freshfield-loss",
+  "source": {
+    "url": "https://www.rmg.co.uk/stories/maritime-history/library-archive/loss-ss-freshfield",
+    "publisher": "Royal Museums Greenwich",
+    "title": "فريشفيلد: آخر رحلة للسفينة"
+  },
+  "fiction": false,
+  "documented": true,
+  "editorial_review": {
+    "supported": true,
+    "novel": true,
+    "issues": [],
+    "model": "gemini-3.5-flash-lite"
+  },
+  "writer_model": "gemini-3.5-flash-lite"
+}
