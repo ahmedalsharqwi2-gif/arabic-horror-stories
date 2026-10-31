@@ -549,11 +549,32 @@
         "writer_model": "gemini-3.5-flash-lite"
       },
       "one_off_publication": {
-        "status": "submitting",
+        "status": "accepted",
         "approved_video_sha256": "f65206b6f8aa275272b44ef901098b528ac8e9f1b3741cfc5c374518416f993c",
         "media_id": "approved-horror-41198762140",
-        "title": "ملفات غامضه | إنديورانس: الجليد حاصر السفينة"
-      }
+        "title": "ملفات غامضه | إنديورانس: الجليد حاصر السفينة",
+        "receipts": {
+          "youtube": {
+            "id": "6ae5fc815fdbd4dd6291ad03",
+            "due_at": "2026-10-31T14:36:40Z",
+            "run_id": "41210690791",
+            "accepted_at": "2026-10-31T14:34:41.199851+00:00"
+          },
+          "instagram": {
+            "id": "6ae5fc81f0984eef3313b7a0",
+            "due_at": "2026-10-31T14:36:40Z",
+            "run_id": "41210690791",
+            "accepted_at": "2026-10-31T14:34:42.083033+00:00"
+          },
+          "facebook": {
+            "id": "6ae5fc825fdbd4dd6291ad90",
+            "due_at": "2026-10-31T14:36:40Z",
+            "run_id": "41210690791",
+            "accepted_at": "2026-10-31T14:34:42.752960+00:00"
+          }
+        }
+      },
+      "status": "scheduled"
     }
   ]
 }
