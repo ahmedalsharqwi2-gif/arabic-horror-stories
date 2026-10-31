@@ -410,6 +410,150 @@
         "writer_model": "gemini-3.5-flash-lite"
       },
       "reserved_at": "2026-10-30T12:14:01.341549+00:00"
+    },
+    {
+      "slot": "review-41198762140",
+      "topic_key": "endurance-1915",
+      "story": {
+        "title": "إنديورانس: الجليد حاصر السفينة",
+        "canonical_subject": "endurance-1915",
+        "suitable": true,
+        "facts": [
+          "السفينة إنديورانس حوصرت في جليد بحر ويدل في التاسع عشر من يناير عام ألف وتسعة عشر وخمسة عشر.",
+          "تم سحق السفينة تدريجياً على مدار تسعة أشهر وغرقت في السابع والعشرين من أكتوبر.",
+          "عسكر الطاقم المكون من ثمانية وعشرين رجلاً على الجليد بعد استحالة جر القوارب عبر البحر المتجمد."
+        ],
+        "milestones": [
+          "1914",
+          "1915",
+          "1916"
+        ],
+        "scenes": [
+          {
+            "id": "scene_1",
+            "label": "رحلة إنديورانس",
+            "narration": "في شهر أغسطس من عام ألف وتسعة عشر وخسمة عشر، خرج إرنست شاكلتون مع طاقمه على متن السفينة إنديورانس عشان يعبروا القطب المتجمد الجنوبي من بحر ويدل لبحر روس، في وقت كانت الحربا تقم في أوروبا، وكان التحدي ده هو آخر مغامرة كبيرة بالنسبة لهم في تلك الظروف القاسية.",
+            "labels": [
+              "إنديورانس",
+              "شاكلتون"
+            ],
+            "visual_mode": "hero",
+            "evidence_excerpt_id": 11,
+            "evidence_quote": "expedition? In 1914, in command of a party on the ship Endurance , Shackleton set"
+          },
+          {
+            "id": "scene_2",
+            "label": "الحصار الجليدي",
+            "narration": "على مدار الشهور التالية وتحديداً في التاسع عشر من يناير، حصلت اللحظة المرعبة لما حوصرت السفينة إنديورانس تماماً في وسط الجليد المتسلط لبحر ويدل، وبدأت الكتل الجليدية تحاصر الهيكل ببطء وبدون أي مخرج مرئي للنجاة من هذا الطوق الأبيض المرعب.",
+            "labels": [
+              "الجليد",
+              "بحر ويدل"
+            ],
+            "visual_mode": "weather",
+            "evidence_excerpt_id": 16,
+            "evidence_quote": "as the war was starting in Europe. On 19 January 1915, Endurance became locked in"
+          },
+          {
+            "id": "scene_3",
+            "label": "تحطم السفينة",
+            "narration": "طوال تسعة أشهر متواصلة، كان الضغط بيزيد على السفينة لحد ما اتعرضت للتهشيم التدريجي بواسطة كتل الجليد الضخمة، وانتهت اللحظة بغرق إنديورانس بالكامل في السابع والعشرين من شهر أكتوبر، مما اضطر الطاقم للنزول على سطح الجليد العائم وسط البرد القارس.",
+            "labels": [
+              "غرق",
+              "أكتوبر"
+            ],
+            "visual_mode": "wreck",
+            "evidence_excerpt_id": 18,
+            "evidence_quote": "ship was gradually crushed, finally sinking on 27 October. It proved impossible for the 28"
+          },
+          {
+            "id": "scene_4",
+            "label": "المخيم العائم",
+            "narration": "مع استحالة جر القوارب والمؤونة عبر سطح البحر المتجمد، قرر شاكلتون ورجاله الثمانية والعشرون إقامة مخيم مؤقت فوق الكتل الجليدية المتحركة، وعاشوا هناك فترة طويلة وهم بينجرفوا مع التيارات الباردة في عزلة تامة عن العالم الخارجي.",
+            "labels": [
+              "الجليد"
+            ],
+            "visual_mode": "pump",
+            "evidence_excerpt_id": 19,
+            "evidence_quote": "men to drag their boats and stores across the frozen sea, so Shackleton camped on"
+          },
+          {
+            "id": "scene_5",
+            "label": "الوصول لجزيرة الفيل",
+            "narration": "لما بدأ الجليد يتكسر تحت أقدامهم، استغل الرجال الفرصة ونزلوا بالقوارب الثلاثة في ظروف بالغة الخطورة لحد ما وصلوا لجزيرة الفيل، وهي جزيرة صخرية وجرداء تبعد أكثر من مائة ميل عن أي أرض مسكونة يمكن تطلب منها المساعدة.",
+            "labels": [
+              "جزيرة الفيل",
+              "القوارب"
+            ],
+            "visual_mode": "route",
+            "evidence_excerpt_id": 21,
+            "evidence_quote": "launched the three boats and in dangerous conditions, managed to reach Elephant Island. This rocky"
+          },
+          {
+            "id": "scene_6",
+            "label": "رحلة جيمس كيرد",
+            "narration": "عشان يلاقوا طوق نجاة حقيقي، خد شاكلتون خمسة رجال وسافروا على متن قارب جيمس كيرد لمسافة ثمان مائة ميل نحو جزيرة جورجيا الجنوبية، وقعدوا خمسة عشر يوم في البحر في رحلة شاقة ومنهكة لحد ما ظهرت قدامهم سواحل الجزيرة المقصودة.",
+            "labels": [
+              "جيمس كيرد",
+              "جورجيا الجنوبية"
+            ],
+            "visual_mode": "research",
+            "evidence_excerpt_id": 27,
+            "evidence_quote": "15 exhausting days at sea, the crew of the James Caird finally sighted South Georgia."
+          },
+          {
+            "id": "scene_7",
+            "label": "عبور الجبال",
+            "narration": "بعد الوصول للجانب غير المأهول، اضطر الثلاثي شاكلتون وتوم كرين وفرانك وورسلي لقطع تسلق خطير بمرتفعات تقارب ثلاثة آلاف قدم، ومشيوا بلا توقف لمدة ست وثلاثين ساعة عبر تضاريس جليدية وجبلية وعرة لحد ما وصلوا لمحطة صيد الحيتان في سترومنس.",
+            "labels": [
+              "سترومنس"
+            ],
+            "visual_mode": "papers",
+            "evidence_excerpt_id": 33,
+            "evidence_quote": "36 hours, covering some 40 miles over mountainous and icy terrain until they finally reached"
+          },
+          {
+            "id": "scene_8",
+            "label": "الإنقاذ الأخير",
+            "narration": "باقي أفراد الطاقم اللي استنوا في جزيرة الفيل فضلوا محاصرين لحد يوم الثلاثين من أغسطس من عام ألف وتسعة عشر وستة عشر، لما تمكن شاكلتون من الرجوع بقارب تابع للبحرية التشيلية لإنقاذهم جميعاً بعد رحلة صمود أسطورية في قلب القطب الجنوبي.",
+            "labels": [
+              "أغسطس"
+            ],
+            "visual_mode": "timeline",
+            "evidence_excerpt_id": 35,
+            "evidence_quote": "on Elephant Island had to wait longer, until 30 August 1916, but were eventually picked"
+          }
+        ],
+        "hashtags": [
+          "إنديورانس",
+          "شاكلتون",
+          "القطب_الجنوبي"
+        ],
+        "profile": "horror",
+        "series": "ملفات غامضه",
+        "visual_family": "maritime",
+        "variant": "polar",
+        "topic_key": "endurance-1915",
+        "source": {
+          "url": "https://www.rmg.co.uk/stories/maritime-history/sir-ernest-shackleton",
+          "publisher": "Royal Museums Greenwich",
+          "title": "إنديورانس: الجليد حاصر السفينة"
+        },
+        "fiction": false,
+        "documented": true,
+        "editorial_review": {
+          "supported": true,
+          "novel": true,
+          "issues": [],
+          "model": "gemini-3.5-flash-lite"
+        },
+        "writer_model": "gemini-3.5-flash-lite"
+      },
+      "one_off_publication": {
+        "status": "submitting",
+        "approved_video_sha256": "f65206b6f8aa275272b44ef901098b528ac8e9f1b3741cfc5c374518416f993c",
+        "media_id": "approved-horror-41198762140",
+        "title": "ملفات غامضه | إنديورانس: الجليد حاصر السفينة"
+      }
     }
   ]
 }

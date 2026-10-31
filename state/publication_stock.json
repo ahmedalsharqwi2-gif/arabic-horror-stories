@@ -666,6 +666,15 @@
         "youtube"
       ],
       "confirmed_at": "2026-10-29T19:34:38.344157+00:00"
+    },
+    "immediate approved-horror-41198762140": {
+      "confirmed": false,
+      "receipts": {},
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ]
     }
   }
 }
