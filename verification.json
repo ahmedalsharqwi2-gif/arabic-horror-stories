@@ -1,0 +1,181 @@
+{
+  "file": "professional-review.mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 156.36,
+  "story_sha256": "2300857ac7218aea0bcae0817d2bde88b53d7a8c5782bc4eb1f6a9bdcd634195",
+  "voice": "original Gemini Charon",
+  "asr_model": "medium+small+large-v3",
+  "independent_asr_word_coverage": 0.8734567901234568,
+  "exact_token_coverage": 0.8734567901234568,
+  "speech_matching_method": "Exact-token ensemble anchors; supplied-script phrase captions; no active-word precision claim",
+  "known_name_normalization_applied": false,
+  "visual_gate": {
+    "passed": true,
+    "duration": 156.366667,
+    "resolution": [
+      1080,
+      1920
+    ],
+    "method": "within-scene diagram-region pixel changes",
+    "scenes": [
+      {
+        "scene": 1,
+        "diagram_spatial_std": [
+          49.03117821482927,
+          49.540655404489,
+          49.8254178778444
+        ],
+        "changed_pixel_ratios": [
+          0.21138414055080723,
+          0.21286799620132954
+        ],
+        "passed": true
+      },
+      {
+        "scene": 2,
+        "diagram_spatial_std": [
+          48.804704599287774,
+          50.15426193510125,
+          54.9795500552912
+        ],
+        "changed_pixel_ratios": [
+          0.342153371320038,
+          0.38004510921177587
+        ],
+        "passed": true
+      },
+      {
+        "scene": 3,
+        "diagram_spatial_std": [
+          56.125312950461634,
+          56.16944392116241,
+          56.35154540404486
+        ],
+        "changed_pixel_ratios": [
+          0.27213912630579296,
+          0.3367877492877493
+        ],
+        "passed": true
+      },
+      {
+        "scene": 4,
+        "diagram_spatial_std": [
+          23.637189145743907,
+          23.44975049610162,
+          23.387309883170214
+        ],
+        "changed_pixel_ratios": [
+          0.03881766381766382,
+          0.022827635327635327
+        ],
+        "passed": true
+      },
+      {
+        "scene": 5,
+        "diagram_spatial_std": [
+          17.417193309551255,
+          17.70979045225554,
+          17.065906074152878
+        ],
+        "changed_pixel_ratios": [
+          0.05233855650522317,
+          0.050854700854700854
+        ],
+        "passed": true
+      },
+      {
+        "scene": 6,
+        "diagram_spatial_std": [
+          17.837907445584655,
+          18.107898077785627,
+          18.245848955183895
+        ],
+        "changed_pixel_ratios": [
+          0.026115859449192782,
+          0.056991927825261156
+        ],
+        "passed": true
+      },
+      {
+        "scene": 7,
+        "diagram_spatial_std": [
+          41.22508009989435,
+          41.42907507283638,
+          41.04503077135521
+        ],
+        "changed_pixel_ratios": [
+          0.02758784425451092,
+          0.04115622032288699
+        ],
+        "passed": true
+      },
+      {
+        "scene": 8,
+        "diagram_spatial_std": [
+          14.70625773654301,
+          14.167360912048714,
+          14.449313268054919
+        ],
+        "changed_pixel_ratios": [
+          0.03416429249762583,
+          0.029451566951566952
+        ],
+        "passed": true
+      }
+    ],
+    "note": "Technical blank/freeze detection only; not a judgement of artistic or factual quality."
+  },
+  "audio_tail": {
+    "audio_seconds": 156.36,
+    "video_seconds": 156.36,
+    "difference_seconds": 0.0,
+    "last_speech_window_correlation": 0.9715577960014343,
+    "audio_tail_checked": true,
+    "silence_padding_used_to_hide_lost_speech": false
+  },
+  "publication_metadata": {
+    "title": "ملفات غامضه | إنديورانس: الجليد حاصر السفينة",
+    "caption": "رسوم توضيحية وإعادة تمثيل درامية؛ ليست تسجيلًا للأحداث.\nالمصدر: Royal Museums Greenwich\nhttps://www.rmg.co.uk/stories/maritime-history/sir-ernest-shackleton\n#إنديورانس #شاكلتون #القطب_الجنوبي",
+    "description": "رسوم توضيحية وإعادة تمثيل درامية؛ ليست تسجيلًا للأحداث.\nالمصدر: Royal Museums Greenwich\nhttps://www.rmg.co.uk/stories/maritime-history/sir-ernest-shackleton\n#إنديورانس #شاكلتون #القطب_الجنوبي",
+    "tags": [
+      "إنديورانس",
+      "شاكلتون",
+      "القطب_الجنوبي"
+    ],
+    "hashtags": [
+      "#إنديورانس",
+      "#شاكلتون",
+      "#القطب_الجنوبي"
+    ],
+    "source_url": "https://www.rmg.co.uk/stories/maritime-history/sir-ernest-shackleton",
+    "containsSyntheticMedia": true
+  },
+  "duration_policy": {
+    "minimum_exclusive": 90,
+    "maximum_exclusive": 180
+  },
+  "music_target_lufs": -27,
+  "music": "Original composed score",
+  "music_bpm": 94,
+  "source": {
+    "url": "https://www.rmg.co.uk/stories/maritime-history/sir-ernest-shackleton",
+    "publisher": "Royal Museums Greenwich",
+    "title": "إنديورانس: الجليد حاصر السفينة"
+  },
+  "topic_key": "endurance-1915",
+  "profile": "horror",
+  "editorial_review": {
+    "supported": true,
+    "novel": true,
+    "issues": [],
+    "model": "gemini-3.5-flash-lite"
+  },
+  "render": "Three.js geometry and lighting with reference editorial frame; bloom disabled",
+  "visual_style": "reference",
+  "review_watermark": true,
+  "reference_audio_reused": false,
+  "automatically_published": false,
+  "status": "Technical checks passed; artistic judgement requires viewing the complete film."
+}
