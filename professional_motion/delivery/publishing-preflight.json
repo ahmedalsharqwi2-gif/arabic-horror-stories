@@ -1,0 +1,53 @@
+{
+  "buffer": {
+    "youtube": "6aaa8778ea19ca0bde57da16",
+    "facebook": "6aaa853fea19ca0bde57b5f7",
+    "instagram": "6aad267dea19ca0bde778d5e"
+  },
+  "direct_youtube": false,
+  "problems": [],
+  "credential_presence": {
+    "BUFFER_API_KEY": true,
+    "YT_CLIENT_ID": true,
+    "YT_CLIENT_SECRET": true,
+    "YT_REFRESH_TOKEN": true,
+    "YT_REFRESH_TOKEN_FALLBACK": false
+  },
+  "available_channels": [
+    {
+      "name": "cosmic_secrets2",
+      "service": "instagram",
+      "id": "6aad267dea19ca0bde778d5e",
+      "paused": false
+    },
+    {
+      "name": "Desert Soul Music\n",
+      "service": "youtube",
+      "id": "6aaa8778ea19ca0bde57da16",
+      "paused": false
+    },
+    {
+      "name": "ملفات غامضة - Mysterious Files ",
+      "service": "facebook",
+      "id": "6aaa853fea19ca0bde57b5f7",
+      "paused": false
+    }
+  ],
+  "matched_channels": [
+    {
+      "name": "cosmic_secrets2",
+      "service": "instagram",
+      "id": "6aad267dea19ca0bde778d5e"
+    },
+    {
+      "name": "Desert Soul Music\n",
+      "service": "youtube",
+      "id": "6aaa8778ea19ca0bde57da16"
+    },
+    {
+      "name": "ملفات غامضة - Mysterious Files ",
+      "service": "facebook",
+      "id": "6aaa853fea19ca0bde57b5f7"
+    }
+  ]
+}
