@@ -1,0 +1,15 @@
+{
+  "profile": "horror",
+  "renderer_commit": "ebd50d3823d3e471df6ccb5a7587536cea5f8fb6",
+  "original_delivery_commit": "15647497b9c3b556700479e3acbb27a4c8348432",
+  "voice": "Gemini Charon; archived exact original audio reused only for technical regression",
+  "archived_regression": true,
+  "fresh_topic_verified": false,
+  "publishable": false,
+  "automatically_published": false,
+  "full_sha256": "1e95e1b7ab6b86253b952af948797308d451fe09b4ccc69aad310a738a271572",
+  "sample_sha256": "581561e4c1f24311461f9b28c3fa580aa2473356811b6722ba6b4789a9cbf398",
+  "sample_duration": 40.066667,
+  "original_logo_installed": false,
+  "limitation": "Technical media validation does not establish artistic approval or current Buffer publication status"
+}
