@@ -1,0 +1,17 @@
+{
+  "provider": "Gemini TTS",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Native Egyptian Arabic ar-EG. Same mature male Charon identity, intimate psychological horror performance rather than a documentary announcer. Begin close to the microphone with a quiet voiced near-whisper, clearly audible consonants. Build restrained unease, vary pace with the meaning, let questions feel personal and frightened. Short natural hesitations at commas, tense brief silence at sentence endings; do not insert extra words. On phrases about disappearance, absence or an unexplained fate, use an audible breathy whisper, then return to a low conversational register. No shouting, cartoon villain voice or flat newsreader cadence. Preserve every word, pronounce names and written-out numbers clearly, complete the final sentence. Do not speak these instructions. No music or sound effects in the generated voice.\nEgyptian Arabic gripping horror storyteller. Natural resonant Charon voice with exceptionally clear everyday Egyptian diction. Calm controlled tension and short uneasy pauses, escalating urgency near reveals. Do not whisper, mumble, distort words, scream, add words or swallow sentence endings. Read every supplied word exactly. Keep tension through the final sentence. Finish every word, then stop without a warm resolving tone. No music or sound effects. Read only the supplied words. Finish the last sentence. Clear natural pace.",
+  "text": "سفينة الشحن فريشفيلد خرجت من الموانئ الأمريكية سنة ألف وتسعة مئة وخمسة بطاقم مكون من خمسة وعشرين فرداً. الطاقم ده واجه كابوس حقيقي في رحلة العودة عبر المحيط الأطلسي، والسفينة دي اختفت تماماً من غير ما تسيب أي اثر. المسار بدا من موبيل في ألاباما لشحن الأخشاب، وبعدين بينساكولا في فلوريدا، ووصلت السفينة لنورفوك في فرجينيا عشان إمدادات الفحم. الحركة دي وضعت السفينة في قلب ظروف قاسية ومشحونة بالمخاطر. عامل الشحن في بينساكولا اعترض على طريقة رص الأخشاب القصيرة فوق بعضها عشان اعتبرها غير آمنة. الكابتن ديفيد لوسون لقى نفسه قدام ضغوط كبيرة من الشركات والمستأجرين لتفريغ الشحنة في موانئ محددة. لما وصلت السفينة فرجينيا، كانت الشحنة اتحركت وتغطت بالجليد والسفينة مالت على جنبها الشمالي. البحارة رفضوا ركوب السفينة واختاروا السجن على إنهم يطلعوا في رحلة بحرية بالخطورة دي، فالكابتن اضطر يعدل وضع الشحنة. رسائل الكابتن لوسون لمراته بيلا وضحت قلقه الشديد وخوفه من خسارة شغله لو ما التزمش بتعليمات الشركات. لوسون كتب إن السفينة دي كانت سلسلة من الكوارث، وإنه اضطر يتحرك بعد ما خفف حوالي عشرة في المية من الشحنة. السفينة فريشفيلد اتحركت أخيرًا من نورفوك يوم سبعة فبراير سنة ألف وتسعة مئة وخمسة عشان تقطع الأطلسي في الشتاء. التحقيقات أثبتت بعد كده إن نقل الأخشاب على السطح في الشتاء بيمثل خطر مضاعف. مجلس التجارة فتح تحقيق رسمي في اختفاء السفينة يوم ثلاثة وعشرين أغسطس سنة ألف وتسعة مئة وخمسة. القضية دي اتذكرت كمان في نقاشات مجلس اللوردات البريطاني بخصوص خطورة شحن الأخشاب في الشتاء. رغم النقاشات البرلمانية، الحملات ما قدرتش تمنع شحن الأخشاب تماماً في البداية. لكن التشريعات بعد كده عدلت قوانين خطوط الشحن البحري وحمايتها، وفضلت قصة فريشفيلد علامة واضحة على مخاطر الإبحار الشتوي.",
+  "interaction_id": "v1_ChdSc19sYXQzcUxjdjMtc0FQa2VHMXdBdxIXUnNfbGF0M3FMY3YzLXNBUGtlRzF3QXc",
+  "duration": 133.12,
+  "sample_rate": 24000,
+  "channels": 1,
+  "sha256": "dd9b0eeb6b5ade03d25e9a8129cc02de2f3ffab43c3e26d696a2fe54692a5af3",
+  "newly_synthesized": true,
+  "original_video_audio_used": false,
+  "fallback_used": false,
+  "cache_hit": false,
+  "output_sha256": "dd9b0eeb6b5ade03d25e9a8129cc02de2f3ffab43c3e26d696a2fe54692a5af3"
+}
