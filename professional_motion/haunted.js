@@ -1,6 +1,7 @@
 import * as THREE from 'three';
+import {wornSurface} from './cinematic_horror.js';
 // Original procedural sets, props and silhouette. No sampled film imagery.
-export function hauntedStage(parent){
+export function hauntedStage(parent,{cinematic=false}={}){
  const root=new THREE.Group();parent.add(root);
  const groups={},mat=(c,r=.8,m=.03)=>new THREE.MeshStandardMaterial({color:c,roughness:r,metalness:m});
  const plaster=mat(0x62645a,.98),wood=mat(0x45352d,.86),metal=mat(0x626960,.5,.55),black=mat(0x020304,.95),red=new THREE.MeshStandardMaterial({color:0x982c21,emissive:0xa43122,emissiveIntensity:1});
@@ -13,6 +14,7 @@ export function hauntedStage(parent){
   };
  }
  weathered(plaster,'plaster');weathered(wood,'wood');
+ if(cinematic){wornSurface(plaster,'plaster');wornSurface(wood,'wood');wornSurface(metal,'metal');}
  const mesh=(g,geo,m,x=0,y=0,z=0)=>{const o=new THREE.Mesh(geo,m);o.position.set(x,y,z);g.add(o);return o;};
  const box=(g,w,h,d,m,x=0,y=0,z=0)=>mesh(g,new THREE.BoxGeometry(w,h,d),m,x,y,z);
  const group=n=>{const g=new THREE.Group();g.name='haunted-'+n;root.add(g);groups[n]=g;return g;};

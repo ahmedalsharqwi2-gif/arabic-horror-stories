@@ -8,10 +8,14 @@ import {spawn} from 'node:child_process';
 import {existsSync} from 'node:fs';
 import {once} from 'node:events';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const output=path.join(root,'professional_motion/output');await mkdir(output,{recursive:true});
+const option=(name,fallback)=>{const i=process.argv.indexOf(name);if(i<0)return fallback;const value=process.argv[i+1];if(!value||value.startsWith('--'))throw Error('Missing '+name+' value');return value;};
+const pipeline=option('--pipeline',process.argv.includes('--pipeline-v2')?'v2':'legacy');
+if(!['legacy','v2'].includes(pipeline))throw Error('Unknown pipeline');
+const delivery=path.resolve(option('--delivery-dir',path.join(root,'professional_motion/delivery')));
+const output=path.resolve(option('--output-dir',path.join(root,'professional_motion/output')));await mkdir(output,{recursive:true});
 const mime={'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.json':'application/json','.ttf':'font/ttf','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp'};
 const server=createServer(async(req,res)=>{
- try{const p=path.resolve(root,'.'+decodeURIComponent(req.url.split('?')[0]));if(!p.startsWith(root+path.sep))throw Error('path');const b=await readFile(p);res.writeHead(200,{'Content-Type':mime[path.extname(p)]||'application/octet-stream','Cache-Control':'no-store'});res.end(b);}catch{res.writeHead(404);res.end('Not found');}
+ try{const pathname=decodeURIComponent(req.url.split('?')[0]);const deliveryRequest=pathname.startsWith('/professional_motion/delivery/');if(deliveryRequest&&!['story.json','timing.json'].includes(pathname.slice('/professional_motion/delivery/'.length)))throw Error('path');const p=deliveryRequest?path.join(delivery,path.basename(pathname)):path.resolve(root,'.'+pathname);if(!deliveryRequest&&!p.startsWith(root+path.sep))throw Error('path');const b=await readFile(p);res.writeHead(200,{'Content-Type':mime[path.extname(p)]||'application/octet-stream','Cache-Control':'no-store'});res.end(b);}catch{res.writeHead(404);res.end('Not found');}
 });server.listen(0,'127.0.0.1');await once(server,'listening');
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||(existsSync('/usr/bin/chromium')?'/usr/bin/chromium':chromium.executablePath()),headless:true,args:['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 const page=await browser.newPage({viewport:{width:1080,height:1920},deviceScaleFactor:1});
@@ -19,12 +23,12 @@ const errors=[];page.on('console',m=>{if(m.type()==='error'&&!m.text().includes(
 try{
  const styleIndex=process.argv.indexOf('--style'),style=styleIndex<0?'original':process.argv[styleIndex+1];
  if(!['original','reference'].includes(style))throw Error('Unknown visual style');
- const query=new URLSearchParams({style,review:String(process.argv.includes('--review'))});
+ const query=new URLSearchParams({style,review:String(process.argv.includes('--review')),pipeline});
  await page.goto(`http://127.0.0.1:${server.address().port}/professional_motion/index.html?${query}`);
  await page.waitForFunction(()=>window.ready===true,null,{timeout:60000});
  if(errors.length)throw Error('Renderer page errors');
- let timing;try{timing=JSON.parse(await readFile(path.join(root,'professional_motion/delivery/timing.json'),'utf8'));}catch{}
- const storyHash=createHash('sha256').update(await readFile(path.join(root,'professional_motion/delivery/story.json'))).digest('hex');
+ let timing;try{timing=JSON.parse(await readFile(path.join(delivery,'timing.json'),'utf8'));}catch{}
+ const storyHash=createHash('sha256').update(await readFile(path.join(delivery,'story.json'))).digest('hex');
  if(timing&&timing.story_sha256!==storyHash)throw Error('Story changed after measured voice timing');
  const duration=timing?.duration||46.5;const fps=30;
  const flag=(key,fallback)=>{let i=process.argv.indexOf(key);return i<0?fallback:process.argv[i+1];};
@@ -55,5 +59,5 @@ try{
   }
   ff.stdin.end();const [code]=await completed;if(code!==0)throw Error('FFmpeg failed');
  }
- await writeFile(path.join(output,partial?outputName+'.json':'render.json'),JSON.stringify({duration,from,to,start_frame:startFrame,end_frame:endFrame,total_frames:totalFrames,fps,width:1080,height:1920,originalVoice:!!timing,visual_style:style,review:process.argv.includes('--review'),story_sha256:storyHash,branding:await page.evaluate(()=>window.brandingStatus),errors},null,2));
+ await writeFile(path.join(output,partial?outputName+'.json':'render.json'),JSON.stringify({duration,from,to,start_frame:startFrame,end_frame:endFrame,total_frames:totalFrames,fps,width:1080,height:1920,originalVoice:!!timing,pipeline,cinematic:await page.evaluate(()=>window.cinematicStatus||null),visual_style:style,review:process.argv.includes('--review'),story_sha256:storyHash,branding:await page.evaluate(()=>window.brandingStatus),errors},null,2));
 }finally{await browser.close();server.close();}

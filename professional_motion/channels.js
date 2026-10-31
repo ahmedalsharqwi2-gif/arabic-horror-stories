@@ -1,10 +1,12 @@
 import * as THREE from 'three';
+import {wornSurface} from './cinematic_horror.js';
 const TAU=Math.PI*2;
-export function channelStage(scene){
+export function channelStage(scene,{cinematic=false}={}){
  const root=new THREE.Group();scene.add(root);
  const groups={};
  const mat=(color,roughness=.4,metalness=.15)=>new THREE.MeshStandardMaterial({color,roughness,metalness});
  const brass=mat(0xad7944,.32,.5),stone=mat(0xb6a58c,.8,.02),iceMat=mat(0x97d5e3,.25,.1),blue=mat(0x243d51,.35,.4),copper=mat(0xb57540,.3,.6);
+ if(cinematic){wornSurface(brass,'metal');wornSurface(stone,'plaster');wornSurface(copper,'metal');}
  const emit=c=>new THREE.MeshStandardMaterial({color:c,emissive:c,emissiveIntensity:1.2,roughness:.3});
  const aqua=emit(0x49d3c7),violet=emit(0x9975ee);
  const group=name=>{const g=new THREE.Group();g.name=name;root.add(g);groups[name]=g;return g;};
@@ -16,8 +18,9 @@ export function channelStage(scene){
   const hull=new THREE.Shape();hull.moveTo(-1.8,.1);hull.lineTo(-1.35,-.6);hull.lineTo(1.2,-.6);hull.lineTo(1.95,.2);hull.lineTo(-1.8,.1);
   const h=mesh(s,new THREE.ExtrudeGeometry(hull,{depth:.78,bevelEnabled:true,bevelSegments:2,steps:1,bevelSize:.04,bevelThickness:.04}),mat(0x594031,.7,.05));h.position.z=-.39;
   box(s,3.3,.12,.8,brass,0,.1,0);
+  if(cinematic)wornSurface(h.material,'wood');
   // Deck planking, rail posts, hatch and ropes give the ship tangible detail.
-  const timber=mat(0x30251f,.9,.02);
+  const timber=mat(0x30251f,.9,.02);if(cinematic)wornSurface(timber,'wood');
   for(let i=0;i<16;i++)box(s,.014,.013,.73,timber,-1.5+i*.2,.17,0);
   for(let side of [-1,1]){
    for(let i=0;i<15;i++)box(s,.018,.24,.018,brass,-1.5+i*.22,.29,side*.37);

@@ -2,6 +2,7 @@ import {drawReferenceLayout} from './reference_layout.js';
 import {loadBranding,drawBranding} from './branding.js';
 import {drawCaption} from './caption_layout.js';
 import {hauntedStage} from './haunted.js';
+import {cinematicHorror} from './cinematic_horror.js';
 import {channelStage} from './channels.js';
 import * as THREE from 'three';
 import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
@@ -9,6 +10,7 @@ import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
 import {UnrealBloomPass} from 'three/addons/postprocessing/UnrealBloomPass.js';
 
 const W=1080,H=1920;
+const cinematicV2=new URLSearchParams(location.search).get('pipeline')==='v2';
 const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true,alpha:false});
 renderer.setSize(W,H);renderer.setPixelRatio(1);renderer.setClearColor(0x030c14);
 renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.02;
@@ -165,10 +167,12 @@ for(let i=0;i<16;i++){
 }
 const overlay=document.querySelector('#text'),ctx=overlay.getContext('2d');
 const endCanvas=document.createElement('canvas');endCanvas.width=W;endCanvas.height=H;const endCtx=endCanvas.getContext('2d');
-const channel=channelStage(scene);
+const channel=channelStage(scene,{cinematic:cinematicV2});
 const storyResponse=await fetch('./delivery/story.json');if(!storyResponse.ok)throw Error('Missing authored daily story');
 let config=await storyResponse.json();const brandMark=await loadBranding(config.profile);const headerLeft=brandMark?235:75,headerRuleY=brandMark?208:142,headerIndexY=brandMark?255:202;window.brandingStatus={profile:config.profile,logoApplied:!!brandMark};const useOctopus=config.visual_family==='octopus',useHaunted=config.visual_family==='haunted_interior';
-const haunted=useHaunted?hauntedStage(scene):null;
+const haunted=useHaunted?hauntedStage(scene,{cinematic:cinematicV2}):null;
+const horrorRig=config.profile==='horror'&&cinematicV2?cinematicHorror(renderer,scene,camera,useHaunted?haunted:channel):null;
+if(horrorRig)bloom.strength=.16;
 if(useHaunted){scene.fog.density=.043;renderer.toneMappingExposure=1.22;scene.traverse(o=>{if(o.isDirectionalLight)o.intensity*=.30;if(o.isHemisphereLight)o.intensity*=.55;});ambient.intensity=1.0;}
 const backdrop={science:0x030c14,horror:0x030b10,history:0x100d09,news:0x090713}[config.profile];
 renderer.setClearColor(backdrop);scene.fog.color.setHex(backdrop);
@@ -287,9 +291,10 @@ window.renderAt=(time,duration=D)=>{
  hub.scale.setScalar(1+.1*Math.sin(local*5));
  layers.rotation.y=.12+Math.sin(local*.25)*.11;layers.position.y=-.3;layers.scale.setScalar(1.03);
  photons.forEach((m,i)=>{const q=(local*.35+i*.13)%1,travel=q<.5?q*2:2-q*2;m.position.set(-1.5+(i%4)+Math.max(0,q-.5)*.8,1.7-travel*2.5,Math.sin(i)*.8);m.material.color.setHex(q<.5?0xe2f6ff:0x87d5ff);});
- if(useHaunted){const beat=timing?.scenes[index]?.scare_beat;const view=haunted.update(config,index,local,p,t,beat===undefined?-1:t-beat);camera.position.set(...view.position);camera.lookAt(...view.target);}
+ if(useHaunted){const beat=timing?.scenes[index]?.scare_beat;const view=haunted.update(config,index,local,p,t,beat===undefined?-1:t-beat);camera.position.set(...view.position);camera.lookAt(...view.target);if(horrorRig)window.cinematicStatus=horrorRig.update(view,config.scenes[index].visual_mode,p,t);}
  dust.visible=!useHaunted;shafts.forEach(o=>o.visible=!useHaunted);
  dust.rotation.y=t*.012;dust.position.y=Math.sin(t*.11)*.5;shafts.forEach((m,i)=>m.material.uniforms.opacity.value=.025+.015*(.5+.5*Math.sin(t*.2+i)));
+ if(horrorRig&&!useHaunted)window.cinematicStatus=horrorRig.update({position:camera.position.toArray(),target:[0,index===1?.35+.3*p:.35,0]},config.scenes[index].visual_mode,p,t);
  if(new URLSearchParams(location.search).get('style')==='reference')renderer.render(scene,camera);else composer.render();if(useOctopus)drawText(t,index,local,p);else drawChannelText(t,index,local,p);if(new URLSearchParams(location.search).get('style')==='reference')drawReferenceLayout(ctx,{story:config,timing,index,time:t,local,duration:D,review:new URLSearchParams(location.search).get('review')==='true',logo:!!brandMark});drawBranding(ctx,brandMark);
  return {scene:index+1,time:t,duration:D,originalVoice:!!timing};
 };
