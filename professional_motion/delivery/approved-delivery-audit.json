@@ -1,0 +1,26 @@
+[
+  {
+    "service": "youtube",
+    "id": "6ae5fc815fdbd4dd6291ad03",
+    "status": "scheduled",
+    "dueAt": "2026-10-31T14:36:40.000Z",
+    "sentAt": null,
+    "externalLink": null
+  },
+  {
+    "service": "instagram",
+    "id": "6ae5fc81f0984eef3313b7a0",
+    "status": "scheduled",
+    "dueAt": "2026-10-31T14:36:40.000Z",
+    "sentAt": null,
+    "externalLink": null
+  },
+  {
+    "service": "facebook",
+    "id": "6ae5fc825fdbd4dd6291ad90",
+    "status": "scheduled",
+    "dueAt": "2026-10-31T14:36:40.000Z",
+    "sentAt": null,
+    "externalLink": null
+  }
+]
