@@ -1,0 +1,5 @@
+{
+  "profile": "horror",
+  "request_id": "resume-2026-11-01-schema-1",
+  "purpose": "Diagnose prior HTTP400 using one token-limited schema request; no production generation or publishing"
+}
