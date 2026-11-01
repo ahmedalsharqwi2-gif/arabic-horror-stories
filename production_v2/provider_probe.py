@@ -13,6 +13,22 @@ def main():
     request=json.loads(Path('.github/provider-probe-request.json').read_text())
     profile=request['profile']
     repository,run,attempt,source=context(profile)
+    if request.get('recover_run'):
+        from .diagnose import Reader
+        import io,zipfile
+        reader=Reader(repository,os.environ['GITHUB_TOKEN'])
+        items=reader.json('/actions/runs/'+str(int(request['recover_run']))+'/artifacts').get('artifacts',[])
+        matches=[item for item in items if item['name']=='provider-schema-probe-'+str(request['recover_run']) and not item.get('expired')]
+        if len(matches)!=1:raise ValueError('Require exact retained probe artifact; never repeat provider request')
+        with zipfile.ZipFile(io.BytesIO(reader.archive('/actions/artifacts/'+str(matches[0]['id'])+'/zip'))) as archive:
+            names=[n for n in archive.namelist() if n.endswith('provider-schema-probe.json')]
+            if len(names)!=1:raise ValueError('Require exact probe report')
+            report=json.loads(archive.read(names[0]))
+        report['recovered_from_run']=str(request['recover_run'])
+        report['recovery_provider_requests']=0
+        report['status_commit']=StatusStore('.', 'codex/production-v2-diagnostics').save(run,attempt,report)
+        print(json.dumps(report,ensure_ascii=False,indent=2))
+        return
     schema=response_schema(editorial.SCHEMA,load_catalog('.',profile))
     model=editorial.model_name()
     key=(os.getenv('GEMINI_TEXT_API_KEY') or os.getenv('GEMINI_API_KEY') or '').strip()
@@ -41,7 +57,7 @@ def main():
         report['stage']='success'
     Path('work').mkdir(exist_ok=True)
     Path('work/provider-schema-probe.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
-    report['status_commit']=StatusStore('.', 'codex/production-v2-provider-diagnostics').save(run,attempt,report)
+    report['status_commit']=StatusStore('.', 'codex/production-v2-diagnostics').save(run,attempt,report)
     print(json.dumps(report,ensure_ascii=False,indent=2))
     if report['stage']!='success':raise SystemExit(1)
 if __name__=='__main__':main()
