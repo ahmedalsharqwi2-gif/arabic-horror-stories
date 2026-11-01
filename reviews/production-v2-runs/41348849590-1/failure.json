@@ -1,0 +1,40 @@
+{
+  "kind": "bounded_provider_schema_probe",
+  "profile": "horror",
+  "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+  "run_id": "41348849590",
+  "run_attempt": "1",
+  "source_commit": "61e1089587e634a6ec2e7749bb5726f2458d248f",
+  "model": "gemini-3.5-flash-lite",
+  "schema_sha256": "d093a8e8bacf3b9b6185f52b1f8d08313c3b462b8d8e9347d5145f506b704558",
+  "provider_requests": 3,
+  "story_generated": false,
+  "voice_generated": false,
+  "posts_created": false,
+  "cutover_eligible": false,
+  "cases": [
+    {
+      "case": "minimal",
+      "http_status": 200,
+      "schema_sha256": "f1e07b03f7e9ed64bf93a599a4eddb35cfca973e11e6026bb031744a2686be2a",
+      "schema_accepted": true
+    },
+    {
+      "case": "directed",
+      "http_status": 400,
+      "schema_sha256": "d093a8e8bacf3b9b6185f52b1f8d08313c3b462b8d8e9347d5145f506b704558",
+      "provider_error": {
+        "code": "400",
+        "status": "INVALID_ARGUMENT",
+        "message": "Request contains an invalid argument."
+      }
+    },
+    {
+      "case": "string_ids",
+      "http_status": 200,
+      "schema_sha256": "2ddd3ef8f400b0026d38d34cfca84e161b1178fab5a0f444cd4d3d99551c917d",
+      "schema_accepted": true
+    }
+  ],
+  "stage": "failure"
+}
