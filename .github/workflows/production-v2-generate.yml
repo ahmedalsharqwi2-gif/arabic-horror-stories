@@ -105,7 +105,7 @@
           "uses": "actions/upload-artifact@v4",
           "with": {
             "name": "horror-v2-fresh-candidate-${{ github.run_id }}",
-            "path": ".candidate-v2/run-*/output/candidate-review.mp4\n.candidate-v2/run-*/output/candidate-verification.json\n.candidate-v2/run-*/generation-verification.json\n.candidate-v2/run-*/source-snapshot.json\n.candidate-v2/run-*/professional_motion/delivery/*.json\n.candidate-v2/run-*/generation-failure.json",
+            "path": ".candidate-v2/run-*/output/candidate-review.mp4\n.candidate-v2/run-*/output/candidate-verification.json\n.candidate-v2/run-*/generation-verification.json\n.candidate-v2/run-*/source-snapshot.json\n.candidate-v2/run-*/professional_motion/delivery/*.json\n.candidate-v2/run-*/generation-failure.json\n.candidate-v2/run-*/output/render.json\n.candidate-v2/run-*/professional_motion/delivery/narration.wav",
             "if-no-files-found": "warn",
             "retention-days": 7,
             "include-hidden-files": true
