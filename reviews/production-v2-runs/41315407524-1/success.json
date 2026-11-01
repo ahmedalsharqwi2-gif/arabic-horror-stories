@@ -1,0 +1,70 @@
+{
+  "profile": "horror",
+  "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+  "kind": "read_only_diagnostic",
+  "stage": "success",
+  "run_id": "41315407524",
+  "run_attempt": "1",
+  "source_commit": "a75b2e26d0159f9aeea7ac067de603b4d69c3b77",
+  "target_run": "41315039788",
+  "observed_at": "2026-11-01T14:17:07.432203+00:00",
+  "no_provider_calls": true,
+  "no_posts_created": true,
+  "evidence": [
+    {
+      "file": "run-41315039788-1/generation-failure.json",
+      "data": {
+        "slot": "candidate-horror-700dce73c9644bb9b9203f0bcab8798d",
+        "profile": "horror",
+        "error_class": "RuntimeError",
+        "reservation_retained": false,
+        "publishable": false,
+        "failed_phase": "story_or_reservation",
+        "measured_narration_seconds": null,
+        "timing_present": false
+      }
+    },
+    {
+      "file": "run-41315039788-1/professional_motion/delivery/candidate-status.json",
+      "data": [
+        {
+          "key": "hms-captain-1870",
+          "title": "إتش إم إس كابتن: الكارثة اللي ابتلعت السفينة",
+          "family": "maritime",
+          "variant": "atlantic",
+          "published": null,
+          "already_reserved": false
+        }
+      ]
+    },
+    {
+      "file": "0_candidate.txt",
+      "error_lines": [
+        "2026-11-01T14:14:21.9122404Z Traceback (most recent call last):",
+        "2026-11-01T14:14:21.9140590Z     if attempt or daily or r.status_code not in (429,500,502,503,504) or delay>45:raise RuntimeError(f'Editorial provider HTTP {r.status_code}; current story retained')",
+        "2026-11-01T14:14:21.9142430Z RuntimeError: Editorial provider HTTP 400; current story retained",
+        "2026-11-01T14:14:49.5477100Z     \"error_class\": \"RuntimeError\",",
+        "2026-11-01T14:14:49.5488694Z   \"evidence_error_class\": \"ValueError\","
+      ]
+    },
+    {
+      "file": "candidate/11_Generate a new reserved source-backed story and full Charon film in isolation.txt",
+      "error_lines": [
+        "2026-11-01T14:14:21.9122364Z Traceback (most recent call last):",
+        "2026-11-01T14:14:21.9140587Z     if attempt or daily or r.status_code not in (429,500,502,503,504) or delay>45:raise RuntimeError(f'Editorial provider HTTP {r.status_code}; current story retained')",
+        "2026-11-01T14:14:21.9142426Z RuntimeError: Editorial provider HTTP 400; current story retained"
+      ]
+    },
+    {
+      "file": "candidate/14_Retain final review status and verified movie Release.txt",
+      "error_lines": [
+        "2026-11-01T14:14:49.5477096Z     \"error_class\": \"RuntimeError\",",
+        "2026-11-01T14:14:49.5488689Z   \"evidence_error_class\": \"ValueError\","
+      ]
+    }
+  ],
+  "errors": [],
+  "provider_http_statuses": [
+    400
+  ]
+}
