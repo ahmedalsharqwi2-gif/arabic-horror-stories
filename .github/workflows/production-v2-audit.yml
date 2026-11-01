@@ -48,7 +48,8 @@
             "name": "horror-retained-buffer-audit-${{ github.run_id }}",
             "path": ".candidate-v2/retained-buffer-audit.json",
             "if-no-files-found": "error",
-            "retention-days": 7
+            "retention-days": 7,
+            "include-hidden-files": true
           }
         },
         {
