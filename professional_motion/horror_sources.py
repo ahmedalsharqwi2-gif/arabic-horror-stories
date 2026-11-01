@@ -11,6 +11,7 @@ CAPTAIN_KEY = 'hms-captain-1870'
 CAPTAIN_URL = 'https://www.rmg.co.uk/stories/maritime-history/hms-captain-britains-forgotten-maritime-disaster'
 CAPTAIN_CONTRACT = {
     'world': 'stormship_inquiry',
+    'documented_outcome': 'sank',
     'supported_topic_keys': [CAPTAIN_KEY],
     'source_url': CAPTAIN_URL,
     'focal_subject': 'The loss of HMS Captain in 1870 and the documented inquiry into its stability',
