@@ -38,23 +38,39 @@ def main():
             'model':model,'schema_sha256':hashlib.sha256(json.dumps(schema,sort_keys=True).encode()).hexdigest(),
             'provider_requests':0,'story_generated':False,'voice_generated':False,
             'posts_created':False,'cutover_eligible':False}
-    payload={'contents':[{'parts':[{'text':'Diagnostic only. Do not write a film. Return an unsuitable result.'}]}],
-             'generationConfig':{'responseMimeType':'application/json','responseSchema':schema,
-                                 'temperature':0.1,'maxOutputTokens':1}}
+    from copy import deepcopy
+    relaxed=deepcopy(schema)
+    def relax(node):
+        if isinstance(node,dict):
+            node.pop('enum',None)
+            for value in node.values():relax(value)
+        elif isinstance(node,list):
+            for value in node:relax(value)
+    relax(relaxed)
+    cases={'minimal':{'type':'OBJECT','properties':{'ok':{'type':'BOOLEAN'}},'required':['ok']},
+           'directed':schema,'string_ids':relaxed}
+    requested=request.get('cases',['directed'])
+    if not requested or len(requested)>3 or len(set(requested))!=len(requested) or any(c not in cases for c in requested):
+        raise ValueError('One bounded diagnostic per distinct schema case')
     from api_budget import reserve
-    reserve('text',model,key)
-    report['provider_requests']=1
-    response=requests.post('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent',
-                           headers={'x-goog-api-key':key},json=payload,timeout=90)
-    report['http_status']=response.status_code
-    if response.status_code!=200:
-        try:error=response.json().get('error',{})
-        except ValueError:error={}
-        report['provider_error']={name:redact(error[name])[:3000] for name in ('code','status','message') if name in error}
-        report['stage']='failure'
-    else:
-        report['schema_accepted']=True
-        report['stage']='success'
+    report['cases']=[]
+    for case in requested:
+        payload={'contents':[{'parts':[{'text':'Diagnostic only. Do not write a film. Return an unsuitable result, or ok=true for the minimal schema.'}]}],
+                 'generationConfig':{'responseMimeType':'application/json','responseSchema':cases[case],
+                                     'temperature':0.1,'maxOutputTokens':256}}
+        reserve('text',model,key)
+        report['provider_requests']+=1
+        response=requests.post('https://generativelanguage.googleapis.com/v1beta/models/'+model+':generateContent',
+                               headers={'x-goog-api-key':key},json=payload,timeout=90)
+        item={'case':case,'http_status':response.status_code,
+              'schema_sha256':hashlib.sha256(json.dumps(cases[case],sort_keys=True).encode()).hexdigest()}
+        if response.status_code!=200:
+            try:error=response.json().get('error',{})
+            except ValueError:error={}
+            item['provider_error']={name:redact(error[name])[:4000] for name in ('code','status','message','details') if name in error}
+        else:item['schema_accepted']=True
+        report['cases'].append(item)
+    report['stage']='success' if all(c['http_status']==200 for c in report['cases']) else 'failure'
     Path('work').mkdir(exist_ok=True)
     Path('work/provider-schema-probe.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
     report['status_commit']=StatusStore('.', 'codex/production-v2-diagnostics').save(run,attempt,report)
