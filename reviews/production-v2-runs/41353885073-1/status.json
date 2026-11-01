@@ -4,9 +4,9 @@
   "run_id": "41353885073",
   "run_attempt": "1",
   "source_commit": "66c5c570ecf730c6373561c7f235d5f70ab10f43",
-  "stage": "started",
-  "requested_stage": "started",
-  "observed_at": "2026-11-01T21:48:38.468324+00:00",
+  "stage": "failure",
+  "requested_stage": "failure",
+  "observed_at": "2026-11-01T21:57:04.622414+00:00",
   "review_only": true,
   "automatically_published": false,
   "cutover_eligible": false,
@@ -16,5 +16,18 @@
     "GEMINI_API_KEY": true,
     "GEMINI_TEXT_API_KEY": true,
     "GEMINI_TTS_API_KEY": true
-  }
+  },
+  "generation_failure": {
+    "slot": "candidate-horror-96c8c01545ce48ea9ecd1914ae850530",
+    "profile": "horror",
+    "error_class": "ValueError",
+    "reservation_retained": true,
+    "legacy_film_not_used_as_fallback": true,
+    "publishable": false,
+    "failed_phase": "narration_or_alignment",
+    "measured_narration_seconds": 148.24,
+    "timing_present": false
+  },
+  "planning_evidence": {},
+  "evidence_error_class": "ValueError"
 }
