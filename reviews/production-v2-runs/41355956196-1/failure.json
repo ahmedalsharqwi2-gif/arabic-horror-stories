@@ -1,0 +1,39 @@
+{
+  "profile": "horror",
+  "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+  "run_id": "41355956196",
+  "run_attempt": "1",
+  "source_commit": "a224cce0e719b8fd4f3684651fcea8f3a7f3c47c",
+  "stage": "failure",
+  "requested_stage": "failure",
+  "observed_at": "2026-11-01T22:51:51.054919+00:00",
+  "review_only": true,
+  "automatically_published": false,
+  "cutover_eligible": false,
+  "complete_film_verified": false,
+  "media_url": null,
+  "credential_presence": {
+    "GEMINI_API_KEY": true,
+    "GEMINI_TEXT_API_KEY": true,
+    "GEMINI_TTS_API_KEY": true
+  },
+  "generation_failure": {
+    "slot": "candidate-horror-96c8c01545ce48ea9ecd1914ae850530",
+    "profile": "horror",
+    "reservation_retained": true,
+    "publishable": false,
+    "error_class": "CalledProcessError"
+  },
+  "generation_result": {
+    "slot": "candidate-horror-96c8c01545ce48ea9ecd1914ae850530",
+    "profile": "horror",
+    "topic_key": "knowledge-er-third-eye-possession",
+    "duration": 148.24,
+    "story_sha256": "f35c7130f704e045bed32543068856c4dbad252aa3451a21d3eec885a0b6b8e6",
+    "audio_sha256": "b71b0cb971f643bd4388db74f425a87b9bfcb25591fa18f46cc083b091937ef3",
+    "fresh_topic_verified": true,
+    "publishable": false
+  },
+  "planning_evidence": {},
+  "evidence_error_class": "ValueError"
+}
