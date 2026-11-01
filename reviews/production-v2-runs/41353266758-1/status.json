@@ -1,0 +1,696 @@
+{
+  "profile": "horror",
+  "stage": "success",
+  "kind": "retained_draft_inspection",
+  "provider_requests": 0,
+  "target_run": "41352837148",
+  "draft": {
+    "title": "العين الثالثة في غرفة الطوارئ",
+    "canonical_subject": "er-third-eye-possession",
+    "suitable": true,
+    "facts": [],
+    "milestones": [],
+    "scenes": [
+      {
+        "id": "scene_1",
+        "label": "حارس المستشفى",
+        "narration": "دخل حارس المستشفى الدور الأرضي المظلم وفي إيده كشاف قديم علشان يدور على صوت خبط غريب جاي من أوضة الطوارئ المقفولة.",
+        "labels": [
+          "حارس المستشفى",
+          "أوضة الطوارئ"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "door",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              2,
+              0.2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#333333",
+            "motion": "none"
+          },
+          {
+            "kind": "lantern",
+            "position": [
+              1.2,
+              -0.5,
+              1
+            ],
+            "scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#ffaa00",
+            "motion": "pulse"
+          }
+        ],
+        "camera_start": [
+          0,
+          1,
+          10
+        ],
+        "camera_end": [
+          0,
+          0,
+          8
+        ],
+        "visual_change": "Door creaks open slightly as the lantern flickers."
+      },
+      {
+        "id": "scene_2",
+        "label": "الترابيزة الخشبية",
+        "narration": "لقى ترابيزة الكشف القديمة مرمية وعليها أدوات جراحة متعرجة ومش نظيفة وكأن حد كان قاعد عليها حالا وبيحركها بسرعة.",
+        "labels": [
+          "ترابيزة الكشف",
+          "أدوات جراحة"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "table",
+            "position": [
+              0,
+              -1,
+              0
+            ],
+            "scale": [
+              2,
+              1,
+              1
+            ],
+            "rotation": [
+              0,
+              0.2,
+              0
+            ],
+            "color": "#553322",
+            "motion": "none"
+          },
+          {
+            "kind": "box",
+            "position": [
+              0.5,
+              0.2,
+              0
+            ],
+            "scale": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "rotation": [
+              0,
+              1.5,
+              0
+            ],
+            "color": "#777777",
+            "motion": "spin"
+          }
+        ],
+        "camera_start": [
+          0,
+          2,
+          12
+        ],
+        "camera_end": [
+          0,
+          1,
+          9
+        ],
+        "visual_change": "Box spins abruptly as if touched by an unseen hand."
+      },
+      {
+        "id": "scene_3",
+        "label": "نبضات القلب",
+        "narration": "فجأة جهاز قياس نبضات القلب اللي كان مطفي اشتغل لوحده وبدأ ينبض ببطء شديد وبصوت مرعب ملا الأوضة كلها.",
+        "labels": [
+          "نبضات القلب",
+          "جهاز مطفي"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "heart",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#aa0000",
+            "motion": "pulse"
+          },
+          {
+            "kind": "circuit",
+            "position": [
+              -2,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#00ffaa",
+            "motion": "none"
+          }
+        ],
+        "camera_start": [
+          0,
+          0,
+          14
+        ],
+        "camera_end": [
+          0,
+          0,
+          10
+        ],
+        "visual_change": "Heart organ pulses rapidly and glows bright red."
+      },
+      {
+        "id": "scene_4",
+        "label": "الكريستالة المعلقة",
+        "narration": "الكريستالة اللي في سقف الأوضة بدأت تلف حوالين نفسها بسرعة عكس اتجاه الهواء وبقى نورها أحمر قاتم ودموي.",
+        "labels": [
+          "الكريستالة المعلقة",
+          "نور أحمر"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "crystal",
+            "position": [
+              0,
+              1.5,
+              0
+            ],
+            "scale": [
+              0.8,
+              1.2,
+              0.8
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#ff0055",
+            "motion": "spin"
+          },
+          {
+            "kind": "sphere",
+            "position": [
+              0,
+              -1.5,
+              0
+            ],
+            "scale": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#222222",
+            "motion": "none"
+          }
+        ],
+        "camera_start": [
+          0,
+          3,
+          15
+        ],
+        "camera_end": [
+          0,
+          1,
+          11
+        ],
+        "visual_change": "Crystal spins wildly and projects a crimson light."
+      },
+      {
+        "id": "scene_5",
+        "label": "المجسم البشري",
+        "narration": "الحارس حاول يهرب بس لقى المجسم التشريحي اللي واقف في ركن الأوضة لف راسه ناحيته وباصص له بعينين ملتهبتين.",
+        "labels": [
+          "المجسم البشري",
+          "ركن الأوضة"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "person",
+            "position": [
+              0,
+              -0.5,
+              0
+            ],
+            "scale": [
+              1.2,
+              1.5,
+              1.2
+            ],
+            "rotation": [
+              0,
+              3.14,
+              0
+            ],
+            "color": "#886644",
+            "motion": "none"
+          },
+          {
+            "kind": "cylinder",
+            "position": [
+              0,
+              -2,
+              0
+            ],
+            "scale": [
+              1.5,
+              0.2,
+              1.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#111111",
+            "motion": "none"
+          }
+        ],
+        "camera_start": [
+          0,
+          1,
+          12
+        ],
+        "camera_end": [
+          0,
+          0,
+          9
+        ],
+        "visual_change": "Person figure rotates its head sharply toward the camera."
+      },
+      {
+        "id": "scene_6",
+        "label": "الباب المقفول",
+        "narration": "جرى بسرعة ناحية باب الخروج بس لقى الترباس اتقفل لوحده وقوة خفية كتفته ومنعته حتى من إنه يصرخ أو ينادي حد.",
+        "labels": [
+          "الباب المقفول",
+          "قوة خفية"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "door",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.5,
+              2.5,
+              0.3
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#441111",
+            "motion": "slam"
+          },
+          {
+            "kind": "gear",
+            "position": [
+              0.8,
+              0,
+              0.2
+            ],
+            "scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#aaaaaa",
+            "motion": "spin"
+          }
+        ],
+        "camera_start": [
+          0,
+          0,
+          11
+        ],
+        "camera_end": [
+          0,
+          0,
+          8
+        ],
+        "visual_change": "Door slams shut violently with gears locking in place."
+      },
+      {
+        "id": "scene_7",
+        "label": "الساعة القديمة",
+        "narration": "عقارب الساعة القديمة على الحيطة رجعت لورا بسرعة جنونية وكأن الزمن في المكان ده بيعيش اللحظة الأخيرة قبل الكارثة.",
+        "labels": [
+          "الساعة القديمة",
+          "العقارب بتلف"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "clock",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.5,
+              1.5,
+              0.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#332211",
+            "motion": "spin"
+          },
+          {
+            "kind": "pendulum",
+            "position": [
+              0,
+              -1.2,
+              0
+            ],
+            "scale": [
+              0.3,
+              1,
+              0.3
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#ffcc00",
+            "motion": "swing"
+          }
+        ],
+        "camera_start": [
+          0,
+          0,
+          13
+        ],
+        "camera_end": [
+          0,
+          0,
+          9
+        ],
+        "visual_change": "Clock hands spin backward rapidly as the pendulum swings erratically."
+      },
+      {
+        "id": "scene_8",
+        "label": "المراية المكسورة",
+        "narration": "وفي آخر اللقطة انعكست صورة الحارس في المراية المكسورة وهو مبتسم ابتسامة مرعبة وبيفتح عين ثالثة في جبهته.",
+        "labels": [
+          "المراية المكسورة",
+          "الابتسامة المرعبة"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "sphere",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.2,
+              1.2,
+              1.2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#114444",
+            "motion": "pulse"
+          },
+          {
+            "kind": "cone",
+            "position": [
+              0,
+              0.8,
+              0
+            ],
+            "scale": [
+              0.4,
+              0.6,
+              0.4
+            ],
+            "rotation": [
+              3.14,
+              0,
+              0
+            ],
+            "color": "#ff0000",
+            "motion": "grow"
+          }
+        ],
+        "camera_start": [
+          0,
+          0,
+          10
+        ],
+        "camera_end": [
+          0,
+          0,
+          7
+        ],
+        "visual_change": "A third red eye sprouts and glows on the central figure."
+      }
+    ],
+    "hashtags": [
+      "#رعب_مصرى",
+      "#قصص_مرعبة",
+      "#ماوراء_الطبيعة",
+      "#أفلام_قصيره"
+    ]
+  },
+  "scene_metrics": [
+    {
+      "keys": [
+        "id",
+        "label",
+        "narration",
+        "labels",
+        "visual_mode",
+        "environment",
+        "objects",
+        "camera_start",
+        "camera_end",
+        "visual_change"
+      ],
+      "object_count": 2,
+      "kinds": [
+        "door",
+        "lantern"
+      ],
+      "words": 21
+    },
+    {
+      "keys": [
+        "id",
+        "label",
+        "narration",
+        "labels",
+        "visual_mode",
+        "environment",
+        "objects",
+        "camera_start",
+        "camera_end",
+        "visual_change"
+      ],
+      "object_count": 2,
+      "kinds": [
+        "table",
+        "box"
+      ],
+      "words": 19
+    },
+    {
+      "keys": [
+        "id",
+        "label",
+        "narration",
+        "labels",
+        "visual_mode",
+        "environment",
+        "objects",
+        "camera_start",
+        "camera_end",
+        "visual_change"
+      ],
+      "object_count": 2,
+      "kinds": [
+        "heart",
+        "circuit"
+      ],
+      "words": 19
+    },
+    {
+      "keys": [
+        "id",
+        "label",
+        "narration",
+        "labels",
+        "visual_mode",
+        "environment",
+        "objects",
+        "camera_start",
+        "camera_end",
+        "visual_change"
+      ],
+      "object_count": 2,
+      "kinds": [
+        "crystal",
+        "sphere"
+      ],
+      "words": 18
+    },
+    {
+      "keys": [
+        "id",
+        "label",
+        "narration",
+        "labels",
+        "visual_mode",
+        "environment",
+        "objects",
+        "camera_start",
+        "camera_end",
+        "visual_change"
+      ],
+      "object_count": 2,
+      "kinds": [
+        "person",
+        "cylinder"
+      ],
+      "words": 19
+    },
+    {
+      "keys": [
+        "id",
+        "label",
+        "narration",
+        "labels",
+        "visual_mode",
+        "environment",
+        "objects",
+        "camera_start",
+        "camera_end",
+        "visual_change"
+      ],
+      "object_count": 2,
+      "kinds": [
+        "door",
+        "gear"
+      ],
+      "words": 21
+    },
+    {
+      "keys": [
+        "id",
+        "label",
+        "narration",
+        "labels",
+        "visual_mode",
+        "environment",
+        "objects",
+        "camera_start",
+        "camera_end",
+        "visual_change"
+      ],
+      "object_count": 2,
+      "kinds": [
+        "clock",
+        "pendulum"
+      ],
+      "words": 19
+    },
+    {
+      "keys": [
+        "id",
+        "label",
+        "narration",
+        "labels",
+        "visual_mode",
+        "environment",
+        "objects",
+        "camera_start",
+        "camera_end",
+        "visual_change"
+      ],
+      "object_count": 2,
+      "kinds": [
+        "sphere",
+        "cone"
+      ],
+      "words": 18
+    }
+  ]
+}
