@@ -12,7 +12,8 @@
     "workflow_dispatch": {}
   },
   "permissions": {
-    "contents": "write"
+    "contents": "write",
+    "actions": "read"
   },
   "concurrency": {
     "group": "provider-schema-probe-horror",

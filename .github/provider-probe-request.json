@@ -1,5 +1,1 @@
-{
-  "profile": "horror",
-  "inspect_run": 41352837148,
-  "no_provider_calls": true
-}
+{"profile":"horror","inspect_alignment_run":41353885073,"purpose":"Inspect existing recognized speech only; no new text, TTS, rendering or posts"}

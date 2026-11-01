@@ -13,6 +13,34 @@ def main():
     request=json.loads(Path('.github/provider-probe-request.json').read_text())
     profile=request['profile']
     repository,run,attempt,source=context(profile)
+    if request.get('inspect_alignment_run'):
+        from .diagnose import Reader
+        from .speech_characters import character_timing
+        from professional_motion.alignment import recognized_key,measured_timing
+        import io,zipfile
+        target=str(int(request['inspect_alignment_run']))
+        reader=Reader(repository,os.environ['GITHUB_TOKEN'])
+        matches=[a for a in reader.json('/actions/runs/'+target+'/artifacts').get('artifacts',[]) if a['name']==profile+'-v2-fresh-candidate-'+target and not a.get('expired')]
+        if len(matches)!=1:raise ValueError('Exact retained failed artifact required')
+        with zipfile.ZipFile(io.BytesIO(reader.archive('/actions/artifacts/'+str(matches[0]['id'])+'/zip'))) as archive:
+            def read(name):
+                found=[n for n in archive.namelist() if n.endswith('/'+name)]
+                if len(found)!=1:raise ValueError('Unique retained evidence required: '+name)
+                return json.loads(archive.read(found[0]))
+            failure=read('generation-failure.json')
+            if not failure.get('reservation_retained'):raise ValueError('Exact reserved narration required')
+            story=read('story.json')
+            transcripts=[(m,read('asr-'+m+'.json')['recognized_words']) for m in ('medium','small','large-v3')]
+        duration=failure['measured_narration_seconds']
+        report={'profile':profile,'kind':'retained_alignment_inspection','target_run':target,'provider_requests':0,'posts_created':False,'voice_generated':False,'story':story,'transcripts':transcripts,'duration':duration}
+        try:
+            timing=character_timing(story,duration,transcripts,recognized_key)
+            report.update(stage='success',coverage=timing['coverage'],normalized_character_coverage=timing['normalized_character_coverage'],asr_model=timing['asr_model'])
+        except ValueError as error:
+            report.update(stage='failure',error=str(error))
+        report['status_commit']=StatusStore('.', 'codex/production-v2-diagnostics').save(run,attempt,report)
+        print(json.dumps({k:v for k,v in report.items() if k not in ('story','transcripts')},ensure_ascii=False,indent=2))
+        return
     if request.get('inspect_run'):
         from .diagnose import Reader
         import io,zipfile
