@@ -1,5 +1,5 @@
 {
   "profile": "horror",
-  "target_run": 41349008016,
-  "reason": "Inspect retained planning validation after schema fix; no provider requests"
+  "target_run": 41349653671,
+  "reason": "Inspect retained drafts and planning validation; no provider calls"
 }
