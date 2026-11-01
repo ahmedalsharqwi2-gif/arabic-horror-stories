@@ -1,13 +1,1 @@
-{
-  "profile": "horror",
-  "review_only": true,
-  "launch": "retained-episode-completion-for-2026-11-02-1",
-  "no_social_posts": true,
-  "source_verification_run": "41314812687",
-  "source_verified_http_status": 200,
-  "prior_failure": "41315039788",
-  "retain_raw_drafts": true,
-  "production_film": true,
-  "publication_date": "2026-11-02",
-  "resume_planning_run": 41352837148
-}
+{"profile":"horror","review_only":true,"no_social_posts":true,"resume_reserved_run":41353885073,"slot":"candidate-horror-96c8c01545ce48ea9ecd1914ae850530","publication_date":"2026-11-02","request":"render-retained-audio-with-measured-ensemble-alignment-1"}

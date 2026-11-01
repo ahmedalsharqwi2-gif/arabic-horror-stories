@@ -21,7 +21,8 @@
     }
   },
   "permissions": {
-    "contents": "write"
+    "contents": "write",
+    "actions": "read"
   },
   "concurrency": {
     "group": "${{ inputs.caller_serialized && format('v2-child-{0}', github.run_id) || 'professional-daily-horror' }}",
@@ -33,9 +34,6 @@
       "timeout-minutes": 120,
       "env": {
         "PYTHONUNBUFFERED": "1",
-        "GEMINI_API_KEY": "${{ secrets.GEMINI_API_KEY }}",
-        "GEMINI_TEXT_API_KEY": "${{ secrets.GEMINI_TEXT_API_KEY || secrets.GEMINI_API_KEY }}",
-        "GEMINI_TTS_API_KEY": "${{ secrets.GEMINI_TTS_API_KEY || secrets.GEMINI_API_KEY }}",
         "CANDIDATE_RUN": "${{ github.run_id }}-${{ github.run_attempt }}",
         "GITHUB_TOKEN": "${{ github.token }}",
         "PRODUCTION_PUBLICATION_DATE": "2026-11-02"
@@ -72,10 +70,6 @@
           "run": "sudo apt-get update -qq\nsudo apt-get install -y ffmpeg\npython -m pip install numpy Pillow requests beautifulsoup4 faster-whisper==1.2.1 google-api-python-client google-auth-oauthlib pytest PyYAML\ncd professional_motion\nnpm ci\nnpx playwright-core install --with-deps chromium"
         },
         {
-          "name": "Check provider credentials without printing values",
-          "run": "python -c \"from professional_motion.credentials import preflight; preflight()\""
-        },
-        {
           "name": "Test candidate isolation and persistence",
           "run": "python -m pytest -q tests/test_production_v2.py tests/test_v2_*.py"
         },
@@ -88,8 +82,8 @@
           }
         },
         {
-          "name": "Continue the same retained episode and create its first original narration",
-          "run": "python - <<'PY'\nimport json,os,sys\nfrom pathlib import Path\nfrom production_v2.planning_resume import planning_resume\nfrom production_v2.generate import main\nrequest=json.loads(Path('.github/production-v2-launch.json').read_text())\ntarget=int(request['resume_planning_run'])\nsys.argv=['production_v2.generate','--profile','horror','--run-dir','.candidate-v2/run-'+os.environ['CANDIDATE_RUN'],'--ledger','.candidate-v2/shared.sqlite3','--git-state','--then-review','--production']\nwith planning_resume('horror',target):main()\nPY"
+          "name": "Render exact reserved horror story and retained measured narration; zero text or TTS calls",
+          "run": "python -m production_v2.resume_reserved --profile horror --target-run 41353885073 --slot candidate-horror-96c8c01545ce48ea9ecd1914ae850530 --run-dir \".candidate-v2/run-$CANDIDATE_RUN\" --ledger .candidate-v2/shared.sqlite3 --production"
         },
         {
           "name": "Retain narration budget and verified voice cache",

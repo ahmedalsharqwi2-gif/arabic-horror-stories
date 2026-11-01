@@ -7,7 +7,7 @@ def character_timing(story,duration,transcripts,key,exact_coverage=0):
     if not script:raise ValueError('No normalized script characters')
     ranges=[];offset=0
     for token in pieces:ranges.append((offset,offset+len(token)));offset+=len(token)
-    best=None
+    best=None;candidates={};matched_characters=set();retained=[]
     for model,raw in transcripts:
         if not raw or any(a['start']>b['start'] for a,b in zip(raw,raw[1:])):continue
         if any(not 0<=w['start']<w['end']<=duration+.1 for w in raw):continue
@@ -30,11 +30,27 @@ def character_timing(story,duration,transcripts,key,exact_coverage=0):
             first,last=raw[indices[0]],raw[indices[-1]]
             if last['end']-first['start']>3:continue
             anchors[i]={'start':first['start'],'end':last['end'],'recognized_token_indices':indices}
+        retained.append((model,raw));matched_characters.update(mapping)
+        for i,anchor in anchors.items():candidates.setdefault(i,[]).append({**anchor,'asr_model':model})
         word_coverage=len(anchors)/len(expected);char_coverage=len(mapping)/len(script)
         score=min(word_coverage,char_coverage)
         if best is None or score>best[0]:best=(score,model,raw,anchors,word_coverage,char_coverage)
-    if best is None or best[0]<.9:raise ValueError('Insufficient independently recognized speech after word-splitting normalization')
-    _,model,raw,anchors,word_coverage,char_coverage=best
+    if best is None:raise ValueError('No valid independently recognized speech')
+    nodes=[(i,a) for i in sorted(candidates) for a in candidates[i]]
+    scores=[1]*len(nodes);parents=[-1]*len(nodes)
+    for j,(idx,anchor) in enumerate(nodes):
+        for k,(previous_idx,previous) in enumerate(nodes[:j]):
+            # A single recognized token may contain two adjacent script words.
+            if previous_idx<idx and previous['start']<=anchor['start'] and previous['end']<=anchor['end']+.03 and scores[k]+1>scores[j]:
+                scores[j]=scores[k]+1;parents[j]=k
+    anchors={}
+    if nodes:
+        k=max(range(len(nodes)),key=lambda n:scores[n])
+        while k>=0:
+            idx,anchor=nodes[k];anchors[idx]=anchor;k=parents[k]
+    word_coverage=len(anchors)/len(expected);char_coverage=len(matched_characters)/len(script)
+    if min(word_coverage,char_coverage)<.9:raise ValueError('Insufficient independently recognized speech after word-splitting normalization')
+    model='+'.join(sorted({a['asr_model'] for a in anchors.values()}));raw=retained[0][1]
     scenes=[];cursor=0
     for i,scene in enumerate(story['scenes']):
         size=len(scene['narration'].split())
@@ -56,4 +72,6 @@ def character_timing(story,duration,transcripts,key,exact_coverage=0):
        'coverage':word_coverage,'exact_token_coverage':exact_coverage,'normalized_character_coverage':char_coverage,
        'known_name_and_egyptian_normalization_applied':True,'asr_model':model,
        'unmatched_script_words':[word for i,word in enumerate(expected) if i not in anchors],
-       'timing_method':'Monotonic normalized script-character anchors against independently recognized speech; ASR word-splitting differences allowed; supplied-script phrase captions; no active-word precision claim'}
+       'asr_transcripts':[{'model':m,'recognized_words':w} for m,w in retained],
+       'timing_method':'Monotonic ensemble of normalized script-character anchors against independently recognized speech; ASR word-splitting differences allowed; supplied-script phrase captions; no active-word precision claim'}
+
