@@ -51,7 +51,8 @@ def validate_plan(story,catalog):
         if row.get('id')!=scene.get('id'):raise ValueError('Directed shots must match authored scene identities')
         for field in FIELDS:
             if row.get(field) not in allowed[field]:raise ValueError('Unsupported executable '+field)
-        if compatible and not any(all(row.get(field)==beat.get(field) for field in ('setting','focal_object','action')) for beat in compatible):
+        if compatible and not any(all(row.get(field)==beat.get(field) for field in ('setting','focal_object','action')) and
+                                  ('shot' not in beat or row.get('shot')==beat['shot']) for beat in compatible):
             raise ValueError('Action/object does not belong to the selected physical setting')
         if not isinstance(row.get('state_change'),str) or not row['state_change'].strip():
             raise ValueError('Each scene needs a concrete visible event and consequence')

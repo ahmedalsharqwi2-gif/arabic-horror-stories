@@ -39,6 +39,11 @@ class DirectingTests(unittest.TestCase):
   changed=deepcopy(self.story);changed['visual_plan']['scenes'][0]['source_excerpt_id']=7
   with self.assertRaisesRegex(ValueError,'supporting'):validate_plan(changed,self.catalog)
   with self.assertRaisesRegex(ValueError,'Fictional'):validate_plan({**self.story,'fiction':True},self.catalog)
+ def test_beat_specific_shot_is_checked_before_provider_use(self):
+  self.spec['compatible_beats']=[{k:row[k] for k in ('setting','focal_object','action','shot')} for row in self.plan['scenes']]
+  validate_plan(self.story,self.catalog)
+  changed=deepcopy(self.story);changed['visual_plan']['scenes'][0]['shot']='detail'
+  with self.assertRaisesRegex(ValueError,'physical setting'):validate_plan(changed,self.catalog)
  def test_legacy_template_without_plan_is_rejected(self):
   with self.assertRaisesRegex(ValueError,'explicit'):validate_plan({'scenes':self.story['scenes']},self.catalog)
  def test_editor_context_replaces_fixed_order_and_restores_on_failure(self):
