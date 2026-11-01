@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-01",
+  "scope": "Complete existing five repository production v2 branches, validate fresh full films, then activate daily scheduled publication at 17:00 Africa/Cairo",
+  "authorized_by": "repository owner in current Codex conversation",
+  "constraints": [
+    "Preserve all repositories, topic histories, fingerprints and receipts",
+    "Use each repository's existing secrets",
+    "Never publish review samples",
+    "No duplicate generation or submission",
+    "Never roll a missed slot forward automatically",
+    "Keep legacy active until all five new full films pass"
+  ],
+  "execution_complete": false
+}
