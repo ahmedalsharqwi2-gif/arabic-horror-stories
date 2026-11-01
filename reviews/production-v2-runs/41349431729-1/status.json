@@ -1,0 +1,80 @@
+{
+  "profile": "horror",
+  "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+  "kind": "read_only_diagnostic",
+  "stage": "success",
+  "run_id": "41349431729",
+  "run_attempt": "1",
+  "source_commit": "d66efc7a9258a0843ff164e1f471740c10dca268",
+  "target_run": "41349008016",
+  "observed_at": "2026-11-01T20:57:09.519225+00:00",
+  "no_provider_calls": true,
+  "no_posts_created": true,
+  "evidence": [
+    {
+      "file": "run-41349008016-1/generation-failure.json",
+      "data": {
+        "slot": "candidate-horror-dbc9d909120a4b96a55c6e538b92dd59",
+        "profile": "horror",
+        "error_class": "RuntimeError",
+        "reservation_retained": false,
+        "publishable": false,
+        "failed_phase": "story_or_reservation",
+        "measured_narration_seconds": null,
+        "timing_present": false
+      }
+    },
+    {
+      "file": "run-41349008016-1/professional_motion/delivery/candidate-status.json",
+      "data": [
+        {
+          "key": "hms-captain-1870",
+          "title": "إتش إم إس كابتن: الكارثة اللي ابتلعت السفينة",
+          "family": "maritime",
+          "variant": "atlantic",
+          "published": null,
+          "already_reserved": false
+        }
+      ]
+    },
+    {
+      "file": "run-41349008016-1/professional_motion/delivery/planning-errors.json",
+      "data": [
+        {
+          "topic_key": "hms-captain-1870",
+          "error_class": "ValueError",
+          "validation": "Directed shots must match authored scene identities"
+        }
+      ]
+    },
+    {
+      "file": "0_candidate.txt",
+      "error_lines": [
+        "2026-11-01T20:55:29.9919296Z Traceback (most recent call last):",
+        "2026-11-01T20:55:29.9959433Z ##[error]    raise RuntimeError('No unused, evidence-backed topic fits the supported scene families; refusing a repeated or invented video')",
+        "2026-11-01T20:55:29.9968315Z RuntimeError: No unused, evidence-backed topic fits the supported scene families; refusing a repeated or invented video",
+        "2026-11-01T20:55:58.0044862Z     \"error_class\": \"RuntimeError\",",
+        "2026-11-01T20:55:58.0050849Z         \"error_class\": \"ValueError\",",
+        "2026-11-01T20:55:58.0059056Z   \"evidence_error_class\": \"ValueError\","
+      ]
+    },
+    {
+      "file": "candidate/11_Generate a new reserved source-backed story and full Charon film in isolation.txt",
+      "error_lines": [
+        "2026-11-01T20:55:29.9919248Z Traceback (most recent call last):",
+        "2026-11-01T20:55:29.9959417Z ##[error]    raise RuntimeError('No unused, evidence-backed topic fits the supported scene families; refusing a repeated or invented video')",
+        "2026-11-01T20:55:29.9968300Z RuntimeError: No unused, evidence-backed topic fits the supported scene families; refusing a repeated or invented video"
+      ]
+    },
+    {
+      "file": "candidate/14_Retain final review status and verified movie Release.txt",
+      "error_lines": [
+        "2026-11-01T20:55:58.0044857Z     \"error_class\": \"RuntimeError\",",
+        "2026-11-01T20:55:58.0050844Z         \"error_class\": \"ValueError\",",
+        "2026-11-01T20:55:58.0059051Z   \"evidence_error_class\": \"ValueError\","
+      ]
+    }
+  ],
+  "errors": [],
+  "provider_http_statuses": []
+}
