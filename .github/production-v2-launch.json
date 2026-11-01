@@ -1,6 +1,8 @@
 {
   "profile": "horror",
   "review_only": true,
-  "launch": "full-new-generation-review-1",
-  "no_social_posts": true
+  "launch": "full-topic-directed-review-2",
+  "no_social_posts": true,
+  "source_verification_run": "41314812687",
+  "source_verified_http_status": 200
 }

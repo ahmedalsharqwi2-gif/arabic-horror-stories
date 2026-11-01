@@ -1,0 +1,41 @@
+{
+  "profile": "horror",
+  "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+  "run_id": "41314812687",
+  "run_attempt": "1",
+  "source_commit": "920ba33c16aa39aefcc995752464d1ef6bc4c07b",
+  "kind": "official_source_probe",
+  "stage": "success",
+  "observed_at": "2026-11-01T14:10:12.650834+00:00",
+  "read_only": true,
+  "no_provider_calls": true,
+  "no_posts_created": true,
+  "sources": [
+    {
+      "requested_url": "https://www.rmg.co.uk/stories/maritime-history/hms-captain-britains-forgotten-maritime-disaster",
+      "authority": "rmg.co.uk",
+      "verified": true,
+      "tls_verification": true,
+      "keyless_get_only": true,
+      "final_url": "https://www.rmg.co.uk/stories/maritime-history/hms-captain-britains-forgotten-maritime-disaster",
+      "http_status": 200,
+      "official_links": [],
+      "title": "HMS Captain: Britain's forgotten maritime disaster | Royal Museums Greenwich",
+      "canonical_url": "https://www.rmg.co.uk/stories/maritime-history/hms-captain-britains-forgotten-maritime-disaster",
+      "body_word_count": 1694,
+      "evidence_sha256": "9db08909e8cb97a2eaf3bad5a51770df1ab902ff57ad9b07b3eb3b63520f1c53",
+      "excerpts": [
+        "leading the search for HMS Captain questions why the sinking of 'one of the finest",
+        "of the legendary ironclad HMS Captain , which foundered in a gale off the coast",
+        "four years our Find the Captain Project has worked to identify the exact location of",
+        "approximate to that of HMS Captain . Our next goal is to return and make",
+        "lost Victorian man-o’-war, Find the Captain is even more about rediscovering the vessel’s place in",
+        "down with this dangerously low freeboard yet fully rigged turret ship, including her controversial designer,"
+      ],
+      "quoted_words": 90,
+      "geometry_inference": null,
+      "geometry_note": "No tier count or geometry is inferred. Any contract must cite an explicit source statement."
+    }
+  ],
+  "all_requested_pages_verified": true
+}
