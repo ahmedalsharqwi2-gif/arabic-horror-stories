@@ -24,7 +24,7 @@ name: Professional full-length daily film — horror
         - original
         default: reference
   schedule:
-  - cron: 0 18 * * *
+  - cron: 0 7 * * *
   workflow_call:
     inputs:
       pipeline:
