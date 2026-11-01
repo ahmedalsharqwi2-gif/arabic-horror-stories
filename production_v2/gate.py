@@ -52,7 +52,13 @@ def check_profile(profile, evidence):
         raise ValueError('Exact authored story topic identity required')
     if ({token for token in tokens(story) if token[0] in ('topic', 'source')} | {('topic', topic)}) & old_tokens:
         raise ValueError('Topic was already reserved/produced in legacy history')
-    plan = validate_plan(story, load_catalog(root, profile))
+    effective_story = story
+    plan_path = evidence.get('visual_plan_path')
+    if plan_path:
+        if profile != 'stickman':
+            raise ValueError('Only the preserved stickman narration supports a versioned visual-plan sidecar')
+        effective_story = {**story, 'visual_plan': json.loads(Path(plan_path).read_text())}
+    plan = validate_plan(effective_story, load_catalog(root, profile))
     voice = evidence.get('narration', {})
     if voice.get('provider') != 'gemini' or voice.get('voice') != 'Charon' or voice.get('story_sha256') != story_hash:
         raise ValueError('New Charon narration must be bound to the exact new story')
@@ -68,6 +74,8 @@ def check_profile(profile, evidence):
         if not source.is_relative_to(root) or not source.is_file() or sha256(source) != expected:
             raise ValueError('Renderer source changed after full-film acceptance')
     render_report = json.loads(Path(renderer['report_path']).read_text())
+    if plan_path and render_report.get('visual_plan_sha256') != sha256(plan_path):
+        raise ValueError('The full film must execute the exact preserved visual-plan sidecar')
     director = render_report.get('topic_director', {})
     if director.get('active') is not True or director.get('world') != plan['world'] or director.get('scene_count') != 8 or render_report.get('story_sha256') != story_hash:
         raise ValueError('The full film must execute its topic-specific scene plan; a generic template is insufficient')

@@ -85,14 +85,14 @@ def response_schema(base,catalog):
              [('setting','settings'),('focal_object','focal_objects'),('action','actions'),('shot','shots')]}
     fields={key:{'type':'STRING','enum':value} for key,value in choices.items()}
     fields.update(id={'type':'STRING'},state_change={'type':'STRING'},source_excerpt_id={'type':'INTEGER'})
-    schema['properties']['visual_plan']={'type':'OBJECT','properties':{'version':{'type':'INTEGER'},'world':{'type':'STRING','enum':[*worlds,'unsupported']},
+    schema['properties']['visual_plan']={'type':'OBJECT','properties':{'version':{'type':'INTEGER'},'topic_key':{'type':'STRING'},'world':{'type':'STRING','enum':[*worlds,'unsupported']},
         'scenes':{'type':'ARRAY','maxItems':8,'items':{'type':'OBJECT','properties':fields,'required':list(fields)}}},'required':['version','world','scenes']}
     schema['required']=[*schema['required'],'visual_plan']
     return schema
 
 def prompt_instructions(catalog):
     return ('\nDIRECT THIS SPECIFIC FILM, not a reusable slide/template sequence. Replace any earlier fixed scene-order instruction. '
-        'Choose an implemented visual world appropriate to the exact source and write visual_plan version1. '
+        'Choose an implemented visual world appropriate to the exact source and write visual_plan version1, with topic_key equal to the candidate key. '
         'Every scene selects real setting, focal_object, action and shot IDs from the supplied executable catalog, and states the visible state_change caused by that action. '
         'The source excerpt ID must match that scene narration evidence_excerpt_id. Select and order physical locations, props, actions and shots to tell THIS story: question/goal, obstacle or mechanism, revealing actions and concrete payoff. '
         'Do not follow the catalog listing order mechanically; it is an asset vocabulary, not the plot. '
