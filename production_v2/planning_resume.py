@@ -8,7 +8,8 @@ from .export_review import context
 
 def read_draft(raw):
     with zipfile.ZipFile(io.BytesIO(raw)) as archive:
-        names=[n for n in archive.namelist() if PurePosixPath(n).name=='last-draft.json']
+        stories=[n for n in archive.namelist() if n.endswith('/professional_motion/delivery/story.json')]
+        names=stories if len(stories)==1 else [n for n in archive.namelist() if PurePosixPath(n).name=='last-draft.json']
         failures=[n for n in archive.namelist() if PurePosixPath(n).name=='generation-failure.json']
         if len(names)!=1 or len(failures)!=1:raise ValueError('Require one retained draft and failure evidence')
         for name in names+failures:
@@ -32,18 +33,25 @@ def planning_resume(profile,target_run):
         raise ValueError('Resume requires an actual failed candidate-branch run')
     artifacts=reader.json('/actions/runs/'+str(int(target_run))+'/artifacts').get('artifacts',[])
     expected=profile+'-v2-fresh-candidate-'+str(target_run)
-    matches=[a for a in artifacts if a.get('name')==expected and not a.get('expired')]
+    matches=[a for a in artifacts if a.get('name') in (expected,profile+'-v2-final-'+str(target_run)) and not a.get('expired')]
     if len(matches)!=1:raise ValueError('Require exact retained candidate artifact')
     draft=read_draft(reader.archive('/actions/artifacts/'+str(matches[0]['id'])+'/zip'))
     from professional_motion import editorial
-    original=editorial.ask;used=False
+    original=editorial.ask;original_candidates=editorial.candidates;used=False
+    if profile=='news' and draft.get('source',{}).get('url'):
+        source_row={**draft['source'],'key':draft['topic_key'],'family':draft['visual_family'],'variant':draft['variant'],'news_selection':draft.get('news_selection',{})}
+        editorial.candidates=lambda actual:[source_row] if actual==profile else original_candidates(actual)
     def retained(prompt,schema,**kwargs):
         nonlocal used
-        if kwargs.get('review'):return original(prompt,schema,**kwargs)
-        if used:raise ValueError('Retained draft requires a targeted edit; automatic text regeneration is disabled')
+        if kwargs.get('review') or 'narrations' in schema.get('properties',{}):return original(prompt,schema,**kwargs)
+        if used:
+            if profile=='news' and ('EDITORIAL REVISION:' in prompt or 'Rewrite this SAME draft' in prompt):
+                print(json.dumps({'targeted_retained_narration_revision':True,'new_topic_generation':False}))
+                return original(prompt,schema,**kwargs)
+            raise ValueError('Retained draft requires a targeted edit; automatic full-story regeneration is disabled')
         used=True
         print(json.dumps({'retained_draft_from_run':str(target_run),'story_generation_requests':0,'profile':profile}))
         return deepcopy(draft)
     editorial.ask=retained
     try:yield
-    finally:editorial.ask=original
+    finally:editorial.ask=original;editorial.candidates=original_candidates
