@@ -84,9 +84,9 @@ def response_schema(base,catalog):
     schema=deepcopy(base);worlds=catalog['worlds']
     choices={field:sorted({value for spec in worlds.values() for value in spec.get(key,[])}) for field,key in
              [('setting','settings'),('focal_object','focal_objects'),('action','actions'),('shot','shots')]}
-    fields={key:{'type':'STRING','enum':value} for key,value in choices.items()}
+    fields={key:{'type':'STRING','description':'Executable asset ID; validated against the supplied catalog after generation.'} for key in choices}
     fields.update(id={'type':'STRING'},state_change={'type':'STRING'},source_excerpt_id={'type':'INTEGER'})
-    schema['properties']['visual_plan']={'type':'OBJECT','properties':{'version':{'type':'INTEGER'},'topic_key':{'type':'STRING'},'world':{'type':'STRING','enum':[*worlds,'unsupported']},
+    schema['properties']['visual_plan']={'type':'OBJECT','properties':{'version':{'type':'INTEGER'},'topic_key':{'type':'STRING'},'world':{'type':'STRING','description':'Implemented catalog world ID, or unsupported when no world fits the source.'},
         'scenes':{'type':'ARRAY','maxItems':8,'items':{'type':'OBJECT','properties':fields,'required':list(fields)}}},'required':['version','world','scenes']}
     schema['required']=[*schema['required'],'visual_plan']
     return schema
