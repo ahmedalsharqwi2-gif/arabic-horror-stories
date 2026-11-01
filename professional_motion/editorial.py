@@ -161,7 +161,7 @@ def validate(story,profile,row):
         if s.get('visual_mode') not in MODES.get(row['family'],set()):raise ValueError('Unsupported scene visual mode')
         contract=row.get('visual_contract')
         if contract and s.get('visual_mode') not in contract.get('allowed_modes',[]):raise ValueError('Scene visual mode conflicts with the source-specific structure contract')
-        if row['family']=='maritime' and row.get('variant')!='polar' and s.get('visual_mode')=='wreck':raise ValueError('Do not depict an afloat ship as an underwater wreck')
+        if row['family']=='maritime' and row.get('variant')!='polar' and s.get('visual_mode')=='wreck' and not (row.get('key')=='hms-captain-1870' and row.get('director_contract',{}).get('world')=='stormship_inquiry' and row.get('director_contract',{}).get('documented_outcome')=='sank'):raise ValueError('Do not depict an afloat ship as an underwater wreck')
         s['labels']=[x for x in s.get('labels',[]) if isinstance(x,str) and re.search(r'[\u0621-\u064a]',x) and x in s['narration']][:2]
     if not re.search(r'[\u0621-\u064a]',story.get('title','')):note(story,'The public title must be Egyptian Arabic')
     spoken=' '.join(x['narration'] for x in scenes)
