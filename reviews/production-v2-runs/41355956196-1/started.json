@@ -1,0 +1,20 @@
+{
+  "profile": "horror",
+  "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+  "run_id": "41355956196",
+  "run_attempt": "1",
+  "source_commit": "a224cce0e719b8fd4f3684651fcea8f3a7f3c47c",
+  "stage": "started",
+  "requested_stage": "started",
+  "observed_at": "2026-11-01T22:12:43.660576+00:00",
+  "review_only": true,
+  "automatically_published": false,
+  "cutover_eligible": false,
+  "complete_film_verified": false,
+  "media_url": null,
+  "credential_presence": {
+    "GEMINI_API_KEY": true,
+    "GEMINI_TEXT_API_KEY": true,
+    "GEMINI_TTS_API_KEY": true
+  }
+}
