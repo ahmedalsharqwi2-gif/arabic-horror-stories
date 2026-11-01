@@ -1,0 +1,76 @@
+{
+  "name": "Bounded provider schema diagnostic; no film or publishing",
+  "on": {
+    "push": {
+      "branches": [
+        "codex/rebuild-production-v2"
+      ],
+      "paths": [
+        ".github/provider-probe-request.json"
+      ]
+    },
+    "workflow_dispatch": {}
+  },
+  "permissions": {
+    "contents": "write"
+  },
+  "concurrency": {
+    "group": "provider-schema-probe-horror",
+    "cancel-in-progress": false
+  },
+  "jobs": {
+    "probe": {
+      "runs-on": "ubuntu-24.04",
+      "timeout-minutes": 10,
+      "env": {
+        "GITHUB_TOKEN": "${{ github.token }}",
+        "GEMINI_TEXT_API_KEY": "${{ secrets.GEMINI_TEXT_API_KEY || secrets.GEMINI_API_KEY }}"
+      },
+      "steps": [
+        {
+          "uses": "actions/checkout@v4",
+          "with": {
+            "fetch-depth": 0
+          }
+        },
+        {
+          "uses": "actions/setup-python@v5",
+          "with": {
+            "python-version": "3.11"
+          }
+        },
+        {
+          "run": "python -m pip install requests beautifulsoup4"
+        },
+        {
+          "uses": "actions/cache/restore@v4",
+          "with": {
+            "path": "state/api_budget.sqlite3",
+            "key": "provider-budget-${{ github.repository_id }}-${{ github.run_id }}",
+            "restore-keys": "provider-budget-${{ github.repository_id }}-\nprofessional-v3-${{ github.repository_id }}-"
+          }
+        },
+        {
+          "run": "python -m py_compile production_v2/provider_probe.py\npython -m production_v2.provider_probe"
+        },
+        {
+          "if": "always()",
+          "uses": "actions/cache/save@v4",
+          "with": {
+            "path": "state/api_budget.sqlite3",
+            "key": "provider-budget-${{ github.repository_id }}-${{ github.run_id }}"
+          }
+        },
+        {
+          "if": "always()",
+          "uses": "actions/upload-artifact@v4",
+          "with": {
+            "name": "provider-schema-probe-${{ github.run_id }}",
+            "path": "work/provider-schema-probe.json",
+            "retention-days": 14
+          }
+        }
+      ]
+    }
+  }
+}
