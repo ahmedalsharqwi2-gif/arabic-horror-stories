@@ -1,10 +1,5 @@
 {
   "profile": "horror",
-  "request_id": "isolate-schema-400-2026-11-01",
-  "cases": [
-    "minimal",
-    "directed",
-    "string_ids"
-  ],
-  "production_generation": false
+  "inspect_run": 41352837148,
+  "no_provider_calls": true
 }
