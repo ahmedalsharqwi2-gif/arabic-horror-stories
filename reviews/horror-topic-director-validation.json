@@ -31,7 +31,10 @@
       },
       "source_fingerprints_match": true,
       "fiction": false,
-      "artistic_status": "Schematic visual-direction review only, not a finished narrated film or accepted release"
+      "artistic_status": "Schematic visual-direction review only, not a finished narrated film or accepted release",
+      "download_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/raw/refs/heads/codex/topic-directed-motion-review-2026-11-01/review-media/topic-directed/horror-stormship-32s.mp4",
+      "download_http_status": 200,
+      "download_sha256_matches": true
     },
     {
       "world": "abandoned_station",
@@ -61,10 +64,15 @@
       },
       "source_fingerprints_match": true,
       "fiction": true,
-      "artistic_status": "Schematic visual-direction review only, not a finished narrated film or accepted release"
+      "artistic_status": "Schematic visual-direction review only, not a finished narrated film or accepted release",
+      "download_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/raw/refs/heads/codex/topic-directed-motion-review-2026-11-01/review-media/topic-directed/horror-station-pov-32s.mp4",
+      "download_http_status": 200,
+      "download_sha256_matches": true
     }
   ],
   "legacy_state_modified": false,
   "automatically_published": false,
-  "cutover_eligible": false
+  "cutover_eligible": false,
+  "media_branch": "codex/topic-directed-motion-review-2026-11-01",
+  "media_commit": "231b4e706b89fad3f06cba77b5ca1a684f98830c"
 }

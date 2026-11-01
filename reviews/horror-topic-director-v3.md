@@ -12,3 +12,11 @@
 عينتا المقارنة محليًا تحت `/workspace/setup/horror-topic-worlds/<world>/validated/`، مدتهما الفعلية 32 ثانية لكل واحدة، 1080×1920 و24 إطارًا في الثانية. العينات صامتة ومعلنة للمراجعة؛ توقيتها الصناعي لا يُدّعى أنه ASR. لا تحقق شرط فيلم جديد كامل بصوت أو شرط الاستبدال. اجتاز الملفان فك الترميز الكامل وفحص 768 إطارًا فعليًا لكل منهما، وطابقت بصمات ملفات الرندر الأربعة ما استخدمه المتصفح. فُحصت لقطات من بداية ووسط ونهاية الملفين المشفرين. الدليل في `horror-topic-director-validation.json`.
 
 السجلات والمصادر والإيصالات والمشغلات القديمة لم تُعدل. ملفات `production_v2` المشتركة ليست ضمن هذه التعديلات.
+
+
+## ملفات المقارنة المنشورة للمراجعة
+
+- [السفينة والتحقيق ، 32 ثانية صامتة](https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/raw/refs/heads/codex/topic-directed-motion-review-2026-11-01/review-media/topic-directed/horror-stormship-32s.mp4).
+- [المحطة بمنظور المحقق ، 32 ثانية صامتة](https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/raw/refs/heads/codex/topic-directed-motion-review-2026-11-01/review-media/topic-directed/horror-station-pov-32s.mp4).
+
+عاد تنزيل الملفين عبر HTTP 200 وطابقت البصمتان الملفين المحليين. فرع الوسائط يحتفظ بشجرة المصدر الكاملة، ولم يُبدّل فرع العمل أو يمس main أو ينشر على الحسابات.
