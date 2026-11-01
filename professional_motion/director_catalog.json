@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "profile": "horror",
+  "worlds": {
+    "stormship_inquiry": {
+      "fiction": false,
+      "settings": [
+        "weather_deck",
+        "chart_room",
+        "engine_hold",
+        "storm_deck",
+        "lifeboat_station",
+        "capsize_section",
+        "seabed",
+        "inquiry_archive"
+      ],
+      "focal_objects": [
+        "turret_ship",
+        "chart",
+        "steam_engine",
+        "rigging",
+        "lifeboat",
+        "hull_section",
+        "wreck",
+        "evidence_board"
+      ],
+      "actions": [
+        "sail",
+        "trace_route",
+        "turn_engine",
+        "heel_in_storm",
+        "swing_davit",
+        "lose_stability",
+        "settle",
+        "compare_evidence"
+      ],
+      "shots": [
+        "tracking_wide",
+        "overhead",
+        "mechanical_close",
+        "low_deck",
+        "shoulder",
+        "section_side",
+        "descending",
+        "tabletop"
+      ],
+      "compatible_beats": [
+        {
+          "setting": "weather_deck",
+          "focal_object": "turret_ship",
+          "action": "sail"
+        },
+        {
+          "setting": "chart_room",
+          "focal_object": "chart",
+          "action": "trace_route"
+        },
+        {
+          "setting": "engine_hold",
+          "focal_object": "steam_engine",
+          "action": "turn_engine"
+        },
+        {
+          "setting": "storm_deck",
+          "focal_object": "rigging",
+          "action": "heel_in_storm"
+        },
+        {
+          "setting": "lifeboat_station",
+          "focal_object": "lifeboat",
+          "action": "swing_davit"
+        },
+        {
+          "setting": "capsize_section",
+          "focal_object": "hull_section",
+          "action": "lose_stability"
+        },
+        {
+          "setting": "seabed",
+          "focal_object": "wreck",
+          "action": "settle"
+        },
+        {
+          "setting": "inquiry_archive",
+          "focal_object": "evidence_board",
+          "action": "compare_evidence"
+        }
+      ],
+      "minimum_distinct_settings": 5,
+      "subject_contract": {
+        "supported_topic_keys": [
+          "hms-captain-1870"
+        ],
+        "required_source_url_contains": "hms-captain",
+        "schematic_not_to_scale": true,
+        "not_a_generic_ship": true
+      }
+    },
+    "abandoned_station": {
+      "fiction": true,
+      "settings": [
+        "platform",
+        "ticket_office",
+        "radio_room",
+        "service_corridor",
+        "stairwell",
+        "records_room",
+        "exit_door",
+        "dawn_platform"
+      ],
+      "focal_objects": [
+        "investigator",
+        "ticket_window",
+        "radio",
+        "service_door",
+        "staircase",
+        "file_cabinet",
+        "exit_handle",
+        "platform_clock"
+      ],
+      "actions": [
+        "arrive",
+        "look_through_window",
+        "press_radio",
+        "open_door",
+        "climb",
+        "pull_file",
+        "release_latch",
+        "leave"
+      ],
+      "shots": [
+        "establishing",
+        "window_close",
+        "hand_close",
+        "follow",
+        "low_stairs",
+        "over_shoulder",
+        "handle_close",
+        "reverse_wide"
+      ],
+      "compatible_beats": [
+        {
+          "setting": "platform",
+          "focal_object": "investigator",
+          "action": "arrive"
+        },
+        {
+          "setting": "ticket_office",
+          "focal_object": "ticket_window",
+          "action": "look_through_window"
+        },
+        {
+          "setting": "radio_room",
+          "focal_object": "radio",
+          "action": "press_radio"
+        },
+        {
+          "setting": "service_corridor",
+          "focal_object": "service_door",
+          "action": "open_door"
+        },
+        {
+          "setting": "stairwell",
+          "focal_object": "staircase",
+          "action": "climb"
+        },
+        {
+          "setting": "records_room",
+          "focal_object": "file_cabinet",
+          "action": "pull_file"
+        },
+        {
+          "setting": "exit_door",
+          "focal_object": "exit_handle",
+          "action": "release_latch"
+        },
+        {
+          "setting": "dawn_platform",
+          "focal_object": "platform_clock",
+          "action": "leave"
+        }
+      ],
+      "minimum_distinct_settings": 5
+    }
+  }
+}

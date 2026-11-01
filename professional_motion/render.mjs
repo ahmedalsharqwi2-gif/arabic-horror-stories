@@ -11,6 +11,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const option=(name,fallback)=>{const i=process.argv.indexOf(name);if(i<0)return fallback;const value=process.argv[i+1];if(!value||value.startsWith('--'))throw Error('Missing '+name+' value');return value;};
 const pipeline=option('--pipeline',process.argv.includes('--pipeline-v2')?'v2':'legacy');
 if(!['legacy','v2'].includes(pipeline))throw Error('Unknown pipeline');
+const rendererSources=Object.fromEntries(await Promise.all(['professional_motion/render.mjs','professional_motion/scene.js','professional_motion/horror_directing.js','professional_motion/horror_worlds.js'].map(async name=>[name,createHash('sha256').update(await readFile(path.join(root,name))).digest('hex')])));
 const delivery=path.resolve(option('--delivery-dir',path.join(root,'professional_motion/delivery')));
 const output=path.resolve(option('--output-dir',path.join(root,'professional_motion/output')));await mkdir(output,{recursive:true});
 const mime={'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.json':'application/json','.ttf':'font/ttf','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp'};
@@ -30,7 +31,10 @@ try{
  let timing;try{timing=JSON.parse(await readFile(path.join(delivery,'timing.json'),'utf8'));}catch{}
  const storyHash=createHash('sha256').update(await readFile(path.join(delivery,'story.json'))).digest('hex');
  if(timing&&timing.story_sha256!==storyHash)throw Error('Story changed after measured voice timing');
- const duration=timing?.duration||46.5;const fps=30;
+ const visualReview=process.argv.includes('--visual-review');
+ const duration=timing?.duration||46.5;const fps=Number(option('--fps','30'));
+ if(!Number.isInteger(fps)||fps<12||fps>30)throw Error('FPS must be12..30');
+ if(pipeline==='v2'&&!timing?.audio_sha256&&!visualReview)throw Error('Silent topic review requires explicit --visual-review');
  const flag=(key,fallback)=>{let i=process.argv.indexOf(key);return i<0?fallback:process.argv[i+1];};
  const splitting=process.argv.includes('--part'),part=Number(flag('--part',0)),parts=Number(flag('--parts',1));
  if(!Number.isInteger(part)||!Number.isInteger(parts)||parts<1||part<0||part>=parts)throw Error('Invalid frame partition');
@@ -40,7 +44,7 @@ try{
  const startFrame=splitting?Math.floor(totalFrames*part/parts):Math.ceil(from*fps),endFrame=splitting?Math.floor(totalFrames*(part+1)/parts):Math.ceil(to*fps);
  if(!Number.isFinite(from)||!Number.isFinite(to)||from<0||to<=from||to>duration+.001)throw Error('Invalid render interval');
  const outputName=path.basename(flag('--output','visuals.mp4'));const partial=startFrame>0||endFrame<totalFrames;
- console.log(JSON.stringify({duration,originalVoice:!!timing,webgl:await page.evaluate(()=>document.querySelector('canvas:not(#text)').getContext('webgl2')?.getParameter(7937))}));
+ console.log(JSON.stringify({duration,originalVoice:Boolean(timing?.audio_sha256),webgl:await page.evaluate(()=>document.querySelector('canvas:not(#text)').getContext('webgl2')?.getParameter(7937))}));
  const stills=process.argv.includes('--stills');
  if(stills){
   for(const [i,t] of [2.7,7,12,18,24,30,36.5,43].entries()){
@@ -59,5 +63,5 @@ try{
   }
   ff.stdin.end();const [code]=await completed;if(code!==0)throw Error('FFmpeg failed');
  }
- await writeFile(path.join(output,partial?outputName+'.json':'render.json'),JSON.stringify({duration,from,to,start_frame:startFrame,end_frame:endFrame,total_frames:totalFrames,fps,width:1080,height:1920,originalVoice:!!timing,pipeline,cinematic:await page.evaluate(()=>window.cinematicStatus||null),visual_style:style,review:process.argv.includes('--review'),story_sha256:storyHash,branding:await page.evaluate(()=>window.brandingStatus),errors},null,2));
+ await writeFile(path.join(output,stills?'stills.json':partial?outputName+'.json':'render.json'),JSON.stringify({renderer_source_sha256:rendererSources,render_mode:stills?'stills':'video',rendered_frames:stills?8:endFrame-startFrame,duration,from,to,start_frame:startFrame,end_frame:endFrame,total_frames:totalFrames,fps,width:1080,height:1920,originalVoice:Boolean(timing?.audio_sha256),pipeline,visual_review:visualReview,topic_director:await page.evaluate(()=>window.topicDirecting?{active:true,world:window.topicDirecting.world,scene_count:window.topicDirecting.scenes.length}:null),topic_directing:await page.evaluate(()=>window.topicDirecting||null),cinematic:await page.evaluate(()=>window.cinematicStatus||null),visual_style:style,review:process.argv.includes('--review'),story_sha256:storyHash,branding:await page.evaluate(()=>window.brandingStatus),errors},null,2));
 }finally{await browser.close();server.close();}

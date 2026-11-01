@@ -2,6 +2,7 @@ import {drawReferenceLayout} from './reference_layout.js';
 import {loadBranding,drawBranding} from './branding.js';
 import {drawCaption} from './caption_layout.js';
 import {hauntedStage} from './haunted.js';
+import {horrorWorld} from './horror_worlds.js';
 import {cinematicHorror} from './cinematic_horror.js';
 import {channelStage} from './channels.js';
 import * as THREE from 'three';
@@ -181,6 +182,8 @@ const DEFAULT=[0,4.4,9.5,15.1,21.2,27.4,33.5,40];
 const defaultDuration=46.5;
 const times=timing?timing.scenes.map(s=>s.start/timing.duration):DEFAULT.map(t=>t/defaultDuration);
 let D=timing?.duration||defaultDuration;
+const topicWorld=cinematicV2?horrorWorld(renderer,config):null;
+window.topicDirecting=topicWorld?.plan||null;
 const ACCENT='#87e7d8',ORANGE='#ffb16d',WHITE='#f1f0df',MUTED='#749894';
 const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
 const ease=x=>1-Math.pow(1-clamp(x),3);
@@ -273,6 +276,7 @@ function drawChannelText(t,index,local,p){
 
 window.renderAt=(time,duration=D)=>{
  D=duration;const t=Math.max(0,time),u=t/D;
+ if(topicWorld){const result=topicWorld.render(t,D,timing,ctx);drawBranding(ctx,brandMark);window.cinematicStatus=result;return result;}
  let index=times.findLastIndex(s=>s<=u);index=Math.max(0,index);
  const sceneStart=times[index]*D,sceneEnd=(times[index+1]??1)*D,local=t-sceneStart,p=clamp(local/(sceneEnd-sceneStart));
  uniforms.clock.value=t;uniforms.morph.value=index===6?(.5-.5*Math.cos(p*Math.PI*2)):0;
