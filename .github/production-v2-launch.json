@@ -1,8 +1,9 @@
 {
   "profile": "horror",
   "review_only": true,
-  "launch": "full-topic-directed-review-2",
+  "launch": "schema-fixed-full-film-2026-11-01-1",
   "no_social_posts": true,
   "source_verification_run": "41314812687",
-  "source_verified_http_status": 200
+  "source_verified_http_status": 200,
+  "prior_failure": "41315039788"
 }
