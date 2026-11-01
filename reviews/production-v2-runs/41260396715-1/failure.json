@@ -1,0 +1,32 @@
+{
+  "profile": "horror",
+  "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+  "run_id": "41260396715",
+  "run_attempt": "1",
+  "source_commit": "7fe426322b7fbed0766744b0ea82ee38c4025b32",
+  "stage": "failure",
+  "requested_stage": "failure",
+  "observed_at": "2026-11-01T01:19:10.264043+00:00",
+  "review_only": true,
+  "automatically_published": false,
+  "cutover_eligible": false,
+  "complete_film_verified": false,
+  "media_url": null,
+  "credential_presence": {
+    "GEMINI_API_KEY": true,
+    "GEMINI_TEXT_API_KEY": true,
+    "GEMINI_TTS_API_KEY": true
+  },
+  "generation_failure": {
+    "slot": "candidate-horror-498d3bd73dd54226b9d53facb48bc683",
+    "profile": "horror",
+    "error_class": "RuntimeError",
+    "reservation_retained": false,
+    "legacy_film_not_used_as_fallback": true,
+    "publishable": false,
+    "failed_phase": "story_or_reservation",
+    "measured_narration_seconds": null,
+    "timing_present": false
+  },
+  "evidence_error_class": "ValueError"
+}
