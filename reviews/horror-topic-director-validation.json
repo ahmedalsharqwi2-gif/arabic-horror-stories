@@ -1,0 +1,70 @@
+{
+  "profile": "horror",
+  "version": 3,
+  "source_renderer_commit": "6687854103379a223762d9cedee4d8a7a5476dad",
+  "worlds": [
+    {
+      "world": "stormship_inquiry",
+      "file": "/workspace/setup/horror-topic-worlds/stormship_inquiry/validated/horror-stormship_inquiry-32s.mp4",
+      "sha256": "53a5c6a7afe394a4877cdca1ba816aab44db7c77ff6f0316fd68698da49a93b0",
+      "bytes": 15222661,
+      "duration": 32.0,
+      "width": 1080,
+      "height": 1920,
+      "fps": 24,
+      "decoded_video_frames": 768,
+      "full_decode": "PASS",
+      "audio_present": false,
+      "original_voice": false,
+      "visual_review": true,
+      "topic_director": {
+        "active": true,
+        "world": "stormship_inquiry",
+        "scene_count": 8
+      },
+      "story_sha256": "ddb76808d37667221573433c82def1da6d608ff4c4a374efa1a999977bd48c93",
+      "renderer_source_sha256": {
+        "professional_motion/render.mjs": "880146bdcd745112cf3c190a8f031c715a4eb243590f532763a37a593b6ddca6",
+        "professional_motion/scene.js": "3bf2772bd65b47f8a22ce14650d3a5a33d58cf37dcc19cc8cad92a27c2048484",
+        "professional_motion/horror_directing.js": "dcd5e148470e4cc8798e9d6817146521416ff2f94b115d72d712b07b09921d3c",
+        "professional_motion/horror_worlds.js": "27330b1cb3819508192d25c7826106025445038b05d4be887550465da04101b6"
+      },
+      "source_fingerprints_match": true,
+      "fiction": false,
+      "artistic_status": "Schematic visual-direction review only, not a finished narrated film or accepted release"
+    },
+    {
+      "world": "abandoned_station",
+      "file": "/workspace/setup/horror-topic-worlds/abandoned_station/validated/horror-abandoned_station-32s.mp4",
+      "sha256": "d5bf0291f3e7a262216decf3d20f09d4dee40bdb6ab8a4fae6e56f3f4600f804",
+      "bytes": 17074583,
+      "duration": 32.0,
+      "width": 1080,
+      "height": 1920,
+      "fps": 24,
+      "decoded_video_frames": 768,
+      "full_decode": "PASS",
+      "audio_present": false,
+      "original_voice": false,
+      "visual_review": true,
+      "topic_director": {
+        "active": true,
+        "world": "abandoned_station",
+        "scene_count": 8
+      },
+      "story_sha256": "2843b88e3c67ebcb538d91646d24a373f4186c91eb16f54a41e730b2176ca6f9",
+      "renderer_source_sha256": {
+        "professional_motion/render.mjs": "880146bdcd745112cf3c190a8f031c715a4eb243590f532763a37a593b6ddca6",
+        "professional_motion/scene.js": "3bf2772bd65b47f8a22ce14650d3a5a33d58cf37dcc19cc8cad92a27c2048484",
+        "professional_motion/horror_directing.js": "dcd5e148470e4cc8798e9d6817146521416ff2f94b115d72d712b07b09921d3c",
+        "professional_motion/horror_worlds.js": "27330b1cb3819508192d25c7826106025445038b05d4be887550465da04101b6"
+      },
+      "source_fingerprints_match": true,
+      "fiction": true,
+      "artistic_status": "Schematic visual-direction review only, not a finished narrated film or accepted release"
+    }
+  ],
+  "legacy_state_modified": false,
+  "automatically_published": false,
+  "cutover_eligible": false
+}
