@@ -4,9 +4,9 @@
   "run_id": "41349008016",
   "run_attempt": "1",
   "source_commit": "6b3fac8a6d110299fff5f11167ca151997a389f3",
-  "stage": "started",
-  "requested_stage": "started",
-  "observed_at": "2026-11-01T20:51:57.483356+00:00",
+  "stage": "failure",
+  "requested_stage": "failure",
+  "observed_at": "2026-11-01T20:55:56.205615+00:00",
   "review_only": true,
   "automatically_published": false,
   "cutover_eligible": false,
@@ -16,5 +16,36 @@
     "GEMINI_API_KEY": true,
     "GEMINI_TEXT_API_KEY": true,
     "GEMINI_TTS_API_KEY": true
-  }
+  },
+  "generation_failure": {
+    "slot": "candidate-horror-dbc9d909120a4b96a55c6e538b92dd59",
+    "profile": "horror",
+    "error_class": "RuntimeError",
+    "reservation_retained": false,
+    "legacy_film_not_used_as_fallback": true,
+    "publishable": false,
+    "failed_phase": "story_or_reservation",
+    "measured_narration_seconds": null,
+    "timing_present": false
+  },
+  "planning_evidence": {
+    "planning-errors.json": [
+      {
+        "topic_key": "hms-captain-1870",
+        "error_class": "ValueError",
+        "validation": "Directed shots must match authored scene identities"
+      }
+    ],
+    "candidate-status.json": [
+      {
+        "key": "hms-captain-1870",
+        "title": "إتش إم إس كابتن: الكارثة اللي ابتلعت السفينة",
+        "family": "maritime",
+        "variant": "atlantic",
+        "published": null,
+        "already_reserved": false
+      }
+    ]
+  },
+  "evidence_error_class": "ValueError"
 }
