@@ -1,10 +1,11 @@
 {
   "profile": "horror",
   "review_only": true,
-  "launch": "source-bound-scene-id-fix-2026-11-01-1",
+  "launch": "resume-retained-captain-draft-2026-11-01",
   "no_social_posts": true,
   "source_verification_run": "41314812687",
   "source_verified_http_status": 200,
   "prior_failure": "41315039788",
-  "retain_raw_drafts": true
+  "retain_raw_drafts": true,
+  "resume_planning_run": 41349653671
 }
