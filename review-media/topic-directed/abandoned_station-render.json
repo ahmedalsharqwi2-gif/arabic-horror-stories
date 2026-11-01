@@ -1,0 +1,131 @@
+{
+  "renderer_source_sha256": {
+    "professional_motion/render.mjs": "880146bdcd745112cf3c190a8f031c715a4eb243590f532763a37a593b6ddca6",
+    "professional_motion/scene.js": "3bf2772bd65b47f8a22ce14650d3a5a33d58cf37dcc19cc8cad92a27c2048484",
+    "professional_motion/horror_directing.js": "dcd5e148470e4cc8798e9d6817146521416ff2f94b115d72d712b07b09921d3c",
+    "professional_motion/horror_worlds.js": "27330b1cb3819508192d25c7826106025445038b05d4be887550465da04101b6"
+  },
+  "render_mode": "video",
+  "rendered_frames": 768,
+  "duration": 32,
+  "from": 0,
+  "to": 32,
+  "start_frame": 0,
+  "end_frame": 768,
+  "total_frames": 768,
+  "fps": 24,
+  "width": 1080,
+  "height": 1920,
+  "originalVoice": false,
+  "pipeline": "v2",
+  "visual_review": true,
+  "topic_director": {
+    "active": true,
+    "world": "abandoned_station",
+    "scene_count": 8
+  },
+  "topic_directing": {
+    "version": 1,
+    "world": "abandoned_station",
+    "scenes": [
+      {
+        "id": "scene_0",
+        "setting": "platform",
+        "focal_object": "investigator",
+        "action": "arrive",
+        "shot": "establishing",
+        "state_change": "arrive:start-to-consequence",
+        "source_excerpt_id": null
+      },
+      {
+        "id": "scene_1",
+        "setting": "ticket_office",
+        "focal_object": "ticket_window",
+        "action": "look_through_window",
+        "shot": "window_close",
+        "state_change": "look_through_window:start-to-consequence",
+        "source_excerpt_id": null
+      },
+      {
+        "id": "scene_2",
+        "setting": "radio_room",
+        "focal_object": "radio",
+        "action": "press_radio",
+        "shot": "hand_close",
+        "state_change": "press_radio:start-to-consequence",
+        "source_excerpt_id": null
+      },
+      {
+        "id": "scene_3",
+        "setting": "service_corridor",
+        "focal_object": "service_door",
+        "action": "open_door",
+        "shot": "follow",
+        "state_change": "open_door:start-to-consequence",
+        "source_excerpt_id": null
+      },
+      {
+        "id": "scene_4",
+        "setting": "stairwell",
+        "focal_object": "staircase",
+        "action": "climb",
+        "shot": "low_stairs",
+        "state_change": "climb:start-to-consequence",
+        "source_excerpt_id": null
+      },
+      {
+        "id": "scene_5",
+        "setting": "records_room",
+        "focal_object": "file_cabinet",
+        "action": "pull_file",
+        "shot": "over_shoulder",
+        "state_change": "pull_file:start-to-consequence",
+        "source_excerpt_id": null
+      },
+      {
+        "id": "scene_6",
+        "setting": "exit_door",
+        "focal_object": "exit_handle",
+        "action": "release_latch",
+        "shot": "handle_close",
+        "state_change": "release_latch:start-to-consequence",
+        "source_excerpt_id": null
+      },
+      {
+        "id": "scene_7",
+        "setting": "dawn_platform",
+        "focal_object": "platform_clock",
+        "action": "leave",
+        "shot": "reverse_wide",
+        "state_change": "leave:start-to-consequence",
+        "source_excerpt_id": null
+      }
+    ]
+  },
+  "cinematic": {
+    "world": "abandoned_station",
+    "stage_index": 7,
+    "setting": "dawn_platform",
+    "focal_object": "platform_clock",
+    "action": "leave",
+    "shot": "reverse_wide",
+    "state_change": "leave:start-to-consequence",
+    "progress": 0.9996767397280092,
+    "scene": 8,
+    "camera_fov": 70,
+    "camera_position": [
+      0.8,
+      1.4847659651495382,
+      0.9990302191840277
+    ],
+    "originalVoice": false
+  },
+  "visual_style": "original",
+  "review": true,
+  "story_sha256": "2843b88e3c67ebcb538d91646d24a373f4186c91eb16f54a41e730b2176ca6f9",
+  "branding": {
+    "profile": "horror",
+    "logoApplied": false
+  },
+  "errors": []
+}

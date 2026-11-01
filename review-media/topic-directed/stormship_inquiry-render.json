@@ -1,0 +1,131 @@
+{
+  "renderer_source_sha256": {
+    "professional_motion/render.mjs": "880146bdcd745112cf3c190a8f031c715a4eb243590f532763a37a593b6ddca6",
+    "professional_motion/scene.js": "3bf2772bd65b47f8a22ce14650d3a5a33d58cf37dcc19cc8cad92a27c2048484",
+    "professional_motion/horror_directing.js": "dcd5e148470e4cc8798e9d6817146521416ff2f94b115d72d712b07b09921d3c",
+    "professional_motion/horror_worlds.js": "27330b1cb3819508192d25c7826106025445038b05d4be887550465da04101b6"
+  },
+  "render_mode": "video",
+  "rendered_frames": 768,
+  "duration": 32,
+  "from": 0,
+  "to": 32,
+  "start_frame": 0,
+  "end_frame": 768,
+  "total_frames": 768,
+  "fps": 24,
+  "width": 1080,
+  "height": 1920,
+  "originalVoice": false,
+  "pipeline": "v2",
+  "visual_review": true,
+  "topic_director": {
+    "active": true,
+    "world": "stormship_inquiry",
+    "scene_count": 8
+  },
+  "topic_directing": {
+    "version": 1,
+    "world": "stormship_inquiry",
+    "scenes": [
+      {
+        "id": "scene_0",
+        "setting": "weather_deck",
+        "focal_object": "turret_ship",
+        "action": "sail",
+        "shot": "tracking_wide",
+        "state_change": "sail:start-to-consequence",
+        "source_excerpt_id": null
+      },
+      {
+        "id": "scene_1",
+        "setting": "chart_room",
+        "focal_object": "chart",
+        "action": "trace_route",
+        "shot": "overhead",
+        "state_change": "trace_route:start-to-consequence",
+        "source_excerpt_id": null
+      },
+      {
+        "id": "scene_2",
+        "setting": "engine_hold",
+        "focal_object": "steam_engine",
+        "action": "turn_engine",
+        "shot": "mechanical_close",
+        "state_change": "turn_engine:start-to-consequence",
+        "source_excerpt_id": null
+      },
+      {
+        "id": "scene_3",
+        "setting": "storm_deck",
+        "focal_object": "rigging",
+        "action": "heel_in_storm",
+        "shot": "low_deck",
+        "state_change": "heel_in_storm:start-to-consequence",
+        "source_excerpt_id": null
+      },
+      {
+        "id": "scene_4",
+        "setting": "lifeboat_station",
+        "focal_object": "lifeboat",
+        "action": "swing_davit",
+        "shot": "shoulder",
+        "state_change": "swing_davit:start-to-consequence",
+        "source_excerpt_id": null
+      },
+      {
+        "id": "scene_5",
+        "setting": "capsize_section",
+        "focal_object": "hull_section",
+        "action": "lose_stability",
+        "shot": "section_side",
+        "state_change": "lose_stability:start-to-consequence",
+        "source_excerpt_id": null
+      },
+      {
+        "id": "scene_6",
+        "setting": "seabed",
+        "focal_object": "wreck",
+        "action": "settle",
+        "shot": "descending",
+        "state_change": "settle:start-to-consequence",
+        "source_excerpt_id": null
+      },
+      {
+        "id": "scene_7",
+        "setting": "inquiry_archive",
+        "focal_object": "evidence_board",
+        "action": "compare_evidence",
+        "shot": "tabletop",
+        "state_change": "compare_evidence:start-to-consequence",
+        "source_excerpt_id": null
+      }
+    ]
+  },
+  "cinematic": {
+    "world": "stormship_inquiry",
+    "stage_index": 7,
+    "setting": "inquiry_archive",
+    "focal_object": "evidence_board",
+    "action": "compare_evidence",
+    "shot": "tabletop",
+    "state_change": "compare_evidence:start-to-consequence",
+    "progress": 0.9996767397280092,
+    "scene": 8,
+    "camera_fov": 43,
+    "camera_position": [
+      0.22485453287760415,
+      4.300121866230534,
+      4.0501454671223955
+    ],
+    "originalVoice": false
+  },
+  "visual_style": "original",
+  "review": true,
+  "story_sha256": "ddb76808d37667221573433c82def1da6d608ff4c4a374efa1a999977bd48c93",
+  "branding": {
+    "profile": "horror",
+    "logoApplied": false
+  },
+  "errors": []
+}
