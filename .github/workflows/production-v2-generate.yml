@@ -36,7 +36,10 @@
         "PYTHONUNBUFFERED": "1",
         "CANDIDATE_RUN": "${{ github.run_id }}-${{ github.run_attempt }}",
         "GITHUB_TOKEN": "${{ github.token }}",
-        "PRODUCTION_PUBLICATION_DATE": "2026-11-02"
+        "PRODUCTION_PUBLICATION_DATE": "2026-11-02",
+        "GEMINI_API_KEY": "${{ secrets.GEMINI_API_KEY }}",
+        "GEMINI_TEXT_API_KEY": "${{ secrets.GEMINI_TEXT_API_KEY || secrets.GEMINI_API_KEY }}",
+        "GEMINI_TTS_API_KEY": "${{ secrets.GEMINI_TTS_API_KEY || secrets.GEMINI_API_KEY }}"
       },
       "steps": [
         {
