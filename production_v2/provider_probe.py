@@ -13,6 +13,23 @@ def main():
     request=json.loads(Path('.github/provider-probe-request.json').read_text())
     profile=request['profile']
     repository,run,attempt,source=context(profile)
+    if request.get('inspect_run'):
+        from .diagnose import Reader
+        import io,zipfile
+        reader=Reader(repository,os.environ['GITHUB_TOKEN'])
+        target=str(int(request['inspect_run']))
+        items=reader.json('/actions/runs/'+target+'/artifacts').get('artifacts',[])
+        matches=[a for a in items if a['name']==profile+'-v2-fresh-candidate-'+target and not a.get('expired')]
+        if len(matches)!=1:raise ValueError('Exact retained generation artifact required')
+        with zipfile.ZipFile(io.BytesIO(reader.archive('/actions/artifacts/'+str(matches[0]['id'])+'/zip'))) as archive:
+            names=[n for n in archive.namelist() if n.endswith('/last-draft.json')]
+            if len(names)!=1:raise ValueError('One retained draft required')
+            draft=json.loads(archive.read(names[0]))
+        report={'profile':profile,'stage':'success','kind':'retained_draft_inspection','provider_requests':0,'target_run':target,
+                'draft':draft,'scene_metrics':[{'keys':list(s),'object_count':len(s.get('objects',[])),'kinds':[o.get('kind') for o in s.get('objects',[])],'words':len(s.get('narration','').split())} for s in draft.get('scenes',[])]}
+        report['status_commit']=StatusStore('.', 'codex/production-v2-diagnostics').save(run,attempt,report)
+        print(json.dumps(report,ensure_ascii=False,indent=2))
+        return
     if request.get('recover_run'):
         from .diagnose import Reader
         import io,zipfile
