@@ -1,0 +1,36 @@
+{
+  "profile": "horror",
+  "base_commit": "2255ed2f2d8099cd6d6d337f235922e54dd6ab6c",
+  "files": [
+    {
+      "path": "state/cinematic_budget.json",
+      "sha256": "7978806e445915b60db65364a385973bb15346444192bc2ae28d290f7c185100"
+    },
+    {
+      "path": "state/film_topics.json",
+      "sha256": "333a648411b9a7e2a5441d6188eaa34d543dbb003d6125befc835b1ac5be48cd"
+    },
+    {
+      "path": "state/professional_topics.json",
+      "sha256": "2157452fb712b5805dc3bcb23a64fb678c2bca4b2543fe79a7297f9208a9fd88"
+    },
+    {
+      "path": "state/publication_stock.json",
+      "sha256": "4bc5a88b397021031b90527d631a7569ecc8ef38658b7a0a66899646ad4b5414"
+    },
+    {
+      "path": "state/topic_history.json",
+      "sha256": "d4406ddb3e1a596f9fee4be4691877adb769a9aa5c33d33f66798bc2781a2c81"
+    },
+    {
+      "path": "state/used_clips.json",
+      "sha256": "3524f0e462f5735d79c9451b081cfb7fb76ced49c9c3f1f4d520516d12f246da"
+    },
+    {
+      "path": "state/yt_token_last_success.json",
+      "sha256": "5cf0ba10107097d2b961aba99b45744fd5dbc111ee66c331d58c89c4b7e3547d"
+    }
+  ],
+  "state_modified": false,
+  "legacy_workflow_semantic_sha256": "74a597aa68b527ef6a30f5cab81cba761a795284c17f2a38742836dcc7a1dff0"
+}
