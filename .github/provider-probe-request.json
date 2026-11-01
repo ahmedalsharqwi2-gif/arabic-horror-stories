@@ -1,5 +1,6 @@
 {
   "profile": "horror",
-  "request_id": "resume-2026-11-01-schema-1",
-  "purpose": "Diagnose prior HTTP400 using one token-limited schema request; no production generation or publishing"
+  "request_id": "recover-probe-41348668940",
+  "recover_run": 41348668940,
+  "no_new_provider_calls": true
 }
