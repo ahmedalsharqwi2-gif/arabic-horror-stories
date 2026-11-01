@@ -1,11 +1,12 @@
 {
   "profile": "horror",
   "review_only": true,
-  "launch": "resume-retained-captain-draft-2026-11-01",
+  "launch": "final-film-for-2026-11-02-at-17-cairo",
   "no_social_posts": true,
   "source_verification_run": "41314812687",
   "source_verified_http_status": 200,
   "prior_failure": "41315039788",
   "retain_raw_drafts": true,
-  "resume_planning_run": 41349653671
+  "production_film": true,
+  "publication_date": "2026-11-02"
 }

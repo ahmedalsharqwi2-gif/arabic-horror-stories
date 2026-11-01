@@ -37,7 +37,8 @@
         "GEMINI_TEXT_API_KEY": "${{ secrets.GEMINI_TEXT_API_KEY || secrets.GEMINI_API_KEY }}",
         "GEMINI_TTS_API_KEY": "${{ secrets.GEMINI_TTS_API_KEY || secrets.GEMINI_API_KEY }}",
         "CANDIDATE_RUN": "${{ github.run_id }}-${{ github.run_attempt }}",
-        "GITHUB_TOKEN": "${{ github.token }}"
+        "GITHUB_TOKEN": "${{ github.token }}",
+        "PRODUCTION_PUBLICATION_DATE": "2026-11-02"
       },
       "steps": [
         {
@@ -87,8 +88,8 @@
           }
         },
         {
-          "name": "Resume retained sourced draft, review facts, and produce one complete Charon film",
-          "run": "python - <<'PY'\nimport json,os,sys\nfrom pathlib import Path\nfrom production_v2.planning_resume import planning_resume\nfrom production_v2.generate import main\nrequest=json.loads(Path('.github/production-v2-launch.json').read_text())\nif request.get('resume_planning_run')!=41349653671:raise ValueError('Require exact retained planning run')\nsys.argv=['production_v2.generate','--profile','horror','--run-dir','.candidate-v2/run-'+os.environ['CANDIDATE_RUN'],'--ledger','.candidate-v2/shared.sqlite3','--git-state','--then-review']\nwith planning_resume('horror',request['resume_planning_run']):main()\nPY"
+          "name": "Produce one fresh final film for the retained next-day publication target",
+          "run": "python -m production_v2.generate --profile horror --run-dir \".candidate-v2/run-$CANDIDATE_RUN\" --ledger .candidate-v2/shared.sqlite3 --git-state --then-review --production"
         },
         {
           "name": "Retain narration budget and verified voice cache",
