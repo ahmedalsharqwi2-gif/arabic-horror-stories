@@ -1,0 +1,64 @@
+{
+  "name": "Finalize verified horror review without revealing its ending",
+  "on": {
+    "push": {
+      "branches": [
+        "codex/daily-professional-factory"
+      ],
+      "paths": [
+        ".github/workflows/professional-finalize-horror.yml"
+      ]
+    }
+  },
+  "permissions": {
+    "contents": "write"
+  },
+  "concurrency": {
+    "group": "professional-daily-horror",
+    "cancel-in-progress": false
+  },
+  "jobs": {
+    "finalize": {
+      "runs-on": "ubuntu-24.04",
+      "timeout-minutes": 20,
+      "steps": [
+        {
+          "uses": "actions/checkout@v4",
+          "with": {
+            "fetch-depth": 0
+          }
+        },
+        {
+          "run": "sudo apt-get update -qq\nsudo apt-get install -y ffmpeg\npython -m pip install Pillow requests beautifulsoup4 numpy"
+        },
+        {
+          "name": "Restore the already verified original movie, narration timing and review evidence",
+          "run": "git fetch origin refs/heads/codex/professional-video-40926569486\ngit fetch origin refs/heads/codex/professional-review-run-40926569486\npython - <<'PYRESTORE'\nfrom pathlib import Path\nimport subprocess\nout=Path('professional_motion/output');out.mkdir(exist_ok=True)\nfor name,path,ref in [('original-1080p.mp4','review-1080p.mp4','5213474f41d29a884b03b65f8807804ae834902b'),('verification.json','verification.json','5213474f41d29a884b03b65f8807804ae834902b'),('story.json','professional_motion/delivery/story.json','18621eaf16edbae7b3de83c4d6f579aad3f3f873'),('timing.json','professional_motion/delivery/timing.json','18621eaf16edbae7b3de83c4d6f579aad3f3f873')]:\n (out/name).write_bytes(subprocess.check_output(['git','show',ref+':'+path]))\nPYRESTORE"
+        },
+        {
+          "name": "Correct intro title and prove original audio packets are unchanged",
+          "run": "python -m professional_motion.finalize_horror_title"
+        },
+        {
+          "name": "Recheck actual final visuals and bind reviewed title to the movie",
+          "run": "python - <<'PYFINAL'\nimport hashlib,json,shutil\nfrom pathlib import Path\nfrom professional_motion.editorial import registry,save\nfrom motion_factory.quality import audit\nout=Path('professional_motion/output');delivery=Path('professional_motion/delivery');delivery.mkdir(exist_ok=True)\nshutil.copy2(out/'final-story.json',delivery/'story.json');story=json.loads((delivery/'story.json').read_text());timing=json.loads((out/'timing.json').read_text());timing['story_sha256']=hashlib.sha256((delivery/'story.json').read_bytes()).hexdigest();(delivery/'timing.json').write_text(json.dumps(timing,ensure_ascii=False,indent=2));shutil.copy2(out/'review-1080p.mp4',out/'professional-review.mp4');report=json.loads((out/'final-verification.json').read_text());report['visual_gate']=audit(out/'professional-review.mp4',timing['scenes'],out/'final-visual-quality.json');(out/'verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));data=registry();episode=next(r for r in data['episodes'] if r.get('topic_key')==story['topic_key']);episode.update(story=story,title=story['title'],status='rendered',video_sha256=hashlib.sha256((out/'professional-review.mp4').read_bytes()).hexdigest());save(data)\nPYFINAL"
+        },
+        {
+          "run": "python -m professional_motion.persist_state"
+        },
+        {
+          "run": "python -m professional_motion.deliver_media"
+        },
+        {
+          "name": "Deliver transparent final metadata and review lineage",
+          "if": "always()",
+          "run": "python -m professional_motion.review_evidence",
+          "env": {
+            "REVIEW_STAGE": "title-safe-finished",
+            "REVIEW_ONLY": "true"
+          }
+        }
+      ]
+    }
+  }
+}

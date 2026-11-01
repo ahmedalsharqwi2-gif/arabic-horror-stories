@@ -1,0 +1,14 @@
+{
+  "profile": "horror",
+  "date": "2026-10-30",
+  "production_run": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/41055885506",
+  "duration": 155.166667,
+  "sha256": "9fd01c8243a510deda3bd582c39418533494f9438cb50e0f43f279e92bde47dd",
+  "download": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/auto-publish-daily-2026-10-30/science-video-daily-2026-10-30.mp4",
+  "publication_status": "scheduled",
+  "publication_local_time": "17:00 Africa/Cairo",
+  "verified_destinations": 3,
+  "actual_provider_audit": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/raw/refs/heads/codex/professional-review-run-41061062315/professional_motion/delivery/daily-publication-audit.json",
+  "branding_applies_to_future_films": true,
+  "original_logo_installed": false
+}

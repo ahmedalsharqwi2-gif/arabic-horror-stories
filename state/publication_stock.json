@@ -1,0 +1,732 @@
+{
+  "slots": {
+    "immediate 38309524506--": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6acd52293d6121df402eecc9",
+          "due_at": "2026-10-12T21:35:28.851194Z",
+          "run_id": "38309524506",
+          "accepted_at": "2026-10-12T21:33:29.753342+00:00"
+        },
+        "instagram": {
+          "id": "6acd522aa36dd8518130abfa",
+          "due_at": "2026-10-12T21:35:28.851194Z",
+          "run_id": "38309524506",
+          "accepted_at": "2026-10-12T21:33:30.791236+00:00"
+        },
+        "youtube": {
+          "id": "N3DuAnnT90U",
+          "due_at": "2026-10-12T22:46:04Z",
+          "run_id": "38309524506",
+          "accepted_at": "2026-10-12T21:33:35.970022+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-12T21:33:36.061231+00:00"
+    },
+    "stock 2026-10-13 12 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6acd5d9e9f22b96ae7e54975",
+          "due_at": "2026-10-13T09:00:00Z",
+          "run_id": "38314857681",
+          "accepted_at": "2026-10-12T22:22:22.588596+00:00"
+        },
+        "instagram": {
+          "id": "6acd5d9f5229b40e8683fae3",
+          "due_at": "2026-10-13T09:00:00Z",
+          "run_id": "38314857681",
+          "accepted_at": "2026-10-12T22:22:23.345437+00:00"
+        },
+        "youtube": {
+          "id": "WBWAw2bRYqA",
+          "due_at": "2026-10-13T09:00:00Z",
+          "run_id": "38314857681",
+          "accepted_at": "2026-10-12T22:22:29.095329+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-12T22:22:29.183109+00:00"
+    },
+    "stock 2026-10-13 18 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6acd7fd25229b40e868a969b",
+          "due_at": "2026-10-13T15:00:00Z",
+          "run_id": "38327958685",
+          "accepted_at": "2026-10-13T00:48:18.474486+00:00"
+        },
+        "instagram": {
+          "id": "6acd7fd33d6121df40372e67",
+          "due_at": "2026-10-13T15:00:00Z",
+          "run_id": "38327958685",
+          "accepted_at": "2026-10-13T00:48:19.236418+00:00"
+        },
+        "youtube": {
+          "id": "gGnNw5ZNXaw",
+          "due_at": "2026-10-13T15:00:00Z",
+          "run_id": "38327958685",
+          "accepted_at": "2026-10-13T00:48:23.109175+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-13T00:48:23.195654+00:00"
+    },
+    "immediate 38358386966--": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6acdd6b69f22b96ae7fac17f",
+          "due_at": "2026-10-13T07:01:01.589192Z",
+          "run_id": "38358386966",
+          "accepted_at": "2026-10-13T06:59:02.575562+00:00"
+        },
+        "instagram": {
+          "id": "6acdd6b75462be2e903d1458",
+          "due_at": "2026-10-13T07:01:01.589192Z",
+          "run_id": "38358386966",
+          "accepted_at": "2026-10-13T06:59:03.423258+00:00"
+        },
+        "youtube": {
+          "id": "1aczXrOG5QQ",
+          "due_at": "2026-10-13T08:14:19Z",
+          "run_id": "38358386966",
+          "accepted_at": "2026-10-13T06:59:06.406254+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-13T06:59:06.503910+00:00"
+    },
+    "stock 2026-10-14 12 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6acdda465229b40e869a269b",
+          "due_at": "2026-10-14T09:00:00Z",
+          "run_id": "38359980646",
+          "accepted_at": "2026-10-13T07:14:14.772012+00:00"
+        },
+        "instagram": {
+          "id": "6acdda475229b40e869a26cd",
+          "due_at": "2026-10-14T09:00:00Z",
+          "run_id": "38359980646",
+          "accepted_at": "2026-10-13T07:14:15.505442+00:00"
+        },
+        "youtube": {
+          "id": "M5Fe9gHQuIM",
+          "due_at": "2026-10-14T09:00:00Z",
+          "run_id": "38359980646",
+          "accepted_at": "2026-10-13T07:14:19.191018+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-13T07:14:19.281204+00:00"
+    },
+    "stock 2026-10-14 18 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ace55b011032ccdb8be88f3",
+          "due_at": "2026-10-14T15:00:00Z",
+          "run_id": "38418483279",
+          "accepted_at": "2026-10-13T16:00:48.567351+00:00"
+        },
+        "instagram": {
+          "id": "6ace55b1d9d45db80a045dcc",
+          "due_at": "2026-10-14T15:00:00Z",
+          "run_id": "38418483279",
+          "accepted_at": "2026-10-13T16:00:49.684052+00:00"
+        },
+        "youtube": {
+          "id": "naRK9hbHcgQ",
+          "due_at": "2026-10-14T15:00:00Z",
+          "run_id": "38418483279",
+          "accepted_at": "2026-10-13T16:00:53.418854+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-13T16:00:53.511874+00:00"
+    },
+    "stock 2026-10-15 12 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ace98749d95f50fddb921b5",
+          "due_at": "2026-10-15T09:00:00Z",
+          "run_id": "38464355755",
+          "accepted_at": "2026-10-13T20:45:40.155690+00:00"
+        },
+        "instagram": {
+          "id": "6ace987448ff980feab2e81e",
+          "due_at": "2026-10-15T09:00:00Z",
+          "run_id": "38464355755",
+          "accepted_at": "2026-10-13T20:45:41.041971+00:00"
+        },
+        "youtube": {
+          "id": "8JlCUl5ITQM",
+          "due_at": "2026-10-15T09:00:00Z",
+          "run_id": "38464355755",
+          "accepted_at": "2026-10-13T20:45:43.819863+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-13T20:45:43.907058+00:00"
+    },
+    "stock 2026-10-16 12 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6acfa73995350f80b3548411",
+          "due_at": "2026-10-16T09:00:00Z",
+          "run_id": "38590422256",
+          "accepted_at": "2026-10-14T16:00:57.597970+00:00"
+        },
+        "instagram": {
+          "id": "6acfa73a3defc2eb353d1977",
+          "due_at": "2026-10-16T09:00:00Z",
+          "run_id": "38590422256",
+          "accepted_at": "2026-10-14T16:00:58.802821+00:00"
+        },
+        "youtube": {
+          "id": "ArGZKDwUHWE",
+          "due_at": "2026-10-16T09:00:00Z",
+          "run_id": "38590422256",
+          "accepted_at": "2026-10-14T16:01:03.226618+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-14T16:01:03.316673+00:00"
+    },
+    "stock 2026-10-15 18 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6acfd4bbbf9402436860d8f4",
+          "due_at": "2026-10-15T15:00:00Z",
+          "run_id": "38619881175",
+          "accepted_at": "2026-10-14T19:15:07.138729+00:00"
+        },
+        "instagram": {
+          "id": "6acfd4bc0b61877d1315d6d6",
+          "due_at": "2026-10-15T15:00:00Z",
+          "run_id": "38619881175",
+          "accepted_at": "2026-10-14T19:15:08.643815+00:00"
+        },
+        "youtube": {
+          "id": "BEMrK6zB-cw",
+          "due_at": "2026-10-15T15:00:00Z",
+          "run_id": "38619881175",
+          "accepted_at": "2026-10-14T19:15:11.240285+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-14T19:15:11.318504+00:00"
+    },
+    "stock 2026-10-16 18 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ad00417097897a778dc083b",
+          "due_at": "2026-10-16T15:00:00Z",
+          "run_id": "38646392716",
+          "accepted_at": "2026-10-14T22:37:12.052480+00:00"
+        },
+        "instagram": {
+          "id": "6ad00418097897a778dc0865",
+          "due_at": "2026-10-16T15:00:00Z",
+          "run_id": "38646392716",
+          "accepted_at": "2026-10-14T22:37:12.858697+00:00"
+        },
+        "youtube": {
+          "id": "nvHc-j2U0rw",
+          "due_at": "2026-10-16T15:00:00Z",
+          "run_id": "38646392716",
+          "accepted_at": "2026-10-14T22:37:19.700241+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-14T22:37:19.791226+00:00"
+    },
+    "stock 2026-10-17 12 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ad0250244227f52a8c1325b",
+          "due_at": "2026-10-17T09:00:00Z",
+          "run_id": "38661073193",
+          "accepted_at": "2026-10-15T00:57:39.109047+00:00"
+        },
+        "instagram": {
+          "id": "6ad02503ba6d896f9b520c58",
+          "due_at": "2026-10-17T09:00:00Z",
+          "run_id": "38661073193",
+          "accepted_at": "2026-10-15T00:57:39.974509+00:00"
+        },
+        "youtube": {
+          "id": "qHJugvVyG80",
+          "due_at": "2026-10-17T09:00:00Z",
+          "run_id": "38661073193",
+          "accepted_at": "2026-10-15T00:57:43.920289+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-15T00:57:44.009059+00:00"
+    },
+    "stock 2026-10-17 18 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ad06b0f8b6f374826e085a3",
+          "due_at": "2026-10-17T15:00:00Z",
+          "run_id": "38686287723",
+          "accepted_at": "2026-10-15T05:56:31.271610+00:00"
+        },
+        "instagram": {
+          "id": "6ad06b0ff702624d49ef3f90",
+          "due_at": "2026-10-17T15:00:00Z",
+          "run_id": "38686287723",
+          "accepted_at": "2026-10-15T05:56:32.019970+00:00"
+        },
+        "youtube": {
+          "id": "i0fYZEMP2Ok",
+          "due_at": "2026-10-17T15:00:00Z",
+          "run_id": "38686287723",
+          "accepted_at": "2026-10-15T05:56:35.451241+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-15T05:56:35.536133+00:00"
+    },
+    "stock 2026-10-18 12 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ad0aa60b324123738c5a611",
+          "due_at": "2026-10-18T09:00:00Z",
+          "run_id": "38718267472",
+          "accepted_at": "2026-10-15T10:26:40.454934+00:00"
+        },
+        "instagram": {
+          "id": "6ad0aa61670326712d1cd1b0",
+          "due_at": "2026-10-18T09:00:00Z",
+          "run_id": "38718267472",
+          "accepted_at": "2026-10-15T10:26:41.563669+00:00"
+        },
+        "youtube": {
+          "id": "87-vRJ9UhBc",
+          "due_at": "2026-10-18T09:00:00Z",
+          "run_id": "38718267472",
+          "accepted_at": "2026-10-15T10:26:47.382043+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-15T10:26:47.472114+00:00"
+    },
+    "stock 2026-10-18 18 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ad0ef484e51e6e9857921b9",
+          "due_at": "2026-10-18T15:00:00Z",
+          "run_id": "38757677287",
+          "accepted_at": "2026-10-15T15:20:40.513191+00:00"
+        },
+        "instagram": {
+          "id": "6ad0ef49a14082e1861ba4b2",
+          "due_at": "2026-10-18T15:00:00Z",
+          "run_id": "38757677287",
+          "accepted_at": "2026-10-15T15:20:41.354752+00:00"
+        },
+        "youtube": {
+          "id": "7Uli9VKfpP8",
+          "due_at": "2026-10-18T15:00:00Z",
+          "run_id": "38757677287",
+          "accepted_at": "2026-10-15T15:20:44.944845+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-15T15:20:45.032099+00:00"
+    },
+    "stock 2026-10-19 12 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ad13633b4510d553d7738bf",
+          "due_at": "2026-10-19T09:00:00Z",
+          "run_id": "38800464249",
+          "accepted_at": "2026-10-15T20:23:15.675248+00:00"
+        },
+        "instagram": {
+          "id": "6ad13634b81b8f98548d54e8",
+          "due_at": "2026-10-19T09:00:00Z",
+          "run_id": "38800464249",
+          "accepted_at": "2026-10-15T20:23:16.544169+00:00"
+        },
+        "youtube": {
+          "id": "0YaRvWiThhE",
+          "due_at": "2026-10-19T09:00:00Z",
+          "run_id": "38800464249",
+          "accepted_at": "2026-10-15T20:23:19.633696+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-15T20:23:19.722570+00:00"
+    },
+    "stock 2026-10-19 18 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ad15951a82f34dbe1362a4a",
+          "due_at": "2026-10-19T15:00:00Z",
+          "run_id": "38817453233",
+          "accepted_at": "2026-10-15T22:53:05.120629+00:00"
+        },
+        "instagram": {
+          "id": "6ad159519597cd16625729f7",
+          "due_at": "2026-10-19T15:00:00Z",
+          "run_id": "38817453233",
+          "accepted_at": "2026-10-15T22:53:05.880566+00:00"
+        },
+        "youtube": {
+          "id": "ZDap1wYBhOE",
+          "due_at": "2026-10-19T15:00:00Z",
+          "run_id": "38817453233",
+          "accepted_at": "2026-10-15T22:53:14.695336+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-15T22:53:14.800268+00:00"
+    },
+    "stock 2026-10-20 12 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ad17699a82f34dbe13d269a",
+          "due_at": "2026-10-20T09:00:00Z",
+          "run_id": "38831087702",
+          "accepted_at": "2026-10-16T00:58:01.305230+00:00"
+        },
+        "instagram": {
+          "id": "6ad1769a4ed7d375a43badba",
+          "due_at": "2026-10-20T09:00:00Z",
+          "run_id": "38831087702",
+          "accepted_at": "2026-10-16T00:58:02.410561+00:00"
+        },
+        "youtube": {
+          "id": "1znZP1OxGGc",
+          "due_at": "2026-10-20T09:00:00Z",
+          "run_id": "38831087702",
+          "accepted_at": "2026-10-16T00:58:09.178081+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-16T00:58:09.263793+00:00"
+    },
+    "stock 2026-10-20 18 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ad1b69c9597cd16626a754f",
+          "due_at": "2026-10-20T15:00:00Z",
+          "run_id": "38854412720",
+          "accepted_at": "2026-10-16T05:31:08.559429+00:00"
+        },
+        "instagram": {
+          "id": "6ad1b69dfb64fffcf1b71490",
+          "due_at": "2026-10-20T15:00:00Z",
+          "run_id": "38854412720",
+          "accepted_at": "2026-10-16T05:31:09.444791+00:00"
+        },
+        "youtube": {
+          "id": "JwM8BzcuNSE",
+          "due_at": "2026-10-20T15:00:00Z",
+          "run_id": "38854412720",
+          "accepted_at": "2026-10-16T05:31:14.154890+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-16T05:31:14.242768+00:00"
+    },
+    "stock 2026-10-21 12 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ad29e9487c49357709cf36c",
+          "due_at": "2026-10-21T09:00:00Z",
+          "run_id": "38970965447",
+          "accepted_at": "2026-10-16T22:00:52.651107+00:00"
+        },
+        "instagram": {
+          "id": "6ad29e951c7e49ea4c26c31a",
+          "due_at": "2026-10-21T09:00:00Z",
+          "run_id": "38970965447",
+          "accepted_at": "2026-10-16T22:00:53.687130+00:00"
+        },
+        "youtube": {
+          "id": "g6jGTmjz4qY",
+          "due_at": "2026-10-21T09:00:00Z",
+          "run_id": "38970965447",
+          "accepted_at": "2026-10-16T22:00:58.531397+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-16T22:00:58.620049+00:00"
+    },
+    "stock 2026-10-21 18 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ad2be848ac6cfe54422001a",
+          "due_at": "2026-10-21T15:00:00Z",
+          "run_id": "38984200208",
+          "accepted_at": "2026-10-17T00:17:08.323238+00:00"
+        },
+        "instagram": {
+          "id": "6ad2be848ac6cfe54422005c",
+          "due_at": "2026-10-21T15:00:00Z",
+          "run_id": "38984200208",
+          "accepted_at": "2026-10-17T00:17:09.099472+00:00"
+        },
+        "youtube": {
+          "id": "XThkaOonHko",
+          "due_at": "2026-10-21T15:00:00Z",
+          "run_id": "38984200208",
+          "accepted_at": "2026-10-17T00:17:12.922290+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-17T00:17:13.023346+00:00"
+    },
+    "stock 2026-10-22 17 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ad8d9b4d7ec68457b6b12ce",
+          "due_at": "2026-10-22T14:00:00Z",
+          "run_id": "39623457645",
+          "accepted_at": "2026-10-21T15:26:44.342780+00:00"
+        },
+        "instagram": {
+          "id": "6ad8d9b5528a4622a8525e71",
+          "due_at": "2026-10-22T14:00:00Z",
+          "run_id": "39623457645",
+          "accepted_at": "2026-10-21T15:26:45.294887+00:00"
+        },
+        "youtube": {
+          "id": "soz5Q1gLHAI",
+          "due_at": "2026-10-22T14:00:00Z",
+          "run_id": "39623457645",
+          "accepted_at": "2026-10-21T15:26:47.984390+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-21T15:26:48.077787+00:00"
+    },
+    "immediate approved-photo-v3-horror": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ad946fdcf322174cebb68ea",
+          "due_at": "2026-10-21T23:15:00Z",
+          "run_id": "39691195356",
+          "accepted_at": "2026-10-21T23:13:01.224642+00:00"
+        },
+        "instagram": {
+          "id": "6ad946fd9b7af5217d170a04",
+          "due_at": "2026-10-21T23:15:00Z",
+          "run_id": "39691195356",
+          "accepted_at": "2026-10-21T23:13:01.863810+00:00"
+        },
+        "youtube": {
+          "id": "kSamnxZ_Urc",
+          "due_at": "2026-10-22T14:00:00Z",
+          "run_id": "39691195356",
+          "accepted_at": "2026-10-21T23:13:05.114292+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-21T23:13:05.115227+00:00"
+    },
+    "immediate approved-horror-40933433482": {
+      "confirmed": true,
+      "receipts": {
+        "instagram": {
+          "id": "6ae39fcc98c11c76e3750380",
+          "due_at": "2026-10-29T19:36:35Z",
+          "run_id": "40940990314",
+          "accepted_at": "2026-10-29T19:34:36.559195+00:00"
+        },
+        "facebook": {
+          "id": "6ae39fcd98c11c76e37503c0",
+          "due_at": "2026-10-29T19:36:35Z",
+          "run_id": "40940990314",
+          "accepted_at": "2026-10-29T19:34:37.503250+00:00"
+        },
+        "youtube": {
+          "id": "6ae39fce02b1fcfd3e15f881",
+          "due_at": "2026-10-29T19:36:35Z",
+          "run_id": "40940990314",
+          "accepted_at": "2026-10-29T19:34:38.342233+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "confirmed_at": "2026-10-29T19:34:38.344157+00:00"
+    },
+    "stock 2026-10-30 17 Cairo": {
+      "confirmed": true,
+      "receipts": {
+        "facebook": {
+          "id": "6ae491614233ff6805be1cb9",
+          "due_at": "2026-10-30T15:00:00Z",
+          "run_id": "41055885506",
+          "accepted_at": "2026-10-30T12:45:22.119451+00:00",
+          "channel_id": "6aaa853fea19ca0bde57b5f7",
+          "scheduled_at": "2026-10-30T15:00:00+00:00",
+          "status": "scheduled",
+          "verified_at": "2026-10-30T12:45:27.159608+00:00"
+        },
+        "instagram": {
+          "id": "6ae491644233ff6805be1d24",
+          "due_at": "2026-10-30T15:00:00Z",
+          "run_id": "41055885506",
+          "accepted_at": "2026-10-30T12:45:24.530818+00:00",
+          "channel_id": "6aad267dea19ca0bde778d5e",
+          "scheduled_at": "2026-10-30T15:00:00+00:00",
+          "status": "scheduled",
+          "verified_at": "2026-10-30T12:45:27.335600+00:00"
+        },
+        "youtube": {
+          "id": "6ae491663dc61ec0c2ffdd23",
+          "due_at": "2026-10-30T15:00:00Z",
+          "run_id": "41055885506",
+          "accepted_at": "2026-10-30T12:45:26.981092+00:00",
+          "channel_id": "6aaa8778ea19ca0bde57da16",
+          "scheduled_at": "2026-10-30T15:00:00+00:00",
+          "status": "scheduled",
+          "verified_at": "2026-10-30T12:45:27.520920+00:00"
+        }
+      },
+      "required_services": [
+        "facebook",
+        "instagram",
+        "youtube"
+      ],
+      "submissions": {
+        "facebook": {
+          "channel_id": "6aaa853fea19ca0bde57b5f7",
+          "scheduled_at": "2026-10-30T15:00:00Z",
+          "status": "submitting",
+          "created_at": "2026-10-30T12:45:19.605018+00:00"
+        },
+        "instagram": {
+          "channel_id": "6aad267dea19ca0bde778d5e",
+          "scheduled_at": "2026-10-30T15:00:00Z",
+          "status": "submitting",
+          "created_at": "2026-10-30T12:45:22.120606+00:00"
+        },
+        "youtube": {
+          "channel_id": "6aaa8778ea19ca0bde57da16",
+          "scheduled_at": "2026-10-30T15:00:00Z",
+          "status": "submitting",
+          "created_at": "2026-10-30T12:45:24.531919+00:00"
+        }
+      },
+      "confirmed_at": "2026-10-30T12:45:27.522222+00:00"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "removed_workflows": [
+    "charon-api-integration.yml",
+    "cinema-review.yml",
+    "correct-nyos.yml",
+    "main.yml",
+    "photo-motion.yml",
+    "portrait-quality-probe.yml",
+    "reference-quality-probe.yml",
+    "renew-topic-bank.yml",
+    "review-inspect.yml",
+    "review-sample.yml",
+    "sound-review.yml"
+  ],
+  "retired_direct_entrypoints": [
+    "scripts/assemble_video.py",
+    "scripts/cinematic_production.py",
+    "scripts/finish_audio_review.py",
+    "scripts/refresh_approved_sample.py",
+    "photo_motion/engine.py",
+    "scripts/hybrid_vertical_pipeline.py",
+    "scripts/publish_buffer.py",
+    "scripts/publish_youtube_direct.py",
+    "film_factory/publish.py",
+    "scripts/portrait_quality_probe.py"
+  ],
+  "profile": "horror"
+}

@@ -1,0 +1,304 @@
+{
+  "days": {
+    "2026-10-09": {
+      "estimated_usd": 0,
+      "episodes": {
+        "75f7f7895047dad1ecd93764": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 7
+        },
+        "dcc1854fbc8c0bfb14c3d4ea": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 12
+        },
+        "634719a0a1f6b1e3c1636934": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 5
+        },
+        "fececa353ece87e11f2fc54c": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 12
+        }
+      },
+      "free_calls": 36
+    },
+    "2026-10-10": {
+      "estimated_usd": 0,
+      "episodes": {
+        "66d789058e64d5e40e31e099": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 40
+        },
+        "d1dadf344519e3ff44e360dd": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 37
+        },
+        "bad5ca1a31265218a06e9839": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 18
+        },
+        "94b5fc6c3c0b3590e2733ebb": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 38
+        },
+        "1410de1083e0b6c9de70e098": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 21
+        }
+      },
+      "free_calls": 154
+    },
+    "2026-10-11": {
+      "estimated_usd": 0,
+      "episodes": {
+        "2edfe269b7f04bc0d9ae0d3b": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 80
+        },
+        "69bb72c71971e10249dc6937": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 42
+        },
+        "83b4d213af57d33dd2c6d695": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 64
+        },
+        "70baa6e54bbc7d2dce723e2e": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 40
+        },
+        "91b402fe3cd9e8a8cfe79659": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 14
+        },
+        "474bec266e8698ea02903dab": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 53
+        },
+        "046385702427b5dbcc0f150a": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 26
+        },
+        "71be84bed9f8973cb6f5d1ef": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 69
+        },
+        "dd40d3da7eafb4665c22532b": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 36
+        },
+        "30aa603615af01747fb63b86": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 80
+        },
+        "2553d6dbb96b6e2e6973081c": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 83
+        },
+        "fc177944ececcdd0c1630600": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 38
+        }
+      },
+      "free_calls": 625
+    },
+    "2026-10-12": {
+      "estimated_usd": 0,
+      "episodes": {
+        "cee1fca74f0965d697e8c804": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 27
+        }
+      },
+      "free_calls": 27
+    },
+    "2026-10-13": {
+      "estimated_usd": 0,
+      "episodes": {
+        "9b54b8f5a17d019330160414": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 46
+        },
+        "04d93d352a9ac456a3875d39": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 28
+        },
+        "e249d930c443eedb2075db69": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 32
+        },
+        "9dc278eac3364c7bdd56986b": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 33
+        },
+        "6b164a357204f0b54a32e20a": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 24
+        },
+        "f2d18c494fd0446feb2b45df": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 73
+        },
+        "cc588b637fa2d582d73308b1": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 4
+        }
+      },
+      "free_calls": 240
+    },
+    "2026-10-14": {
+      "estimated_usd": 0,
+      "episodes": {
+        "dd96b9993b16d272b2b3fd60": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 151
+        },
+        "cefeac7e6fdce0e0f8c0c102": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 89
+        }
+      },
+      "free_calls": 240
+    },
+    "2026-10-15": {
+      "estimated_usd": 0,
+      "episodes": {
+        "437d5ae79728bd2734ceb1f2": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 63
+        },
+        "d0ea313c759b3910a17420e7": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 59
+        },
+        "786566f2085e04531d058187": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 61
+        },
+        "5a352d401b63f331f8fdc911": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 42
+        },
+        "9f148ca17c4194caeb87494d": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 15
+        }
+      },
+      "free_calls": 240
+    },
+    "2026-10-16": {
+      "estimated_usd": 0,
+      "episodes": {
+        "2a7d78cec1d4cd0b800c5e0c": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 66
+        },
+        "c96f4a6ef6df321d030ed623": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 31
+        },
+        "57f642ba64bcd867d441da00": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 67
+        }
+      },
+      "free_calls": 164
+    },
+    "2026-10-17": {
+      "estimated_usd": 0,
+      "episodes": {
+        "8f7c7a06ac4045779d8f8fa9": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 55
+        },
+        "7127be3cc82272721f4433f3": {
+          "estimated_usd": 0,
+          "calls": 0,
+          "reservations": [],
+          "free_calls": 56
+        }
+      },
+      "free_calls": 111
+    }
+  }
+}

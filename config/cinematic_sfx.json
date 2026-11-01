@@ -1,0 +1,7 @@
+{
+  "wind": null,
+  "footsteps": "assets/sfx/horror_distant_footsteps.mp3",
+  "door": null,
+  "water": null,
+  "impact": "assets/sfx/horror_reveal_hit.mp3"
+}

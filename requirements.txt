@@ -1,0 +1,14 @@
+google-genai
+requests
+google-auth
+google-auth-httplib2
+google-api-python-client
+faster-whisper
+pytrends>=4.9.2
+urllib3>=1.26,<2.0
+Pillow>=10.0
+
+av<19
+num2words>=0.5.14,<0.6
+stable-ts>=2.18,<3
+numpy>=1.26

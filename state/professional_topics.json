@@ -1,0 +1,736 @@
+{
+  "version": 2,
+  "episodes": [
+    {
+      "slot": "review-40787353327",
+      "topic_key": "mary-celeste-1872",
+      "canonical_subject": "mary-celeste-1872",
+      "title": "ماري سيليست: السفينة رجعت.. والناس؟",
+      "url": "https://www.smithsonianmag.com/history/abandoned-ship-the-mary-celeste-174488104/",
+      "status": "rendered",
+      "story": {
+        "title": "ماري سيليست: السفينة رجعت.. والناس؟",
+        "canonical_subject": "mary-celeste-1872",
+        "suitable": true,
+        "facts": [
+          "The British brig Dei Gratia spotted the Mary Celeste adrift on December 5, 1872",
+          "The ship had a six-month supply of food and water but no crew on board",
+          "Modern investigations used historical weather data and modern maritime technology to study the drift"
+        ],
+        "milestones": [
+          "November 7, 1872",
+          "December 5, 1872",
+          "1884"
+        ],
+        "scenes": [
+          {
+            "id": "scene-1",
+            "label": "سفينة من غير طاقم",
+            "visual_mode": "hero",
+            "narration": "تخيل سفينة ماشية في البحر، والأكل والميه لسه موجودين، بس مفيش حد عليها. دي حكاية ماري سيليست.",
+            "labels": [],
+            "evidence_quote": "and water—but not a soul to consume it. Thus was born one of the most"
+          },
+          {
+            "id": "scene-2",
+            "label": "رحلة ماكملتش",
+            "visual_mode": "route",
+            "narration": "السفينة دي خرجت من نيويورك، ووجهتها كانت جنوة في إيطاليا. لكن اللي حصل لطاقمها فضل لغز.",
+            "labels": [],
+            "evidence_quote": "that the unguided vessel was the Mary Celeste , which had left New York City"
+          },
+          {
+            "id": "scene-3",
+            "label": "اكتشاف في الأطلسي",
+            "visual_mode": "hero",
+            "narration": "سفينة تانية لقت ماري سيليست تايهة في الأطلسي. هي مااختفتش تحت الميه، اللي اختفى كان الناس.",
+            "labels": [],
+            "evidence_quote": "a ship adrift in the choppy seas. Capt. David Morehouse was taken aback to discover"
+          },
+          {
+            "id": "scene-4",
+            "label": "سجلات وأسئلة",
+            "visual_mode": "timeline",
+            "narration": "سجل الرحلة بيساعد الباحثين يتتبعوا الطريق. بس السجل لوحده مش بيقول إيه اللي خلّى الطاقم يمشي.",
+            "labels": [],
+            "evidence_quote": "had been tossed about, and the crewmen's belongings were still in their quarters. The ship's"
+          },
+          {
+            "id": "scene-5",
+            "label": "إعادة تتبع الرحلة",
+            "visual_mode": "research",
+            "narration": "باحثين رجعوا لبيانات الطقس ومسار السفينة، عشان يحاولوا يفهموا الرحلة. ده بحث بعد الواقعة، مش شهادة عيان.",
+            "labels": [],
+            "evidence_quote": "says. Documentarian Anne MacGregor and oceanographer Phil Richardson used historical weather data to plot the"
+          },
+          {
+            "id": "scene-6",
+            "label": "مضخة مفككة",
+            "visual_mode": "pump",
+            "narration": "على السفينة لقوا مضخة مفككة وميه في القاع. الرسم ده توضيحي للمضخة، مش صورة للمعدة الأصلية.",
+            "labels": [],
+            "evidence_quote": "only lifeboat was missing, and one of its two pumps had been disassembled. Three and"
+          },
+          {
+            "id": "scene-7",
+            "label": "فرضيات من غير حسم",
+            "visual_mode": "papers",
+            "narration": "تفاصيل زي دي فتحت باب لتفسيرات مختلفة. بس وجود تفسير محتمل مش معناه إننا عرفنا السبب بشكل قاطع.",
+            "labels": [],
+            "evidence_quote": "the Mary Celeste ? Through the decades, a lack of hard facts has only spurred"
+          },
+          {
+            "id": "scene-8",
+            "label": "السفينة رجعت.. والناس؟",
+            "visual_mode": "hero",
+            "narration": "الغريب إن السفينة اتلاقت وهي عايمة، لكن مصير طاقمها فضل مجهول. هنا بالذات، السؤال أقوى من أي إجابة سهلة.",
+            "labels": [],
+            "evidence_quote": "durable mysteries in nautical history: What happened to the ten people who had sailed aboard"
+          }
+        ],
+        "profile": "horror",
+        "series": "ملفات غامضه",
+        "visual_family": "maritime",
+        "variant": "atlantic",
+        "topic_key": "mary-celeste-1872",
+        "source": {
+          "url": "https://www.smithsonianmag.com/history/abandoned-ship-the-mary-celeste-174488104/",
+          "publisher": "Smithsonian Magazine"
+        },
+        "fiction": false,
+        "documented": true,
+        "editorial_review": {
+          "supported": true,
+          "novel": true,
+          "issues": []
+        },
+        "revision": "source-checked narration and topic-specific authored visual modes"
+      },
+      "reserved_at": "2026-10-28T23:27:02.578092+00:00",
+      "video_sha256": "e479c521979e67b1c2d8d1db7410e1f1f264bc495874596cd7dba0141373c196"
+    },
+    {
+      "slot": "review-40845205098",
+      "topic_key": "fiction-873b4fd6856e1995",
+      "canonical_subject": "repeating-apartment-stairwell-mirror-trap",
+      "title": "الدور الرابع.. الباب اللي مش بيرجعني البيت",
+      "plot_signature": "A man climbs a repeating apartment stairwell, notices a delayed mirror reflection, enters what he thinks is a safe open apartment, only to realize the apartment is a trap inside the loop, ending face-to-face with his own grinning reflection.",
+      "fiction": true,
+      "status": "scheduled",
+      "story": {
+        "title": "الدور الرابع.. الباب اللي مش بيرجعني البيت",
+        "canonical_subject": "repeating-apartment-stairwell-mirror-trap",
+        "suitable": true,
+        "facts": [],
+        "milestones": [],
+        "scenes": [
+          {
+            "id": "scene_1",
+            "label": "الدور الرابع",
+            "narration": "طلعت سلم العمارة بعد نص الليل، وأنا سامع صوت رجلي بيرد من فوق. وقفت. الصوت كمل درجتين لوحده، وبعدين سكت. قدامي كان باب الدور الرابع، بنفس الخدش الطويل اللي جنب المقبض. الخدش ده أنا عارفه كويس.",
+            "labels": [],
+            "visual_mode": "stairs",
+            "scare_phrase": "الصوت كمل درجتين لوحده",
+            "clock_motion": "none"
+          },
+          {
+            "id": "scene_2",
+            "label": "الانعكاس استنى",
+            "narration": "على بسطة السلم كانت فيه مراية قديمة. قربت أصلح ياقة القميص، ورفعت إيدي الشمال. اللي في المراية ما اتحركش. فضلت إيده تحت، رغم إن إيدي قدام وشي. وبعد ثانية، رفعها ببطء، وأنا كنت نزلتها خلاص.",
+            "labels": [],
+            "visual_mode": "mirror",
+            "scare_phrase": "اللي في المراية ما اتحركش",
+            "clock_motion": "none"
+          },
+          {
+            "id": "scene_3",
+            "label": "السلم بيرجعني",
+            "narration": "ما استنتش أفهم. طلعت بسرعة، وعديت بسطة وبسطة. بس الباب اللي قابلني كان باب الدور الرابع، بنفس الخدش جنب المقبض. نزلت بدل ما أطلع. لقيته تاني. المرة دي، سمعت حركة المقبض من جوه، قبل ما أقرب.",
+            "labels": [],
+            "visual_mode": "stairs",
+            "scare_phrase": "سمعت حركة المقبض من جوه",
+            "clock_motion": "none"
+          },
+          {
+            "id": "scene_4",
+            "label": "باب موارب",
+            "narration": "باب شقتي ظهر في آخر الممر، موارب زي ما بسيبه ساعات. كنت عايز أي حاجة مألوفة، فدخلت وقفلت ورايا. أول ما القفل عمل تكته، صوت السلم اختفى. حتى صوت الشارع اختفى. المكان بقى ساكت بطريقة توجع الودان.",
+            "labels": [],
+            "visual_mode": "door",
+            "scare_phrase": "حتى صوت الشارع اختفى",
+            "clock_motion": "none"
+          },
+          {
+            "id": "scene_5",
+            "label": "مش شقتي",
+            "narration": "مديت إيدي أدور على مفتاح النور. مفيش مفتاح. ومفيش كنبة، ولا ترابيزة، ولا أي حاجة من شقتي. قدامي نفس الممر الطويل. وفي آخره، نفس باب الدور الرابع. بس الخدش المرة دي كان من الناحية اللي أنا واقف فيها.",
+            "labels": [],
+            "visual_mode": "hall",
+            "scare_phrase": "الخدش المرة دي كان من الناحية",
+            "clock_motion": "none"
+          },
+          {
+            "id": "scene_6",
+            "label": "الساعة ساكتة",
+            "narration": "فوق الباب ساعة قديمة، عقاربها واقفة. مع كده، كنت سامع تكة منتظمة من ورا الباب. قربت ودني، فالتكة وقفت. بعدين سمعت نفسي باخد نفس طويل من جوه. حبست نفسي. النفس اللي ورا الباب كمل عادي.",
+            "labels": [],
+            "visual_mode": "clock",
+            "scare_phrase": "النفس اللي ورا الباب كمل",
+            "clock_motion": "stopped"
+          },
+          {
+            "id": "scene_7",
+            "label": "حد مستنيني",
+            "narration": "رجعت لورا واحدة واحدة. في آخر الممر كان فيه خيال واقف، ملامحه مش باينة. ما كانش بيجري ورايا، ولا بيقرب. كان مستني. كل ما أبعد عنه، ألاقي المراية أقرب لوشي. وكأن الممر كله بيزقني ناحيتها.",
+            "labels": [],
+            "visual_mode": "hall",
+            "scare_phrase": "كان مستني",
+            "clock_motion": "none"
+          },
+          {
+            "id": "scene_8",
+            "label": "مين بيقلد مين؟",
+            "narration": "بصيت في المراية عشان أعرف هو ورايا ولا لأ. اللي جواها رفع إيده الشمال. أنا ما كنتش رفعتها. حاولت أثبت دراعي، بس إيدي طلعت لوحدها وراه. ساعتها فهمت: أنا مش اللي واقف قدام المراية. أنا اللي بقيت الانعكاس.",
+            "labels": [],
+            "visual_mode": "mirror",
+            "scare_phrase": "أنا اللي بقيت الانعكاس",
+            "clock_motion": "none"
+          }
+        ],
+        "hashtags": [
+          "الدور_الرابع",
+          "المراية",
+          "سلم_العمارة",
+          "رعب_مصري"
+        ],
+        "plot_signature": "A man climbs a repeating apartment stairwell, notices a delayed mirror reflection, enters what he thinks is a safe open apartment, only to realize the apartment is a trap inside the loop, ending face-to-face with his own grinning reflection.",
+        "profile": "horror",
+        "series": "ملفات غامضه",
+        "visual_family": "haunted_interior",
+        "variant": "stairwell",
+        "topic_key": "fiction-873b4fd6856e1995",
+        "source": {
+          "kind": "original_fiction",
+          "publisher": "ملفات غامضه"
+        },
+        "fiction": true,
+        "documented": false,
+        "editorial_review": {
+          "supported": true,
+          "novel": true,
+          "issues": [],
+          "review_type": "Codex editorial review of the SAME unpublished repository-authored original plot",
+          "checks": [
+            "No invented documentary evidence",
+            "First-person events match corridor, stairs, door, stopped-clock and mirror sets",
+            "Clear Egyptian wording; coherent delayed-reflection callback",
+            "Same reserved episode, not a new duplicate subject"
+          ]
+        },
+        "editorial_revision": {
+          "original_source_run": "40845205098",
+          "original_story_sha256": "babd25198c9b9e890620089efdb4b3504c212f61769cec19e39773054c1f37f0",
+          "reviewer": "Codex",
+          "scope": "Repair awkward wording and visual contradictions in the repository draft; preserve its delayed-reflection/stairwell trap plot. Generate a completely new original narration for this revised text."
+        }
+      },
+      "reserved_at": "2026-10-29T08:53:52.660372+00:00",
+      "video_sha256": "2983697b9f56df162ff283359e3efe1d54fbbaeaf7217caf5bcaed2dc372702b",
+      "one_off_publication": {
+        "status": "accepted",
+        "approved_video_sha256": "2983697b9f56df162ff283359e3efe1d54fbbaeaf7217caf5bcaed2dc372702b",
+        "media_id": "approved-horror-40933433482",
+        "title": "ملفات غامضه | الدور الرابع.. الباب اللي مش بيرجعني البيت",
+        "receipts": {
+          "instagram": {
+            "id": "6ae39fcc98c11c76e3750380",
+            "due_at": "2026-10-29T19:36:35Z",
+            "run_id": "40940990314",
+            "accepted_at": "2026-10-29T19:34:36.559195+00:00"
+          },
+          "facebook": {
+            "id": "6ae39fcd98c11c76e37503c0",
+            "due_at": "2026-10-29T19:36:35Z",
+            "run_id": "40940990314",
+            "accepted_at": "2026-10-29T19:34:37.503250+00:00"
+          },
+          "youtube": {
+            "id": "6ae39fce02b1fcfd3e15f881",
+            "due_at": "2026-10-29T19:36:35Z",
+            "run_id": "40940990314",
+            "accepted_at": "2026-10-29T19:34:38.342233+00:00"
+          }
+        }
+      }
+    },
+    {
+      "slot": "daily-2026-10-30",
+      "topic_key": "franklin-expedition-1845",
+      "canonical_subject": "franklin-expedition-1845",
+      "title": "سفن فرانكلين: اختفاء في الجليد",
+      "url": "https://www.rmg.co.uk/stories/maritime-history/what-happened-to-erebus-terror-crew-true-story",
+      "status": "scheduled",
+      "story": {
+        "title": "سفن فرانكلين: اختفاء في الجليد",
+        "canonical_subject": "franklin-expedition-1845",
+        "suitable": true,
+        "facts": [
+          "خرجت سفينتا إتش إم إس إريبوس وإتش إم إس تيرور من إنجلترا عام 1845 للبحث عن الممر الشمالي الغربي بقيادة السير جون فرانكلين.",
+          "فقدت السفينتان ومات جميع أفراد الطاقم البالغ عددهم مئة وتسعة وعشرين فرداً في القطب الشمالي.",
+          "تركت الحملة ورقاء سجل في نقطة فيكتوري تؤكد هجر السفينتين في أبريل 1848.",
+          "أظهرت الأبحاث الحديثة وتحديداً تحليل العظام وجود نسبة عالية من الرصاص ربما بسبب علب الطعام المحفوظة."
+        ],
+        "milestones": [
+          "1845",
+          "1848",
+          "2014"
+        ],
+        "scenes": [
+          {
+            "id": "scene_1",
+            "label": "البداية من إنجلترا",
+            "narration": "في شهر مايو سنة 1845، اتحركت سفينتا HMS Erebus وHMS Terror من بريطانيا. الهدف كان البحث عن الممر الشمالي الغربي، وهو ممر بحري مهم بيربط بين المحيط الأطلسي والمحيط الهادي.",
+            "labels": [
+              "إتش إم إس إريبوس وإتش إم إس تيرور",
+              "الممر الشمالي الغربي"
+            ],
+            "visual_mode": "route",
+            "evidence_excerpt_id": 17,
+            "evidence_quote": "and Terror In May 1845 two ships, HMS Erebus and HMS Terror , sailed from"
+          },
+          {
+            "id": "scene_2",
+            "label": "رحلة القطب الشمالي",
+            "narration": "بقيادة المستكشف جون فرانكلين، السفينتين وصلوا إلى شمال كندا. في أواخر شهر يوليو، شاهدهم قارب صيد حيتان في خليج بافن وهم مستنيين الجليد يذوب عشان يبدأوا طريقهم نحو مضيق بيرينغ، ودي كانت آخر مرة حد يشوف الطاقم عايش.",
+            "labels": [
+              "جون فرانكلين",
+              "خليج بافن"
+            ],
+            "visual_mode": "weather",
+            "evidence_excerpt_id": 25,
+            "evidence_quote": "two ships were seen by a whaler in Baffin Bay, waiting for ice to clear"
+          },
+          {
+            "id": "scene_3",
+            "label": "ظروف الحياة القاسية",
+            "narration": "الرجال على السفينتين واجهوا ظروف قاسية جداً وبرد قارس بيخلي درجات الحرارة تنزل لتحت الصفر بكتير. البرد كان بيأثر على الجلد لدرجة إن نزع غطاء الوجه ممكن يسلخ الجلد واللحية، والناس كانت بتضطر تعيش في برد شديد تحت السطح.",
+            "labels": [
+              "درجات الحرارة تنزل لتحت الصفر",
+              "سلخ الجلد واللحية"
+            ],
+            "visual_mode": "pump",
+            "evidence_excerpt_id": 33,
+            "evidence_quote": "– in extreme cold, even taking a balaclava off could rip the skin and beard"
+          },
+          {
+            "id": "scene_4",
+            "label": "الجليد القاتل",
+            "narration": "السفينتين اتحصروا في الجليد قرب جزيرة كينج وليام. ضغط الكتل الجليدية الضخمة وحركة الجبال العائمة كان بيحط الطاقم في خطر مباشر ومستمر، والمؤونة الكافية لثلاث سنين بدأت تخلص مع مرور الوقت الطويل وسط العزلة.",
+            "labels": [
+              "جزيرة كينج وليام",
+              "ضغط الكتل الجليدية"
+            ],
+            "visual_mode": "wreck",
+            "evidence_excerpt_id": 106,
+            "evidence_quote": "point of King William Island, were trapped by the ice flow down the McClintock Channel."
+          },
+          {
+            "id": "scene_5",
+            "label": "مذكرة نقطة فيكتوري",
+            "narration": "في سنة 1859، ظهرت الورقة الوحيدة اللي كشفت جزء من الحقيقة. مذكرة نقطة فيكتوري وضحت إن السفينتين اتهجروا في أبريل سنة 1848 بعد ما فضلوا محشورين في الجليد سنين طويلة.",
+            "labels": [
+              "مذكرة نقطة فيكتوري",
+              "اتهجروا في أبريل"
+            ],
+            "visual_mode": "papers",
+            "evidence_excerpt_id": 117,
+            "evidence_quote": "Victory Point Note . In the margins of this standard Admiralty form was a handwritten"
+          },
+          {
+            "id": "scene_6",
+            "label": "مصير الطاقم",
+            "narration": "المية وخمسة ناجين من الطاقم بقيادة الكابتن كروزير قرروا يمشوا على رجليهم جنوباً باتجاه نهر باك. لكن الضعف بسبب نقص الفيتامينات والمرض خلى أغلبهم يموت في الطريق على الساحل الغربي للجزيرة في ظروف مرعبة.",
+            "labels": [
+              "الكابتن كروزير",
+              "نهر باك"
+            ],
+            "visual_mode": "timeline",
+            "evidence_excerpt_id": 112,
+            "evidence_quote": "April 1848. Weakened by starvation and scurvy, the 105 surviving men headed south for the"
+          },
+          {
+            "id": "scene_7",
+            "label": "أبحاث وعينات الرصاص",
+            "narration": "في الثمانينيات، رجع باحثون لفحص رفات البشر اللي لقوها على الجزيرة. التحاليل بينت إن عظام الرجال كان فيها نسب عالية جداً من عنصر الرصاص، وده رجح إن أكل العلب المحفوظة اللي اتسدت بمادة الرصاص ساهم في كارثة الطاقم.",
+            "labels": [
+              "نسب عالية جداً من عنصر الرصاص",
+              "أكل العلب المحفوظة"
+            ],
+            "visual_mode": "research",
+            "evidence_excerpt_id": 156,
+            "evidence_quote": "had been found. Through Beattie’s research it was found that the amount of lead in"
+          },
+          {
+            "id": "scene_8",
+            "label": "اكتشاف الحطام",
+            "narration": "في سنتي 2014 و2016، تم اكتشاف حطام إريبوس وتيرور في قاع البحر. الاكتشافات دي قدمت أدلة مادية جديدة من خلال آلاف القطع اللي استخرجوها لتروي قصة واحدة من أسوأ الكوارث في تاريخ الاستكشاف القطبي.",
+            "labels": [
+              "حطام إريبوس وتيرور",
+              "تاريخ الاستكشاف القطبي"
+            ],
+            "visual_mode": "evidence",
+            "evidence_excerpt_id": 170,
+            "evidence_quote": "Erebus and Terror In 2014 and 2016, the wrecks of HMS Erebus and Terror were"
+          }
+        ],
+        "hashtags": [
+          "سفن_فرانكلين",
+          "الممر_الشمالي_الغربي",
+          "تاريخ_بحري",
+          "القطب_الشمالي"
+        ],
+        "profile": "horror",
+        "series": "ملفات غامضه",
+        "visual_family": "maritime",
+        "variant": "polar",
+        "topic_key": "franklin-expedition-1845",
+        "source": {
+          "url": "https://www.rmg.co.uk/stories/maritime-history/what-happened-to-erebus-terror-crew-true-story",
+          "publisher": "Royal Museums Greenwich",
+          "title": "سفن فرانكلين: اختفاء في الجليد"
+        },
+        "fiction": false,
+        "documented": true,
+        "editorial_review": {
+          "supported": true,
+          "novel": true,
+          "issues": [],
+          "model": "gemini-3.5-flash-lite"
+        },
+        "writer_model": "gemini-3.5-flash-lite",
+        "post_edit_review": {
+          "reviewer": "Codex",
+          "scope": "Correct malformed written-out years to real source dates independently recognized in the original audio; retain narration audio byte for byte",
+          "original_story_sha256": "eb225f4534045f0810353a23c1401abbde0a4b5cbbd6f1ca21eb05dccd9aa5b6",
+          "original_audio_sha256": "2e96aaa0e07cf34b11544976d0b2a24ddbfbb3a8201f79fac99fcae4df8a02bd",
+          "changes": {
+            "ألف وكمان مية وخمسة والأربعين": "1845",
+            "ألف وكمان مية وتسعة وخمسين": "1859",
+            "ألف وكمان مية وثمانية": "1848",
+            "ألفين وكمان أربعة عشر وألفين وكمان ستة عشر": "2014 و2016",
+            "إتش إم إس إريبوس وإتش إم إس تيرور": "HMS Erebus وHMS Terror"
+          }
+        }
+      },
+      "reserved_at": "2026-10-30T12:14:01.341549+00:00",
+      "video_sha256": "9fd01c8243a510deda3bd582c39418533494f9438cb50e0f43f279e92bde47dd",
+      "due_at": "2026-10-30T15:00:00Z",
+      "receipts": {
+        "facebook": {
+          "id": "6ae491614233ff6805be1cb9",
+          "due_at": "2026-10-30T15:00:00Z",
+          "run_id": "41055885506",
+          "accepted_at": "2026-10-30T12:45:22.119451+00:00",
+          "channel_id": "6aaa853fea19ca0bde57b5f7",
+          "scheduled_at": "2026-10-30T15:00:00+00:00",
+          "status": "scheduled",
+          "verified_at": "2026-10-30T12:45:27.159608+00:00"
+        },
+        "instagram": {
+          "id": "6ae491644233ff6805be1d24",
+          "due_at": "2026-10-30T15:00:00Z",
+          "run_id": "41055885506",
+          "accepted_at": "2026-10-30T12:45:24.530818+00:00",
+          "channel_id": "6aad267dea19ca0bde778d5e",
+          "scheduled_at": "2026-10-30T15:00:00+00:00",
+          "status": "scheduled",
+          "verified_at": "2026-10-30T12:45:27.335600+00:00"
+        },
+        "youtube": {
+          "id": "6ae491663dc61ec0c2ffdd23",
+          "due_at": "2026-10-30T15:00:00Z",
+          "run_id": "41055885506",
+          "accepted_at": "2026-10-30T12:45:26.981092+00:00",
+          "channel_id": "6aaa8778ea19ca0bde57da16",
+          "scheduled_at": "2026-10-30T15:00:00+00:00",
+          "status": "scheduled",
+          "verified_at": "2026-10-30T12:45:27.520920+00:00"
+        }
+      }
+    },
+    {
+      "slot": "daily-2026-10-31",
+      "topic_key": "ss-freshfield-loss",
+      "canonical_subject": "ss-freshfield-loss",
+      "title": "فريشفيلد: رحلة الشحن المشؤومة عبر الأطلسي",
+      "url": "https://www.rmg.co.uk/stories/maritime-history/library-archive/loss-ss-freshfield",
+      "status": "reserved",
+      "story": {
+        "title": "فريشفيلد: رحلة الشحن المشؤومة عبر الأطلسي",
+        "canonical_subject": "ss-freshfield-loss",
+        "suitable": true,
+        "facts": [
+          "The cargo steamer SS Freshfield disappeared in 1905 after leaving the coast of America.",
+          "The ship was captained by David Lawson with a twenty five strong crew.",
+          "The vessel loaded timber in Mobile and Pensacola and replenished coal in Norfolk, Virginia.",
+          "The crew refused to board the ship in Virginia because the vessel was listing and covered in ice.",
+          "A Board of Trade inquiry investigated the loss of the Freshfield starting on August twenty third, 1905."
+        ],
+        "milestones": [
+          "7 February 1905",
+          "23 August 1905",
+          "17 March 1905"
+        ],
+        "scenes": [
+          {
+            "id": "scene_1",
+            "label": "سفينة الشحن فريشفيلد",
+            "narration": "سفينة الشحن فريشفيلد خرجت من الموانئ الأمريكية سنة ألف وتسعة مئة وخمسة بطاقم مكون من خمسة وعشرين فرداً. الطاقم ده واجه كابوس حقيقي في رحلة العودة عبر المحيط الأطلسي، والسفينة دي اختفت تماماً من غير ما تسيب أي اثر.",
+            "labels": [
+              "سفينة الشحن فريشفيلد"
+            ],
+            "visual_mode": "route",
+            "evidence_excerpt_id": 3,
+            "evidence_quote": "of SS Freshfield on its journey home. The SS Freshfield , captained by David Lawson"
+          },
+          {
+            "id": "scene_2",
+            "label": "مسار الشحن",
+            "narration": "المسار بدا من موبيل في ألاباما لشحن الأخشاب، وبعدين بينساكولا في فلوريدا، ووصلت السفينة لنورفوك في فرجينيا عشان إمدادات الفحم. الحركة دي وضعت السفينة في قلب ظروف قاسية ومشحونة بالمخاطر.",
+            "labels": [],
+            "visual_mode": "route",
+            "evidence_excerpt_id": 5,
+            "evidence_quote": "of timber. The ship then travelled around the coast to Pensacola in Florida , where"
+          },
+          {
+            "id": "scene_3",
+            "label": "شحنة الأخشاب",
+            "narration": "عامل الشحن في بينساكولا اعترض على طريقة رص الأخشاب القصيرة فوق بعضها عشان اعتبرها غير آمنة. الكابتن ديفيد لوسون لقى نفسه قدام ضغوط كبيرة من الشركات والمستأجرين لتفريغ الشحنة في موانئ محددة.",
+            "labels": [],
+            "visual_mode": "papers",
+            "evidence_excerpt_id": 16,
+            "evidence_quote": "’; the latter objected to shorter logs being placed on top as they were impossible"
+          },
+          {
+            "id": "scene_4",
+            "label": "رفض الطاقم",
+            "narration": "لما وصلت السفينة فرجينيا، كانت الشحنة اتحركت وتغطت بالجليد والسفينة مالت على جنبها الشمالي. البحارة رفضوا ركوب السفينة واختاروا السجن على إنهم يطلعوا في رحلة بحرية بالخطورة دي، فالكابتن اضطر يعدل وضع الشحنة.",
+            "labels": [],
+            "visual_mode": "evidence",
+            "evidence_excerpt_id": 19,
+            "evidence_quote": "ship was listing to the port side. The crew refused to board the ship ‘"
+          },
+          {
+            "id": "scene_5",
+            "label": "مخاوف الكابتن",
+            "narration": "رسائل الكابتن لوسون لمراته بيلا وضحت قلقه الشديد وخوفه من خسارة شغله لو ما التزمش بتعليمات الشركات. لوسون كتب إن السفينة دي كانت سلسلة من الكوارث، وإنه اضطر يتحرك بعد ما خفف حوالي عشرة في المية من الشحنة.",
+            "labels": [],
+            "visual_mode": "research",
+            "evidence_excerpt_id": 26,
+            "evidence_quote": "clear from his letters that Lawson was very anxious about the voyage and the state"
+          },
+          {
+            "id": "scene_6",
+            "label": "الانطلاق الأخير",
+            "narration": "السفينة فريشفيلد اتحركت أخيرًا من نورفوك يوم سبعة فبراير سنة ألف وتسعة مئة وخمسة عشان تقطع الأطلسي في الشتاء. التحقيقات أثبتت بعد كده إن نقل الأخشاب على السطح في الشتاء بيمثل خطر مضاعف.",
+            "labels": [],
+            "visual_mode": "weather",
+            "evidence_excerpt_id": 7,
+            "evidence_quote": "The Freshfield departed Norfolk on 7 February 1905 to make the return voyage across the"
+          },
+          {
+            "id": "scene_7",
+            "label": "تحقيق مجلس التجارة",
+            "narration": "مجلس التجارة فتح تحقيق رسمي في اختفاء السفينة يوم ثلاثة وعشرين أغسطس سنة ألف وتسعة مئة وخمسة. القضية دي اتذكرت كمان في نقاشات مجلس اللوردات البريطاني بخصوص خطورة شحن الأخشاب في الشتاء.",
+            "labels": [],
+            "visual_mode": "papers",
+            "evidence_excerpt_id": 9,
+            "evidence_quote": "the loss of the Freshfield opened on 23 August 1905, which, incidentally, would have been"
+          },
+          {
+            "id": "scene_8",
+            "label": "النتائج والقرارات",
+            "narration": "رغم النقاشات البرلمانية، الحملات ما قدرتش تمنع شحن الأخشاب تماماً في البداية. لكن التشريعات بعد كده عدلت قوانين خطوط الشحن البحري وحمايتها، وفضلت قصة فريشفيلد علامة واضحة على مخاطر الإبحار الشتوي.",
+            "labels": [],
+            "visual_mode": "timeline",
+            "evidence_excerpt_id": 85,
+            "evidence_quote": "the law…. Campaigners were unsuccessful in getting deck loads outlawed entirely. However, the library collection"
+          }
+        ],
+        "hashtags": [
+          "SS_Freshfield",
+          "David_Lawson",
+          "Board_of_Trade",
+          "maritime_history"
+        ],
+        "editorial_warnings": [
+          "At least two hashtags must refer to specific subjects actually discussed in this film"
+        ],
+        "profile": "horror",
+        "series": "ملفات غامضه",
+        "visual_family": "maritime",
+        "variant": "atlantic",
+        "topic_key": "ss-freshfield-loss",
+        "source": {
+          "url": "https://www.rmg.co.uk/stories/maritime-history/library-archive/loss-ss-freshfield",
+          "publisher": "Royal Museums Greenwich",
+          "title": "فريشفيلد: آخر رحلة للسفينة"
+        },
+        "fiction": false,
+        "documented": true,
+        "editorial_review": {
+          "supported": true,
+          "novel": true,
+          "issues": [],
+          "model": "gemini-3.5-flash-lite"
+        },
+        "writer_model": "gemini-3.5-flash-lite"
+      },
+      "reserved_at": "2026-10-31T11:21:39.689371+00:00"
+    },
+    {
+      "slot": "review-41198762140",
+      "topic_key": "endurance-1915",
+      "canonical_subject": "endurance-1915",
+      "title": "إنديورانس: الجليد حاصر السفينة",
+      "url": "https://www.rmg.co.uk/stories/maritime-history/sir-ernest-shackleton",
+      "status": "rendered",
+      "story": {
+        "title": "إنديورانس: الجليد حاصر السفينة",
+        "canonical_subject": "endurance-1915",
+        "suitable": true,
+        "facts": [
+          "السفينة إنديورانس حوصرت في جليد بحر ويدل في التاسع عشر من يناير عام ألف وتسعة عشر وخمسة عشر.",
+          "تم سحق السفينة تدريجياً على مدار تسعة أشهر وغرقت في السابع والعشرين من أكتوبر.",
+          "عسكر الطاقم المكون من ثمانية وعشرين رجلاً على الجليد بعد استحالة جر القوارب عبر البحر المتجمد."
+        ],
+        "milestones": [
+          "1914",
+          "1915",
+          "1916"
+        ],
+        "scenes": [
+          {
+            "id": "scene_1",
+            "label": "رحلة إنديورانس",
+            "narration": "في شهر أغسطس من عام ألف وتسعة عشر وخسمة عشر، خرج إرنست شاكلتون مع طاقمه على متن السفينة إنديورانس عشان يعبروا القطب المتجمد الجنوبي من بحر ويدل لبحر روس، في وقت كانت الحربا تقم في أوروبا، وكان التحدي ده هو آخر مغامرة كبيرة بالنسبة لهم في تلك الظروف القاسية.",
+            "labels": [
+              "إنديورانس",
+              "شاكلتون"
+            ],
+            "visual_mode": "hero",
+            "evidence_excerpt_id": 11,
+            "evidence_quote": "expedition? In 1914, in command of a party on the ship Endurance , Shackleton set"
+          },
+          {
+            "id": "scene_2",
+            "label": "الحصار الجليدي",
+            "narration": "على مدار الشهور التالية وتحديداً في التاسع عشر من يناير، حصلت اللحظة المرعبة لما حوصرت السفينة إنديورانس تماماً في وسط الجليد المتسلط لبحر ويدل، وبدأت الكتل الجليدية تحاصر الهيكل ببطء وبدون أي مخرج مرئي للنجاة من هذا الطوق الأبيض المرعب.",
+            "labels": [
+              "الجليد",
+              "بحر ويدل"
+            ],
+            "visual_mode": "weather",
+            "evidence_excerpt_id": 16,
+            "evidence_quote": "as the war was starting in Europe. On 19 January 1915, Endurance became locked in"
+          },
+          {
+            "id": "scene_3",
+            "label": "تحطم السفينة",
+            "narration": "طوال تسعة أشهر متواصلة، كان الضغط بيزيد على السفينة لحد ما اتعرضت للتهشيم التدريجي بواسطة كتل الجليد الضخمة، وانتهت اللحظة بغرق إنديورانس بالكامل في السابع والعشرين من شهر أكتوبر، مما اضطر الطاقم للنزول على سطح الجليد العائم وسط البرد القارس.",
+            "labels": [
+              "غرق",
+              "أكتوبر"
+            ],
+            "visual_mode": "wreck",
+            "evidence_excerpt_id": 18,
+            "evidence_quote": "ship was gradually crushed, finally sinking on 27 October. It proved impossible for the 28"
+          },
+          {
+            "id": "scene_4",
+            "label": "المخيم العائم",
+            "narration": "مع استحالة جر القوارب والمؤونة عبر سطح البحر المتجمد، قرر شاكلتون ورجاله الثمانية والعشرون إقامة مخيم مؤقت فوق الكتل الجليدية المتحركة، وعاشوا هناك فترة طويلة وهم بينجرفوا مع التيارات الباردة في عزلة تامة عن العالم الخارجي.",
+            "labels": [
+              "الجليد"
+            ],
+            "visual_mode": "pump",
+            "evidence_excerpt_id": 19,
+            "evidence_quote": "men to drag their boats and stores across the frozen sea, so Shackleton camped on"
+          },
+          {
+            "id": "scene_5",
+            "label": "الوصول لجزيرة الفيل",
+            "narration": "لما بدأ الجليد يتكسر تحت أقدامهم، استغل الرجال الفرصة ونزلوا بالقوارب الثلاثة في ظروف بالغة الخطورة لحد ما وصلوا لجزيرة الفيل، وهي جزيرة صخرية وجرداء تبعد أكثر من مائة ميل عن أي أرض مسكونة يمكن تطلب منها المساعدة.",
+            "labels": [
+              "جزيرة الفيل",
+              "القوارب"
+            ],
+            "visual_mode": "route",
+            "evidence_excerpt_id": 21,
+            "evidence_quote": "launched the three boats and in dangerous conditions, managed to reach Elephant Island. This rocky"
+          },
+          {
+            "id": "scene_6",
+            "label": "رحلة جيمس كيرد",
+            "narration": "عشان يلاقوا طوق نجاة حقيقي، خد شاكلتون خمسة رجال وسافروا على متن قارب جيمس كيرد لمسافة ثمان مائة ميل نحو جزيرة جورجيا الجنوبية، وقعدوا خمسة عشر يوم في البحر في رحلة شاقة ومنهكة لحد ما ظهرت قدامهم سواحل الجزيرة المقصودة.",
+            "labels": [
+              "جيمس كيرد",
+              "جورجيا الجنوبية"
+            ],
+            "visual_mode": "research",
+            "evidence_excerpt_id": 27,
+            "evidence_quote": "15 exhausting days at sea, the crew of the James Caird finally sighted South Georgia."
+          },
+          {
+            "id": "scene_7",
+            "label": "عبور الجبال",
+            "narration": "بعد الوصول للجانب غير المأهول، اضطر الثلاثي شاكلتون وتوم كرين وفرانك وورسلي لقطع تسلق خطير بمرتفعات تقارب ثلاثة آلاف قدم، ومشيوا بلا توقف لمدة ست وثلاثين ساعة عبر تضاريس جليدية وجبلية وعرة لحد ما وصلوا لمحطة صيد الحيتان في سترومنس.",
+            "labels": [
+              "سترومنس"
+            ],
+            "visual_mode": "papers",
+            "evidence_excerpt_id": 33,
+            "evidence_quote": "36 hours, covering some 40 miles over mountainous and icy terrain until they finally reached"
+          },
+          {
+            "id": "scene_8",
+            "label": "الإنقاذ الأخير",
+            "narration": "باقي أفراد الطاقم اللي استنوا في جزيرة الفيل فضلوا محاصرين لحد يوم الثلاثين من أغسطس من عام ألف وتسعة عشر وستة عشر، لما تمكن شاكلتون من الرجوع بقارب تابع للبحرية التشيلية لإنقاذهم جميعاً بعد رحلة صمود أسطورية في قلب القطب الجنوبي.",
+            "labels": [
+              "أغسطس"
+            ],
+            "visual_mode": "timeline",
+            "evidence_excerpt_id": 35,
+            "evidence_quote": "on Elephant Island had to wait longer, until 30 August 1916, but were eventually picked"
+          }
+        ],
+        "hashtags": [
+          "إنديورانس",
+          "شاكلتون",
+          "القطب_الجنوبي"
+        ],
+        "profile": "horror",
+        "series": "ملفات غامضه",
+        "visual_family": "maritime",
+        "variant": "polar",
+        "topic_key": "endurance-1915",
+        "source": {
+          "url": "https://www.rmg.co.uk/stories/maritime-history/sir-ernest-shackleton",
+          "publisher": "Royal Museums Greenwich",
+          "title": "إنديورانس: الجليد حاصر السفينة"
+        },
+        "fiction": false,
+        "documented": true,
+        "editorial_review": {
+          "supported": true,
+          "novel": true,
+          "issues": [],
+          "model": "gemini-3.5-flash-lite"
+        },
+        "writer_model": "gemini-3.5-flash-lite"
+      },
+      "reserved_at": "2026-10-31T11:55:23.354432+00:00",
+      "video_sha256": "f65206b6f8aa275272b44ef901098b528ac8e9f1b3741cfc5c374518416f993c"
+    }
+  ]
+}
