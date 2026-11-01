@@ -1,0 +1,5271 @@
+{
+  "profile": "horror",
+  "kind": "retained_alignment_inspection",
+  "target_run": "41353885073",
+  "provider_requests": 0,
+  "posts_created": false,
+  "voice_generated": false,
+  "story": {
+    "title": "العين الثالثة في غرفة الطوارئ",
+    "canonical_subject": "er-third-eye-possession",
+    "suitable": true,
+    "facts": [],
+    "milestones": [],
+    "scenes": [
+      {
+        "id": "scene_1",
+        "label": "حارس المستشفى",
+        "narration": "دخل حارس المستشفى الدور الأرضي المظلم وفي إيده كشاف قديم علشان يدور على صوت خبط غريب جاي من أوضة الطوارئ المقفولة اللي فيها الباب بيزيق وبيفتح بالراحة والكشاف بيتهز في إيده بنظرة خوف شديدة وقلق مستمر طول الوقت",
+        "labels": [
+          "حارس المستشفى",
+          "أوضة الطوارئ"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "door",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              2,
+              0.2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#333333",
+            "motion": "none"
+          },
+          {
+            "kind": "lantern",
+            "position": [
+              1.2,
+              -0.5,
+              1
+            ],
+            "scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#ffaa00",
+            "motion": "pulse"
+          }
+        ],
+        "camera_start": [
+          0,
+          1,
+          10
+        ],
+        "camera_end": [
+          0,
+          0,
+          8
+        ],
+        "visual_change": "Door creaks open slightly as the lantern flickers."
+      },
+      {
+        "id": "scene_2",
+        "label": "الترابيزة الخشبية",
+        "narration": "لقى ترابيزة الكشف القديمة مرمية وعليها أدوات جراحة متعرجة ومش نظيفة وكأن حد كان قاعد عليها حالا وبيحركها بسرعة والعلبة اللي على الترابيزة اترجت بشكل مفاجئ كأن إيد خفية لمستها ووقعت الأدوات على الأرض بصوت عالي جدا",
+        "labels": [
+          "ترابيزة الكشف",
+          "أدوات جراحة"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "table",
+            "position": [
+              0,
+              -1,
+              0
+            ],
+            "scale": [
+              2,
+              1,
+              1
+            ],
+            "rotation": [
+              0,
+              0.2,
+              0
+            ],
+            "color": "#553322",
+            "motion": "none"
+          },
+          {
+            "kind": "box",
+            "position": [
+              0.5,
+              0.2,
+              0
+            ],
+            "scale": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "rotation": [
+              0,
+              1.5,
+              0
+            ],
+            "color": "#777777",
+            "motion": "spin"
+          }
+        ],
+        "camera_start": [
+          0,
+          2,
+          12
+        ],
+        "camera_end": [
+          0,
+          1,
+          9
+        ],
+        "visual_change": "Box spins abruptly as if touched by an unseen hand."
+      },
+      {
+        "id": "scene_3",
+        "label": "نبضات القلب",
+        "narration": "فجأة جهاز قياس نبضات القلب اللي كان مطفي اشتغل لوحده وبدأ ينبض ببطء شديد وبصوت مرعب ملا الأوضة كلها وطلع منه نور أحمر قوي خلى الحارس يقف مكانه مش مصدق اللي بيحصل قدامه من هول الصدمة والرعب المرعب",
+        "labels": [
+          "نبضات القلب"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "heart",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#aa0000",
+            "motion": "pulse"
+          },
+          {
+            "kind": "circuit",
+            "position": [
+              -2,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#00ffaa",
+            "motion": "none"
+          }
+        ],
+        "camera_start": [
+          0,
+          0,
+          14
+        ],
+        "camera_end": [
+          0,
+          0,
+          10
+        ],
+        "visual_change": "Heart organ pulses rapidly and glows bright red."
+      },
+      {
+        "id": "scene_4",
+        "label": "الكريستالة المعلقة",
+        "narration": "الكريستالة اللي في سقف الأوضة بدأت تلف حوالين نفسها بسرعة عكس اتجاه الهواء وبقى نورها أحمر قاتم ودموي وبتلف بشكل جنوني بتعمل إضاءة حمراء في كل حتة حوالين الحارس اللي مش عارف يهرب من المكان المظلم والمرعب ده نهائي",
+        "labels": [],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "crystal",
+            "position": [
+              0,
+              1.5,
+              0
+            ],
+            "scale": [
+              0.8,
+              1.2,
+              0.8
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#ff0055",
+            "motion": "spin"
+          },
+          {
+            "kind": "sphere",
+            "position": [
+              0,
+              -1.5,
+              0
+            ],
+            "scale": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#222222",
+            "motion": "none"
+          }
+        ],
+        "camera_start": [
+          0,
+          3,
+          15
+        ],
+        "camera_end": [
+          0,
+          1,
+          11
+        ],
+        "visual_change": "Crystal spins wildly and projects a crimson light."
+      },
+      {
+        "id": "scene_5",
+        "label": "المجسم البشري",
+        "narration": "الحارس حاول يهرب بس لقى المجسم التشريحي اللي واقف في ركن الأوضة لف راسه ناحيته وباصص له بعينين ملتهبتين وبحركة سريعة ومخيفة خلت الحارس يتجمد في مكانه من كتر الخوف والهلع اللي سيطر على جسمه كله ووقف عاجز تماما عن الحركة",
+        "labels": [
+          "ركن الأوضة"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "person",
+            "position": [
+              0,
+              -0.5,
+              0
+            ],
+            "scale": [
+              1.2,
+              1.5,
+              1.2
+            ],
+            "rotation": [
+              0,
+              3.14,
+              0
+            ],
+            "color": "#886644",
+            "motion": "none"
+          },
+          {
+            "kind": "cylinder",
+            "position": [
+              0,
+              -2,
+              0
+            ],
+            "scale": [
+              1.5,
+              0.2,
+              1.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#111111",
+            "motion": "none"
+          }
+        ],
+        "camera_start": [
+          0,
+          1,
+          12
+        ],
+        "camera_end": [
+          0,
+          0,
+          9
+        ],
+        "visual_change": "Person figure rotates its head sharply toward the camera."
+      },
+      {
+        "id": "scene_6",
+        "label": "الباب المقفول",
+        "narration": "جرى بسرعة ناحية باب الخروج بس لقى الترباس اتقفل لوحده وقوة خفية كتفته ومنعته حتى من إنه يصرخ أو ينادي حد والباب اتقفل بعنف والتروس بتاعت القفل اتحركت لوحدها عشان تقفل عليه الطريق تماما وتمنع أي محاولة للهروب من الأوضة",
+        "labels": [
+          "قوة خفية"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "door",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.5,
+              2.5,
+              0.3
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#441111",
+            "motion": "slam"
+          },
+          {
+            "kind": "gear",
+            "position": [
+              0.8,
+              0,
+              0.2
+            ],
+            "scale": [
+              0.4,
+              0.4,
+              0.4
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#aaaaaa",
+            "motion": "spin"
+          }
+        ],
+        "camera_start": [
+          0,
+          0,
+          11
+        ],
+        "camera_end": [
+          0,
+          0,
+          8
+        ],
+        "visual_change": "Door slams shut violently with gears locking in place."
+      },
+      {
+        "id": "scene_7",
+        "label": "الساعة القديمة",
+        "narration": "عقارب الساعة القديمة على الحيطة رجعت لورا بسرعة جنونية وكأن الزمن في المكان ده بيعيش اللحظة الأخيرة قبل الكارثة والبندول بيتحرك بعنف شديد ويخبط في حواف الساعة بصوت مزعج ومخيف بيزود التوتر والهلع جوه الأوضة المظلمة دي بشكل مرعب",
+        "labels": [
+          "الساعة القديمة"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "clock",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.5,
+              1.5,
+              0.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#332211",
+            "motion": "spin"
+          },
+          {
+            "kind": "pendulum",
+            "position": [
+              0,
+              -1.2,
+              0
+            ],
+            "scale": [
+              0.3,
+              1,
+              0.3
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#ffcc00",
+            "motion": "swing"
+          }
+        ],
+        "camera_start": [
+          0,
+          0,
+          13
+        ],
+        "camera_end": [
+          0,
+          0,
+          9
+        ],
+        "visual_change": "Clock hands spin backward rapidly as the pendulum swings erratically."
+      },
+      {
+        "id": "scene_8",
+        "label": "المراية المكسورة",
+        "narration": "وفي آخر اللقطة انعكست صورة الحارس في المراية المكسورة وهو مبتسم ابتسامة مرعبة وبيفتح عين ثالثة في جبهته بتنور بنور أحمر قوي ومخيف جدا بيعلن سيطرة القوة الخفية عليه وتحوله الكامل لنهاية ماساوية مرعبة جوه غرفة الطوارئ المظلمة",
+        "labels": [
+          "المراية المكسورة"
+        ],
+        "visual_mode": "hero",
+        "environment": "dark_interior",
+        "objects": [
+          {
+            "kind": "sphere",
+            "position": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1.2,
+              1.2,
+              1.2
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "color": "#114444",
+            "motion": "pulse"
+          },
+          {
+            "kind": "cone",
+            "position": [
+              0,
+              0.8,
+              0
+            ],
+            "scale": [
+              0.4,
+              0.6,
+              0.4
+            ],
+            "rotation": [
+              3.14,
+              0,
+              0
+            ],
+            "color": "#ff0000",
+            "motion": "grow"
+          }
+        ],
+        "camera_start": [
+          0,
+          0,
+          10
+        ],
+        "camera_end": [
+          0,
+          0,
+          7
+        ],
+        "visual_change": "A third red eye sprouts and glows on the central figure."
+      }
+    ],
+    "hashtags": [
+      "#رعب_مصرى",
+      "#قصص_مرعبة",
+      "#ماوراء_الطبيعة",
+      "#أفلام_قصيره"
+    ],
+    "profile": "horror",
+    "series": "ملفات غامضه",
+    "topic_key": "knowledge-er-third-eye-possession",
+    "knowledge_category": "supernatural",
+    "visual_family": "haunted_interior",
+    "variant": "procedural",
+    "fiction": true,
+    "documented": false,
+    "source": {
+      "kind": "original_fiction",
+      "publisher": "ملفات غامضه",
+      "url": "",
+      "title": ""
+    },
+    "editorial_policy": {
+      "external_sources_required": false,
+      "independent_scientific_review_required": false
+    },
+    "visual_plan": {
+      "version": 1,
+      "world": "procedural_story",
+      "scenes": [
+        {
+          "id": "scene_1",
+          "setting": "dark_interior",
+          "focal_object": "door",
+          "action": "none",
+          "shot": "authored_camera",
+          "state_change": "Door creaks open slightly as the lantern flickers."
+        },
+        {
+          "id": "scene_2",
+          "setting": "dark_interior",
+          "focal_object": "table",
+          "action": "none",
+          "shot": "authored_camera",
+          "state_change": "Box spins abruptly as if touched by an unseen hand."
+        },
+        {
+          "id": "scene_3",
+          "setting": "dark_interior",
+          "focal_object": "heart",
+          "action": "pulse",
+          "shot": "authored_camera",
+          "state_change": "Heart organ pulses rapidly and glows bright red."
+        },
+        {
+          "id": "scene_4",
+          "setting": "dark_interior",
+          "focal_object": "crystal",
+          "action": "spin",
+          "shot": "authored_camera",
+          "state_change": "Crystal spins wildly and projects a crimson light."
+        },
+        {
+          "id": "scene_5",
+          "setting": "dark_interior",
+          "focal_object": "person",
+          "action": "none",
+          "shot": "authored_camera",
+          "state_change": "Person figure rotates its head sharply toward the camera."
+        },
+        {
+          "id": "scene_6",
+          "setting": "dark_interior",
+          "focal_object": "door",
+          "action": "slam",
+          "shot": "authored_camera",
+          "state_change": "Door slams shut violently with gears locking in place."
+        },
+        {
+          "id": "scene_7",
+          "setting": "dark_interior",
+          "focal_object": "clock",
+          "action": "spin",
+          "shot": "authored_camera",
+          "state_change": "Clock hands spin backward rapidly as the pendulum swings erratically."
+        },
+        {
+          "id": "scene_8",
+          "setting": "dark_interior",
+          "focal_object": "sphere",
+          "action": "pulse",
+          "shot": "authored_camera",
+          "state_change": "A third red eye sprouts and glows on the central figure."
+        }
+      ]
+    },
+    "visual_sequence_sha256": "fffa32d66864aaef42b47eb299b6b8f46f5ddbf146ce2a767f88177c71e1a6c1"
+  },
+  "transcripts": [
+    [
+      "medium",
+      [
+        {
+          "text": "دخل",
+          "start": 0.0,
+          "end": 0.58
+        },
+        {
+          "text": "حرس",
+          "start": 0.58,
+          "end": 0.96
+        },
+        {
+          "text": "المستشفى",
+          "start": 0.96,
+          "end": 1.92
+        },
+        {
+          "text": "الدور",
+          "start": 1.92,
+          "end": 2.38
+        },
+        {
+          "text": "الأرض",
+          "start": 2.38,
+          "end": 2.72
+        },
+        {
+          "text": "المظلم",
+          "start": 2.72,
+          "end": 3.82
+        },
+        {
+          "text": "وفي",
+          "start": 3.82,
+          "end": 4.14
+        },
+        {
+          "text": "إيده",
+          "start": 4.14,
+          "end": 4.4
+        },
+        {
+          "text": "كشاف",
+          "start": 4.4,
+          "end": 4.78
+        },
+        {
+          "text": "قديم",
+          "start": 4.78,
+          "end": 5.64
+        },
+        {
+          "text": "علشان",
+          "start": 5.64,
+          "end": 6.1
+        },
+        {
+          "text": "يدور",
+          "start": 6.1,
+          "end": 6.44
+        },
+        {
+          "text": "على",
+          "start": 6.44,
+          "end": 6.62
+        },
+        {
+          "text": "صوت",
+          "start": 6.62,
+          "end": 6.88
+        },
+        {
+          "text": "خط",
+          "start": 6.88,
+          "end": 7.18
+        },
+        {
+          "text": "غريب",
+          "start": 7.18,
+          "end": 7.64
+        },
+        {
+          "text": "جاي",
+          "start": 7.64,
+          "end": 7.84
+        },
+        {
+          "text": "من",
+          "start": 7.84,
+          "end": 8.02
+        },
+        {
+          "text": "قط",
+          "start": 8.02,
+          "end": 8.24
+        },
+        {
+          "text": "الطوارئ",
+          "start": 8.24,
+          "end": 8.76
+        },
+        {
+          "text": "المأفولة",
+          "start": 8.76,
+          "end": 9.78
+        },
+        {
+          "text": "اللي",
+          "start": 9.78,
+          "end": 9.94
+        },
+        {
+          "text": "فيها",
+          "start": 9.94,
+          "end": 10.22
+        },
+        {
+          "text": "الباب",
+          "start": 10.22,
+          "end": 10.56
+        },
+        {
+          "text": "بيزعيق",
+          "start": 10.56,
+          "end": 11.16
+        },
+        {
+          "text": "وبيفتح",
+          "start": 11.16,
+          "end": 11.62
+        },
+        {
+          "text": "بالراحة",
+          "start": 11.62,
+          "end": 12.02
+        },
+        {
+          "text": "وكشاف",
+          "start": 12.84,
+          "end": 13.36
+        },
+        {
+          "text": "بيتهزف",
+          "start": 13.36,
+          "end": 13.92
+        },
+        {
+          "text": "إيده",
+          "start": 13.92,
+          "end": 14.6
+        },
+        {
+          "text": "بنظرة",
+          "start": 14.6,
+          "end": 15.0
+        },
+        {
+          "text": "خوف",
+          "start": 15.0,
+          "end": 15.26
+        },
+        {
+          "text": "شديدة",
+          "start": 15.26,
+          "end": 16.12
+        },
+        {
+          "text": "وأهلق",
+          "start": 16.12,
+          "end": 16.68
+        },
+        {
+          "text": "مستمرة",
+          "start": 16.68,
+          "end": 17.2
+        },
+        {
+          "text": "طول",
+          "start": 17.2,
+          "end": 17.46
+        },
+        {
+          "text": "الوقت",
+          "start": 17.46,
+          "end": 18.0
+        },
+        {
+          "text": "لقى",
+          "start": 18.78,
+          "end": 19.04
+        },
+        {
+          "text": "طرابست",
+          "start": 19.04,
+          "end": 19.4
+        },
+        {
+          "text": "الكشف",
+          "start": 19.4,
+          "end": 19.76
+        },
+        {
+          "text": "القديمة",
+          "start": 19.76,
+          "end": 20.16
+        },
+        {
+          "text": "مرمية",
+          "start": 20.16,
+          "end": 21.08
+        },
+        {
+          "text": "وعليها",
+          "start": 21.08,
+          "end": 21.6
+        },
+        {
+          "text": "أدوات",
+          "start": 21.6,
+          "end": 21.94
+        },
+        {
+          "text": "جراحة",
+          "start": 21.94,
+          "end": 22.28
+        },
+        {
+          "text": "متعرقة",
+          "start": 22.28,
+          "end": 22.78
+        },
+        {
+          "text": "ومش",
+          "start": 22.78,
+          "end": 23.04
+        },
+        {
+          "text": "نظيفة",
+          "start": 23.04,
+          "end": 24.04
+        },
+        {
+          "text": "وكأن",
+          "start": 24.04,
+          "end": 24.5
+        },
+        {
+          "text": "حد",
+          "start": 24.5,
+          "end": 24.86
+        },
+        {
+          "text": "كان",
+          "start": 24.86,
+          "end": 25.02
+        },
+        {
+          "text": "قاعد",
+          "start": 25.02,
+          "end": 25.34
+        },
+        {
+          "text": "عليها",
+          "start": 25.34,
+          "end": 25.72
+        },
+        {
+          "text": "حالاً",
+          "start": 25.72,
+          "end": 26.58
+        },
+        {
+          "text": "وبيحركها",
+          "start": 26.58,
+          "end": 27.12
+        },
+        {
+          "text": "بسرعة",
+          "start": 27.12,
+          "end": 28.26
+        },
+        {
+          "text": "والعلبة",
+          "start": 28.26,
+          "end": 28.9
+        },
+        {
+          "text": "اللي",
+          "start": 28.9,
+          "end": 28.98
+        },
+        {
+          "text": "على",
+          "start": 28.98,
+          "end": 29.1
+        },
+        {
+          "text": "الطرابيزة",
+          "start": 29.1,
+          "end": 30.0
+        },
+        {
+          "text": "اترجت",
+          "start": 30.0,
+          "end": 30.54
+        },
+        {
+          "text": "بشكل",
+          "start": 30.54,
+          "end": 30.9
+        },
+        {
+          "text": "مفاجئ",
+          "start": 30.9,
+          "end": 31.88
+        },
+        {
+          "text": "كأن",
+          "start": 31.88,
+          "end": 32.3
+        },
+        {
+          "text": "إيد",
+          "start": 32.3,
+          "end": 32.52
+        },
+        {
+          "text": "خافية",
+          "start": 32.52,
+          "end": 32.92
+        },
+        {
+          "text": "لمستها",
+          "start": 32.92,
+          "end": 34.02
+        },
+        {
+          "text": "وهو",
+          "start": 34.02,
+          "end": 34.38
+        },
+        {
+          "text": "قاعد",
+          "start": 34.38,
+          "end": 34.64
+        },
+        {
+          "text": "الأدوات",
+          "start": 34.64,
+          "end": 35.04
+        },
+        {
+          "text": "على",
+          "start": 35.04,
+          "end": 35.18
+        },
+        {
+          "text": "الأرض",
+          "start": 35.18,
+          "end": 35.36
+        },
+        {
+          "text": "بصوت",
+          "start": 35.36,
+          "end": 35.62
+        },
+        {
+          "text": "عالي",
+          "start": 35.62,
+          "end": 36.9
+        },
+        {
+          "text": "جدا",
+          "start": 36.9,
+          "end": 36.9
+        },
+        {
+          "text": "فجأة",
+          "start": 36.9,
+          "end": 38.34
+        },
+        {
+          "text": "جهاز",
+          "start": 38.34,
+          "end": 38.72
+        },
+        {
+          "text": "قياس",
+          "start": 38.72,
+          "end": 39.04
+        },
+        {
+          "text": "نبضة",
+          "start": 39.04,
+          "end": 39.4
+        },
+        {
+          "text": "القلب",
+          "start": 39.4,
+          "end": 39.72
+        },
+        {
+          "text": "اللي",
+          "start": 39.72,
+          "end": 39.9
+        },
+        {
+          "text": "كان",
+          "start": 39.9,
+          "end": 40.04
+        },
+        {
+          "text": "مطفي",
+          "start": 40.04,
+          "end": 40.62
+        },
+        {
+          "text": "اشتغل",
+          "start": 40.62,
+          "end": 41.22
+        },
+        {
+          "text": "لوحده",
+          "start": 41.22,
+          "end": 42.12
+        },
+        {
+          "text": "وبدأ",
+          "start": 42.12,
+          "end": 42.58
+        },
+        {
+          "text": "ينبط",
+          "start": 42.58,
+          "end": 42.96
+        },
+        {
+          "text": "ببط",
+          "start": 42.96,
+          "end": 43.26
+        },
+        {
+          "text": "شديد",
+          "start": 43.26,
+          "end": 44.06
+        },
+        {
+          "text": "وبصوت",
+          "start": 44.06,
+          "end": 44.44
+        },
+        {
+          "text": "مرعب",
+          "start": 44.44,
+          "end": 44.84
+        },
+        {
+          "text": "مالى",
+          "start": 44.84,
+          "end": 45.18
+        },
+        {
+          "text": "الأوضة",
+          "start": 45.18,
+          "end": 45.38
+        },
+        {
+          "text": "كلها",
+          "start": 45.38,
+          "end": 46.16
+        },
+        {
+          "text": "وطلع",
+          "start": 46.16,
+          "end": 46.64
+        },
+        {
+          "text": "منه",
+          "start": 46.64,
+          "end": 46.86
+        },
+        {
+          "text": "نور",
+          "start": 46.86,
+          "end": 47.12
+        },
+        {
+          "text": "أحمر",
+          "start": 47.12,
+          "end": 47.6
+        },
+        {
+          "text": "قوي",
+          "start": 47.6,
+          "end": 48.1
+        },
+        {
+          "text": "خلى",
+          "start": 48.1,
+          "end": 48.8
+        },
+        {
+          "text": "الحرس",
+          "start": 48.8,
+          "end": 49.18
+        },
+        {
+          "text": "يقف",
+          "start": 49.18,
+          "end": 49.4
+        },
+        {
+          "text": "مكانه",
+          "start": 49.4,
+          "end": 50.08
+        },
+        {
+          "text": "مش",
+          "start": 50.08,
+          "end": 50.26
+        },
+        {
+          "text": "مصدق",
+          "start": 50.26,
+          "end": 50.68
+        },
+        {
+          "text": "اللي",
+          "start": 50.68,
+          "end": 50.8
+        },
+        {
+          "text": "بيحصل",
+          "start": 50.8,
+          "end": 51.1
+        },
+        {
+          "text": "قدامه",
+          "start": 51.1,
+          "end": 51.5
+        },
+        {
+          "text": "من",
+          "start": 51.5,
+          "end": 51.68
+        },
+        {
+          "text": "هول",
+          "start": 51.68,
+          "end": 51.92
+        },
+        {
+          "text": "الصدمة",
+          "start": 51.92,
+          "end": 52.44
+        },
+        {
+          "text": "والرعب",
+          "start": 52.44,
+          "end": 52.82
+        },
+        {
+          "text": "المرعب",
+          "start": 52.82,
+          "end": 54.18
+        },
+        {
+          "text": "الكريستال",
+          "start": 54.18,
+          "end": 54.9
+        },
+        {
+          "text": "اللي",
+          "start": 54.9,
+          "end": 55.04
+        },
+        {
+          "text": "فزأ",
+          "start": 55.04,
+          "end": 55.24
+        },
+        {
+          "text": "في",
+          "start": 55.24,
+          "end": 55.36
+        },
+        {
+          "text": "الأوضة",
+          "start": 55.36,
+          "end": 56.0
+        },
+        {
+          "text": "بدأ",
+          "start": 56.0,
+          "end": 56.28
+        },
+        {
+          "text": "يتلف",
+          "start": 56.28,
+          "end": 56.56
+        },
+        {
+          "text": "حوالين",
+          "start": 56.56,
+          "end": 57.02
+        },
+        {
+          "text": "نفسها",
+          "start": 57.02,
+          "end": 57.34
+        },
+        {
+          "text": "بصرعة",
+          "start": 57.34,
+          "end": 57.96
+        },
+        {
+          "text": "عكس",
+          "start": 57.96,
+          "end": 58.44
+        },
+        {
+          "text": "تجاهل",
+          "start": 58.44,
+          "end": 58.88
+        },
+        {
+          "text": "هوة",
+          "start": 58.88,
+          "end": 59.88
+        },
+        {
+          "text": "وبقى",
+          "start": 59.88,
+          "end": 60.14
+        },
+        {
+          "text": "نورها",
+          "start": 60.14,
+          "end": 60.74
+        },
+        {
+          "text": "أحمر",
+          "start": 60.74,
+          "end": 61.3
+        },
+        {
+          "text": "قحاتم",
+          "start": 61.3,
+          "end": 61.86
+        },
+        {
+          "text": "ودموي",
+          "start": 61.86,
+          "end": 62.230000000000004
+        },
+        {
+          "text": "وبتلف",
+          "start": 62.7,
+          "end": 63.2
+        },
+        {
+          "text": "بشكل",
+          "start": 63.2,
+          "end": 63.6
+        },
+        {
+          "text": "جنوني",
+          "start": 63.6,
+          "end": 64.32
+        },
+        {
+          "text": "بتعمل",
+          "start": 64.32,
+          "end": 64.68
+        },
+        {
+          "text": "إضاغة",
+          "start": 64.68,
+          "end": 65.02
+        },
+        {
+          "text": "حمرة",
+          "start": 65.02,
+          "end": 65.2
+        },
+        {
+          "text": "في",
+          "start": 65.2,
+          "end": 65.32
+        },
+        {
+          "text": "كل",
+          "start": 65.32,
+          "end": 65.5
+        },
+        {
+          "text": "حتة",
+          "start": 65.5,
+          "end": 65.82
+        },
+        {
+          "text": "حوالين",
+          "start": 65.82,
+          "end": 66.16
+        },
+        {
+          "text": "الحرس",
+          "start": 66.16,
+          "end": 66.98
+        },
+        {
+          "text": "اللي",
+          "start": 66.98,
+          "end": 67.18
+        },
+        {
+          "text": "مش",
+          "start": 67.18,
+          "end": 67.32
+        },
+        {
+          "text": "عارف",
+          "start": 67.32,
+          "end": 67.54
+        },
+        {
+          "text": "يهرق",
+          "start": 67.54,
+          "end": 67.82
+        },
+        {
+          "text": "من",
+          "start": 67.82,
+          "end": 67.96
+        },
+        {
+          "text": "المكان",
+          "start": 67.96,
+          "end": 68.22
+        },
+        {
+          "text": "المصدم",
+          "start": 68.22,
+          "end": 68.82
+        },
+        {
+          "text": "والمرعب",
+          "start": 68.82,
+          "end": 69.62
+        },
+        {
+          "text": "ده",
+          "start": 69.62,
+          "end": 69.72
+        },
+        {
+          "text": "نهائي",
+          "start": 69.72,
+          "end": 70.09
+        },
+        {
+          "text": "الحرس",
+          "start": 71.06,
+          "end": 71.52
+        },
+        {
+          "text": "حاول",
+          "start": 71.52,
+          "end": 71.74
+        },
+        {
+          "text": "يهرب",
+          "start": 71.74,
+          "end": 72.42
+        },
+        {
+          "text": "بس",
+          "start": 72.42,
+          "end": 72.84
+        },
+        {
+          "text": "لأ",
+          "start": 72.84,
+          "end": 72.98
+        },
+        {
+          "text": "المجسم",
+          "start": 72.98,
+          "end": 73.48
+        },
+        {
+          "text": "التشريحي",
+          "start": 73.48,
+          "end": 74.44
+        },
+        {
+          "text": "اللي",
+          "start": 74.44,
+          "end": 74.58
+        },
+        {
+          "text": "واقف",
+          "start": 74.58,
+          "end": 74.86
+        },
+        {
+          "text": "في",
+          "start": 74.86,
+          "end": 74.9
+        },
+        {
+          "text": "ركن",
+          "start": 74.9,
+          "end": 75.08
+        },
+        {
+          "text": "الأوضة",
+          "start": 75.08,
+          "end": 75.76
+        },
+        {
+          "text": "لف",
+          "start": 75.76,
+          "end": 76.06
+        },
+        {
+          "text": "راسه",
+          "start": 76.06,
+          "end": 76.46
+        },
+        {
+          "text": "نحيته",
+          "start": 76.46,
+          "end": 77.14
+        },
+        {
+          "text": "وبصصه",
+          "start": 77.14,
+          "end": 77.74
+        },
+        {
+          "text": "بعنين",
+          "start": 77.74,
+          "end": 78.08
+        },
+        {
+          "text": "ملتهبتين",
+          "start": 78.08,
+          "end": 79.4
+        },
+        {
+          "text": "وفهركة",
+          "start": 79.77,
+          "end": 80.14
+        },
+        {
+          "text": "سريعة",
+          "start": 80.14,
+          "end": 80.46
+        },
+        {
+          "text": "ومخيفة",
+          "start": 80.46,
+          "end": 81.26
+        },
+        {
+          "text": "خلت",
+          "start": 81.26,
+          "end": 81.56
+        },
+        {
+          "text": "الحرس",
+          "start": 81.56,
+          "end": 81.94
+        },
+        {
+          "text": "يتجمد",
+          "start": 81.94,
+          "end": 82.38
+        },
+        {
+          "text": "في",
+          "start": 82.38,
+          "end": 82.54
+        },
+        {
+          "text": "مكانه",
+          "start": 82.54,
+          "end": 83.1
+        },
+        {
+          "text": "من",
+          "start": 83.1,
+          "end": 83.38
+        },
+        {
+          "text": "كتر",
+          "start": 83.38,
+          "end": 83.74
+        },
+        {
+          "text": "خوف",
+          "start": 83.74,
+          "end": 84.12
+        },
+        {
+          "text": "والهلع",
+          "start": 84.12,
+          "end": 84.92
+        },
+        {
+          "text": "اللي",
+          "start": 84.92,
+          "end": 85.12
+        },
+        {
+          "text": "سيطر",
+          "start": 85.12,
+          "end": 85.48
+        },
+        {
+          "text": "على",
+          "start": 85.48,
+          "end": 85.62
+        },
+        {
+          "text": "جسمه",
+          "start": 85.62,
+          "end": 86.02
+        },
+        {
+          "text": "كله",
+          "start": 86.02,
+          "end": 86.92
+        },
+        {
+          "text": "ويقف",
+          "start": 86.92,
+          "end": 87.32
+        },
+        {
+          "text": "عجز",
+          "start": 87.32,
+          "end": 87.64
+        },
+        {
+          "text": "تماما",
+          "start": 87.64,
+          "end": 88.08
+        },
+        {
+          "text": "عن",
+          "start": 88.08,
+          "end": 88.12
+        },
+        {
+          "text": "الحركة",
+          "start": 88.12,
+          "end": 89.46
+        },
+        {
+          "text": "جده",
+          "start": 89.46,
+          "end": 89.78
+        },
+        {
+          "text": "بصور",
+          "start": 89.78,
+          "end": 89.94
+        },
+        {
+          "text": "عن",
+          "start": 89.94,
+          "end": 90.08
+        },
+        {
+          "text": "حيد",
+          "start": 90.08,
+          "end": 90.24
+        },
+        {
+          "text": "باب",
+          "start": 90.24,
+          "end": 90.38
+        },
+        {
+          "text": "الخروج",
+          "start": 90.38,
+          "end": 91.06
+        },
+        {
+          "text": "بس",
+          "start": 91.06,
+          "end": 91.4
+        },
+        {
+          "text": "لأ",
+          "start": 91.4,
+          "end": 91.54
+        },
+        {
+          "text": "الترباس",
+          "start": 91.54,
+          "end": 91.96
+        },
+        {
+          "text": "تقفل",
+          "start": 91.96,
+          "end": 92.7
+        },
+        {
+          "text": "لوحده",
+          "start": 93.52,
+          "end": 93.88
+        },
+        {
+          "text": "وقوة",
+          "start": 93.88,
+          "end": 94.9
+        },
+        {
+          "text": "خفية",
+          "start": 94.9,
+          "end": 95.26
+        },
+        {
+          "text": "كتفته",
+          "start": 95.26,
+          "end": 96.24
+        },
+        {
+          "text": "ومنعيته",
+          "start": 96.24,
+          "end": 97.2
+        },
+        {
+          "text": "حتى",
+          "start": 97.2,
+          "end": 97.54
+        },
+        {
+          "text": "من",
+          "start": 97.54,
+          "end": 97.68
+        },
+        {
+          "text": "أنه",
+          "start": 97.68,
+          "end": 97.84
+        },
+        {
+          "text": "يصرخ",
+          "start": 97.84,
+          "end": 98.6
+        },
+        {
+          "text": "أو",
+          "start": 98.6,
+          "end": 98.8
+        },
+        {
+          "text": "ينادي",
+          "start": 98.8,
+          "end": 99.06
+        },
+        {
+          "text": "حد",
+          "start": 99.06,
+          "end": 99.98
+        },
+        {
+          "text": "والباب",
+          "start": 99.98,
+          "end": 100.38
+        },
+        {
+          "text": "يتقفل",
+          "start": 100.38,
+          "end": 100.7
+        },
+        {
+          "text": "بعنف",
+          "start": 100.7,
+          "end": 101.72
+        },
+        {
+          "text": "والتروس",
+          "start": 101.72,
+          "end": 102.34
+        },
+        {
+          "text": "بتاعت",
+          "start": 102.34,
+          "end": 102.6
+        },
+        {
+          "text": "القفلة",
+          "start": 102.6,
+          "end": 102.92
+        },
+        {
+          "text": "تحركت",
+          "start": 102.92,
+          "end": 103.36
+        },
+        {
+          "text": "لوحده",
+          "start": 103.36,
+          "end": 104.18
+        },
+        {
+          "text": "عشان",
+          "start": 104.18,
+          "end": 104.62
+        },
+        {
+          "text": "تقفل",
+          "start": 104.62,
+          "end": 104.9
+        },
+        {
+          "text": "عليه",
+          "start": 104.9,
+          "end": 105.08
+        },
+        {
+          "text": "الطريق",
+          "start": 105.08,
+          "end": 105.42
+        },
+        {
+          "text": "تماما",
+          "start": 105.42,
+          "end": 106.42
+        },
+        {
+          "text": "وتمنع",
+          "start": 106.42,
+          "end": 106.96
+        },
+        {
+          "text": "أي",
+          "start": 106.96,
+          "end": 107.22
+        },
+        {
+          "text": "محاولة",
+          "start": 107.22,
+          "end": 107.66
+        },
+        {
+          "text": "اللي",
+          "start": 107.66,
+          "end": 107.72
+        },
+        {
+          "text": "يهرب",
+          "start": 107.72,
+          "end": 107.9
+        },
+        {
+          "text": "من",
+          "start": 107.9,
+          "end": 108.08
+        },
+        {
+          "text": "الأوضة",
+          "start": 108.08,
+          "end": 109.56
+        },
+        {
+          "text": "عقرب",
+          "start": 109.56,
+          "end": 110.0
+        },
+        {
+          "text": "الساعة",
+          "start": 110.0,
+          "end": 110.26
+        },
+        {
+          "text": "القديمة",
+          "start": 110.26,
+          "end": 110.6
+        },
+        {
+          "text": "على",
+          "start": 110.6,
+          "end": 110.76
+        },
+        {
+          "text": "الحيطة",
+          "start": 110.76,
+          "end": 111.16
+        },
+        {
+          "text": "حيث",
+          "start": 111.16,
+          "end": 111.16
+        },
+        {
+          "text": "جاءت",
+          "start": 111.16,
+          "end": 111.36
+        },
+        {
+          "text": "الورى",
+          "start": 111.36,
+          "end": 111.58
+        },
+        {
+          "text": "بسرعة",
+          "start": 111.58,
+          "end": 111.96
+        },
+        {
+          "text": "جنونية",
+          "start": 111.96,
+          "end": 112.98
+        },
+        {
+          "text": "وكأن",
+          "start": 112.98,
+          "end": 113.46
+        },
+        {
+          "text": "الزمن",
+          "start": 113.46,
+          "end": 113.82
+        },
+        {
+          "text": "في",
+          "start": 113.82,
+          "end": 113.94
+        },
+        {
+          "text": "المكان",
+          "start": 113.94,
+          "end": 114.22
+        },
+        {
+          "text": "ده",
+          "start": 114.22,
+          "end": 114.64
+        },
+        {
+          "text": "بيعيش",
+          "start": 114.64,
+          "end": 115.04
+        },
+        {
+          "text": "اللحظة",
+          "start": 115.04,
+          "end": 115.42
+        },
+        {
+          "text": "الأخيرة",
+          "start": 115.42,
+          "end": 115.82
+        },
+        {
+          "text": "قبل",
+          "start": 115.82,
+          "end": 116.02
+        },
+        {
+          "text": "الكارثة",
+          "start": 116.02,
+          "end": 117.2
+        },
+        {
+          "text": "والبندول",
+          "start": 117.2,
+          "end": 117.68
+        },
+        {
+          "text": "بيتحرك",
+          "start": 117.68,
+          "end": 118.12
+        },
+        {
+          "text": "بعنف",
+          "start": 118.12,
+          "end": 118.52
+        },
+        {
+          "text": "اشتهد",
+          "start": 118.52,
+          "end": 119.2
+        },
+        {
+          "text": "ويخبط",
+          "start": 119.2,
+          "end": 119.76
+        },
+        {
+          "text": "في",
+          "start": 119.76,
+          "end": 119.92
+        },
+        {
+          "text": "حواف",
+          "start": 119.92,
+          "end": 120.24
+        },
+        {
+          "text": "الساعة",
+          "start": 120.24,
+          "end": 120.6
+        },
+        {
+          "text": "بصوت",
+          "start": 120.6,
+          "end": 120.9
+        },
+        {
+          "text": "مزعج",
+          "start": 120.9,
+          "end": 121.62
+        },
+        {
+          "text": "ومخيف",
+          "start": 121.62,
+          "end": 122.5
+        },
+        {
+          "text": "بيزود",
+          "start": 123.08000000000001,
+          "end": 123.48
+        },
+        {
+          "text": "التوتر",
+          "start": 123.48,
+          "end": 124.38
+        },
+        {
+          "text": "والهلع",
+          "start": 125.0,
+          "end": 125.4
+        },
+        {
+          "text": "كوه",
+          "start": 125.4,
+          "end": 125.78
+        },
+        {
+          "text": "الأوضة",
+          "start": 125.78,
+          "end": 126.04
+        },
+        {
+          "text": "المسلمة",
+          "start": 126.04,
+          "end": 126.5
+        },
+        {
+          "text": "دي",
+          "start": 126.5,
+          "end": 126.58
+        },
+        {
+          "text": "بشكل",
+          "start": 126.58,
+          "end": 126.9
+        },
+        {
+          "text": "مرعب",
+          "start": 126.9,
+          "end": 127.30000000000001
+        },
+        {
+          "text": "وفي",
+          "start": 128.0,
+          "end": 128.42
+        },
+        {
+          "text": "آخر",
+          "start": 128.42,
+          "end": 128.64
+        },
+        {
+          "text": "اللقطة",
+          "start": 128.64,
+          "end": 129.56
+        },
+        {
+          "text": "أنا",
+          "start": 129.56,
+          "end": 129.78
+        },
+        {
+          "text": "عكس",
+          "start": 129.78,
+          "end": 130.14
+        },
+        {
+          "text": "الصورة",
+          "start": 130.14,
+          "end": 130.5
+        },
+        {
+          "text": "الحرس",
+          "start": 130.5,
+          "end": 130.8
+        },
+        {
+          "text": "في",
+          "start": 130.8,
+          "end": 130.9
+        },
+        {
+          "text": "المرايا",
+          "start": 130.9,
+          "end": 131.24
+        },
+        {
+          "text": "المكسورة",
+          "start": 131.24,
+          "end": 132.28
+        },
+        {
+          "text": "وهو",
+          "start": 132.28,
+          "end": 132.54
+        },
+        {
+          "text": "مبتسم",
+          "start": 132.54,
+          "end": 133.3
+        },
+        {
+          "text": "ابتسامة",
+          "start": 133.3,
+          "end": 133.98
+        },
+        {
+          "text": "مرعبة",
+          "start": 133.98,
+          "end": 134.9
+        },
+        {
+          "text": "وبيفتح",
+          "start": 134.9,
+          "end": 135.64
+        },
+        {
+          "text": "عين",
+          "start": 135.64,
+          "end": 135.78
+        },
+        {
+          "text": "تلتة",
+          "start": 135.78,
+          "end": 136.14
+        },
+        {
+          "text": "في",
+          "start": 136.14,
+          "end": 136.22
+        },
+        {
+          "text": "جبهته",
+          "start": 136.22,
+          "end": 136.88
+        },
+        {
+          "text": "بتنور",
+          "start": 136.88,
+          "end": 137.44
+        },
+        {
+          "text": "بنور",
+          "start": 137.44,
+          "end": 137.76
+        },
+        {
+          "text": "أحمر",
+          "start": 137.76,
+          "end": 138.16
+        },
+        {
+          "text": "قوي",
+          "start": 138.16,
+          "end": 138.66
+        },
+        {
+          "text": "ومخيف",
+          "start": 138.66,
+          "end": 139.26
+        },
+        {
+          "text": "جدا",
+          "start": 139.26,
+          "end": 140.34
+        },
+        {
+          "text": "بيعلن",
+          "start": 140.34,
+          "end": 140.9
+        },
+        {
+          "text": "سيطرة",
+          "start": 140.9,
+          "end": 141.32
+        },
+        {
+          "text": "القوة",
+          "start": 141.32,
+          "end": 141.7
+        },
+        {
+          "text": "الخفي",
+          "start": 141.7,
+          "end": 142.08
+        },
+        {
+          "text": "عليه",
+          "start": 142.08,
+          "end": 142.5
+        },
+        {
+          "text": "وتحوله",
+          "start": 142.5,
+          "end": 143.56
+        },
+        {
+          "text": "الكامل",
+          "start": 143.56,
+          "end": 144.48
+        },
+        {
+          "text": "لنهاية",
+          "start": 144.48,
+          "end": 144.9
+        },
+        {
+          "text": "مأساوية",
+          "start": 144.9,
+          "end": 145.36
+        },
+        {
+          "text": "مرعبة",
+          "start": 145.36,
+          "end": 146.26
+        },
+        {
+          "text": "كوه",
+          "start": 146.26,
+          "end": 146.66
+        },
+        {
+          "text": "غرفة",
+          "start": 146.66,
+          "end": 146.98
+        },
+        {
+          "text": "الطوارئ",
+          "start": 146.98,
+          "end": 147.36
+        },
+        {
+          "text": "المسلمة",
+          "start": 147.36,
+          "end": 147.94
+        }
+      ]
+    ],
+    [
+      "small",
+      [
+        {
+          "text": "دخل",
+          "start": 0.0,
+          "end": 0.52
+        },
+        {
+          "text": "حرس",
+          "start": 0.52,
+          "end": 0.86
+        },
+        {
+          "text": "المستشفع،",
+          "start": 0.86,
+          "end": 1.84
+        },
+        {
+          "text": "الدور",
+          "start": 1.84,
+          "end": 2.3
+        },
+        {
+          "text": "الأرض",
+          "start": 2.3,
+          "end": 2.64
+        },
+        {
+          "text": "المُظلم،",
+          "start": 2.64,
+          "end": 3.8
+        },
+        {
+          "text": "وفي",
+          "start": 3.8,
+          "end": 4.1
+        },
+        {
+          "text": "إيده",
+          "start": 4.1,
+          "end": 4.36
+        },
+        {
+          "text": "كشف",
+          "start": 4.36,
+          "end": 4.7
+        },
+        {
+          "text": "أديم،",
+          "start": 4.7,
+          "end": 5.74
+        },
+        {
+          "text": "علشان",
+          "start": 5.74,
+          "end": 6.04
+        },
+        {
+          "text": "يدور",
+          "start": 6.04,
+          "end": 6.34
+        },
+        {
+          "text": "على",
+          "start": 6.34,
+          "end": 6.56
+        },
+        {
+          "text": "صوت",
+          "start": 6.56,
+          "end": 6.8
+        },
+        {
+          "text": "خط",
+          "start": 6.8,
+          "end": 7.06
+        },
+        {
+          "text": "غريب",
+          "start": 7.06,
+          "end": 7.6
+        },
+        {
+          "text": "جايم",
+          "start": 7.6,
+          "end": 7.84
+        },
+        {
+          "text": "من",
+          "start": 7.84,
+          "end": 7.98
+        },
+        {
+          "text": "قطة",
+          "start": 7.98,
+          "end": 8.26
+        },
+        {
+          "text": "الطوارئ",
+          "start": 8.26,
+          "end": 8.64
+        },
+        {
+          "text": "المأفولة",
+          "start": 8.64,
+          "end": 9.42
+        },
+        {
+          "text": "اللي",
+          "start": 9.42,
+          "end": 9.9
+        },
+        {
+          "text": "فيها",
+          "start": 9.9,
+          "end": 10.16
+        },
+        {
+          "text": "البب",
+          "start": 10.16,
+          "end": 10.42
+        },
+        {
+          "text": "يزعية",
+          "start": 10.42,
+          "end": 10.96
+        },
+        {
+          "text": "وبيفتح",
+          "start": 10.96,
+          "end": 11.58
+        },
+        {
+          "text": "بالراحة،",
+          "start": 11.58,
+          "end": 12.78
+        },
+        {
+          "text": "وكشف",
+          "start": 12.78,
+          "end": 13.3
+        },
+        {
+          "text": "بيتهز",
+          "start": 13.3,
+          "end": 13.74
+        },
+        {
+          "text": "في",
+          "start": 13.74,
+          "end": 13.86
+        },
+        {
+          "text": "إيده",
+          "start": 13.86,
+          "end": 14.42
+        },
+        {
+          "text": "بنظرت",
+          "start": 14.42,
+          "end": 14.94
+        },
+        {
+          "text": "خوف",
+          "start": 14.94,
+          "end": 15.18
+        },
+        {
+          "text": "شديدة،",
+          "start": 15.18,
+          "end": 16.12
+        },
+        {
+          "text": "وأهلاق",
+          "start": 16.12,
+          "end": 16.66
+        },
+        {
+          "text": "مستمر",
+          "start": 16.66,
+          "end": 17.04
+        },
+        {
+          "text": "طول",
+          "start": 17.04,
+          "end": 17.34
+        },
+        {
+          "text": "الوقت،",
+          "start": 17.34,
+          "end": 18.54
+        },
+        {
+          "text": "لا",
+          "start": 18.54,
+          "end": 18.88
+        },
+        {
+          "text": "أطربست",
+          "start": 18.88,
+          "end": 19.34
+        },
+        {
+          "text": "الكشف",
+          "start": 19.34,
+          "end": 19.7
+        },
+        {
+          "text": "الأديم",
+          "start": 19.7,
+          "end": 20.08
+        },
+        {
+          "text": "مرمية،",
+          "start": 20.08,
+          "end": 21.06
+        },
+        {
+          "text": "وعليها",
+          "start": 21.06,
+          "end": 21.56
+        },
+        {
+          "text": "أدوات",
+          "start": 21.56,
+          "end": 21.86
+        },
+        {
+          "text": "جراحة",
+          "start": 21.86,
+          "end": 22.22
+        },
+        {
+          "text": "متعرأة",
+          "start": 22.22,
+          "end": 22.74
+        },
+        {
+          "text": "ومشنظيفة،",
+          "start": 22.74,
+          "end": 24.08
+        },
+        {
+          "text": "وكأن",
+          "start": 24.08,
+          "end": 24.4
+        },
+        {
+          "text": "حد",
+          "start": 24.4,
+          "end": 24.76
+        },
+        {
+          "text": "كان",
+          "start": 24.76,
+          "end": 24.96
+        },
+        {
+          "text": "أعد",
+          "start": 24.96,
+          "end": 25.22
+        },
+        {
+          "text": "عليها",
+          "start": 25.22,
+          "end": 25.6
+        },
+        {
+          "text": "حالا،",
+          "start": 25.6,
+          "end": 26.42
+        },
+        {
+          "text": "وبحركة",
+          "start": 26.42,
+          "end": 27.1
+        },
+        {
+          "text": "بصراحة،",
+          "start": 27.1,
+          "end": 28.36
+        },
+        {
+          "text": "والعلب",
+          "start": 28.36,
+          "end": 28.76
+        },
+        {
+          "text": "اللي",
+          "start": 28.76,
+          "end": 28.92
+        },
+        {
+          "text": "على",
+          "start": 28.92,
+          "end": 29.06
+        },
+        {
+          "text": "التربيضة",
+          "start": 29.06,
+          "end": 29.68
+        },
+        {
+          "text": "اترجت",
+          "start": 29.68,
+          "end": 30.48
+        },
+        {
+          "text": "بشكل",
+          "start": 30.48,
+          "end": 30.82
+        },
+        {
+          "text": "مفاجئ،",
+          "start": 30.82,
+          "end": 31.66
+        },
+        {
+          "text": "كأنني",
+          "start": 31.66,
+          "end": 32.36
+        },
+        {
+          "text": "اتخافية",
+          "start": 32.36,
+          "end": 32.86
+        },
+        {
+          "text": "لمستها،",
+          "start": 32.86,
+          "end": 34.0
+        },
+        {
+          "text": "وهو",
+          "start": 34.0,
+          "end": 34.28
+        },
+        {
+          "text": "أعد",
+          "start": 34.28,
+          "end": 34.52
+        },
+        {
+          "text": "الأدوات",
+          "start": 34.52,
+          "end": 34.98
+        },
+        {
+          "text": "على",
+          "start": 34.98,
+          "end": 35.1
+        },
+        {
+          "text": "الأرض",
+          "start": 35.1,
+          "end": 35.32
+        },
+        {
+          "text": "بصوت",
+          "start": 35.32,
+          "end": 35.58
+        },
+        {
+          "text": "عالي",
+          "start": 35.58,
+          "end": 35.86
+        },
+        {
+          "text": "كداً،",
+          "start": 35.86,
+          "end": 36.96
+        },
+        {
+          "text": "فجأة،",
+          "start": 36.96,
+          "end": 38.38
+        },
+        {
+          "text": "جهاز",
+          "start": 38.38,
+          "end": 38.64
+        },
+        {
+          "text": "قيصنا",
+          "start": 38.64,
+          "end": 39.08
+        },
+        {
+          "text": "بضط",
+          "start": 39.08,
+          "end": 39.3
+        },
+        {
+          "text": "القلب",
+          "start": 39.3,
+          "end": 39.64
+        },
+        {
+          "text": "اللي",
+          "start": 39.64,
+          "end": 39.86
+        },
+        {
+          "text": "كان",
+          "start": 39.86,
+          "end": 39.96
+        },
+        {
+          "text": "مطفي،",
+          "start": 39.96,
+          "end": 40.66
+        },
+        {
+          "text": "اشتغل",
+          "start": 40.66,
+          "end": 41.18
+        },
+        {
+          "text": "لوحده،",
+          "start": 41.18,
+          "end": 42.1
+        },
+        {
+          "text": "وبدأ",
+          "start": 42.1,
+          "end": 42.52
+        },
+        {
+          "text": "ينبض",
+          "start": 42.52,
+          "end": 42.88
+        },
+        {
+          "text": "ببطء",
+          "start": 42.88,
+          "end": 43.3
+        },
+        {
+          "text": "جديد،",
+          "start": 43.3,
+          "end": 44.06
+        },
+        {
+          "text": "وبصوت",
+          "start": 44.06,
+          "end": 44.38
+        },
+        {
+          "text": "مرعب",
+          "start": 44.38,
+          "end": 44.78
+        },
+        {
+          "text": "ملأ",
+          "start": 44.78,
+          "end": 44.98
+        },
+        {
+          "text": "الأوضة",
+          "start": 44.98,
+          "end": 45.34
+        },
+        {
+          "text": "كلها،",
+          "start": 45.34,
+          "end": 46.24
+        },
+        {
+          "text": "وطلع",
+          "start": 46.24,
+          "end": 46.58
+        },
+        {
+          "text": "منه",
+          "start": 46.58,
+          "end": 46.84
+        },
+        {
+          "text": "نور",
+          "start": 46.84,
+          "end": 47.04
+        },
+        {
+          "text": "أحمر",
+          "start": 47.04,
+          "end": 47.46
+        },
+        {
+          "text": "أوي،",
+          "start": 47.46,
+          "end": 48.5
+        },
+        {
+          "text": "خلال",
+          "start": 48.5,
+          "end": 48.8
+        },
+        {
+          "text": "حرس",
+          "start": 48.8,
+          "end": 49.12
+        },
+        {
+          "text": "يقاف",
+          "start": 49.12,
+          "end": 49.32
+        },
+        {
+          "text": "مكانه،",
+          "start": 49.32,
+          "end": 50.02
+        },
+        {
+          "text": "مش",
+          "start": 50.02,
+          "end": 50.2
+        },
+        {
+          "text": "مسدق",
+          "start": 50.2,
+          "end": 50.62
+        },
+        {
+          "text": "اللي",
+          "start": 50.62,
+          "end": 50.76
+        },
+        {
+          "text": "بيحصل",
+          "start": 50.76,
+          "end": 51.04
+        },
+        {
+          "text": "قدامه",
+          "start": 51.04,
+          "end": 51.48
+        },
+        {
+          "text": "من",
+          "start": 51.48,
+          "end": 51.58
+        },
+        {
+          "text": "هول",
+          "start": 51.58,
+          "end": 51.82
+        },
+        {
+          "text": "للصدمة",
+          "start": 51.82,
+          "end": 52.34
+        },
+        {
+          "text": "والروع",
+          "start": 52.34,
+          "end": 52.68
+        },
+        {
+          "text": "بالمرعب.",
+          "start": 52.68,
+          "end": 53.26
+        },
+        {
+          "text": "الكرستلال",
+          "start": 54.28,
+          "end": 54.92
+        },
+        {
+          "text": "لفساء",
+          "start": 54.92,
+          "end": 55.2
+        },
+        {
+          "text": "في",
+          "start": 55.2,
+          "end": 55.3
+        },
+        {
+          "text": "الأوضة،",
+          "start": 55.3,
+          "end": 55.92
+        },
+        {
+          "text": "بدأت",
+          "start": 55.92,
+          "end": 56.32
+        },
+        {
+          "text": "تلف",
+          "start": 56.32,
+          "end": 56.48
+        },
+        {
+          "text": "حول",
+          "start": 56.48,
+          "end": 56.84
+        },
+        {
+          "text": "النفسها",
+          "start": 56.84,
+          "end": 57.28
+        },
+        {
+          "text": "بصرعة",
+          "start": 57.28,
+          "end": 57.72
+        },
+        {
+          "text": "عكس",
+          "start": 57.72,
+          "end": 58.38
+        },
+        {
+          "text": "التجاه",
+          "start": 58.38,
+          "end": 58.72
+        },
+        {
+          "text": "لهوة،",
+          "start": 58.72,
+          "end": 59.6
+        },
+        {
+          "text": "وبقانورها",
+          "start": 59.6,
+          "end": 60.44
+        },
+        {
+          "text": "أحمر",
+          "start": 60.44,
+          "end": 61.14
+        },
+        {
+          "text": "قوات",
+          "start": 61.14,
+          "end": 61.62
+        },
+        {
+          "text": "مو",
+          "start": 61.62,
+          "end": 61.86
+        },
+        {
+          "text": "دموي،",
+          "start": 61.86,
+          "end": 62.74
+        },
+        {
+          "text": "وبتلف",
+          "start": 62.74,
+          "end": 63.14
+        },
+        {
+          "text": "بشكل",
+          "start": 63.14,
+          "end": 63.52
+        },
+        {
+          "text": "لجنوني،",
+          "start": 63.52,
+          "end": 64.22
+        },
+        {
+          "text": "بتعمل",
+          "start": 64.22,
+          "end": 64.62
+        },
+        {
+          "text": "إضاءة",
+          "start": 64.62,
+          "end": 64.9
+        },
+        {
+          "text": "حمره",
+          "start": 64.9,
+          "end": 65.16
+        },
+        {
+          "text": "في",
+          "start": 65.16,
+          "end": 65.24
+        },
+        {
+          "text": "كل",
+          "start": 65.24,
+          "end": 65.4
+        },
+        {
+          "text": "حتة",
+          "start": 65.4,
+          "end": 65.78
+        },
+        {
+          "text": "حولين",
+          "start": 65.78,
+          "end": 66.08
+        },
+        {
+          "text": "الحارس،",
+          "start": 66.08,
+          "end": 66.96
+        },
+        {
+          "text": "اللي",
+          "start": 66.96,
+          "end": 67.12
+        },
+        {
+          "text": "مش",
+          "start": 67.12,
+          "end": 67.26
+        },
+        {
+          "text": "حرف",
+          "start": 67.26,
+          "end": 67.44
+        },
+        {
+          "text": "يهرأ",
+          "start": 67.44,
+          "end": 67.74
+        },
+        {
+          "text": "من",
+          "start": 67.74,
+          "end": 67.88
+        },
+        {
+          "text": "المكان",
+          "start": 67.88,
+          "end": 68.14
+        },
+        {
+          "text": "المظلم",
+          "start": 68.14,
+          "end": 68.6
+        },
+        {
+          "text": "والمرعب",
+          "start": 68.6,
+          "end": 69.52
+        },
+        {
+          "text": "دنهائي،",
+          "start": 69.52,
+          "end": 71.12
+        },
+        {
+          "text": "الحرس",
+          "start": 71.12,
+          "end": 71.46
+        },
+        {
+          "text": "حول",
+          "start": 71.46,
+          "end": 71.68
+        },
+        {
+          "text": "يخرب،",
+          "start": 71.68,
+          "end": 72.54
+        },
+        {
+          "text": "بس",
+          "start": 72.54,
+          "end": 72.74
+        },
+        {
+          "text": "لا",
+          "start": 72.74,
+          "end": 72.86
+        },
+        {
+          "text": "المجسم",
+          "start": 72.86,
+          "end": 73.36
+        },
+        {
+          "text": "التشريحي",
+          "start": 73.36,
+          "end": 74.32
+        },
+        {
+          "text": "اللي",
+          "start": 74.32,
+          "end": 74.54
+        },
+        {
+          "text": "واقف",
+          "start": 74.54,
+          "end": 74.82
+        },
+        {
+          "text": "ركن",
+          "start": 74.82,
+          "end": 75.06
+        },
+        {
+          "text": "الأوضة،",
+          "start": 75.06,
+          "end": 75.82
+        },
+        {
+          "text": "لف",
+          "start": 75.82,
+          "end": 76.0
+        },
+        {
+          "text": "راس",
+          "start": 76.0,
+          "end": 76.3
+        },
+        {
+          "text": "نحيته،",
+          "start": 76.3,
+          "end": 77.2
+        },
+        {
+          "text": "وبصصله",
+          "start": 77.2,
+          "end": 77.76
+        },
+        {
+          "text": "بعنين",
+          "start": 77.76,
+          "end": 77.96
+        },
+        {
+          "text": "ملتهبتين،",
+          "start": 77.96,
+          "end": 79.62
+        },
+        {
+          "text": "وفحرك",
+          "start": 79.62,
+          "end": 79.94
+        },
+        {
+          "text": "سريعة",
+          "start": 79.94,
+          "end": 80.38
+        },
+        {
+          "text": "ومخيفة،",
+          "start": 80.38,
+          "end": 81.2
+        },
+        {
+          "text": "خلت",
+          "start": 81.2,
+          "end": 81.52
+        },
+        {
+          "text": "الحرس",
+          "start": 81.52,
+          "end": 81.9
+        },
+        {
+          "text": "يتجمد",
+          "start": 81.9,
+          "end": 82.34
+        },
+        {
+          "text": "في",
+          "start": 82.34,
+          "end": 82.44
+        },
+        {
+          "text": "مكانه",
+          "start": 82.44,
+          "end": 82.88
+        },
+        {
+          "text": "من",
+          "start": 82.88,
+          "end": 83.24
+        },
+        {
+          "text": "كتر",
+          "start": 83.24,
+          "end": 83.66
+        },
+        {
+          "text": "الخوف",
+          "start": 83.66,
+          "end": 84.08
+        },
+        {
+          "text": "والهلع،",
+          "start": 84.08,
+          "end": 84.9
+        },
+        {
+          "text": "اللي",
+          "start": 84.9,
+          "end": 85.12
+        },
+        {
+          "text": "صيطر",
+          "start": 85.12,
+          "end": 85.44
+        },
+        {
+          "text": "على",
+          "start": 85.44,
+          "end": 85.56
+        },
+        {
+          "text": "جسمه",
+          "start": 85.56,
+          "end": 85.9
+        },
+        {
+          "text": "كله،",
+          "start": 85.9,
+          "end": 86.52
+        },
+        {
+          "text": "ويقف",
+          "start": 86.52,
+          "end": 87.26
+        },
+        {
+          "text": "عاجس",
+          "start": 87.26,
+          "end": 87.62
+        },
+        {
+          "text": "تماما",
+          "start": 87.62,
+          "end": 87.94
+        },
+        {
+          "text": "عن",
+          "start": 87.94,
+          "end": 88.08
+        },
+        {
+          "text": "الحركة،",
+          "start": 88.08,
+          "end": 89.26
+        },
+        {
+          "text": "جده",
+          "start": 89.26,
+          "end": 89.7
+        },
+        {
+          "text": "بصورة",
+          "start": 89.7,
+          "end": 89.94
+        },
+        {
+          "text": "نحيت",
+          "start": 89.94,
+          "end": 90.2
+        },
+        {
+          "text": "بمن",
+          "start": 90.2,
+          "end": 90.34
+        },
+        {
+          "text": "الخروج،",
+          "start": 90.34,
+          "end": 91.04
+        },
+        {
+          "text": "بس",
+          "start": 91.04,
+          "end": 91.32
+        },
+        {
+          "text": "لا",
+          "start": 91.32,
+          "end": 91.46
+        },
+        {
+          "text": "الترباسة",
+          "start": 91.46,
+          "end": 91.98
+        },
+        {
+          "text": "أفل،",
+          "start": 91.98,
+          "end": 92.62
+        },
+        {
+          "text": "لوحده،",
+          "start": 93.38,
+          "end": 94.06
+        },
+        {
+          "text": "وقوة",
+          "start": 94.06,
+          "end": 94.84
+        },
+        {
+          "text": "خفية",
+          "start": 94.84,
+          "end": 95.18
+        },
+        {
+          "text": "كاتفته،",
+          "start": 95.18,
+          "end": 96.54
+        },
+        {
+          "text": "ومنعيته",
+          "start": 96.54,
+          "end": 97.1
+        },
+        {
+          "text": "حتى",
+          "start": 97.1,
+          "end": 97.42
+        },
+        {
+          "text": "من",
+          "start": 97.42,
+          "end": 97.56
+        },
+        {
+          "text": "أنه",
+          "start": 97.56,
+          "end": 97.8
+        },
+        {
+          "text": "يصرخ",
+          "start": 97.8,
+          "end": 98.3
+        },
+        {
+          "text": "أو",
+          "start": 98.3,
+          "end": 98.72
+        },
+        {
+          "text": "ينادي",
+          "start": 98.72,
+          "end": 98.98
+        },
+        {
+          "text": "حد،",
+          "start": 98.98,
+          "end": 99.98
+        },
+        {
+          "text": "والباب",
+          "start": 99.98,
+          "end": 100.32
+        },
+        {
+          "text": "يتأفل",
+          "start": 100.32,
+          "end": 100.64
+        },
+        {
+          "text": "بعنف،",
+          "start": 100.64,
+          "end": 101.88
+        },
+        {
+          "text": "والتروس",
+          "start": 101.88,
+          "end": 102.26
+        },
+        {
+          "text": "بتاعت",
+          "start": 102.26,
+          "end": 102.54
+        },
+        {
+          "text": "الإفلة",
+          "start": 102.54,
+          "end": 102.86
+        },
+        {
+          "text": "تحركة",
+          "start": 102.86,
+          "end": 103.3
+        },
+        {
+          "text": "لوحده،",
+          "start": 103.3,
+          "end": 104.32
+        },
+        {
+          "text": "عشان",
+          "start": 104.32,
+          "end": 104.56
+        },
+        {
+          "text": "تقف",
+          "start": 104.56,
+          "end": 104.78
+        },
+        {
+          "text": "العلي",
+          "start": 104.78,
+          "end": 105.04
+        },
+        {
+          "text": "الطريق",
+          "start": 105.04,
+          "end": 105.36
+        },
+        {
+          "text": "تماما،",
+          "start": 105.36,
+          "end": 106.24
+        },
+        {
+          "text": "وتمنع",
+          "start": 106.24,
+          "end": 106.8
+        },
+        {
+          "text": "أي",
+          "start": 106.8,
+          "end": 107.14
+        },
+        {
+          "text": "محاولة",
+          "start": 107.14,
+          "end": 107.58
+        },
+        {
+          "text": "لو",
+          "start": 107.58,
+          "end": 107.74
+        },
+        {
+          "text": "رب",
+          "start": 107.74,
+          "end": 107.86
+        },
+        {
+          "text": "من",
+          "start": 107.86,
+          "end": 108.0
+        },
+        {
+          "text": "الأوضة،",
+          "start": 108.0,
+          "end": 109.58
+        },
+        {
+          "text": "عارب",
+          "start": 109.58,
+          "end": 109.96
+        },
+        {
+          "text": "الساحة",
+          "start": 109.96,
+          "end": 110.24
+        },
+        {
+          "text": "الأديم",
+          "start": 110.24,
+          "end": 110.54
+        },
+        {
+          "text": "على",
+          "start": 110.54,
+          "end": 110.68
+        },
+        {
+          "text": "الحيطاريات",
+          "start": 110.68,
+          "end": 111.26
+        },
+        {
+          "text": "لوورة",
+          "start": 111.26,
+          "end": 111.54
+        },
+        {
+          "text": "بصرعة",
+          "start": 111.54,
+          "end": 111.92
+        },
+        {
+          "text": "جنونية،",
+          "start": 111.92,
+          "end": 113.1
+        },
+        {
+          "text": "وكأن",
+          "start": 113.1,
+          "end": 113.4
+        },
+        {
+          "text": "الزمن",
+          "start": 113.4,
+          "end": 113.74
+        },
+        {
+          "text": "في",
+          "start": 113.74,
+          "end": 113.88
+        },
+        {
+          "text": "المكان",
+          "start": 113.88,
+          "end": 114.1
+        },
+        {
+          "text": "ده",
+          "start": 114.1,
+          "end": 114.5
+        },
+        {
+          "text": "بيعيش",
+          "start": 114.5,
+          "end": 114.94
+        },
+        {
+          "text": "اللحظة",
+          "start": 114.94,
+          "end": 115.36
+        },
+        {
+          "text": "الأخيرة",
+          "start": 115.36,
+          "end": 115.76
+        },
+        {
+          "text": "قبل",
+          "start": 115.76,
+          "end": 115.96
+        },
+        {
+          "text": "الكرسة،",
+          "start": 115.96,
+          "end": 117.02
+        },
+        {
+          "text": "والبندول",
+          "start": 117.02,
+          "end": 117.6
+        },
+        {
+          "text": "بيتحرك",
+          "start": 117.6,
+          "end": 118.06
+        },
+        {
+          "text": "بعم",
+          "start": 118.06,
+          "end": 118.3
+        },
+        {
+          "text": "فيش",
+          "start": 118.3,
+          "end": 118.6
+        },
+        {
+          "text": "تهد،",
+          "start": 118.6,
+          "end": 119.18
+        },
+        {
+          "text": "ويخبط",
+          "start": 119.18,
+          "end": 119.72
+        },
+        {
+          "text": "في",
+          "start": 119.72,
+          "end": 119.86
+        },
+        {
+          "text": "حواف",
+          "start": 119.86,
+          "end": 120.2
+        },
+        {
+          "text": "السعب",
+          "start": 120.2,
+          "end": 120.6
+        },
+        {
+          "text": "صوت",
+          "start": 120.6,
+          "end": 120.86
+        },
+        {
+          "text": "مزعج،",
+          "start": 120.86,
+          "end": 121.54
+        },
+        {
+          "text": "ومخيف",
+          "start": 121.54,
+          "end": 122.26
+        },
+        {
+          "text": "بيزود",
+          "start": 122.26,
+          "end": 123.36
+        },
+        {
+          "text": "الطوالطر،",
+          "start": 123.36,
+          "end": 124.4
+        },
+        {
+          "text": "والهلع",
+          "start": 124.4,
+          "end": 124.94
+        },
+        {
+          "text": "كوة",
+          "start": 124.94,
+          "end": 125.74
+        },
+        {
+          "text": "الأوضة",
+          "start": 125.74,
+          "end": 125.96
+        },
+        {
+          "text": "المسلمة",
+          "start": 125.96,
+          "end": 126.46
+        },
+        {
+          "text": "دي",
+          "start": 126.46,
+          "end": 126.54
+        },
+        {
+          "text": "بشكل",
+          "start": 126.54,
+          "end": 126.84
+        },
+        {
+          "text": "مرائب،",
+          "start": 126.84,
+          "end": 127.98
+        },
+        {
+          "text": "وفي",
+          "start": 127.98,
+          "end": 128.36
+        },
+        {
+          "text": "أخر",
+          "start": 128.36,
+          "end": 128.52
+        },
+        {
+          "text": "اللقطة،",
+          "start": 128.52,
+          "end": 129.46
+        },
+        {
+          "text": "أنا",
+          "start": 129.46,
+          "end": 129.74
+        },
+        {
+          "text": "عكس",
+          "start": 129.74,
+          "end": 130.06
+        },
+        {
+          "text": "الصورة",
+          "start": 130.06,
+          "end": 130.4
+        },
+        {
+          "text": "الحرس",
+          "start": 130.4,
+          "end": 130.74
+        },
+        {
+          "text": "في",
+          "start": 130.74,
+          "end": 130.86
+        },
+        {
+          "text": "المرايا",
+          "start": 130.86,
+          "end": 131.18
+        },
+        {
+          "text": "المقصورة،",
+          "start": 131.18,
+          "end": 132.24
+        },
+        {
+          "text": "وهو",
+          "start": 132.24,
+          "end": 132.44
+        },
+        {
+          "text": "مبتسم",
+          "start": 132.44,
+          "end": 132.96
+        },
+        {
+          "text": "بتسامة",
+          "start": 132.96,
+          "end": 133.96
+        },
+        {
+          "text": "مرائبة،",
+          "start": 133.96,
+          "end": 135.0
+        },
+        {
+          "text": "وبيفتحين",
+          "start": 135.0,
+          "end": 135.68
+        },
+        {
+          "text": "تلتة",
+          "start": 135.68,
+          "end": 136.06
+        },
+        {
+          "text": "في",
+          "start": 136.06,
+          "end": 136.16
+        },
+        {
+          "text": "جبهته،",
+          "start": 136.16,
+          "end": 136.98
+        },
+        {
+          "text": "بتنور",
+          "start": 136.98,
+          "end": 137.38
+        },
+        {
+          "text": "بنور",
+          "start": 137.38,
+          "end": 137.66
+        },
+        {
+          "text": "أحمر",
+          "start": 137.66,
+          "end": 138.04
+        },
+        {
+          "text": "قوي",
+          "start": 138.04,
+          "end": 138.46
+        },
+        {
+          "text": "ومخيف",
+          "start": 138.46,
+          "end": 139.14
+        },
+        {
+          "text": "كتن،",
+          "start": 139.14,
+          "end": 140.24
+        },
+        {
+          "text": "بيعلن",
+          "start": 140.24,
+          "end": 140.84
+        },
+        {
+          "text": "صيطرت",
+          "start": 140.84,
+          "end": 141.24
+        },
+        {
+          "text": "القوة",
+          "start": 141.24,
+          "end": 141.6
+        },
+        {
+          "text": "الخفية",
+          "start": 141.6,
+          "end": 142.0
+        },
+        {
+          "text": "عليه،",
+          "start": 142.0,
+          "end": 142.7
+        },
+        {
+          "text": "وتحولوا",
+          "start": 142.7,
+          "end": 143.38
+        },
+        {
+          "text": "الكامل",
+          "start": 143.38,
+          "end": 144.12
+        },
+        {
+          "text": "لنهاية",
+          "start": 144.12,
+          "end": 144.82
+        },
+        {
+          "text": "مأسوية",
+          "start": 144.82,
+          "end": 145.3
+        },
+        {
+          "text": "مرعبة،",
+          "start": 145.3,
+          "end": 146.1
+        },
+        {
+          "text": "كوة",
+          "start": 146.1,
+          "end": 146.54
+        },
+        {
+          "text": "غرفة",
+          "start": 146.54,
+          "end": 146.86
+        },
+        {
+          "text": "الطواري",
+          "start": 146.86,
+          "end": 147.3
+        },
+        {
+          "text": "المسلمة.",
+          "start": 147.3,
+          "end": 147.82
+        }
+      ]
+    ],
+    [
+      "large-v3",
+      [
+        {
+          "text": "دخل",
+          "start": 0.0,
+          "end": 0.46
+        },
+        {
+          "text": "حرس",
+          "start": 0.46,
+          "end": 0.78
+        },
+        {
+          "text": "المستشفى",
+          "start": 0.78,
+          "end": 1.48
+        },
+        {
+          "text": "الدور",
+          "start": 1.48,
+          "end": 2.24
+        },
+        {
+          "text": "الأرض",
+          "start": 2.24,
+          "end": 2.6
+        },
+        {
+          "text": "المظلم",
+          "start": 2.6,
+          "end": 3.1
+        },
+        {
+          "text": "وفي",
+          "start": 3.1,
+          "end": 4.02
+        },
+        {
+          "text": "إيده",
+          "start": 4.02,
+          "end": 4.28
+        },
+        {
+          "text": "كشاف",
+          "start": 4.28,
+          "end": 4.64
+        },
+        {
+          "text": "قديم",
+          "start": 4.64,
+          "end": 5.04
+        },
+        {
+          "text": "علشان",
+          "start": 5.04,
+          "end": 5.96
+        },
+        {
+          "text": "يدور",
+          "start": 5.96,
+          "end": 6.3
+        },
+        {
+          "text": "على",
+          "start": 6.3,
+          "end": 6.48
+        },
+        {
+          "text": "صوت",
+          "start": 6.48,
+          "end": 6.76
+        },
+        {
+          "text": "خط",
+          "start": 6.76,
+          "end": 7.04
+        },
+        {
+          "text": "غريب",
+          "start": 7.04,
+          "end": 7.5
+        },
+        {
+          "text": "جاي",
+          "start": 7.5,
+          "end": 7.72
+        },
+        {
+          "text": "من",
+          "start": 7.72,
+          "end": 7.88
+        },
+        {
+          "text": "قط",
+          "start": 7.88,
+          "end": 8.16
+        },
+        {
+          "text": "الطوارئ",
+          "start": 8.16,
+          "end": 8.56
+        },
+        {
+          "text": "المقفولة",
+          "start": 8.56,
+          "end": 9.28
+        },
+        {
+          "text": "اللي",
+          "start": 9.28,
+          "end": 9.84
+        },
+        {
+          "text": "فيها",
+          "start": 9.84,
+          "end": 10.08
+        },
+        {
+          "text": "الباب",
+          "start": 10.08,
+          "end": 10.42
+        },
+        {
+          "text": "بيزعيق",
+          "start": 10.42,
+          "end": 10.98
+        },
+        {
+          "text": "وبيفتح",
+          "start": 10.98,
+          "end": 11.5
+        },
+        {
+          "text": "بالراحة",
+          "start": 11.5,
+          "end": 12.06
+        },
+        {
+          "text": "والكشاف",
+          "start": 12.06,
+          "end": 13.24
+        },
+        {
+          "text": "بيتهز",
+          "start": 13.24,
+          "end": 13.68
+        },
+        {
+          "text": "في",
+          "start": 13.68,
+          "end": 13.8
+        },
+        {
+          "text": "إيده",
+          "start": 13.8,
+          "end": 14.1
+        },
+        {
+          "text": "بنظرة",
+          "start": 14.1,
+          "end": 14.88
+        },
+        {
+          "text": "خوف",
+          "start": 14.88,
+          "end": 15.18
+        },
+        {
+          "text": "شديدة",
+          "start": 15.18,
+          "end": 15.66
+        },
+        {
+          "text": "وأهلا",
+          "start": 15.66,
+          "end": 16.48
+        },
+        {
+          "text": "مستمر",
+          "start": 16.48,
+          "end": 17.02
+        },
+        {
+          "text": "طول",
+          "start": 17.02,
+          "end": 17.3
+        },
+        {
+          "text": "الوقت",
+          "start": 17.3,
+          "end": 17.76
+        },
+        {
+          "text": "لقى",
+          "start": 18.479999999999997,
+          "end": 18.88
+        },
+        {
+          "text": "ترابست",
+          "start": 18.88,
+          "end": 19.24
+        },
+        {
+          "text": "الكشف",
+          "start": 19.24,
+          "end": 19.64
+        },
+        {
+          "text": "الأديمة",
+          "start": 19.64,
+          "end": 20.06
+        },
+        {
+          "text": "مرمية",
+          "start": 20.06,
+          "end": 20.4
+        },
+        {
+          "text": "وعليها",
+          "start": 20.4,
+          "end": 21.48
+        },
+        {
+          "text": "أدوات",
+          "start": 21.48,
+          "end": 21.8
+        },
+        {
+          "text": "جراحة",
+          "start": 21.8,
+          "end": 22.14
+        },
+        {
+          "text": "متعرقة",
+          "start": 22.14,
+          "end": 22.66
+        },
+        {
+          "text": "ومش",
+          "start": 22.66,
+          "end": 22.9
+        },
+        {
+          "text": "نظيفة",
+          "start": 22.9,
+          "end": 23.34
+        },
+        {
+          "text": "وكأن",
+          "start": 23.34,
+          "end": 24.3
+        },
+        {
+          "text": "حد",
+          "start": 24.3,
+          "end": 24.76
+        },
+        {
+          "text": "كان",
+          "start": 24.76,
+          "end": 24.88
+        },
+        {
+          "text": "قاعد",
+          "start": 24.88,
+          "end": 25.2
+        },
+        {
+          "text": "عليها",
+          "start": 25.2,
+          "end": 25.52
+        },
+        {
+          "text": "حالا",
+          "start": 25.52,
+          "end": 25.96
+        },
+        {
+          "text": "وبيحركها",
+          "start": 25.96,
+          "end": 27.02
+        },
+        {
+          "text": "بسرعة",
+          "start": 27.02,
+          "end": 27.42
+        },
+        {
+          "text": "والعلبة",
+          "start": 27.42,
+          "end": 28.78
+        },
+        {
+          "text": "اللي",
+          "start": 28.78,
+          "end": 28.9
+        },
+        {
+          "text": "على",
+          "start": 28.9,
+          "end": 28.96
+        },
+        {
+          "text": "الترابيزة",
+          "start": 28.96,
+          "end": 29.52
+        },
+        {
+          "text": "اترجت",
+          "start": 29.52,
+          "end": 30.44
+        },
+        {
+          "text": "بشكل",
+          "start": 30.44,
+          "end": 30.8
+        },
+        {
+          "text": "مفاجئ",
+          "start": 30.8,
+          "end": 31.32
+        },
+        {
+          "text": "كأني",
+          "start": 31.32,
+          "end": 32.22
+        },
+        {
+          "text": "إيد",
+          "start": 32.22,
+          "end": 32.44
+        },
+        {
+          "text": "خافية",
+          "start": 32.44,
+          "end": 32.78
+        },
+        {
+          "text": "لمستها",
+          "start": 32.78,
+          "end": 33.4
+        },
+        {
+          "text": "وهو",
+          "start": 33.4,
+          "end": 34.24
+        },
+        {
+          "text": "قاعدت",
+          "start": 34.24,
+          "end": 34.56
+        },
+        {
+          "text": "الأدوات",
+          "start": 34.56,
+          "end": 34.92
+        },
+        {
+          "text": "على",
+          "start": 34.92,
+          "end": 35.02
+        },
+        {
+          "text": "الأرض",
+          "start": 35.02,
+          "end": 35.32
+        },
+        {
+          "text": "بصوت",
+          "start": 35.32,
+          "end": 35.54
+        },
+        {
+          "text": "عالي",
+          "start": 35.54,
+          "end": 35.76
+        },
+        {
+          "text": "جدا",
+          "start": 35.76,
+          "end": 36.06
+        },
+        {
+          "text": "فجأة",
+          "start": 36.06,
+          "end": 37.48
+        },
+        {
+          "text": "جهاز",
+          "start": 37.48,
+          "end": 38.6
+        },
+        {
+          "text": "قياس",
+          "start": 38.6,
+          "end": 38.88
+        },
+        {
+          "text": "نبضات",
+          "start": 38.88,
+          "end": 39.24
+        },
+        {
+          "text": "القلب",
+          "start": 39.24,
+          "end": 39.6
+        },
+        {
+          "text": "اللي",
+          "start": 39.6,
+          "end": 39.8
+        },
+        {
+          "text": "كان",
+          "start": 39.8,
+          "end": 39.92
+        },
+        {
+          "text": "مطفي",
+          "start": 39.92,
+          "end": 40.24
+        },
+        {
+          "text": "اشتغل",
+          "start": 40.24,
+          "end": 41.1
+        },
+        {
+          "text": "لوحده",
+          "start": 41.1,
+          "end": 41.58
+        },
+        {
+          "text": "وبدأ",
+          "start": 41.58,
+          "end": 42.44
+        },
+        {
+          "text": "ينبط",
+          "start": 42.44,
+          "end": 42.84
+        },
+        {
+          "text": "ببطء",
+          "start": 42.84,
+          "end": 43.2
+        },
+        {
+          "text": "جديد",
+          "start": 43.2,
+          "end": 43.74
+        },
+        {
+          "text": "وبصوت",
+          "start": 43.74,
+          "end": 44.32
+        },
+        {
+          "text": "مرعب",
+          "start": 44.32,
+          "end": 44.74
+        },
+        {
+          "text": "مال",
+          "start": 44.74,
+          "end": 44.94
+        },
+        {
+          "text": "القوضة",
+          "start": 44.94,
+          "end": 45.26
+        },
+        {
+          "text": "كلها",
+          "start": 45.26,
+          "end": 45.62
+        },
+        {
+          "text": "وطلع",
+          "start": 45.62,
+          "end": 46.52
+        },
+        {
+          "text": "منه",
+          "start": 46.52,
+          "end": 46.76
+        },
+        {
+          "text": "نور",
+          "start": 46.76,
+          "end": 47.0
+        },
+        {
+          "text": "أحمر",
+          "start": 47.0,
+          "end": 47.42
+        },
+        {
+          "text": "قوي",
+          "start": 47.42,
+          "end": 47.82
+        },
+        {
+          "text": "خلى",
+          "start": 47.82,
+          "end": 48.72
+        },
+        {
+          "text": "الحارس",
+          "start": 48.72,
+          "end": 49.04
+        },
+        {
+          "text": "يقف",
+          "start": 49.04,
+          "end": 49.28
+        },
+        {
+          "text": "مكانه",
+          "start": 49.28,
+          "end": 49.7
+        },
+        {
+          "text": "مش",
+          "start": 49.7,
+          "end": 50.14
+        },
+        {
+          "text": "مصدق",
+          "start": 50.14,
+          "end": 50.56
+        },
+        {
+          "text": "اللي",
+          "start": 50.56,
+          "end": 50.7
+        },
+        {
+          "text": "بيحصل",
+          "start": 50.7,
+          "end": 50.98
+        },
+        {
+          "text": "قدامه",
+          "start": 50.98,
+          "end": 51.34
+        },
+        {
+          "text": "من",
+          "start": 51.34,
+          "end": 51.5
+        },
+        {
+          "text": "هول",
+          "start": 51.5,
+          "end": 51.78
+        },
+        {
+          "text": "الصدمة",
+          "start": 51.78,
+          "end": 52.3
+        },
+        {
+          "text": "والرعب",
+          "start": 52.3,
+          "end": 52.68
+        },
+        {
+          "text": "المرعب",
+          "start": 52.68,
+          "end": 53.18
+        },
+        {
+          "text": "الكريستالة",
+          "start": 54.1,
+          "end": 54.82
+        },
+        {
+          "text": "اللي",
+          "start": 54.82,
+          "end": 54.98
+        },
+        {
+          "text": "في",
+          "start": 54.98,
+          "end": 55.06
+        },
+        {
+          "text": "سقف",
+          "start": 55.06,
+          "end": 55.22
+        },
+        {
+          "text": "القوضة",
+          "start": 55.22,
+          "end": 55.58
+        },
+        {
+          "text": "بدأت",
+          "start": 55.58,
+          "end": 56.24
+        },
+        {
+          "text": "تلف",
+          "start": 56.24,
+          "end": 56.48
+        },
+        {
+          "text": "حوالي",
+          "start": 56.48,
+          "end": 56.84
+        },
+        {
+          "text": "النفسها",
+          "start": 56.84,
+          "end": 57.26
+        },
+        {
+          "text": "بسرعة",
+          "start": 57.26,
+          "end": 57.64
+        },
+        {
+          "text": "عكس",
+          "start": 57.64,
+          "end": 58.28
+        },
+        {
+          "text": "اتجاه",
+          "start": 58.28,
+          "end": 58.66
+        },
+        {
+          "text": "الهوى",
+          "start": 58.66,
+          "end": 59.02
+        },
+        {
+          "text": "وبقى",
+          "start": 59.02,
+          "end": 60.02
+        },
+        {
+          "text": "نورها",
+          "start": 60.02,
+          "end": 60.34
+        },
+        {
+          "text": "أحمر",
+          "start": 60.34,
+          "end": 61.14
+        },
+        {
+          "text": "قاطم",
+          "start": 61.14,
+          "end": 61.72
+        },
+        {
+          "text": "ودموي",
+          "start": 61.72,
+          "end": 62.22
+        },
+        {
+          "text": "وبتلف",
+          "start": 62.22,
+          "end": 63.14
+        },
+        {
+          "text": "بشكل",
+          "start": 63.14,
+          "end": 63.48
+        },
+        {
+          "text": "جنوني",
+          "start": 63.48,
+          "end": 63.88
+        },
+        {
+          "text": "بتعمل",
+          "start": 63.88,
+          "end": 64.58
+        },
+        {
+          "text": "إضاءة",
+          "start": 64.58,
+          "end": 64.84
+        },
+        {
+          "text": "حمر",
+          "start": 64.84,
+          "end": 65.06
+        },
+        {
+          "text": "في",
+          "start": 65.06,
+          "end": 65.14
+        },
+        {
+          "text": "كل",
+          "start": 65.14,
+          "end": 65.34
+        },
+        {
+          "text": "حتة",
+          "start": 65.34,
+          "end": 65.66
+        },
+        {
+          "text": "حوالين",
+          "start": 65.66,
+          "end": 66.02
+        },
+        {
+          "text": "الحارس",
+          "start": 66.02,
+          "end": 66.46
+        },
+        {
+          "text": "اللي",
+          "start": 66.46,
+          "end": 67.08
+        },
+        {
+          "text": "مش",
+          "start": 67.08,
+          "end": 67.2
+        },
+        {
+          "text": "حارس",
+          "start": 67.2,
+          "end": 67.4
+        },
+        {
+          "text": "يهرب",
+          "start": 67.4,
+          "end": 67.68
+        },
+        {
+          "text": "من",
+          "start": 67.68,
+          "end": 67.82
+        },
+        {
+          "text": "المكان",
+          "start": 67.82,
+          "end": 68.12
+        },
+        {
+          "text": "المظلم",
+          "start": 68.12,
+          "end": 68.56
+        },
+        {
+          "text": "والمرعب",
+          "start": 68.56,
+          "end": 69.5
+        },
+        {
+          "text": "ده",
+          "start": 69.5,
+          "end": 69.6
+        },
+        {
+          "text": "نهائي",
+          "start": 69.6,
+          "end": 70.02
+        },
+        {
+          "text": "الحارس",
+          "start": 70.02,
+          "end": 71.4
+        },
+        {
+          "text": "حاول",
+          "start": 71.4,
+          "end": 71.6
+        },
+        {
+          "text": "يغرب",
+          "start": 71.6,
+          "end": 71.98
+        },
+        {
+          "text": "بس",
+          "start": 71.98,
+          "end": 72.64
+        },
+        {
+          "text": "لقى",
+          "start": 72.64,
+          "end": 72.9
+        },
+        {
+          "text": "المجسم",
+          "start": 72.9,
+          "end": 73.32
+        },
+        {
+          "text": "التشريحي",
+          "start": 73.32,
+          "end": 74.06
+        },
+        {
+          "text": "اللي",
+          "start": 74.06,
+          "end": 74.5
+        },
+        {
+          "text": "واقف",
+          "start": 74.5,
+          "end": 74.72
+        },
+        {
+          "text": "في",
+          "start": 74.72,
+          "end": 74.82
+        },
+        {
+          "text": "ركن",
+          "start": 74.82,
+          "end": 74.98
+        },
+        {
+          "text": "القوضة",
+          "start": 74.98,
+          "end": 75.34
+        },
+        {
+          "text": "لف",
+          "start": 75.34,
+          "end": 76.0
+        },
+        {
+          "text": "راسه",
+          "start": 76.0,
+          "end": 76.32
+        },
+        {
+          "text": "نحيته",
+          "start": 76.32,
+          "end": 76.82
+        },
+        {
+          "text": "وبصصله",
+          "start": 76.82,
+          "end": 77.66
+        },
+        {
+          "text": "بعنين",
+          "start": 77.66,
+          "end": 77.92
+        },
+        {
+          "text": "ملتهبتين",
+          "start": 77.92,
+          "end": 78.78
+        },
+        {
+          "text": "وفحركة",
+          "start": 78.78,
+          "end": 79.94
+        },
+        {
+          "text": "سريعة",
+          "start": 79.94,
+          "end": 80.34
+        },
+        {
+          "text": "ومخيفة",
+          "start": 80.34,
+          "end": 80.84
+        },
+        {
+          "text": "خلت",
+          "start": 80.84,
+          "end": 81.46
+        },
+        {
+          "text": "الحارس",
+          "start": 81.46,
+          "end": 81.82
+        },
+        {
+          "text": "يتجمد",
+          "start": 81.82,
+          "end": 82.28
+        },
+        {
+          "text": "في",
+          "start": 82.28,
+          "end": 82.42
+        },
+        {
+          "text": "مكانه",
+          "start": 82.42,
+          "end": 82.76
+        },
+        {
+          "text": "من",
+          "start": 82.76,
+          "end": 83.16
+        },
+        {
+          "text": "كتر",
+          "start": 83.16,
+          "end": 83.6
+        },
+        {
+          "text": "الخوف",
+          "start": 83.6,
+          "end": 84.04
+        },
+        {
+          "text": "والهلع",
+          "start": 84.04,
+          "end": 84.5
+        },
+        {
+          "text": "اللي",
+          "start": 84.5,
+          "end": 85.04
+        },
+        {
+          "text": "سيطر",
+          "start": 85.04,
+          "end": 85.36
+        },
+        {
+          "text": "على",
+          "start": 85.36,
+          "end": 85.48
+        },
+        {
+          "text": "جسمه",
+          "start": 85.48,
+          "end": 85.84
+        },
+        {
+          "text": "كله",
+          "start": 85.84,
+          "end": 86.2
+        },
+        {
+          "text": "وقف",
+          "start": 86.2,
+          "end": 87.18
+        },
+        {
+          "text": "عاجز",
+          "start": 87.18,
+          "end": 87.54
+        },
+        {
+          "text": "تماما",
+          "start": 87.54,
+          "end": 87.92
+        },
+        {
+          "text": "عن",
+          "start": 87.92,
+          "end": 88.04
+        },
+        {
+          "text": "الحركة",
+          "start": 88.04,
+          "end": 88.52
+        },
+        {
+          "text": "جاءت",
+          "start": 88.52,
+          "end": 89.62
+        },
+        {
+          "text": "بسرعة",
+          "start": 89.62,
+          "end": 89.9
+        },
+        {
+          "text": "ناحية",
+          "start": 89.9,
+          "end": 90.12
+        },
+        {
+          "text": "باب",
+          "start": 90.12,
+          "end": 90.3
+        },
+        {
+          "text": "الخروج",
+          "start": 90.3,
+          "end": 90.66
+        },
+        {
+          "text": "بس",
+          "start": 90.66,
+          "end": 91.28
+        },
+        {
+          "text": "لقى",
+          "start": 91.28,
+          "end": 91.44
+        },
+        {
+          "text": "الترباس",
+          "start": 91.44,
+          "end": 91.82
+        },
+        {
+          "text": "اتقفل",
+          "start": 91.82,
+          "end": 92.3
+        },
+        {
+          "text": "لوحته",
+          "start": 92.3,
+          "end": 93.16
+        },
+        {
+          "text": "وقوة",
+          "start": 94.02,
+          "end": 94.74
+        },
+        {
+          "text": "خفية",
+          "start": 94.74,
+          "end": 95.14
+        },
+        {
+          "text": "كتفته",
+          "start": 95.14,
+          "end": 95.8
+        },
+        {
+          "text": "ومنعته",
+          "start": 95.8,
+          "end": 97.08
+        },
+        {
+          "text": "حتى",
+          "start": 97.08,
+          "end": 97.34
+        },
+        {
+          "text": "من",
+          "start": 97.34,
+          "end": 97.54
+        },
+        {
+          "text": "إنه",
+          "start": 97.54,
+          "end": 97.72
+        },
+        {
+          "text": "يصرخ",
+          "start": 97.72,
+          "end": 98.14
+        },
+        {
+          "text": "أو",
+          "start": 98.14,
+          "end": 98.64
+        },
+        {
+          "text": "ينادي",
+          "start": 98.64,
+          "end": 98.92
+        },
+        {
+          "text": "حد",
+          "start": 98.92,
+          "end": 99.3
+        },
+        {
+          "text": "والباب",
+          "start": 99.3,
+          "end": 100.3
+        },
+        {
+          "text": "اتقفل",
+          "start": 100.3,
+          "end": 100.6
+        },
+        {
+          "text": "بعنف",
+          "start": 100.6,
+          "end": 100.96
+        },
+        {
+          "text": "والتروس",
+          "start": 100.96,
+          "end": 102.2
+        },
+        {
+          "text": "بتاعت",
+          "start": 102.2,
+          "end": 102.5
+        },
+        {
+          "text": "القفلة",
+          "start": 102.5,
+          "end": 102.82
+        },
+        {
+          "text": "اتحركت",
+          "start": 102.82,
+          "end": 103.26
+        },
+        {
+          "text": "لوحده",
+          "start": 103.26,
+          "end": 103.6
+        },
+        {
+          "text": "عشان",
+          "start": 103.6,
+          "end": 104.48
+        },
+        {
+          "text": "تقفل",
+          "start": 104.48,
+          "end": 104.84
+        },
+        {
+          "text": "عليه",
+          "start": 104.84,
+          "end": 104.96
+        },
+        {
+          "text": "الطريق",
+          "start": 104.96,
+          "end": 105.28
+        },
+        {
+          "text": "تماما",
+          "start": 105.28,
+          "end": 105.84
+        },
+        {
+          "text": "وتمنع",
+          "start": 105.84,
+          "end": 106.76
+        },
+        {
+          "text": "أي",
+          "start": 106.76,
+          "end": 107.02
+        },
+        {
+          "text": "محاولة",
+          "start": 107.02,
+          "end": 107.5
+        },
+        {
+          "text": "للغروب",
+          "start": 107.5,
+          "end": 107.82
+        },
+        {
+          "text": "من",
+          "start": 107.82,
+          "end": 107.94
+        },
+        {
+          "text": "القوضة",
+          "start": 107.94,
+          "end": 108.4
+        },
+        {
+          "text": "عقارب",
+          "start": 109.18,
+          "end": 109.9
+        },
+        {
+          "text": "الساعة",
+          "start": 109.9,
+          "end": 110.16
+        },
+        {
+          "text": "القديمة",
+          "start": 110.16,
+          "end": 110.5
+        },
+        {
+          "text": "على",
+          "start": 110.5,
+          "end": 110.62
+        },
+        {
+          "text": "الحيطة",
+          "start": 110.62,
+          "end": 110.92
+        },
+        {
+          "text": "رجعت",
+          "start": 110.92,
+          "end": 111.18
+        },
+        {
+          "text": "الورى",
+          "start": 111.18,
+          "end": 111.48
+        },
+        {
+          "text": "بسرعة",
+          "start": 111.48,
+          "end": 111.82
+        },
+        {
+          "text": "جنونية",
+          "start": 111.82,
+          "end": 112.32
+        },
+        {
+          "text": "وكأن",
+          "start": 112.32,
+          "end": 113.34
+        },
+        {
+          "text": "الزمن",
+          "start": 113.34,
+          "end": 113.72
+        },
+        {
+          "text": "في",
+          "start": 113.72,
+          "end": 113.82
+        },
+        {
+          "text": "المكان",
+          "start": 113.82,
+          "end": 114.1
+        },
+        {
+          "text": "ده",
+          "start": 114.1,
+          "end": 114.28
+        },
+        {
+          "text": "بيعيش",
+          "start": 114.28,
+          "end": 114.88
+        },
+        {
+          "text": "اللحظة",
+          "start": 114.88,
+          "end": 115.32
+        },
+        {
+          "text": "الأخيرة",
+          "start": 115.32,
+          "end": 115.68
+        },
+        {
+          "text": "قبل",
+          "start": 115.68,
+          "end": 115.92
+        },
+        {
+          "text": "الكرامة",
+          "start": 115.92,
+          "end": 116.18
+        },
+        {
+          "text": "والبندول",
+          "start": 116.2,
+          "end": 117.58
+        },
+        {
+          "text": "بيتحرك",
+          "start": 117.58,
+          "end": 118.02
+        },
+        {
+          "text": "بعنف",
+          "start": 118.02,
+          "end": 118.38
+        },
+        {
+          "text": "جديد",
+          "start": 118.38,
+          "end": 118.88
+        },
+        {
+          "text": "ويخبط",
+          "start": 118.88,
+          "end": 119.66
+        },
+        {
+          "text": "في",
+          "start": 119.66,
+          "end": 119.78
+        },
+        {
+          "text": "حواف",
+          "start": 119.78,
+          "end": 120.1
+        },
+        {
+          "text": "الساعة",
+          "start": 120.1,
+          "end": 120.52
+        },
+        {
+          "text": "بصوت",
+          "start": 120.52,
+          "end": 120.8
+        },
+        {
+          "text": "مزعج",
+          "start": 120.8,
+          "end": 121.26
+        },
+        {
+          "text": "ومخيف",
+          "start": 121.26,
+          "end": 122.16
+        },
+        {
+          "text": "بيزود",
+          "start": 122.16,
+          "end": 123.32
+        },
+        {
+          "text": "التوتر",
+          "start": 123.32,
+          "end": 123.98
+        },
+        {
+          "text": "والهالع",
+          "start": 123.98,
+          "end": 124.96
+        },
+        {
+          "text": "كوالقوضة",
+          "start": 124.96,
+          "end": 125.9
+        },
+        {
+          "text": "المسلمة",
+          "start": 125.9,
+          "end": 126.38
+        },
+        {
+          "text": "دي",
+          "start": 126.38,
+          "end": 126.48
+        },
+        {
+          "text": "بشكل",
+          "start": 126.48,
+          "end": 126.78
+        },
+        {
+          "text": "مرعب",
+          "start": 126.78,
+          "end": 127.18
+        },
+        {
+          "text": "وفي",
+          "start": 127.18,
+          "end": 128.26
+        },
+        {
+          "text": "آخر",
+          "start": 128.26,
+          "end": 128.52
+        },
+        {
+          "text": "اللقطة",
+          "start": 128.52,
+          "end": 129.0
+        },
+        {
+          "text": "انعكس",
+          "start": 129.0,
+          "end": 130.0
+        },
+        {
+          "text": "الصورة",
+          "start": 130.0,
+          "end": 130.32
+        },
+        {
+          "text": "الحارس",
+          "start": 130.32,
+          "end": 130.66
+        },
+        {
+          "text": "في",
+          "start": 130.66,
+          "end": 130.8
+        },
+        {
+          "text": "المراية",
+          "start": 130.8,
+          "end": 131.14
+        },
+        {
+          "text": "المكسورة",
+          "start": 131.14,
+          "end": 131.68
+        },
+        {
+          "text": "وهو",
+          "start": 131.99,
+          "end": 132.44
+        },
+        {
+          "text": "مبتسم",
+          "start": 132.44,
+          "end": 132.92
+        },
+        {
+          "text": "ابتسامة",
+          "start": 132.92,
+          "end": 133.84
+        },
+        {
+          "text": "مرعبة",
+          "start": 133.84,
+          "end": 134.32
+        },
+        {
+          "text": "وبيفتحين",
+          "start": 134.32,
+          "end": 135.62
+        },
+        {
+          "text": "تلتة",
+          "start": 135.62,
+          "end": 136.0
+        },
+        {
+          "text": "في",
+          "start": 136.0,
+          "end": 136.12
+        },
+        {
+          "text": "جبهته",
+          "start": 136.12,
+          "end": 136.52
+        },
+        {
+          "text": "بتنور",
+          "start": 136.52,
+          "end": 137.32
+        },
+        {
+          "text": "بنور",
+          "start": 137.32,
+          "end": 137.66
+        },
+        {
+          "text": "أحمر",
+          "start": 137.66,
+          "end": 137.98
+        },
+        {
+          "text": "قوي",
+          "start": 137.98,
+          "end": 138.4
+        },
+        {
+          "text": "ومخيف",
+          "start": 138.4,
+          "end": 139.16
+        },
+        {
+          "text": "جدا",
+          "start": 139.16,
+          "end": 139.54
+        },
+        {
+          "text": "بيعلن",
+          "start": 139.54,
+          "end": 140.8
+        },
+        {
+          "text": "سيطرة",
+          "start": 140.8,
+          "end": 141.16
+        },
+        {
+          "text": "القوى",
+          "start": 141.16,
+          "end": 141.56
+        },
+        {
+          "text": "الخفية",
+          "start": 141.56,
+          "end": 141.94
+        },
+        {
+          "text": "عليه",
+          "start": 141.94,
+          "end": 142.2
+        },
+        {
+          "text": "وتحوله",
+          "start": 142.2,
+          "end": 143.32
+        },
+        {
+          "text": "الكامل",
+          "start": 143.32,
+          "end": 143.98
+        },
+        {
+          "text": "لنهاية",
+          "start": 143.98,
+          "end": 144.78
+        },
+        {
+          "text": "مأساوية",
+          "start": 144.78,
+          "end": 145.2
+        },
+        {
+          "text": "مرعبة",
+          "start": 145.2,
+          "end": 145.7
+        },
+        {
+          "text": "قوى",
+          "start": 145.7,
+          "end": 146.52
+        },
+        {
+          "text": "غرفة",
+          "start": 146.52,
+          "end": 146.82
+        },
+        {
+          "text": "الطوارئ",
+          "start": 146.82,
+          "end": 147.22
+        },
+        {
+          "text": "المسلمة",
+          "start": 147.22,
+          "end": 147.74
+        }
+      ]
+    ]
+  ],
+  "duration": 148.24,
+  "stage": "failure",
+  "error": "Insufficient independently recognized speech after word-splitting normalization"
+}
