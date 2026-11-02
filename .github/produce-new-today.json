@@ -1,0 +1,10 @@
+{
+  "request_id": "owner-new-today-2026-11-02",
+  "repository": "arabic-horror-stories",
+  "profile": "horror",
+  "slot": "requested-2026-11-02-horror",
+  "due_at": "2026-11-02T15:00:00Z",
+  "preserve_tomorrow_posts": true,
+  "new_topic_required": true,
+  "duration_policy_owner_confirmed": "news>60; every other channel>90"
+}
