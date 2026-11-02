@@ -2,7 +2,7 @@
   "version": 1,
   "episodes": {
     "remotion-2026-11-04-horror": {
-      "status": "rendered",
+      "status": "publishing",
       "canonical_subject": "hms-captain-capsize-1870",
       "title": "السفينة كابتن: كارثة حقيقية في ليلة عاصفة",
       "story_sha256": "73ac7a5f58d932996341613e081da662c43b14ef52f7f75ab71e6d5a06c9b35e",
@@ -17,7 +17,8 @@
       "coverage": 0.9257950530035336,
       "video_sha256": "c0fe6995807ba5b414eb31de419387e7084e30144ccd9c0da12a0b990d1b3157",
       "render_run": 41491443018,
-      "source_evidence_file": "professional_motion/output/remotion-validation.json"
+      "source_evidence_file": "professional_motion/output/remotion-validation.json",
+      "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-remotion-2026-11-04-horror/horror-remotion-2026-11-04-horror.mp4"
     }
   }
 }
