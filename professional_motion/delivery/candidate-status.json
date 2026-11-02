@@ -1,0 +1,56 @@
+[
+  {
+    "key": "takarkori-green-sahara-lineage-2025",
+    "title": "لغز تكركوري: سلالة غامضة في الصحراء الخضراء",
+    "url": "https://www.nature.com/articles/s41586-025-08793-7",
+    "family": "haunted_interior",
+    "variant": "desert",
+    "published": null,
+    "already_reserved": false
+  },
+  {
+    "key": "franklin-expedition-1845",
+    "title": "سفن فرانكلين: اختفاء في الجليد",
+    "url": "https://www.rmg.co.uk/stories/maritime-history/what-happened-to-erebus-terror-crew-true-story",
+    "family": "maritime",
+    "variant": "polar",
+    "published": null,
+    "already_reserved": true
+  },
+  {
+    "key": "mary-celeste-1872",
+    "title": "ماري سيليست: سفينة من غير طاقم",
+    "url": "https://www.rmg.co.uk/stories/maritime-history/mystery-mary-celeste",
+    "family": "maritime",
+    "variant": "atlantic",
+    "published": null,
+    "already_reserved": true
+  },
+  {
+    "key": "endurance-1915",
+    "title": "إنديورانس: الجليد حاصر السفينة",
+    "url": "https://www.rmg.co.uk/stories/maritime-history/sir-ernest-shackleton",
+    "family": "maritime",
+    "variant": "polar",
+    "published": null,
+    "already_reserved": true
+  },
+  {
+    "key": "hms-captain-1870",
+    "title": "إتش إم إس كابتن: الكارثة اللي ابتلعت السفينة",
+    "url": "https://www.rmg.co.uk/stories/maritime-history/hms-captain-britains-forgotten-maritime-disaster",
+    "family": "maritime",
+    "variant": "atlantic",
+    "published": null,
+    "already_reserved": false
+  },
+  {
+    "key": "ss-freshfield-loss",
+    "title": "فريشفيلد: آخر رحلة للسفينة",
+    "url": "https://www.rmg.co.uk/stories/maritime-history/library-archive/loss-ss-freshfield",
+    "family": "maritime",
+    "variant": "atlantic",
+    "published": null,
+    "already_reserved": true
+  }
+]

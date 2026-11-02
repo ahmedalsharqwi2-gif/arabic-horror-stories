@@ -1,0 +1,17 @@
+{
+  "provider": "Gemini TTS",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "style": "Native Egyptian Arabic ar-EG. Same mature male Charon identity, intimate psychological horror performance rather than a documentary announcer. Begin close to the microphone with a quiet voiced near-whisper, clearly audible consonants. Build restrained unease, vary pace with the meaning, let questions feel personal and frightened. Short natural hesitations at commas, tense brief silence at sentence endings; do not insert extra words. On phrases about disappearance, absence or an unexplained fate, use an audible breathy whisper, then return to a low conversational register. No shouting, cartoon villain voice or flat newsreader cadence. Preserve every word, pronounce names and written-out numbers clearly, complete the final sentence. Do not speak these instructions. No music or sound effects in the generated voice.\nEgyptian Arabic gripping horror storyteller. Natural resonant Charon voice with exceptionally clear everyday Egyptian diction. Calm controlled tension and short uneasy pauses, escalating urgency near reveals. Do not whisper, mumble, distort words, scream, add words or swallow sentence endings. Read every supplied word exactly. Keep tension through the final sentence. Finish every word, then stop without a warm resolving tone. No music or sound effects. Read only the supplied words. Finish the last sentence. Clear natural pace.",
+  "text": "الصحراء الليبية النهارده مش إلا يابسة وقاحلة، لكنها كانت زمان جنة خضراء مليانة بحيرات ومساحات سافانا ضمن الفترة المطيرة الأفريقية بين أربعة عشر ألف وخمسمائة وخمسة آلاف سنة مضت. جوه أعمق تجويف في ملجأ تكركوري الصخري بجبال تادرارت أكاكوس، اتبحتث دفنات بشرية هامة تعود لأزمنة الرعي القديمة، وخرجت منها عينتين لبنات البشر اللواتي عشن قبل حوالي سبعة آلاف سنة لتكشف أسراراً مدفونة تحت الرمال. حفظ الحمض النووي في المنطقة دي كان شبه مستحيل بسبب الظروف المناخية القاسية، لكن العلماء استخدموا تقنيات التقاط دقيقة عشان يرجعوا معلومات وراثية مهمة جدا من جذور الأسنان وقطع الشظايا العظمية المتآكلة. النتائج الجينية أظهرت مفاجأة صادمة لكل الباحثين؛ أفراد تكركوري بيحملوا سلالة شمال أفريقية فريدة ومجهولة تماما قبل كده، فضلت معزولة ومنفصلة عن بقية السلالات الأفريقية وغير الأفريقية طوال تاريخها الطويل. بمقارنة العينات دي، لقى الباحثين إن نسبة حمض النياندرتال عندهم قليلة جدا مقارنة بالبشر خارج إفريقيا، ده غير القرابة الواضحة مع صيادي مغارة تافورالت بالمغرب اللي عاشوا قبل خمسة عشر ألف سنة كاملة. السؤال الأهم كان عن طريقة وصول الرعي للمنطقة؛ هل جه مع هجرة شعوب جديدة، ولا عبر الانتشار الثقافي؟ البيانات الجينية أكدت بكل وضوح إن الرعي انتقل ثقافيا وسط هذه السلالة المحلية المعزولة. رغم نجاح التحاليل الضخمة والبيانات اللي ظهرت، لسه فيه تفاصيل غامضة حوالين الأصول العميقة للسلالة دي وعلاقتها المعقدة بالمجموعات البشرية اللي ظهرت في العصور القديمة عبر القارة الإفريقية. في النهاية، فتحت عينات تكركوري باب جديد لفهم التاريخ الديموغرافي للصحراء، وأثبتت بشكل قاطع إن شمال إفريقيا كان خزانا وراثيا مستقلا صنع تاريخه البشري في قلب الطبيعة القاسية.",
+  "interaction_id": "v1_ChdOT1huYXNQTUxjV2FvX1VQanBlTG1BMBIXTk9YbmFzUE1MY1dhb19VUGpwZUxtQTA",
+  "duration": 142.92,
+  "sample_rate": 24000,
+  "channels": 1,
+  "sha256": "722753630254f6a69ba4a191be339530ed4b577b236d6a21b4be068a9d2beb5c",
+  "newly_synthesized": true,
+  "original_video_audio_used": false,
+  "fallback_used": false,
+  "cache_hit": false,
+  "output_sha256": "722753630254f6a69ba4a191be339530ed4b577b236d6a21b4be068a9d2beb5c"
+}
