@@ -1,65 +1,98 @@
 {
-  "date": "2026-11-04",
+  "date": "2026-11-02",
   "profile": "horror",
-  "phase": "prepublish",
-  "checked_at": "2026-11-02T19:03:47.379835+00:00",
-  "run_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/41506326628",
-  "report_path": "reviews/daily_health/2026-11-04/41506326628-1.json",
-  "publication_due_utc": "2026-11-04T15:00:00+00:00",
+  "phase": "postpublish",
+  "checked_at": "2026-11-02T21:54:18.560111+00:00",
+  "run_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/41532481570",
+  "report_path": "reviews/daily_health/2026-11-02/41532481570-1.json",
+  "publication_due_utc": "2026-11-02T15:00:00+00:00",
   "errors": [],
   "passed": true,
   "generation_calls": 0,
   "publication_mutations": 0,
-  "preview": true,
+  "preview": false,
   "scheduler": {
     "observed": false,
-    "reason": "Future date preview; actual9am clock event not due yet"
+    "reason": "Monitoring was activated after this date morning; no historical9am success claimed"
+  },
+  "observed_receipts": {
+    "instagram": [
+      {
+        "id": "6ae86edb8b29b4b46d135b5a",
+        "channelId": "6aad267dea19ca0bde778d5e",
+        "status": "sent",
+        "dueAt": "2026-11-02T15:00:00.000Z",
+        "sentAt": "2026-11-02T15:03:57.898Z",
+        "externalLink": "https://www.instagram.com/reel/DfPlT0zAZrE/"
+      }
+    ],
+    "youtube": [
+      {
+        "id": "6ae86eddc3158f6789b36eda",
+        "channelId": "6aaa8778ea19ca0bde57da16",
+        "status": "sent",
+        "dueAt": "2026-11-02T15:00:00.000Z",
+        "sentAt": "2026-11-02T15:02:31.370Z",
+        "externalLink": "https://www.youtube.com/shorts/ctKE2tLAmiI"
+      }
+    ],
+    "facebook": [
+      {
+        "id": "6ae86edfc3158f6789b36f75",
+        "channelId": "6aaa853fea19ca0bde57b5f7",
+        "status": "sent",
+        "dueAt": "2026-11-02T15:00:00.000Z",
+        "sentAt": "2026-11-02T15:02:34.828Z",
+        "externalLink": "https://www.facebook.com/reel/1179215394766492/"
+      }
+    ]
   },
   "receipts": {
     "instagram": {
-      "id": "6ae8d3594e55e02608791e8d",
+      "id": "6ae86edb8b29b4b46d135b5a",
       "channelId": "6aad267dea19ca0bde778d5e",
-      "status": "scheduled",
-      "dueAt": "2026-11-04T15:00:00.000Z",
-      "sentAt": null,
-      "externalLink": null
+      "status": "sent",
+      "dueAt": "2026-11-02T15:00:00.000Z",
+      "sentAt": "2026-11-02T15:03:57.898Z",
+      "externalLink": "https://www.instagram.com/reel/DfPlT0zAZrE/"
     },
     "youtube": {
-      "id": "6ae8d35fc25538a9f8cb72e2",
+      "id": "6ae86eddc3158f6789b36eda",
       "channelId": "6aaa8778ea19ca0bde57da16",
-      "status": "scheduled",
-      "dueAt": "2026-11-04T15:00:00.000Z",
-      "sentAt": null,
-      "externalLink": null
+      "status": "sent",
+      "dueAt": "2026-11-02T15:00:00.000Z",
+      "sentAt": "2026-11-02T15:02:31.370Z",
+      "externalLink": "https://www.youtube.com/shorts/ctKE2tLAmiI"
     },
     "facebook": {
-      "id": "6ae8d365c1e1a07104365e2f",
+      "id": "6ae86edfc3158f6789b36f75",
       "channelId": "6aaa853fea19ca0bde57b5f7",
-      "status": "scheduled",
-      "dueAt": "2026-11-04T15:00:00.000Z",
-      "sentAt": null,
-      "externalLink": null
+      "status": "sent",
+      "dueAt": "2026-11-02T15:00:00.000Z",
+      "sentAt": "2026-11-02T15:02:34.828Z",
+      "externalLink": "https://www.facebook.com/reel/1179215394766492/"
     }
   },
   "episode": {
-    "slot": "remotion-2026-11-04-horror",
-    "title": "السفينة كابتن: كارثة حقيقية في ليلة عاصفة",
-    "pipeline": "remotion",
-    "expected_sha256": "c0fe6995807ba5b414eb31de419387e7084e30144ccd9c0da12a0b990d1b3157"
+    "slot": "requested-2026-11-02-horror",
+    "title": "المصعد التالت.. الباب اللي بيفتح على الفراغ",
+    "pipeline": "legacy",
+    "expected_sha256": "011adf82b948e60f885440f9e4e08e37b09520a33b25ea0982c71def9cc0567b"
   },
   "technical": {
     "passed": true,
-    "sha256": "c0fe6995807ba5b414eb31de419387e7084e30144ccd9c0da12a0b990d1b3157",
+    "sha256": "011adf82b948e60f885440f9e4e08e37b09520a33b25ea0982c71def9cc0567b",
     "full_decode": true,
-    "duration": 153.466667,
+    "duration": 128.766667,
     "width": 1080,
     "height": 1920,
-    "audio_mean_db": -19.2,
+    "audio_mean_db": -19.0,
     "actual_visual_samples": 12,
     "unique_visual_samples": 12,
-    "checked_at": "2026-11-02T19:04:09.344865+00:00",
+    "checked_at": "2026-11-02T21:54:33.454588+00:00",
     "scope": "Independent technical media check; no claim of human narrative or scientific review",
     "reused_immutable_media_check": false,
     "live_asset_metadata_verified": true
-  }
+  },
+  "media_binding": "Three live sent post IDs match retained original submission receipts; original release SHA independently verified. Platform-transcoded bytes are not claimed identical."
 }
