@@ -58,5 +58,11 @@
         }
       }
     }
+  },
+  "cutover_evidence": {
+    "slot": "remotion-2026-11-04-horror",
+    "video_sha256": "c0fe6995807ba5b414eb31de419387e7084e30144ccd9c0da12a0b990d1b3157",
+    "run": 41491443018,
+    "ready": true
   }
 }
