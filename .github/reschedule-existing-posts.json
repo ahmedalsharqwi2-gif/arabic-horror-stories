@@ -1,0 +1,22 @@
+{
+  "request_id": "owner-retime-2026-11-02-1700",
+  "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+  "slot": "daily-2026-11-02",
+  "video_sha256": "d760a9cabe69219ccda0bbfcb6c7daf50da250778c022b418e1b369cda8b75b2",
+  "old_due_at": "2026-11-03T15:00:00Z",
+  "new_due_at": "2026-11-02T15:00:00Z",
+  "posts": {
+    "youtube": {
+      "id": "6ae845997817c41d1a50ddea",
+      "channel_id": "6aaa8778ea19ca0bde57da16"
+    },
+    "facebook": {
+      "id": "6ae8459bc60bdbcc33e38477",
+      "channel_id": "6aaa853fea19ca0bde57b5f7"
+    },
+    "instagram": {
+      "id": "6ae8459dc60bdbcc33e3854e",
+      "channel_id": "6aad267dea19ca0bde778d5e"
+    }
+  }
+}
