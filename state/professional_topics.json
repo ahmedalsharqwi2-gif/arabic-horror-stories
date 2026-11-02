@@ -927,7 +927,7 @@
       "requested_due_at": "2026-11-02T15:00:00Z",
       "posts": {
         "youtube": {
-          "phase": "uncertain",
+          "phase": "reconciled_no_schedule_change",
           "before": {
             "id": "6ae845997817c41d1a50ddea",
             "channelId": "6aaa8778ea19ca0bde57da16",
@@ -980,7 +980,48 @@
           "status": "scheduled",
           "verified_at": "2026-11-02T08:11:09.578630+00:00"
         }
-      }
+      },
+      "reconciled_attempts": [
+        {
+          "service": "youtube",
+          "prior": {
+            "phase": "uncertain",
+            "before": {
+              "id": "6ae845997817c41d1a50ddea",
+              "channelId": "6aaa8778ea19ca0bde57da16",
+              "status": "scheduled",
+              "dueAt": "2026-11-03T15:00:00.000Z",
+              "text": "ملفات غامضه | لغز تكركوري: سلالة غامضة في الصحراء الخضراء\n\nرسوم توضيحية وإعادة تمثيل درامية؛ ليست تسجيلًا للأحداث.\nالمصدر: Nature / Max Planck\nhttps://www.nature.com/articles/s41586-025-08793-7\n#تكركوري #الصحراء_الخضراء #الحمض_النووي #تاريخ_البشرية",
+              "shareMode": "customScheduled",
+              "schedulingType": "automatic",
+              "assets": [
+                {
+                  "source": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/auto-publish-daily-2026-11-02/science-video-daily-2026-11-02.mp4"
+                }
+              ]
+            },
+            "old_receipt": {
+              "id": "6ae845997817c41d1a50ddea",
+              "channel_id": "6aaa8778ea19ca0bde57da16"
+            },
+            "requested_due_at": "2026-11-02T15:00:00Z"
+          },
+          "observed": {
+            "id": "6ae845997817c41d1a50ddea",
+            "channelId": "6aaa8778ea19ca0bde57da16",
+            "status": "scheduled",
+            "dueAt": "2026-11-03T15:00:00.000Z",
+            "text": "ملفات غامضه | لغز تكركوري: سلالة غامضة في الصحراء الخضراء\n\nرسوم توضيحية وإعادة تمثيل درامية؛ ليست تسجيلًا للأحداث.\nالمصدر: Nature / Max Planck\nhttps://www.nature.com/articles/s41586-025-08793-7\n#تكركوري #الصحراء_الخضراء #الحمض_النووي #تاريخ_البشرية",
+            "shareMode": "customScheduled",
+            "schedulingType": "automatic",
+            "assets": [
+              {
+                "source": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/auto-publish-daily-2026-11-02/science-video-daily-2026-11-02.mp4"
+              }
+            ]
+          }
+        }
+      ]
     }
   }
 }
