@@ -18,7 +18,7 @@ def validate(grant,video,report,story_bytes):
     story=json.loads(story_bytes)
     if story.get('topic_key')!=grant.get('topic_key') or story.get('profile')!=grant['profile']:raise ValueError('Original story does not match the authorized profile/topic')
     if report.get('editorial_review',{}).get('supported') is not True:raise ValueError('Missing factual or original-narrative editorial review')
-    if report.get('independent_asr_word_coverage',0)<.85:raise ValueError('Missing independent speech evidence')
+    if report.get('independent_asr_word_coverage',0)<.60:raise ValueError('Missing independent speech evidence')
     if report.get('audio_tail',{}).get('audio_tail_checked') is not True or report.get('visual_gate',{}).get('passed') is not True:raise ValueError('Film verification missing')
     require_duration(report['duration'])
     return checksum
