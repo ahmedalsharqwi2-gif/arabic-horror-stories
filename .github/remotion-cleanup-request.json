@@ -1,13 +1,12 @@
 {
   "apply": true,
-  "revision": 2,
-  "expected_dry_run": "41533540794",
-  "scope": "Apply inspected inactive snapshots and fully merged branches with verified archive tags and atomic delete leases",
+  "scope": "Resume only remaining unused branches after bounded archive visibility verification; keep original recovery reports",
   "keep": [
     "main",
     "open PR branches",
     "active runs",
     "production_v2 recovery/state/source/diagnostic refs",
     "all topic histories/receipts/voice originals"
-  ]
+  ],
+  "revision": 3
 }
