@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "active_workflow_count": 6,
+  "active_workflows": [
+    "remotion-daily.yml",
+    "remotion-health.yml",
+    "remotion-cleanup.yml",
+    "arabic_guard.yml",
+    "validation.yml",
+    "checks.yml"
+  ],
+  "retired_definitions": 30,
+  "retirement_manifest": "reviews/cleanup/workflow-simplification.json",
+  "inactive_catalog_evidence": "reviews/cleanup/workflow-catalog-latest.json",
+  "current_day_read_only_controller_preflight": {
+    "run": false,
+    "reason": "all three existing destination slots occupied; preserve them",
+    "due_at": "2026-11-03T15:00:00Z",
+    "occupied_slot_proof": {
+      "retained_post_ids_verified": true,
+      "original_release_verified": true,
+      "video_sha256": "d760a9cabe69219ccda0bbfcb6c7daf50da250778c022b418e1b369cda8b75b2",
+      "duration": 142.933333,
+      "technical_passed": true
+    },
+    "dry_run": true,
+    "generation_calls": 0,
+    "publication_mutations": 0
+  },
+  "future_scheduling_audit": {
+    "date": "2026-11-04",
+    "preview": true,
+    "run": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/41542357149",
+    "three_live_receipts_verified": true,
+    "full_media_sha256": "c0fe6995807ba5b414eb31de419387e7084e30144ccd9c0da12a0b990d1b3157"
+  },
+  "actual_09_clock_run_observed": false,
+  "clock_evidence": "First09Cairo event on2026-11-03 is still upcoming; preflight is not claimed as that event",
+  "guide": "WORKFLOWS.md",
+  "historical_run_deletions": 0,
+  "publication_mutations": 0,
+  "generation_calls": 0
+}
