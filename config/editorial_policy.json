@@ -1,7 +1,7 @@
 {
   "version": 1,
   "profile": "horror",
-  "external_sources_required": false,
+  "external_sources_required": true,
   "independent_scientific_review_required": false,
   "topic_history_required": true,
   "video_fingerprint_required": true,
@@ -11,12 +11,13 @@
     "timezone": "Africa/Cairo",
     "missed_slot": "skip_without_rollover"
   },
-  "editorial_mode": "original_fiction",
+  "editorial_mode": "documented_true_story",
   "categories": [
     "supernatural",
     "psychological",
     "mystery",
     "isolated_places"
   ],
-  "source": "Explicit repository-owner instruction in current resumed conversation on 2026-11-01"
+  "source": "Latest owner instruction2026-11-02: true actual stories for history and horror",
+  "fiction_allowed": false
 }
