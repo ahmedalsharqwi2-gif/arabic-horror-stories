@@ -1,0 +1,188 @@
+{
+  "file": "professional-review.mp4",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 142.92,
+  "story_sha256": "5762981cf4c2e005248903a12f236d59692bbd841c6940cef3f391488bb1a1c6",
+  "voice": "original Gemini Charon",
+  "asr_model": "medium",
+  "independent_asr_word_coverage": 0.7813765182186235,
+  "exact_token_coverage": 0.7813765182186235,
+  "speech_matching_method": "Exact-token ensemble anchors; supplied-script phrase captions; no active-word precision claim",
+  "known_name_normalization_applied": false,
+  "visual_gate": {
+    "passed": true,
+    "duration": 142.933333,
+    "resolution": [
+      1080,
+      1920
+    ],
+    "method": "within-scene diagram-region pixel changes",
+    "scenes": [
+      {
+        "scene": 1,
+        "diagram_spatial_std": [
+          31.3485398056438,
+          31.26085271115932,
+          30.040596783414834
+        ],
+        "changed_pixel_ratios": [
+          0.16184710351377019,
+          0.21911206077872744
+        ],
+        "passed": true
+      },
+      {
+        "scene": 2,
+        "diagram_spatial_std": [
+          20.64874097546196,
+          27.165477658872348,
+          26.173045004502836
+        ],
+        "changed_pixel_ratios": [
+          0.13278727445394112,
+          0.2865384615384615
+        ],
+        "passed": true
+      },
+      {
+        "scene": 3,
+        "diagram_spatial_std": [
+          13.600762744056043,
+          13.660191929810313,
+          13.757672280053889
+        ],
+        "changed_pixel_ratios": [
+          0.07608024691358024,
+          0.08551756885090218
+        ],
+        "passed": true
+      },
+      {
+        "scene": 4,
+        "diagram_spatial_std": [
+          35.43304351881971,
+          20.85583728038696,
+          21.2195061252426
+        ],
+        "changed_pixel_ratios": [
+          0.5505816714150048,
+          0.1372150997150997
+        ],
+        "passed": true
+      },
+      {
+        "scene": 5,
+        "diagram_spatial_std": [
+          38.406471983738626,
+          36.46261889174496,
+          34.13607556615652
+        ],
+        "changed_pixel_ratios": [
+          0.04627255460588794,
+          0.04249762583095917
+        ],
+        "passed": true
+      },
+      {
+        "scene": 6,
+        "diagram_spatial_std": [
+          11.09243842907584,
+          11.109516044469057,
+          11.145785070399675
+        ],
+        "changed_pixel_ratios": [
+          0.022542735042735042,
+          0.02638888888888889
+        ],
+        "passed": true
+      },
+      {
+        "scene": 7,
+        "diagram_spatial_std": [
+          23.077251530610635,
+          23.344913427566873,
+          23.389841296636007
+        ],
+        "changed_pixel_ratios": [
+          0.12395536562203228,
+          0.14586894586894586
+        ],
+        "passed": true
+      },
+      {
+        "scene": 8,
+        "diagram_spatial_std": [
+          31.787619632105816,
+          22.672161503572095,
+          21.243869859408424
+        ],
+        "changed_pixel_ratios": [
+          0.36594254510921176,
+          0.1606837606837607
+        ],
+        "passed": true
+      }
+    ],
+    "note": "Technical blank/freeze detection only; not a judgement of artistic or factual quality."
+  },
+  "audio_tail": {
+    "audio_seconds": 142.92,
+    "video_seconds": 142.92,
+    "difference_seconds": 0.0,
+    "last_speech_window_correlation": 0.9713948369026184,
+    "audio_tail_checked": true,
+    "silence_padding_used_to_hide_lost_speech": false
+  },
+  "publication_metadata": {
+    "title": "ملفات غامضه | لغز تكركوري: سلالة غامضة في الصحراء الخضراء",
+    "caption": "رسوم توضيحية وإعادة تمثيل درامية؛ ليست تسجيلًا للأحداث.\nالمصدر: Nature / Max Planck\nhttps://www.nature.com/articles/s41586-025-08793-7\n#تكركوري #الصحراء_الخضراء #الحمض_النووي #تاريخ_البشرية",
+    "description": "رسوم توضيحية وإعادة تمثيل درامية؛ ليست تسجيلًا للأحداث.\nالمصدر: Nature / Max Planck\nhttps://www.nature.com/articles/s41586-025-08793-7\n#تكركوري #الصحراء_الخضراء #الحمض_النووي #تاريخ_البشرية",
+    "tags": [
+      "تكركوري",
+      "الصحراء_الخضراء",
+      "الحمض_النووي",
+      "تاريخ_البشرية"
+    ],
+    "hashtags": [
+      "#تكركوري",
+      "#الصحراء_الخضراء",
+      "#الحمض_النووي",
+      "#تاريخ_البشرية"
+    ],
+    "source_url": "https://www.nature.com/articles/s41586-025-08793-7",
+    "containsSyntheticMedia": true
+  },
+  "duration_policy": {
+    "minimum_exclusive": 90,
+    "maximum_exclusive": 180
+  },
+  "music_target_lufs": -27,
+  "music": "Original composed score",
+  "music_bpm": 94,
+  "source": {
+    "url": "https://www.nature.com/articles/s41586-025-08793-7",
+    "publisher": "Nature / Max Planck",
+    "title": "لغز تكركوري: سلالة غامضة في الصحراء الخضراء"
+  },
+  "topic_key": "takarkori-green-sahara-lineage-2025",
+  "profile": "horror",
+  "editorial_review": {
+    "supported": true,
+    "novel": true,
+    "issues": [
+      "Ensure word count fits the 260-330 spoken range precisely.",
+      "Maintain a balanced tone blending scientific reporting with the series horror profile."
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  "render": "Three.js procedural geometry, physical lighting, custom skin shader, layered optical bloom",
+  "visual_style": "original",
+  "review_watermark": false,
+  "reference_audio_reused": false,
+  "archived_regression": false,
+  "new_topic_acceptance": false,
+  "automatically_published": false,
+  "status": "Technical checks passed; artistic judgement requires viewing the complete film."
+}
