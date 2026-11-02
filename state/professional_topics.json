@@ -926,7 +926,7 @@
       "canonical_subject": "supernatural-elevator-horror-loop",
       "title": "المصعد التالت.. الباب اللي بيفتح على الفراغ",
       "knowledge_category": "supernatural",
-      "status": "publishing",
+      "status": "scheduled",
       "story": {
         "title": "المصعد التالت.. الباب اللي بيفتح على الفراغ",
         "canonical_subject": "supernatural-elevator-horror-loop",
@@ -1710,7 +1710,40 @@
       },
       "requested_due_at": "2026-11-02T15:00:00Z",
       "video_sha256": "011adf82b948e60f885440f9e4e08e37b09520a33b25ea0982c71def9cc0567b",
-      "publication_video_sha256": "011adf82b948e60f885440f9e4e08e37b09520a33b25ea0982c71def9cc0567b"
+      "publication_video_sha256": "011adf82b948e60f885440f9e4e08e37b09520a33b25ea0982c71def9cc0567b",
+      "due_at": "2026-11-02T15:00:00Z",
+      "receipts": {
+        "youtube": {
+          "id": "6ae86eddc3158f6789b36eda",
+          "due_at": "2026-11-02T15:00:00Z",
+          "run_id": "41431947928",
+          "accepted_at": "2026-11-02T11:07:09.815311+00:00",
+          "channel_id": "6aaa8778ea19ca0bde57da16",
+          "scheduled_at": "2026-11-02T15:00:00+00:00",
+          "status": "scheduled",
+          "verified_at": "2026-11-02T11:07:12.229924+00:00"
+        },
+        "instagram": {
+          "id": "6ae86edb8b29b4b46d135b5a",
+          "due_at": "2026-11-02T15:00:00Z",
+          "run_id": "41431947928",
+          "accepted_at": "2026-11-02T11:07:07.400255+00:00",
+          "channel_id": "6aad267dea19ca0bde778d5e",
+          "scheduled_at": "2026-11-02T15:00:00+00:00",
+          "status": "scheduled",
+          "verified_at": "2026-11-02T11:07:12.089357+00:00"
+        },
+        "facebook": {
+          "id": "6ae86edfc3158f6789b36f75",
+          "due_at": "2026-11-02T15:00:00Z",
+          "run_id": "41431947928",
+          "accepted_at": "2026-11-02T11:07:11.829120+00:00",
+          "channel_id": "6aaa853fea19ca0bde57b5f7",
+          "scheduled_at": "2026-11-02T15:00:00+00:00",
+          "status": "scheduled",
+          "verified_at": "2026-11-02T11:07:12.398177+00:00"
+        }
+      }
     }
   ],
   "rescheduling_history": {
