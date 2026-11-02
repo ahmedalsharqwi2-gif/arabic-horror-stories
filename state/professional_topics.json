@@ -919,6 +919,796 @@
           "verified_at": "2026-11-02T08:11:09.578630+00:00"
         }
       }
+    },
+    {
+      "slot": "requested-2026-11-02-horror",
+      "topic_key": "knowledge-supernatural-elevator-horror-loop",
+      "canonical_subject": "supernatural-elevator-horror-loop",
+      "title": "المصعد التالت.. الباب اللي بيفتح على الفراغ",
+      "knowledge_category": "supernatural",
+      "status": "reserved",
+      "story": {
+        "title": "المصعد التالت.. الباب اللي بيفتح على الفراغ",
+        "canonical_subject": "supernatural-elevator-horror-loop",
+        "suitable": true,
+        "facts": [],
+        "milestones": [],
+        "scenes": [
+          {
+            "id": "scene_1",
+            "label": "المصعد القديم",
+            "narration": "دخلت المبنى القديم في نص الليل وكان همي الوحيد أهرب من المطر الغزير. دايماً بخاف من الأماكن المقفولة بس ماكنش قدامي غير أركب المصعد عشان أوصل للدور العاشر. ضغطت على الزرار ونزل الباب الحديدي ببطء مخيف.",
+            "labels": [
+              "دخلت المبنى",
+              "المصعد القديم"
+            ],
+            "visual_mode": "hero",
+            "environment": "dark_interior",
+            "objects": [
+              {
+                "kind": "door",
+                "position": [
+                  0,
+                  0,
+                  0
+                ],
+                "scale": [
+                  1.5,
+                  2.5,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#4a4a4a",
+                "motion": "open"
+              },
+              {
+                "kind": "lantern",
+                "position": [
+                  -3,
+                  2,
+                  -1
+                ],
+                "scale": [
+                  0.8,
+                  0.8,
+                  0.8
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#ffaa00",
+                "motion": "pulse"
+              },
+              {
+                "kind": "box",
+                "position": [
+                  3,
+                  -1,
+                  -2
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0.5,
+                  0
+                ],
+                "color": "#2c2c2c",
+                "motion": "none"
+              }
+            ],
+            "camera_start": [
+              0,
+              0,
+              15
+            ],
+            "camera_end": [
+              0,
+              0,
+              10
+            ],
+            "visual_change": "The heavy iron door slowly opens inward, revealing a dark elevator interior."
+          },
+          {
+            "id": "scene_2",
+            "label": "الطلوع البطيء",
+            "narration": "بدأ المصعد يتحرك لفوق بصوت طقطقة تروس عالية ومرعبة. الكابينة كانت بتتهز مع كل خطوة طلوع كأنها هتقع في أي لحظة. بصيت على شاشة الأدوار ولقيتها بتتحرك بعكس الاتجاه وبطريقة جنونية.",
+            "labels": [
+              "المصعد يتحرك",
+              "صوت طقطقة"
+            ],
+            "visual_mode": "hero",
+            "environment": "dark_interior",
+            "objects": [
+              {
+                "kind": "gear",
+                "position": [
+                  0,
+                  1,
+                  -1
+                ],
+                "scale": [
+                  2,
+                  2,
+                  0.5
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  1.5
+                ],
+                "color": "#8b4513",
+                "motion": "spin"
+              },
+              {
+                "kind": "monitor",
+                "position": [
+                  0,
+                  3,
+                  -2
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#00ff00",
+                "motion": "pulse"
+              },
+              {
+                "kind": "cylinder",
+                "position": [
+                  -2,
+                  -2,
+                  -1
+                ],
+                "scale": [
+                  0.5,
+                  3,
+                  0.5
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#555555",
+                "motion": "shake"
+              }
+            ],
+            "camera_start": [
+              0,
+              1,
+              14
+            ],
+            "camera_end": [
+              0,
+              -1,
+              11
+            ],
+            "visual_change": "The metal gears spin rapidly while the control monitor flashes erratically."
+          },
+          {
+            "id": "scene_3",
+            "label": "الظلام التام",
+            "narration": "فجأة النور ومض مرتين وبعدين انقطع تماماً وبقيت قاعد في ظلام دامس. حاولت أدور على زر الطوارئ بس إيدي لمست سطح بارد وملزق كأنه جدار لحم بشري. حسيت برعب شديد ونبضات قلبي زادت جداً.",
+            "labels": [
+              "انقطع تماماً",
+              "نبضات قلبي"
+            ],
+            "visual_mode": "hero",
+            "environment": "dark_interior",
+            "objects": [
+              {
+                "kind": "heart",
+                "position": [
+                  0,
+                  0,
+                  0
+                ],
+                "scale": [
+                  1.5,
+                  1.5,
+                  1.5
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#8b0000",
+                "motion": "pulse"
+              },
+              {
+                "kind": "circuit",
+                "position": [
+                  -3,
+                  -1,
+                  -2
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#0000ff",
+                "motion": "none"
+              },
+              {
+                "kind": "sphere",
+                "position": [
+                  3,
+                  2,
+                  -1
+                ],
+                "scale": [
+                  0.8,
+                  0.8,
+                  0.8
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#111111",
+                "motion": "float"
+              }
+            ],
+            "camera_start": [
+              0,
+              0,
+              12
+            ],
+            "camera_end": [
+              0,
+              0,
+              9
+            ],
+            "visual_change": "The schematic heart organ pulses heavily in the darkness while electrical circuits short out."
+          },
+          {
+            "id": "scene_4",
+            "label": "فتح الباب",
+            "narration": "وقف المصعد أخيرًا بهزة عنيفة وفتحت الأبواب تلقائيًا بس المنظر اللي برا ماكانش الدور العاشر أبدًا. الشاشة كانت مظلمة والممر طويل وضيّق وفي آخره كائن غريب واقف بيتحرك بحركات غير طبيعية.",
+            "labels": [
+              "وقف المصعد",
+              "كائن غريب"
+            ],
+            "visual_mode": "hero",
+            "environment": "dark_interior",
+            "objects": [
+              {
+                "kind": "person",
+                "position": [
+                  0,
+                  -1,
+                  -2
+                ],
+                "scale": [
+                  1.2,
+                  2,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#222222",
+                "motion": "head_turn"
+              },
+              {
+                "kind": "door",
+                "position": [
+                  0,
+                  0,
+                  0
+                ],
+                "scale": [
+                  2,
+                  3,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#333333",
+                "motion": "slam"
+              },
+              {
+                "kind": "table",
+                "position": [
+                  3,
+                  -2,
+                  -3
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#1a1a1a",
+                "motion": "none"
+              }
+            ],
+            "camera_start": [
+              0,
+              0,
+              16
+            ],
+            "camera_end": [
+              0,
+              0,
+              11
+            ],
+            "visual_change": "The human figure slowly turns its head toward the open elevator doors."
+          },
+          {
+            "id": "scene_5",
+            "label": "محاولة الهروب",
+            "narration": "حاولت أضغط على زر إغلاق الباب بجنون بس الأزرار كانت سايحة في بعضها ومتحولة لمادة غريبة. الكائن بدأ يقرب مني بخطوات بطيئة وصوت تكسير عظم مسموع في المكان كله. حسيت أن روحي بتتسحب.",
+            "labels": [
+              "إغلاق الباب",
+              "كائن بدأ يقرب"
+            ],
+            "visual_mode": "hero",
+            "environment": "dark_interior",
+            "objects": [
+              {
+                "kind": "cell",
+                "position": [
+                  0,
+                  0,
+                  -1
+                ],
+                "scale": [
+                  1.5,
+                  1.5,
+                  1.5
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#556b2f",
+                "motion": "split"
+              },
+              {
+                "kind": "phone",
+                "position": [
+                  -2,
+                  1,
+                  -1
+                ],
+                "scale": [
+                  0.8,
+                  0.8,
+                  0.8
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0.5
+                ],
+                "color": "#b22222",
+                "motion": "shake"
+              },
+              {
+                "kind": "box",
+                "position": [
+                  2,
+                  -1,
+                  -2
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#444444",
+                "motion": "none"
+              }
+            ],
+            "camera_start": [
+              0,
+              0,
+              13
+            ],
+            "camera_end": [
+              0,
+              0,
+              8
+            ],
+            "visual_change": "The biological cell structure splits apart while the emergency phone vibrates violently."
+          },
+          {
+            "id": "scene_6",
+            "label": "صوت الصراخ",
+            "narration": "صرخت بكل قوتي وأنا شايف الكائن بيمد إيده الطويلة جوة المصعد عشان يمسكني. جريت لزقيت نفسي في زاوية الكابينة وغمضت عيني بقوة وأنا بدعي أن الكابينة دي تكون كابوس وأصحى منه حالاً.",
+            "labels": [
+              "بيمد إيده",
+              "أدعي أن الكابينة"
+            ],
+            "visual_mode": "hero",
+            "environment": "dark_interior",
+            "objects": [
+              {
+                "kind": "waveform",
+                "position": [
+                  0,
+                  0,
+                  -1
+                ],
+                "scale": [
+                  2,
+                  1,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#ff4500",
+                "motion": "pulse"
+              },
+              {
+                "kind": "shield",
+                "position": [
+                  -2.5,
+                  0,
+                  -2
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0.5,
+                  0
+                ],
+                "color": "#4682b4",
+                "motion": "backward"
+              },
+              {
+                "kind": "cylinder",
+                "position": [
+                  2.5,
+                  0,
+                  -2
+                ],
+                "scale": [
+                  0.5,
+                  2,
+                  0.5
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#333333",
+                "motion": "none"
+              }
+            ],
+            "camera_start": [
+              0,
+              0,
+              14
+            ],
+            "camera_end": [
+              0,
+              0,
+              10
+            ],
+            "visual_change": "The sound waveform pulses intensely in red while the protective shield moves backward."
+          },
+          {
+            "id": "scene_7",
+            "label": "السقوط الحر",
+            "narration": "فجأة حسيت المصعد بيقع بينا بسرعة رهيبة من غير أي تحذير وكأن الكابلات اتقطعت. الهوا كان بيخبط في وجهي بقوة وكنت طاير جوة الكابينة وأنا شايف الأرضيات بتعدي قدامي بسرعة البرق.",
+            "labels": [
+              "المصعد بيقع",
+              "كابلات اتقطعت"
+            ],
+            "visual_mode": "hero",
+            "environment": "dark_interior",
+            "objects": [
+              {
+                "kind": "rock_layers",
+                "position": [
+                  0,
+                  -2,
+                  -2
+                ],
+                "scale": [
+                  2,
+                  1.5,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#8b5a2b",
+                "motion": "flow"
+              },
+              {
+                "kind": "sphere",
+                "position": [
+                  0,
+                  2,
+                  -1
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#ffffff",
+                "motion": "float"
+              },
+              {
+                "kind": "crystal",
+                "position": [
+                  -3,
+                  0,
+                  -2
+                ],
+                "scale": [
+                  0.8,
+                  1.5,
+                  0.8
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0.5
+                ],
+                "color": "#00ffff",
+                "motion": "spin"
+              }
+            ],
+            "camera_start": [
+              0,
+              2,
+              15
+            ],
+            "camera_end": [
+              0,
+              -2,
+              10
+            ],
+            "visual_change": "The rock layers and crystals rush upward as the elevator free-falls through the shaft."
+          },
+          {
+            "id": "scene_8",
+            "label": "النهاية الملتوية",
+            "narration": "فتحت عيني ولقيت نفسي واقف قدام باب شقتي عادي جداً والمطر برة وقف. تنفست بعمق وقلت لنفسي الحمد لله إنه كان مجرد كابوس سخيف. بس وأنا بطلع المفتاح لاحظت إن انعكاسي على المرايا بيضحك بسخرية وهو لسه واقف جوه المصعد.",
+            "labels": [
+              "باب شقتي",
+              "انعكاسي على المرايا"
+            ],
+            "visual_mode": "hero",
+            "environment": "dark_interior",
+            "objects": [
+              {
+                "kind": "door",
+                "position": [
+                  0,
+                  0,
+                  0
+                ],
+                "scale": [
+                  1.5,
+                  2.5,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#654321",
+                "motion": "close"
+              },
+              {
+                "kind": "monitor",
+                "position": [
+                  -2.5,
+                  1,
+                  -1
+                ],
+                "scale": [
+                  1,
+                  1,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#ff0000",
+                "motion": "none"
+              },
+              {
+                "kind": "person",
+                "position": [
+                  2.5,
+                  -1,
+                  -1
+                ],
+                "scale": [
+                  1,
+                  2,
+                  1
+                ],
+                "rotation": [
+                  0,
+                  0,
+                  0
+                ],
+                "color": "#111111",
+                "motion": "head_turn"
+              }
+            ],
+            "camera_start": [
+              0,
+              0,
+              14
+            ],
+            "camera_end": [
+              0,
+              0,
+              9
+            ],
+            "visual_change": "The wooden apartment door closes shut while the reflection inside the monitor grins."
+          }
+        ],
+        "hashtags": [
+          "#رعب",
+          "#قصص_مرعبة",
+          "#مصعد",
+          "#غموض"
+        ],
+        "profile": "horror",
+        "series": "ملفات غامضه",
+        "topic_key": "knowledge-supernatural-elevator-horror-loop",
+        "knowledge_category": "supernatural",
+        "visual_family": "haunted_interior",
+        "variant": "procedural",
+        "fiction": true,
+        "documented": false,
+        "source": {
+          "kind": "original_fiction",
+          "publisher": "ملفات غامضه",
+          "url": "",
+          "title": ""
+        },
+        "editorial_policy": {
+          "external_sources_required": false,
+          "independent_scientific_review_required": false
+        },
+        "visual_plan": {
+          "version": 1,
+          "world": "procedural_story",
+          "scenes": [
+            {
+              "id": "scene_1",
+              "setting": "dark_interior",
+              "focal_object": "door",
+              "action": "open",
+              "shot": "authored_camera",
+              "state_change": "The heavy iron door slowly opens inward, revealing a dark elevator interior."
+            },
+            {
+              "id": "scene_2",
+              "setting": "dark_interior",
+              "focal_object": "gear",
+              "action": "spin",
+              "shot": "authored_camera",
+              "state_change": "The metal gears spin rapidly while the control monitor flashes erratically."
+            },
+            {
+              "id": "scene_3",
+              "setting": "dark_interior",
+              "focal_object": "heart",
+              "action": "pulse",
+              "shot": "authored_camera",
+              "state_change": "The schematic heart organ pulses heavily in the darkness while electrical circuits short out."
+            },
+            {
+              "id": "scene_4",
+              "setting": "dark_interior",
+              "focal_object": "person",
+              "action": "head_turn",
+              "shot": "authored_camera",
+              "state_change": "The human figure slowly turns its head toward the open elevator doors."
+            },
+            {
+              "id": "scene_5",
+              "setting": "dark_interior",
+              "focal_object": "cell",
+              "action": "split",
+              "shot": "authored_camera",
+              "state_change": "The biological cell structure splits apart while the emergency phone vibrates violently."
+            },
+            {
+              "id": "scene_6",
+              "setting": "dark_interior",
+              "focal_object": "waveform",
+              "action": "pulse",
+              "shot": "authored_camera",
+              "state_change": "The sound waveform pulses intensely in red while the protective shield moves backward."
+            },
+            {
+              "id": "scene_7",
+              "setting": "dark_interior",
+              "focal_object": "rock_layers",
+              "action": "flow",
+              "shot": "authored_camera",
+              "state_change": "The rock layers and crystals rush upward as the elevator free-falls through the shaft."
+            },
+            {
+              "id": "scene_8",
+              "setting": "dark_interior",
+              "focal_object": "door",
+              "action": "close",
+              "shot": "authored_camera",
+              "state_change": "The wooden apartment door closes shut while the reflection inside the monitor grins."
+            }
+          ]
+        },
+        "visual_sequence_sha256": "fe69c7518d4c6de0cd6647afd9aba1393782b06fc3a0a0e917361aab3e3c72cc",
+        "editorial_review": {
+          "performed": false,
+          "required": false,
+          "reason": "Owner permits general knowledge and original fiction without mandatory external sources or independent fact-check"
+        }
+      },
+      "requested_due_at": "2026-11-02T15:00:00Z"
     }
   ],
   "rescheduling_history": {
@@ -1028,9 +1818,10 @@
   "requested_production": {
     "requested-2026-11-02-horror": {
       "started_at": "2026-11-02T09:55:14.015958+00:00",
-      "phase": "writing",
+      "phase": "story_ready",
       "request_id": "owner-new-today-2026-11-02",
-      "due_at": "2026-11-02T15:00:00Z"
+      "due_at": "2026-11-02T15:00:00Z",
+      "topic_key": "knowledge-supernatural-elevator-horror-loop"
     }
   }
 }
