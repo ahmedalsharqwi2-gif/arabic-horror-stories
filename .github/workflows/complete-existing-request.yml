@@ -1,0 +1,199 @@
+{
+  "name": "Complete new original horror from retained voice; no new text or TTS",
+  "on": {
+    "push": {
+      "branches": [
+        "main"
+      ],
+      "paths": [
+        ".github/complete-existing-request.json"
+      ]
+    }
+  },
+  "permissions": {
+    "contents": "write",
+    "actions": "read"
+  },
+  "concurrency": {
+    "group": "professional-daily-horror",
+    "cancel-in-progress": false
+  },
+  "jobs": {
+    "render": {
+      "runs-on": "ubuntu-24.04",
+      "timeout-minutes": 60,
+      "permissions": {
+        "contents": "read",
+        "actions": "read"
+      },
+      "strategy": {
+        "fail-fast": false,
+        "max-parallel": 4,
+        "matrix": {
+          "part": [
+            0,
+            1,
+            2,
+            3
+          ]
+        }
+      },
+      "steps": [
+        {
+          "uses": "actions/checkout@v4",
+          "with": {
+            "ref": "${{ github.sha }}"
+          }
+        },
+        {
+          "uses": "actions/download-artifact@v4",
+          "with": {
+            "name": "original-voice-41424375337",
+            "path": "professional_motion/delivery/",
+            "github-token": "${{ github.token }}",
+            "run-id": 41424375337
+          }
+        },
+        {
+          "uses": "actions/setup-node@v4",
+          "with": {
+            "node-version": "22"
+          }
+        },
+        {
+          "uses": "actions/setup-python@v5",
+          "with": {
+            "python-version": "3.11"
+          }
+        },
+        {
+          "name": "Recover measured phrase timing from retained original ASR only",
+          "run": "python -m professional_motion.recover_measured_timing"
+        },
+        {
+          "name": "Install exact renderer and browser",
+          "run": "sudo apt-get update -qq\nsudo apt-get install -y ffmpeg\ncd professional_motion\nnpm ci\nnpx playwright-core install --with-deps chromium"
+        },
+        {
+          "name": "Render an exact quarter of the real-timing full-resolution frames",
+          "run": "args=(--style \"$REVIEW_VISUAL_STYLE\")\nif [ \"$IS_REVIEW\" = \"true\" ]; then args+=(--review); fi\nnode professional_motion/render.mjs --pipeline v2 \"${args[@]}\" --part ${{ matrix.part }} --parts 4 --output chunk-${{ matrix.part }}.mp4",
+          "env": {
+            "REVIEW_VISUAL_STYLE": "original",
+            "IS_REVIEW": "false"
+          }
+        },
+        {
+          "uses": "actions/upload-artifact@v4",
+          "with": {
+            "name": "frames-${{ matrix.part }}",
+            "path": "professional_motion/output/chunk-${{ matrix.part }}.mp4\nprofessional_motion/output/chunk-${{ matrix.part }}.mp4.json",
+            "retention-days": 7,
+            "if-no-files-found": "error"
+          }
+        }
+      ]
+    },
+    "finish": {
+      "needs": [
+        "render"
+      ],
+      "if": "needs.render.result == 'success'",
+      "runs-on": "ubuntu-24.04",
+      "timeout-minutes": 35,
+      "env": {
+        "PYTHONPATH": "${{ github.workspace }}",
+        "PYTHONUNBUFFERED": "1",
+        "GITHUB_TOKEN": "${{ github.token }}",
+        "GH_RELEASE_TOKEN": "${{ github.token }}",
+        "BUFFER_API_KEY": "${{ secrets.BUFFER_API_KEY }}",
+        "BUFFER_CHANNEL_IDS": "${{ secrets.BUFFER_CHANNEL_IDS || vars.BUFFER_CHANNEL_IDS }}",
+        "YT_CLIENT_ID": "${{ secrets.YT_CLIENT_ID }}",
+        "YT_CLIENT_SECRET": "${{ secrets.YT_CLIENT_SECRET }}",
+        "YT_REFRESH_TOKEN": "${{ secrets.YT_REFRESH_TOKEN }}",
+        "YT_REFRESH_TOKEN_FALLBACK": "${{ secrets.YT_REFRESH_TOKEN_FALLBACK }}",
+        "BUFFER_YOUTUBE_CHANNEL_ID": "${{ secrets.BUFFER_YOUTUBE_CHANNEL_ID }}",
+        "BUFFER_FACEBOOK_CHANNEL_ID": "${{ secrets.BUFFER_FACEBOOK_CHANNEL_ID }}",
+        "BUFFER_INSTAGRAM_CHANNEL_ID": "${{ secrets.BUFFER_INSTAGRAM_CHANNEL_ID }}",
+        "BUFFER_TIKTOK_CHANNEL_ID": "${{ secrets.BUFFER_TIKTOK_CHANNEL_ID }}",
+        "HORROR_REVIEW_GENRE": "${{ inputs.horror_genre || '' }}",
+        "DURABLE_SUBMISSION_GUARD": "true",
+        "NEWS_DIGEST_MAX_AGE_HOURS": "168"
+      },
+      "steps": [
+        {
+          "uses": "actions/checkout@v4",
+          "with": {
+            "ref": "${{ github.sha }}",
+            "fetch-depth": 0
+          }
+        },
+        {
+          "uses": "actions/setup-python@v5",
+          "with": {
+            "python-version": "3.11"
+          }
+        },
+        {
+          "name": "Install media finishing dependencies",
+          "run": "sudo apt-get update -qq\nsudo apt-get install -y ffmpeg\npython -m pip install numpy Pillow requests beautifulsoup4 google-api-python-client google-auth-oauthlib"
+        },
+        {
+          "uses": "actions/download-artifact@v4",
+          "with": {
+            "name": "original-voice-41424375337",
+            "path": "professional_motion/delivery/",
+            "github-token": "${{ github.token }}",
+            "run-id": 41424375337
+          }
+        },
+        {
+          "uses": "actions/download-artifact@v4",
+          "with": {
+            "pattern": "frames-*",
+            "path": "professional_motion/chunks/",
+            "merge-multiple": true
+          }
+        },
+        {
+          "name": "Recover identical measured phrase timing without generation",
+          "run": "python -m professional_motion.recover_measured_timing"
+        },
+        {
+          "name": "Join every original frame without gaps or repetition",
+          "run": "python -m professional_motion.requested_merge"
+        },
+        {
+          "name": "Mix quieter music and verify the actual 90–180 second movie",
+          "id": "finish",
+          "run": "python -m professional_motion.requested_finish --pipeline v2\npython -m professional_motion.cli rendered horror --slot \"requested-2026-11-02-horror\""
+        },
+        {
+          "name": "Persist the completed episode and its exact video checksum",
+          "if": "steps.finish.outcome == 'success'",
+          "run": "python -m professional_motion.persist_state"
+        },
+        {
+          "name": "Schedule approved daily film for exactly 17:00 Cairo",
+          "if": "steps.finish.outcome == 'success'",
+          "run": "python -m professional_motion.requested_publish horror --slot \"requested-2026-11-02-horror\" --due \"2026-11-02T15:00:00Z\" --request .github/complete-existing-request.json",
+          "id": "publication"
+        },
+        {
+          "uses": "actions/upload-artifact@v4",
+          "if": "always()",
+          "with": {
+            "name": "horror-professional-${{ github.run_id }}",
+            "path": "professional_motion/output/\nprofessional_motion/delivery/\nstate/professional_topics.json",
+            "retention-days": 30,
+            "if-no-files-found": "warn"
+          }
+        },
+        {
+          "name": "Preserve partial provider acceptance receipts on any failure",
+          "if": "always()",
+          "run": "python -m professional_motion.persist_state"
+        }
+      ]
+    }
+  }
+}
