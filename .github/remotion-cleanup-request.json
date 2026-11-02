@@ -1,12 +1,48 @@
 {
+  "workflow_catalog": true,
   "apply": true,
-  "scope": "Resume only remaining unused branches after bounded archive visibility verification; keep original recovery reports",
-  "keep": [
-    "main",
-    "open PR branches",
-    "active runs",
-    "production_v2 recovery/state/source/diagnostic refs",
-    "all topic histories/receipts/voice originals"
+  "revision": 10,
+  "keep_paths": [
+    ".github/workflows/remotion-daily.yml",
+    ".github/workflows/remotion-health.yml",
+    ".github/workflows/remotion-cleanup.yml",
+    ".github/workflows/arabic_guard.yml",
+    ".github/workflows/validation.yml",
+    ".github/workflows/checks.yml"
   ],
-  "revision": 3
+  "retired_paths": [
+    ".github/workflows/complete-existing-request.yml",
+    ".github/workflows/daily-production-v3.yml",
+    ".github/workflows/image-fallback-ci.yml",
+    ".github/workflows/motion-kit-validation.yml",
+    ".github/workflows/produce-new-today.yml",
+    ".github/workflows/production-v2-audit.yml",
+    ".github/workflows/production-v2-diagnostics.yml",
+    ".github/workflows/production-v2-generate.yml",
+    ".github/workflows/production-v2-provider-probe.yml",
+    ".github/workflows/production-v2-review.yml",
+    ".github/workflows/production-v2-sources.yml",
+    ".github/workflows/professional-approved-review.yml",
+    ".github/workflows/professional-audit-daily-release.yml",
+    ".github/workflows/professional-channel-check.yml",
+    ".github/workflows/professional-corrected-review.yml",
+    ".github/workflows/professional-daily.yml",
+    ".github/workflows/professional-delivery-audit.yml",
+    ".github/workflows/professional-finalize-horror.yml",
+    ".github/workflows/professional-full-length-review.yml",
+    ".github/workflows/professional-pipeline-validation.yml",
+    ".github/workflows/professional-quieter-review.yml",
+    ".github/workflows/professional-resume-horror.yml",
+    ".github/workflows/professional-review-diagnostics.yml",
+    ".github/workflows/professional-review-download.yml",
+    ".github/workflows/professional-safe-failure-report.yml",
+    ".github/workflows/professional-ship-polish.yml",
+    ".github/workflows/professional-start-today.yml",
+    ".github/workflows/reschedule-existing-posts.yml",
+    ".github/workflows/scene-director-ci.yml",
+    ".github/workflows/visual-quality-gate.yml",
+    ".github/workflows/remotion-voice.yml",
+    ".github/workflows/remotion-complete.yml"
+  ],
+  "recovery_ref": "archive/housekeeping-41535695204-1/main-before-cleanup"
 }
