@@ -1,0 +1,66 @@
+{
+  "profile": "horror",
+  "schedule": {
+    "timezone": "Africa/Cairo",
+    "production": "09:00",
+    "publication": "17:00",
+    "publication_day_offset": 0,
+    "first_scheduled_clock_execution_not_yet_observed": true
+  },
+  "full_film": {
+    "title": "السفينة كابتن: كارثة حقيقية في ليلة عاصفة",
+    "slot": "remotion-2026-11-04-horror",
+    "duration": 153.466667,
+    "sha256": "c0fe6995807ba5b414eb31de419387e7084e30144ccd9c0da12a0b990d1b3157",
+    "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-remotion-2026-11-04-horror/horror-remotion-2026-11-04-horror.mp4",
+    "render_run": 41491443018,
+    "publication_due": "2026-11-04T15:00:00Z"
+  },
+  "receipts": {
+    "instagram": {
+      "phase": "verified",
+      "channel_id": "6aad267dea19ca0bde778d5e",
+      "due_at": "2026-11-04T15:00:00Z",
+      "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-remotion-2026-11-04-horror/horror-remotion-2026-11-04-horror.mp4",
+      "created_at": "2026-11-02T18:15:52.036797+00:00",
+      "id": "6ae8d3594e55e02608791e8d",
+      "accepted_at": "2026-11-02T18:15:54.165818+00:00",
+      "status": "scheduled",
+      "scheduled_at": "2026-11-04T15:00:00.000Z",
+      "verified_at": "2026-11-02T18:15:55.836142+00:00"
+    },
+    "youtube": {
+      "phase": "verified",
+      "channel_id": "6aaa8778ea19ca0bde57da16",
+      "due_at": "2026-11-04T15:00:00Z",
+      "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-remotion-2026-11-04-horror/horror-remotion-2026-11-04-horror.mp4",
+      "created_at": "2026-11-02T18:15:57.621026+00:00",
+      "id": "6ae8d35fc25538a9f8cb72e2",
+      "accepted_at": "2026-11-02T18:15:59.827219+00:00",
+      "status": "scheduled",
+      "scheduled_at": "2026-11-04T15:00:00.000Z",
+      "verified_at": "2026-11-02T18:16:01.267123+00:00"
+    },
+    "facebook": {
+      "phase": "verified",
+      "channel_id": "6aaa853fea19ca0bde57b5f7",
+      "due_at": "2026-11-04T15:00:00Z",
+      "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-remotion-2026-11-04-horror/horror-remotion-2026-11-04-horror.mp4",
+      "created_at": "2026-11-02T18:16:02.870204+00:00",
+      "id": "6ae8d365c1e1a07104365e2f",
+      "accepted_at": "2026-11-02T18:16:05.375035+00:00",
+      "status": "scheduled",
+      "scheduled_at": "2026-11-04T15:00:00.000Z",
+      "verified_at": "2026-11-02T18:16:07.006556+00:00"
+    }
+  },
+  "final_no_duplicate_test": {
+    "run": 41503051245,
+    "url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/41503051245",
+    "status": "success"
+  },
+  "legacy_cron_archived_and_disabled": true,
+  "visible_hashtags_enabled_for_future_production": true,
+  "first_embedded_hashtag_film": false,
+  "review_samples_published": false
+}
