@@ -1,0 +1,369 @@
+{
+  "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+  "run_id": "41533540794",
+  "apply": false,
+  "started_at": "2026-11-02T22:01:14.360934+00:00",
+  "errors": [],
+  "deleted_branches": [],
+  "retained": [
+    {
+      "name": "codex/clip-audio-integrity-20261005",
+      "reason": "keep_unmerged_work_not_proven_unused"
+    },
+    {
+      "name": "codex/commons-media-fallback-20261006",
+      "reason": "keep_unmerged_work_not_proven_unused"
+    },
+    {
+      "name": "codex/daily-professional-factory",
+      "reason": "keep_workflow_reference"
+    },
+    {
+      "name": "codex/free-cinematic-vertical-20261009",
+      "reason": "keep_unmerged_work_not_proven_unused"
+    },
+    {
+      "name": "codex/production-v2-audit-status",
+      "reason": "keep_recovery_and_diagnostic_history"
+    },
+    {
+      "name": "codex/production-v2-diagnostics",
+      "reason": "keep_recovery_and_diagnostic_history"
+    },
+    {
+      "name": "codex/production-v2-media-2026-10-31",
+      "reason": "keep_recovery_and_diagnostic_history"
+    },
+    {
+      "name": "codex/production-v2-sources",
+      "reason": "keep_recovery_and_diagnostic_history"
+    },
+    {
+      "name": "codex/production-v2-state",
+      "reason": "keep_recovery_and_diagnostic_history"
+    },
+    {
+      "name": "codex/production-v2-status",
+      "reason": "keep_recovery_and_diagnostic_history"
+    },
+    {
+      "name": "codex/professional-review-run-40790917440",
+      "reason": "keep_workflow_reference"
+    },
+    {
+      "name": "codex/professional-review-run-40926569486",
+      "reason": "keep_workflow_reference"
+    },
+    {
+      "name": "codex/professional-review-run-40933433482",
+      "reason": "keep_workflow_reference"
+    },
+    {
+      "name": "codex/professional-review-run-41362222350",
+      "reason": "keep_recent_commit_under24hours"
+    },
+    {
+      "name": "codex/professional-review-run-41368754330",
+      "reason": "keep_recent_commit_under24hours"
+    },
+    {
+      "name": "codex/professional-review-run-41371797623",
+      "reason": "keep_recent_commit_under24hours"
+    },
+    {
+      "name": "codex/professional-review-run-41372100255",
+      "reason": "keep_recent_commit_under24hours"
+    },
+    {
+      "name": "codex/professional-review-run-41408977907",
+      "reason": "keep_recent_commit_under24hours"
+    },
+    {
+      "name": "codex/professional-video-40926569486",
+      "reason": "keep_workflow_reference"
+    },
+    {
+      "name": "codex/professional-video-40933433482",
+      "reason": "keep_workflow_reference"
+    },
+    {
+      "name": "codex/professional-video-41408977907",
+      "reason": "keep_recent_commit_under24hours"
+    },
+    {
+      "name": "codex/rebuild-production-v2",
+      "reason": "keep_recovery_and_diagnostic_history"
+    },
+    {
+      "name": "codex/topic-directed-motion-review-2026-11-01",
+      "reason": "keep_unmerged_work_not_proven_unused"
+    },
+    {
+      "name": "feat/egyptian-canvas-voice-20261016",
+      "reason": "keep_open_pull_request"
+    },
+    {
+      "name": "feat/horror-arabic-language-guards",
+      "reason": "keep_open_pull_request"
+    },
+    {
+      "name": "feat/shared-motion-preview-20261016",
+      "reason": "keep_open_pull_request"
+    },
+    {
+      "name": "fix/minimum-70-percent-real-video",
+      "reason": "keep_unmerged_work_not_proven_unused"
+    },
+    {
+      "name": "fix/narration-continuity",
+      "reason": "keep_unmerged_work_not_proven_unused"
+    },
+    {
+      "name": "fix/normalize-overlapping-caption-timeline",
+      "reason": "keep_unmerged_work_not_proven_unused"
+    },
+    {
+      "name": "fix/production-recovery-20261014",
+      "reason": "keep_unmerged_work_not_proven_unused"
+    },
+    {
+      "name": "fix/provider-outage-resilience",
+      "reason": "keep_unmerged_work_not_proven_unused"
+    },
+    {
+      "name": "fix/reel-caption-separation",
+      "reason": "keep_open_pull_request"
+    },
+    {
+      "name": "fix/resilient-caption-publishing-20261013",
+      "reason": "keep_unmerged_work_not_proven_unused"
+    },
+    {
+      "name": "fix/stock-root-causes-20261015",
+      "reason": "keep_unmerged_work_not_proven_unused"
+    },
+    {
+      "name": "fix/video-first-broad-stock-recovery",
+      "reason": "keep_unmerged_work_not_proven_unused"
+    },
+    {
+      "name": "main",
+      "reason": "keep_protected_or_default"
+    },
+    {
+      "name": "pr-9",
+      "reason": "keep_unmerged_work_not_proven_unused"
+    }
+  ],
+  "removed_paths": [],
+  "generation_calls": 0,
+  "social_mutations": 0,
+  "default_branch": "main",
+  "main_before": "78b38ef810bc9c928c2a94dd343b6d51d373dfd5",
+  "branch_count": 77,
+  "planned_branches": [
+    {
+      "name": "codex/destination-check-40838591494",
+      "sha": "3c1a3f869659d79f07f5ba8123f865fe3dd8af82",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/planning-diagnostic-40786155007",
+      "sha": "55e17f4d26ffb7d5dae1058a4f0678a8f44abef9",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/planning-diagnostic-40790459297",
+      "sha": "fd7f62865ac843d979a424ffb9761adf86ff1810",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40786155007",
+      "sha": "20f1d96c53ac3af4113451d494aee49d0cab6af9",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40787353327",
+      "sha": "00fab956b8c55982f205847f8d97594b356afa02",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40790459297",
+      "sha": "00cf712382b0885dae08452318a809465be1506b",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40845205098",
+      "sha": "5e3166c303561f37d1626a226d3007068253ec2e",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40848280838",
+      "sha": "152480a602e926b594eed2ba017b2bbcc4fc1770",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40878050634",
+      "sha": "cf345f8dc9fdb195126a7afb2245b94c09cc370c",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40879675873",
+      "sha": "905500d84f35e314de6dba8103ee71aa50a0c332",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40894222568",
+      "sha": "d3da77c84663cf3c003f28e5c56fb344628c9bf4",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40896235991",
+      "sha": "392f8e3fe5d45535fbb8714a6c29fe60e9d03f3b",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40897683199",
+      "sha": "9ea7ad8f5e68e511c05c93d75349761e94278065",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40898506513",
+      "sha": "a44a5bd8e528788c81291b9cde56456284c9c285",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40940990314",
+      "sha": "0a8874c32c8495f9c0c0023ed4d23806f1f4dfd2",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40941604100",
+      "sha": "2072134b5dd49d03f05b84aa9eaeee09d456c48d",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40941845531",
+      "sha": "348b1781d2889b5055718914a16ebab00f2b8b01",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40942144976",
+      "sha": "cd345d7f15537793a48dbdb299f2ee40f41352fc",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-40947217989",
+      "sha": "590cef4c742e16d6bb3cc943a3dc4fd7f2568a3f",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-41053666915",
+      "sha": "c270644f69d05c54990ba192940072cf6c214cdf",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-41055487195",
+      "sha": "0dad95be4de43917e37e336d39702004365ebcfa",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-41055885506",
+      "sha": "15647497b9c3b556700479e3acbb27a4c8348432",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-41061062315",
+      "sha": "409f6898b02032872d078cf6728bc828dc7a4e0f",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-41125279905",
+      "sha": "4d80d8a2c366b80580c41822d6013744af08a692",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-41196356134",
+      "sha": "e60bd44307ff0b1da2197139023d2299d3099525",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-41198762140",
+      "sha": "6416b08945304afecbc342029f72fc5dc3eb0016",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-41210690791",
+      "sha": "e97c3582d394eb1047f2cc8d50588ab0fbddeb4b",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-41227924316",
+      "sha": "5d08a64532bb1a5eb3e9e01209d1b8d9af0da71d",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-41229138726",
+      "sha": "68b4762523034fa5dee24e4e5e15089295efd295",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-41231443428",
+      "sha": "42619462773b7983a40561c556b3c343c753ee38",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-review-run-41352153128",
+      "sha": "6467ad61182b9db98ecde5c4255c1e4cdf0a9d65",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-video-40787353327",
+      "sha": "26d679c379794b28568866cc704bc6047cab7e94",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-video-40790917440",
+      "sha": "7e830a212f22e8ce534b60c811813eea34d1f7ef",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-video-40837937977",
+      "sha": "dbf097f6a5d6b14e6a389a5afaddcdee88ae72ac",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-video-40840862105",
+      "sha": "3921a30f9e1bc9c860d8d1b4ee3ae719eb4a0470",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-video-41055885506",
+      "sha": "890991f5243cd45d48f0da475999ec1418d364b8",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/professional-video-41198762140",
+      "sha": "8a3458f785eeb6199e871fe0c85e087bf4cfd2ea",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced"
+    },
+    {
+      "name": "codex/replace-production-with-motion",
+      "sha": "66c481b9f6183cff5cbe7178e0fd96e4dbab3858",
+      "reason": "fully_merged_into_current_main_and_inactive"
+    },
+    {
+      "name": "fix/cairo-batch-slots-20261012",
+      "sha": "932ec07c7534db941bbdb1940d481b8425dab04a",
+      "reason": "fully_merged_into_current_main_and_inactive"
+    },
+    {
+      "name": "fix/rolling-stock-confirmed-publication",
+      "sha": "a71a7efa92cc8bd625bba4a2fe97b6403e327b8b",
+      "reason": "fully_merged_into_current_main_and_inactive"
+    }
+  ],
+  "planned_paths": [],
+  "passed": true,
+  "finished_at": "2026-11-02T22:02:18.673072+00:00"
+}
