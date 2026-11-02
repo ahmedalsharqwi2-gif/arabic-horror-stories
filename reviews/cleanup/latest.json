@@ -1,10 +1,37 @@
 {
   "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
-  "run_id": "41533540794",
-  "apply": false,
-  "started_at": "2026-11-02T22:01:14.360934+00:00",
-  "errors": [],
-  "deleted_branches": [],
+  "run_id": "41535695204",
+  "apply": true,
+  "started_at": "2026-11-02T22:15:40.754557+00:00",
+  "errors": [
+    "Recovery ref not independently confirmed"
+  ],
+  "deleted_branches": [
+    {
+      "name": "codex/destination-check-40838591494",
+      "sha": "3c1a3f869659d79f07f5ba8123f865fe3dd8af82",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced",
+      "recovery_tag": "archive/housekeeping-41535695204-1/codex/destination-check-40838591494"
+    },
+    {
+      "name": "codex/planning-diagnostic-40786155007",
+      "sha": "55e17f4d26ffb7d5dae1058a4f0678a8f44abef9",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced",
+      "recovery_tag": "archive/housekeeping-41535695204-1/codex/planning-diagnostic-40786155007"
+    },
+    {
+      "name": "codex/planning-diagnostic-40790459297",
+      "sha": "fd7f62865ac843d979a424ffb9761adf86ff1810",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced",
+      "recovery_tag": "archive/housekeeping-41535695204-1/codex/planning-diagnostic-40790459297"
+    },
+    {
+      "name": "codex/professional-review-run-40786155007",
+      "sha": "20f1d96c53ac3af4113451d494aee49d0cab6af9",
+      "reason": "completed_run_snapshot_older_than24hours_not_referenced",
+      "recovery_tag": "archive/housekeeping-41535695204-1/codex/professional-review-run-40786155007"
+    }
+  ],
   "retained": [
     {
       "name": "codex/clip-audio-integrity-20261005",
@@ -159,7 +186,7 @@
   "generation_calls": 0,
   "social_mutations": 0,
   "default_branch": "main",
-  "main_before": "78b38ef810bc9c928c2a94dd343b6d51d373dfd5",
+  "main_before": "357d262352c234ab6aa888660c42502e768240cc",
   "branch_count": 77,
   "planned_branches": [
     {
@@ -364,6 +391,7 @@
     }
   ],
   "planned_paths": [],
-  "passed": true,
-  "finished_at": "2026-11-02T22:02:18.673072+00:00"
+  "main_recovery_tag": "archive/housekeeping-41535695204-1/main-before-cleanup",
+  "passed": false,
+  "finished_at": "2026-11-02T22:16:45.811689+00:00"
 }
