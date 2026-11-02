@@ -1,3 +1,4 @@
+import {createSvgScenes} from './svg_story.js';
 import {loopPhase} from './animation_time.mjs';
 import {proceduralDirector} from './procedural_story.js';
 import {drawReferenceLayout} from './reference_layout.js';
@@ -276,6 +277,7 @@ function drawChannelText(t,index,local,p){
  const flash=1-clamp(local/.28);if(index>0&&flash>0){ctx.fillStyle=`rgba(103,228,208,${flash*.12})`;ctx.fillRect(W*(1-flash),230,10+flash*26,1330);}
 }
 
+const svgScenes=await createSvgScenes(config);
 const procedural=useProcedural&&new URLSearchParams(location.search).get('pipeline')==='v2'?proceduralDirector(scene,config):null;
 window.renderAt=(time,duration=D)=>{
  D=duration;const t=Math.max(0,time),u=t/D;
@@ -304,6 +306,7 @@ window.renderAt=(time,duration=D)=>{
  if(horrorRig&&!useHaunted)window.cinematicStatus=horrorRig.update({position:camera.position.toArray(),target:[0,index===1?.35+.3*p:.35,0]},config.scenes[index].visual_mode,p,t);
  if(procedural){channel.root.visible=false;dust.visible=false;shafts.forEach(o=>o.visible=false);const view=procedural.update(index,p,t);camera.position.set(...view.position);camera.lookAt(...view.target);window.topicDirecting=view;}
  if(new URLSearchParams(location.search).get('style')==='reference')renderer.render(scene,camera);else composer.render();if(useOctopus)drawText(t,index,local,p);else drawChannelText(t,index,local,p);if(new URLSearchParams(location.search).get('style')==='reference')drawReferenceLayout(ctx,{story:config,timing,index,time:t,local,duration:D,review:new URLSearchParams(location.search).get('review')==='true',logo:!!brandMark});drawBranding(ctx,brandMark);
+ svgScenes.draw(ctx,index,p);
  return {scene:index+1,time:t,duration:D,originalVoice:!!timing};
 };
 window.captureFrame=()=>{endCtx.drawImage(renderer.domElement,0,0);endCtx.drawImage(overlay,0,0);return endCanvas.toDataURL('image/jpeg',.96).split(',')[1];};
