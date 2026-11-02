@@ -14,7 +14,7 @@ def main():
  with wave.open(str(root/'narration.wav')) as audio:duration=audio.getnframes()/audio.getframerate()
  require_duration(duration)
  transcripts=[(m,json.loads((root/('asr-'+m+'.json')).read_text())['recognized_words']) for m in ('medium','small','large-v3')]
- old=measured_timing(story,duration,transcripts)
+ old=measured_timing(story,duration,transcripts,allow_low_coverage=True)
  timing=character_timing(story,duration,transcripts,recognized_key,old.get('exact_token_coverage',old['coverage']))
  timing.update(profile=story['profile'],topic_key=story['topic_key'],story_sha256=hashlib.sha256((root/'story.json').read_bytes()).hexdigest(),audio_sha256=audio_hash)
  (root/'timing.json').write_text(json.dumps(timing,ensure_ascii=False,indent=2)+'\n')
