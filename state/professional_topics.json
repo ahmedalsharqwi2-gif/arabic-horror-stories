@@ -926,7 +926,7 @@
       "canonical_subject": "supernatural-elevator-horror-loop",
       "title": "المصعد التالت.. الباب اللي بيفتح على الفراغ",
       "knowledge_category": "supernatural",
-      "status": "rendered",
+      "status": "publishing",
       "story": {
         "title": "المصعد التالت.. الباب اللي بيفتح على الفراغ",
         "canonical_subject": "supernatural-elevator-horror-loop",
@@ -1709,7 +1709,8 @@
         }
       },
       "requested_due_at": "2026-11-02T15:00:00Z",
-      "video_sha256": "011adf82b948e60f885440f9e4e08e37b09520a33b25ea0982c71def9cc0567b"
+      "video_sha256": "011adf82b948e60f885440f9e4e08e37b09520a33b25ea0982c71def9cc0567b",
+      "publication_video_sha256": "011adf82b948e60f885440f9e4e08e37b09520a33b25ea0982c71def9cc0567b"
     }
   ],
   "rescheduling_history": {
