@@ -927,7 +927,7 @@
       "requested_due_at": "2026-11-02T15:00:00Z",
       "posts": {
         "youtube": {
-          "phase": "reconciled_no_schedule_change",
+          "phase": "intent",
           "before": {
             "id": "6ae845997817c41d1a50ddea",
             "channelId": "6aaa8778ea19ca0bde57da16",
