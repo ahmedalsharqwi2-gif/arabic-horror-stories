@@ -6,7 +6,7 @@
       "canonical_subject": "hms-captain-capsize-1870",
       "title": "السفينة كابتن: كارثة حقيقية في ليلة عاصفة",
       "story_sha256": "73ac7a5f58d932996341613e081da662c43b14ef52f7f75ab71e6d5a06c9b35e",
-      "due_at": "2026-11-04T15:00:00Z",
+      "due_at": "2026-11-04T10:00:00Z",
       "profile": "horror",
       "source_run": 41483322475,
       "created_at": "2026-11-02T16:39:05.013954+00:00",
@@ -23,37 +23,37 @@
         "instagram": {
           "phase": "verified",
           "channel_id": "6aad267dea19ca0bde778d5e",
-          "due_at": "2026-11-04T15:00:00Z",
+          "due_at": "2026-11-04T10:00:00Z",
           "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-remotion-2026-11-04-horror/horror-remotion-2026-11-04-horror.mp4",
           "created_at": "2026-11-02T18:15:52.036797+00:00",
           "id": "6ae8d3594e55e02608791e8d",
           "accepted_at": "2026-11-02T18:15:54.165818+00:00",
           "status": "scheduled",
-          "scheduled_at": "2026-11-04T15:00:00.000Z",
+          "scheduled_at": "2026-11-04T10:00:00.000Z",
           "verified_at": "2026-11-02T18:15:55.836142+00:00"
         },
         "youtube": {
           "phase": "verified",
           "channel_id": "6aaa8778ea19ca0bde57da16",
-          "due_at": "2026-11-04T15:00:00Z",
+          "due_at": "2026-11-04T10:00:00Z",
           "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-remotion-2026-11-04-horror/horror-remotion-2026-11-04-horror.mp4",
           "created_at": "2026-11-02T18:15:57.621026+00:00",
           "id": "6ae8d35fc25538a9f8cb72e2",
           "accepted_at": "2026-11-02T18:15:59.827219+00:00",
           "status": "scheduled",
-          "scheduled_at": "2026-11-04T15:00:00.000Z",
+          "scheduled_at": "2026-11-04T10:00:00.000Z",
           "verified_at": "2026-11-02T18:16:01.267123+00:00"
         },
         "facebook": {
           "phase": "verified",
           "channel_id": "6aaa853fea19ca0bde57b5f7",
-          "due_at": "2026-11-04T15:00:00Z",
+          "due_at": "2026-11-04T10:00:00Z",
           "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-remotion-2026-11-04-horror/horror-remotion-2026-11-04-horror.mp4",
           "created_at": "2026-11-02T18:16:02.870204+00:00",
           "id": "6ae8d365c1e1a07104365e2f",
           "accepted_at": "2026-11-02T18:16:05.375035+00:00",
           "status": "scheduled",
-          "scheduled_at": "2026-11-04T15:00:00.000Z",
+          "scheduled_at": "2026-11-04T10:00:00.000Z",
           "verified_at": "2026-11-02T18:16:07.006556+00:00"
         }
       },
@@ -136,7 +136,14 @@
             "verified_at": "2026-11-03T20:00:50.387402+00:00"
           }
         }
-      }
+      },
+      "schedule_history": [
+        {
+          "request_id": "noon-trial-2026-11-04",
+          "from": "2026-11-04T15:00:00Z",
+          "to": "2026-11-04T10:00:00Z"
+        }
+      ]
     }
   },
   "cutover_evidence": {
