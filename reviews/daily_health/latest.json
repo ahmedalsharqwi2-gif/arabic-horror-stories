@@ -2,9 +2,9 @@
   "date": "2026-11-03",
   "profile": "horror",
   "phase": "prepublish",
-  "checked_at": "2026-11-03T13:57:23.291829+00:00",
-  "run_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/41648906308",
-  "report_path": "reviews/daily_health/2026-11-03/41648906308-1.json",
+  "checked_at": "2026-11-03T14:53:02.426330+00:00",
+  "run_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/41657989206",
+  "report_path": "reviews/daily_health/2026-11-03/41657989206-1.json",
   "publication_due_utc": "2026-11-03T15:00:00+00:00",
   "errors": [
     "No successful clock-triggered daily run for this date; manual recovery and dry-run tests do not count as the automatic clock"
