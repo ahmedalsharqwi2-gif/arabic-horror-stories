@@ -84,7 +84,7 @@
             "verified_at": "2026-11-03T20:00:39.731571+00:00"
           },
           "youtube": {
-            "phase": "intent",
+            "phase": "acknowledged",
             "post_id": "6ae8d35fc25538a9f8cb72e2",
             "before": {
               "id": "6ae8d35fc25538a9f8cb72e2",
