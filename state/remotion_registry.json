@@ -111,6 +111,26 @@
             "service": "youtube",
             "due_at": "2026-11-04T10:00:00.000Z",
             "verified_at": "2026-11-03T20:00:45.055174+00:00"
+          },
+          "facebook": {
+            "phase": "intent",
+            "post_id": "6ae8d365c1e1a07104365e2f",
+            "before": {
+              "id": "6ae8d365c1e1a07104365e2f",
+              "channelId": "6aaa853fea19ca0bde57b5f7",
+              "status": "scheduled",
+              "dueAt": "2026-11-04T15:00:00.000Z",
+              "text": "السفينة كابتن: كارثة حقيقية في ليلة عاصفة\nالمصدر: https://www.rmg.co.uk/stories/maritime-history/hms-captain-britains-forgotten-maritime-disaster\nصور ورسومات أرشيفية: Unknown authorUnknown author",
+              "assets": [
+                {
+                  "source": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-remotion-2026-11-04-horror/horror-remotion-2026-11-04-horror.mp4"
+                }
+              ],
+              "metadata": {
+                "__typename": "FacebookPostMetadata",
+                "type": "post"
+              }
+            }
           }
         }
       }
