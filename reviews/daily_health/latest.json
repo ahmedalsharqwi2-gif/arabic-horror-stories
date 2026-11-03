@@ -1,10 +1,10 @@
 {
   "date": "2026-11-03",
   "profile": "horror",
-  "phase": "prepublish",
-  "checked_at": "2026-11-03T14:53:02.426330+00:00",
-  "run_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/41657989206",
-  "report_path": "reviews/daily_health/2026-11-03/41657989206-1.json",
+  "phase": "postpublish",
+  "checked_at": "2026-11-03T15:36:24.027105+00:00",
+  "run_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/41665551511",
+  "report_path": "reviews/daily_health/2026-11-03/41665551511-1.json",
   "publication_due_utc": "2026-11-03T15:00:00+00:00",
   "errors": [
     "No successful clock-triggered daily run for this date; manual recovery and dry-run tests do not count as the automatic clock"
@@ -18,30 +18,30 @@
       {
         "id": "6ae8459dc60bdbcc33e3854e",
         "channelId": "6aad267dea19ca0bde778d5e",
-        "status": "scheduled",
+        "status": "sent",
         "dueAt": "2026-11-03T15:00:00.000Z",
-        "sentAt": null,
-        "externalLink": null
+        "sentAt": "2026-11-03T15:05:58.275Z",
+        "externalLink": "https://www.instagram.com/reel/DfSKQVLD8mj/"
       }
     ],
     "youtube": [
       {
         "id": "6ae845997817c41d1a50ddea",
         "channelId": "6aaa8778ea19ca0bde57da16",
-        "status": "scheduled",
+        "status": "sent",
         "dueAt": "2026-11-03T15:00:00.000Z",
-        "sentAt": null,
-        "externalLink": null
+        "sentAt": "2026-11-03T15:03:47.816Z",
+        "externalLink": "https://www.youtube.com/shorts/FqpuUoLmAW8"
       }
     ],
     "facebook": [
       {
         "id": "6ae8459bc60bdbcc33e38477",
         "channelId": "6aaa853fea19ca0bde57b5f7",
-        "status": "scheduled",
+        "status": "sent",
         "dueAt": "2026-11-03T15:00:00.000Z",
-        "sentAt": null,
-        "externalLink": null
+        "sentAt": "2026-11-03T15:03:55.062Z",
+        "externalLink": "https://www.facebook.com/reel/2017485578957560/"
       }
     ]
   },
@@ -49,26 +49,26 @@
     "instagram": {
       "id": "6ae8459dc60bdbcc33e3854e",
       "channelId": "6aad267dea19ca0bde778d5e",
-      "status": "scheduled",
+      "status": "sent",
       "dueAt": "2026-11-03T15:00:00.000Z",
-      "sentAt": null,
-      "externalLink": null
+      "sentAt": "2026-11-03T15:05:58.275Z",
+      "externalLink": "https://www.instagram.com/reel/DfSKQVLD8mj/"
     },
     "youtube": {
       "id": "6ae845997817c41d1a50ddea",
       "channelId": "6aaa8778ea19ca0bde57da16",
-      "status": "scheduled",
+      "status": "sent",
       "dueAt": "2026-11-03T15:00:00.000Z",
-      "sentAt": null,
-      "externalLink": null
+      "sentAt": "2026-11-03T15:03:47.816Z",
+      "externalLink": "https://www.youtube.com/shorts/FqpuUoLmAW8"
     },
     "facebook": {
       "id": "6ae8459bc60bdbcc33e38477",
       "channelId": "6aaa853fea19ca0bde57b5f7",
-      "status": "scheduled",
+      "status": "sent",
       "dueAt": "2026-11-03T15:00:00.000Z",
-      "sentAt": null,
-      "externalLink": null
+      "sentAt": "2026-11-03T15:03:55.062Z",
+      "externalLink": "https://www.facebook.com/reel/2017485578957560/"
     }
   },
   "episode": {
@@ -92,5 +92,5 @@
     "reused_immutable_media_check": true,
     "live_asset_metadata_verified": true
   },
-  "media_binding": "Same live scheduled source URL and independently hashed original"
+  "media_binding": "Three live sent post IDs match retained original submission receipts; original release SHA independently verified. Platform-transcoded bytes are not claimed identical."
 }
