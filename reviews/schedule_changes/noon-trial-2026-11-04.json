@@ -70,7 +70,65 @@
       }
     }
   },
-  "complete": false,
+  "after": {
+    "instagram": {
+      "id": "6ae8d3594e55e02608791e8d",
+      "channelId": "6aad267dea19ca0bde778d5e",
+      "status": "scheduled",
+      "dueAt": "2026-11-04T10:00:00.000Z",
+      "text": "السفينة كابتن: كارثة حقيقية في ليلة عاصفة\nالمصدر: https://www.rmg.co.uk/stories/maritime-history/hms-captain-britains-forgotten-maritime-disaster\nصور ورسومات أرشيفية: Unknown authorUnknown author",
+      "assets": [
+        {
+          "source": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-remotion-2026-11-04-horror/horror-remotion-2026-11-04-horror.mp4"
+        }
+      ],
+      "metadata": {
+        "__typename": "InstagramPostMetadata",
+        "type": "reel",
+        "shouldShareToFeed": true
+      }
+    },
+    "youtube": {
+      "id": "6ae8d35fc25538a9f8cb72e2",
+      "channelId": "6aaa8778ea19ca0bde57da16",
+      "status": "scheduled",
+      "dueAt": "2026-11-04T10:00:00.000Z",
+      "text": "السفينة كابتن: كارثة حقيقية في ليلة عاصفة\nالمصدر: https://www.rmg.co.uk/stories/maritime-history/hms-captain-britains-forgotten-maritime-disaster\nصور ورسومات أرشيفية: Unknown authorUnknown author",
+      "assets": [
+        {
+          "source": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-remotion-2026-11-04-horror/horror-remotion-2026-11-04-horror.mp4"
+        }
+      ],
+      "metadata": {
+        "__typename": "YoutubePostMetadata",
+        "title": "السفينة كابتن: كارثة حقيقية في ليلة عاصفة",
+        "category": {
+          "categoryId": "27"
+        },
+        "privacy": "public",
+        "madeForKids": false,
+        "notifySubscribers": false
+      }
+    },
+    "facebook": {
+      "id": "6ae8d365c1e1a07104365e2f",
+      "channelId": "6aaa853fea19ca0bde57b5f7",
+      "status": "scheduled",
+      "dueAt": "2026-11-04T10:00:00.000Z",
+      "text": "السفينة كابتن: كارثة حقيقية في ليلة عاصفة\nالمصدر: https://www.rmg.co.uk/stories/maritime-history/hms-captain-britains-forgotten-maritime-disaster\nصور ورسومات أرشيفية: Unknown authorUnknown author",
+      "assets": [
+        {
+          "source": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-remotion-2026-11-04-horror/horror-remotion-2026-11-04-horror.mp4"
+        }
+      ],
+      "metadata": {
+        "__typename": "FacebookPostMetadata",
+        "type": "post"
+      }
+    }
+  },
+  "complete": true,
   "generation_calls": 0,
-  "new_posts": 0
+  "new_posts": 0,
+  "verified_at": "2026-11-03T20:00:53.038878+00:00"
 }
