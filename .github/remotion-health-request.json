@@ -2,6 +2,6 @@
   "date": "2026-11-05",
   "phase": "prepublish",
   "legacy_diagnostic": false,
-  "revision": 12,
-  "reason": "Owner requests tomorrow readiness status: read-only live media/receipts and actual automatic production provenance check; no generation, resubmission or schedule change"
+  "revision": 13,
+  "reason": "Owner-authorized independent delivery verification: actual full movie, immutable hash and three live exact post IDs/time; no generation, rescheduling or posting."
 }
