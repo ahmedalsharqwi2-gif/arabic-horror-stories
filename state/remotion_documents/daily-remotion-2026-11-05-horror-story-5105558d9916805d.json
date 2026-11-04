@@ -1,0 +1,198 @@
+{
+  "title": "كيف اختفى كل من كان على متن السفينة؟",
+  "canonical_subject": "maritime-mary-celeste-mystery",
+  "hashtags": [
+    "#تاريخ",
+    "#أسرار",
+    "#غموض"
+  ],
+  "scenes": [
+    {
+      "label": "الإبحار نحو المجهول",
+      "narration": "في السابع من شهر نوفمبر لعام ألف وثمنمائة واثنين وسبعين غادرت السفينة ماري سيلست ميناء نيويورك متجهة نحو إيطاليا وعلى متنها طاقم كامل مع عائلة القبطان وثلاثة عشر ومائة برميل من الكحول عالي الجودة ولم يكن أحد يعلم ما ينتظرهم في عرض المحيط الأطلسي الواسع.",
+      "evidence_quote": "The brigantine Mary Celeste left New York on 7 November 1872",
+      "diagram": "flow",
+      "labels": [
+        "إبحار",
+        "نيويورك",
+        "شحنة"
+      ],
+      "id": "scene_1",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "flow",
+        "labels": [
+          "إبحار",
+          "نيويورك",
+          "شحنة"
+        ]
+      }
+    },
+    {
+      "label": "السفينة التائهة",
+      "narration": "في الرابع من شهر ديسمبر رصد طاقم سفينة أخرى تسمى دي غراتسيا سفينة ماري سيلست وهي تتحرك بطريقة غريبة ومطربة في وسط المحيط الأطلسي بالقرب من جزر الأزور ولم يقدم أحد أي إجابة واضحة على نداءات الاستغاثة المتكررة مما دفع القبطان لإرسال فريق استكشاف.",
+      "evidence_quote": "the crew of the brigantine Dei Gratia sighted a ship adrift in the Atlantic near the Azores",
+      "diagram": "compare",
+      "labels": [
+        "رصد",
+        "محيط",
+        "استطلاع"
+      ],
+      "id": "scene_2",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "compare",
+        "labels": [
+          "رصد",
+          "محيط",
+          "استطلاع"
+        ]
+      }
+    },
+    {
+      "label": "الفراغ المخيف",
+      "narration": "صعد البحارة على متن السفينة المهجورة ليجدوا مشهدا غريبا للغاية حيث كانت السفينة فارغة تماما من أي شخص ولم يتبق سوى القوارب المفقودة بينما كانت الأشرعة مرفوعة جزئيا مع وجود آثار واضحة لبعض الأضرار في الحبال والتقلبات البحرية السابقة التي أثارت الحيرة.",
+      "evidence_quote": "What they found on boarding the ship would give rise to one of the most intriguing",
+      "diagram": "layers",
+      "labels": [
+        "فراغ",
+        "مهجورة",
+        "حيرة"
+      ],
+      "id": "scene_3",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "layers",
+        "labels": [
+          "فراغ",
+          "مهجورة",
+          "حيرة"
+        ]
+      }
+    },
+    {
+      "label": "أدلة غامضة",
+      "narration": "كشف التفتيش الدقيق داخل السفينة عن تفاصيل أكثر غرابة حيث كانت أغطية عنابر الشحن مرفوعة وموضوعة على السطح بينما تم تفكيك إحدى مضخات المياه جزئيا مع وجود عصا قياس بجانبها دون أضرار مادية بالغة تعكس وجود صراع عنيف مباشر بين الأفراد.",
+      "evidence_quote": "The fore and aft cargo hatches had been lifted and were lying on the deck",
+      "diagram": "cycle",
+      "labels": [
+        "عنابر",
+        "مضخة",
+        "أدلة"
+      ],
+      "id": "scene_4",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "cycle",
+        "labels": [
+          "عنابر",
+          "مضخة",
+          "أدلة"
+        ]
+      }
+    },
+    {
+      "label": "أغراض متروكة",
+      "narration": "ظلت ممتلكات أفراد الطاقم سليمة وفي مكانها المعتاد باستثناء اختفاء وثائق السفينة وأدوات الملاحة الخاصة بالقبطان بريغز بينما ترك لوح الكتابة اللوحي متضمنا آخر تسجيل رسمي يعود لصباح يوم الخامس والعشرين من شهر نوفمبر دون أي تفسير نهائي لهذا الهروب المفاجئ.",
+      "evidence_quote": "the crew's belongings appeared to be intact, and the only items missing were the ship's papers",
+      "diagram": "flow",
+      "labels": [
+        "ممتلكات",
+        "وثائق",
+        "تسجيل"
+      ],
+      "id": "scene_5",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "flow",
+        "labels": [
+          "ممتلكات",
+          "وثائق",
+          "تسجيل"
+        ]
+      }
+    },
+    {
+      "label": "رحلة الوصول إلى الميناء",
+      "narration": "اتخذ القبطان مورهاوس قرارا جريئا ومخاطرة كبيرة بإرسال مجموعة صغيرة من رجاله لإبحار السفينة نحو جبريل طمعا في الحصول على مكافأة الإنقاذ المالي وبعد رحلة شاقة استمرت أياما طويلة وصلت السفينة المهجورة إلى الميناء ليتم إخضاعها للحجز الرسمي والقضائي.",
+      "evidence_quote": "Morehouse was determined to bring the Mary Celeste into Gibraltar",
+      "diagram": "compare",
+      "labels": [
+        "إنقاذ",
+        "ميناء",
+        "حجز"
+      ],
+      "id": "scene_6",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "compare",
+        "labels": [
+          "إنقاذ",
+          "ميناء",
+          "حجز"
+        ]
+      }
+    },
+    {
+      "label": "محاكمة ونقاشات محتدمة",
+      "narration": "انعقدت محكمة الإنقاذ البحري واستمرت جلساتها شهورا طويلة وسط جدل قانوني واسع واختلافات حادة حول أسباب الاختفاء حيث تمسك النائب العام بنظرية الجريمة الجنائية وقتل الطاقم بينما عجزت المحكمة عن تقديم إجابة قاطعة بسبب غياب الشهود والأدلة المادية الحاسمة.",
+      "evidence_quote": "a salvage court convened on 17 December. The proceedings continued until 25 February",
+      "diagram": "layers",
+      "labels": [
+        "محاكمة",
+        "نقاش",
+        "قانون"
+      ],
+      "id": "scene_7",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "layers",
+        "labels": [
+          "محاكمة",
+          "نقاش",
+          "قانون"
+        ]
+      }
+    },
+    {
+      "label": "أسرار بلا نهاية",
+      "narration": "تعددت النظريات وتفاوتت بين الاحتمالات العقلية والخرافات الشعبية وصولا إلى قصص الخيال العلمي والأدب الشهير لكن الحقيقة ظلت غامضة ومجهولة إلى الأبد ليظل لغز السفينة ماري سيلست واحدا من أعظم الألغاز البحرية التي تثير الفضول والتساؤلات عبر تاريخ الإبحار البشري.",
+      "evidence_quote": "The mystery of the Mary Celeste has never been solved, although many theories have been put forward",
+      "diagram": "cycle",
+      "labels": [
+        "نظريات",
+        "أساطير",
+        "خاتمة"
+      ],
+      "id": "scene_8",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "cycle",
+        "labels": [
+          "نظريات",
+          "أساطير",
+          "خاتمة"
+        ]
+      }
+    }
+  ],
+  "cover_text": "لغز السفينة المهجورة",
+  "profile": "horror",
+  "series": "ملفات غامضه",
+  "fiction": false,
+  "documented": true,
+  "topic_key": "remotion-maritime-mary-celeste-mystery",
+  "source": {
+    "url": "https://www.rmg.co.uk/stories/maritime-history/mystery-mary-celeste",
+    "title": "The mystery of the Mary Celeste",
+    "publisher": "Royal Museums Greenwich"
+  }
+}
