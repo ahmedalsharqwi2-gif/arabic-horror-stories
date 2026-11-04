@@ -148,7 +148,7 @@
     "daily-remotion-2026-11-05-horror": {
       "profile": "horror",
       "due_at": "2026-11-05T10:00:00Z",
-      "status": "review_requested",
+      "status": "authored",
       "source_run": 41904549127,
       "created_at": "2026-11-04T20:15:15.705366+00:00",
       "source_selection": {
@@ -174,7 +174,15 @@
         "sha256": "5105558d9916805d0dd54674bfd61ed3ccc6768f92b219726e9e78182fad06d3"
       },
       "canonical_subject": "maritime-mary-celeste-mystery",
-      "title": "كيف اختفى كل من كان على متن السفينة؟"
+      "title": "كيف اختفى كل من كان على متن السفينة؟",
+      "editorial_review": {
+        "supported": true,
+        "engaging": true,
+        "novel": true,
+        "visuals_match": true,
+        "issues": [],
+        "passed": true
+      }
     }
   },
   "cutover_evidence": {
