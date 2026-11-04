@@ -1,6 +1,6 @@
 {
-  "workflow_catalog": true,
-  "apply": true,
+  "workflow_catalog": false,
+  "apply": false,
   "revision": 10,
   "keep_paths": [
     ".github/workflows/remotion-daily.yml",
@@ -44,5 +44,10 @@
     ".github/workflows/remotion-voice.yml",
     ".github/workflows/remotion-complete.yml"
   ],
-  "recovery_ref": "archive/housekeeping-41535695204-1/main-before-cleanup"
+  "recovery_ref": "archive/housekeeping-41535695204-1/main-before-cleanup",
+  "operation": "cancel-stuck-prerequisites",
+  "run_id": 41904549127,
+  "expected_job_id": 126875592961,
+  "approved_by_owner": true,
+  "reason": "Cancel pinned dependency-only stall only if no writer, voice or rendering has started; same-date controlled bounded continuation is explicitly authorized. No cleanup or deletion."
 }
