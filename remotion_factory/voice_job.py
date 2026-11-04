@@ -25,6 +25,12 @@ def main():
   style={'science':'Clear engaging Egyptian Arabic science explanation.','history':'Natural Egyptian Arabic true historical storytelling; grounded, curious, cinematic, never grandiose.','horror':'Clear resonant Egyptian Arabic true-disaster storytelling, restrained dread and narrative tension; no whispering, screams, fake dialogue or swallowed words.','news':'Quick Egyptian Arabic technology news with light dry humor, clear facts and natural conversational delivery.','stickman':'Playful Egyptian Arabic what-if story with character actions, setbacks and a comic payoff.'}[story['profile']]
   generate(full,str(wav),style+' Read only the supplied words. Finish the final sentence. No music or sound effects. Natural clear pace without stretching.')
  duration=float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',str(wav)]))
+ if 180<=duration<=188:
+  from .compact_silence import compact
+  edit=compact(wav,source)
+  duration=edit['duration']
+  def retain_edit(data):data['episodes'][req['slot']].update(voice_artifact_run=int(os.environ['GITHUB_RUN_ID']),voice_silence_edit=edit)
+  mutate(retain_edit)
  minimum=60 if story['profile']=='news' else 90
  if not minimum<duration<180:raise ValueError(f'Actual voice must be strictly over{minimum}seconds and under180; no padding or speed change')
  from faster_whisper import WhisperModel

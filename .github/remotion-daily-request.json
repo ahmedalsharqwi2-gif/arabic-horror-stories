@@ -1,6 +1,6 @@
 {
   "publish_date": "2026-11-05",
-  "revision": "owner-bounded-retained-production-v3",
+  "revision": "owner-retained-horror-quiet-pauses-only-v4",
   "preserve_existing_posts": true,
-  "reason": "Explicit owner continuation of same retained episode after bounded dependency fix; keep concurrency, no duplicate generation or posts."
+  "reason": "Continue the original 183.4-second voice, preserving raw PCM. Remove only 3.9 seconds of measured < -48dB pauses, no speech removal, no resynthesis or speed change; remeasure ASR on the 179.5-second result before rendering."
 }

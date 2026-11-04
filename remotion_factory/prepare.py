@@ -13,7 +13,7 @@ def read_request():
  if due<=datetime.now(timezone.utc) or due!=due_for(due.astimezone(ZoneInfo('Africa/Cairo')).date()):raise ValueError('Publication slot invalid or expired; never roll it forward')
  return req
 def restore(entry,story_hash):
- run=entry['source_run'];repo,_=identity();h={'Authorization':'Bearer '+os.environ['GITHUB_TOKEN'],'Accept':'application/vnd.github+json'}
+ run=entry.get('voice_artifact_run') or entry.get('voice_request_run') or entry['source_run'];repo,_=identity();h={'Authorization':'Bearer '+os.environ['GITHUB_TOKEN'],'Accept':'application/vnd.github+json'}
  r=requests.get(f'https://api.github.com/repos/{repo}/actions/runs/{run}/artifacts',headers=h,timeout=30);r.raise_for_status()
  matches=[a for a in r.json()['artifacts'] if not a['expired'] and a['name'].startswith(f'remotion-voice-{run}-')]
  if not matches:raise RuntimeError('Prior voice request retained but no recoverable artifact; refusing repeated synthesis')
