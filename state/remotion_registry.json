@@ -148,9 +148,23 @@
     "daily-remotion-2026-11-05-horror": {
       "profile": "horror",
       "due_at": "2026-11-05T10:00:00Z",
-      "status": "author_pending",
+      "status": "author_requested",
       "source_run": 41904549127,
-      "created_at": "2026-11-04T20:15:15.705366+00:00"
+      "created_at": "2026-11-04T20:15:15.705366+00:00",
+      "source_selection": {
+        "title": "The mystery of the Mary Celeste",
+        "url": "https://www.rmg.co.uk/stories/maritime-history/mystery-mary-celeste",
+        "publisher": "Royal Museums Greenwich",
+        "canonical_subject": "maritime-d2930a95e961e43490a2"
+      },
+      "source": {
+        "url": "https://www.rmg.co.uk/stories/maritime-history/mystery-mary-celeste"
+      },
+      "source_document": {
+        "path": "state/remotion_documents/daily-remotion-2026-11-05-horror-source-8b8496d194429db9.json",
+        "sha256": "8b8496d194429db9876dd917fbce2b8aea22a9a2acf479691812f912e377f4af"
+      },
+      "writer_run": 41917792102
     }
   },
   "cutover_evidence": {
