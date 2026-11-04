@@ -148,7 +148,7 @@
     "daily-remotion-2026-11-05-horror": {
       "profile": "horror",
       "due_at": "2026-11-05T10:00:00Z",
-      "status": "draft_retained",
+      "status": "review_requested",
       "source_run": 41904549127,
       "created_at": "2026-11-04T20:15:15.705366+00:00",
       "source_selection": {
@@ -168,7 +168,13 @@
       "draft_document": {
         "path": "state/remotion_documents/daily-remotion-2026-11-05-horror-draft-33d227b89d58d10c.json",
         "sha256": "33d227b89d58d10c4d67b2039d16ff44f2659f36b46c711fdd51c025e7cb59aa"
-      }
+      },
+      "story_document": {
+        "path": "state/remotion_documents/daily-remotion-2026-11-05-horror-story-5105558d9916805d.json",
+        "sha256": "5105558d9916805d0dd54674bfd61ed3ccc6768f92b219726e9e78182fad06d3"
+      },
+      "canonical_subject": "maritime-mary-celeste-mystery",
+      "title": "كيف اختفى كل من كان على متن السفينة؟"
     }
   },
   "cutover_evidence": {
