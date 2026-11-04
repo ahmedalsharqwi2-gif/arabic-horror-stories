@@ -148,7 +148,7 @@
     "daily-remotion-2026-11-05-horror": {
       "profile": "horror",
       "due_at": "2026-11-05T10:00:00Z",
-      "status": "voice_ready",
+      "status": "rendered",
       "source_run": 41917792102,
       "created_at": "2026-11-04T20:15:15.705366+00:00",
       "source_selection": {
@@ -237,7 +237,10 @@
       "duration": 179.5,
       "audio_sha256": "0ce123d16ded9accce990d87fe8c7db03037118d52ea5d4713ba8eb7ab11a01d",
       "timing_sha256": "233cf01ca3e3d2133a0a6975365982003e19dc82f17b931e3b5b8c6ccd90d7cc",
-      "coverage": 0.9395770392749244
+      "coverage": 0.9395770392749244,
+      "video_sha256": "1a203b0c761e48a323faee4b1c47a89140fb57a91a56333f21d4d28a88990edc",
+      "render_run": 41919799467,
+      "source_evidence_file": "professional_motion/output/remotion-validation.json"
     }
   },
   "cutover_evidence": {
