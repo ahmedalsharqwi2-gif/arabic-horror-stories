@@ -241,7 +241,16 @@
       "video_sha256": "1a203b0c761e48a323faee4b1c47a89140fb57a91a56333f21d4d28a88990edc",
       "render_run": 41919799467,
       "source_evidence_file": "professional_motion/output/remotion-validation.json",
-      "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-daily-remotion-2026-11-05-horror/horror-daily-remotion-2026-11-05-horror.mp4"
+      "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-daily-remotion-2026-11-05-horror/horror-daily-remotion-2026-11-05-horror.mp4",
+      "receipts": {
+        "instagram": {
+          "phase": "intent",
+          "channel_id": "6aad267dea19ca0bde778d5e",
+          "due_at": "2026-11-05T10:00:00Z",
+          "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-daily-remotion-2026-11-05-horror/horror-daily-remotion-2026-11-05-horror.mp4",
+          "created_at": "2026-11-04T22:00:34.786050+00:00"
+        }
+      }
     }
   },
   "cutover_evidence": {
