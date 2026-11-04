@@ -148,7 +148,7 @@
     "daily-remotion-2026-11-05-horror": {
       "profile": "horror",
       "due_at": "2026-11-05T10:00:00Z",
-      "status": "publishing",
+      "status": "scheduled",
       "source_run": 41917792102,
       "created_at": "2026-11-04T20:15:15.705366+00:00",
       "source_selection": {
