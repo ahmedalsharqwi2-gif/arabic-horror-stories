@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-04",
+  "profile": "horror",
+  "phase": "postpublish",
+  "checked_at": "2026-11-04T14:36:27.817825+00:00",
+  "run_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/41849131371",
+  "report_path": "reviews/daily_health/2026-11-04/41849131371-1.json",
+  "publication_due_utc": "2026-11-04T10:00:00+00:00",
+  "errors": [],
+  "passed": true,
+  "generation_calls": 0,
+  "publication_mutations": 0,
+  "preview": false,
+  "scheduler": {
+    "observed": false,
+    "reason": "Transition inventory retained; first automatic evening run targets November 5"
+  },
+  "observed_receipts": {
+    "instagram": [
+      {
+        "id": "6ae8d3594e55e02608791e8d",
+        "channelId": "6aad267dea19ca0bde778d5e",
+        "status": "sent",
+        "dueAt": "2026-11-04T10:00:00.000Z",
+        "sentAt": "2026-11-04T10:04:53.185Z",
+        "externalLink": "https://www.instagram.com/reel/DfUMmShjQm5/"
+      }
+    ],
+    "youtube": [
+      {
+        "id": "6ae8d35fc25538a9f8cb72e2",
+        "channelId": "6aaa8778ea19ca0bde57da16",
+        "status": "sent",
+        "dueAt": "2026-11-04T10:00:00.000Z",
+        "sentAt": "2026-11-04T10:01:48.330Z",
+        "externalLink": "https://www.youtube.com/shorts/WKmCLyoJ20U"
+      }
+    ],
+    "facebook": [
+      {
+        "id": "6ae8d365c1e1a07104365e2f",
+        "channelId": "6aaa853fea19ca0bde57b5f7",
+        "status": "sent",
+        "dueAt": "2026-11-04T10:00:00.000Z",
+        "sentAt": "2026-11-04T10:01:49.996Z",
+        "externalLink": "https://www.facebook.com/reel/2652447678535344/"
+      }
+    ]
+  },
+  "receipts": {
+    "instagram": {
+      "id": "6ae8d3594e55e02608791e8d",
+      "channelId": "6aad267dea19ca0bde778d5e",
+      "status": "sent",
+      "dueAt": "2026-11-04T10:00:00.000Z",
+      "sentAt": "2026-11-04T10:04:53.185Z",
+      "externalLink": "https://www.instagram.com/reel/DfUMmShjQm5/"
+    },
+    "youtube": {
+      "id": "6ae8d35fc25538a9f8cb72e2",
+      "channelId": "6aaa8778ea19ca0bde57da16",
+      "status": "sent",
+      "dueAt": "2026-11-04T10:00:00.000Z",
+      "sentAt": "2026-11-04T10:01:48.330Z",
+      "externalLink": "https://www.youtube.com/shorts/WKmCLyoJ20U"
+    },
+    "facebook": {
+      "id": "6ae8d365c1e1a07104365e2f",
+      "channelId": "6aaa853fea19ca0bde57b5f7",
+      "status": "sent",
+      "dueAt": "2026-11-04T10:00:00.000Z",
+      "sentAt": "2026-11-04T10:01:49.996Z",
+      "externalLink": "https://www.facebook.com/reel/2652447678535344/"
+    }
+  },
+  "episode": {
+    "slot": "remotion-2026-11-04-horror",
+    "title": "السفينة كابتن: كارثة حقيقية في ليلة عاصفة",
+    "pipeline": "remotion",
+    "expected_sha256": "c0fe6995807ba5b414eb31de419387e7084e30144ccd9c0da12a0b990d1b3157"
+  },
+  "technical": {
+    "passed": true,
+    "sha256": "c0fe6995807ba5b414eb31de419387e7084e30144ccd9c0da12a0b990d1b3157",
+    "full_decode": true,
+    "duration": 153.466667,
+    "width": 1080,
+    "height": 1920,
+    "audio_mean_db": -19.2,
+    "actual_visual_samples": 12,
+    "unique_visual_samples": 12,
+    "checked_at": "2026-11-02T19:04:09.344865+00:00",
+    "scope": "Independent technical media check; no claim of human narrative or scientific review",
+    "reused_immutable_media_check": true,
+    "live_asset_metadata_verified": true
+  },
+  "media_binding": "Three live sent post IDs match retained original submission receipts; original release SHA independently verified. Platform-transcoded bytes are not claimed identical.",
+  "production_at_cairo": "2026-11-03T19:00:00+02:00",
+  "publication_at_cairo": "2026-11-04T12:00:00+02:00",
+  "hours_until_publication": -4.61,
+  "readiness": "verified"
+}
