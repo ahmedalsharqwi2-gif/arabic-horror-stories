@@ -148,7 +148,7 @@
     "daily-remotion-2026-11-05-horror": {
       "profile": "horror",
       "due_at": "2026-11-05T10:00:00Z",
-      "status": "rendered",
+      "status": "publishing",
       "source_run": 41917792102,
       "created_at": "2026-11-04T20:15:15.705366+00:00",
       "source_selection": {
@@ -240,7 +240,8 @@
       "coverage": 0.9395770392749244,
       "video_sha256": "1a203b0c761e48a323faee4b1c47a89140fb57a91a56333f21d4d28a88990edc",
       "render_run": 41919799467,
-      "source_evidence_file": "professional_motion/output/remotion-validation.json"
+      "source_evidence_file": "professional_motion/output/remotion-validation.json",
+      "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-daily-remotion-2026-11-05-horror/horror-daily-remotion-2026-11-05-horror.mp4"
     }
   },
   "cutover_evidence": {
