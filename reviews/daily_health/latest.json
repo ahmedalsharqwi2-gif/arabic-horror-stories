@@ -2,9 +2,9 @@
   "date": "2026-11-05",
   "profile": "horror",
   "phase": "prepublish",
-  "checked_at": "2026-11-04T22:02:23.009345+00:00",
-  "run_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/41921440790",
-  "report_path": "reviews/daily_health/2026-11-05/41921440790-1.json",
+  "checked_at": "2026-11-04T22:03:18.755754+00:00",
+  "run_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/41921499042",
+  "report_path": "reviews/daily_health/2026-11-05/41921499042-1.json",
   "publication_due_utc": "2026-11-05T10:00:00+00:00",
   "errors": [
     "No successful clock-triggered daily run for this date; manual recovery and dry-run tests do not count as the automatic clock"
@@ -89,12 +89,12 @@
     "unique_visual_samples": 12,
     "checked_at": "2026-11-04T22:02:40.166332+00:00",
     "scope": "Independent technical media check; no claim of human narrative or scientific review",
-    "reused_immutable_media_check": false,
+    "reused_immutable_media_check": true,
     "live_asset_metadata_verified": true
   },
   "media_binding": "Same live scheduled source URL and independently hashed original",
   "production_at_cairo": "2026-11-04T19:00:00+02:00",
   "publication_at_cairo": "2026-11-05T12:00:00+02:00",
-  "hours_until_publication": 11.96,
+  "hours_until_publication": 11.94,
   "readiness": "verified"
 }
