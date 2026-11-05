@@ -11,7 +11,10 @@ from .alignment import measured_timing
 from .speech_characters import character_timing
 from .speech_lexicon import recognized_key
 def main():
- req=read_request();story=json.loads((DELIVERY/'story.json').read_text());full=' '.join(s['narration'] for s in story['scenes']);wav=DELIVERY/'narration.wav';source=DELIVERY/'narration.source.json'
+ req=read_request();story=json.loads((DELIVERY/'story.json').read_text());
+ from .locked_episode import validate_episode,validate_timing,validate_first_audio_frame
+ validate_episode(story)
+ full=' '.join(s['narration'] for s in story['scenes']);wav=DELIVERY/'narration.wav';source=DELIVERY/'narration.source.json'
  def started(data):
   e=data['episodes'][req['slot']]
   if not wav.exists() and e['status'] in ('voice_requested','voice_ready'):raise RuntimeError('A voice request already exists; restore it instead of synthesizing again')
@@ -23,6 +26,8 @@ def main():
   if (proof.get('output_sha256') or proof.get('sha256'))!=hashlib.sha256(wav.read_bytes()).hexdigest():raise ValueError('Retained voice provenance hash differs')
  else:
   style={'science':'Clear engaging Egyptian Arabic science explanation.','history':'Natural Egyptian Arabic true historical storytelling; grounded, curious, cinematic, never grandiose.','horror':'Clear resonant Egyptian Arabic true-disaster storytelling, restrained dread and narrative tension; no whispering, screams, fake dialogue or swallowed words.','news':'Quick Egyptian Arabic technology news with light dry humor, clear facts and natural conversational delivery.','stickman':'Playful Egyptian Arabic what-if story with character actions, setbacks and a comic payoff.'}[story['profile']]
+  pause_ends=[s['narration'] for s in story['scenes'][:-1] if s.get('silence_after')]
+  if pause_ends:style+=' Perform a 0.45 second natural narration pause after each of these passages; do not speak this instruction: '+json.dumps(pause_ends,ensure_ascii=False)
   generate(full,str(wav),style+' Read only the supplied words. Finish the final sentence. No music or sound effects. Natural clear pace without stretching.')
  duration=float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','csv=p=0',str(wav)]))
  if 180<=duration<=188:
@@ -52,6 +57,14 @@ def main():
   except ValueError:pass
  if timing is None:raise ValueError('Independent ASR does not cover enough real speech; original voice retained')
  timing.update(story_sha256=hashlib.sha256((DELIVERY/'story.json').read_bytes()).hexdigest(),audio_sha256=hashlib.sha256(wav.read_bytes()).hexdigest(),profile=story['profile'],topic_key=story['topic_key'])
+ from .silence_beats import verify as verify_silence
+ timing['measured_silence_beats']=verify_silence(story,timing,wav)
+ validate_first_audio_frame(wav)
+ short_events=validate_timing(story,timing)
+ timing['short_caption_events']=short_events
+ from .captions import write as write_captions
+ caption_path=DELIVERY/('captions-'+hashlib.sha256(json.dumps(timing,sort_keys=True).encode()).hexdigest()[:12]+'.ass')
+ if not caption_path.exists():write_captions(story,timing,caption_path)
  (DELIVERY/'timing.json').write_text(json.dumps(timing,ensure_ascii=False,indent=2)+'\n')
  def ready(data):data['episodes'][req['slot']].update(status='voice_ready',duration=duration,audio_sha256=timing['audio_sha256'],timing_sha256=hashlib.sha256((DELIVERY/'timing.json').read_bytes()).hexdigest(),coverage=timing['coverage'])
  mutate(ready);print(json.dumps({'duration':duration,'coverage':timing['coverage'],'profile':story['profile']}))

@@ -15,6 +15,6 @@ def main():
  before=audio_digest(old);after=audio_digest(output)
  if before!=after:raise ValueError('Audio packets changed during title correction')
  run(['ffmpeg','-v','error','-i',str(output),'-f','null','-'])
- report['original_render_story_sha256']=report['story_sha256'];report['source_video_sha256']=hashlib.sha256(old.read_bytes()).hexdigest();story['title']=NEW;raw=json.dumps(story,ensure_ascii=False,indent=2).encode();(ROOT/'final-story.json').write_bytes(raw);report['story_sha256']=hashlib.sha256(raw).hexdigest();report['postproduction_edit']={'scope':'intro title only, above diagram area; avoid revealing the final twist','original_audio_packets_unchanged':True,'audio_packets_sha256':after,'full_decode_passed':True};report['publication_metadata']['title']='ملفات غامضه | '+NEW
+ report['original_render_story_sha256']=report['story_sha256'];report['source_video_sha256']=hashlib.sha256(old.read_bytes()).hexdigest();story['title']=NEW;raw=json.dumps(story,ensure_ascii=False,indent=2).encode();(ROOT/'final-story.json').write_bytes(raw);report['story_sha256']=hashlib.sha256(raw).hexdigest();report['postproduction_edit']={'scope':'intro title only, above diagram area; avoid revealing the final twist','original_audio_packets_unchanged':True,'audio_packets_sha256':after,'full_decode_passed':True};report['publication_metadata']['title']='ملفات غامضة | '+NEW
  (ROOT/'final-verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2));print('Title corrected; audio packet checksum unchanged',after)
 if __name__=='__main__':main()

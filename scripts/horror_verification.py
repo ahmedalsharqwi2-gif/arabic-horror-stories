@@ -59,6 +59,10 @@ def validate_production_table(table: Any) -> None:
 
 def validate_episode(episode: dict[str, Any]) -> None:
     if not isinstance(episode, dict): _fail("episode must be an object")
+    if episode.get('visual_template_version')==1:
+        from visual_contract import load_template,validate_hook,require_source_support
+        t=load_template();hook=validate_hook(episode.get('hook_line'),max_words=t['hook']['max_words'],profile='horror')
+        require_source_support(hook,episode.get('hook_evidence_quote'),episode.get('source_text',''),episode.get('hook_review',{}))
     story_type = _s(episode.get("story_type"))
     label = _s(episode.get("authenticity_label"))
     if story_type not in TYPES: _fail("invalid story_type")
