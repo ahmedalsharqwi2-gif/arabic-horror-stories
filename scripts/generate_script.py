@@ -35,7 +35,10 @@ TOPIC_PERFORMANCE_FILE = ROOT / os.getenv("TOPIC_PERFORMANCE_FILE", "state/topic
 HISTORY_LIMIT = int(os.getenv("HISTORY_LIMIT", "8"))
 REGION_HISTORY_LIMIT = int(os.getenv("REGION_HISTORY_LIMIT", "6"))
 
-CONTENT_RED_FLAGS = ("السيلينس", "الشهرات الجوية", "المحتلة بالدقيق", "البركان الثلجي")
+try:
+    from scripts.content_flags import CONTENT_RED_FLAGS
+except ImportError:
+    from content_flags import CONTENT_RED_FLAGS
 
 
 def load_system_prompt() -> str:

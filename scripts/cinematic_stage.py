@@ -47,7 +47,7 @@ def frame_chrome(im,profile,kind,word,age):
     d=ImageDraw.Draw(im,'RGBA')
     d.rectangle((0,0,W,210),fill=(5,12,20,210))
     d.rectangle((0,1635,W,H),fill=(5,12,20,225))
-    brand='ملفات غامضه' if profile=='horror' else 'نقص ونروى'
+    brand='ملفات غامضة' if profile=='horror' else 'نقص ونروى'
     color='#bad6d5' if profile=='horror' else '#edc589'
     label(im,brand,540,125,38,color)
     if word and age<2.2:
