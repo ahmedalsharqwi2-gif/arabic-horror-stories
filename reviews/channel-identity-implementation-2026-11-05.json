@@ -1,0 +1,214 @@
+{
+  "date": "2026-11-05",
+  "repository": "arabic-horror-stories",
+  "tested_code_sha": "8614d713b4ef48fae93f7c87de9fa39fe41f234d",
+  "github_ci": [
+    {
+      "id": 41964453292,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/41964453292"
+    }
+  ],
+  "local_tests": {
+    "python_exit": 0,
+    "typescript_exit": 0,
+    "summary": "....................................................................................................\n----------------------------------------------------------------------\nRan 103 tests in 0.519s\n\nOK\n"
+  },
+  "full_film_qa": {
+    "repo": "arabic-horror-stories",
+    "profile": "horror",
+    "status": "complete_private_qa_film_technically_verified",
+    "review_only": true,
+    "publishable": false,
+    "scheduled": false,
+    "voice_generation_calls": 0,
+    "publication_calls": 0,
+    "duration": 153.466667,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "movie_sha256": "dada162e7754eed26decb22053d2f53d3e75769f4bb7399d23e7af1442f45848",
+    "original_voice_sha256": "e6b86594a6b9b7dc3d94502dd64384e10bc4559b779f1291fe9fa127f2861ed8",
+    "original_story_sha256": "73ac7a5f58d932996341613e081da662c43b14ef52f7f75ab71e6d5a06c9b35e",
+    "full_decode_passed": true,
+    "frames": 4604,
+    "audio_tail": {
+      "audio_seconds": 153.44,
+      "video_seconds": 153.44,
+      "difference_seconds": 0.0,
+      "last_speech_window_correlation": 0.9890740513801575,
+      "audio_tail_checked": true,
+      "silence_padding_used_to_hide_lost_speech": false
+    },
+    "scene_images": [
+      {
+        "name": "remotion-shot-1.png",
+        "sha256": "2142de1aed9f0a290913b3c551681d6abadf21b11c439ea635fdd10975ba42a5"
+      },
+      {
+        "name": "remotion-shot-2.png",
+        "sha256": "b56aab433972cad8bf8c5196ad1dccc2f405a2ad5e7a8a593b8b6f052814719a"
+      },
+      {
+        "name": "remotion-shot-3.png",
+        "sha256": "a47b0d45ddef0f3af0cfcb02ba992e266011e943479e69d4525055b08511439a"
+      },
+      {
+        "name": "remotion-shot-4.png",
+        "sha256": "467a34a56ceda92122efcc61f03e15cf12a3a4e18b4121d65523a0ce12dce74d"
+      },
+      {
+        "name": "remotion-shot-5.png",
+        "sha256": "7ae4906b7b81550366a859b8e80bd1db47988fb73392096185afadfdc3d13f60"
+      },
+      {
+        "name": "remotion-shot-6.png",
+        "sha256": "c70a8f53e3e689597e7e6936143666bc73a9943131a020cd7d785c01da2f9bad"
+      },
+      {
+        "name": "remotion-shot-7.png",
+        "sha256": "890fdd9fc7f36dadce7ec32b3a7c8745d20ca7d94c3770113f12c45ba3bb0b88"
+      },
+      {
+        "name": "remotion-shot-8.png",
+        "sha256": "f3028531925896688a294db47d8019feacd4dec8bbc5e17ec8870a09b1f84079"
+      }
+    ],
+    "unique_scene_images": 8,
+    "identity": {
+      "version": "channel-identities-v1",
+      "profile": "horror",
+      "name": "ملف لم يُغلق",
+      "background": "#0c1117",
+      "ink": "#ece5dc",
+      "accent": "#d27666",
+      "visual": "slow archival investigation, restrained light, real evidence and honest uncertainty",
+      "sound": "low drone, sparse piano, environmental creaks and measured silence"
+    },
+    "sound": {
+      "profile": "horror",
+      "bpm": 60,
+      "sound_identity": "low drone, sparse piano and creaks",
+      "seed": 2891121259,
+      "episode_key_sha256": "ac53026b035a4925835565b8a4cb1f8b6bacd800ffb1624b4ab4c98e81374a0e",
+      "duration": 153.44,
+      "cues": [
+        {
+          "type": "restrained_environment_creak",
+          "at": 0,
+          "scene_object": "heart"
+        },
+        {
+          "type": "restrained_environment_creak",
+          "at": 22.36,
+          "scene_object": "document"
+        },
+        {
+          "type": "restrained_environment_creak",
+          "at": 39.58,
+          "scene_object": "ship"
+        },
+        {
+          "type": "restrained_environment_creak",
+          "at": 58.76,
+          "scene_object": "ship"
+        },
+        {
+          "type": "restrained_environment_creak",
+          "at": 76.44,
+          "scene_object": "heart"
+        },
+        {
+          "type": "restrained_environment_creak",
+          "at": 95.2,
+          "scene_object": "dna"
+        },
+        {
+          "type": "restrained_environment_creak",
+          "at": 116.62,
+          "scene_object": "ship"
+        },
+        {
+          "type": "restrained_environment_creak",
+          "at": 134.16,
+          "scene_object": "cell"
+        },
+        {
+          "type": "music_only_silence_before_reveal",
+          "at": 39.58,
+          "narration_untouched": true
+        },
+        {
+          "type": "music_only_silence_before_reveal",
+          "at": 95.2,
+          "narration_untouched": true
+        }
+      ],
+      "original_composition": true,
+      "reference_audio_sampled": false,
+      "score_sha256": "05684a407fdd7da9e9fbba227ed47ec748e9d0408e1be4c5736eedda685c2dd0"
+    },
+    "renderer": {
+      "pipeline": "remotion",
+      "renderer": "Remotion4.0.540",
+      "duration": 153.44,
+      "fps": 30,
+      "width": 1080,
+      "height": 1920,
+      "originalVoice": true,
+      "review": false,
+      "story_sha256": "73ac7a5f58d932996341613e081da662c43b14ef52f7f75ab71e6d5a06c9b35e",
+      "audio_sha256": "e6b86594a6b9b7dc3d94502dd64384e10bc4559b779f1291fe9fa127f2861ed8",
+      "total_frames": 4604,
+      "rendered_frames": 4604,
+      "render_mode": "video",
+      "visual_style": "ملف لم يُغلق",
+      "identity_version": "channel-identities-v1",
+      "identity_plan_sha256": "5d2ebf8ccff57bd482a5b031dc71af1cdf27cf37c9eba7e2bcbd4a72845c6dd4",
+      "burned_hashtags": [
+        "السفينة_كابتن",
+        "كوارث_حقيقية",
+        "رعب"
+      ],
+      "errors": [],
+      "renderer_sources": {
+        "src/AdventurePlate.tsx": "da8a8c16496723b0ff44412cd771909e82cfdad33c95e3e2e36e1540cf2e739a",
+        "src/Documentary.tsx": "77661efe40f83978040e2215972057c430cdf7f1ede8c2b52945e9836fdf2556",
+        "src/ExplainerPlate.tsx": "3ec96774f04e1aeffc9c5ca2cd9a9918815b41dfe5bcd26ed0857d7c207c386b",
+        "src/IdentityFilm.tsx": "34b4913876f1fcf0f0114a5071d5b52692e63d61c1eaa918468a11d68326deea",
+        "src/IdentityStickman.tsx": "ced2f0ecb0ef26fe01c3740495e5807c3ec99dd941a0893665685cec9365183f",
+        "src/LearningDevice.tsx": "0f6e5d1a54e3b7b67333d292281dc9a39483e9f02ee7e94bb9f26ee1ab08da88",
+        "src/LegacyWorld.tsx": "f83f66d937393d6f7180db6ad11caad2667d8a2acc300303d745b2d7ddc6523d",
+        "src/MapPlate.tsx": "9f5beb4bb0a5451d8b8ae438ca2b247f10c11742ceae2e6378067d7751354745",
+        "src/MotionFinish.tsx": "c01d9c9e0e7c4b0f1fc7e7ed7c4e66dce6b93e9188fb459f6e02eb6908748f2f",
+        "src/OpeningCover.tsx": "64e114f1531ce5676c4d4ab8d63757bf1ebdf20dcd7ae2b9c95389d78ec74ea7",
+        "src/Root.tsx": "c5f240f57d18387c8d047fdcc731e5775694278ed89bc2407afc85898872fb47",
+        "src/SciencePlate.tsx": "35064313d2afdd40e3cf5c0f8e04307c64c544fff554539f465444624e22f830",
+        "src/StickmanPlate.tsx": "a2249b511f86dcd9aa5b554bbb4e11e5494edee4e1de1bb1900e481410d39288",
+        "src/WhatIfPlate.tsx": "fbcd98d7212e65f83acca8a55d6b61a698f9651c7cf3ea3516d6083f84cdecfa",
+        "src/index.ts": "28c07a9c5b90643adcecc9e9235322ab175ab5c423bc4f0c813ecfb06e23ff56",
+        "src/types.ts": "696c6f841288407c611d0007c4e743010c10af6610c1f61717970e8934e977a7",
+        "render.mjs": "c23557b4898166e7b82a9055087f15cebb5a4363cd5d7377c8898f5e2f8e6240",
+        "package.json": "422907b1c8db1264e6ff674d5faa386e69fc6b713b8869e7347617b081c8951a",
+        "package-lock.json": "32147035bebea55f6b61667031723a159347192ec99968b8de33b57c7416c3c1",
+        "visual-overrides.json": "e7a13610af470eea3a4f8e0d9b80fad904caeb322103d3399ad21cdcaf7a2fae",
+        "../professional_motion/procedural_story.js": "f7b23780e7c37c28c4245e1513f8bebdb4d04baf500d1376eebbd1c22472349b",
+        "../professional_motion/identity_stage.js": "d8bd47fa0c1118ee358453f1a2a1aa6f74774c1ee82b965e03fc7332e99a230a",
+        "../professional_motion/cinema.js": "37954e44c4362a83df34e5523b768026a90bd06d4cf257bc1fd91eae49083667",
+        "../professional_motion/science_shots.js": "d051358861c5e2a6a55b43a2a0c6f9ca295fe082ad262bf3e48781cb92913df7"
+      }
+    },
+    "technical_checks_are_not_a_guarantee_of_engagement": true
+  },
+  "qa_narration": "Retained original episode and original narration; no new narration generated. Stickman next-episode writing rules are updated separately.",
+  "production_safeguards": {
+    "existing_posts_unchanged": true,
+    "schedule_unchanged": true,
+    "secrets_unchanged": true,
+    "generation_calls": 0,
+    "publication_calls": 0
+  },
+  "next_automatic_cycle_observed": false,
+  "review_media_upload": "Not uploaded: exact full-file Drive authorization pending."
+}

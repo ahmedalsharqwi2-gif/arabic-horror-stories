@@ -1,0 +1,13 @@
+{
+  "version": "channel-identities-v1",
+  "profile": "horror",
+  "name": "ملف لم يُغلق",
+  "background": "#0c1117",
+  "ink": "#ece5dc",
+  "accent": "#d27666",
+  "visual": "slow archival investigation, restrained light, real evidence and honest uncertainty",
+  "sound": "low drone, sparse piano, environmental creaks and measured silence",
+  "enabled": true,
+  "approval_basis": "Owner approved the two real hybrid samples and requested channel-by-channel adaptation on 2026-11-05",
+  "schedule_and_publication_configuration_changed": false
+}
