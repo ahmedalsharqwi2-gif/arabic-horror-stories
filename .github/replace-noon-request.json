@@ -1,0 +1,424 @@
+{
+  "request_id": "owner-replace-five-identity-films-2026-11-05",
+  "repository": "ahmedalsharqwi2-gif/arabic-horror-stories",
+  "episode_key": "daily-remotion-2026-11-05-horror",
+  "due_at": "2026-11-05T10:00:00Z",
+  "owner_approved_exact_full_file": true,
+  "authorization": "User explicitly asked to replace the five noon posts today with these exact five reviewed full films. Preserve IDs and due time; no new posts.",
+  "old_video_sha256": "1a203b0c761e48a323faee4b1c47a89140fb57a91a56333f21d4d28a88990edc",
+  "old_media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-daily-remotion-2026-11-05-horror/horror-daily-remotion-2026-11-05-horror.mp4",
+  "posts": {
+    "instagram": {
+      "phase": "verified",
+      "channel_id": "6aad267dea19ca0bde778d5e",
+      "due_at": "2026-11-05T10:00:00Z",
+      "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-daily-remotion-2026-11-05-horror/horror-daily-remotion-2026-11-05-horror.mp4",
+      "created_at": "2026-11-04T22:00:34.786050+00:00",
+      "id": "6aebab04c91738fad507280c",
+      "accepted_at": "2026-11-04T22:00:37.098898+00:00",
+      "status": "scheduled",
+      "scheduled_at": "2026-11-05T10:00:00.000Z",
+      "verified_at": "2026-11-04T22:00:38.517665+00:00"
+    },
+    "youtube": {
+      "phase": "verified",
+      "channel_id": "6aaa8778ea19ca0bde57da16",
+      "due_at": "2026-11-05T10:00:00Z",
+      "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-daily-remotion-2026-11-05-horror/horror-daily-remotion-2026-11-05-horror.mp4",
+      "created_at": "2026-11-04T22:00:40.004861+00:00",
+      "id": "6aebab093a6057e11e78a122",
+      "accepted_at": "2026-11-04T22:00:42.082058+00:00",
+      "status": "scheduled",
+      "scheduled_at": "2026-11-05T10:00:00.000Z",
+      "verified_at": "2026-11-04T22:00:43.484777+00:00"
+    },
+    "facebook": {
+      "phase": "verified",
+      "channel_id": "6aaa853fea19ca0bde57b5f7",
+      "due_at": "2026-11-05T10:00:00Z",
+      "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-daily-remotion-2026-11-05-horror/horror-daily-remotion-2026-11-05-horror.mp4",
+      "created_at": "2026-11-04T22:00:45.128290+00:00",
+      "id": "6aebab0ec91738fad50730af",
+      "accepted_at": "2026-11-04T22:00:47.155211+00:00",
+      "status": "scheduled",
+      "scheduled_at": "2026-11-05T10:00:00.000Z",
+      "verified_at": "2026-11-04T22:00:48.509502+00:00"
+    }
+  },
+  "new_video_sha256": "dada162e7754eed26decb22053d2f53d3e75769f4bb7399d23e7af1442f45848",
+  "new_media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/approved-identity-2026-11-05/identity-full-review.mp4",
+  "story": {
+    "profile": "horror",
+    "series": "ملفات غامضه",
+    "title": "السفينة كابتن: كارثة حقيقية في ليلة عاصفة",
+    "canonical_subject": "hms-captain-capsize-1870",
+    "topic_key": "remotion-hms-captain-capsize-1870",
+    "source": {
+      "url": "https://www.rmg.co.uk/stories/maritime-history/hms-captain-britains-forgotten-maritime-disaster",
+      "publisher": "Royal Museums Greenwich",
+      "title": "HMS Captain: Britain's forgotten maritime disaster"
+    },
+    "scenes": [
+      {
+        "label": "سفينة قوتها ما أنقذتهاش",
+        "narration": "سفينة حربية حديثة، مدافع في أبراج دوارة، وأشرعة فوق هيكل حديدي. منظرها يوحي بالقوة. لكن في ليلة عاصفة سنة ألف تمنمية وسبعين، السفينة كابتن انقلبت، ومعاها تقريبًا كل طاقمها. دي كارثة حقيقية، مش حكاية سفينة أشباح.",
+        "visual": {
+          "kind": "photo",
+          "asset": "media/horror-ship.jpg",
+          "asset_label": "صورة تاريخية للسفينة كابتن • Public domain"
+        },
+        "id": "scene_1",
+        "labels": [],
+        "visual_mode": "hero"
+      },
+      {
+        "label": "قدام الساحل الإسباني",
+        "narration": "الكارثة حصلت قبالة رأس فينيستير في إسبانيا، خلال عاصفة في ليلة السادس للسابع من سبتمبر. المكان الموضح على الخريطة منطقة الحادث بشكل تقريبي؛ مش تحديدًا مؤكدًا لمكان الحطام، لأن التفصيلة دي لسه محتاجة إثبات.",
+        "visual": {
+          "kind": "map",
+          "longitude": -9.27,
+          "latitude": 42.88,
+          "zoom": 4.6,
+          "detail": "قبالة رأس فينيستير • نطاق تقريبي للحادث"
+        },
+        "id": "scene_2",
+        "labels": [],
+        "visual_mode": "hero"
+      },
+      {
+        "label": "الخطر كان في التصميم",
+        "narration": "كابتن جمعت تسليحًا متطورًا مع أشرعة كبيرة وسطح منخفض قريب من المياه. المخاوف من التصميم كانت موجودة قبل الكارثة. والسؤال ماكانش قوة المدافع بس، لكن هل السفينة تقدر تستعيد اتزانها، لما الريح والموج يميلوها بقوة؟",
+        "visual": {
+          "kind": "photo",
+          "asset": "media/horror-plan.jpg",
+          "asset_label": "رسم تاريخي لتصميم السفينة • Public domain"
+        },
+        "id": "scene_3",
+        "labels": [],
+        "visual_mode": "hero"
+      },
+      {
+        "label": "ميلان ما رجعتش منه",
+        "narration": "الرسم هنا بيوضح مبدأ الثبات، مش بيعيد حادث الغرق بقياسات مؤكدة. السفينة لازم تقدر تقاوم الميلان وترجع لوضعها. الجمع بين هيئة البدن وارتفاع الأشرعة وأثر الريح كان جزءًا أساسيًا من الأسئلة اللي ارتبطت بكارثة كابتن.",
+        "visual": {
+          "kind": "stability"
+        },
+        "id": "scene_4",
+        "labels": [],
+        "visual_mode": "hero"
+      },
+      {
+        "label": "ليلة اتحولت لكارثة",
+        "narration": "وسط العاصفة، انقلبت السفينة وضاعت مئات الأرواح، ومن بينهم مصممها كوبر فيبس كولز. الرسمة التاريخية قدامك تصور المأساة، لكنها مش صورة فوتوغرافية للحظة الغرق. ولا فيه هنا حوار متخيل بننسبه لحد كان على متنها.",
+        "visual": {
+          "kind": "photo",
+          "asset": "media/horror-storm.jpg",
+          "asset_label": "رسم تاريخي للكارثة • ليس تصويرًا للحظة الغرق"
+        },
+        "id": "scene_5",
+        "labels": [],
+        "visual_mode": "hero"
+      },
+      {
+        "label": "شهادات وأسئلة بعد الغرق",
+        "narration": "بعد الكارثة، فضل قدام الباحثين سجلات سفن، وشهادات ناجين، ووثائق التحقيق. وظهرت أسئلة عن التصميم والتنفيذ والظروف الجوية. محاولة فهم اللي حصل مهمة، لأن تفسير مأساة بالحظ السيئ وحده، ممكن يخبي تحذيرات كان لازم تتسمع من البداية.",
+        "visual": {
+          "kind": "photo",
+          "asset": "media/horror-survivors.jpg",
+          "asset_label": "رسم تاريخي للناجين • Public domain"
+        },
+        "id": "scene_6",
+        "labels": [],
+        "visual_mode": "hero"
+      },
+      {
+        "label": "الحطام المرشح مش دليل نهائي",
+        "narration": "في مسح بحري سنة ألفين واتنين وعشرين، اتشاف حطام شكله العام ممكن يناسب كابتن. لكن المصدر البحثي بيوضح إن تأكيد هويته لسه هدف للتحقيق، مش خبر محسوم. وجود شكل قريب تحت المياه، لوحده، مايثبتش إن اللغز اتحل.",
+        "visual": {
+          "kind": "timeline",
+          "timeline": [
+            {
+              "year": "1870",
+              "text": "انقلاب كابتن في عاصفة"
+            },
+            {
+              "year": "2022",
+              "text": "رصد حطام محتمل • الهوية غير مؤكدة"
+            }
+          ]
+        },
+        "id": "scene_7",
+        "labels": [],
+        "visual_mode": "hero"
+      },
+      {
+        "label": "الرعب الحقيقي: تحذير اتساب",
+        "narration": "اللي يخوّف في القصة دي مش كائن ظهر في البحر، لكن سفينة قُدّمت كرمز للتقدم، وانتهت بمأساة خلال شهور. وبين الصور والرسومات والسجلات، بيبقى السؤال الأصعب: إمتى الثقة في مشروع كبير، بتخلينا نستهين بخطر حقيقي؟",
+        "visual": {
+          "kind": "photo",
+          "asset": "media/horror-deck.jpg",
+          "asset_label": "صورة تاريخية على سطح السفينة • Public domain"
+        },
+        "id": "scene_8",
+        "labels": [],
+        "visual_mode": "hero"
+      }
+    ],
+    "fiction": false,
+    "documented": true,
+    "facts": [],
+    "milestones": [],
+    "suitable": true,
+    "hashtags": [
+      "السفينة_كابتن",
+      "كوارث_حقيقية",
+      "رعب"
+    ],
+    "editorial_review": {
+      "performed_by": "source-grounded authored script",
+      "supported": true,
+      "novel": true,
+      "fiction_disclosed": false,
+      "no_invented_witness_dialogue": true
+    },
+    "visual_family": "remotion_documentary",
+    "variant": "horror"
+  },
+  "timing_sha256": "ded395cdf09dd531a2e30a1cfd61a1833735208ba9bec1b931b6fc89ce58be00",
+  "qa": {
+    "repo": "arabic-horror-stories",
+    "profile": "horror",
+    "status": "complete_private_qa_film_technically_verified",
+    "review_only": true,
+    "publishable": false,
+    "scheduled": false,
+    "voice_generation_calls": 0,
+    "publication_calls": 0,
+    "duration": 153.466667,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "movie_sha256": "dada162e7754eed26decb22053d2f53d3e75769f4bb7399d23e7af1442f45848",
+    "original_voice_sha256": "e6b86594a6b9b7dc3d94502dd64384e10bc4559b779f1291fe9fa127f2861ed8",
+    "original_story_sha256": "73ac7a5f58d932996341613e081da662c43b14ef52f7f75ab71e6d5a06c9b35e",
+    "full_decode_passed": true,
+    "frames": 4604,
+    "audio_tail": {
+      "audio_seconds": 153.44,
+      "video_seconds": 153.44,
+      "difference_seconds": 0.0,
+      "last_speech_window_correlation": 0.9890740513801575,
+      "audio_tail_checked": true,
+      "silence_padding_used_to_hide_lost_speech": false
+    },
+    "scene_images": [
+      {
+        "name": "remotion-shot-1.png",
+        "sha256": "2142de1aed9f0a290913b3c551681d6abadf21b11c439ea635fdd10975ba42a5"
+      },
+      {
+        "name": "remotion-shot-2.png",
+        "sha256": "b56aab433972cad8bf8c5196ad1dccc2f405a2ad5e7a8a593b8b6f052814719a"
+      },
+      {
+        "name": "remotion-shot-3.png",
+        "sha256": "a47b0d45ddef0f3af0cfcb02ba992e266011e943479e69d4525055b08511439a"
+      },
+      {
+        "name": "remotion-shot-4.png",
+        "sha256": "467a34a56ceda92122efcc61f03e15cf12a3a4e18b4121d65523a0ce12dce74d"
+      },
+      {
+        "name": "remotion-shot-5.png",
+        "sha256": "7ae4906b7b81550366a859b8e80bd1db47988fb73392096185afadfdc3d13f60"
+      },
+      {
+        "name": "remotion-shot-6.png",
+        "sha256": "c70a8f53e3e689597e7e6936143666bc73a9943131a020cd7d785c01da2f9bad"
+      },
+      {
+        "name": "remotion-shot-7.png",
+        "sha256": "890fdd9fc7f36dadce7ec32b3a7c8745d20ca7d94c3770113f12c45ba3bb0b88"
+      },
+      {
+        "name": "remotion-shot-8.png",
+        "sha256": "f3028531925896688a294db47d8019feacd4dec8bbc5e17ec8870a09b1f84079"
+      }
+    ],
+    "unique_scene_images": 8,
+    "identity": {
+      "version": "channel-identities-v1",
+      "profile": "horror",
+      "name": "ملف لم يُغلق",
+      "background": "#0c1117",
+      "ink": "#ece5dc",
+      "accent": "#d27666",
+      "visual": "slow archival investigation, restrained light, real evidence and honest uncertainty",
+      "sound": "low drone, sparse piano, environmental creaks and measured silence"
+    },
+    "sound": {
+      "profile": "horror",
+      "bpm": 60,
+      "sound_identity": "low drone, sparse piano and creaks",
+      "seed": 2891121259,
+      "episode_key_sha256": "ac53026b035a4925835565b8a4cb1f8b6bacd800ffb1624b4ab4c98e81374a0e",
+      "duration": 153.44,
+      "cues": [
+        {
+          "type": "restrained_environment_creak",
+          "at": 0,
+          "scene_object": "heart"
+        },
+        {
+          "type": "restrained_environment_creak",
+          "at": 22.36,
+          "scene_object": "document"
+        },
+        {
+          "type": "restrained_environment_creak",
+          "at": 39.58,
+          "scene_object": "ship"
+        },
+        {
+          "type": "restrained_environment_creak",
+          "at": 58.76,
+          "scene_object": "ship"
+        },
+        {
+          "type": "restrained_environment_creak",
+          "at": 76.44,
+          "scene_object": "heart"
+        },
+        {
+          "type": "restrained_environment_creak",
+          "at": 95.2,
+          "scene_object": "dna"
+        },
+        {
+          "type": "restrained_environment_creak",
+          "at": 116.62,
+          "scene_object": "ship"
+        },
+        {
+          "type": "restrained_environment_creak",
+          "at": 134.16,
+          "scene_object": "cell"
+        },
+        {
+          "type": "music_only_silence_before_reveal",
+          "at": 39.58,
+          "narration_untouched": true
+        },
+        {
+          "type": "music_only_silence_before_reveal",
+          "at": 95.2,
+          "narration_untouched": true
+        }
+      ],
+      "original_composition": true,
+      "reference_audio_sampled": false,
+      "score_sha256": "05684a407fdd7da9e9fbba227ed47ec748e9d0408e1be4c5736eedda685c2dd0"
+    },
+    "renderer": {
+      "pipeline": "remotion",
+      "renderer": "Remotion4.0.540",
+      "duration": 153.44,
+      "fps": 30,
+      "width": 1080,
+      "height": 1920,
+      "originalVoice": true,
+      "review": false,
+      "story_sha256": "73ac7a5f58d932996341613e081da662c43b14ef52f7f75ab71e6d5a06c9b35e",
+      "audio_sha256": "e6b86594a6b9b7dc3d94502dd64384e10bc4559b779f1291fe9fa127f2861ed8",
+      "total_frames": 4604,
+      "rendered_frames": 4604,
+      "render_mode": "video",
+      "visual_style": "ملف لم يُغلق",
+      "identity_version": "channel-identities-v1",
+      "identity_plan_sha256": "5d2ebf8ccff57bd482a5b031dc71af1cdf27cf37c9eba7e2bcbd4a72845c6dd4",
+      "burned_hashtags": [
+        "السفينة_كابتن",
+        "كوارث_حقيقية",
+        "رعب"
+      ],
+      "errors": [],
+      "renderer_sources": {
+        "src/AdventurePlate.tsx": "da8a8c16496723b0ff44412cd771909e82cfdad33c95e3e2e36e1540cf2e739a",
+        "src/Documentary.tsx": "77661efe40f83978040e2215972057c430cdf7f1ede8c2b52945e9836fdf2556",
+        "src/ExplainerPlate.tsx": "3ec96774f04e1aeffc9c5ca2cd9a9918815b41dfe5bcd26ed0857d7c207c386b",
+        "src/IdentityFilm.tsx": "34b4913876f1fcf0f0114a5071d5b52692e63d61c1eaa918468a11d68326deea",
+        "src/IdentityStickman.tsx": "ced2f0ecb0ef26fe01c3740495e5807c3ec99dd941a0893665685cec9365183f",
+        "src/LearningDevice.tsx": "0f6e5d1a54e3b7b67333d292281dc9a39483e9f02ee7e94bb9f26ee1ab08da88",
+        "src/LegacyWorld.tsx": "f83f66d937393d6f7180db6ad11caad2667d8a2acc300303d745b2d7ddc6523d",
+        "src/MapPlate.tsx": "9f5beb4bb0a5451d8b8ae438ca2b247f10c11742ceae2e6378067d7751354745",
+        "src/MotionFinish.tsx": "c01d9c9e0e7c4b0f1fc7e7ed7c4e66dce6b93e9188fb459f6e02eb6908748f2f",
+        "src/OpeningCover.tsx": "64e114f1531ce5676c4d4ab8d63757bf1ebdf20dcd7ae2b9c95389d78ec74ea7",
+        "src/Root.tsx": "c5f240f57d18387c8d047fdcc731e5775694278ed89bc2407afc85898872fb47",
+        "src/SciencePlate.tsx": "35064313d2afdd40e3cf5c0f8e04307c64c544fff554539f465444624e22f830",
+        "src/StickmanPlate.tsx": "a2249b511f86dcd9aa5b554bbb4e11e5494edee4e1de1bb1900e481410d39288",
+        "src/WhatIfPlate.tsx": "fbcd98d7212e65f83acca8a55d6b61a698f9651c7cf3ea3516d6083f84cdecfa",
+        "src/index.ts": "28c07a9c5b90643adcecc9e9235322ab175ab5c423bc4f0c813ecfb06e23ff56",
+        "src/types.ts": "696c6f841288407c611d0007c4e743010c10af6610c1f61717970e8934e977a7",
+        "render.mjs": "c23557b4898166e7b82a9055087f15cebb5a4363cd5d7377c8898f5e2f8e6240",
+        "package.json": "422907b1c8db1264e6ff674d5faa386e69fc6b713b8869e7347617b081c8951a",
+        "package-lock.json": "32147035bebea55f6b61667031723a159347192ec99968b8de33b57c7416c3c1",
+        "visual-overrides.json": "e7a13610af470eea3a4f8e0d9b80fad904caeb322103d3399ad21cdcaf7a2fae",
+        "../professional_motion/procedural_story.js": "f7b23780e7c37c28c4245e1513f8bebdb4d04baf500d1376eebbd1c22472349b",
+        "../professional_motion/identity_stage.js": "d8bd47fa0c1118ee358453f1a2a1aa6f74774c1ee82b965e03fc7332e99a230a",
+        "../professional_motion/cinema.js": "37954e44c4362a83df34e5523b768026a90bd06d4cf257bc1fd91eae49083667",
+        "../professional_motion/science_shots.js": "d051358861c5e2a6a55b43a2a0c6f9ca295fe082ad262bf3e48781cb92913df7"
+      }
+    },
+    "technical_checks_are_not_a_guarantee_of_engagement": true
+  },
+  "caption": "السفينة كابتن: كارثة حقيقية في ليلة عاصفة\n#السفينة_كابتن #كوارث_حقيقية #رعب\nالمصدر: https://www.rmg.co.uk/stories/maritime-history/hms-captain-britains-forgotten-maritime-disaster\nاعتمادات الصور (قص وتحريك بصري):\nUnknown authorUnknown author — Public domain — https://commons.wikimedia.org/wiki/File:HMS_Captain_5.jpg\nUnknown authorUnknown author — Public domain — https://commons.wikimedia.org/wiki/File:HMS_Captain_1869_in_heavy_seas.jpg\nUnknown authorUnknown author — Public domain — https://commons.wikimedia.org/wiki/File:HMS_Captain_Drawing.JPG",
+  "hashtags": "#السفينة_كابتن #كوارث_حقيقية #رعب",
+  "owner_approved_git_blob_transport": true,
+  "transport_parts": [
+    {
+      "blob_sha": "117dcbb2cc58bcf3de7f728baec01d355fc35522",
+      "sha256": "bdf4933ac7cfa39566c00736c0ad11b632bcac40120d23c22234f469ee0b859d",
+      "size": 8388608
+    },
+    {
+      "blob_sha": "d8bf60475469b92f0380dff72b6d0c9132ea76aa",
+      "sha256": "6e56007bdf1670e08610400c591f0b74920af9c9ac9a5b0d55911b43d947f174",
+      "size": 8388608
+    },
+    {
+      "blob_sha": "736f2cdaeb693ca8f312981ebb4ffc42943c3c5a",
+      "sha256": "8868055f607c29c3a96fcb4d4e0c51366241f7d1fafd9863173e629176c7b0ae",
+      "size": 8388608
+    },
+    {
+      "blob_sha": "b377f162f40695ff393f1a4b654cdba24cb54d6c",
+      "sha256": "14441097d8084d6a5dead8aab2cfe19d1b3499adabace9ae0a215875d2951b1d",
+      "size": 8388608
+    },
+    {
+      "blob_sha": "69dd0e01506c15cf19a4a11a1475011a5105ed73",
+      "sha256": "8be7f99afc88d5fd78f14efe3b43986c0f8a11bbf57eb99d95bebc06856344a6",
+      "size": 8388608
+    },
+    {
+      "blob_sha": "4f89bb56418f63181273c79fda5e0331c9a468a4",
+      "sha256": "56210a650c1f86a860f6a987750d1c2d169af17714f98d3b540f06f921a89b1e",
+      "size": 8388608
+    },
+    {
+      "blob_sha": "6edfd02cc708a35b47787e1e74f5f3819a9e3597",
+      "sha256": "626736c4890370cd36fdc50a7409f20bf7768bc8682fad3fe91effd66c6aa779",
+      "size": 8388608
+    },
+    {
+      "blob_sha": "63911df0a147b5516764dad07ec4a978df64ebc8",
+      "sha256": "cec2c642f45af445b6df6cbdefd00034fec4e65986978d022a448e2fb55373c0",
+      "size": 8388608
+    },
+    {
+      "blob_sha": "ef0ff237e280a42ec9560f437dc8be91c8e35716",
+      "sha256": "f93446de4d214698066aad2fd0d7e81370f18f90dadabb919b93c411244d89e0",
+      "size": 7742562
+    }
+  ]
+}
