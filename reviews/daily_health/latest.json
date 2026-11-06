@@ -2,14 +2,13 @@
   "date": "2026-11-06",
   "profile": "horror",
   "phase": "postpublish",
-  "checked_at": "2026-11-06T15:09:30.938962+00:00",
-  "run_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/42240302870",
-  "report_path": "reviews/daily_health/2026-11-06/42240302870-1.json",
+  "checked_at": "2026-11-06T15:10:17.069375+00:00",
+  "run_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/42240386034",
+  "report_path": "reviews/daily_health/2026-11-06/42240386034-1.json",
   "publication_due_utc": "2026-11-06T10:00:00+00:00",
   "errors": [
     "No successful clock-triggered daily run for this date; manual recovery and dry-run tests do not count as the automatic clock",
-    "instagram: missing post or duplicate posts at the configured Cairo slot",
-    "Production workflow failed/cancelled; inspect its retained evidence"
+    "instagram: missing post or duplicate posts at the configured Cairo slot"
   ],
   "passed": false,
   "generation_calls": 0,
@@ -22,6 +21,6 @@
   },
   "production_at_cairo": "2026-11-05T19:00:00+02:00",
   "publication_at_cairo": "2026-11-06T12:00:00+02:00",
-  "hours_until_publication": -5.16,
+  "hours_until_publication": -5.17,
   "readiness": "needs_attention"
 }
