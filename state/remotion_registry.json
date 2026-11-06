@@ -291,9 +291,23 @@
     "daily-remotion-2026-11-07-horror": {
       "profile": "horror",
       "due_at": "2026-11-07T10:00:00Z",
-      "status": "author_pending",
+      "status": "author_requested",
       "source_run": 42228779424,
-      "created_at": "2026-11-06T13:50:59.523545+00:00"
+      "created_at": "2026-11-06T13:50:59.523545+00:00",
+      "source_selection": {
+        "title": "HMS Captain: Britain's forgotten maritime disaster",
+        "url": "https://www.rmg.co.uk/stories/maritime-history/hms-captain-britains-forgotten-maritime-disaster",
+        "publisher": "Royal Museums Greenwich",
+        "canonical_subject": "maritime-6a53d50c38702011707b"
+      },
+      "source": {
+        "url": "https://www.rmg.co.uk/stories/maritime-history/hms-captain-britains-forgotten-maritime-disaster"
+      },
+      "source_document": {
+        "path": "state/remotion_documents/daily-remotion-2026-11-07-horror-source-edcd5c6bb317693c.json",
+        "sha256": "edcd5c6bb317693c584f7d723b2d55f2febc810cb6d212730c3a46268221133a"
+      },
+      "writer_run": 42228779424
     }
   },
   "cutover_evidence": {
