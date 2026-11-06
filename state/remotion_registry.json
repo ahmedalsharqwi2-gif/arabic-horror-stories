@@ -312,6 +312,13 @@
       "draft_document": {
         "path": "state/remotion_documents/daily-remotion-2026-11-07-horror-draft-927e3d860a98db54.json",
         "sha256": "927e3d860a98db54be4b168d0774c45210c8ad174d45a970aa100b02393ec8cf"
+      },
+      "draft_repair": {
+        "phase": "requested",
+        "original_sha256": "3e9603c5af4afb55302507f2ebf19947a722ebbfea73c9df85b1cea312b1e691",
+        "problem": "Three to five topical on-screen hashtags required before synthesis",
+        "maximum_requests": 1,
+        "voice_requests": 0
       }
     }
   },
