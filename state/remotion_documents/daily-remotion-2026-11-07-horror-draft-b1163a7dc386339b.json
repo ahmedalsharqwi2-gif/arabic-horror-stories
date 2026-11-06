@@ -1,0 +1,158 @@
+{
+  "title": "الغرق المنسي لأقوى سفينة حديدية في تاريخ بريطانيا",
+  "canonical_subject": "maritime-6a53d50c38702011707b",
+  "hashtags": [
+    "تاريخ",
+    "بحرية",
+    "بريطانيا",
+    "غموض"
+  ],
+  "scenes": [
+    {
+      "label": "البداية والحدث",
+      "narration": "في السابع من سبتمبر عام ألف وثمنمائة وسبعين، غرقت السفينة الحربية إتش إم إس كابتن في عرض البحر قبالة سواحل إspanيا، ومعها ما يقارب خمسمائة بحار، لتصبح واحدة من أسوأ الفواجع البحرية في تاريخ البحرية الملكية البريطانية خلال القرن التاسع عشر بأكمله.",
+      "evidence_quote": "Few such terrible disasters have ever happened at sea",
+      "diagram": "flow",
+      "labels": [
+        "سفينة",
+        "غرق",
+        "تاريخ"
+      ],
+      "secondary_object": "document",
+      "interaction": "contrast",
+      "shot_type": "archive",
+      "hero_object": "ship",
+      "object_motion": "drift",
+      "image_query": "Victorian ironclad warship HMS Captain model",
+      "visual_rationale": "عرض نموذج أرشفي للسفينة الحربية يوضح تصميمها الثوري الذي انتهى بكارثة غرق مأساوية في عمق المياه."
+    },
+    {
+      "label": "التصميم الثوري",
+      "narration": "كانت السفينة تمثل قمة التكنولوجيا العسكرية لعصرها، مزودة بأبراج دوران مسلحة ومدفعية ثقيلة، لكن تصميمها الجديد تميز بانخفاض الشوكة المائية بشكل خطير، مما جعلها عرضة للأمواج العاتية والرياح العنيفة في ليلة العاصفة المميتة.",
+      "evidence_quote": "a fully rigged turret ship",
+      "diagram": "layers",
+      "labels": [
+        "تصميم",
+        "مدفعية",
+        "تكنولوجيا"
+      ],
+      "secondary_object": "gear",
+      "interaction": "approach",
+      "shot_type": "reconstruction",
+      "hero_object": "ship",
+      "object_motion": "spin",
+      "image_query": "cross section of Victorian turret warship stability",
+      "visual_rationale": "رسم هندسي يوضح طبقات الأبراج الدوارة ومستوى سطح السفينة المنخفض مقارنة بخط المياه الظاهري."
+    },
+    {
+      "label": "المسح البحري الحديث",
+      "narration": "بعد أكثر من قرن ونصف من النسيان التام وعدم ذكر الحادثة، انطلق مشروع بحثي أكاديمي بقيادة جامعة وولفرهامبتون لمسح قاع البحر واستخدام التقنيات الحديثة لتحديد الموقع الدقيق للحتام ورسم خريطة كاملة للبقايا الغارقة.",
+      "evidence_quote": "exploratory marine survey off Cape Finisterre",
+      "diagram": "compare",
+      "labels": [
+        "مسح",
+        "بحث",
+        "قاع البحر"
+      ],
+      "secondary_object": "monitor",
+      "interaction": "encircle",
+      "shot_type": "location",
+      "hero_object": "rock_layers",
+      "object_motion": "pulse",
+      "image_query": "sonar scan of deep sea shipwreck ruins",
+      "visual_rationale": "شاشة ترصد بيانات السونار البحري لتوضيح تضاريس قاع المحيط وموقع الحطام المكتشف حديثاً."
+    },
+    {
+      "label": "الغموض السياسي",
+      "narration": "لم تكن المشكلة محصورة في سوء الأحوال الجوية فقط، بل تحولت الكارثة إلى صراع سياسي مرير أدى إلى طمس الحادثة من الذاكرة الوطنية لبريطانيا العظمى، حيث تجنب المؤرخون لاحقاً الخوض في تفاصيل هذا الإخفاق التقني الكبير.",
+      "evidence_quote": "so politically divisive, so bitterly personal",
+      "diagram": "flow",
+      "labels": [
+        "سياسة",
+        "تعتيم",
+        "تاريخ"
+      ],
+      "secondary_object": "scroll",
+      "interaction": "transfer",
+      "shot_type": "archive",
+      "hero_object": "document",
+      "object_motion": "none",
+      "image_query": "19th century British parliamentary record document",
+      "visual_rationale": "عرض وثيقة أرشيفية قديمة تعكس النقاشات السياسية التي أحاطت بالتحقيق الرسمي في الحادثة."
+    },
+    {
+      "label": "دور المصمم",
+      "narration": "تحمل مصمم السفينة كوبر فيبس كولس المسؤولية الكبرى في الروايات التاريخية اللاحقة، إذ دافع باستماتة عن مفهوم الأبراج الدوارة رغم التحذيرات الهندسية المتكررة من افتقار السفينة للاستقرار البحري الكافي في العواصف.",
+      "evidence_quote": "designer Cowper Phipps Coles",
+      "diagram": "compare",
+      "labels": [
+        "مهندس",
+        "تصميم",
+        "مسؤولية"
+      ],
+      "secondary_object": "book",
+      "interaction": "contrast",
+      "shot_type": "archive",
+      "hero_object": "person",
+      "object_motion": "none",
+      "image_query": "portrait of Victorian naval architect",
+      "visual_rationale": "صورة أرشيفية للمصمم وسط رسوماته الهندسية تبرز الجدل حول قرار بناء السفينة."
+    },
+    {
+      "label": "ردود الفعل والذاكرة",
+      "narration": "تخليداً لضحايا الكارثة، تم وضع لوحات نحاسية ضخمة في كاتدرائية سانت بول ونافذة زجاجية ملونة في دير وستمنستر، في سابقة لم تتكرر أبداً لأي سفينة أخرى، مما يبرز حجم الصدمة التي هزت المجتمع البريطاني آنذاك.",
+      "evidence_quote": "brass plaques in St. Paul’s Cathedral",
+      "diagram": "layers",
+      "labels": [
+        "نصب",
+        "تخليد",
+        "صدمة"
+      ],
+      "secondary_object": "temple",
+      "interaction": "approach",
+      "shot_type": "location",
+      "hero_object": "stone",
+      "object_motion": "none",
+      "image_query": "Victorian memorial plaque in cathedral",
+      "visual_rationale": "لقطة من داخل الكاتدرائية تظهر النصب التذكاري واللوحات المثبتة تخليداً لذكرى البحارة."
+    },
+    {
+      "label": "أسئلة الاستقرار البحري",
+      "narration": "يتساءل الباحثون المعاصرون عما إذا كانت إضافة عارضات الاستقرار السفلي ستنقذ السفينة، أو ما إذا كانت الهبات الهوائية الإعصارية العنيفة قد تجاوزت القدرة القصوى لأي قطعة بحرية في الأسطول خلال تلك الليلة المشؤومة.",
+      "evidence_quote": "Would any vessel... have survived the focused blast",
+      "diagram": "cycle",
+      "labels": [
+        "فيزياء",
+        "استقرار",
+        "عاصفة"
+      ],
+      "secondary_object": "waveform",
+      "interaction": "shake",
+      "shot_type": "reconstruction",
+      "hero_object": "pendulum",
+      "object_motion": "swing",
+      "image_query": "ship stability wave simulation test",
+      "visual_rationale": "نموذج حركي يوضح تأثير تذبذب الأمواج على زاوية ميل السفينة أثناء العواصف الشديدة."
+    },
+    {
+      "label": "الحقيقة والشك",
+      "narration": "يبقى حطام السفينة في قاع البحر شاهداً صامتاً على ثقة العصر السريعة بالتقدم التكنولوجي وجهل البشر بطبيعة البحار المتغير، بينما يستمر البحث عن الهوية الكاملة للحتام دون ادعاء الوصول لحلول قاطعة.",
+      "evidence_quote": "nothing more than a long-lost mass grave site",
+      "diagram": "flow",
+      "labels": [
+        "حطام",
+        "غموض",
+        "حقيقة"
+      ],
+      "secondary_object": "rock_layers",
+      "interaction": "none",
+      "shot_type": "absence",
+      "hero_object": "ship",
+      "object_motion": "float",
+      "image_query": "dark deep ocean abyss shipwreck silhouette",
+      "visual_rationale": "صورة مظلمة تعبر عن غياب الأدلة القطعية في أعماق المحيط وصمت الحطام الأبدي."
+    }
+  ],
+  "cover_text": "غرق أقوى سفينة بريطانية",
+  "director_version": "v1"
+}
