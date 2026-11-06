@@ -314,11 +314,15 @@
         "sha256": "927e3d860a98db54be4b168d0774c45210c8ad174d45a970aa100b02393ec8cf"
       },
       "draft_repair": {
-        "phase": "requested",
+        "phase": "received",
         "original_sha256": "3e9603c5af4afb55302507f2ebf19947a722ebbfea73c9df85b1cea312b1e691",
         "problem": "Three to five topical on-screen hashtags required before synthesis",
         "maximum_requests": 1,
-        "voice_requests": 0
+        "voice_requests": 0,
+        "document": {
+          "path": "state/remotion_documents/daily-remotion-2026-11-07-horror-corrected-draft-e00acb8806e60be1.json",
+          "sha256": "e00acb8806e60be11a0dc98ac322ddf45ee3e13b1fa6b6ab2f7324fc0a94edcf"
+        }
       }
     }
   },
