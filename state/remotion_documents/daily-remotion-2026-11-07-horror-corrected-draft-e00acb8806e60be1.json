@@ -1,0 +1,158 @@
+{
+  "title": "أضخم سفينة حربية بريطانية غرقت في عاصفة ليلية",
+  "canonical_subject": "maritime-6a53d50c38702011707b",
+  "hashtags": [
+    "تاريخ",
+    "سفينة",
+    "بحرية",
+    "كارثة"
+  ],
+  "scenes": [
+    {
+      "label": "البداية والظلمات",
+      "narration": "في ليلة مظلمة اختفت أضخم سفينة حربية بريطانية. Few such terrible disasters have ever happened at sea.",
+      "evidence_quote": "Few such terrible disasters have ever happened at sea",
+      "diagram": "compare",
+      "labels": [
+        "غرق",
+        "تاريخ",
+        "سفينة"
+      ],
+      "secondary_object": "document",
+      "interaction": "contrast",
+      "shot_type": "archive",
+      "hero_object": "ship",
+      "object_motion": "drift",
+      "image_query": "Victorian ironclad warship painting",
+      "visual_rationale": "A static archival rendering of the massive ironclad contrasted against dark waters to establish the historical scale of the disaster."
+    },
+    {
+      "label": "التصميم الثوري",
+      "narration": "صممت السفينة لتكون فخر الأسطول الملكي. The Captain of 1870 was designed to take up her mantle.",
+      "evidence_quote": "The Captain of 1870 was designed to take up her mantle",
+      "diagram": "layers",
+      "labels": [
+        "تصميم",
+        "هندسة",
+        "أبراج"
+      ],
+      "secondary_object": "gear",
+      "interaction": "approach",
+      "shot_type": "evidence",
+      "hero_object": "gear",
+      "object_motion": "spin",
+      "image_query": "Victorian naval architectural drawing of rotating turrets",
+      "visual_rationale": "An engineering blueprint highlighting the rotating gun turrets and low freeboard layout discussed in the historical records."
+    },
+    {
+      "label": "العاصفة العنيفة",
+      "narration": "غرقت السفينة بسبب عاصفة قوية. Foundered in a gale off the coast of Spain on 7 September 1870.",
+      "evidence_quote": "Foundered in a gale off the coast of Spain on 7 September 1870",
+      "diagram": "flow",
+      "labels": [
+        "عاصفة",
+        "أمواج",
+        "خطر"
+      ],
+      "secondary_object": "rock_layers",
+      "interaction": "encircle",
+      "shot_type": "location",
+      "hero_object": "ship",
+      "object_motion": "shake",
+      "image_query": "rough stormy sea off Cape Finisterre",
+      "visual_rationale": "A dark stormy ocean surface illustrating the severe weather conditions documented in survivor accounts."
+    },
+    {
+      "label": "الصدمة الوطنية",
+      "narration": "كانت هذه أسوأ كارثة بحرية. The worst fiasco suffered by the Royal Navy since the Napoleonic Wars.",
+      "evidence_quote": "The worst fiasco suffered by the Royal Navy since the Napoleonic Wars",
+      "diagram": "cycle",
+      "labels": [
+        "صدمة",
+        "بريطانيا",
+        "تخليد"
+      ],
+      "secondary_object": "book",
+      "interaction": "transfer",
+      "shot_type": "archive",
+      "hero_object": "document",
+      "object_motion": "none",
+      "image_query": "Victorian memorial plaque St Pauls Cathedral",
+      "visual_rationale": "An archival shot of the commemorative brass plaque in St. Paul's Cathedral reflecting the official public mourning."
+    },
+    {
+      "label": "المسؤولية الضائعة",
+      "narration": "أصبح الحادث مثيرا للانقسام. So politically divisive, so bitterly personal.",
+      "evidence_quote": "So politically divisive, so bitterly personal",
+      "diagram": "compare",
+      "labels": [
+        "نزاع",
+        "سياسة",
+        "تحقيق"
+      ],
+      "secondary_object": "shield",
+      "interaction": "contrast",
+      "shot_type": "evidence",
+      "hero_object": "document",
+      "object_motion": "none",
+      "image_query": "19th century British parliamentary inquiry document",
+      "visual_rationale": "A weathered official inquiry paper emphasizing the political friction and desire to bury the memory of the disaster."
+    },
+    {
+      "label": "النسيان الطويل",
+      "narration": "تم التعامل مع الحادث كاستثناء. Treating it as an aberration, a footnote in a rather deterministic narrative.",
+      "evidence_quote": "Treating it as an aberration, a footnote in a rather deterministic narrative",
+      "diagram": "layers",
+      "labels": [
+        "نسيان",
+        "تاريخ",
+        "أبحاث"
+      ],
+      "secondary_object": "scroll",
+      "interaction": "approach",
+      "shot_type": "archive",
+      "hero_object": "book",
+      "object_motion": "none",
+      "image_query": "old historical monograph on naval history",
+      "visual_rationale": "An old academic book spine representing the long decades of historical silence regarding the lost ironclad."
+    },
+    {
+      "label": "البحث الحديث",
+      "narration": "قامت مراكز الأبحاث بمسح بحري. An exploratory marine survey off Cape Finisterre scanned a previously unidentified shipwreck.",
+      "evidence_quote": "An exploratory marine survey off Cape Finisterre scanned a previously unidentified shipwreck",
+      "diagram": "flow",
+      "labels": [
+        "استكشاف",
+        "مسح",
+        "حطام"
+      ],
+      "secondary_object": "monitor",
+      "interaction": "transfer",
+      "shot_type": "location",
+      "hero_object": "server",
+      "object_motion": "pulse",
+      "image_query": "modern marine sonar scan of underwater shipwreck",
+      "visual_rationale": "A digital sonar display screen showing the outlines of an unidentified seabed wreck matching the vessel's dimensions."
+    },
+    {
+      "label": "الغموض الباقي",
+      "narration": "يبقى الماضي بعيدا عن الاهتمام. The past itself is all but irrelevant.",
+      "evidence_quote": "The past itself is all but irrelevant",
+      "diagram": "cycle",
+      "labels": [
+        "غموض",
+        "أعماق",
+        "تساؤلات"
+      ],
+      "secondary_object": "rock_layers",
+      "interaction": "none",
+      "shot_type": "evidence",
+      "hero_object": "rock_layers",
+      "object_motion": "drift",
+      "image_query": "deep sea dark water background texture",
+      "visual_rationale": "A fading, deep-sea visual representing the enduring uncertainty and silent resting place of the forgotten ship."
+    }
+  ],
+  "cover_text": "سفينة بريطانية غرقت بصمت",
+  "director_version": "v1"
+}
