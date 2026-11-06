@@ -307,7 +307,9 @@
         "path": "state/remotion_documents/daily-remotion-2026-11-07-horror-source-edcd5c6bb317693c.json",
         "sha256": "edcd5c6bb317693c584f7d723b2d55f2febc810cb6d212730c3a46268221133a"
       },
-      "writer_run": 42228779424
+      "writer_run": 42228779424,
+      "recovery_requested": true,
+      "recovery_reason": "Confirmed prior author request ended non-200 before draft; Gemini diagnostic now returned HTTP 200; reuse retained source only."
     }
   },
   "cutover_evidence": {
