@@ -291,7 +291,7 @@
     "daily-remotion-2026-11-07-horror": {
       "profile": "horror",
       "due_at": "2026-11-07T10:00:00Z",
-      "status": "draft_retained",
+      "status": "review_requested",
       "source_run": 42228779424,
       "created_at": "2026-11-06T13:50:59.523545+00:00",
       "source_selection": {
@@ -324,7 +324,13 @@
           "sha256": "e00acb8806e60be11a0dc98ac322ddf45ee3e13b1fa6b6ab2f7324fc0a94edcf"
         },
         "failure": "Draft word budget fails natural-duration preflight: actual 125, required 240-370; no TTS requested"
-      }
+      },
+      "story_document": {
+        "path": "state/remotion_documents/daily-remotion-2026-11-07-horror-story-d960b061d62a1e02.json",
+        "sha256": "d960b061d62a1e028a3fcacdc990801083892b672b642bcab4de057a04e032c8"
+      },
+      "canonical_subject": "maritime-6a53d50c38702011707b",
+      "title": "إزاي أضخم سفينة حربية بريطانية غرقت في دقيقة؟"
     },
     "daily-remotion-2026-11-08-horror": {
       "profile": "horror",
