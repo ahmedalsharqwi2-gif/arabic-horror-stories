@@ -420,11 +420,15 @@
         "sha256": "114f33089581d107e7c8390cac43a942da3ea0ba34c6a59ccd33e7c4d55ae8e8"
       },
       "draft_repair": {
-        "phase": "requested",
+        "phase": "received",
         "original_sha256": "bc1989a0023e35cb67112c552f6f2cce48c87ca79519224596251530ef00d876",
         "problem": "Draft word budget fails natural-duration preflight: actual 430, required 240-370; no TTS requested",
         "maximum_requests": 1,
-        "voice_requests": 0
+        "voice_requests": 0,
+        "document": {
+          "path": "state/remotion_documents/daily-remotion-2026-11-09-horror-corrected-draft-75bd102a58eee178.json",
+          "sha256": "75bd102a58eee1789f5ee03eea5d81f8089e4d678faa98c7ff206ccaded300d2"
+        }
       }
     }
   },
