@@ -1,6 +1,6 @@
 {
-  "publish_date": "2026-11-05",
-  "revision": "owner-retained-horror-quiet-pauses-only-v4",
+  "publish_date": "2026-11-07",
+  "revision": "design-v2-1-arabic-horror-stories-031121",
   "preserve_existing_posts": true,
-  "reason": "Continue the original 183.4-second voice, preserving raw PCM. Remove only 3.9 seconds of measured < -48dB pauses, no speech removal, no resynthesis or speed change; remeasure ASR on the 179.5-second result before rendering."
+  "reason": "Owner: the repositories must produce the videos. Queue the next slot with the v2.1 pack."
 }
