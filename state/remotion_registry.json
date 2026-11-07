@@ -291,8 +291,8 @@
     "daily-remotion-2026-11-07-horror": {
       "profile": "horror",
       "due_at": "2026-11-07T10:00:00Z",
-      "status": "authored",
-      "source_run": 42228779424,
+      "status": "voice_requested",
+      "source_run": 42322677869,
       "created_at": "2026-11-06T13:50:59.523545+00:00",
       "source_selection": {
         "title": "HMS Captain: Britain's forgotten maritime disaster",
@@ -339,7 +339,8 @@
         "issues": [],
         "passed": true
       },
-      "story_sha256": "d960b061d62a1e028a3fcacdc990801083892b672b642bcab4de057a04e032c8"
+      "story_sha256": "d960b061d62a1e028a3fcacdc990801083892b672b642bcab4de057a04e032c8",
+      "voice_request_run": 42322677869
     },
     "daily-remotion-2026-11-08-horror": {
       "profile": "horror",
