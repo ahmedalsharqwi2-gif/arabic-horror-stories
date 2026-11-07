@@ -398,7 +398,7 @@
     "daily-remotion-2026-11-09-horror": {
       "profile": "horror",
       "due_at": "2026-11-09T10:00:00Z",
-      "status": "draft_retained",
+      "status": "review_requested",
       "source_run": 42420485900,
       "created_at": "2026-11-07T22:25:04.831496+00:00",
       "source_selection": {
@@ -442,7 +442,13 @@
             "sha256": "75bd102a58eee1789f5ee03eea5d81f8089e4d678faa98c7ff206ccaded300d2"
           }
         }
-      ]
+      ],
+      "story_document": {
+        "path": "state/remotion_documents/daily-remotion-2026-11-09-horror-story-bdd1c0d485e168e3.json",
+        "sha256": "bdd1c0d485e168e3977a5a30d572e1edb02cc38ff9c7d08b68a46b2865d6d512"
+      },
+      "canonical_subject": "maritime-9a2860f376f150bde116",
+      "title": "إزاي شخص مسافرش بره بلده وجمع أخطر رحلات البحار؟"
     }
   },
   "cutover_evidence": {
