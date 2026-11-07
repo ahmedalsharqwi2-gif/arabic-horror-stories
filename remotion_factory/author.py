@@ -59,7 +59,8 @@ def candidates(profile):
    from urllib.parse import urljoin
    for a in soup.select('a[href]'):
     title=a.get_text(' ',strip=True);url=urljoin(response.url,a['href'])
-    if not re.search(r'shipwreck|disaster|mystery|lost|Franklin|Terror|Captain|Endurance|Celeste|Freshfield',title,re.I) or not url.startswith('https://www.rmg.co.uk/stories/maritime-history/'):continue
+    if not url.startswith('https://www.rmg.co.uk/stories/maritime-history/') or len(title.strip())<12:continue
+    if not re.search(r'shipwreck|disaster|mystery|lost|Franklin|Terror|Captain|Endurance|Celeste|Freshfield|wreck|voyage|crew|expedition|sea|ship|ocean|maritime',title,re.I):continue
     rows.append({'title':title,'url':url,'publisher':'Royal Museums Greenwich','canonical_subject':'maritime-'+hashlib.sha256(url.encode()).hexdigest()[:20]})
   except requests.RequestException:pass
  if profile=='stickman':
@@ -188,4 +189,3 @@ def author(req,entry):
  mutate(save)
  if not review['passed']:raise ValueError('Independent editorial review rejected this retained draft; no new TTS or rewrite')
  return story
-
