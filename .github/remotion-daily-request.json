@@ -1,6 +1,6 @@
 {
   "publish_date": "2026-11-07",
-  "revision": "design-v2-1-arabic-horror-stories-031121",
+  "revision": "v2.1-pack-live-arabic-horror-stories",
   "preserve_existing_posts": true,
-  "reason": "Owner: the repositories must produce the videos. Queue the next slot with the v2.1 pack."
+  "reason": "Re-request after the v2.1 visual pack landed on main: the repository now renders the photo plate, science 3D engine, news broadcast plate and two-character dialogue itself."
 }
