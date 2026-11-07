@@ -1,0 +1,267 @@
+{
+  "title": "إزاي أضخم سفينة حربية بريطانية غرقت في دقيقة؟",
+  "canonical_subject": "maritime-6a53d50c38702011707b",
+  "hashtags": [
+    "تاريخ",
+    "غموض",
+    "سفن",
+    "بريطانيا",
+    "وثائقي"
+  ],
+  "scenes": [
+    {
+      "label": "المقدمة والحدث المفاجئ",
+      "narration": "تخيل إن فخر البحرية البريطانية وأحدث سفينة حديدية في العالم تختفي في قاع المحيط وسلطات القرن التاسع عشر تتكتم على كارثة مرعبة هزت الإمبراطورية وقتها بدون سابق إنذار واضح لكل المتابعين.",
+      "evidence_quote": "Few such terrible disasters have ever happened at sea",
+      "diagram": "flow",
+      "labels": [
+        "سفينة حربية",
+        "كارثة بحرية",
+        "البحرية البريطانية"
+      ],
+      "secondary_object": "document",
+      "interaction": "contrast",
+      "shot_type": "archive",
+      "hero_object": "ship",
+      "object_motion": "drift",
+      "image_query": "Victorian ironclad warship at sea",
+      "visual_rationale": "An archival illustration of a massive ironclad warship stands against a dark background, contrasting with old official records to establish the sudden loss.",
+      "id": "scene_1",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "flow",
+        "labels": [
+          "سفينة حربية",
+          "كارثة بحرية",
+          "البحرية البريطانية"
+        ]
+      }
+    },
+    {
+      "label": "تصميم السفينة والغرور الهندسي",
+      "narration": "الناس كانت مؤمنة إن التكنولوجيا والتقدم العلمي ممكن يحلوا أي مشكلة لكن المصمم حط أبراج مدافع ثقيلة على هيكل منخفض جداً عشان يوفر ثبات وهمي وده خلق عيب قاتل في التصميم.",
+      "evidence_quote": "dangerously low freeboard yet fully rigged turret ship",
+      "diagram": "layers",
+      "labels": [
+        "تصميم هندسي",
+        "أبراج مدافع",
+        "خط الماء"
+      ],
+      "secondary_object": "scroll",
+      "interaction": "approach",
+      "shot_type": "reconstruction",
+      "hero_object": "ship",
+      "object_motion": "none",
+      "image_query": "cross section diagram of Victorian turret ship",
+      "visual_rationale": "A technical schematic diagram exposes the unusually low freeboard and heavy rotating turrets, showing the unstable engineering layers.",
+      "id": "scene_2",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "layers",
+        "labels": [
+          "تصميم هندسي",
+          "أبراج مدافع",
+          "خط الماء"
+        ]
+      }
+    },
+    {
+      "label": "العاصفة الليلة واللحظة الحاسمة",
+      "narration": "في ليلة سبعة سبتمبر سنة ألف وثمانية ومقاطعة الإسبان استقبلت السفينة عاصفة مرعبة ضربت السواحل وخلي السفينة تميل على جنبها وما تقدرش ترفع جسمها تاني قدام الرياح القوية.",
+      "evidence_quote": "foundered in a gale off the coast of Spain",
+      "diagram": "compare",
+      "labels": [
+        "عاصفة بحرية",
+        "رياح عاتية",
+        "انقلاب السفينة"
+      ],
+      "secondary_object": "waveform",
+      "interaction": "shake",
+      "shot_type": "location",
+      "hero_object": "ship",
+      "object_motion": "shake",
+      "image_query": "stormy sea waves off Spanish coast Cape Finisterre",
+      "visual_rationale": "A turbulent sea simulation showing violent waves shaking a model ship to visualize the physical pressure of the cyclonic downburst.",
+      "id": "scene_3",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "compare",
+        "labels": [
+          "عاصفة بحرية",
+          "رياح عاتية",
+          "انقلاب السفينة"
+        ]
+      }
+    },
+    {
+      "label": "فقدان الطاقم وضياع خمسمائة بحار",
+      "narration": "النتيجة كانت مرعبة لأن خمسمائة راكب من صفوة البحارة نزلوا للقاع ومعاهم المهندس المصمم نفسه اللي صمم السفينة دي ومحدش نجا من الحادثة دي غير عدد قليل جداً من الأفراد.",
+      "evidence_quote": "Nearly the entire crew of 500 men went down",
+      "diagram": "flow",
+      "labels": [
+        "طاقم السفينة",
+        "ضحايا البحر",
+        "سجلات الأفراد"
+      ],
+      "secondary_object": "document",
+      "interaction": "transfer",
+      "shot_type": "evidence",
+      "hero_object": "document",
+      "object_motion": "none",
+      "image_query": "Victorian naval crew muster roll list",
+      "visual_rationale": "An aged paper document listing the crew names fades slightly to represent the massive loss of five hundred lives in the disaster.",
+      "id": "scene_4",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "flow",
+        "labels": [
+          "طاقم السفينة",
+          "ضحايا البحر",
+          "سجلات الأفراد"
+        ]
+      }
+    },
+    {
+      "label": "رد فعل الحكومة والتكتم السياسي",
+      "narration": "الإدارة البريطانية دخلت في صدمة سياسية مخيفة والكل حاول يدفن الموضوع عشان الفضيحة ما تأثرش على هيبة الدولة كسيادة البحار وبقت الحادثة دي كأنها شبح محدش يحب يجيب سيرته نهائي.",
+      "evidence_quote": "became eager to put the memory",
+      "diagram": "compare",
+      "labels": [
+        "تكتم سياسي",
+        "الحكومة البريطانية",
+        "الذاكرة الوطنية"
+      ],
+      "secondary_object": "shield",
+      "interaction": "encircle",
+      "shot_type": "archive",
+      "hero_object": "shield",
+      "object_motion": "none",
+      "image_query": "Victorian government seal official document",
+      "visual_rationale": "An official government seal stamp presses down on a dark document, symbolizing the deliberate political cover-up and suppression of memory.",
+      "id": "scene_5",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "compare",
+        "labels": [
+          "تكتم سياسي",
+          "الحكومة البريطانية",
+          "الذاكرة الوطنية"
+        ]
+      }
+    },
+    {
+      "label": "النصب التذكارية والنقوش الحجرية",
+      "narration": "الاعتراف بالحجم الحقيقي للمأساة ظهر في لفتات غير مسبوقة زي نوافذ الزجاج الملون في كنيسة وستمنستر ولوحات نحاسية ضخمة اتعملت عشان تخلد ذكرى اللي راحوا في أعماق المحيط للأبد.",
+      "evidence_quote": "brass plaques in St. Paul’s Cathedral as well as a stained-glass window",
+      "diagram": "layers",
+      "labels": [
+        "نصب تذكاري",
+        "كاتدرائية",
+        "لوحات نحاسية"
+      ],
+      "secondary_object": "temple",
+      "interaction": "approach",
+      "shot_type": "location",
+      "hero_object": "scroll",
+      "object_motion": "none",
+      "image_query": "Victorian memorial plaque cathedral interior",
+      "visual_rationale": "A dim light illuminates an old cathedral wall plaque, showing the rare commemorative steps taken by the British establishment.",
+      "id": "scene_6",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "layers",
+        "labels": [
+          "نصب تذكاري",
+          "كاتدرائية",
+          "لوحات نحاسية"
+        ]
+      }
+    },
+    {
+      "label": "البحث الحديث عن الحطام المفقود",
+      "narration": "وبعد أكتر من مية وخمسين سنة جه فريق بحث من جامعة وولفرهامبتون وبدأ يفتش في السجلات القديمة وصور بأساليب مسح بحري متطورة عشان يلاقي مكان السفينة الغارقة ويحل اللغز القديم.",
+      "evidence_quote": "Find the Captain Project has worked to identify the exact location",
+      "diagram": "flow",
+      "labels": [
+        "مسح بحري",
+        "بحث أثري",
+        "حطام السفينة"
+      ],
+      "secondary_object": "monitor",
+      "interaction": "approach",
+      "shot_type": "evidence",
+      "hero_object": "monitor",
+      "object_motion": "pulse",
+      "image_query": "modern marine sonar shipwreck scan monitor display",
+      "visual_rationale": "A computer screen displays a sonar scan of an unidentified seabed target, illustrating modern marine archaeology searching for the wreck.",
+      "id": "scene_7",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "flow",
+        "labels": [
+          "مسح بحري",
+          "بحث أثري",
+          "حطام السفينة"
+        ]
+      }
+    },
+    {
+      "label": "الخاتمة والغموض المستمر في القاع",
+      "narration": "لحد دلوقتي الحطام مستبخبى تحت المية كأنه مقبرة صامتة بتستعرض حدود الغرور البشري قدام قوة الطبيعة وتفكرنا إن أعظم القوى العسكرية ممكن تختفي في ثواني معدودة بدون إجابة نهائية لكل الأسئلة.",
+      "evidence_quote": "nothing more than a long-lost mass grave site",
+      "diagram": "compare",
+      "labels": [
+        "مقبرة بحرية",
+        "تساؤلات تاريخية",
+        "نهاية الغموض"
+      ],
+      "secondary_object": "rock_layers",
+      "interaction": "none",
+      "shot_type": "absence",
+      "hero_object": "ship",
+      "object_motion": "drift",
+      "image_query": "dark deep ocean floor silhouette shipwreck",
+      "visual_rationale": "A dark, distant silhouette of a submerged hull rests on the ocean floor under faint light, leaving the final historical questions unanswered.",
+      "id": "scene_8",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "compare",
+        "labels": [
+          "مقبرة بحرية",
+          "تساؤلات تاريخية",
+          "نهاية الغموض"
+        ]
+      }
+    }
+  ],
+  "cover_text": "سفينة بريطانية غرقت بدقيقة",
+  "director_version": "v1.0-masri",
+  "profile": "horror",
+  "series": "ملفات غامضه",
+  "fiction": false,
+  "documented": true,
+  "topic_key": "remotion-maritime-6a53d50c38702011707b",
+  "source": {
+    "url": "https://www.rmg.co.uk/stories/maritime-history/hms-captain-britains-forgotten-maritime-disaster",
+    "title": "HMS Captain: Britain's forgotten maritime disaster",
+    "publisher": "Royal Museums Greenwich"
+  },
+  "visual_identity": {
+    "version": "channel-identities-v1",
+    "profile": "horror",
+    "name": "ملف لم يُغلق",
+    "background": "#0c1117",
+    "ink": "#ece5dc",
+    "accent": "#d27666",
+    "visual": "slow archival investigation, restrained light, real evidence and honest uncertainty",
+    "sound": "low drone, sparse piano, environmental creaks and measured silence"
+  }
+}
