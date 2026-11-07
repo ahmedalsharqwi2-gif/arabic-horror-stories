@@ -1,0 +1,266 @@
+{
+  "title": "إزاي شخص مسافرش بره بلده وجمع أخطر رحلات البحار؟",
+  "canonical_subject": "maritime-9a2860f376f150bde116",
+  "hashtags": [
+    "تاريخ",
+    "رحلات",
+    "غرائب",
+    "استكشاف"
+  ],
+  "scenes": [
+    {
+      "label": "بداية المهووس بالجغرافيا",
+      "narration": "تخيل إن راجل قاعد جوه أوضته طول عمره ومسافرش أي بلد بره، وفجأة يتحول لأهم مرجع لكل رحلات البحار في عصره. ريتشارد هاكلوت مكنش بيتحرك من مكانه، بس قدر يجمع قصص المغامرين اللي سافروا في البحار المجهولة عشان يوثق تاريخ إنجلترا كله.",
+      "evidence_quote": "despite limited foreign travel, the leading European authority on overseas exploration",
+      "diagram": "flow",
+      "labels": [
+        "جغرافيا",
+        "مكتبة",
+        "تاريخ"
+      ],
+      "secondary_object": "document",
+      "interaction": "contrast",
+      "shot_type": "archive",
+      "hero_object": "book",
+      "object_motion": "none",
+      "image_query": "old leather bound library book archive",
+      "visual_rationale": "An open antique book sits under dim archival lighting, representing the collected texts studied by Hakluyt.",
+      "id": "scene_1",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "flow",
+        "labels": [
+          "جغرافيا",
+          "مكتبة",
+          "تاريخ"
+        ]
+      }
+    },
+    {
+      "label": "تأثير ابن العم والقسوة",
+      "narration": "كل الحكاية بدأت لما قابل ابن عمه اللي كان مهتم بالتجارة والملاحة، وده خلاه يسيب كل حاجة ويروح جامعة أكسفورد عشان يدرس اللاهوت والجغرافيا مع بعض. الراجل كان بيقعد بالساعات يقرا نصوص قديمة بلغات كتيرة عن الكشوف الجغرافية لحد ما بقى قسيس.",
+      "evidence_quote": "Hakluyt’s interest in geography was stimulated through his cousin",
+      "diagram": "compare",
+      "labels": [
+        "جامعة",
+        "قسيس",
+        "دراسة"
+      ],
+      "secondary_object": "scroll",
+      "interaction": "approach",
+      "shot_type": "evidence",
+      "hero_object": "scroll",
+      "object_motion": "drift",
+      "image_query": "ancient Latin manuscript scroll on wooden desk",
+      "visual_rationale": "A decaying Latin manuscript unrolls slowly across a dark wooden table to show the sources of his studies.",
+      "id": "scene_2",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "compare",
+        "labels": [
+          "جامعة",
+          "قسيس",
+          "دراسة"
+        ]
+      }
+    },
+    {
+      "label": "جاسوسية القصر والدبلوماسية",
+      "narration": "لما سافر فرنسا كقسيس للسفير الإنجليزي وهناك قعد خمس سنين كاملة، مكنش بيقضي وقته في الصلاة وبس. ده كان بيراقب تحركات الإسبان والفرنسيين لصالح رئيس الجواسيس فرانسيس والسينغهام، وقابل هناك شخصيات خطيرة ومنفاها السياسي كان بيخدم مصالح بلده بذكاء شديد.",
+      "evidence_quote": "regular contact with court personalities was useful to Walsingham who had Hakluyt monitor the movements",
+      "diagram": "layers",
+      "labels": [
+        "جاسوسية",
+        "سفارة",
+        "فرنسا"
+      ],
+      "secondary_object": "map",
+      "interaction": "encircle",
+      "shot_type": "location",
+      "hero_object": "document",
+      "object_motion": "none",
+      "image_query": "sixteenth century European political diplomatic map",
+      "visual_rationale": "An old political map of Europe shows surveillance routes and borders monitored during the ambassadorial stay.",
+      "id": "scene_3",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "layers",
+        "labels": [
+          "جاسوسية",
+          "سفارة",
+          "فرنسا"
+        ]
+      }
+    },
+    {
+      "label": "إصدار كتاب أمريكا وراشلي",
+      "narration": "في باريس، نشر نسخة جديدة من كتاب بطرس ميرتور عن العالم الجديد، واللي ظهر فيه اسم ولاية فيرجينيا لأول مرة على خريطة نادرة أهداها للسير والتر رالي. الراجل ده كان بيشجع الناس تستثمر في المستعمرات الجديدة في أمريكا عشان تلحق تنافس إسبانيا وقوتها.",
+      "evidence_quote": "Included is a rare map, dedicated to Hakluyt, in which the name Virginia first appears",
+      "diagram": "cycle",
+      "labels": [
+        "فيرجينيا",
+        "خريطة",
+        "استعمار"
+      ],
+      "secondary_object": "ship",
+      "interaction": "transfer",
+      "shot_type": "archive",
+      "hero_object": "ship",
+      "object_motion": "float",
+      "image_query": "sixteenth century woodcut map of Virginia",
+      "visual_rationale": "A historic woodcut map of early North American colonies displays the coastal geography and exploration zones.",
+      "id": "scene_4",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "cycle",
+        "labels": [
+          "فيرجينيا",
+          "خريطة",
+          "استعمار"
+        ]
+      }
+    },
+    {
+      "label": "توثيق التوثيق والملاحة الكبرى",
+      "narration": "سنة ألف خمسمائة وتسعة وثمانين، طلع للنور أهم أعماله على الإطلاق وهو كتاب الملاحة والرحلات الكبرى للأمة الإنجليزية. الكتاب ده مكنش مجرد حكايات عادية، ده كان كتالوج ضخم بيجمع تاريخ البحار، وكتبه باعتماد كامل على شهادات حقيقية من الناس اللي سافرت بعنيها.",
+      "evidence_quote": "I have referred every voyage to his author: for I am not ignorant of Ptolemies assertion",
+      "diagram": "flow",
+      "labels": [
+        "رحلات",
+        "أرشيف",
+        "توثيق"
+      ],
+      "secondary_object": "book",
+      "interaction": "approach",
+      "shot_type": "evidence",
+      "hero_object": "book",
+      "object_motion": "pulse",
+      "image_query": "title page of Principal Navigations 1599",
+      "visual_rationale": "The ornate title page of the 1599 publication is illuminated by a single flickering candle in the archive.",
+      "id": "scene_5",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "flow",
+        "labels": [
+          "رحلات",
+          "أرشيف",
+          "توثيق"
+        ]
+      }
+    },
+    {
+      "label": "إهداءات للرجال الأقوياء",
+      "narration": "الطبعة التانية من الكتاب اتعدلت واتقسمت على تلات مجلدات ضخمة عشان تدخل فيها هزيمة الأسطول الإسباني العظيم. وطبعاً عشان الشغل يكمل ويتحمى، كان بيغير الإهداءات حسب الشخصيات النافذة اللي تموت أو تتولى الحكم، فكان بيهديها للورد هوارد أو لروبرت سيسل سكرتير الدولة.",
+      "evidence_quote": "A second edition published 1598-1600 expanded the work across three volumes and included naval actions",
+      "diagram": "layers",
+      "labels": [
+        "أسطول",
+        "سياسة",
+        "إهداء"
+      ],
+      "secondary_object": "shield",
+      "interaction": "contrast",
+      "shot_type": "archive",
+      "hero_object": "document",
+      "object_motion": "none",
+      "image_query": "historical English naval battle document 16th century",
+      "visual_rationale": "Official state papers bearing royal seals and naval victory logs are displayed under restrained lighting.",
+      "id": "scene_6",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "layers",
+        "labels": [
+          "أسطول",
+          "سياسة",
+          "إهداء"
+        ]
+      }
+    },
+    {
+      "label": "إرث ألهم ويليام شكسبير نفسه",
+      "narration": "أبحاث هاكلوت وكتاباته بقت المرجع الأساسي لأي حد عايز يفهم عوالم البحار وممكن تكون ألهمت كبار الأدباء زي ويليام شكسبير نفسه عشان يكتبوا عن العوالم الغريبة. الراجل ده قدر ببساطة يربط الفكر الاستعماري بالتاريخ الثقافي لحد ما أسسوا جمعية هاكلوت الشهيرة.",
+      "evidence_quote": "It inspired many prominent Elizabethans – including William Shakespeare – to the possibilities beyond England’s shores",
+      "diagram": "cycle",
+      "labels": [
+        "شكسبير",
+        "أدب",
+        "إرث"
+      ],
+      "secondary_object": "pen",
+      "interaction": "approach",
+      "shot_type": "reconstruction",
+      "hero_object": "scroll",
+      "object_motion": "none",
+      "image_query": "Elizabethan quill pen and parchment paper",
+      "visual_rationale": "An Elizabethan quill pen rests beside a partially written manuscript reflecting the literary legacy left behind.",
+      "id": "scene_7",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "cycle",
+        "labels": [
+          "شكسبير",
+          "أدب",
+          "إرث"
+        ]
+      }
+    },
+    {
+      "label": "الحقيقة المجهولة والمؤرخ الصامت",
+      "narration": "في الآخر، ريتشارد هاكلوت مات من غير ما يسافر أي رحلة حقيقية لأمريكا ولا يشاهد بعينه العجائب اللي كتب عنها في مجلداته. كل اللي سابه لنا كان عبارة عن مجهود فكري بحت في تجميع وتوثيق تجارب غيره، وده بيخلينا نقف قدام سؤال مهم عن حقيقة التاريخ.",
+      "evidence_quote": "Ultimately, his pursuits remained intellectual ones, concerned with the gathering, recording, and disseminating",
+      "diagram": "compare",
+      "labels": [
+        "تساؤل",
+        "مجهول",
+        "حقيقة"
+      ],
+      "secondary_object": "monitor",
+      "interaction": "none",
+      "shot_type": "absence",
+      "hero_object": "document",
+      "object_motion": "none",
+      "image_query": "empty dark archive room with single desk and shadows",
+      "visual_rationale": "An empty archival study table fades into deep shadows, emphasizing the unanswered questions of historical recording.",
+      "id": "scene_8",
+      "visual_mode": "hero",
+      "visual": {
+        "kind": "explainer",
+        "kicker": "compare",
+        "labels": [
+          "تساؤل",
+          "مجهول",
+          "حقيقة"
+        ]
+      }
+    }
+  ],
+  "cover_text": "أخطر رحلات البحار",
+  "director_version": "v1",
+  "profile": "horror",
+  "series": "ملفات غامضه",
+  "fiction": false,
+  "documented": true,
+  "topic_key": "remotion-maritime-9a2860f376f150bde116",
+  "source": {
+    "url": "https://www.rmg.co.uk/stories/maritime-history/library-archive/voyages-search-discoverie-strange-coasts-chiefe-subject-my",
+    "title": "Voyages in ‘search and discoverie of strange coasts, the chiefe subject of this my labour’",
+    "publisher": "Royal Museums Greenwich"
+  },
+  "visual_identity": {
+    "version": "channel-identities-v1",
+    "profile": "horror",
+    "name": "ملف لم يُغلق",
+    "background": "#0c1117",
+    "ink": "#ece5dc",
+    "accent": "#d27666",
+    "visual": "slow archival investigation, restrained light, real evidence and honest uncertainty",
+    "sound": "low drone, sparse piano, environmental creaks and measured silence"
+  }
+}
