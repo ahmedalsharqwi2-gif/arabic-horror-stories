@@ -375,11 +375,13 @@
           "verified_at": "2026-11-07T01:27:40.336978+00:00"
         },
         "facebook": {
-          "phase": "intent",
+          "phase": "acknowledged",
           "channel_id": "6aaa853fea19ca0bde57b5f7",
           "due_at": "2026-11-07T10:00:00Z",
           "media_url": "https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/releases/download/production-daily-remotion-2026-11-07-horror/horror-daily-remotion-2026-11-07-horror.mp4",
-          "created_at": "2026-11-07T01:27:41.644705+00:00"
+          "created_at": "2026-11-07T01:27:41.644705+00:00",
+          "id": "6aee7e8fd6bbae6fa15a7bbd",
+          "accepted_at": "2026-11-07T01:27:43.382378+00:00"
         }
       }
     },
