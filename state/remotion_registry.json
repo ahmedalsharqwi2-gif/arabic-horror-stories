@@ -397,9 +397,9 @@
     }
   },
   "cutover_evidence": {
-    "slot": "daily-remotion-2026-11-05-horror",
-    "video_sha256": "1a203b0c761e48a323faee4b1c47a89140fb57a91a56333f21d4d28a88990edc",
-    "run": 41919799467,
+    "slot": "daily-remotion-2026-11-07-horror",
+    "video_sha256": "0f214824d1efd3884e381e9029c1410739ddcfbef36731e13f0f0ba05a9d74e2",
+    "run": 42322677869,
     "ready": true
   }
 }
