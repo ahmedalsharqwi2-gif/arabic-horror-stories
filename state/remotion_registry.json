@@ -338,7 +338,8 @@
         "visuals_match": true,
         "issues": [],
         "passed": true
-      }
+      },
+      "story_sha256": "d960b061d62a1e028a3fcacdc990801083892b672b642bcab4de057a04e032c8"
     },
     "daily-remotion-2026-11-08-horror": {
       "profile": "horror",
