@@ -398,7 +398,7 @@
     "daily-remotion-2026-11-09-horror": {
       "profile": "horror",
       "due_at": "2026-11-09T10:00:00Z",
-      "status": "author_requested",
+      "status": "draft_retained",
       "source_run": 42420485900,
       "created_at": "2026-11-07T22:25:04.831496+00:00",
       "source_selection": {
@@ -414,7 +414,11 @@
         "path": "state/remotion_documents/daily-remotion-2026-11-09-horror-source-511d8ff6c3b46be0.json",
         "sha256": "511d8ff6c3b46be0b11ab430356e7bffc6fd64bad0b1d9cf4f06b5a3b9319476"
       },
-      "writer_run": 42420485900
+      "writer_run": 42420485900,
+      "draft_document": {
+        "path": "state/remotion_documents/daily-remotion-2026-11-09-horror-draft-114f33089581d107.json",
+        "sha256": "114f33089581d107e7c8390cac43a942da3ea0ba34c6a59ccd33e7c4d55ae8e8"
+      }
     }
   },
   "cutover_evidence": {
