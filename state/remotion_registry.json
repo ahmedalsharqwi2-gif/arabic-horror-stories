@@ -291,7 +291,7 @@
     "daily-remotion-2026-11-07-horror": {
       "profile": "horror",
       "due_at": "2026-11-07T10:00:00Z",
-      "status": "voice_ready",
+      "status": "rendered",
       "source_run": 42322677869,
       "created_at": "2026-11-06T13:50:59.523545+00:00",
       "source_selection": {
@@ -341,10 +341,13 @@
       },
       "story_sha256": "d960b061d62a1e028a3fcacdc990801083892b672b642bcab4de057a04e032c8",
       "voice_request_run": 42322677869,
-      "duration": 124.56,
+      "duration": 124.566667,
       "audio_sha256": "f2221bcda6aca915c9afdf4b725236aad5cb08be8f9af36a3fb8c8b5d4bc84bc",
       "timing_sha256": "a4aeed659a61d8fd58a0e756640b6d9c31246e4776180cac4e1be026687dec38",
-      "coverage": 0.9125
+      "coverage": 0.9125,
+      "video_sha256": "0f214824d1efd3884e381e9029c1410739ddcfbef36731e13f0f0ba05a9d74e2",
+      "render_run": 42322677869,
+      "source_evidence_file": "professional_motion/output/remotion-validation.json"
     },
     "daily-remotion-2026-11-08-horror": {
       "profile": "horror",
