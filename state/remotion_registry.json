@@ -398,9 +398,23 @@
     "daily-remotion-2026-11-09-horror": {
       "profile": "horror",
       "due_at": "2026-11-09T10:00:00Z",
-      "status": "author_pending",
+      "status": "author_requested",
       "source_run": 42420485900,
-      "created_at": "2026-11-07T22:25:04.831496+00:00"
+      "created_at": "2026-11-07T22:25:04.831496+00:00",
+      "source_selection": {
+        "title": "Voyages in ‘search and discoverie of strange coasts, the chiefe subject of this my labour’",
+        "url": "https://www.rmg.co.uk/stories/maritime-history/library-archive/voyages-search-discoverie-strange-coasts-chiefe-subject-my",
+        "publisher": "Royal Museums Greenwich",
+        "canonical_subject": "maritime-9a2860f376f150bde116"
+      },
+      "source": {
+        "url": "https://www.rmg.co.uk/stories/maritime-history/library-archive/voyages-search-discoverie-strange-coasts-chiefe-subject-my"
+      },
+      "source_document": {
+        "path": "state/remotion_documents/daily-remotion-2026-11-09-horror-source-511d8ff6c3b46be0.json",
+        "sha256": "511d8ff6c3b46be0b11ab430356e7bffc6fd64bad0b1d9cf4f06b5a3b9319476"
+      },
+      "writer_run": 42420485900
     }
   },
   "cutover_evidence": {
