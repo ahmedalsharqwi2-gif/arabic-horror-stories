@@ -398,7 +398,7 @@
     "daily-remotion-2026-11-09-horror": {
       "profile": "horror",
       "due_at": "2026-11-09T10:00:00Z",
-      "status": "review_requested",
+      "status": "authored",
       "source_run": 42420485900,
       "created_at": "2026-11-07T22:25:04.831496+00:00",
       "source_selection": {
@@ -448,7 +448,15 @@
         "sha256": "bdd1c0d485e168e3977a5a30d572e1edb02cc38ff9c7d08b68a46b2865d6d512"
       },
       "canonical_subject": "maritime-9a2860f376f150bde116",
-      "title": "إزاي شخص مسافرش بره بلده وجمع أخطر رحلات البحار؟"
+      "title": "إزاي شخص مسافرش بره بلده وجمع أخطر رحلات البحار؟",
+      "editorial_review": {
+        "supported": true,
+        "engaging": true,
+        "novel": true,
+        "visuals_match": true,
+        "issues": [],
+        "passed": true
+      }
     }
   },
   "cutover_evidence": {
