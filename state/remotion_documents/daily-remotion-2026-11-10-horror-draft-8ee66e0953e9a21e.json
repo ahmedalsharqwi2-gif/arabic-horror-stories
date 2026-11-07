@@ -1,0 +1,158 @@
+{
+  "title": "مين اللي ضاع أسمه في صور رحلة تشالنجر؟",
+  "canonical_subject": "maritime-45b7a430904befae7544",
+  "hashtags": [
+    "تاريخ",
+    "تحقيق",
+    "أرشيف",
+    "بحرية"
+  ],
+  "scenes": [
+    {
+      "label": "البداية والأرشيف المنسي",
+      "narration": "تعالوا نعرف سر الصور القديمة لرحلة سفينة تشالنجر سنة 1872 اللي لفت العالم. الأرشيف ده بيعرض صور لناس كتير ظهرت مع البعثة، بس المشكلة إن الأسامي الحقيقية للأشخاص دول اتغيرت أو اتقصت تماماً بفعل الزمن والجهل الاستعماري القديم، وسابت ورراها علامات استفهام كتيرة.",
+      "evidence_quote": "Individuals in these photographs are rarely identified by name, with their original compilers opting instead to caption images with generalised",
+      "diagram": "compare",
+      "labels": [
+        "أرشيف",
+        "صور قديمة",
+        "سفينة تشالنجر"
+      ],
+      "secondary_object": "document",
+      "interaction": "contrast",
+      "shot_type": "archive",
+      "hero_object": "ship",
+      "object_motion": "drift",
+      "image_query": "HMS Challenger ship old archive photograph",
+      "visual_rationale": "Contrast between the ship and old documents to show missing names in the historical records."
+    },
+    {
+      "label": "طاقم التصوير والمتغيرات",
+      "narration": "الرحلة دي طولت بشكل مرعب في وسط البحر من غير أي نزول لأرض لمدة أسابيع طويلة. ده خلى المصورين الرسمي اللي طلعوا مع البعثة يهربوا واحد ورا التاني في موانئ زي كيب تاون وهونج كونج، وسابوا الباحثين في حيرة من أمرهم وسط البحر الواسع.",
+      "evidence_quote": "Caleb Newbold started off with the voyage, but absconded from the ship in Cape Town in December 1873",
+      "diagram": "flow",
+      "labels": [
+        "مصورين",
+        "هروب",
+        "موانئ"
+      ],
+      "secondary_object": "monitor",
+      "interaction": "approach",
+      "shot_type": "location",
+      "hero_object": "person",
+      "object_motion": "shake",
+      "image_query": "historic port photography Cape Town 1873",
+      "visual_rationale": "Illustrates the departure of photographers from the ship using archival logs."
+    },
+    {
+      "label": "ويليام بيمبا والطبيعي المنسي",
+      "narration": "في وسط كل اللخبطة دي، ظهر اسم ويليام بيمبا في السجلات الرسمية كعامل من الدرجة التالتة، لكن الدفاتر بتأكد إنه كان شغال طبيعي حقيقي جوه البعثة. وظهر في الصورة الوحيدة لطاقم العلم، بس اسمه اتكتب غلط وتجاهلوه لسنين طويلة بسبب العبث التاريخي والتمييز.",
+      "evidence_quote": "Although officially employed as a member of class 3 domestic staff, Pemba's profession is listed as Naturalist",
+      "diagram": "layers",
+      "labels": [
+        "ويليام بيمبا",
+        "طبيعي",
+        "دفاتر رسمية"
+      ],
+      "secondary_object": "document",
+      "interaction": "transfer",
+      "shot_type": "evidence",
+      "hero_object": "document",
+      "object_motion": "pulse",
+      "image_query": "scientific staff HMS Challenger 1874 photograph",
+      "visual_rationale": "Highlighting William Pemba in the crew photograph using document overlays."
+    },
+    {
+      "label": "وفاة مبكرة وغموض الحقيقة",
+      "narration": "للأسف بيمبا اتعب ونزل مستشفى بحري في هونج كونج، ومات بعدها باسبوع واحد بس نتيجة مرض استهلاكي خطير. وفاته السريعة دي هي اللي خلته يختفي من الذاكرة العامة لولا نبش الباحثين في الأرشيف المنسي عشان يرجعوا له جزء من كرامته الإنسانية.",
+      "evidence_quote": "Pemba unfortunately fell ill and was discharged to a naval hospital in Hong Kong in December 1874. He died just a week later",
+      "diagram": "cycle",
+      "labels": [
+        "وفاة",
+        "مستشفى",
+        "ذاكرة"
+      ],
+      "secondary_object": "fossil",
+      "interaction": "separate",
+      "shot_type": "absence",
+      "hero_object": "person",
+      "object_motion": "none",
+      "image_query": "19th century naval hospital Hong Kong archive",
+      "visual_rationale": "An absence shot focusing on the hospital record where Pemba passed away."
+    },
+    {
+      "label": "ملك جبل فيجي المجهول",
+      "narration": "وفي جزر فيجي، الكاميرا صورت شخص بوصف مهين جداً في دفاتر الأسطول زي رجل الشيطان، بس الأبحاث في مكتبة أكسفورد بينت الحقيقة. الشخص ده طلع الملك الحقيقي للقبائل هناك اسمه راتو ماتانيتوبوا، وكان لابس باروكة شعر تقليدية مميزة جداً بتدل على مكانته.",
+      "evidence_quote": "This duplicate image was annotated on the reverse, revealing that this man was in fact the Tui Namosi or King of one of the largest mountain tribes",
+      "diagram": "compare",
+      "labels": [
+        "فيجي",
+        "ملك الجبل",
+        "أكسفورد"
+      ],
+      "secondary_object": "book",
+      "interaction": "transfer",
+      "shot_type": "archive",
+      "hero_object": "person",
+      "object_motion": "spin",
+      "image_query": "Fiji mountain chief 19th century photograph archive",
+      "visual_rationale": "Comparing the derogatory caption with the actual archival note identifying the king."
+    },
+    {
+      "label": "المترجم الياباني الضائع",
+      "narration": "كمان المترجم الياباني للرحلة نيشي بايايشي ظهر في الصور مع عيلته، بس كل متحف كتب عنه اسم شكل. ده كتبوا عنه ساموراي، والتاني قال كاهن، والأرشيف البريطاني تجاهل اسمه خالص لحد ما الباحثة لقت اسمه متسجل صراحة في الهوامش الرسمية.",
+      "evidence_quote": "It was only in W.B. Carpenter’s collection at the Natural History Museum that the image caption revealed the identity of Bayeashi",
+      "diagram": "flow",
+      "labels": [
+        "مترجم ياباني",
+        "نيشي بايايشي",
+        "هوامش"
+      ],
+      "secondary_object": "document",
+      "interaction": "approach",
+      "shot_type": "evidence",
+      "hero_object": "document",
+      "object_motion": "drift",
+      "image_query": "Japanese interpreter Nishi Bayeashi 1875 archive",
+      "visual_rationale": "Zooming into the marginal notes in official correspondence to reveal the interpreter's name."
+    },
+    {
+      "label": "توبي وقصته في إندونيسيا",
+      "narration": "من ضمن الناس دي ظهر توبي، وهو شخص من جزيرة أقطاب إندونيسيا قضى سبعتاشر يوم مع الطاقم وساعدهم يعرفوا الموانئ الآمنة. لكن تصويره جانبياً بالطريقة دي بيكشف إزاي العلماء في الوقت ده كانوا بيتعاملوا مع السكان المحليين كعينات بحثية مش كبشر عاديين.",
+      "evidence_quote": "Taken from the side, this image stands in stark contrast with the group shot of Api Islanders",
+      "diagram": "layers",
+      "labels": [
+        "توبي",
+        "إندونيسيا",
+        "صورة جانبية"
+      ],
+      "secondary_object": "monitor",
+      "interaction": "contrast",
+      "shot_type": "archive",
+      "hero_object": "person",
+      "object_motion": "none",
+      "image_query": "Toby Api islander side profile 1874 photograph",
+      "visual_rationale": "Highlighting the anthropometric side-profile photography used on local inhabitants."
+    },
+    {
+      "label": "الخلاصة ومراجعة الأرشيف",
+      "narration": "الرحلة دي سابت ملايين البيانات، بس الأهم هو إعادة كتابة التاريخ ومنح الناس دي هويتهم اللي اتسرقت. المتاحف دلوقتي بتحاول تراجع الصور دي بحذر شديد مع المجتمعات الأصلية عشان تتأكد إن الحقيقة ظهرت كاملة من غير أي تزييف أو استعلاء قديم.",
+      "evidence_quote": "In working with archives of these kinds of images, there are points at which we need to ask ourselves whether re-showing certain images gives agency",
+      "diagram": "cycle",
+      "labels": [
+        "مراجعة",
+        "هوية",
+        "متاحف"
+      ],
+      "secondary_object": "server",
+      "interaction": "approach",
+      "shot_type": "location",
+      "hero_object": "server",
+      "object_motion": "pulse",
+      "image_query": "modern museum archive consultation room",
+      "visual_rationale": "Showing modern archival servers where historical catalog corrections take place."
+    }
+  ],
+  "cover_text": "أسامي منسية في صور تشالنجر",
+  "director_version": "v1.0"
+}
