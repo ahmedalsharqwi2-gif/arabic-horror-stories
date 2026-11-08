@@ -26,5 +26,7 @@
     "first_automatic_publication_date": "2026-11-05",
     "transition": "November 4 uses the already completed retained films; move the same existing Buffer IDs in place.",
     "permanent": true
-  }
+  },
+  "publication_interval_days": 3,
+  "publication_cadence_anchor_local_date": "2026-11-09"
 }
