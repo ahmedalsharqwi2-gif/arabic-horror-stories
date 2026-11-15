@@ -1,20 +1,10 @@
-# Actual delivery status
+# Horror follow-up review — validation in progress
 
-This rebuild remains a DRAFT candidate; the requested full production acceptance is incomplete.
+- Branch: rebuild/clean-pipeline; existing PR #95. Main and backup refs are not modified.
+- Original owner-provided JPG installed byte-for-byte at brand/logo/logo.jpg. SHA-256: f4dd2c963a4541493ea44af45ee5398cdb063fc874a1e40a0fe7a4a276c2320a. Header, intro/outro scene header and thumbnail use the same BrandLogo component through a canonical public alias. Source hash and rendered-pixel checks remain mandatory.
+- Actual local make test: 29 tests PASS, TypeScript PASS. This includes mocked 429/503, Retry-After (including discovery and model fallback), rate limits, persistent voice resume, source freshness and corroboration, immutable-logo tamper rejection. Tests do not contact Gemini.
+- Live full review via repository-bound GitHub Actions is the next execution step. Earlier run failures are not used as evidence of this follow-up's result.
+- Local make review is queued under a shared renderer lock. A missing local Gemini binding must fail preflight and may produce a clearly marked silent, incomplete visual preview; it can never become a narrated-film acceptance.
+- publish_enabled remains false. No Buffer/YouTube publication or scheduling is attempted.
 
-- Remote backup branch and tag verified before deletion. Main never modified.
-- Preserved identity, fonts, available font licenses and original historical topic data; extracted semantic topic index retained.
-- One review-only workflow; publishing blocked; no Buffer/YouTube upload or scheduling performed.
-- Local eight policy/evidence/service tests and TypeScript pass in all six repositories. Remote verify job also passed in all six.
-- Seven actual 1080x1920 template stills rendered and visually sampled for Nafhamha; seven for the stickman prototype, then re-rendered after outline/expression changes. These are not complete episodes.
-- Actual local review attempt failed at missing Gemini binding. Actual remote review attempts failed as recorded below.
-
-Latest remote attempt: https://github.com/ahmedalsharqwi2-gif/arabic-horror-stories/actions/runs/43767712376
-
-Failure: `script: PROVIDER_HTTP_503`.
-
-No new complete film, final contact sheet, listening approval or reference-level acceptance was produced. Original inline logo images were seen but their file bytes were unavailable through the attachment tool, so they have not been recreated or falsely claimed installed. Exact-logo installation, fully matched art direction, automatic visual/pronunciation/character gates, comprehensive Python lock/license audit, and service caller compatibility remain incomplete. See RUNBOOK and REFERENCE_COMPARISON before any production use.
-
-Provider 429 means usage/rate limits; 503 means provider unavailable; no-current-source deliberately stops stale/unverified news; missing Gemini binding needs the existing secure repository connection configured, not a key pasted into chat.
-
-Remotion may require a paid Company License for commercial organizations outside its free eligibility; see LICENSES.md.
+A terminal result, exact new error if any, actual video/contact-sheet artifact and measured QA will replace this in-progress observation after the run completes. Reference-level art direction and listening approval are not claimed.

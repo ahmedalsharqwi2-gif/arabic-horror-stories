@@ -18,3 +18,13 @@ All listed bytes preserved at their original paths, except the Nafhamha identity
 | `professional_motion/fonts/IBMPlexMono-Medium.ttf` | `a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755` |
 
 Original logo present in checkout: no. The owner subsequently supplied inline logo references. Their original file bytes have not been exposed by the upload tool; no replacement has been drawn. See config/logo-intake.json. Original font files and their available notices remain. Charon and intended 17:00 Africa/Cairo destination names remain in config. No .mp4 files were tracked on the cloned main snapshots; no approved media was deleted from remote media branches. Legacy scheduling files are in the backup, but the new branch has only one active workflow.
+
+## Follow-up original logo installation
+
+Source: Owner supplied logos.zip / arabic-horror-stories.jpg
+
+Canonical file: `brand/logo/logo.jpg`
+
+SHA-256: `f4dd2c963a4541493ea44af45ee5398cdb063fc874a1e40a0fe7a4a276c2320a`
+
+Byte-for-byte copy verified; no redraw, recolor, background removal, raster edit or vectorization. The public/brand/logo directory is a symlink to the canonical directory. Header, intro/outro and thumbnail use the same Logo component and source.

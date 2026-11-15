@@ -1,0 +1,2 @@
+import path from 'node:path';import {partialReview} from './render.mjs';import {json} from './io.mjs';import {layoutQA} from './layout-qa.mjs';
+const out=path.resolve('out/visual-followup');const result=await partialReview(out,await json('config/channel.json'),{reason:'NARRATION_PROVIDER_NOT_AVAILABLE_FOR_LOCAL_REVIEW'});const props=await json(path.join(out,'visual-preview-props.json'));await layoutQA(props,out);console.log(JSON.stringify(result));
