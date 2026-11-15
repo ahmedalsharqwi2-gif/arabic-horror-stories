@@ -1,0 +1,225 @@
+{
+  "schema": 1,
+  "id": "2026-11-15T22-22-33-042Z",
+  "profile": "horror",
+  "episode": {
+    "topicKey": "voyager-1-light-day-unknown",
+    "title": "فويجر 1: رسالة في ظلمات الفضاء السحيق",
+    "hook": "هل تخيلت إن فيه مركبة فضائية من صنع البشر بتسافر بقالها خمسين سنة ووصلت لمسافة محتاجة يوم كامل عشان الضوء يوصلها؟",
+    "cta": "شاركنا رأيك في التعليقات وما تنساش تتابعنا لمزيد من أسرار الفضاء المجهول.",
+    "scenes": [
+      {
+        "title": "إنجاز فضائي تاريخي",
+        "text": "هل تخيلت إن فيه مركبة من صنع البشر بقالها خمسين سنة مسافرة في ظلمات الفضاء السحيق، ووصلت لمسافة محتاجة يوم كامل عشان شعاع الضوء يقدر يوصلها؟",
+        "summary": "فويجر 1 تصل لمسافة يوم ضوئي كامل عن الأرض.",
+        "keyword": "فويجر 1",
+        "template": "phenomenon",
+        "labels": [
+          "الفضاء السحيق",
+          "يوم ضوئي",
+          "ناسا"
+        ],
+        "values": [],
+        "claim": "فويجر 1 تبعد عن كوكب الأرض مسافة تتطلب يوما كاملا لوصول الضوء إليها",
+        "sourceId": "cd85106e7b1b",
+        "evidence": "takes a full 24 hours to reach it.",
+        "kind": "fact",
+        "expression": 10,
+        "action": "point"
+      },
+      {
+        "title": "مسافة وسرعة مرعبة",
+        "text": "المسبار فويجر وان بيتحرك بسرعة تبلغ واحد وستين ألف كيلومتر في الساعة، وقطع مسافة تقارب ستة وعشرين مليار كيلومتر، لدرجة إن الرسالة عشان تروح وترجع محتاجة يومين كاملين.",
+        "summary": "سرعة المسبار والمسافة الشاسعة التي قطعها.",
+        "keyword": "سرعة فويجر",
+        "template": "journey",
+        "labels": [
+          "مسافة هائلة",
+          "سرعة خارقة",
+          "اتصالات"
+        ],
+        "values": [],
+        "claim": "يسير المسبار بسرعة 61 ألف كم/س وقطع 26 مليار كم والرد يستغرق يومين",
+        "sourceId": "cd85106e7b1b",
+        "evidence": "Voyager 1, cruising through space at nearly 38,000 mph (61,000 km/h), is just shy of 16 billion miles (about 26 billion kilometers) from Earth.",
+        "kind": "fact",
+        "expression": 8,
+        "action": "walk"
+      },
+      {
+        "title": "سحابة أورت والجاذبية",
+        "text": "رغم إن المسبار خرج بره فقاعة الغلاف الشمسي سنة ألفين واثنا عشر، إلا إنه لسه واقع تحت جاذبية الشمس، ومحتاج حوالي ثلاثمائة سنة بس عشان يوصل لحافة سحابة أورت الجليدية.",
+        "summary": "المسبار لا يزال خاضعا لجاذبية الشمس وسحابة أورت.",
+        "keyword": "سحابة أورت",
+        "template": "map",
+        "labels": [
+          "جاذبية الشمس",
+          "الغلاف الشمسي",
+          "سحابة أورت"
+        ],
+        "values": [],
+        "claim": "يحتاج المسبار 300 عام للوصول للحافة الداخلية لسحابة أورت",
+        "sourceId": "cd85106e7b1b",
+        "evidence": "Voyager 1 will need about 300 more years just to reach the cloud's inner edge, and possibly 30,000 years to fly beyond it, according to NASA .",
+        "kind": "fact",
+        "expression": 5,
+        "action": "turn"
+      },
+      {
+        "title": "رحلة نحو نجم مجهول",
+        "text": "العلماء بيأكدوا إن المسبار محتاج ثلاثين ألف سنة عشان يتجاوز السحابة دي بالكامل، وفي خلال أربعين ألف سنة هيمر بالقرب من نجم خافت اسمه جليز أربعمائة وخمسة وأربعين في أعماق المجرة.",
+        "summary": "مسار فويجر الطويل نحو نجم جليز 445.",
+        "keyword": "نجم جليز",
+        "template": "steps",
+        "labels": [
+          "سنوات ضوئية",
+          "نجم جليز 445",
+          "مسار الرحلة"
+        ],
+        "values": [],
+        "claim": "سيمر فويجر 1 على مسافة 1.7 سنة ضوئية من النجم جليز 445 بعد 40 ألف سنة",
+        "sourceId": "cd85106e7b1b",
+        "evidence": "On its current path, Voyager 1 will pass within 1.7 light-years of a dim star called Gliese 445 in about 40,000 years",
+        "kind": "fact",
+        "expression": 1,
+        "action": "walk"
+      },
+      {
+        "title": "اكتشافات قلبت الموازين",
+        "text": "الرحلة دي كشفت أسرار مذهلة زي ثلاثة وعشرين قمر، وبراكين نشطة على قمر آيو سنة تسعة وسبعين، بجانب صور قريبة لقمر يوروبا غيرت مفاهيمنا تماما عن إمكانية وجود عوالم حية.",
+        "summary": "اكتشاف أقمار وبراكين نشطة خارج كوكب الأرض.",
+        "keyword": "اكتشافات فويجر",
+        "template": "comparison",
+        "labels": [
+          "قمر آيو",
+          "قمر يوروبا",
+          "براكين فضائية"
+        ],
+        "values": [],
+        "claim": "اكتشف فويجر 1 براكين نشطة على قمر المشتري آيو عام 1979",
+        "sourceId": "cd85106e7b1b",
+        "evidence": "Voyager 1 spotted active volcanoes on Jupiter's moon Io in 1979, the first time they had been seen on any world other than Earth.",
+        "kind": "fact",
+        "expression": 9,
+        "action": "point"
+      },
+      {
+        "title": "نفاد الطاقة تدريجيا",
+        "text": "بطاريات البلوتونيوم النووية بدأت تضعف تدريجيا بعد عقود طويلة، وده اللي خلى وكالة ناسا تقفل معظم الأجهزة العلمية وتسيب جهازين بس شغالين لقياس المجالات المغناطيسية والإشعاعات الكونية في الفضاء بين النجمي.",
+        "summary": "تراجع الطاقة وتشغيل جهازين فقط لحفظ المسبار.",
+        "keyword": "بطاريات نووية",
+        "template": "cause",
+        "labels": [
+          "طاقة نووية",
+          "بلوتونيوم",
+          "توفير الطاقة"
+        ],
+        "values": [],
+        "claim": "يعمل جهازان علميان فقط على فويجر 1 لقياس المجالات المغناطيسية والأشعة الكونية",
+        "sourceId": "cd85106e7b1b",
+        "evidence": "Today, only two remain active on Voyager 1 and three on Voyager 2, measuring the magnetic fields, plasma and cosmic rays of interstellar space.",
+        "kind": "fact",
+        "expression": 6,
+        "action": "hang"
+      },
+      {
+        "title": "الصمت الأخير في 2036",
+        "text": "المهندسون قرروا إن مقياس المغناطيسية هيكون آخر جهاز يتقفل، وممكن المسبار يفضل يبعت إشارات هندسية لحد سنة ألفين وستة وثلاثين، وبعدها هيستمر في الانجراف الصامت للأبد ككتلة حديدية سليمة.",
+        "summary": "نهاية إرسال البيانات واستمرار الانجراف للأبد.",
+        "keyword": "صمت فويجر",
+        "template": "steps",
+        "labels": [
+          "نهاية الإرسال",
+          "سنة 2036",
+          "انجراف أبدي"
+        ],
+        "values": [],
+        "claim": "قد تستمر الإشارات الهندسية حتى عام 2036 قبل أن يصمت المسبار تماما",
+        "sourceId": "cd85106e7b1b",
+        "evidence": "After the science data eventually stops, both probes may still keep beaming back basic engineering updates, such as about their health and power status, until around 2036, according to NASA .",
+        "kind": "fact",
+        "expression": 2,
+        "action": "sleep"
+      },
+      {
+        "title": "رسالة ذهبية للكائنات",
+        "text": "المسبار شايل جواه أسطوانة ذهبية بتضم أصوات وتحيات بخمس وخمسين لغة وخريطة لموقع الأرض، لكن العلماء بيشوفوا إن احتمالية عثور أي كائنات فضائية عليها في الفضاء الشاسع شبه مستحيلة.",
+        "summary": "القرص الذهبي ورسائل البشر إلى الفضاء.",
+        "keyword": "القرص الذهبي",
+        "template": "phenomenon",
+        "labels": [
+          "القرص الذهبي",
+          "لغات العالم",
+          "حضارات فضائية"
+        ],
+        "values": [],
+        "claim": "يحمل المسبار قرصا ذهبيا يحتوي تحيات بـ 55 لغة وخريطة لموقع الأرض",
+        "sourceId": "cd85106e7b1b",
+        "evidence": "They hold sounds such as wind and animal calls, greetings in 55 languages, images of our planet and a celestial map pinpointing its location",
+        "kind": "fact",
+        "expression": 11,
+        "action": "point"
+      },
+      {
+        "title": "سفير البشرية المنسي",
+        "text": "شاركنا رأيك في التعليقات، هل تفتكر كبسولة البشرية دي ممكن تقع في إيد حضارة تانية يوما ما، ولا هتفضل تايهة في الظلام السحيق للأبد، وما تنساش تتابعنا لمزيد من الأسرار.",
+        "summary": "تساؤل عن مصير رسالة الأرض في المجهول.",
+        "keyword": "مصير فويجر",
+        "template": "journey",
+        "labels": [
+          "مصير مجهول",
+          "سفير الأرض",
+          "مشاركة الرأي"
+        ],
+        "values": [],
+        "claim": "يواصل المسبار رحلته في الفضاء إلى ما بعد حياة صانعيه",
+        "sourceId": "cd85106e7b1b",
+        "evidence": "\"Although I won't be able to speak to the Voyager spacecraft any more, I love knowing that I'll always be able to look to the stars and know they're still on their way.\"",
+        "kind": "fact",
+        "expression": 10,
+        "action": "turn"
+      }
+    ]
+  },
+  "topic": {
+    "selected": {
+      "id": "cd85106e7b1b",
+      "title": "'Out there, moving into the unknown': As Voyager 1 reaches one light-day from Earth, scientists reflect on its past — and its future",
+      "url": "https://www.livescience.com/space/space-exploration/out-there-moving-into-the-unknown-as-voyager-1-reaches-one-light-day-from-earth-scientists-reflect-on-its-past-and-its-future",
+      "text": "NASA's Voyager 1 probe, already the farthest human-made object in space, is about to set another record. On Nov. 18, the spacecraft will be so far from Earth that light, the universe's ultimate speed limit , takes a full 24 hours to reach it. For researchers who worked on the Voyager program and continue to study its data, the symbolic milestone of being a full light-day from Earth celebrates a mission that continues half a century after it began. Since launching in September 1977, the twin Voyager probes have outlasted many of the engineers who built them, and their flybys of the outer solar system planets remain some of the best close-up observations scientists have of those distant worlds. \"Voyager 1 and Voyager 2 are transcending generations,\" Pascal Lee , a planetary scientist at the SETI Institute who was part of the Voyager 2 team at NASA's Jet Propulsion Laboratory (JPL) during its Neptune flyby in 1989, told Live Science. \"Not only is their data relevant, but they themselves are still out there, moving into the unknown.\" Here is what the Voyagers have revealed about the solar system and interstellar space, what happens when their power finally runs out, and whether anyone — or anything — might ever intercept the messages from Earth they carry. How far are Voyager 1 and Voyager 2 from Earth now? A NASA simulation showing where Voyager 1 is relative to the sun and solar system planets. (Image credit: NASA/JPL) Voyager 1, cruising through space at nearly 38,000 mph (61,000 km/h), is just shy of 16 billion miles (about 26 billion kilometers) from Earth. That's the distance light travels in 24 hours, also known as one light-day. The spacecraft will reach this milestone on Nov. 18 at 5:16:07 a.m. ET, after traveling through space for 49 years, two months and 11 days. As long as that sounds, \"it's still pathetically slow in the grand scheme of things,\" Lee told Live Science. If anything, it reminds us of the sheer vastness of space and time, and how this spacecraft is just a little mote of dust that's barely drifted out of the solar system still. Pascal Lee, Voyager 2 team member Scientifically speaking, Voyager 1 hasn't even left its home neighborhood yet . In 2012, the probe traveled beyond the heliosphere, the bubble of plasma blown outward by the sun that shields the planets from incoming cosmic radiation. But it still remains within the sun's gravitational grasp, which extends past the Oort Cloud — a vast spherical shell of icy bodies surrounding the solar system. Voyager 1 will need about 300 more years just to reach the cloud's inner edge, and possibly 30,000 years to fly beyond it, according to NASA . \"If anything, it reminds us of the sheer vastness of space and time, and how this spacecraft is just a little mote of dust that's barely drifted out of the solar system still,\" Lee said. On its current path, Voyager 1 will pass within 1.7 light-years of a dim star called Gliese 445 in about 40,000 years, at which point it will be closer to that star than to our own sun. Farther out, the nearest star system to our own, Proxima Centauri, sits about 4.24 light-years away — more than 1,500 times farther than Voyager 1 will be on Nov. 18. Meanwhile Voyager 1's twin, Voyager 2, took a different route through the solar system after both probes launched in 1977, in order to swing past Uranus and Neptune after revisiting Jupiter and Saturn. Currently in interstellar space about 13 billion miles (21 million km) from Earth, Voyager 2 will reach its own light-day mark in November 2035, according to NASA . What does a light-day mean for talking to Voyager 1? An illustration of the Voyager probes passing beyond the heliopause, into interstellar space. (Image credit: NASA/JPL-Caltech) Crossing the one-light-day mark doesn't change how NASA communicates with the probe, though it does demand more patience. NASA talks to the spacecraft using radio signals, which travel at the speed of light. At a distance of one light-day, a signal sent from Earth takes 24 hours to reach Voyager 1, and a reply takes another 24 hours to make the return journey. \"If you want to say 'hello' to Voyager, you send your message and then you go home and you wait two days before you finally get a response,\" Suzanne Dodd , Voyager project manager at JPL, said in a recent statement . As the spacecraft continues to cruise deeper into space, that wait will grow longer. Moreover, 50 years of traversing the solar system and the increasing distance from our sun takes a toll on the probe itself. Because sunlight in the outer reaches is far too faint for solar panels, Voyager 1 relies on nuclear batteries that convert heat from the natural decay of plutonium into electricity. That supply is gradually dwindling, prompting NASA to gradually shut down nonessential instruments to conserve what energy remains and extend the mission as much as possible. Kelly Perry, a data systems engineer on the Voyager program at JPL, told Live Science via email that the mission team's priority remains the same: \"keep the spacecraft going as long as possible.\" What have the Voyager probes taught us? A montage of planets imaged by the twin Voyager probes, showing Jupiter, Saturn, Uranus and Neptune. (Image credit: NASA/JPL) Before the Voyagers launched, the outer solar system was largely a blur of telescopic speculation. The twin probes took advantage of a planetary alignment that comes around only once every 176 years, using the gravity of giant planets to slingshot themselves onward. Together, they have discovered 23 moons across the outer solar system, revealed faint rings around Jupiter and captured the first detailed atmospheric profiles of Saturn, Uranus and Neptune. They also gave the first detailed, close-up views of Jupiter's moon Europa, transforming our perception of it from a blurry speck into a remarkably smooth, geologically young world — and now one of the prime candidates for finding extraterrestrial life . We had no idea what they looked like. And all of a sudden they became places we could map, imagine ourselves exploring, landing on…they became places. Pascal Lee, Voyager 2 team member Among the more striking finds, Voyager 1 spotted active volcanoes on Jupiter's moon Io in 1979, the first time they had been seen on any world other than Earth. \"We had no idea what they looked like,\" Lee said. \"And all of a sudden they became places we could map, imagine ourselves exploring, landing on…they became places,\" he added. \"That's what Voyager was for me — a voyage of discovery,\" he said. These discoveries laid the groundwork for decades of follow-up exploration, including NASA's Galileo mission to Jupiter and the Cassini mission to Saturn. Decades later, as the only spacecraft to return in situ data from outside the heliosphere, the probes also proved that interstellar space is a dynamic, complex frontier rather than an empty vacuum. How much time does Voyager 1 have left, and what happens when it falls silent? Each Voyager spacecraft launched with 10 science instruments. Today, only two remain active on Voyager 1 and three on Voyager 2, measuring the magnetic fields, plasma and cosmic rays of interstellar space. NASA began switching off the others one by one decades ago to conserve power, including the camera on Voyager 1 just minutes after it snapped the famous \"Pale Blue Dot\" portrait of the solar system in 1990. Ongoing power-saving reconfigurations have since helped keep the aging spacecraft operational nearly 50 years into its lifetime. Voyager's iconic \"Pale Blue Dot\" image shows Earth as a \"mote of dust suspended in a sunbeam,\" in the words of Carl Sagan. (Image credit: NASA/JPL) In one such recent effort, nicknamed the \" Big Bang ,\" engineers shut off certain high-power subsystems while switching on lower-power alternatives, which \"bought us almost two more years during which we will not need to turn any instrument off,\" Perry said. With onboard power steadily dwindling, however, \"there's a recognition that it won't be forever,\" Deana Weibel , an anthropologist at the Grand Valley State University in Michigan who co-authored an upcoming book about the Golden Record aboard the Voyager probes, told Live Science. Because Voyager is a science mission, its mission will be considered finished when \"no science instruments are operational,\" Perry said. \"The Science Team decided that the last remaining instrument will be the magnetometer,\" she added. \"We will never intentionally power off this instrument.\" After the science data eventually stops, both probes may still keep beaming back basic engineering updates, such as about their health and power status, until around 2036, according to NASA . Even after the spacecraft finally fall silent, they will keep coasting through interstellar space, and \"analysis shows that they should remain intact,\" Perry said. Scientists will still be able to calculate their positions based on their last known speed and trajectories, Weibel said. \"We'll know intellectually where it is unless it gets intercepted.\" Could an alien civilization discover the Voyager probes? An illustration of Voyager shown next to the Golden Record. (Image credit: NASA/JPL-Caltech) Theoretically, yes. But interstellar space is so unfathomably vast that the chances of aliens finding the probes are vanishingly small, Lee said. That makes it unlikely that aliens will ever find the Voyager Golden Records — twin gold-plated discs meant to portray the diversity of life on Earth. They hold sounds such as wind and animal calls, greetings in 55 languages, images of our planet and a celestial map pinpointing its location — all intended for a hypothetical civilization capable of retrieving and playing them. (The probes also carry visual instructions for spinning the records). In that sense, the Golden Records are as much an artistic exercise as a scientific one. \"The chances of us going after Voyager 1 and bringing it back for the Smithsonian — not that it's likely — are more believable than any chance of an alien civilization finding it, and then playing the record,\" Lee said. Knowing that Voyager will continue its mission long past my lifetime actually gives me comfort Kelly Perry, Voyager team member If an extraterrestrial civilization did find the probe after we lost contact with it, \"we would have no way of knowing,\" Weibel added. \"It becomes something that's powered entirely by imagination at that point.\" So why send a message at all? All three scientists interviewed for this story see the Golden Record as a cosmic time capsule, a symbolic gesture meant to unite humanity around a shared home planet. For all its imperfections, including the omission of some widely spoken languages and a few mislabeled tracks , the disc remains an enduring emblem of human presence on Earth, they said. \"Knowing that Voyager will continue its mission long past my lifetime actually gives me comfort,\" Perry told Live Science. \"Although I won't be able to speak to the Voyager spacecraft any more, I love knowing that I'll always be able to look to the stars and know they're still on their way.\"",
+      "published": "2026-11-15T20:00:00.000Z",
+      "official": false,
+      "score": 37.623827500000004
+    },
+    "sources": [
+      {
+        "id": "cd85106e7b1b",
+        "title": "'Out there, moving into the unknown': As Voyager 1 reaches one light-day from Earth, scientists reflect on its past — and its future",
+        "url": "https://www.livescience.com/space/space-exploration/out-there-moving-into-the-unknown-as-voyager-1-reaches-one-light-day-from-earth-scientists-reflect-on-its-past-and-its-future",
+        "text": "NASA's Voyager 1 probe, already the farthest human-made object in space, is about to set another record. On Nov. 18, the spacecraft will be so far from Earth that light, the universe's ultimate speed limit , takes a full 24 hours to reach it. For researchers who worked on the Voyager program and continue to study its data, the symbolic milestone of being a full light-day from Earth celebrates a mission that continues half a century after it began. Since launching in September 1977, the twin Voyager probes have outlasted many of the engineers who built them, and their flybys of the outer solar system planets remain some of the best close-up observations scientists have of those distant worlds. \"Voyager 1 and Voyager 2 are transcending generations,\" Pascal Lee , a planetary scientist at the SETI Institute who was part of the Voyager 2 team at NASA's Jet Propulsion Laboratory (JPL) during its Neptune flyby in 1989, told Live Science. \"Not only is their data relevant, but they themselves are still out there, moving into the unknown.\" Here is what the Voyagers have revealed about the solar system and interstellar space, what happens when their power finally runs out, and whether anyone — or anything — might ever intercept the messages from Earth they carry. How far are Voyager 1 and Voyager 2 from Earth now? A NASA simulation showing where Voyager 1 is relative to the sun and solar system planets. (Image credit: NASA/JPL) Voyager 1, cruising through space at nearly 38,000 mph (61,000 km/h), is just shy of 16 billion miles (about 26 billion kilometers) from Earth. That's the distance light travels in 24 hours, also known as one light-day. The spacecraft will reach this milestone on Nov. 18 at 5:16:07 a.m. ET, after traveling through space for 49 years, two months and 11 days. As long as that sounds, \"it's still pathetically slow in the grand scheme of things,\" Lee told Live Science. If anything, it reminds us of the sheer vastness of space and time, and how this spacecraft is just a little mote of dust that's barely drifted out of the solar system still. Pascal Lee, Voyager 2 team member Scientifically speaking, Voyager 1 hasn't even left its home neighborhood yet . In 2012, the probe traveled beyond the heliosphere, the bubble of plasma blown outward by the sun that shields the planets from incoming cosmic radiation. But it still remains within the sun's gravitational grasp, which extends past the Oort Cloud — a vast spherical shell of icy bodies surrounding the solar system. Voyager 1 will need about 300 more years just to reach the cloud's inner edge, and possibly 30,000 years to fly beyond it, according to NASA . \"If anything, it reminds us of the sheer vastness of space and time, and how this spacecraft is just a little mote of dust that's barely drifted out of the solar system still,\" Lee said. On its current path, Voyager 1 will pass within 1.7 light-years of a dim star called Gliese 445 in about 40,000 years, at which point it will be closer to that star than to our own sun. Farther out, the nearest star system to our own, Proxima Centauri, sits about 4.24 light-years away — more than 1,500 times farther than Voyager 1 will be on Nov. 18. Meanwhile Voyager 1's twin, Voyager 2, took a different route through the solar system after both probes launched in 1977, in order to swing past Uranus and Neptune after revisiting Jupiter and Saturn. Currently in interstellar space about 13 billion miles (21 million km) from Earth, Voyager 2 will reach its own light-day mark in November 2035, according to NASA . What does a light-day mean for talking to Voyager 1? An illustration of the Voyager probes passing beyond the heliopause, into interstellar space. (Image credit: NASA/JPL-Caltech) Crossing the one-light-day mark doesn't change how NASA communicates with the probe, though it does demand more patience. NASA talks to the spacecraft using radio signals, which travel at the speed of light. At a distance of one light-day, a signal sent from Earth takes 24 hours to reach Voyager 1, and a reply takes another 24 hours to make the return journey. \"If you want to say 'hello' to Voyager, you send your message and then you go home and you wait two days before you finally get a response,\" Suzanne Dodd , Voyager project manager at JPL, said in a recent statement . As the spacecraft continues to cruise deeper into space, that wait will grow longer. Moreover, 50 years of traversing the solar system and the increasing distance from our sun takes a toll on the probe itself. Because sunlight in the outer reaches is far too faint for solar panels, Voyager 1 relies on nuclear batteries that convert heat from the natural decay of plutonium into electricity. That supply is gradually dwindling, prompting NASA to gradually shut down nonessential instruments to conserve what energy remains and extend the mission as much as possible. Kelly Perry, a data systems engineer on the Voyager program at JPL, told Live Science via email that the mission team's priority remains the same: \"keep the spacecraft going as long as possible.\" What have the Voyager probes taught us? A montage of planets imaged by the twin Voyager probes, showing Jupiter, Saturn, Uranus and Neptune. (Image credit: NASA/JPL) Before the Voyagers launched, the outer solar system was largely a blur of telescopic speculation. The twin probes took advantage of a planetary alignment that comes around only once every 176 years, using the gravity of giant planets to slingshot themselves onward. Together, they have discovered 23 moons across the outer solar system, revealed faint rings around Jupiter and captured the first detailed atmospheric profiles of Saturn, Uranus and Neptune. They also gave the first detailed, close-up views of Jupiter's moon Europa, transforming our perception of it from a blurry speck into a remarkably smooth, geologically young world — and now one of the prime candidates for finding extraterrestrial life . We had no idea what they looked like. And all of a sudden they became places we could map, imagine ourselves exploring, landing on…they became places. Pascal Lee, Voyager 2 team member Among the more striking finds, Voyager 1 spotted active volcanoes on Jupiter's moon Io in 1979, the first time they had been seen on any world other than Earth. \"We had no idea what they looked like,\" Lee said. \"And all of a sudden they became places we could map, imagine ourselves exploring, landing on…they became places,\" he added. \"That's what Voyager was for me — a voyage of discovery,\" he said. These discoveries laid the groundwork for decades of follow-up exploration, including NASA's Galileo mission to Jupiter and the Cassini mission to Saturn. Decades later, as the only spacecraft to return in situ data from outside the heliosphere, the probes also proved that interstellar space is a dynamic, complex frontier rather than an empty vacuum. How much time does Voyager 1 have left, and what happens when it falls silent? Each Voyager spacecraft launched with 10 science instruments. Today, only two remain active on Voyager 1 and three on Voyager 2, measuring the magnetic fields, plasma and cosmic rays of interstellar space. NASA began switching off the others one by one decades ago to conserve power, including the camera on Voyager 1 just minutes after it snapped the famous \"Pale Blue Dot\" portrait of the solar system in 1990. Ongoing power-saving reconfigurations have since helped keep the aging spacecraft operational nearly 50 years into its lifetime. Voyager's iconic \"Pale Blue Dot\" image shows Earth as a \"mote of dust suspended in a sunbeam,\" in the words of Carl Sagan. (Image credit: NASA/JPL) In one such recent effort, nicknamed the \" Big Bang ,\" engineers shut off certain high-power subsystems while switching on lower-power alternatives, which \"bought us almost two more years during which we will not need to turn any instrument off,\" Perry said. With onboard power steadily dwindling, however, \"there's a recognition that it won't be forever,\" Deana Weibel , an anthropologist at the Grand Valley State University in Michigan who co-authored an upcoming book about the Golden Record aboard the Voyager probes, told Live Science. Because Voyager is a science mission, its mission will be considered finished when \"no science instruments are operational,\" Perry said. \"The Science Team decided that the last remaining instrument will be the magnetometer,\" she added. \"We will never intentionally power off this instrument.\" After the science data eventually stops, both probes may still keep beaming back basic engineering updates, such as about their health and power status, until around 2036, according to NASA . Even after the spacecraft finally fall silent, they will keep coasting through interstellar space, and \"analysis shows that they should remain intact,\" Perry said. Scientists will still be able to calculate their positions based on their last known speed and trajectories, Weibel said. \"We'll know intellectually where it is unless it gets intercepted.\" Could an alien civilization discover the Voyager probes? An illustration of Voyager shown next to the Golden Record. (Image credit: NASA/JPL-Caltech) Theoretically, yes. But interstellar space is so unfathomably vast that the chances of aliens finding the probes are vanishingly small, Lee said. That makes it unlikely that aliens will ever find the Voyager Golden Records — twin gold-plated discs meant to portray the diversity of life on Earth. They hold sounds such as wind and animal calls, greetings in 55 languages, images of our planet and a celestial map pinpointing its location — all intended for a hypothetical civilization capable of retrieving and playing them. (The probes also carry visual instructions for spinning the records). In that sense, the Golden Records are as much an artistic exercise as a scientific one. \"The chances of us going after Voyager 1 and bringing it back for the Smithsonian — not that it's likely — are more believable than any chance of an alien civilization finding it, and then playing the record,\" Lee said. Knowing that Voyager will continue its mission long past my lifetime actually gives me comfort Kelly Perry, Voyager team member If an extraterrestrial civilization did find the probe after we lost contact with it, \"we would have no way of knowing,\" Weibel added. \"It becomes something that's powered entirely by imagination at that point.\" So why send a message at all? All three scientists interviewed for this story see the Golden Record as a cosmic time capsule, a symbolic gesture meant to unite humanity around a shared home planet. For all its imperfections, including the omission of some widely spoken languages and a few mislabeled tracks , the disc remains an enduring emblem of human presence on Earth, they said. \"Knowing that Voyager will continue its mission long past my lifetime actually gives me comfort,\" Perry told Live Science. \"Although I won't be able to speak to the Voyager spacecraft any more, I love knowing that I'll always be able to look to the stars and know they're still on their way.\"",
+        "published": "2026-11-15T20:00:00.000Z",
+        "official": false
+      }
+    ],
+    "trend": [
+      "امم اوروبا",
+      "lamine yamal",
+      "james trafford",
+      "تعويض",
+      "الوطن",
+      "ماتش اسبانيا وانجلترا",
+      "الشروق الجديد",
+      "أنصار الله الحوثيون",
+      "uefa nations league",
+      "belgium vs italy"
+    ],
+    "scoring": "official authority + freshness + observed Egypt Trends lexical overlap; no fabricated interest-volume metric"
+  },
+  "scriptSha256": "52ba0c93776c32bfc48d6f347d6e18853e6fa7ccc0ac87d3f0d5b49f8b963563",
+  "state": "failed",
+  "migration": "Recovered original reserved script after the earlier provider failure; no new script or repeated source selection.",
+  "lastFailure": {
+    "stage": "align",
+    "code": "STAGE_FAILED_SEE_RUNBOOK"
+  }
+}

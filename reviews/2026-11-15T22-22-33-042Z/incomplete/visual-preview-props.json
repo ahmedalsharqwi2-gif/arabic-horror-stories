@@ -1,0 +1,198 @@
+{
+  "title": "فويجر 1: رسالة في ظلمات الفضاء السحيق",
+  "editorialLabel": null,
+  "scenes": [
+    {
+      "title": "إنجاز فضائي تاريخي",
+      "text": "هل تخيلت إن فيه مركبة من صنع البشر بقالها خمسين سنة مسافرة في ظلمات الفضاء السحيق، ووصلت لمسافة محتاجة يوم كامل عشان شعاع الضوء يقدر يوصلها؟",
+      "summary": "فويجر 1 تصل لمسافة يوم ضوئي كامل عن الأرض.",
+      "keyword": "فويجر 1",
+      "template": "phenomenon",
+      "labels": [
+        "الفضاء السحيق",
+        "يوم ضوئي",
+        "ناسا"
+      ],
+      "values": [],
+      "claim": "فويجر 1 تبعد عن كوكب الأرض مسافة تتطلب يوما كاملا لوصول الضوء إليها",
+      "sourceId": "cd85106e7b1b",
+      "evidence": "takes a full 24 hours to reach it.",
+      "kind": "fact",
+      "expression": 10,
+      "action": "point",
+      "duration": 10.666666666666666,
+      "words": []
+    },
+    {
+      "title": "مسافة وسرعة مرعبة",
+      "text": "المسبار فويجر وان بيتحرك بسرعة تبلغ واحد وستين ألف كيلومتر في الساعة، وقطع مسافة تقارب ستة وعشرين مليار كيلومتر، لدرجة إن الرسالة عشان تروح وترجع محتاجة يومين كاملين.",
+      "summary": "سرعة المسبار والمسافة الشاسعة التي قطعها.",
+      "keyword": "سرعة فويجر",
+      "template": "journey",
+      "labels": [
+        "مسافة هائلة",
+        "سرعة خارقة",
+        "اتصالات"
+      ],
+      "values": [],
+      "claim": "يسير المسبار بسرعة 61 ألف كم/س وقطع 26 مليار كم والرد يستغرق يومين",
+      "sourceId": "cd85106e7b1b",
+      "evidence": "Voyager 1, cruising through space at nearly 38,000 mph (61,000 km/h), is just shy of 16 billion miles (about 26 billion kilometers) from Earth.",
+      "kind": "fact",
+      "expression": 8,
+      "action": "walk",
+      "duration": 10.666666666666666,
+      "words": []
+    },
+    {
+      "title": "سحابة أورت والجاذبية",
+      "text": "رغم إن المسبار خرج بره فقاعة الغلاف الشمسي سنة ألفين واثنا عشر، إلا إنه لسه واقع تحت جاذبية الشمس، ومحتاج حوالي ثلاثمائة سنة بس عشان يوصل لحافة سحابة أورت الجليدية.",
+      "summary": "المسبار لا يزال خاضعا لجاذبية الشمس وسحابة أورت.",
+      "keyword": "سحابة أورت",
+      "template": "map",
+      "labels": [
+        "جاذبية الشمس",
+        "الغلاف الشمسي",
+        "سحابة أورت"
+      ],
+      "values": [],
+      "claim": "يحتاج المسبار 300 عام للوصول للحافة الداخلية لسحابة أورت",
+      "sourceId": "cd85106e7b1b",
+      "evidence": "Voyager 1 will need about 300 more years just to reach the cloud's inner edge, and possibly 30,000 years to fly beyond it, according to NASA .",
+      "kind": "fact",
+      "expression": 5,
+      "action": "turn",
+      "duration": 10.666666666666666,
+      "words": []
+    },
+    {
+      "title": "رحلة نحو نجم مجهول",
+      "text": "العلماء بيأكدوا إن المسبار محتاج ثلاثين ألف سنة عشان يتجاوز السحابة دي بالكامل، وفي خلال أربعين ألف سنة هيمر بالقرب من نجم خافت اسمه جليز أربعمائة وخمسة وأربعين في أعماق المجرة.",
+      "summary": "مسار فويجر الطويل نحو نجم جليز 445.",
+      "keyword": "نجم جليز",
+      "template": "steps",
+      "labels": [
+        "سنوات ضوئية",
+        "نجم جليز 445",
+        "مسار الرحلة"
+      ],
+      "values": [],
+      "claim": "سيمر فويجر 1 على مسافة 1.7 سنة ضوئية من النجم جليز 445 بعد 40 ألف سنة",
+      "sourceId": "cd85106e7b1b",
+      "evidence": "On its current path, Voyager 1 will pass within 1.7 light-years of a dim star called Gliese 445 in about 40,000 years",
+      "kind": "fact",
+      "expression": 1,
+      "action": "walk",
+      "duration": 10.666666666666666,
+      "words": []
+    },
+    {
+      "title": "اكتشافات قلبت الموازين",
+      "text": "الرحلة دي كشفت أسرار مذهلة زي ثلاثة وعشرين قمر، وبراكين نشطة على قمر آيو سنة تسعة وسبعين، بجانب صور قريبة لقمر يوروبا غيرت مفاهيمنا تماما عن إمكانية وجود عوالم حية.",
+      "summary": "اكتشاف أقمار وبراكين نشطة خارج كوكب الأرض.",
+      "keyword": "اكتشافات فويجر",
+      "template": "comparison",
+      "labels": [
+        "قمر آيو",
+        "قمر يوروبا",
+        "براكين فضائية"
+      ],
+      "values": [],
+      "claim": "اكتشف فويجر 1 براكين نشطة على قمر المشتري آيو عام 1979",
+      "sourceId": "cd85106e7b1b",
+      "evidence": "Voyager 1 spotted active volcanoes on Jupiter's moon Io in 1979, the first time they had been seen on any world other than Earth.",
+      "kind": "fact",
+      "expression": 9,
+      "action": "point",
+      "duration": 10.666666666666666,
+      "words": []
+    },
+    {
+      "title": "نفاد الطاقة تدريجيا",
+      "text": "بطاريات البلوتونيوم النووية بدأت تضعف تدريجيا بعد عقود طويلة، وده اللي خلى وكالة ناسا تقفل معظم الأجهزة العلمية وتسيب جهازين بس شغالين لقياس المجالات المغناطيسية والإشعاعات الكونية في الفضاء بين النجمي.",
+      "summary": "تراجع الطاقة وتشغيل جهازين فقط لحفظ المسبار.",
+      "keyword": "بطاريات نووية",
+      "template": "cause",
+      "labels": [
+        "طاقة نووية",
+        "بلوتونيوم",
+        "توفير الطاقة"
+      ],
+      "values": [],
+      "claim": "يعمل جهازان علميان فقط على فويجر 1 لقياس المجالات المغناطيسية والأشعة الكونية",
+      "sourceId": "cd85106e7b1b",
+      "evidence": "Today, only two remain active on Voyager 1 and three on Voyager 2, measuring the magnetic fields, plasma and cosmic rays of interstellar space.",
+      "kind": "fact",
+      "expression": 6,
+      "action": "hang",
+      "duration": 10.666666666666666,
+      "words": []
+    },
+    {
+      "title": "الصمت الأخير في 2036",
+      "text": "المهندسون قرروا إن مقياس المغناطيسية هيكون آخر جهاز يتقفل، وممكن المسبار يفضل يبعت إشارات هندسية لحد سنة ألفين وستة وثلاثين، وبعدها هيستمر في الانجراف الصامت للأبد ككتلة حديدية سليمة.",
+      "summary": "نهاية إرسال البيانات واستمرار الانجراف للأبد.",
+      "keyword": "صمت فويجر",
+      "template": "steps",
+      "labels": [
+        "نهاية الإرسال",
+        "سنة 2036",
+        "انجراف أبدي"
+      ],
+      "values": [],
+      "claim": "قد تستمر الإشارات الهندسية حتى عام 2036 قبل أن يصمت المسبار تماما",
+      "sourceId": "cd85106e7b1b",
+      "evidence": "After the science data eventually stops, both probes may still keep beaming back basic engineering updates, such as about their health and power status, until around 2036, according to NASA .",
+      "kind": "fact",
+      "expression": 2,
+      "action": "sleep",
+      "duration": 10.666666666666666,
+      "words": []
+    },
+    {
+      "title": "رسالة ذهبية للكائنات",
+      "text": "المسبار شايل جواه أسطوانة ذهبية بتضم أصوات وتحيات بخمس وخمسين لغة وخريطة لموقع الأرض، لكن العلماء بيشوفوا إن احتمالية عثور أي كائنات فضائية عليها في الفضاء الشاسع شبه مستحيلة.",
+      "summary": "القرص الذهبي ورسائل البشر إلى الفضاء.",
+      "keyword": "القرص الذهبي",
+      "template": "phenomenon",
+      "labels": [
+        "القرص الذهبي",
+        "لغات العالم",
+        "حضارات فضائية"
+      ],
+      "values": [],
+      "claim": "يحمل المسبار قرصا ذهبيا يحتوي تحيات بـ 55 لغة وخريطة لموقع الأرض",
+      "sourceId": "cd85106e7b1b",
+      "evidence": "They hold sounds such as wind and animal calls, greetings in 55 languages, images of our planet and a celestial map pinpointing its location",
+      "kind": "fact",
+      "expression": 11,
+      "action": "point",
+      "duration": 10.666666666666666,
+      "words": []
+    },
+    {
+      "title": "سفير البشرية المنسي",
+      "text": "شاركنا رأيك في التعليقات، هل تفتكر كبسولة البشرية دي ممكن تقع في إيد حضارة تانية يوما ما، ولا هتفضل تايهة في الظلام السحيق للأبد، وما تنساش تتابعنا لمزيد من الأسرار.",
+      "summary": "تساؤل عن مصير رسالة الأرض في المجهول.",
+      "keyword": "مصير فويجر",
+      "template": "journey",
+      "labels": [
+        "مصير مجهول",
+        "سفير الأرض",
+        "مشاركة الرأي"
+      ],
+      "values": [],
+      "claim": "يواصل المسبار رحلته في الفضاء إلى ما بعد حياة صانعيه",
+      "sourceId": "cd85106e7b1b",
+      "evidence": "\"Although I won't be able to speak to the Voyager spacecraft any more, I love knowing that I'll always be able to look to the stars and know they're still on their way.\"",
+      "kind": "fact",
+      "expression": 10,
+      "action": "turn",
+      "duration": 10.666666666666666,
+      "words": []
+    }
+  ],
+  "durationInFrames": 2880,
+  "preview": true,
+  "incomplete": true
+}

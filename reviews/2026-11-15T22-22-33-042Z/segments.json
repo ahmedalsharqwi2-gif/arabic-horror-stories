@@ -1,0 +1,209 @@
+[
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-15T22-22-33-042Z/scene-0.wav",
+    "duration": 14.12,
+    "text": "هل تخيلت إن فيه مركبة من صنع البشر بقالها خمسين سنة مسافرة في ظلمات الفضاء السحيق، ووصلت لمسافة محتاجة يوم كامل عشان شعاع الضوء يقدر يوصلها؟",
+    "sha256": "792018ca30f4b60bf085e8f8658918c5136bb856f5da5a8a1497e8723ec6aa85",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 0,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "31414a03a503e882a28f377d1947224d21dfd6ef2671d7fd0acc21f89ec5712f",
+        "sha256": "792018ca30f4b60bf085e8f8658918c5136bb856f5da5a8a1497e8723ec6aa85",
+        "text_sha256": "ee9befa1c55c5be2ca86d0bd8e8e3792752b42c5014e6fc80795b483c37a306c",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 677838,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-15T22-22-33-042Z/scene-1.wav",
+    "duration": 15.2,
+    "text": "المسبار فويجر وان بيتحرك بسرعة تبلغ واحد وستين ألف كيلومتر في الساعة، وقطع مسافة تقارب ستة وعشرين مليار كيلومتر، لدرجة إن الرسالة عشان تروح وترجع محتاجة يومين كاملين.",
+    "sha256": "de8c9e7fc0ffe7e9eadf1fc28df52e2e611edd62f46cb7ee0c658124464c2efc",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 1,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "88263a6b3788b28f14e49caab11bca324945ff0d9cef785d36a6691d1c320628",
+        "sha256": "de8c9e7fc0ffe7e9eadf1fc28df52e2e611edd62f46cb7ee0c658124464c2efc",
+        "text_sha256": "acfb9bd51946900b3a8b212a0769aeb84c01b9f5f9aac73c1190176ced4b144c",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 729678,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-15T22-22-33-042Z/scene-2.wav",
+    "duration": 14.16,
+    "text": "رغم إن المسبار خرج بره فقاعة الغلاف الشمسي سنة ألفين واثنا عشر، إلا إنه لسه واقع تحت جاذبية الشمس، ومحتاج حوالي ثلاثمائة سنة بس عشان يوصل لحافة سحابة أورت الجليدية.",
+    "sha256": "f421cceffd9b0d3212ce25e02b6e9f1feef17ef8646d0cffbb3736b4ea1abc6f",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 2,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "08309333e04c271148a8ea8d1f1253b46d1dcc48cdcf48f668b31c04ec42719e",
+        "sha256": "f421cceffd9b0d3212ce25e02b6e9f1feef17ef8646d0cffbb3736b4ea1abc6f",
+        "text_sha256": "8a2d92361f39e46dc9ef0eafaac24abb292a96d7ddb0880104bfd6db9b95ff43",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 679758,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-15T22-22-33-042Z/scene-3.wav",
+    "duration": 14.52,
+    "text": "العلماء بيأكدوا إن المسبار محتاج ثلاثين ألف سنة عشان يتجاوز السحابة دي بالكامل، وفي خلال أربعين ألف سنة هيمر بالقرب من نجم خافت اسمه جليز أربعمائة وخمسة وأربعين في أعماق المجرة.",
+    "sha256": "8277fad05f45d1de151476c22f54af0e72b670f5889c7ccb9b8c8f81400d99dd",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 3,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "fcae1451dfb8e6acfa3769893fd2e0de92e538c342cc277293dfa718e7e4743e",
+        "sha256": "8277fad05f45d1de151476c22f54af0e72b670f5889c7ccb9b8c8f81400d99dd",
+        "text_sha256": "7d84fd9b6c9fbae2d5f21678f48dfb7a0211f305a74335bc7061189a6b7a7225",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 697038,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-15T22-22-33-042Z/scene-4.wav",
+    "duration": 15.96,
+    "text": "الرحلة دي كشفت أسرار مذهلة زي ثلاثة وعشرين قمر، وبراكين نشطة على قمر آيو سنة تسعة وسبعين، بجانب صور قريبة لقمر يوروبا غيرت مفاهيمنا تماما عن إمكانية وجود عوالم حية.",
+    "sha256": "587227867bafeb9f82f6fe2b363a0ae3c655dda714c4786b97581d7d043efd41",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 4,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "1e81b689eee1bb68ddfd4aa82098fa98dc3b3cf1b8ea6890ab1c6f9fd1515e3c",
+        "sha256": "587227867bafeb9f82f6fe2b363a0ae3c655dda714c4786b97581d7d043efd41",
+        "text_sha256": "0ab94f46c1137fc0fe4badfd300eea5fc410ea2ab95527d8e91b7798920796b4",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 766158,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-15T22-22-33-042Z/scene-5.wav",
+    "duration": 17.76,
+    "text": "بطاريات البلوتونيوم النووية بدأت تضعف تدريجيا بعد عقود طويلة، وده اللي خلى وكالة ناسا تقفل معظم الأجهزة العلمية وتسيب جهازين بس شغالين لقياس المجالات المغناطيسية والإشعاعات الكونية في الفضاء بين النجمي.",
+    "sha256": "a8d5b01233b94e738c368880335f82359daab541b24c97a5d245ff5681bbb193",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 5,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "61225bb3b7dece22550772874194744be632a0153d627be0fb7259988cede468",
+        "sha256": "a8d5b01233b94e738c368880335f82359daab541b24c97a5d245ff5681bbb193",
+        "text_sha256": "c745e441ea420c12d57e9a5ddc89e8cca88a2a380f70c3b3ace22c7cdf65161a",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 852558,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-15T22-22-33-042Z/scene-6.wav",
+    "duration": 15.72,
+    "text": "المهندسون قرروا إن مقياس المغناطيسية هيكون آخر جهاز يتقفل، وممكن المسبار يفضل يبعت إشارات هندسية لحد سنة ألفين وستة وثلاثين، وبعدها هيستمر في الانجراف الصامت للأبد ككتلة حديدية سليمة.",
+    "sha256": "e032d70fcb97be02c2ff40fb364016a07aa5540d3f0e262354bf3342ce9cbe58",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 6,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "d803d6b38e21f4c3484496fe517dffa567f6beafd9912047f534e704cd761f29",
+        "sha256": "e032d70fcb97be02c2ff40fb364016a07aa5540d3f0e262354bf3342ce9cbe58",
+        "text_sha256": "7d3e19176b95cef5aa482c5b94272cc1995ae321b047acefaa5e9fcea7e7c199",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 754638,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-15T22-22-33-042Z/scene-7.wav",
+    "duration": 15.92,
+    "text": "المسبار شايل جواه أسطوانة ذهبية بتضم أصوات وتحيات بخمس وخمسين لغة وخريطة لموقع الأرض، لكن العلماء بيشوفوا إن احتمالية عثور أي كائنات فضائية عليها في الفضاء الشاسع شبه مستحيلة.",
+    "sha256": "0e8a903fc97ad5dc7ee1a6c0dfc6a5fa220cdb73e70fbbe522c03d3d491aae6b",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 7,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "8a7f0fed1a82a6499ce18822d13345496e5bce608c87af32bada6bd809ba473a",
+        "sha256": "0e8a903fc97ad5dc7ee1a6c0dfc6a5fa220cdb73e70fbbe522c03d3d491aae6b",
+        "text_sha256": "6dd66b04d54009c4893979be233ffef56465e472a1405b0cdbeafeb8bdb1efc9",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 764238,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-15T22-22-33-042Z/scene-8.wav",
+    "duration": 13.32,
+    "text": "شاركنا رأيك في التعليقات، هل تفتكر كبسولة البشرية دي ممكن تقع في إيد حضارة تانية يوما ما، ولا هتفضل تايهة في الظلام السحيق للأبد، وما تنساش تتابعنا لمزيد من الأسرار.",
+    "sha256": "6f3ba04951639e1331cba100375f66c44e24f39976256bdaf6e949a8ebe83479",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 8,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "56979b69b183b73f9d0d64ec1040128f578163ba45a22efe6668c1243422018b",
+        "sha256": "6f3ba04951639e1331cba100375f66c44e24f39976256bdaf6e949a8ebe83479",
+        "text_sha256": "cfcfa1ffc356e9ebdf8d238e83eae4c03360abd771e4468c7ad798db0e47aedf",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 639438,
+        "reused": false
+      }
+    ]
+  }
+]
