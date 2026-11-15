@@ -1,0 +1,179 @@
+{
+  "topicKey": "riparo-mochi-ice-age-dating",
+  "title": "ملفات غامضة: لغز مخيم العصر الجليدي في إيطاليا",
+  "hook": "هل ممكن أسرار مخيم حجري على حدود إيطاليا وفرنسا تقلب كل حساباتنا القديمة، وتكشف إن صيادي إسبانيا دخلوا المنطقة دي في العصر الجليدي قبل ما كنا متخيلين بآلاف السنين؟",
+  "cta": "شاركنا رأيك في التعليقات عن إزاي المناخ بيغير خريطة استقرار البشر عبر العصور، واعمل متابعة للمزيد من أسرار وحقائق التاريخ الغامضة اللي لسه العلم بيكتشفها كل يوم.",
+  "scenes": [
+    {
+      "title": "لغز ريبارو موتشي",
+      "text": "هل ممكن أسرار مخيم حجري على حدود إيطاليا وفرنسا تقلب كل حساباتنا القديمة، وتكشف إن صيادي إسبانيا دخلوا المنطقة دي في العصر الجليدي قبل ما كنا متخيلين بآلاف السنين؟",
+      "summary": "اكتشافات جديدة تعيد تأريخ هجرة العصر الجليدي إلى إيطاليا.",
+      "keyword": "ريبارو موتشي",
+      "template": "phenomenon",
+      "labels": [
+        "العصر الجليدي",
+        "إيطاليا",
+        "هجرة قديمة"
+      ],
+      "values": [],
+      "claim": "الصيادون وجامعو الثمار دخلوا إيطاليا في وقت أبكر مما كان يعتقد سابقاً.",
+      "sourceId": "60c77c8cdc93",
+      "evidence": "suggests that hunter-gatherers from Spain entered Italy earlier than previously thought.",
+      "kind": "fact",
+      "expression": 10,
+      "action": "point"
+    },
+    {
+      "title": "آلاف القطع تحت التراب",
+      "text": "الباحث فابيو سانتانيلو وفريقه من جامعة ترينتو حفروا في ملجأ ريبارو موتشي الصخري، وطلعوا أكتر من سبع آلاف وخمسمية قطعة أثرية، مع موقد نار سليم متحوط بأصداف بحرية وأدوات قديمة جداً.",
+      "summary": "العثور على أكثر من 7500 قطعة أثرية وموقد نار سليم.",
+      "keyword": "تنقيب آثار",
+      "template": "steps",
+      "labels": [
+        "جامعة ترينتو",
+        "قطع أثرية",
+        "موقد قديم"
+      ],
+      "values": [],
+      "claim": "تم العثور على أكثر من 7,500 قطعة أثرية وموقد نار سليم.",
+      "sourceId": "60c77c8cdc93",
+      "evidence": "A recent excavation at the rock shelter conducted by Fabio Santaniello of the University of Trento and his colleagues uncovered more than 7,500 artifacts, including an intact hearth surrounded by marine shells, Noailles burins, and other tools.",
+      "kind": "fact",
+      "expression": 9,
+      "action": "walk"
+    },
+    {
+      "title": "أداة منقاش نواي",
+      "text": "العلماء ركزوا على أداة حجرية مدببة معروفة باسم منقاش نواي، وكان السائد تاريخياً إن الناس في ثقافة نواي بيستعملوا سنها الحاد عشان ينقشوا ويحفروا عظام الحيوانات وقرون الوعول القاسية بس.",
+      "summary": "الاعتقاد القديم حول وظيفة أداة منقاش نواي الحجرية.",
+      "keyword": "منقاش نواي",
+      "template": "comparison",
+      "labels": [
+        "منقاش نواي",
+        "عظام الحيوانات",
+        "ثقافة نواي"
+      ],
+      "values": [],
+      "claim": "كان يُعتقد أن مناقيش نواي استُخدمت لنقش العظام وقرون الوعول.",
+      "sourceId": "60c77c8cdc93",
+      "evidence": "a type of pointed stone tool known as a Noailles burin, thought to have been used to engrave or carve grooves in hard materials such as bone and antler by the people of the Noailles culture.",
+      "kind": "fact",
+      "expression": 0,
+      "action": "turn"
+    },
+    {
+      "title": "مفاجأة الفحص المجهري",
+      "text": "الفحص المجهري كشف مفاجأة غريبة لأن سن المنقاش مكنش عليه أي علامات تآكل خالص، بينما الحواف الجانبية هي اللي كان باين عليها الاستخدام لتقطيع جلود الحيوانات ولحومها في المعسكر.",
+      "summary": "الفحص المجهري يثبت استخدام الحواف لتقطيع الجلود واللحوم.",
+      "keyword": "فحص مجهري",
+      "template": "cause",
+      "labels": [
+        "فحص مجهري",
+        "تآكل الأدوات",
+        "تقطيع اللحوم"
+      ],
+      "values": [],
+      "claim": "حواف المناقيش استُخدمت لتقطيع جلود الحيوانات ولحومها.",
+      "sourceId": "60c77c8cdc93",
+      "evidence": "Microscopic analysis of these Noailles burins found no signs of wear on the sharp tips, but revealed such marks on the sides. These edges are thought to have been used to cut animal skin and meat.",
+      "kind": "fact",
+      "expression": 10,
+      "action": "point"
+    },
+    {
+      "title": "إعادة كتابة التاريخ",
+      "text": "تحليل الكربون المشع للأصداف البحرية أثبت إن عمرها بين تلاتين ألف وتلاتين ألف وتمنمية سنة، وده معناه رجوع تاريخ وجود ثقافة نواي في شمال إيطاليا بحوالي ألفين لتلت آلاف سنة للورا.",
+      "summary": "تأريخ الأصداف يرجع وجود ثقافة نواي لآلاف السنين للخلف.",
+      "keyword": "كربون مشع",
+      "template": "chart",
+      "labels": [
+        "كربون مشع",
+        "أصداف بحرية",
+        "شمال إيطاليا"
+      ],
+      "values": [],
+      "claim": "عمر الأصداف بين 30,000 و30,800 سنة ودفع التاريخ 2,000 إلى 3,000 سنة.",
+      "sourceId": "60c77c8cdc93",
+      "evidence": "Radiocarbon dating shows that the shells are between 30,000 and 30,800 years old, pushing back the timeline for Noaillian presence in northern Italy by some 2,000 to 3,000 years.",
+      "kind": "fact",
+      "expression": 9,
+      "action": "hang"
+    },
+    {
+      "title": "تطابق الشمال والجنوب",
+      "text": "التاريخ الجديد ده خلى وجود ثقافة نواي في الشمال متوافق تماماً مع التواريخ المكتشفة في جنوب إيطاليا، اللي بتتراوح بين واحد وتلاتين ألف وتلاتين ألف سنة فاتت وبتوضح مسار حركتهم.",
+      "summary": "توافق تواريخ الشمال مع جنوب إيطاليا يؤكد مسار الهجرة.",
+      "keyword": "جنوب إيطاليا",
+      "template": "map",
+      "labels": [
+        "جنوب إيطاليا",
+        "تزامن زمني",
+        "ثقافة نواي"
+      ],
+      "values": [],
+      "claim": "التواريخ الجديدة تتطابق مع تواريخ جنوب إيطاليا بين 31,000 و30,000 عام مضت.",
+      "sourceId": "60c77c8cdc93",
+      "evidence": "The new information also brings radiocarbon dates for Noaillian culture in southern Italy, between 31,000 and 30,000 years ago, into line.",
+      "kind": "fact",
+      "expression": 0,
+      "action": "point"
+    },
+    {
+      "title": "الهروب من الصقيع",
+      "text": "الباحثين بيفسروا التحرك ده بأن مناخ أوروبا في الوقت ده بقى بارد وجاف جداً، وده اللي دفع مجموعات الصيادين للهجرة ناحية الشرق عشان يدوروا على بيئات تانية تكون أدفى وأنسب لحياتهم.",
+      "summary": "المناخ البارد والجاف دفع الصيادين للهجرة شرقاً.",
+      "keyword": "مناخ أوروبا",
+      "template": "journey",
+      "labels": [
+        "تغير مناخي",
+        "هجرة شرقية",
+        "مناخ معتدل"
+      ],
+      "values": [],
+      "claim": "المناخ البارد والجاف دفع البشر للهجرة شرقاً نحو مناخ أكثر اعتدالاً.",
+      "sourceId": "60c77c8cdc93",
+      "evidence": "At about this time, Europe’s climate became cold and dry, and likely pushed human migration eastward, toward milder climates, the researchers suggest.",
+      "kind": "fact",
+      "expression": 11,
+      "action": "walk"
+    },
+    {
+      "title": "أدوات نجاة متطورة",
+      "text": "الملجأ كشف كمان عن شفرات حجرية كانت بتتركب على مقابض خشبية، بالإضافة لمكاشط وأوتاد استعملها سكان المكان القدامى في تشكيل الخشب وفلق العظام بطريقة بتوضح دقة أدواتهم المعيشية المتنوعة.",
+      "summary": "العثور على شفرات ومكاشط وأوتاد لتشكيل الخشب وفلق العظام.",
+      "keyword": "أدوات حجرية",
+      "template": "steps",
+      "labels": [
+        "شفرات خشبية",
+        "مكاشط وأوتاد",
+        "فلق العظام"
+      ],
+      "values": [],
+      "claim": "استُخدمت مكاشط وأوتاد لتشكيل المقابض الخشبية وفلق العظام.",
+      "sourceId": "60c77c8cdc93",
+      "evidence": "Additional artifacts uncovered in the rock shelter include blades that had been fitted onto shafts, and scrapers and wedges used to shape wooden shafts and split bone.",
+      "kind": "fact",
+      "expression": 0,
+      "action": "turn"
+    },
+    {
+      "title": "سر البقاء القديم",
+      "text": "شاركنا رأيك في التعليقات عن إزاي المناخ بيغير خريطة استقرار البشر عبر العصور، واعمل متابعة للمزيد من أسرار وحقائق التاريخ الغامضة اللي لسه العلم بيكتشفها كل يوم.",
+      "summary": "دعوة للمتابعة والتفكير في تأثير المناخ على البشر.",
+      "keyword": "أسرار التاريخ",
+      "template": "phenomenon",
+      "labels": [
+        "ملفات غامضة",
+        "تاريخ بشري",
+        "متابعة"
+      ],
+      "values": [],
+      "claim": "هجرة الصيادين وجامعي الثمار من إسبانيا إلى إيطاليا تمت في وقت أبكر.",
+      "sourceId": "60c77c8cdc93",
+      "evidence": "suggests that hunter-gatherers from Spain entered Italy earlier than previously thought.",
+      "kind": "fact",
+      "expression": 9,
+      "action": "point"
+    }
+  ]
+}
