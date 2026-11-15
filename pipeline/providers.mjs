@@ -28,10 +28,14 @@ async function gemini(body,key,model){
 export async function script(topic,config,history){
  const key=process.env.GEMINI_TEXT_API_KEY||process.env.GEMINI_API_KEY;
  const prompt=`Write original Egyptian Arabic white-dialect narration for ${config.name}. Return JSON only. 8-12 scenes, ONE sentence of 24-36 words per scene, total 250-360 Arabic words (90-180s narration). First sentence hook/question, last short CTA. Natural short clauses, no literal translation. Facts ONLY supported by supplied source text. Each scene has title (max 45 chars), text, summary(max 60), keyword, template(phenomenon/comparison/steps/journey/map/chart/cause), labels(2-5 Arabic terms, max 20 chars), values(0-100; ONLY actual sourced percentages, otherwise []), claim, sourceId, evidence(EXACT source quote), kind(fact/legend/illustration), expression(0-11), action(walk/run/jump/fall/point/turn/hang/sleep). For horror explicitly distinguish fact vs legend, no gore; for history acknowledge disputes and dates; news official sources only or two independent confirmations; stickman starts ماذا لو with comic escalation and ends with a real fact, use illustration kind for imaginary setups. topicKey stable semantic identity, not title hash; title,hook,cta,scenes. No made-up numbers. SOURCES: ${JSON.stringify(topic.sources)}. Forbidden previous identities: ${JSON.stringify(history.slice(-80))}`;
- const data=await gemini({contents:[{parts:[{text:prompt}]}],generationConfig:{responseMimeType:'application/json',temperature:.5}},key,process.env.GEMINI_TEXT_MODEL||'gemini-2.5-flash');
- const episode=JSON.parse(data.candidates[0].content.parts.filter(p=>p.text).map(p=>p.text).join(''));
- assertEvidence(episode,topic.sources,config.profile);if(duplicate(episode.topicKey,history))throw Error('DUPLICATE_TOPIC_IDENTITY');
- return episode;
+ let feedback='';
+ for(let attempt=0;attempt<3;attempt++){
+  const data=await gemini({contents:[{parts:[{text:prompt+feedback}]}],generationConfig:{responseMimeType:'application/json',temperature:.3}},key,process.env.GEMINI_TEXT_MODEL||'gemini-2.5-flash');
+  try{const episode=JSON.parse(data.candidates[0].content.parts.filter(p=>p.text).map(p=>p.text).join(''));
+   assertEvidence(episode,topic.sources,config.profile);if(duplicate(episode.topicKey,history))throw Error('DUPLICATE_TOPIC_IDENTITY');return episode;
+  }catch(e){if(attempt===2)throw e;feedback=' Your previous draft failed validation. Produce a new corrected JSON, maintain 250-360 words, exact schema and only exact copied evidence excerpts from the source strings. Do not invent quotations. The evidence may be reused across scenes if the same claim is being explained. Previous issue: '+(e.message==='UNSUPPORTED_CLAIM'?'A quotation was not found in its cited source.':'Schema or duration word budget or duplicate identity failed.');}
+ }
+ throw Error('SCRIPT_VALIDATION_EXHAUSTED');
 }
 export async function voice(episode,publicDir){
  const key=process.env.GEMINI_TTS_API_KEY||process.env.GEMINI_API_KEY;if(!key)throw Error('MISSING_GEMINI_TTS_BINDING');
