@@ -1,0 +1,18 @@
+{
+  "id": "2026-11-15T22-01-51-004Z",
+  "mode": "review",
+  "published": false,
+  "stages": [
+    {
+      "name": "preflight",
+      "status": "pass",
+      "seconds": 0.32
+    }
+  ],
+  "status": "failed",
+  "limitations": [
+    "Visual semantics, pronunciation, watermark absence and copyright require human review; metrics are not proof."
+  ],
+  "failedStage": "topics",
+  "errorCode": "NO_CURRENT_VERIFIED_SOURCES"
+}
