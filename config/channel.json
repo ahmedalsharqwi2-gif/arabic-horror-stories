@@ -1,0 +1,18 @@
+{
+  "profile": "horror",
+  "name": "ملفات غامضة",
+  "accent": "#d27666",
+  "counter": "الملف",
+  "maxAgeHours": 720,
+  "feeds": [
+    {
+      "url": "https://www.archaeology.org/feed/",
+      "official": true
+    },
+    {
+      "url": "https://www.livescience.com/feeds/all",
+      "official": false
+    }
+  ],
+  "logo": ""
+}
