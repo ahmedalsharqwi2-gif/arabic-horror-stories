@@ -14,5 +14,42 @@
       "official": false
     }
   ],
-  "logo": "brand/logo/logo.jpg"
+  "logo": "brand/logo/logo.jpg",
+  "channelRelevance": {
+    "enabled": true,
+    "minimumMatches": 1,
+    "allowedDomains": [
+      "archaeology.org",
+      "livescience.com",
+      "smithsonianmag.com",
+      "worldhistory.org",
+      "britishmuseum.org",
+      "bl.uk",
+      "loc.gov"
+    ],
+    "blockedDomains": [
+      "nasa.gov",
+      "esa.int"
+    ],
+    "excludedTerms": [
+      "recent murder",
+      "قتل حديث",
+      "وفاة لاعب"
+    ],
+    "requiredTerms": [
+      "mystery",
+      "mysterious",
+      "legend",
+      "folklore",
+      "unexplained",
+      "haunted",
+      "enigmat",
+      "megalith",
+      "لغز",
+      "غامض",
+      "أسطورة",
+      "اسطوره",
+      "تراث شعبي"
+    ]
+  }
 }

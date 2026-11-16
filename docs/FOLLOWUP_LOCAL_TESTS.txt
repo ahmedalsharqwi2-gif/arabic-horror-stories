@@ -3,45 +3,56 @@ npm test
 > review-video-pipeline@2.0.0 test
 > node --test tests/*.test.mjs
 
-✔ installed logo bytes match the recorded original SHA256 and the public source resolves to it (11.877117ms)
-✔ logo verification rejects altered bytes (13.926354ms)
-✔ missing Gemini reports required secret names only (0.833465ms)
-✔ claims require an exact excerpt from an attached source (12.932662ms)
-✔ a science script cannot relabel a legend as a verified source (0.550414ms)
-✔ RSS fetch sends a clear User-Agent, reuses fresh cache and enforces delay (105.4649ms)
-✔ expired RSS cache is not used after a protected response (6.868753ms)
-✔ a generic channel update does not make an undated archived item fresh (3.284799ms)
-✔ 429 Retry-After is honored and successful response is reused without another request (109.972749ms)
-✔ 503 retries use exponential backoff plus jitter and stop at the configured attempts (5.871615ms)
-✔ fallback model still respects Retry-After set by the previous model (53.523663ms)
-✔ 404 falls back in configured order; authorization errors never cycle through models (15.155641ms)
-✔ Retry-After beyond total deadline stops rather than sending too early (5.50101ms)
-✔ limiter serializes starts and enforces the per-minute quota (0.629482ms)
-✔ resume keeps successful voice chunk after a later 503 and after a fresh client instance (12.316931ms)
-✔ changing voice settings invalidates cache and long narration is split without losing words (8.078391ms)
-✔ parallel requests for the same response share one request (3.402149ms)
-✔ model-discovery Retry-After also delays the following generation call (6.095134ms)
-✔ publish blocked even if config edited (1.900161ms)
-✔ Cairo 17:00 covers winter and summer offset (51.870586ms)
-✔ original words and measured monotonic times required (2.035092ms)
-✔ canonical identity and source prevent changed-title duplicates (1.871029ms)
-✔ reject silent media or wrong output format (0.650983ms)
-✔ service health independent of provider and uploads closed (49.80381ms)
-✔ 72-hour news window includes a verified 70-hour announcement (3.193645ms)
-✔ weekly fallback is explicitly labeled and never admits older than a week (5.198164ms)
-✔ one secondary publisher cannot confirm a story; independent publishers must cite the same primary reference (0.664194ms)
-✔ missing dates and future posts are excluded instead of given the current time (2.020227ms)
-✔ previous source URLs remain excluded when article headlines change (4.135265ms)
-ℹ tests 29
+✔ installed logo bytes match the recorded original SHA256 and the public source resolves to it (31.298736ms)
+✔ logo verification rejects altered bytes (66.288896ms)
+✔ missing Gemini reports required secret names only (0.582617ms)
+✔ claims require an exact excerpt from an attached source (27.874994ms)
+✔ a science script cannot relabel a legend as a verified source (5.761612ms)
+✔ RSS fetch sends a clear User-Agent, reuses fresh cache and enforces delay (178.857321ms)
+✔ expired RSS cache is not used after a protected response (13.271721ms)
+✔ a generic channel update does not make an undated archived item fresh (2.721842ms)
+✔ 429 Retry-After is honored and successful response is reused without another request (789.598736ms)
+✔ 503 retries use exponential backoff plus jitter and stop at the configured attempts (94.971343ms)
+✔ fallback model still respects Retry-After set by the previous model (23.3692ms)
+✔ 404 falls back in configured order; authorization errors never cycle through models (51.519723ms)
+✔ Retry-After beyond total deadline stops rather than sending too early (8.40305ms)
+✔ limiter serializes starts and enforces the per-minute quota (0.490013ms)
+✔ resume keeps successful voice chunk after a later 503 and after a fresh client instance (41.476081ms)
+✔ changing voice settings invalidates cache and long narration is split without losing words (57.777269ms)
+✔ parallel requests for the same response share one request (13.009183ms)
+✔ model-discovery Retry-After also delays the following generation call (13.111601ms)
+✔ publish blocked even if config edited (1.578232ms)
+✔ Cairo 17:00 covers winter and summer offset (49.37232ms)
+✔ original words and measured monotonic times required (2.000164ms)
+✔ canonical identity and source prevent changed-title duplicates (41.532382ms)
+✔ reject silent media or wrong output format (0.485461ms)
+✔ service health independent of provider and uploads closed (228.457108ms)
+✔ galaxy references cannot become Earth despite mentioning distance from Earth (6.555428ms)
+✔ a generic company map is a concept graph, never a planet (0.903867ms)
+✔ NGC206 is a star cluster and incidental host galaxy does not replace scene focus (0.207587ms)
+✔ distance from Earth is a light path, not a map of Earth (0.158471ms)
+✔ 72-hour news window includes a verified 70-hour announcement (36.635481ms)
+✔ weekly fallback is explicitly labeled and never admits older than a week (1.287439ms)
+✔ one secondary publisher cannot confirm a story; independent publishers must cite the same primary reference (1.032974ms)
+✔ missing dates and future posts are excluded instead of given the current time (42.537809ms)
+✔ previous source URLs remain excluded when article headlines change (0.606044ms)
+ℹ tests 33
 ℹ suites 0
-ℹ pass 29
+ℹ pass 33
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 4294.727229
+ℹ duration_ms 11110.79072
 npm run typecheck
 
 > review-video-pipeline@2.0.0 typecheck
 > tsc --noEmit
 
+python -m unittest discover -s tests -p 'test_alignment.py'
+
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+OK

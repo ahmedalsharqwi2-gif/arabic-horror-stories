@@ -1,3 +1,4 @@
+import {sourceRelevance} from './relevance.mjs';
 import {XMLParser} from 'fast-xml-parser';import {sourceSchema,normalized,digest,duplicate} from './policy.mjs';import {retry} from './io.mjs';import {fetchFeed} from './feed-fetch.mjs';
 const array=x=>Array.isArray(x)?x:x?[x]:[];
 const plain=x=>typeof x==='string'?x:typeof x?.['#text']==='string'?x['#text']:'';
@@ -31,6 +32,7 @@ export function verifiedCandidates(sources,{history=[],maxAgeHours,now=Date.now(
  }).filter(Boolean);
 }
 export function chooseSources(sources,config,{history=[],now=Date.now(),diagnostics=[]}={}){
+ const decisions=sources.map(source=>({id:source.id,url:source.url,...sourceRelevance(source,config.channelRelevance)}));const relevant=sources.filter((_,i)=>decisions[i].accepted);if(config.channelRelevance?.enabled&&!relevant.length){const e=Error('NO_CHANNEL_RELEVANT_SOURCE');e.sourceDiagnostics={feeds:diagnostics,channelRelevance:decisions};throw e;}sources=relevant;
  const hours=config.profile==='news'?72:config.maxAgeHours;let candidates=verifiedCandidates(sources,{history,maxAgeHours:hours,now});let mode='daily',windowHours=hours;
  if(!candidates.length&&config.profile==='news'&&config.weeklyFallback?.enabled){candidates=verifiedCandidates(sources,{history,maxAgeHours:config.weeklyFallback.maxAgeHours,now});mode='weekly';windowHours=config.weeklyFallback.maxAgeHours;}
  candidates.sort((a,b)=>(Number(b.source.official)-Number(a.source.official))||Date.parse(b.source.published)-Date.parse(a.source.published));
