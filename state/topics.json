@@ -8,7 +8,8 @@
   {
     "topicKey": "voyager-1-light-day-unknown",
     "value": "https://www.livescience.com/space/space-exploration/out-there-moving-into-the-unknown-as-voyager-1-reaches-one-light-day-from-earth-scientists-reflect-on-its-past-and-its-future",
-    "status": "reserved",
-    "run": "2026-11-15T22-22-33-042Z"
+    "status": "quarantined",
+    "run": "2026-11-15T22-22-33-042Z",
+    "reason": "NO_CHANNEL_RELEVANT_SOURCE"
   }
 ]
