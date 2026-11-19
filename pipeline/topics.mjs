@@ -1,4 +1,4 @@
-import {sourceRelevance} from './relevance.mjs';import {fetchTrendSignals,rerankCandidates} from './trend-radar.mjs';
+import {sourceRelevance} from './relevance.mjs';import {fetchTrendSignals,rerankCandidates,proposeTopics,fetchTopicSources} from './trend-radar.mjs';
 import {XMLParser} from 'fast-xml-parser';import {sourceSchema,normalized,digest,duplicate} from './policy.mjs';import {retry} from './io.mjs';import {fetchFeed} from './feed-fetch.mjs';
 const array=x=>Array.isArray(x)?x:x?[x]:[];
 const plain=x=>typeof x==='string'?x:typeof x?.['#text']==='string'?x['#text']:'';
@@ -31,9 +31,9 @@ export function verifiedCandidates(sources,{history=[],maxAgeHours,now=Date.now(
   return others.length?{source,corroboration:[source,others[0]],verification:'two_independent_publishers_same_primary_reference'}:null;
  }).filter(Boolean);
 }
-export function chooseSources(sources,config,{history=[],now=Date.now(),diagnostics=[],trendSignals=null}={}){
- const decisions=sources.map(source=>({id:source.id,url:source.url,...sourceRelevance(source,config.channelRelevance)}));const relevant=sources.filter((_,i)=>decisions[i].accepted);if(config.channelRelevance?.enabled&&!relevant.length){const e=Error('NO_CHANNEL_RELEVANT_SOURCE');e.sourceDiagnostics={feeds:diagnostics,channelRelevance:decisions};throw e;}sources=relevant;
- const hours=config.profile==='news'?72:config.maxAgeHours;let candidates=verifiedCandidates(sources,{history,maxAgeHours:hours,now});let mode='daily',windowHours=hours;
+export function chooseSources(sources,config,{history=[],now=Date.now(),diagnostics=[],trendSignals=null,allowProposed=false}={}){
+ const rule=allowProposed?{...(config.channelRelevance||{}),allowedDomains:[]}:config.channelRelevance;const decisions=sources.map(source=>({id:source.id,url:source.url,...sourceRelevance(source,rule)}));const relevant=sources.filter((_,i)=>decisions[i].accepted);if(rule?.enabled&&!relevant.length){const e=Error('NO_CHANNEL_RELEVANT_SOURCE');e.sourceDiagnostics={feeds:diagnostics,channelRelevance:decisions};throw e;}sources=relevant;
+ const hours=config.profile==='news'?72:config.maxAgeHours;let candidates=allowProposed?sources.map(s=>({source:s,corroboration:[s],verification:'proposed_topic_wikipedia_grounding'})):verifiedCandidates(sources,{history,maxAgeHours:hours,now});let mode='daily',windowHours=hours;
  if(!candidates.length&&config.profile==='news'&&config.weeklyFallback?.enabled){candidates=verifiedCandidates(sources,{history,maxAgeHours:config.weeklyFallback.maxAgeHours,now});mode='weekly';windowHours=config.weeklyFallback.maxAgeHours;}
  candidates.sort((a,b)=>(Number(b.source.official)-Number(a.source.official))||Date.parse(b.source.published)-Date.parse(a.source.published));
  let trend=[];
@@ -46,7 +46,18 @@ export async function selectTopic(config,history,options={}){
  const collected=await collectSources(config,options);
  let trendSignals=null,trendDiagnostics=null;
  if(config.trends?.enabled){try{const radar=await fetchTrendSignals(config.trends,options);trendSignals=radar.degraded?null:radar.signals;trendDiagnostics={sources:radar.diagnostics,degraded:radar.degraded};}catch(e){trendDiagnostics={sources:[],degraded:true,code:/[A-Z_]+/.exec(e.message)?.[0]||'TREND_RADAR_UNAVAILABLE'};}}
- const chosen=chooseSources(collected.sources,config,{...options,history,diagnostics:collected.diagnostics,trendSignals});
+ let chosen;
+ try{chosen=chooseSources(collected.sources,config,{...options,history,diagnostics:collected.diagnostics,trendSignals});}
+ catch(e){
+  if(!['NO_CURRENT_VERIFIED_SOURCES','NO_CHANNEL_RELEVANT_SOURCE'].includes(e.message)||config.trends?.mode!=='propose'||!trendSignals)throw e;
+  for(const proposal of proposeTopics(trendSignals,config.trends,{history})){
+   if(chosen)break;
+   try{const grounding=await fetchTopicSources(proposal.topic,config.trends,options);
+    if(grounding.length){chosen=chooseSources(grounding,config,{...options,history,diagnostics:collected.diagnostics,allowProposed:true});chosen.proposedTopic=proposal;}
+   }catch{/* try the next proposal */}
+  }
+  if(!chosen)throw e;
+ }
  if(trendDiagnostics||chosen.trend?.length)chosen.trendDiagnostics={...(trendDiagnostics||{}),decisions:chosen.trend||[]};
  return chosen;
 }

@@ -1,5 +1,7 @@
 import {XMLParser} from 'fast-xml-parser';
 import {fetchFeed} from './feed-fetch.mjs';
+import {digest} from './policy.mjs';
+const hash=digest;
 const array=x=>Array.isArray(x)?x:x?[x]:[];
 const strip=x=>(typeof x==='string'?x:typeof x?.['#text']==='string'?x['#text']:'').replace(/<[^>]*>/g,' ').replace(/&[^;]+;/g,' ').replace(/\s+/g,' ').trim();
 const tokens=text=>[...new Set((text||'').toLowerCase().split(/[^\p{L}\p{N}]+/u).filter(t=>t.length>2))];
@@ -86,4 +88,37 @@ export function rerankCandidates(candidates,signals,config,{now=Date.now()}={}){
   return (db.score-da.score)||(Number((b.source||b).official)-Number((a.source||a).official))||(Date.parse((b.source||b).published)-Date.parse((a.source||a).published));
  });
  return {candidates:reranked,decisions};
+}
+export function proposeTopics(signals,config,{history=[]}={}){
+ const excluded=(config.excludedTerms||[]).map(t=>t.toLowerCase());
+ const used=history.map(h=>String(typeof h==='string'?h:h?.topicKey||h?.title||'').toLowerCase()).filter(Boolean);
+ const pool=[];
+ for(const s of signals.suggestions||[])pool.push({topic:s.text,origin:'search_suggestion',weight:2});
+ for(const t of signals.trends||[])pool.push({topic:t.term,origin:'google_trend',weight:1.5});
+ for(const p of signals.reddit||[])pool.push({topic:p.title,origin:'reddit',weight:1});
+ const seen=new Set(),ranked=[];
+ for(const c of pool.sort((a,b)=>b.weight-a.weight)){
+  const key=c.topic.trim().toLowerCase();
+  if(seen.has(key)||key.length<8)continue;seen.add(key);
+  if(excluded.some(t=>key.includes(t)))continue;
+  if(used.some(u=>u.includes(key)||key.includes(u)))continue;
+  ranked.push(c);
+ }
+ return ranked.slice(0,config.propose?.maxCandidates||5);
+}
+export async function fetchTopicSources(topic,config,{fetcher=fetchFeed,now=Date.now()}={}){
+ const lang=config.propose?.lang||'ar';
+ const search=await fetcher(`https://api.wikimedia.org/core/v1/wikipedia/${lang}/search/page?q=${encodeURIComponent(topic)}&limit=3`,{timeout:20000,cacheTtlMs:86400000});
+ const pages=JSON.parse(await search.text()).pages||[];
+ const sources=[];
+ for(const page of pages.slice(0,2)){
+  try{
+   const response=await fetcher(`https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(page.key||page.title)}`,{timeout:20000,cacheTtlMs:86400000});
+   const data=JSON.parse(await response.text());
+   const text=strip(data.extract||'');
+   const url=data.content_urls?.desktop?.page||`https://${lang}.wikipedia.org/wiki/${encodeURIComponent(page.key||page.title)}`;
+   if(text.length>=200)sources.push({id:hash(url).slice(0,12),title:strip(data.title||page.title),url,text,published:new Date(now).toISOString(),official:false,publisher:'wikipedia.org',primaryRefs:[],dateBasis:'topic_grounding_lookup',proposed:true});
+  }catch{/* try the next page */}
+ }
+ return sources;
 }
