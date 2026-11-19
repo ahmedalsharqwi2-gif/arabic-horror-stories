@@ -1,0 +1,186 @@
+[
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T06-57-23-497Z/scene-0.wav",
+    "duration": 16.36,
+    "text": "تخيل إنك شرطي من نيويورك، قررت تاخد إجازة مع زوجتك في أوروبا، وفجأة تتحول الرحلة لكابوس وتلاقي نفسك مشتبه رئيسي في جريمة قتل بليونير مسن، ده اللي حصل في فيلم لغز جريمة القتل.",
+    "sha256": "0f6175d80aae007947bf225d294134abd36558327f331b4b843d86b79056fcd4",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 0,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "03623dbb8e2ca4804ba5748da20654ee2102640e4f057a66b63bca1b46238ae9",
+        "sha256": "0f6175d80aae007947bf225d294134abd36558327f331b4b843d86b79056fcd4",
+        "text_sha256": "16d7c4f026e8b0583e2f72ae403d270a68c4ee3db07907c514f36857084b2904",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 785358,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T06-57-23-497Z/scene-1.wav",
+    "duration": 16.92,
+    "text": "الفيلم ده مش مجرد قصة عادية، ده عمل كوميدي أمريكي غامض تم إنتاجه سنة 2019، ومن إخراج كايل نيواشيك، وكتابة جيمس فاندربيلت، عشان يقدم لنا تجربة سينمائية مليانة بالضحك والغموض في نفس الوقت.",
+    "sha256": "c520e524205bbe380f1b44ba492ab5321afedd0f2e5627b3d094ce6c480e7855",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 1,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "bdd3422fb7a524c00fe9e35de4c33ecedd1a4b42d184d781e5d13dc4b55e35a7",
+        "sha256": "c520e524205bbe380f1b44ba492ab5321afedd0f2e5627b3d094ce6c480e7855",
+        "text_sha256": "38f47ebe2e6e55601f066642242c2bae3bf02ae41367498645105ed356f831d8",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 812238,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T06-57-23-497Z/scene-2.wav",
+    "duration": 16.96,
+    "text": "الفيلم ضم مجموعة من النجوم الكبار اللي أضافوا طابع خاص للقصة، وعلى رأسهم آدم ساندلر، وجنيفر أنيستون، وكمان لوك إيفانز، اللي قدروا يجسدوا الشخصيات بطريقة خلت الجمهور يتفاعل معاهم بشكل كبير جداً خلال أحداث الفيلم.",
+    "sha256": "81932b483ee07d74a57af55c187056345414774d080f954d2ba19b9a6f932670",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 2,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "9255efb5ca1fa3936aa94c00be7ca3c43fbbf3ff0251823c9e1ade7bd20e99a2",
+        "sha256": "81932b483ee07d74a57af55c187056345414774d080f954d2ba19b9a6f932670",
+        "text_sha256": "891a2dd09ed511260a2fa80ddd5fe4096050a6e6ae61e6277eb331caa04ca743",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 814158,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T06-57-23-497Z/scene-3.wav",
+    "duration": 17.88,
+    "text": "الجمهور كان على موعد مع عرض الفيلم في يوم 14 يونيو 2019، ومن اللحظة دي بدأ الفيلم ينتشر ويحقق مشاهدات عالية، خاصة إنه بيجمع بين الغموض اللي بيشد الأعصاب والكوميديا اللي بتخفف حدة الموقف.",
+    "sha256": "5451870e06c3050659ca4ca5f940f28f240865b7a49876f6088c671c967a7bb0",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 3,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "8dcf193553ed35f57e87697557f85d63dae02f253964d5a1e72f8c7ff500e763",
+        "sha256": "5451870e06c3050659ca4ca5f940f28f240865b7a49876f6088c671c967a7bb0",
+        "text_sha256": "b8eac8bb68917dfb30d537397f5c6581a5cc91506abcbaa253db4efd0d155347",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 858318,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T06-57-23-497Z/scene-4.wav",
+    "duration": 15.8,
+    "text": "الفيلم ده أخد اهتمام كبير على منصات تقييم الأفلام العالمية، زي ما بنشوف في المواقع المتخصصة اللي وثقت وجوده، ومنها موقع ميتاكريتيك، وموقع روتن توميتوز، وكمان منصة نتفليكس اللي عرضت الفيلم لملايين المشاهدين حول العالم.",
+    "sha256": "33d827cfff89633bb321278515ebd00cd8904a391eab7f2f468a689516f03e6d",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 4,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "f9d9048fb7b2710c06194d57bf4aa2b073536708f1ba69c77088e9c3505ed1a2",
+        "sha256": "33d827cfff89633bb321278515ebd00cd8904a391eab7f2f468a689516f03e6d",
+        "text_sha256": "8a946be963cfdd7d7dce099eb48e40aabf23aac642187a4be940e770aa02d5b1",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 758478,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T06-57-23-497Z/scene-5.wav",
+    "duration": 16.16,
+    "text": "مش بس المواقع دي، ده كمان الفيلم موجود على موقع قاعدة بيانات الفلم، وموقع ألو سيني الفرنسي، وموقع فلمافينيتي الإسباني، وده بيأكد إن الفيلم حقق انتشار واسع وتغطية دولية في لغات وثقافات مختلفة تماماً.",
+    "sha256": "bb585fb766dbff20c90c35ac693c7d434bc90973f183e85a85dae8388906c354",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 5,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "b1d4d1d5aa5fcf414f2a10989eacdd885ba8191d2d14bae270f8e373838d47dc",
+        "sha256": "bb585fb766dbff20c90c35ac693c7d434bc90973f183e85a85dae8388906c354",
+        "text_sha256": "80bbfe06a11da7594b2b196e3989a3b13203784852807d6dcb00e0ae8f9dc0d3",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 775758,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T06-57-23-497Z/scene-6.wav",
+    "duration": 17.84,
+    "text": "السر في نجاح الفيلم هو التوازن بين الغموض والكوميديا، فالمشاهد بيعيش لحظات من التوتر وهو بيحاول يحل اللغز مع الأبطال، وفي نفس الوقت بيضحك على المواقف الكوميدية اللي بيقعوا فيها خلال رحلتهم الغامضة في أوروبا.",
+    "sha256": "18a416d92f1d1633c0c24d96215a6cc56f267824d281da77069cfffd2275de7d",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 6,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "0fbb64a1ff04a88dc209f3650df467cba860d059ef43568b4a48ff7c87595245",
+        "sha256": "18a416d92f1d1633c0c24d96215a6cc56f267824d281da77069cfffd2275de7d",
+        "text_sha256": "8ab2abeb24488797e73937981da165d4c5ff8d9500727ce581fabd542160e12b",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 856398,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T06-57-23-497Z/scene-7.wav",
+    "duration": 18.08,
+    "text": "في النهاية، لغز جريمة القتل بيثبت إن الرحلات السياحية ممكن تكون مليانة مفاجآت غير متوقعة، لو عجبك الفيديو ده، ما تنساش تعمل لايك وتشاركنا رأيك في التعليقات، واستنونا في ملف غامض جديد قريباً جداً.",
+    "sha256": "d71ed9e13742996d6a4ccd999533c76c144829efd0173d16db6d6c041d822323",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 7,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "61598a9127c8427b66aef544450da5d97c33c3fc86faa68285782636eef32598",
+        "sha256": "d71ed9e13742996d6a4ccd999533c76c144829efd0173d16db6d6c041d822323",
+        "text_sha256": "a26aafaadb183996d5924ec495bda4f52c260c3ee7dda75e3762fa9c1ea7c9aa",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 867918,
+        "reused": false
+      }
+    ]
+  }
+]

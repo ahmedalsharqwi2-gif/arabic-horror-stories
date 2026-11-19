@@ -1,0 +1,30 @@
+{
+  "incomplete": true,
+  "published": false,
+  "reason": "ALIGNMENT_SPEECH_MISMATCH",
+  "narration": true,
+  "voice": "Gemini Charon",
+  "wordAlignment": false,
+  "storySource": "actual authored script from failed review attempt",
+  "qa": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration": 136,
+    "geometryPassed": true,
+    "logo": {
+      "path": "brand/logo/logo.jpg",
+      "sha256": "f4dd2c963a4541493ea44af45ee5398cdb063fc874a1e40a0fe7a4a276c2320a",
+      "bytes": 99081,
+      "original": true,
+      "renderedPixelsChecked": true
+    },
+    "watermark": {
+      "knownTextScan": "no_known_foreign_watermark_detected",
+      "assetPolicy": "Only original vectors, owner-supplied immutable logos and documented generated backgrounds; listening/visual approval remains separate."
+    },
+    "audioRequired": false,
+    "complete": false,
+    "approved": false
+  }
+}
