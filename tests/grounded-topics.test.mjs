@@ -77,3 +77,18 @@ test('a project without grounding support fails the ping loudly',async()=>{
  await assert.rejects(()=>fresh.assertGrounding(client),/GROUNDING_UNSUPPORTED/);
  void assertGrounding;
 });
+
+test('forceGrounding skips the feed pool and picks a fetch-verified proposal',async()=>{
+ const {selectTopic}=await import('../pipeline/topics.mjs');
+ const horror={profile:'horror',name:'ملفات غامضة',maxAgeHours:720,feeds:[{url:'https://feeds.example/empty.xml',official:false}],grounding:{enabled:true,useWhen:'fallback',mode:'light',maxCandidates:4,blockedDomains:[]}};
+ const emptyFeed='<?xml version="1.0"?><rss version="2.0"><channel><title>x</title></channel></rss>';
+ const storyPage=`<html><head><meta property="article:published_time" content="2026-11-18T09:00:00Z"></head><body>The lighthouse keeper vanished from the island in a storm and the logbook entry stopped mid sentence leaving investigators puzzled for decades.</body></html>`;
+ const fetcher=async url=>({ok:true,status:200,text:async()=>String(url).endsWith('.xml')?emptyFeed:storyPage,headers:new Map()});
+ const proposals=[{title:'حارس المنارة المختفي',url:'https://stories.example/lighthouse',published:'2026-11-18T09:00:00Z',summary:'lighthouse keeper vanished from the island'}];
+ let groundedCalls=0;
+ const client={generate:async()=>{groundedCalls++;return {candidates:[{content:{parts:[{text:JSON.stringify(proposals)}]}}],groundingMetadata:{groundingChunks:[{web:{uri:'https://stories.example/lighthouse'}}]},_pipeline:{model:'gemini-test'}};}};
+ const out=await selectTopic(horror,[],{forceGrounding:true,client,fetcher,now:Date.parse('2026-11-19T12:00:00Z')});
+ assert.equal(out.selected.url,'https://stories.example/lighthouse');
+ assert.equal(out.groundingDiagnostics.forced,true);
+ assert.ok(groundedCalls>=1);
+});

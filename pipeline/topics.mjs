@@ -49,6 +49,21 @@ export async function selectTopic(config,history,options={}){
  let trendSignals=null,trendDiagnostics=null;
  if(config.trends?.enabled){try{const radar=await fetchTrendSignals(config.trends,options);trendSignals=radar.degraded?null:radar.signals;trendDiagnostics={sources:radar.diagnostics,degraded:radar.degraded};}catch(e){trendDiagnostics={sources:[],degraded:true,code:/[A-Z_]+/.exec(e.message)?.[0]||'TREND_RADAR_UNAVAILABLE'};}}
  let chosen;
+ // Forced grounding after a DUPLICATE_TOPIC_IDENTITY roll: skip the feed
+ // pool entirely and propose fresh topics via Gemini Search grounding.
+ if(options.forceGrounding&&config.grounding?.enabled){
+  try{
+   const {proposeGroundedCandidates}=await import('./grounded-topics.mjs');
+   const client=options.client||(await import('./provider-client.mjs')).provider();
+   const grounded=await proposeGroundedCandidates({client:await client,config,history,now:options.now,fetcher:options.fetcher});
+   if(grounded.candidates.length){
+    chosen=chooseSources(collected.sources,config,{...options,history,diagnostics:collected.diagnostics,trendSignals,extraCandidates:grounded.candidates});
+    chosen.groundingDiagnostics={...grounded.diagnostics,forced:true};
+    if(trendDiagnostics||chosen.trend?.length)chosen.trendDiagnostics={...(trendDiagnostics||{}),decisions:chosen.trend||[]};
+    return chosen;
+   }
+  }catch{/* grounding unavailable: fall through to the normal feed path */}
+ }
  try{
  try{chosen=chooseSources(collected.sources,config,{...options,history,diagnostics:collected.diagnostics,trendSignals});}
  catch(e){
