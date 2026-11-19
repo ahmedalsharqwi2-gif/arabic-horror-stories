@@ -1,0 +1,68 @@
+{
+  "method": "stable-ts attention forced alignment; independent unprompted faster-whisper ASR",
+  "estimatedTiming": false,
+  "scenes": [
+    {
+      "scene": 0,
+      "passed": true,
+      "words": 32,
+      "characterSimilarity": 0.9931506849315068,
+      "wordCoverage": 0.96875,
+      "sourceWords": 32,
+      "recognizedWords": 32,
+      "missingNumerals": []
+    },
+    {
+      "scene": 1,
+      "passed": true,
+      "words": 31,
+      "characterSimilarity": 0.9686411149825784,
+      "wordCoverage": 0.8387096774193549,
+      "sourceWords": 31,
+      "recognizedWords": 31,
+      "missingNumerals": []
+    },
+    {
+      "scene": 2,
+      "passed": true,
+      "words": 32,
+      "characterSimilarity": 0.9852941176470589,
+      "wordCoverage": 0.9375,
+      "sourceWords": 32,
+      "recognizedWords": 32,
+      "missingNumerals": []
+    },
+    {
+      "scene": 3,
+      "passed": true,
+      "words": 32,
+      "characterSimilarity": 0.9575289575289575,
+      "wordCoverage": 0.9375,
+      "sourceWords": 32,
+      "recognizedWords": 32,
+      "missingNumerals": []
+    },
+    {
+      "scene": 4,
+      "passed": true,
+      "words": 32,
+      "characterSimilarity": 0.966542750929368,
+      "wordCoverage": 0.90625,
+      "sourceWords": 32,
+      "recognizedWords": 32,
+      "missingNumerals": []
+    }
+  ],
+  "passed": false,
+  "code": "ALIGNMENT_SPEECH_MISMATCH",
+  "stage": "independent_asr",
+  "scene": 5,
+  "errorType": "AlignmentError",
+  "details": {
+    "characterSimilarity": 0.8417508417508418,
+    "wordCoverage": 0.6944444444444444,
+    "sourceWords": 36,
+    "recognizedWords": 33,
+    "missingNumerals": []
+  }
+}

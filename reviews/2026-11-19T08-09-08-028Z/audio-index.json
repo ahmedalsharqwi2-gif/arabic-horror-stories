@@ -1,0 +1,186 @@
+[
+  {
+    "file": "audio/scene-0.wav",
+    "duration": 16.68,
+    "text": "سلسلة المغامرون الخمسة مش مجرد قصص بوليسية، دي كانت عالم كامل بناه الكاتب محمود سالم. بدأت السلسلة بترجمة قصص إنجليزية، لكن بعد كده ألف الكاتب معظم أعدادها اللي حققت شهرة واسعة جداً.",
+    "sha256": "d07717601c0b1d75f228ae254162fafbe064ed721c18a85c66b8506c1164fdad",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 0,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "df40e3558e61abde8c1d12d3ee966c19357981b2068cc2c8fa0b8cfe54317e0c",
+        "sha256": "d07717601c0b1d75f228ae254162fafbe064ed721c18a85c66b8506c1164fdad",
+        "text_sha256": "6d93150a0385fd219efe304ebc2ec65cb83049e59901333b8ab9a2429661bf90",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 800718,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "audio/scene-1.wav",
+    "duration": 16.44,
+    "text": "خمسة أطفال في سن المراهقة، نوسة ولوزة وتختخ وعاطف ومحب، ومعاهم الكلب الذكي زنجر. دول كانوا أصدقاء كل طفل عربي، بيتدخلوا لحل الألغاز وإنقاذ المظلومين في كل مكان يروحوا فيه بذكائهم.",
+    "sha256": "e10537f3acc23450c7168fa8defaa2fe4fddf439720f12ec90c82e537581c330",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 1,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "e16c47c0d654fe58fc966fe004dccf88ff63d02f99ec80aa9c74d87d7ea42172",
+        "sha256": "e10537f3acc23450c7168fa8defaa2fe4fddf439720f12ec90c82e537581c330",
+        "text_sha256": "aaefed63cf4f4cbdeabbe09a4855b010f0b2b17d4e6ea21f310f95a99c56a7d8",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 789198,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "audio/scene-2.wav",
+    "duration": 15.32,
+    "text": "المؤلف محمود سالم كان له رأي غريب في قصصه. قال إن السلسلة دي كانت وسيلة لاستعادة شجون وذكريات طفل متوحد ومنعزل، وكأن المغامرات دي كانت هروب من الواقع اللي عاشه في طفولته.",
+    "sha256": "c1d3459bec5337b25acfc80b75be06faf7f4c0b12b076ecc7e8df2c62f974c2d",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 2,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "6d91811a46f0e38538a44c65e9b3434365a35e67a10bc825943af58c5002a31c",
+        "sha256": "c1d3459bec5337b25acfc80b75be06faf7f4c0b12b076ecc7e8df2c62f974c2d",
+        "text_sha256": "7c63bdbf64e560b530f4dcdc7f3df92fa865d3233e2e2779cb9bffc7742eae79",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 735438,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "audio/scene-3.wav",
+    "duration": 13.84,
+    "text": "في عز نجاح السلسلة، كان الإنتاج ضخم جداً. المؤلف ذكر إنهم وصلوا لطباعة مائة ألف نسخة في الشهر الواحد، وده رقم مرعب في الوقت ده، مما يثبت مدى تعلق الناس بهذه المغامرات.",
+    "sha256": "ad85a0ee4130161ae7febe8c577c81c6083b595ec748bbb8e7a8b71cf280bdb4",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 3,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "dd095a892e0a36ceca7c961a0142695b063b5eb1acb613ec8fad714d49a4d09f",
+        "sha256": "ad85a0ee4130161ae7febe8c577c81c6083b595ec748bbb8e7a8b71cf280bdb4",
+        "text_sha256": "94a97239a22540d15c6e2bd8f3b6d79c76bea07935c6fddb032d2b5d060c42bb",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 664398,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "audio/scene-4.wav",
+    "duration": 16,
+    "text": "تختخ، أو توفيق خليل، كان هو العقل المفكر للفريق. بذكائه وقدرته على التنكر، قدر يحل أصعب الألغاز اللي واجهت المفتش سامي، لدرجة إن المفتش كان بيثق فيه ثقة مطلقة في كل القضايا.",
+    "sha256": "2a026c1143c3cb2adefcca69b1bf23716b1593b1d92cff88e8f7d64068db5be6",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 4,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "da4c78928cd4b0467ea8f7c085c6f733d4f3d61e61eb66fa85c50b041e5f387b",
+        "sha256": "2a026c1143c3cb2adefcca69b1bf23716b1593b1d92cff88e8f7d64068db5be6",
+        "text_sha256": "3c6d9cc87badf0c972b468e374b1f29108af1e39c46a0a121118065a2e172c29",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 768078,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "audio/scene-5.wav",
+    "duration": 16.56,
+    "text": "أغلب الظن إن أحداث السلسلة دارت في فترة الستينات والسبعينات. في مغامرة القبر الملكي، ذكر المؤلف إن اكتشاف مقبرة توت عنخ آمون كان من خمسة وأربعين سنة، مما يحدد زمن القصة بعام ألف وتسعمائة وسبعة وستين.",
+    "sha256": "b671cfd315a3dff7999a4396d8f1d80981c5559aecfbbd2fdaac500bf9636040",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 5,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "6188ba3e5cd064f1b83f99949f312205ebfa1f7f2a1bbf980ec6c89d5e0b8d25",
+        "sha256": "b671cfd315a3dff7999a4396d8f1d80981c5559aecfbbd2fdaac500bf9636040",
+        "text_sha256": "318ec71ba9023cc44f1ecd72332c23a10f773997316a7fe84ad5f97f9642aba0",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 794958,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "audio/scene-6.wav",
+    "duration": 15.92,
+    "text": "المغامرون الخمسة ما كانوش بعيد عن الواقع السياسي. شاركوا في أحداث مهمة زي حرب أكتوبر عام ألف وتسعمائة وثلاثة وسبعين، من خلال لغز جاسوس السويس، وده بيعكس ارتباط السلسلة بالواقع المصري في وقتها.",
+    "sha256": "1fca6d9c54dc5260fb6191a5319d4bafe0b43ef5a7350e7a73f87b9b5590a418",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 6,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "be8253823f39a4bb4350a1d746d1aecd3070e64bdd5e51e1b243bf6dd6105291",
+        "sha256": "1fca6d9c54dc5260fb6191a5319d4bafe0b43ef5a7350e7a73f87b9b5590a418",
+        "text_sha256": "8f751d458c86abb354eeda429995a168f10c07813b6fcdf31e7642e8d308bf90",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 764238,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "audio/scene-7.wav",
+    "duration": 17.48,
+    "text": "بين التنكر والمطاردات في الصحراء، فضلت السلسلة محتفظة برونقها. محمود سالم قدر يدمج الخيال بالمنطق، ويخلينا نصدق إن فيه أطفال يقدروا يحلوا جرائم جاسوسية ويسعدوا المفتش سامي في القبض على المجرمين الكبار.",
+    "sha256": "36313a0342bc4830bc90c366b92b80c8c0d658d1fccef053f3edfdedf8782db3",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 7,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "ab8eefd7f1f1355806602d6c0bb6a6a87ce88ee3a0c7e825508414210799e527",
+        "sha256": "36313a0342bc4830bc90c366b92b80c8c0d658d1fccef053f3edfdedf8782db3",
+        "text_sha256": "395b82a16ee2e33b13ba6961c8aa5b003ac556b577c9d1135d3e4fbf57f4536f",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 839118,
+        "reused": false
+      }
+    ]
+  }
+]
