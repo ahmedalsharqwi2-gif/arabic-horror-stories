@@ -115,7 +115,13 @@ export async function fetchTopicSources(topic,config,{fetcher=fetchFeed,now=Date
   try{
    const response=await fetcher(`https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(page.key||page.title)}`,{timeout:20000,cacheTtlMs:86400000});
    const data=JSON.parse(await response.text());
-   const text=strip(data.extract||'');
+   let text=strip(data.extract||'');
+   try{
+    const full=await fetcher(`https://${lang}.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&format=json&titles=${encodeURIComponent(data.title||page.title)}`,{timeout:20000,cacheTtlMs:86400000});
+    const pagesObj=JSON.parse(await full.text()).query?.pages||{};
+    const extract=Object.values(pagesObj).map(pg=>strip(pg.extract||''))[0]||'';
+    if(extract.length>text.length)text=(text+'\n\n'+extract).slice(0,8000);
+   }catch{/* summary alone is enough grounding */}
    const url=data.content_urls?.desktop?.page||`https://${lang}.wikipedia.org/wiki/${encodeURIComponent(page.key||page.title)}`;
    if(text.length>=200)sources.push({id:hash(url).slice(0,12),title:strip(data.title||page.title),url,text,published:new Date(now).toISOString(),official:false,publisher:'wikipedia.org',primaryRefs:[],dateBasis:'topic_grounding_lookup',proposed:true});
   }catch{/* try the next page */}
