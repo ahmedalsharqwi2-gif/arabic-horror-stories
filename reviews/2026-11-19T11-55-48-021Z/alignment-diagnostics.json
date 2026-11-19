@@ -1,0 +1,22 @@
+{
+  "method": "stable-ts attention forced alignment; independent unprompted faster-whisper ASR",
+  "estimatedTiming": false,
+  "scenes": [
+    {
+      "scene": 0,
+      "passed": true,
+      "words": 31,
+      "characterSimilarity": 0.9714285714285714,
+      "wordCoverage": 0.8387096774193549,
+      "sourceWords": 31,
+      "recognizedWords": 31,
+      "missingNumerals": []
+    }
+  ],
+  "passed": false,
+  "code": "ALIGNMENT_INVALID_MEASURED_SPAN",
+  "stage": "forced_alignment",
+  "scene": 1,
+  "errorType": "AlignmentError",
+  "details": {}
+}
