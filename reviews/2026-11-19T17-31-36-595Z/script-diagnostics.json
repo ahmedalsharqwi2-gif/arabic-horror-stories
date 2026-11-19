@@ -1,0 +1,6 @@
+{
+  "code": "SCRIPT_LINT",
+  "attempt": 3,
+  "zodIssues": null,
+  "detail": "scene[1].text spelled_out_number_run: 3 consecutive number-words in: وأعمارهم كانت بتتراوح ما بين تسعة وأربعة عشر سنة في أغلب المغامرات اللي عاشوها."
+}
