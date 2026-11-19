@@ -40,7 +40,7 @@ export function chooseSources(sources,config,{history=[],now=Date.now(),diagnost
  if(trendSignals){const ranked=rerankCandidates(candidates,trendSignals,config.trends||{},{now});candidates=ranked.candidates;trend=ranked.decisions;}
  if(!candidates.length){const e=Error('NO_CURRENT_VERIFIED_SOURCES');e.sourceDiagnostics={feeds:diagnostics,windowHours:hours,weeklyWindowHours:config.weeklyFallback?.maxAgeHours||null,parsed:sources.length,reasons:['No unused, dated, corroborated or official source inside the permitted windows.']};throw e;}
  const selected=mode==='weekly'?candidates.slice(0,config.weeklyFallback.maxStories||3):[candidates[0]],pool=[...new Map(selected.flatMap(c=>c.corroboration).map(s=>[s.id,s])).values()];
- return {selected:candidates[0].source,sources:pool,editorialMode:mode,editorialLabel:mode==='weekly'?'أهم أخبار الأسبوع':null,windowHours,verification:selected.map(c=>({id:c.source.id,basis:c.verification,sourceIds:c.corroboration.map(s=>s.id)})),diagnostics,trend,scoring:'Source authority, verified freshness and unused canonical source URL; no invented trend-volume metric.'};
+ return {selected:candidates[0].source,sources:pool,editorialMode:mode,editorialLabel:mode==='weekly'?'أهم أخبار الأسبوع':(config.profile==='horror'?'قصة':null),windowHours,verification:selected.map(c=>({id:c.source.id,basis:c.verification,sourceIds:c.corroboration.map(s=>s.id)})),diagnostics,trend,scoring:'Source authority, verified freshness and unused canonical source URL; no invented trend-volume metric.'};
 }
 export async function selectTopic(config,history,options={}){
  const collected=await collectSources(config,options);

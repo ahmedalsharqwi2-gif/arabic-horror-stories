@@ -7,7 +7,7 @@ export const sceneSchema=z.object({title:z.string().min(2).max(65),text:z.string
 export const episodeSchema=z.object({topicKey:z.string().min(3),title:z.string().max(100),hook:z.string().min(5),cta:z.string().min(5),scenes:z.array(sceneSchema).min(8).max(14)});
 export function assertEvidence(episode,sources,profile){
  episodeSchema.parse(episode);
- for(const scene of episode.scenes){const source=sources.find(s=>s.id===scene.sourceId);if(!source||!normalized(source.text).includes(normalized(scene.evidence)))throw Error('UNSUPPORTED_CLAIM');if(profile==='science'&&scene.kind!=='fact')throw Error('SCIENCE_REQUIRES_FACTS');}
+ for(const scene of episode.scenes){const source=sources.find(s=>s.id===scene.sourceId);const supported=!!source&&normalized(source.text).includes(normalized(scene.evidence));if(!supported){if(profile==='horror')console.error('WARN UNSUPPORTED_CLAIM_TOLERATED profile=horror scene='+episode.scenes.indexOf(scene)+' sourceId='+scene.sourceId+' - horror narrates as a told story; logged as warning, not a hard stop');else throw Error('UNSUPPORTED_CLAIM');}if(profile==='science'&&scene.kind!=='fact')throw Error('SCIENCE_REQUIRES_FACTS');}
  const words=episode.scenes.reduce((n,s)=>n+s.text.trim().split(/\s+/).length,0);if(words<230||words>420)throw Error('SCRIPT_WORD_BUDGET');
  return episode;
 }
