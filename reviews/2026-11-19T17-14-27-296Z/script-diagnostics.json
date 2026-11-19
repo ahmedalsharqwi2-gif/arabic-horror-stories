@@ -1,0 +1,6 @@
+{
+  "code": "SCRIPT_LINT",
+  "attempt": 3,
+  "zodIssues": null,
+  "detail": "scene[3].text spelled_out_year: year-like number words in: الكاتب كان بيطبع مئة ألف نسخة في الشهر الواحد،"
+}

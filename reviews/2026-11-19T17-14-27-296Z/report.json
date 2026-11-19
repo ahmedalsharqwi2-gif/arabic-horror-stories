@@ -1,0 +1,23 @@
+{
+  "id": "2026-11-19T17-14-27-296Z",
+  "attemptId": "2026-11-19T17-14-27-296Z",
+  "mode": "review",
+  "published": false,
+  "status": "running",
+  "resumed": false,
+  "stages": [
+    {
+      "name": "preflight",
+      "status": "pass",
+      "seconds": 0.522
+    },
+    {
+      "name": "topics",
+      "status": "pass",
+      "seconds": 17.317
+    }
+  ],
+  "limitations": [
+    "Incomplete visual previews never pass narrated-film acceptance. Human pronunciation and art-direction approval are separate."
+  ]
+}

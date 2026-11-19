@@ -1,0 +1,6 @@
+{
+  "code": "SCRIPT_LINT",
+  "attempt": 2,
+  "zodIssues": null,
+  "detail": "scene[1].text spelled_out_year: year-like number words in: سار بجيش مكوَّن من عشرين ألف جُندي على الإبل،"
+}
