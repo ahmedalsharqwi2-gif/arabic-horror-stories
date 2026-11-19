@@ -1,0 +1,78 @@
+{
+  "id": "2026-11-19T22-57-06-465Z",
+  "attemptId": "2026-11-19T22-53-42-219Z",
+  "mode": "review",
+  "published": false,
+  "status": "failed",
+  "resumed": false,
+  "stages": [
+    {
+      "name": "preflight",
+      "status": "pass",
+      "seconds": 0.465
+    },
+    {
+      "name": "topics",
+      "status": "pass",
+      "seconds": 17.297
+    },
+    {
+      "name": "roll",
+      "status": "rolled_fresh_topic",
+      "roll": 1,
+      "fromStage": "script",
+      "code": "SCRIPT_WORD_BUDGET"
+    },
+    {
+      "name": "preflight",
+      "status": "pass",
+      "seconds": 0.039
+    },
+    {
+      "name": "topics",
+      "status": "pass",
+      "seconds": 0.161
+    },
+    {
+      "name": "roll",
+      "status": "rolled_fresh_topic",
+      "roll": 2,
+      "fromStage": "script",
+      "code": "SCRIPT_WORD_BUDGET"
+    },
+    {
+      "name": "preflight",
+      "status": "pass",
+      "seconds": 0.039
+    },
+    {
+      "name": "topics",
+      "status": "pass",
+      "seconds": 0.148
+    }
+  ],
+  "limitations": [
+    "Incomplete visual previews never pass narrated-film acceptance. Human pronunciation and art-direction approval are separate."
+  ],
+  "rolled": [
+    {
+      "id": "2026-11-19T22-53-42-219Z",
+      "stage": "script",
+      "code": "SCRIPT_WORD_BUDGET",
+      "roll": 1
+    },
+    {
+      "id": "2026-11-19T22-55-37-363Z",
+      "stage": "script",
+      "code": "SCRIPT_WORD_BUDGET",
+      "roll": 2
+    }
+  ],
+  "failedStage": "script",
+  "errorCode": "DUPLICATE_TOPIC_IDENTITY",
+  "partial": {
+    "status": "rendered",
+    "path": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/out/2026-11-19T22-57-06-465Z/incomplete/visual-preview-incomplete.mp4",
+    "incomplete": true
+  }
+}
