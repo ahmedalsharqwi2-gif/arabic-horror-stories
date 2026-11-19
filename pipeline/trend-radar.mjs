@@ -125,8 +125,9 @@ export async function fetchTopicSources(topic,config,{fetcher=fetchFeed,now=Date
      text=(text+'\n\n'+cut).slice(0,8000);
     }
    }catch{/* summary alone is enough grounding */}
+   text=text.split('\n').filter(l=>!/على موقع .*\((الإنجليزية|الفرنسية|الإسبانية|الألمانية|الروسية|التركية|الإيطالية|اليابانية|الصينية|الهندية|البرتغالية|الكورية|الهولندية|السويدية|البولندية|العربية)\)/.test(l)).join('\n');
    const url=data.content_urls?.desktop?.page||`https://${lang}.wikipedia.org/wiki/${encodeURIComponent(page.key||page.title)}`;
-   if(text.length>=200)sources.push({id:hash(url).slice(0,12),title:strip(data.title||page.title),url,text,published:new Date(now).toISOString(),official:false,publisher:'wikipedia.org',primaryRefs:[],dateBasis:'topic_grounding_lookup',proposed:true});
+   if(text.length>=1500)sources.push({id:hash(url).slice(0,12),title:strip(data.title||page.title),url,text,published:new Date(now).toISOString(),official:false,publisher:'wikipedia.org',primaryRefs:[],dateBasis:'topic_grounding_lookup',proposed:true});
   }catch{/* try the next page */}
  }
  return sources;

@@ -21,12 +21,12 @@ test('proposeTopics ranks suggestions first, drops short terms, used topics and 
 test('fetchTopicSources grounds a proposed topic in Wikipedia summaries', async () => {
   const fetcher = async (url) => {
     if (url.includes('search/page')) return new Response(JSON.stringify({pages: [{key: 'ماري_سيليست', title: 'ماري سيليست'}]}));
-    return new Response(JSON.stringify({title: 'ماري سيليست', extract: 'ماري سيليست سفينة تجارية وُجدت مهجورة في المحيط الأطلسي عام 1872 وطاقمها مختفٍ في ظروف غامضة، وأصبحت من أشهر ألغاز البحر في التاريخ الحديث وأثارت نظريات كثيرة عن مصير طاقمها.'.repeat(2), content_urls: {desktop: {page: 'https://ar.wikipedia.org/wiki/ماري_سيليست'}}}));
+    return new Response(JSON.stringify({title: 'ماري سيليست', extract: 'ماري سيليست سفينة تجارية وُجدت مهجورة في المحيط الأطلسي عام 1872 وطاقمها مختفٍ في ظروف غامضة، وأصبحت من أشهر ألغاز البحر في التاريخ الحديث وأثارت نظريات كثيرة عن مصير طاقمها.'.repeat(14), content_urls: {desktop: {page: 'https://ar.wikipedia.org/wiki/ماري_سيليست'}}}));
   };
   const sources = await fetchTopicSources('لغز سفينة الأشباح', config, {fetcher});
   assert.equal(sources.length, 1);
   assert.equal(sources[0].proposed, true);
-  assert.ok(sources[0].text.length >= 200);
+  assert.ok(sources[0].text.length >= 1500);
 });
 
 test('chooseSources allowProposed keeps term gates but not the publisher allowlist', () => {
@@ -50,7 +50,7 @@ test('selectTopic falls back to a proposed grounded topic when feeds verify noth
     if (url.includes('example.com')) return new Response('<?xml version="1.0"?><rss version="2.0"><channel></channel></rss>');
     if (url.includes('suggestqueries')) return new Response('["لغز",[["لغز سفينة الأشباح ماري سيليست"]]]');
     if (url.includes('search/page')) return new Response(JSON.stringify({pages: [{key: 'ماري_سيليست', title: 'ماري سيليست'}]}));
-    if (url.includes('page/summary')) return new Response(JSON.stringify({title: 'ماري سيليست', extract: 'ماري سيليست سفينة وُجدت مهجورة وطاقمها مختفٍ في ظروف غامضة، لغز بحري شهير أثار نظريات كثيرة. '.repeat(4), content_urls: {desktop: {page: 'https://ar.wikipedia.org/wiki/ماري_سيليست'}}}));
+    if (url.includes('page/summary')) return new Response(JSON.stringify({title: 'ماري سيليست', extract: 'ماري سيليست سفينة وُجدت مهجورة وطاقمها مختفٍ في ظروف غامضة، لغز بحري شهير أثار نظريات كثيرة. '.repeat(22), content_urls: {desktop: {page: 'https://ar.wikipedia.org/wiki/ماري_سيليست'}}}));
     throw Error('FEED_HTTP_404');
   };
   const cfg = {
