@@ -1,0 +1,30 @@
+{
+  "id": "2026-11-19T10-19-58-166Z",
+  "attemptId": "2026-11-19T10-19-58-166Z",
+  "mode": "review",
+  "published": false,
+  "status": "failed",
+  "resumed": false,
+  "stages": [
+    {
+      "name": "preflight",
+      "status": "pass",
+      "seconds": 0.285
+    },
+    {
+      "name": "topics",
+      "status": "pass",
+      "seconds": 17.382
+    }
+  ],
+  "limitations": [
+    "Incomplete visual previews never pass narrated-film acceptance. Human pronunciation and art-direction approval are separate."
+  ],
+  "failedStage": "script",
+  "errorCode": "UNSUPPORTED_CLAIM",
+  "partial": {
+    "status": "rendered",
+    "path": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/out/2026-11-19T10-19-58-166Z/incomplete/visual-preview-incomplete.mp4",
+    "incomplete": true
+  }
+}
