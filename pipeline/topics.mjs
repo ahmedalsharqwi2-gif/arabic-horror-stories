@@ -31,10 +31,12 @@ export function verifiedCandidates(sources,{history=[],maxAgeHours,now=Date.now(
   return others.length?{source,corroboration:[source,others[0]],verification:'two_independent_publishers_same_primary_reference'}:null;
  }).filter(Boolean);
 }
-export function chooseSources(sources,config,{history=[],now=Date.now(),diagnostics=[],trendSignals=null,allowProposed=false,proposedTopicText=''}={}){
+export function chooseSources(sources,config,{history=[],now=Date.now(),diagnostics=[],trendSignals=null,allowProposed=false,proposedTopicText='',extraCandidates=[]}={}){
  const rule=allowProposed?{...(config.channelRelevance||{}),allowedDomains:[]}:config.channelRelevance;const decisions=sources.map(source=>({id:source.id,url:source.url,...sourceRelevance(source,rule,allowProposed?proposedTopicText:'')}));const relevant=sources.filter((_,i)=>decisions[i].accepted);if(rule?.enabled&&!relevant.length){const e=Error('NO_CHANNEL_RELEVANT_SOURCE');e.sourceDiagnostics={feeds:diagnostics,channelRelevance:decisions};throw e;}sources=relevant;
  const hours=config.profile==='news'?72:config.maxAgeHours;let candidates=allowProposed?sources.map(s=>({source:s,corroboration:[s],verification:'proposed_topic_wikipedia_grounding'})):verifiedCandidates(sources,{history,maxAgeHours:hours,now});let mode='daily',windowHours=hours;
  if(!candidates.length&&config.profile==='news'&&config.weeklyFallback?.enabled){candidates=verifiedCandidates(sources,{history,maxAgeHours:config.weeklyFallback.maxAgeHours,now});mode='weekly';windowHours=config.weeklyFallback.maxAgeHours;}
+ // Grounded fallback: candidates already fetch-verified by grounded-topics.mjs.
+ if(!candidates.length&&extraCandidates.length)candidates=extraCandidates;
  candidates.sort((a,b)=>(Number(b.source.official)-Number(a.source.official))||Date.parse(b.source.published)-Date.parse(a.source.published));
  let trend=[];
  if(trendSignals){const ranked=rerankCandidates(candidates,trendSignals,config.trends||{},{now});candidates=ranked.candidates;trend=ranked.decisions;}
@@ -47,6 +49,7 @@ export async function selectTopic(config,history,options={}){
  let trendSignals=null,trendDiagnostics=null;
  if(config.trends?.enabled){try{const radar=await fetchTrendSignals(config.trends,options);trendSignals=radar.degraded?null:radar.signals;trendDiagnostics={sources:radar.diagnostics,degraded:radar.degraded};}catch(e){trendDiagnostics={sources:[],degraded:true,code:/[A-Z_]+/.exec(e.message)?.[0]||'TREND_RADAR_UNAVAILABLE'};}}
  let chosen;
+ try{
  try{chosen=chooseSources(collected.sources,config,{...options,history,diagnostics:collected.diagnostics,trendSignals});}
  catch(e){
   if(!['NO_CURRENT_VERIFIED_SOURCES','NO_CHANNEL_RELEVANT_SOURCE'].includes(e.message)||config.trends?.mode!=='propose'||!trendSignals)throw e;
@@ -57,6 +60,16 @@ export async function selectTopic(config,history,options={}){
    }catch{/* try the next proposal */}
   }
   if(!chosen)throw e;
+ }
+ }catch(e){
+  if(e.message!=='NO_CURRENT_VERIFIED_SOURCES'||!config.grounding?.enabled)throw e;
+  // Feed pool and trend proposals exhausted: Gemini Search-grounded fallback,
+  // each URL fetch-verified (light mode) before entering the pool.
+  const {proposeGroundedCandidates}=await import('./grounded-topics.mjs');
+  const client=options.client||(await import('./provider-client.mjs')).provider();
+  const grounded=await proposeGroundedCandidates({client:await client,config,history,now:options.now,fetcher:options.fetcher});
+  chosen=chooseSources(collected.sources,config,{...options,history,diagnostics:collected.diagnostics,trendSignals,extraCandidates:grounded.candidates});
+  chosen.groundingDiagnostics=grounded.diagnostics;
  }
  if(trendDiagnostics||chosen.trend?.length)chosen.trendDiagnostics={...(trendDiagnostics||{}),decisions:chosen.trend||[]};
  return chosen;

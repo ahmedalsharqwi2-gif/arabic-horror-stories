@@ -53,5 +53,19 @@
     ]
   },
   "paper": true,
-  "mascot": false
+  "mascot": false,
+  "grounding": {
+    "enabled": true,
+    "useWhen": "fallback",
+    "mode": "light",
+    "maxCandidates": 6,
+    "blockedDomains": [
+      "facebook.com",
+      "tiktok.com",
+      "pinterest.com",
+      "quora.com",
+      "reddit.com",
+      "youtube.com"
+    ]
+  }
 }
