@@ -36,3 +36,12 @@ test('hook and cta are linted too',()=>{
  const ep={hook:'في ألفين وتسعة وعشرين إيه اللي حصل؟',cta:'تابعنا',scenes:[{text:'جملة نظيفة.'}]};
  assert.ok(lintNarration(ep).some(h=>h.field==='hook'));
 });
+
+test('lint: quantity with thousand-word is NOT a spelled-out year',()=>{
+  const ep={hook:'',cta:'',scenes:[{text:'سار بجيش مكوَّن من عشرين ألف جُندي على الإبل.'}]};
+  assert.deepEqual(lintNarration(ep).filter(i=>i.kind==='spelled_out_year'),[]);
+});
+test('lint: run starting with thousand-word IS a spelled-out year',()=>{
+  const ep={hook:'',cta:'',scenes:[{text:'في مهمة أرتميس اللي متخطط لها في عام ألفين وثمانية وعشرين.'}]};
+  assert.ok(lintNarration(ep).some(i=>i.kind==='spelled_out_year'||i.kind==='spelled_out_number_run'));
+});
