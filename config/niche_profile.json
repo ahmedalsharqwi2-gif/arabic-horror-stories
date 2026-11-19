@@ -1,0 +1,91 @@
+{
+  "channel": "ملفات غامضة",
+  "audience": "Arabic-speaking mystery and legend fans, mostly 16-35",
+  "searchIntent": "حقيقة …، لغز …، القصة الكاملة لـ…، famous mystery names with steady search",
+  "tone": "calm, eerie but honest; legend clearly separated from documented fact",
+  "pillars": [
+    {
+      "id": "historical_mysteries",
+      "title": "ألغاز تاريخية موثقة غير محلولة",
+      "keywords": [
+        "لغز",
+        "لغز تاريخي",
+        "اختفاء",
+        "حقيقة",
+        "أحجية",
+        "mystery",
+        "unsolved"
+      ]
+    },
+    {
+      "id": "places_phenomena",
+      "title": "أماكن وظواهر غامضة موثقة",
+      "keywords": [
+        "مثلث",
+        "مكان غامض",
+        "ظاهرة غامضة",
+        "جزيرة",
+        "مثلث برمودا",
+        "bermuda"
+      ]
+    },
+    {
+      "id": "myth_origins",
+      "title": "أصل الأساطير والحكايات الشعبية",
+      "keywords": [
+        "أسطورة",
+        "حكاية شعبية",
+        "أصل الأسطورة",
+        "خرافة",
+        "myth",
+        "legend",
+        "folklore"
+      ]
+    },
+    {
+      "id": "old_disappearances",
+      "title": "اختفاءات وقضايا تاريخية قديمة",
+      "keywords": [
+        "اختفى",
+        "اختفت",
+        "قضية قديمة",
+        "اختفاء غامض",
+        "disappearance"
+      ]
+    },
+    {
+      "id": "weird_archive",
+      "title": "ملفات من أرشيف التاريخ الغريب",
+      "keywords": [
+        "تاريخ غريب",
+        "قصة حقيقية",
+        "وثائقي",
+        "archeology",
+        "أرشيف"
+      ]
+    }
+  ],
+  "questionPatterns": [
+    "حقيقة",
+    "لغز",
+    "القصة الكاملة"
+  ],
+  "bannedTopics": [
+    "ضحية حديث",
+    "عنف صريح",
+    "قصص مستخدمين منسوخة"
+  ],
+  "rules": [
+    "no copied user stories",
+    "no recent real victims",
+    "no graphic violence",
+    "explicit fact-vs-legend separation",
+    "sources documented"
+  ],
+  "bankMix": {
+    "evergreen": 70,
+    "trending": 30
+  },
+  "visualFilmabilityDefault": 0.55,
+  "aiDisclosure": "محتوى مُنشأ بمساعدة الذكاء الاصطناعي"
+}
