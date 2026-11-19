@@ -6,7 +6,7 @@ test('spelled-out year in scene text is rejected',()=>{
  const ep={hook:'هنشوف',cta:'تابعنا',scenes:[{text:'في ألفين وتسعة وعشرين حصل الإطلاق الأول للمحرك.'}]};
  const hits=lintNarration(ep);
  assert.equal(hits.length,1);
- assert.equal(hits[0].kind,'spelled_out_number_run');
+ assert.equal(hits[0].kind,'spelled_out_year');
 });
 test('year-like ألفين + one number word is rejected',()=>{
  const ep={hook:'هنشوف',cta:'تابعنا',scenes:[{text:'من ألفين وعشرة والتجارب شغالة.'}]};
@@ -44,4 +44,13 @@ test('lint: quantity with thousand-word is NOT a spelled-out year',()=>{
 test('lint: run starting with thousand-word IS a spelled-out year',()=>{
   const ep={hook:'',cta:'',scenes:[{text:'في مهمة أرتميس اللي متخطط لها في عام ألفين وثمانية وعشرين.'}]};
   assert.ok(lintNarration(ep).some(i=>i.kind==='spelled_out_year'||i.kind==='spelled_out_number_run'));
+});
+
+test('lint: adjacent quantities (ages nine and fourteen) are NOT a year',()=>{
+  const ep={hook:'',cta:'',scenes:[{text:'وأعمارهم كانت بتتراوح ما بين تسعة وأربعة عشر سنة في أغلب المغامرات.'}]};
+  assert.deepEqual(lintNarration(ep),[]);
+});
+test('lint: three-word year chain starting with thousand is still rejected',()=>{
+  const ep={hook:'',cta:'',scenes:[{text:'ده حصل في ألفين وتسعة وعشرين تقريبًا.'}]};
+  assert.ok(lintNarration(ep).some(i=>i.kind==='spelled_out_year'));
 });

@@ -17,8 +17,7 @@ function lintText(text,field,out){
    if(NUMWORDS.has(tok)){if(run===0)runStartThousand=THOUSAND.has(tok);run++;if(run>maxRun){maxRun=run;maxStartThousand=runStartThousand;}}
    else{run=0;runStartThousand=false;}
   }
-  if(maxRun>=3)out.push({field,kind:'spelled_out_number_run',detail:maxRun+' consecutive number-words in: '+sentence.slice(0,120)});
-  else if(maxRun>=2&&maxStartThousand)out.push({field,kind:'spelled_out_year',detail:'year-like number words in: '+sentence.slice(0,120)});
+  if(maxRun>=2&&maxStartThousand)out.push({field,kind:'spelled_out_year',detail:'year-like number words in: '+sentence.slice(0,120)});
   const latin=(sentence.match(/[A-Za-z][A-Za-z0-9.-]*/g)||[]).filter(w=>w.length>1);
   if(latin.length>=2)out.push({field,kind:'latin_names',detail:latin.length+' Latin-script tokens ('+latin.slice(0,4).join(', ')+') in: '+sentence.slice(0,120)});
   const hits=new Set();
