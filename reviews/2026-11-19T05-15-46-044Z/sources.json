@@ -1,0 +1,103 @@
+{
+  "selected": {
+    "id": "dabf7b673587",
+    "title": "المغامرون الخمسة",
+    "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%BA%D8%A7%D9%85%D8%B1%D9%88%D9%86_%D8%A7%D9%84%D8%AE%D9%85%D8%B3%D8%A9",
+    "text": "المغامرون الخمسة هي سلسلة قصص مغامرات بوليسية ألّفها الكاتب المصري محمود سالم. لجأ الكاتب بدايةً إلى ترجمة أعداد السلسلة البوليسية الإنجليزية الشهيرة كاشفو الأسرار الخمسة ، وبعد ذلك ألّف القسم الأكبر منها. صدر منها عشرات الكتب من دار المعارف وقدمت في عدة مسلسلات كرتونية، ويقوم ببطولتها خمسة من الأولاد تترواح أعمارهم ما بين التاسعة والرابعة عشرة وهم نوسة ولوزة وتختخ وعاطف ومحب وكلبهم زنجر. نالت السلسلة شهرة واسعة وامتدت شعبيتها إلى جميع أرجاء الوطن العربي. وقُدِّمت في مسلسل المغامرون الخمسة للنجم صلاح ذو الفقار من إخراج محمد نبيه.",
+    "published": "2026-11-19T05:15:56.256Z",
+    "official": false,
+    "publisher": "wikipedia.org",
+    "primaryRefs": [],
+    "dateBasis": "topic_grounding_lookup",
+    "proposed": true
+  },
+  "sources": [
+    {
+      "id": "dabf7b673587",
+      "title": "المغامرون الخمسة",
+      "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%BA%D8%A7%D9%85%D8%B1%D9%88%D9%86_%D8%A7%D9%84%D8%AE%D9%85%D8%B3%D8%A9",
+      "text": "المغامرون الخمسة هي سلسلة قصص مغامرات بوليسية ألّفها الكاتب المصري محمود سالم. لجأ الكاتب بدايةً إلى ترجمة أعداد السلسلة البوليسية الإنجليزية الشهيرة كاشفو الأسرار الخمسة ، وبعد ذلك ألّف القسم الأكبر منها. صدر منها عشرات الكتب من دار المعارف وقدمت في عدة مسلسلات كرتونية، ويقوم ببطولتها خمسة من الأولاد تترواح أعمارهم ما بين التاسعة والرابعة عشرة وهم نوسة ولوزة وتختخ وعاطف ومحب وكلبهم زنجر. نالت السلسلة شهرة واسعة وامتدت شعبيتها إلى جميع أرجاء الوطن العربي. وقُدِّمت في مسلسل المغامرون الخمسة للنجم صلاح ذو الفقار من إخراج محمد نبيه.",
+      "published": "2026-11-19T05:15:56.256Z",
+      "official": false,
+      "publisher": "wikipedia.org",
+      "primaryRefs": [],
+      "dateBasis": "topic_grounding_lookup",
+      "proposed": true
+    }
+  ],
+  "editorialMode": "daily",
+  "editorialLabel": null,
+  "windowHours": 720,
+  "verification": [
+    {
+      "id": "dabf7b673587",
+      "basis": "proposed_topic_wikipedia_grounding",
+      "sourceIds": [
+        "dabf7b673587"
+      ]
+    }
+  ],
+  "diagnostics": [
+    {
+      "url": "https://www.archaeology.org/feed/",
+      "items": 10,
+      "valid": 10,
+      "invalid": 0,
+      "future": 0,
+      "status": "ok",
+      "cache": "miss"
+    },
+    {
+      "url": "https://www.livescience.com/feeds/all",
+      "items": 50,
+      "valid": 50,
+      "invalid": 0,
+      "future": 0,
+      "status": "ok",
+      "cache": "miss"
+    }
+  ],
+  "trend": [],
+  "scoring": "Source authority, verified freshness and unused canonical source URL; no invented trend-volume metric.",
+  "proposedTopic": {
+    "topic": "لغز المتحف الخاص رقم 9",
+    "origin": "search_suggestion",
+    "weight": 2
+  },
+  "trendDiagnostics": {
+    "sources": [
+      {
+        "source": "trends",
+        "status": "ok",
+        "items": 10
+      },
+      {
+        "source": "suggestions",
+        "status": "ok",
+        "items": 10
+      },
+      {
+        "source": "suggestions",
+        "status": "ok",
+        "items": 0
+      },
+      {
+        "source": "suggestions",
+        "status": "ok",
+        "items": 10
+      },
+      {
+        "source": "suggestions",
+        "status": "ok",
+        "items": 1
+      },
+      {
+        "source": "suggestions",
+        "status": "ok",
+        "items": 2
+      }
+    ],
+    "degraded": false,
+    "decisions": []
+  }
+}
