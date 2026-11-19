@@ -1,0 +1,53 @@
+{
+  "id": "2026-11-19T03-37-07-266Z",
+  "attemptId": "2026-11-19T03-37-07-266Z",
+  "mode": "review",
+  "published": false,
+  "status": "failed",
+  "resumed": false,
+  "stages": [
+    {
+      "name": "preflight",
+      "status": "pass",
+      "seconds": 0.136
+    }
+  ],
+  "limitations": [
+    "Incomplete visual previews never pass narrated-film acceptance. Human pronunciation and art-direction approval are separate."
+  ],
+  "failedStage": "topics",
+  "errorCode": "NO_CURRENT_VERIFIED_SOURCES",
+  "sourceDiagnostics": {
+    "feeds": [
+      {
+        "url": "https://www.archaeology.org/feed/",
+        "items": 10,
+        "valid": 10,
+        "invalid": 0,
+        "future": 0,
+        "status": "ok",
+        "cache": "miss"
+      },
+      {
+        "url": "https://www.livescience.com/feeds/all",
+        "items": 50,
+        "valid": 50,
+        "invalid": 0,
+        "future": 0,
+        "status": "ok",
+        "cache": "miss"
+      }
+    ],
+    "windowHours": 720,
+    "weeklyWindowHours": null,
+    "parsed": 10,
+    "reasons": [
+      "No unused, dated, corroborated or official source inside the permitted windows."
+    ]
+  },
+  "partial": {
+    "status": "rendered",
+    "path": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/out/2026-11-19T03-37-07-266Z/incomplete/visual-preview-incomplete.mp4",
+    "incomplete": true
+  }
+}
