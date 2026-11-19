@@ -1,11 +1,11 @@
 import {normalized} from './policy.mjs';
 const domainMatches=(hostname,domain)=>hostname===domain||hostname.endsWith('.'+domain);
-export function sourceRelevance(source,rule){
+export function sourceRelevance(source,rule,extraText=''){
  if(!rule?.enabled)return {accepted:true,reason:'no_channel_rule_required',matchedTerms:[]};
  let hostname;try{hostname=new URL(source.url).hostname.toLowerCase();}catch{return {accepted:false,reason:'invalid_source_url',matchedTerms:[]};}
  if((rule.blockedDomains||[]).some(d=>domainMatches(hostname,d)))return {accepted:false,reason:'blocked_source_domain',matchedTerms:[]};
  if(rule.allowedDomains?.length&&!rule.allowedDomains.some(d=>domainMatches(hostname,d)))return {accepted:false,reason:'source_domain_not_in_channel_profile',matchedTerms:[]};
- const text=normalized([source.title||'',source.text||''].join(' '));
+ const text=normalized([source.title||'',source.text||'',extraText].join(' '));
  const excluded=(rule.excludedTerms||[]).filter(t=>text.includes(normalized(t)));
  if(excluded.length)return {accepted:false,reason:'excluded_channel_topic',matchedTerms:[],excludedTerms:excluded};
  const matchedTerms=(rule.requiredTerms||[]).filter(t=>text.includes(normalized(t)));
