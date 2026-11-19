@@ -1,0 +1,186 @@
+[
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T19-22-18-211Z/scene-0.wav",
+    "duration": 16.76,
+    "text": "عبيد الله بن زياد كان والي قوي حكم البصرة وخراسان، وبدأ فتوحاته وهو شاب صغير، وقطع جيشه أنهار بعيدة وفتح مدن كتيرة، وكان معروف بجرأته الكبيرة في اتخاذ القرارات الصعبة والمصيرية.",
+    "sha256": "ae5fab5404b0abe7e4e1e22ae4d3d5506b652a24291465f4b592ddd1be14503b",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 0,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "5df05a5349e61c8d033756e58296d74e95f7bd9242c93b1db643d5efa8b895be",
+        "sha256": "ae5fab5404b0abe7e4e1e22ae4d3d5506b652a24291465f4b592ddd1be14503b",
+        "text_sha256": "368706e32763adcd9bd3c470890ac67a4aa0394cf7864c02360a2f4f4fdc9a25",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 804558,
+        "reused": true
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T19-22-18-211Z/scene-1.wav",
+    "duration": 13.52,
+    "text": "في فترة حكمه، بنى مدن وقصور فخمة، كان بيقضي الشتا في مكان والصيف في مكان تاني، وده بيورينا قد إيه كانت حياته مليانة بالرفاهية والسيطرة على مقاليد الحكم في وقته.",
+    "sha256": "3a5996414df56bf314d63beb4aa39485da316396759b4ce3d510efe2ebf7e3a9",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 1,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "ee1d59f7f38d952d19623210f567a28e10b4c211415fb4cdadadc00fb86d2c1c",
+        "sha256": "3a5996414df56bf314d63beb4aa39485da316396759b4ce3d510efe2ebf7e3a9",
+        "text_sha256": "0043199e1af6b9936b09600de619fc3febb1bae41f24f97c07d3695766468ce5",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 649038,
+        "reused": true
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T19-22-18-211Z/scene-2.wav",
+    "duration": 15.6,
+    "text": "لما اتغيرت موازين القوى، واجه عبيد الله جيوش كتيرة، زي فرقة التوابين اللي هزمهم، لكن الأمور اتعقدت لما واجه فرقة تانية قوية، وبدأت رحلة النهاية تقرب منه في أرض المعارك.",
+    "sha256": "e740259098dcc65fd9ad2987d82f3fc9fc11056bc50bb015b6f9a18bf3cd41fb",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 2,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "1ca3a56c4c3433f81ec788ade0ee6e4fbeaeeab525be9060b25554b785893f8f",
+        "sha256": "e740259098dcc65fd9ad2987d82f3fc9fc11056bc50bb015b6f9a18bf3cd41fb",
+        "text_sha256": "2b8528adc4a008e989b4529018ac46c149026f4bb2c2499e993e0cc4e0d23e0a",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 748878,
+        "reused": true
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T19-22-18-211Z/scene-3.wav",
+    "duration": 14.6,
+    "text": "في معركة الخازر، التقى جيش ابن زياد بجيش ابن الأشتر، كانت معركة شرسة جداً، والجيشين دخلوا في قتال عنيف، والنتيجة كانت مفاجأة للكل وغيرت مجرى التاريخ في المنطقة دي تماماً.",
+    "sha256": "5b59d86eaa4a22aa1e66729ab2b3d6b80f56d518a87f1b2ae4b6ac79a0304ff1",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 3,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "2df15ff6e4b6f053197b60f5f0c5834b3064d1352e9eef4b6c5ec3f8aeede1a6",
+        "sha256": "5b59d86eaa4a22aa1e66729ab2b3d6b80f56d518a87f1b2ae4b6ac79a0304ff1",
+        "text_sha256": "51efb8ad4488d5d2a490f066c9c5067b2023b5752a77c36e7a5eac88856e4fbf",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 700878,
+        "reused": true
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T19-22-18-211Z/scene-4.wav",
+    "duration": 15.56,
+    "text": "بعد المعركة، ابن الأشتر دور على ابن زياد بين القتلى، ولما لقاه كان مقسوم نصين، والغريب إنه شم ريحة مسك طالعة منه، وكأنها نهاية أسطورية لحاكم عاش حياته في صراع دائم.",
+    "sha256": "a21e174c24794892ec5662d4e5558a89dfe505638dc9839fd0399f2a5e55d92a",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 4,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "7d900438dfccdf0436c0edccb1de23d0df1cb76f1f5e07e3535c11e83c98e8b5",
+        "sha256": "a21e174c24794892ec5662d4e5558a89dfe505638dc9839fd0399f2a5e55d92a",
+        "text_sha256": "081d36188f7ce7cd0a92aac1e058c8e7938a3a4f9ac1f1d91bcefb57c373043c",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 746958,
+        "reused": true
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T19-22-18-211Z/scene-5.wav",
+    "duration": 13.56,
+    "text": "بيحكوا إن ابن زياد كان عنده لُكنة في كلامه، وإن أمه كانت من ملوك الأعاجم، وده خلى الناس تتكلم عن شخصيته وتصرفاته الغريبة اللي كانت بتجمع بين القسوة والذكاء في نفس الوقت.",
+    "sha256": "e3a41f81f06098967e904de6aabe0e553a7fa872645035e8b6e280732db226ca",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 5,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "e42fae3988d506e09500746cf5aa9ef5cb903344cebcd2d7dfaaa6ed8706b3ab",
+        "sha256": "e3a41f81f06098967e904de6aabe0e553a7fa872645035e8b6e280732db226ca",
+        "text_sha256": "01c4327eb9614a2d7e7f2e2efbe2f791f1591cd666b4c86d75ba4112fa1c6350",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 650958,
+        "reused": true
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T19-22-18-211Z/scene-6.wav",
+    "duration": 15.28,
+    "text": "في مرة، راجل راح لابن زياد يطلب يتجوز أم مراته اللي ماتت، فابن زياد استغرب من جهله وقرر يخصم من عطائه أربعمائة درهم، وقال له إن فقهك ده يكفيه تلاتمئة درهم بس.",
+    "sha256": "2d70bb0637e26b330dce66779b2e76fcbbef23dca02ae8ebae9c0b5161a7ae15",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 6,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "049b879ab1df6657410b8a126c194d130f1cf380df054293dadda443a2618a24",
+        "sha256": "2d70bb0637e26b330dce66779b2e76fcbbef23dca02ae8ebae9c0b5161a7ae15",
+        "text_sha256": "4c3915f7cebcaff7391cee3cedb77b8bf926a58f431f722e6ebfaac8245e51eb",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 733518,
+        "reused": true
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-19T19-22-18-211Z/scene-7.wav",
+    "duration": 13.52,
+    "text": "قصة عبيد الله بن زياد بتفضل واحدة من أكتر القصص اللي فيها تفاصيل غامضة، من صعوده للسلطة لحد نهايته اللي لسه بتتحكي، التاريخ دايماً بيخبي أسرار ورا كل شخصية قوية.",
+    "sha256": "6080e6ec0c311955ec2e0b81d87b86137170092aeec9f92abf0414ecd166364e",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 7,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "166f797de29b95c131573386e25e03e4cf914217529ce4d6b23a62107c66a4a3",
+        "sha256": "6080e6ec0c311955ec2e0b81d87b86137170092aeec9f92abf0414ecd166364e",
+        "text_sha256": "bbf345d46aaf484f048dca2437e761ca04d326b8be50980661aa3dd57e62a3c3",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 649038,
+        "reused": true
+      }
+    ]
+  }
+]

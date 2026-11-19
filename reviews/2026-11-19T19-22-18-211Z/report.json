@@ -1,0 +1,64 @@
+{
+  "id": "2026-11-19T19-22-18-211Z",
+  "attemptId": "2026-11-19T19-20-21-192Z",
+  "mode": "review",
+  "published": false,
+  "status": "running",
+  "resumed": false,
+  "stages": [
+    {
+      "name": "preflight",
+      "status": "pass",
+      "seconds": 0.053
+    },
+    {
+      "name": "topics",
+      "status": "pass",
+      "seconds": 17.14
+    },
+    {
+      "name": "roll",
+      "status": "rolled_fresh_topic",
+      "roll": 1,
+      "fromStage": "script",
+      "code": "DUPLICATE_TOPIC_IDENTITY"
+    },
+    {
+      "name": "preflight",
+      "status": "pass",
+      "seconds": 0.045
+    },
+    {
+      "name": "topics",
+      "status": "pass",
+      "seconds": 14.219
+    },
+    {
+      "name": "script",
+      "status": "pass",
+      "seconds": 22.574
+    },
+    {
+      "name": "voice",
+      "status": "pass",
+      "seconds": 410.153
+    },
+    {
+      "name": "voice-repair-1",
+      "status": "pass",
+      "seconds": 1.428
+    }
+  ],
+  "limitations": [
+    "Incomplete visual previews never pass narrated-film acceptance. Human pronunciation and art-direction approval are separate.",
+    "align failed (ALIGNMENT_INVALID_MEASURED_SPAN); re-narrating once with fresh synthesis"
+  ],
+  "rolled": [
+    {
+      "id": "2026-11-19T19-20-21-192Z",
+      "stage": "script",
+      "code": "DUPLICATE_TOPIC_IDENTITY",
+      "roll": 1
+    }
+  ]
+}

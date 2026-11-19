@@ -39,5 +39,11 @@
     "status": "retired",
     "reason": "UNSUPPORTED_CLAIM",
     "run": "2026-11-19T18-10-11-602Z"
+  },
+  {
+    "topicKey": "obayd-allah-bin-ziyad-history",
+    "value": "https://ar.wikipedia.org/wiki/%D8%B9%D8%A8%D9%8A%D8%AF_%D8%A7%D9%84%D9%84%D9%87_%D8%A8%D9%86_%D8%B2%D9%8A%D8%A7%D8%AF",
+    "status": "retired",
+    "run": "2026-11-19T19-22-18-211Z"
   }
 ]
