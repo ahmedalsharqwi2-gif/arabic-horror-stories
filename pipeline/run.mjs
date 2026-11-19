@@ -28,7 +28,7 @@ export async function review({mode='review',scheduled=false,topicReservationPath
   const legacy=await json('state/legacy-topic-index.json'),ledger=await optionalJSON('state/topics.json',[]);const history=[...legacy,...ledger];
   if(!active){
    topic=await stage('topics',async()=>{if(!topicReservationPath)return selectTopic(config,history);const reservation=await json(topicReservationPath);const chosen=reservation.pipelineTopic||reservation;for(const s of chosen.sources)sourceSchema.parse(s);if(!chosen.sources.length)throw Error('NO_CURRENT_VERIFIED_SOURCES');requireRelevantSources(chosen.sources,config.channelRelevance);return chosen;});await save(out+'/sources.json',topic);
-   episode=await stage('script',()=>script(topic,config,history));await save(out+'/script.json',episode);
+   episode=await stage('script',()=>script(topic,config,history,{diagnosticsPath:out+'/script-diagnostics.json'}));await save(out+'/script.json',episode);
    active={schema:1,id,profile:config.profile,episode:structuredClone(episode),topic,scriptSha256:digest(JSON.stringify(episode)),state:'reserved'};await save(path.resolve('state/active-review.json'),active);
   }else{report.stages.push({name:'topics',status:'resumed_from_saved_source_manifest'},{name:'script',status:'resumed_from_hash_verified_script'});await save(out+'/sources.json',topic);await save(out+'/script.json',episode);}
   for(const source of topic.sources)if(!ledger.some(r=>r.run===id&&r.value===source.url))ledger.push({topicKey:episode.topicKey,value:source.url,status:'reserved',run:id});await save(path.resolve('state/topics.json'),ledger);
@@ -63,3 +63,4 @@ export async function review({mode='review',scheduled=false,topicReservationPath
  }finally{await save(out+'/attempt-'+attemptId+'.json',report);if(lock){await lock.close();await rm('.pipeline.lock',{force:true});}}
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(process.argv[1]).href){review({mode:process.env.MODE||'review',scheduled:process.env.SCHEDULED==='true',topicReservationPath:process.env.TOPIC_RESERVATION||undefined}).then(value=>console.log(JSON.stringify(value))).catch(e=>{console.error(e.message);process.exitCode=1;});}
+
