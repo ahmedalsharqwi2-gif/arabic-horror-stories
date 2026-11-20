@@ -34,7 +34,7 @@ test('chooseSources allowProposed keeps term gates but not the publisher allowli
   const cfg = {maxAgeHours: 720, channelRelevance: {enabled: true, minimumMatches: 1, allowedDomains: ['archaeology.org'], blockedDomains: [], excludedTerms: [], requiredTerms: ['لغز']}};
   const rejected = () => chooseSources([source], cfg, {});
   assert.throws(rejected, /NO_CHANNEL_RELEVANT_SOURCE/);
-  const chosen = chooseSources([source], cfg, {allowProposed: true});
+  const chosen = chooseSources([source], cfg, {allowProposed: true, proposedTopicText: 'لغز سفينة ماري سيليست'});
   assert.equal(chosen.selected.id, 'w1');
   assert.equal(chosen.verification[0].basis, 'proposed_topic_wikipedia_grounding');
 });
