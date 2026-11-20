@@ -31,12 +31,16 @@ export function verifiedCandidates(sources,{history=[],maxAgeHours,now=Date.now(
   return others.length?{source,corroboration:[source,others[0]],verification:'two_independent_publishers_same_primary_reference'}:null;
  }).filter(Boolean);
 }
-export function chooseSources(sources,config,{history=[],now=Date.now(),diagnostics=[],trendSignals=null,allowProposed=false,proposedTopicText='',extraCandidates=[]}={}){
+export function chooseSources(sources,config,{history=[],now=Date.now(),diagnostics=[],trendSignals=null,allowProposed=false,proposedTopicText='',extraCandidates=[],preferExtra=false}={}){
  const rule=allowProposed?{...(config.channelRelevance||{}),allowedDomains:[]}:config.channelRelevance;const decisions=sources.map(source=>({id:source.id,url:source.url,...sourceRelevance(source,rule,allowProposed?proposedTopicText:'')}));const relevant=sources.filter((_,i)=>decisions[i].accepted);if(rule?.enabled&&!relevant.length){const e=Error('NO_CHANNEL_RELEVANT_SOURCE');e.sourceDiagnostics={feeds:diagnostics,channelRelevance:decisions};throw e;}sources=relevant;
  const hours=config.profile==='news'?72:config.maxAgeHours;let candidates=allowProposed?sources.map(s=>({source:s,corroboration:[s],verification:'proposed_topic_wikipedia_grounding'})):verifiedCandidates(sources,{history,maxAgeHours:hours,now});let mode='daily',windowHours=hours;
  if(!candidates.length&&config.profile==='news'&&config.weeklyFallback?.enabled){candidates=verifiedCandidates(sources,{history,maxAgeHours:config.weeklyFallback.maxAgeHours,now});mode='weekly';windowHours=config.weeklyFallback.maxAgeHours;}
  // Grounded fallback: candidates already fetch-verified by grounded-topics.mjs.
- if(!candidates.length&&extraCandidates.length)candidates=extraCandidates;
+ // After a DUPLICATE_TOPIC_IDENTITY roll (preferExtra), the feed pool is
+ // exhausted by definition, so grounded candidates REPLACE it instead of
+ // only filling it when empty; otherwise the roll re-picks a feed topic
+ // whose story identity is already covered and fails the script gate again.
+ if(extraCandidates.length&&(preferExtra||!candidates.length))candidates=extraCandidates;
  candidates.sort((a,b)=>(Number(b.source.official)-Number(a.source.official))||Date.parse(b.source.published)-Date.parse(a.source.published));
  let trend=[];
  if(trendSignals){const ranked=rerankCandidates(candidates,trendSignals,config.trends||{},{now});candidates=ranked.candidates;trend=ranked.decisions;}
@@ -57,7 +61,7 @@ export async function selectTopic(config,history,options={}){
    const client=options.client||(await import('./provider-client.mjs')).provider();
    const grounded=await proposeGroundedCandidates({client:await client,config,history,now:options.now,fetcher:options.fetcher});
    if(grounded.candidates.length){
-    chosen=chooseSources(collected.sources,config,{...options,history,diagnostics:collected.diagnostics,trendSignals,extraCandidates:grounded.candidates});
+    chosen=chooseSources(collected.sources,config,{...options,history,diagnostics:collected.diagnostics,trendSignals,extraCandidates:grounded.candidates,preferExtra:true});
     chosen.groundingDiagnostics={...grounded.diagnostics,forced:true};
     if(trendDiagnostics||chosen.trend?.length)chosen.trendDiagnostics={...(trendDiagnostics||{}),decisions:chosen.trend||[]};
     return chosen;

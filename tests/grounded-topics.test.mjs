@@ -61,6 +61,16 @@ test('grounded candidates fill an exhausted feed pool through chooseSources',asy
  assert.equal(chosen.selected.url,'https://www.nasa.gov/lake');
  assert.throws(()=>chooseSources([],config,{history:[],now:NOW}),/NO_CURRENT_VERIFIED_SOURCES/);
 });
+test('preferExtra replaces a non-empty feed pool with grounded candidates (post-duplicate roll)',async()=>{
+ const v=await verifyGroundedCandidate(proposal,{mode:'strict',config,now:NOW,fetcher,nowHours:168});
+ const feedSource={id:'feed1',title:'قصة قديمة متكررة',url:'https://www.nasa.gov/old-story',text:body,published:'2026-11-18T09:00:00Z',official:true};
+ // Without preferExtra the feed pool wins (legacy fallback behavior).
+ const fallback=chooseSources([feedSource],config,{history:[],now:NOW,extraCandidates:[v]});
+ assert.equal(fallback.selected.url,'https://www.nasa.gov/old-story');
+ // With preferExtra the grounded candidate replaces the pool.
+ const forced=chooseSources([feedSource],config,{history:[],now:NOW,extraCandidates:[v],preferExtra:true});
+ assert.equal(forced.selected.url,'https://www.nasa.gov/lake');
+});
 test('proposeGroundedCandidates pings once, parses proposals and skips used topics',async()=>{
  const proposals=[proposal,{...proposal,url:'https://www.nasa.gov/lake2',title:'موضوع قديم'}];
  let calls=0;
