@@ -1,0 +1,76 @@
+{
+  "profile": "horror",
+  "name": "ملفات غامضة",
+  "accent": "#d27666",
+  "counter": "الملف",
+  "maxAgeHours": 720,
+  "feeds": [
+    {
+      "url": "https://www.archaeology.org/feed/",
+      "official": true
+    },
+    {
+      "url": "https://www.livescience.com/feeds/all",
+      "official": false
+    }
+  ],
+  "logo": "brand/logo/logo.jpg",
+  "channelRelevance": {
+    "enabled": true,
+    "minimumMatches": 1,
+    "allowedDomains": [
+      "archaeology.org",
+      "livescience.com",
+      "smithsonianmag.com",
+      "worldhistory.org",
+      "britishmuseum.org",
+      "bl.uk",
+      "loc.gov"
+    ],
+    "blockedDomains": [
+      "nasa.gov",
+      "esa.int"
+    ],
+    "excludedTerms": [
+      "recent murder",
+      "قتل حديث",
+      "وفاة لاعب"
+    ],
+    "requiredTerms": [
+      "mystery",
+      "mysterious",
+      "legend",
+      "folklore",
+      "unexplained",
+      "haunted",
+      "enigmat",
+      "megalith",
+      "لغز",
+      "غامض",
+      "أسطورة",
+      "اسطوره",
+      "تراث شعبي"
+    ]
+  },
+  "paper": true,
+  "mascot": false,
+  "grounding": {
+    "enabled": true,
+    "useWhen": "fallback",
+    "mode": "light",
+    "maxCandidates": 6,
+    "blockedDomains": [
+      "facebook.com",
+      "tiktok.com",
+      "pinterest.com",
+      "quora.com",
+      "reddit.com",
+      "youtube.com"
+    ]
+  },
+  "paperTheme": "ink-dark",
+  "paperCitations": true,
+  "paperTopBar": true,
+  "paperLogo": "brand/logo/logo.jpg",
+  "paperChapterLabel": "الملف"
+}

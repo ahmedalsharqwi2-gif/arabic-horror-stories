@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "mode": "propose",
+  "googleTrends": { "geo": "EG" },
+  "autocompleteSeeds": ["لغز", "اختفى في ظروف غامضة", "قصة حقيقية غامضة", "أغرب قضية", "أسطورة حقيقية"],
+  "competitorChannelIds": [],
+  "onThisDay": { "enabled": false },
+  "hackerNews": { "enabled": false },
+  "redditSubreddits": [],
+  "propose": { "lang": "ar", "maxCandidates": 5 },
+  "weights": { "demand": 1.0, "recency": 0.5 },
+  "excludedTerms": ["قتل حديث", "recent murder", "وفاة لاعب"]
+}
