@@ -1,0 +1,73 @@
+{
+  "id": "2026-11-20T08-22-10-304Z",
+  "attemptId": "2026-11-20T08-08-21-609Z",
+  "mode": "review",
+  "published": false,
+  "status": "failed",
+  "resumed": false,
+  "stages": [
+    {
+      "name": "preflight",
+      "status": "pass",
+      "seconds": 0.395
+    },
+    {
+      "name": "topics",
+      "status": "pass",
+      "seconds": 17.661
+    },
+    {
+      "name": "roll",
+      "status": "rolled_fresh_topic",
+      "roll": 1,
+      "fromStage": "script",
+      "code": "DUPLICATE_TOPIC_IDENTITY"
+    },
+    {
+      "name": "preflight",
+      "status": "pass",
+      "seconds": 0.031
+    },
+    {
+      "name": "roll",
+      "status": "rolled_fresh_topic",
+      "roll": 2,
+      "fromStage": "topics",
+      "code": "GEMINI_HTTP_429_EXHAUSTED"
+    },
+    {
+      "name": "preflight",
+      "status": "pass",
+      "seconds": 0.03
+    },
+    {
+      "name": "topics",
+      "status": "pass",
+      "seconds": 180.148
+    }
+  ],
+  "limitations": [
+    "Incomplete visual previews never pass narrated-film acceptance. Human pronunciation and art-direction approval are separate."
+  ],
+  "rolled": [
+    {
+      "id": "2026-11-20T08-08-21-609Z",
+      "stage": "script",
+      "code": "DUPLICATE_TOPIC_IDENTITY",
+      "roll": 1
+    },
+    {
+      "id": "2026-11-20T08-10-16-026Z",
+      "stage": "topics",
+      "code": "GEMINI_HTTP_429_EXHAUSTED",
+      "roll": 2
+    }
+  ],
+  "failedStage": "script",
+  "errorCode": "DUPLICATE_TOPIC_IDENTITY",
+  "partial": {
+    "status": "rendered",
+    "path": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/out/2026-11-20T08-22-10-304Z/incomplete/visual-preview-incomplete.mp4",
+    "incomplete": true
+  }
+}
