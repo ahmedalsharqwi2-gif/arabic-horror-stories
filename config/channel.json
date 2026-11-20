@@ -67,5 +67,10 @@
       "reddit.com",
       "youtube.com"
     ]
-  }
+  },
+  "paperTheme": "ink-dark",
+  "paperCitations": true,
+  "paperTopBar": true,
+  "paperLogo": "brand/logo/logo.jpg",
+  "paperChapterLabel": "الملف"
 }
