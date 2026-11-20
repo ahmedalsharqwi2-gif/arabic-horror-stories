@@ -1,0 +1,186 @@
+[
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-20T01-39-10-828Z/scene-0.wav",
+    "duration": 14.04,
+    "text": "بدأت الحكاية مع كاتب مصري مبدع قرر يترجم قصص بوليسية إنجليزية، وبعدها ألف القسم الأكبر من سلسلة المغامرون الخمسة اللي بقت جزء من ذكريات أجيال كتير في الوطن العربي كله.",
+    "sha256": "c8f43547efd4cb2ee0471437efe1a86e958bade0bb013a8229eba29eec3d1b40",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 0,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "0fab3e4e98b9cb0e1cf055f8ddb40bddf8e6b73aec34299f0ebe51ed11dae63a",
+        "sha256": "c8f43547efd4cb2ee0471437efe1a86e958bade0bb013a8229eba29eec3d1b40",
+        "text_sha256": "2e1ae9c0008e71d5876b8838e69df13c79af8708e84d8bc9902c799aa2157880",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 673998,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-20T01-39-10-828Z/scene-1.wav",
+    "duration": 13.96,
+    "text": "الفريق كان بيتكون من خمسة أطفال شجعان، أعمارهم بين تسعة وأربعة عشر سنة، ومعاهم كلبهم الذكي زنجر، اللي كان دايماً بيساعدهم في كشف خيوط الجرائم الغامضة في كل مغامرة جديدة.",
+    "sha256": "80eb9a329fa66b3604be2b0d25e4b807ced23dd4e653cf9033a51dfcd3fd25bd",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 1,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "8f71c73f65c17ef5d0fe5394540a89d0de72c05306a89a852b8bb0b4eaaf66ee",
+        "sha256": "80eb9a329fa66b3604be2b0d25e4b807ced23dd4e653cf9033a51dfcd3fd25bd",
+        "text_sha256": "de395f1a452b2c75533291293034129b0d3d685d5c2d3fdc48508405bda147fe",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 670158,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-20T01-39-10-828Z/scene-2.wav",
+    "duration": 15.16,
+    "text": "تختخ كان هو العقل المفكر وقائد الفريق، ولد ذكي جداً وبطل شجاع، قدر بذكائه وقدراته الاستنتاجية الخارقة إنه يحل أغلب الألغاز اللي واجهت الأصدقاء في رحلتهم الطويلة ضد المجرمين.",
+    "sha256": "54fad096db4c788d90967f0edaa48a653e4260553d7a068cfd4d9112730606e0",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 2,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "e9a464172175b78c251a3f346a99a45a8793c7ac9ecc71c9ab254167e133d1e5",
+        "sha256": "54fad096db4c788d90967f0edaa48a653e4260553d7a068cfd4d9112730606e0",
+        "text_sha256": "620104a96e304a6ace34b762da4a48c105822cd8d0fa4ee50a761d8676157a3d",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 727758,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-20T01-39-10-828Z/scene-3.wav",
+    "duration": 15.8,
+    "text": "الكاتب محمود سالم كان بيقول إن السلسلة دي كانت وسيلة لاستعادة ذكريات طفل منعزل، وفي وقت ذروة النجاح، كانت بتطبع مئات الآلاف من النسخ شهرياً، وده دليل على نجاحها الساحق.",
+    "sha256": "32d186552a8d2067a9f580075540a1ba6a06474367ac21c6b4345293036a7ac6",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 3,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "47ded520da125294533d5f967b76d5bcfcaee6b618047fb904e6c90d0ad45383",
+        "sha256": "32d186552a8d2067a9f580075540a1ba6a06474367ac21c6b4345293036a7ac6",
+        "text_sha256": "7c6e1421805866a30bd8e242281865186b9bbf12f797445e03ca330299626be9",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 758478,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-20T01-39-10-828Z/scene-4.wav",
+    "duration": 14.36,
+    "text": "أغلب المغامرات دارت في حي المعادي بالقاهرة، لكن الأبطال سافروا كمان لمدن تانية زي الإسكندرية والفيوم، وحتى سافروا بره مصر في مغامرات نادرة على سفينة أو في مدينة البندقية.",
+    "sha256": "1642e61dd35a9147b58b40c6db4add4d88b34d234f8171677b30cc6bd94bc165",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 4,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "20272fae6b52cd413390158fb09ec12b2e4762bdf9a3af51881c359b8520855d",
+        "sha256": "1642e61dd35a9147b58b40c6db4add4d88b34d234f8171677b30cc6bd94bc165",
+        "text_sha256": "77d26be9879c756206b75c2e6c528926fe2fc7c57d608f40cc29b81b7682692b",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 689358,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-20T01-39-10-828Z/scene-5.wav",
+    "duration": 15.68,
+    "text": "المغامرات مكنتش بس سرقات عادية، الأبطال واجهوا جواسيس، وشاركوا في كشف قضايا تهريب آثار، وحتى تورطوا في أحداث جاسوسية خطيرة كادت تودي بحياتهم في أكتر من قصة مثيرة ومختلفة.",
+    "sha256": "68a36c050d2df48e2139b42ddf7beb0ffc626de982832f037328aa65eb4c9a62",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 5,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "91b0441393193e4afcea9f4861100c8951fb15e36b0464e0ea3d23a98656a3fd",
+        "sha256": "68a36c050d2df48e2139b42ddf7beb0ffc626de982832f037328aa65eb4c9a62",
+        "text_sha256": "f61644aef2247a41e8e35540a86fe780f38ff7a6ce55bf4028ee0009fe705016",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 752718,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-20T01-39-10-828Z/scene-6.wav",
+    "duration": 16.28,
+    "text": "نوسة كانت دايرة معارف الفريق، بتهتم بالقراءة وجمع الطوابع، وكانت مسؤولة عن تنظيم أرشيف خاص بالجرائم والمجرمين، وده الأرشيف اللي ساعدهم كتير في الوصول للحقيقة والقبض على كبار اللصوص.",
+    "sha256": "8214cbbc7acb3023829dd7140cdac2f7c741a566879be7e4b6b4e9c91c461f33",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 6,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "dac92c7f20aa2afc41941126003e5a5bc59268ab5e72b434ad0bf389ef1fcac1",
+        "sha256": "8214cbbc7acb3023829dd7140cdac2f7c741a566879be7e4b6b4e9c91c461f33",
+        "text_sha256": "1dd2afbc373ebaf342f1b021735026db4d3be43d24af6f60e7764af8ea024f14",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 781518,
+        "reused": false
+      }
+    ]
+  },
+  {
+    "file": "/home/runner/work/arabic-horror-stories/arabic-horror-stories/public/generated/2026-11-20T01-39-10-828Z/scene-7.wav",
+    "duration": 16.92,
+    "text": "المغامرون الخمسة فضلوا أبطال في عيوننا، قصصهم علمتنا الذكاء وقوة الملاحظة، والنهاردة بنفتكرهم كجزء من تراثنا الأدبي اللي لسه بيعيش معانا في كل صفحة بنقلبها من مغامراتهم الممتعة والمثيرة.",
+    "sha256": "dd0bdcb75be7b8901738ca29f2e773202780d0693c9071cd31fd560f0865c91f",
+    "provider": "Gemini",
+    "voice": "Charon",
+    "chunks": [
+      {
+        "scene": 7,
+        "chunk": 0,
+        "schema": 1,
+        "cacheKey": "ec8551c1fb648641a82b7ca116890bb8ed0eeedd5eb903d197074d864775cad3",
+        "sha256": "dd0bdcb75be7b8901738ca29f2e773202780d0693c9071cd31fd560f0865c91f",
+        "text_sha256": "689881de8cba838727cb3819fd802b03319d3f13c0efe0e9b43b4826d7da18b4",
+        "voice": "Charon",
+        "provider": "Gemini",
+        "model": "gemini-3.1-flash-tts-preview",
+        "bytes": 812238,
+        "reused": false
+      }
+    ]
+  }
+]

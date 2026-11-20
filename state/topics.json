@@ -45,5 +45,11 @@
     "value": "https://ar.wikipedia.org/wiki/%D8%B9%D8%A8%D9%8A%D8%AF_%D8%A7%D9%84%D9%84%D9%87_%D8%A8%D9%86_%D8%B2%D9%8A%D8%A7%D8%AF",
     "status": "retired",
     "run": "2026-11-19T19-22-18-211Z"
+  },
+  {
+    "topicKey": "maghamiron-khamsa-literary-legacy",
+    "value": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%BA%D8%A7%D9%85%D8%B1%D9%88%D9%86_%D8%A7%D9%84%D8%AE%D9%85%D8%B3%D8%A9",
+    "status": "review",
+    "run": "2026-11-20T01-39-10-828Z"
   }
 ]

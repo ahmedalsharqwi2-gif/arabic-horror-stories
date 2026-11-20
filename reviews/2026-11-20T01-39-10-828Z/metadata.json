@@ -1,0 +1,23 @@
+{
+  "title": "أسرار المغامرون الخمسة: حكايات من قلب القاهرة",
+  "topicKey": "maghamiron-khamsa-literary-legacy",
+  "voice": "Charon",
+  "provider": "Gemini",
+  "sources": [
+    {
+      "id": "dabf7b673587",
+      "title": "المغامرون الخمسة",
+      "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%BA%D8%A7%D9%85%D8%B1%D9%88%D9%86_%D8%A7%D9%84%D8%AE%D9%85%D8%B3%D8%A9",
+      "published": "2026-11-20T01:48:04.329Z",
+      "official": false,
+      "publisher": "wikipedia.org",
+      "primaryRefs": [],
+      "dateBasis": "topic_grounding_lookup",
+      "proposed": true
+    }
+  ],
+  "editorialMode": "daily",
+  "video_sha256": "d616aa636f7e30fbcbac06f703f2a4905a8a3d41a0e72b0981ffe6c54454ebfd",
+  "reviewOnly": true,
+  "approved": false
+}
